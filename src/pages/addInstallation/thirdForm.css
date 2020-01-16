@@ -1,0 +1,250 @@
+/***************************************************************PANEL*REGISTER*THIRD*************************************************************/
+/***PANEL*REGISTER*THIRD*************************************************************************************************************************/
+
+#text-panel-registration {
+  font-size: 16px;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+#col-register-panel-fields {
+  margin-top: 5%;
+  margin-right: -3%;
+}
+#register-panel-fields-third {
+  margin-top: 5%;
+  margin-left: 0%;
+}
+.ant-checkbox {
+  border-color: #db4196;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #db4196;
+  border-color: #db4196;
+}
+#col-image-panel-tracking {
+  margin-top: 5%;
+}
+#image-panel-tracking {
+  margin-top: -7%;
+  width: 50%;
+  height: 50%;
+}
+#register-panels-button-container-third {
+  margin-top: 5%;
+  margin-left: 0%;
+  background-color: burlywood;
+}
+#button-panel-register-previous-third  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 70%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 13%;
+}
+#button-panel-register-next-third {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 70%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 13%;
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: -1%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 3%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: -1%;
+    margin-bottom: -1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: -2%;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 90%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+#image-panel-tracking {
+  margin-top: -10%;
+  width: 85%;
+  height: 85%;
+}
+
+#button-panel-register-previous-third  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 80%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 22%;
+}
+#button-panel-register-next-third {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 80%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 22%;
+}
+}
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: 2%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 5%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: -6%;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+
+#electrical_capacity, #surface, #lon, #lat {
+  color: #2a4092;
+  width: 85%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+}
+#panel-date-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -5%;
+  margin-bottom: -1%;
+}
+
+  #button-panel-register-next {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 55%;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+  }
+}

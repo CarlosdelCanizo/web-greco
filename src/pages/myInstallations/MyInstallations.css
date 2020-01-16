@@ -1,0 +1,316 @@
+@import '~antd/dist/antd.css';
+
+#background-installations {
+  position: absolute;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100vw;
+}
+#popover-panels {
+  font-family: Montserrat;
+  background-color: white;
+  color: #2a4092; 
+  cursor: pointer;
+}
+#popover-menu-panels:hover {
+  color: #db4196; 
+}
+
+/************************************************************ADD*INSTALLATION*************************************************/
+/***COMPUTER************************************************************************************************************************/
+#installation-add {
+  position: relative;
+  padding: 0%;
+  width: 225px;
+  height: 350px;
+  margin-top: 80%;
+  margin-left: 100%;
+  font-size: 16px;
+  border: 2px;
+  border: 2px dotted #2a4092;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-add-button {
+  margin-top: 50%;
+  margin-left: 30%;
+  width: 70px;
+  height: 70px;
+  background-color: #db4196;
+  border-color: #db4196;
+  color: white;
+}
+#add-installation-text-button {
+  margin-top: 15%;
+  margin-left: 15%;
+ 
+}
+/************************************************************INSTALLATION**************************************************/
+/***COMPUTER************************************************************************************************************************/
+#installation-col-container {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 3%;
+}
+#installation-container {
+  position: relative;
+  width: 425px;
+  height: 380px;
+  margin-top: 10%;
+  margin-left: 0%;  
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0; 
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2em;
+  width: 425px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 0.5;
+  margin-top: -15%;
+  margin-left: -15%;
+}
+#installation-tittle:hover {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2em;
+  width: 425px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 1;
+  margin-top: -15%;
+  margin-left: -15%;
+}
+#installation-button-container {
+  margin-top: -20%;
+  margin-left: -15%;
+  width: 450px;
+}
+#installation-button {
+  float: right; 
+  margin-top: 0%;
+  margin-right: 3%;
+  line-height: 2em;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 2em;
+  border: none;
+  z-index: 1;
+  border-radius: none;
+}
+#installation-add-image {
+  padding: 0%;
+  margin-top: -8.75%;
+  margin-left: -6.25%;
+  border-bottom: 5px solid #2a4092;
+}
+#installation-text-fields {
+  padding: 0%;
+  margin: 0%;
+}
+
+#panel-data-labels {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 11px;
+}
+
+#panel-data-fields {
+  font-family: Montserrat;
+  margin-top: -3%;
+  font-weight: 600;
+  color: #2a4092;
+  font-size: 16px;
+  text-align: center;
+}
+
+/************************************************************ADD*INSTALLATION*************************************************/
+/***TABLET************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+#installation-add {
+  position: relative;
+  width: 135%;
+  height: 350px;
+  padding: 0%;
+  margin-top: 20%;
+  margin-left: 15%;
+  font-size: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-add-button {
+  margin-top: 50%;
+  margin-left: 25%;
+  background-color: #db4196;
+  border-color: #db4196;
+  color: white;
+}
+#add-installation-text-button {
+  margin-top: 5%;
+  margin-left: 10%;
+  
+}
+
+/************************************************************INSTALLATIONS**************************************************/
+/***TABLET************************************************************************************************************************/
+
+#installation-col-container {
+  position: absolute;
+  margin-left: 0%;
+  margin-top: 0%;
+  width: 100%;
+}
+#installation-container {
+  position: relative;
+  display: block;
+  width: 424px;
+  height: 385px;
+  margin-top: 5%;
+  margin-left: 20%;  
+  font-family: Montserrat;
+  color: #2a4092;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2em;
+  width: 424px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 0.5;
+  margin-top: -15.5%;
+  margin-left: -15%;
+}
+#installation-button-container {
+  margin-top: -2%;
+  margin-left: -2%;
+  width: 425px;
+}
+#installation-button {
+  position: absolute;
+  margin-top: -13%;
+  margin-left: 95%;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.5em;
+  border: none;
+}
+#installation-add-image {
+  padding: 0%;
+  margin-top: -6.7%;
+  margin-left: -6.2%;
+  border-bottom: 5px solid #2a4092;
+}
+#installation-text-fields {
+  padding: 0%;
+  margin: 1%;
+}
+}
+/************************************************************ADD*INSTALLATION*************************************************/
+/***MOBILE************************************************************************************************************************/
+@media (min-width: 240px) and (max-width: 600px) {
+#installation-add {
+  position: relative;
+  width: 90%;
+  height: 125px;
+  margin-top: 3%;
+  margin-left: 4%;
+  font-size: 16px;
+  border: 2px;
+  border: 2px dotted #2a4092;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+#installation-add-button {
+  margin-top: -3%;
+  margin-left: 40%;
+  background-color: #db4196;
+  border-color: #db4196;
+  color: white;
+}
+#add-installation-text-button {
+  margin-top: 0%;
+  margin-left: 0%;
+  text-align: center;
+}
+/************************************************************INSTALLATIONS**************************************************/
+/***MOBILE************************************************************************************************************************/
+
+#installation-col-container {
+  position: absolute;
+  margin-left: 0%;
+  margin-top: 0%;
+}
+#installation-container {
+  position: relative;
+  margin-top: 5%;
+  margin-left: 4%;
+  width: 92%;
+  height: 100%;  
+  font-family: Montserrat;
+  color: #2a4092; 
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2em;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 0.5;
+  margin-top: -9%;
+  margin-left: -8%;
+}
+#installation-button-container{
+  position: absolute;
+  width: 100%;
+  margin-top: -7%;
+  left: 100%;
+  background-color: transparent;
+}
+#installation-button {
+  margin-top: -4%;
+  margin-left: -6%;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.5em;
+  border: none;
+}
+#installation-add-image {
+  margin-top: -9%;
+  margin-left: -8%;
+  width: 100px;
+  height: 250px; 
+  border-bottom: 5px solid #2a4092;
+}
+#installation-text-fields {
+  width: 100%;
+  padding: 0%;
+  margin-left: 0%;
+}
+}

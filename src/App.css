@@ -1,6 +1,9 @@
+@import '~antd/dist/antd.css';
+
 body,html {
   height: 100%;
   margin: 0;
+  font-family: Montserrat;
 }
 
 /*********************************************************************************RADIO*BUTTON**********************************************/
@@ -9,7 +12,7 @@ body,html {
 
 /*********************************************************************************WELCOME****************************************************/
 
-#grid-welcome {
+/* #grid-welcome {
   background-color: white;
   background-image: url(./assets/left-background.png);
   height: 100vh; 
@@ -86,10 +89,10 @@ body,html {
 }
 #separator{
   height: 50px;
-}
+} */
 
 /******************************************************************************LOGIN*******************************************************/
-
+/* 
 #grid-login {
   background-color: white;
   background-image: url(./assets/left-background.png);
@@ -177,10 +180,10 @@ body,html {
   border-radius: 0;
   border: none;
   margin-left: 55%;
-}
+} */
 
 /********************************************************************************REGISTER*******************************************************/
-
+/* 
 #grid-register {
   background-color: white;
   background-image: url(./assets/left-background.png);
@@ -275,7 +278,7 @@ body,html {
   letter-spacing: -0.07px;
   color: #ff3b30;
   margin-left: 32%;
-}
+} */
 
 /*************************************************************************COMPLETE*REGISTER****************************************************/
 
@@ -624,8 +627,6 @@ body,html {
 #technology-used {
 margin-left: 100%;
 }
-
-
 #subtittle-panel-registration {
   font-size: 16px;
   text-align: left;
@@ -845,9 +846,9 @@ margin-left: 100%;
 #image-preview {
   margin-left: -10%;
 }
-#no-image {
+/* #no-image {
 
-}
+} */
 #preview {
   margin-left: -88%;
 }
@@ -901,8 +902,7 @@ margin-left: 100%;
 }
 #battery {
   margin-top: 10%;
-  background-color: red;
-  /* color: #2a4092; */
+  color: #2a4092;
 }
 #battery-observation {
   margin-top: 1%;
@@ -928,7 +928,7 @@ margin-left: 100%;
 }
 #solar-panel {
   margin-top: 5%;
-  margin-left: 15%;
+  margin-left: 0%;
 }
 #button-panel-finish-next {
   background-color: #db4196;
@@ -998,79 +998,7 @@ margin-left: 100%;
   margin-top: 10%;
 }
 /*********************************************************CHAT-PANEL****************************************************/
-#chat-panel-container {
-  float: right; 
-  height: 90%;
-  width: 434px;
-  font-family: Montserrat;
-  color: #2a4092;
-  padding: 0;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-}
-#close-button {
-  position: absolute;
-  top: 2%;
-  right: 0;
-  background-color: transparent;
-  color: red;
-}
-#chat-panel-name {
-  font-size: 15px;
-  font-weight: 500;;
-  text-align: center;
-  line-height: 1.25;
-  color: #2a4092;
-  margin-top: 1%;
-}
-#chat-panel-image {
-  margin-top: 1%;
-}
-#chat-panel-data {
-  margin-top: 2%;
-  color: #2a4092;
-  text-align: center;
-}
-#chat-panel-data-labels {
-  margin-top: 2%;
-  color: #bfc5d2;
-  text-align: center;
-}
-#chat-panel-data-fields {
-  margin-top: -11%;
-  color: #2a4092;
-  text-align: center;
-}
-#chat-panel-user-name {
-  margin-top: 1%;
-  text-align: center;
-  color: #2a4092;
-  background-color: #eeeeee
-}
-#chat-panel-messages {
-  overflow: scroll;
-  margin-top: 1%;
-  height: 270px;
-  
-}
-#chat-panel-input-message {
-  margin-bottom: 0;
-}
-#send-message {
-  height: 45px;
-  width: 95%;
-  margin-left: 2.5%;
-  margin-bottom: 5%;;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-}
-#chat-panel-send-button {
-  position: absolute;
-  bottom: 4.5%;
-  right: 0;
-  background-color: transparent;
-  color: #2a4092;
-}
+
 /*********************************************************LEFT*MENU************************************************************/
 
 #left-menu-container {
@@ -1124,3 +1052,6 @@ margin-left: 100%;
   background-color: transparent;
   color: #2a4092;
 }
+
+/*********************************************************STATISTICS*MAP************************************************************/
+

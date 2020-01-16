@@ -1,0 +1,120 @@
+@import '~antd/dist/antd.css';
+
+#chat-panel-exterior-background {
+  position: fixed;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#chat-panel-container {
+  float: right;
+  height: 92%;
+  width: 424px;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0;
+  margin-top: 1%;
+  margin-right: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle {
+  position: absolute;
+  font-size: 18px;
+  padding-top: 5px;
+  font-weight: 500;
+  line-height: 1em;
+  width: 425px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 0.5;
+  margin-top: -15.5%;
+  margin-left: -15.25%;
+}
+#chat-panel-close-button{
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  background-color: transparent;
+  color: red;
+  border: none;
+}
+#installation-add-image {
+  padding: 0%;
+  width: 425px;
+  margin-top: -7%;
+  margin-left: -6.75%;
+  border-bottom: 5px solid #2a4092;
+}
+#chat-panel-user-name {
+  margin-top: 1%;
+  margin-left: -6.5%;
+  width: 422.5px;
+  height: 35px;
+  padding-top: 3px;
+  text-align: center;
+  color: #2a4092;
+  background-color: #eeeeee
+}
+#chat-panel-messages {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 1%;
+  margin-left: -3%;
+  height: 260px;
+  width: 400px;  
+}
+
+/* #chat-panel-avatar {
+  background-color: #2a4092;
+  color: #db4196;
+  margin-left: -125%;
+} */
+
+#chat-panel-user-booble {
+	position: relative;
+	background:  #2a4092;
+  border-radius: .9em;
+  width: 360px;
+  margin-left: 15px;
+  margin-top: 10px;
+  /* border-top-left-radius: 0; */
+  color: white;
+  font-family: Montserrat;
+}
+
+#chat-panel-user-booble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 25%;
+	width: 0;
+  height: 0;
+	border: 1em solid transparent;
+	border-right-color: #2a4092;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -0.5em;
+	margin-left: -1em;
+}
+
+#chat-panel-input-form {
+  margin-top: -2%;
+  margin-left: -20px;
+}
+#chat-panel-input-message-box {
+  height: 35px;
+  width: 90%;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#chat-panel-send-button {
+  position: absolute;
+  margin-bottom: 30px;
+  margin-right: -400px;
+  font-size: 2em;
+  background-color: transparent;
+  border: none;
+  color: #2a4092;
+}

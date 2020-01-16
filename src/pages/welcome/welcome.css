@@ -1,0 +1,314 @@
+/*************************************************************COMPUTER**************************************************************/
+/***COMPUTER************************************************************************************************************************/
+  #col-welcome-container {
+  height: 100vh; 
+  background-image: url(../../assets/left-background.png);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+#inside-welcome-container {
+  margin-top: 12%;
+  margin-left: 25%;
+  margin-right: 25%; 
+  padding: 1%;  
+}
+#col-background {
+  background-image: url(../../assets/background.png);
+  height: 100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+#col-background-logo {
+  margin-top: 45%;
+  margin-left: 25%;
+  margin-right: 25%;
+ }
+#welcome-title-text {
+  font-size: 2.2em;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 12%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#welcome-normal-text {
+  margin-top: 5%;
+  font-size: 1.6em;
+  text-align: left;
+  line-height: 1.25;
+  color: #002c50;
+}
+#welcome-text-mini {
+  margin-top: 5%;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.36px;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#large-divider {
+  height: 50px;
+  background-color: transparent;
+}
+#welcome-button-container {
+  display: flex;
+  align-items: start;
+}
+#button-welcome-left {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 600;
+  width: 50%;
+  height: 40px;
+  border-radius: 0;
+}
+#button-welcome-right {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 600;
+  width: 50%;
+  height: 40px;
+  border-radius: 0;
+  margin-left: 5%;
+}
+#link {
+  color: #db4196;
+}
+#welcome-text-footer-container{
+  z-index: 999;
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  bottom: 2%;
+}
+#welcome-text-footer {
+  position: relative;
+  z-index: 999;
+  font-size: 1em;
+  bottom: 3%;
+  left: 45%;
+  color: #2a4092;
+}
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) { */
+  #col-welcome-container {
+    height: 100%; 
+    background-image: none;
+  }
+  #inside-welcome-container {
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%; 
+    padding: 0%;  
+  }
+  #logo-mobile {
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  #logo-mobile-image {
+    margin-left: 12%;
+    width: 60%;
+  }
+  #welcome-title-text {
+    margin-top: 15%;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #welcome-normal-text {
+    margin-top: 10%;
+    font-size: 1.5em;
+    text-align: left;
+    line-height: 1.25;
+    color: #002c50;
+  }
+  #welcome-text-mini {
+    margin-top: 6%;
+    width: 90%;
+    margin-right: 8%;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.36px;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #large-divider {
+    height: 10px;
+  }
+  #welcome-text-footer-container{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 3%;
+  }
+  #welcome-text-footer {
+    position: relative;
+    z-index: 999;
+    font-size: 0.8em;
+    bottom: 3%;
+    left: 10%;
+    width: 80%;
+    color: #2a4092;
+  } 
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+@media (min-width: 240px) and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) { */
+  #col-welcome-container {
+    background-image: none; 
+    height: 100%;
+    width: 100vw;
+    padding: 0%;
+  }
+  #logo-mobile {
+    margin-top: 8%;
+    margin-left: 5%;
+  }
+  #logo-mobile-image {
+    margin-left: 5.5%;
+    width: 80%;
+  }
+  #inside-welcome-container{
+    margin-left: 8%;
+    margin-right: 8%; 
+  }
+  #welcome-title-text {
+    margin-top: 10%;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #welcome-normal-text {
+    margin-top: 6%;
+    margin-right: 8%;
+    font-size: 1.2em;
+    letter-spacing: 0.36px;
+    text-align: left;
+    line-height: 1.25;
+    color: #002c50;
+  }
+  #welcome-text-mini {
+    margin-top: 6%;
+    width: 85%;
+    margin-right: 8%;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.36px;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #large-divider {
+    height: 10px;
+    background-color: transparent;
+  }
+  #welcome-button-container {
+    display: inline;
+  }
+  #button-welcome-left {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 95%;
+    height: 42px;
+    border-radius: 0;
+  }
+  #button-welcome-right {
+    background-color: #2a4092;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 95%;
+    height: 42px;
+    margin-top: 3%;
+    margin-left: 0%;
+    border-radius: 0;
+  }
+  #welcome-text-footer-container{
+    align-items: flex-start;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 1%;
+  }
+  #welcome-text-footer {
+    position: relative;
+    z-index: 999;
+    font-size: 0.8em;
+    bottom: 3%;
+    left: 5%;
+    width: 80%;
+    color: #2a4092;
+  } 
+}
+
+/**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
+/***MOBILE*EXTRA*SMALL***************************************************************************************************************************/
+
+@media (max-width: 240px)  {
+  #welcome-text-footer-container{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -15%;
+  }
+  #welcome-text-footer {
+    position: relative;
+    z-index: 999;
+    font-size: 0.8em;
+    bottom: -15%;
+    width: 80%;
+    color: #2a4092;
+  } 
+}
+
+/**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
+/***ORIENTATION*LANDSCAPE**************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
+
+  #welcome-text-footer-container{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -15%;
+    /* left: -5.5%; */
+  }
+  #welcome-text-footer {
+    position: relative;
+    z-index: 999;
+    font-size: 0.8em;
+    bottom: -15%;
+    width: 80%;
+    color: #2a4092;
+  } 
+} 
+
+#prueba-comunicacion {
+  display: none;
+}

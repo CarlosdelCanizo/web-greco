@@ -1,0 +1,151 @@
+/************************************************************MY*CHALLENGES**********************************************************/
+/***COMPUTER************************************************************************************************************************/
+
+#background-statistics {
+  position: absolute;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#challenge-card-container {
+  margin-top: 3%;
+  margin-left: 15%;
+  width: 70%;
+}
+#challenge-card-image-container {
+  height: 250px;
+  width: 250px;
+  background-color:#ffffff;
+  padding: 0%;
+  margin-left: -5%;
+  margin-top: -1%;
+  text-align: left;
+  box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
+}
+#challenge-tag {
+  text-align: center;
+  margin-left: 80%;
+  width: 15%;
+  
+}
+#challenge-card-image {
+  height: 250px;
+  width: 250px;
+  background-color: #eaedf1;
+}
+#challenge-card-text {
+  margin-left: 5%;
+  color:#8398aa;
+}
+#challenge-card-button {
+  margin-top: 10%;
+  margin-left: 5%;
+  background-color:#2a4092;
+  color: white;
+}
+/* .ant-card {
+  background-color:#ffffff;
+  padding: 12%;
+  color:#8398aa;
+  text-align: left;
+  box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
+} */
+#challenge-percentage {
+margin-top: 12%;
+margin-left: 5%;
+width: 80%;
+}
+
+/************************************************************MY*CHALLENGES**********************************************************/
+/***TABLET************************************************************************************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+  #challenge-card-container {
+    margin-top: 3%;
+    margin-left: 2%;
+    width: 95%;
+  }
+  #challenge-card-image-container {
+    height: 230px;
+    width: 225px;
+    background-color:#ffffff;
+    padding: 0%;
+    margin-left: -10%;
+    margin-top: -1%;
+    text-align: left;
+    box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
+  }
+  #challenge-tag {
+    text-align: center;
+    margin-left: 80%;
+    width: 15%;
+  }
+  #challenge-card-image {
+    height: 230px;
+    width: 225px;
+  }
+  #challenge-card-text {
+    margin-left: 15%;
+    margin-bottom: 15%;
+    color:#8398aa;
+  }
+  #challenge-card-button {
+    margin-top: 2%;
+    margin-left: 15%;
+    background-color:#2a4092;
+    color: white;
+  }
+  #challenge-percentage {
+    margin-top: 12%;
+    margin-left: 10%;
+    width: 80%;
+    }
+}
+/************************************************************MY*CHALLENGES**********************************************************/
+/***MOBILE************************************************************************************************************************/
+@media (min-width: 240px) and (max-width: 600px) {
+  #challenge-card-container {
+    margin-top: 3%;
+    margin-left: 3.5%;
+    width: 93%;
+    height: 100%;
+  }
+  #challenge-card-image-container {
+    height: 116%;
+    width: 116%;
+    background-color:#ffffff;
+    padding: 0%;
+    margin-left: -8%;
+    margin-top: -8%;
+    text-align: left;
+    box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
+  }
+  #challenge-tag {
+    position: absolute;
+    text-align: center;
+    margin-top: -110%;
+    margin-left: 70%;
+    width: 30%;
+  }
+  #challenge-card-image {
+    height: 100%;
+    width: 100%;
+  }
+  #challenge-card-text {
+    width: 100%;
+    margin-left: 0%;
+    margin-top:3%;
+    color:#8398aa;
+  }
+  #challenge-card-button {
+    width: 100%;
+    margin-top: 3%;
+    margin-left: -5%;
+    background-color:#2a4092;
+    color: white;
+  }
+  #challenge-percentage {
+    margin-top: 12%;
+    margin-left: 10%;
+    width: 80%;
+    }
+}

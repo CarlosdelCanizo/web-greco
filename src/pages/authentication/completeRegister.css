@@ -1,0 +1,151 @@
+/*************************************************************COMPUTER**************************************************************/
+/***COMPUTER************************************************************************************************************************/
+
+#col-welcome-container {
+  height: 100vh; 
+  background-image: url(../../assets/left-background.png);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+#inside-welcome-container {
+  margin-top: 12%;
+  margin-left: 25%;
+  margin-right: 25%; 
+  padding: 1%;  
+}
+#col-background {
+  background-image: url(../../assets/background.png);
+  height: 100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+#col-background-logo {
+  margin-top: 45%;
+  margin-left: 25%;
+  margin-right: 25%;
+ }
+#title-register-complete {
+  width: 80%;
+  font-size: 2.2em;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 10%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#solar-image {
+  margin-top: 5%;
+}
+#text-register-complete {
+  width: 100%;
+  font-size: 20px;
+  text-align: left;
+  line-height: 1;
+  color: #2a4092;
+  margin-left: 0;
+  margin-top: 10%;
+  letter-spacing: 0.44px;
+}
+#button-register-complete {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 600;
+  width: 60%;
+  height: 40px;
+  border-radius: 0;
+  margin-left: 0%;
+  margin-top: 10%;
+}
+/**************************************************************TABLET*****************************************************************/
+/***TABLET************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #title-register-complete {
+    width: 100%;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #button-register-complete {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 80%;
+    height: 40px;
+    border-radius: 0;
+    margin-left: 0%;
+    margin-top: 10%;
+  }
+} 
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #col-welcome-container {
+    background-image: none; 
+    height: 100vh;
+    width: 100%;
+    padding: 0%;
+  }
+  #logo-mobile {
+    width: 80%;
+    margin-top: 8%;
+    margin-left: 5%;
+  }
+  #inside-welcome-container{
+    margin-left: 8%;
+    margin-right: 8%; 
+  }
+  #title-register-complete {
+    width: 100%;
+    margin-top: 5%;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 0%;
+  }
+  #solar-image {
+    margin-top: 3%;
+    margin-left: 0%;
+  }
+  #text-register-complete {
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #002a54;
+    margin-left: 0;
+    margin-top: 5%;
+    margin-left: 0%;
+    letter-spacing: 0.44px;
+  }
+  #button-register-complete {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 600;
+    width: 85%;
+    height: 42px;
+    border-radius: 0;
+    margin-left: 0%;
+  }
+}
+
+/**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
+/***ORIENTATION*LANDSCAPE***********************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
+
+}

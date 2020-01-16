@@ -1,0 +1,855 @@
+/***************************************************************FINISHED*PANEL*************************************************************/
+/***FINISHED*PANEL************************************************************************************************************************/
+
+#tittle-finished-panel {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 3%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#solar-panel {
+  margin-top: 0%;
+  margin-left: 0%;
+}
+#text-finished-panel-registration {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#add-another-installation {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.25;
+  color: #db4196;
+  margin-top: 5%;
+  margin-left: 0%;
+  margin-right: 1%;
+}
+#button-panel-finish-next {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 50%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 0%;
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #tittle-panel-registration {
+    color: #2a4092;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 1%;
+    line-height: 1.25;
+  }
+  #solar-panel {
+    margin-top: -2%;
+    margin-left: 0%;
+  }
+  #text-finished-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #add-another-installation {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.25;
+    color: #db4196;
+    margin-top: 5%;
+    margin-left: 0%;
+    margin-right: 1%;
+  }
+  #button-panel-finish-next {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 50%;
+    height:40px;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+}
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: 2%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 5%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: -6%;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+#input-separator {
+  margin-top: 5%;
+  background-color: transparent;
+  margin-bottom: -8%;
+}
+#electrical_capacity, #surface, #lon, #lat {
+  color: #2a4092;
+  width: 85%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+}
+#panel-date-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -5%;
+  margin-bottom: -1%;
+}
+.ant-calendar-picker-input {
+  border-radius: 0px;
+  height: 25px;
+  background-color: #f9f9f9;;
+}
+#col-commissioning-date {
+  margin-top: 3%;
+  margin-left: 2%;
+}
+#commissioningDate {
+  color: #2a4092;
+  width: 85%;
+  height: 40px;
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 1.25;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -5%;
+  margin-top: -2%;
+}
+  #subtittle-panel-registration {
+    font-size: 16px;
+    font-weight: 1000;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 4%;
+    margin-top: 2%;
+  }
+  #col-radio-button {
+    width: 240px;
+    margin-top: 1%;
+  }
+  #images-tech-us {
+    display: inline-block;
+    margin-left: 8%;
+    margin-right: 4%;
+    padding: 5%;
+    border: 1px solid #cdced7;
+  }
+  #label-radio-button {
+    margin-left: 0%;
+    font-size: 1.1em;
+    color: #7f95a7;
+  }
+  #register-panel-inverter {
+    margin-top: 4%;
+    margin-left: 20%;
+  }
+  #panel-alone-input-label {
+    width: 55%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #2a4092;
+    background-color: #f9f9f9;
+    border-bottom: 10px solid #f9f9f9;
+    margin-left: 3%;
+    margin-bottom: -1%;
+    }
+  #inverter-capacity {
+    color: #2a4092;
+    width: 55%;
+    height: 35px;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 2;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+    background-color: #f9f9f9;
+    border-top: 10px solid #f9f9f9;
+    border-radius: 0;
+    margin-left: -40%;
+    margin-top: -1%;
+  }
+  #register-panels-button-container-first {
+    margin-top: -2%;
+  }
+  #button-panel-register-next-first {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 55%;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+}#background-panel-register {
+  position: absolute;
+  background-image: url(../../assets/panels.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+#card-panel-register-inside {
+  height: 85vh;
+  width: 40%;
+  margin-top: 3%;
+  margin-left: 30%;
+  font-family: Montserrat;
+  background-color: white;
+  text-align: center;  
+}
+#pagination {
+  margin-top: 0%;
+}
+#pagination-bullet {
+  margin-left: 1%;
+}
+#tittle-panel-registration {
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 3%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#button-panel-register-next-first {
+  background-color: #db4196;
+  color: #ffffff;
+  line-height: 1.5;
+  height:40px;
+  width: 40%;
+  border-radius: 0;
+  border: none;
+}
+
+/***************************************************************FIRST*FORM*************************************************************/
+/***FIRST*FORM************************************************************************************************************************/
+
+#text-panel-registration {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+#col-register-panel-fields {
+  margin-top: 5%;
+  margin-right: -3%;
+}
+#col-commissioning-date {
+  margin-top: 4.5%;
+}
+#panel-input-label {
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: 10%;
+  margin-bottom: -1%;
+}
+#panel-date-label {
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: 10%;
+  margin-bottom: -1%;
+}
+#input-separator {
+  margin-top: -3%;
+  background-color: transparent;
+  margin-bottom: -3%;
+}
+#electrical_capacity, #surface, #lon, #lat {
+  color: #2a4092;
+  width: 80%;
+  height: 38px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: 10%;
+  margin-top: -1%;
+}
+.ant-calendar-picker-input {
+  border-radius: 0px;
+  height: 26px;
+  background-color: #f9f9f9;
+  border: none;
+}
+#input-date-separator {
+  margin-top: 3%;
+  background-color: transparent;
+  margin-bottom: -7%;
+}
+#commissioningDate {
+  color: #2a4092;
+  width: 80%;
+  height: 38px;
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: 10%;
+  margin-top: -3%;
+}
+#subtittle-panel-registration {
+  font-size: 16px;
+  font-weight: 1000;
+  text-align: left;
+  line-height: 1.25;
+  color: #2a4092;
+  margin-left: 5%;
+  margin-top: 1%;
+}
+#col-radio-button {
+  margin-left: 0%;
+}
+#technology-used {
+    margin-left: 0%;
+  }
+#images-tech-us {
+  margin-top: 1%;
+  width: 90%;
+  height: 100%;
+  margin-left: -5%;
+  margin-right: 3%;
+  padding: 5%;
+  border: 1px solid #cdced7;
+}
+#label-radio-button {
+ margin-left: -5%;
+ font-size: 0.9em;
+ color: #7f95a7;
+}
+#radio-button {
+  margin-left: 0%;
+ }
+#register-panel-inverter {
+  top: -4%;
+}
+#panel-alone-input-label {
+  display: block;
+  width: 40%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: 30%;
+  margin-bottom: -1%;
+}
+#inverter-capacity {
+  color: #2a4092;
+  width: 40%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: 0%;
+  margin-top: -1%;
+}
+#register-panels-button-container-first {
+  margin-top: 0%;
+  margin-left: 0%;
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: -1%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 3%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: -1%;
+    margin-bottom: -1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: -2%;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 90%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+#input-separator {
+  margin-top: -0%;
+  background-color: transparent;
+  margin-bottom: -8%;
+}
+#electrical_capacity, #surface, #lon, #lat {
+  color: #2a4092;
+  width: 90%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+}
+#panel-date-label {
+  display: inline-block;
+  width: 95%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -5%;
+  margin-bottom: 0%;
+}
+.ant-calendar-picker-input {
+  border-radius: 0px;
+  height: 25px;
+  background-color: #f9f9f9;;
+}
+#col-commissioning-date {
+  margin-top: -11%;
+}
+#commissioningDate {
+  color: #2a4092;
+  width: 95%;
+  height: 40px;
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 1.25;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -5%;
+  margin-top: 0%;
+}
+  #subtittle-panel-registration {
+    font-size: 16px;
+    font-weight: 1000;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 0%;
+    margin-top: -6%;
+  }
+  #col-radio-button {
+    margin-left: 0%;
+  }
+  #technology-used {
+    margin-left: 1%;
+  }
+  #images-tech-us {
+    margin-top: 0%;
+    margin-left: -15%;
+    padding: 5%;
+    border: 1px solid #cdced7;
+  }
+  #radio-button {
+  margin-left: 5%;
+  }
+  #register-panel-inverter {
+    margin-top: -4%;
+    margin-left: -2%;
+  }
+  #panel-alone-input-label {
+    display: inline-block;
+    width: 95%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #2a4092;
+    background-color: #f9f9f9;
+    border-bottom: 10px solid #f9f9f9;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    }
+  #inverter-capacity {
+    color: #2a4092;
+    width: 95%;
+    height: 35px;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 2;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+    background-color: #f9f9f9;
+    border-top: 10px solid #f9f9f9;
+    border-radius: 0;
+    margin-left: 0%;
+    margin-top: -3%;
+  }
+  #register-panels-button-container-first {
+    margin-top: -2%;
+  }
+  #button-panel-register-next-first {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 95%;
+    border-radius: 0;
+    border: none;
+    margin-left: -3%;
+  }
+}
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: 2%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 5%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: -6%;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+#input-separator {
+  margin-top: 5%;
+  background-color: transparent;
+  margin-bottom: -8%;
+}
+#electrical_capacity, #surface, #lon, #lat {
+  color: #2a4092;
+  width: 85%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+}
+#panel-date-label {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -5%;
+  margin-bottom: -1%;
+}
+.ant-calendar-picker-input {
+  border-radius: 0px;
+  height: 25px;
+  background-color: #f9f9f9;;
+}
+#col-commissioning-date {
+  margin-top: 3%;
+  margin-left: 2%;
+}
+#commissioningDate {
+  color: #2a4092;
+  width: 85%;
+  height: 40px;
+  font-family: Montserrat;
+  font-size: 20px;
+  line-height: 1.25;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -5%;
+  margin-top: -2%;
+}
+  #subtittle-panel-registration {
+    font-size: 16px;
+    font-weight: 1000;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 4%;
+    margin-top: 2%;
+  }
+  #col-radio-button {
+    width: 240px;
+    margin-top: 1%;
+  }
+  #images-tech-us {
+    display: inline-block;
+    margin-left: 8%;
+    margin-right: 4%;
+    padding: 5%;
+    border: 1px solid #cdced7;
+  }
+  #label-radio-button {
+    margin-left: 0%;
+    font-size: 1.1em;
+    color: #7f95a7;
+  }
+  #register-panel-inverter {
+    margin-top: 4%;
+    margin-left: 20%;
+  }
+  #panel-alone-input-label {
+    width: 55%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #2a4092;
+    background-color: #f9f9f9;
+    border-bottom: 10px solid #f9f9f9;
+    margin-left: 3%;
+    margin-bottom: -1%;
+    }
+  #inverter-capacity {
+    color: #2a4092;
+    width: 55%;
+    height: 35px;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 2;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+    background-color: #f9f9f9;
+    border-top: 10px solid #f9f9f9;
+    border-radius: 0;
+    margin-left: -40%;
+    margin-top: -1%;
+  }
+  #register-panels-button-container-first {
+    margin-top: -2%;
+  }
+  #button-panel-register-next-first {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 55%;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+}

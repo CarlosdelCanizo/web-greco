@@ -1,0 +1,17 @@
+#leaflet-prova-container {
+  height: 750px;
+  width: 100%;
+}
+#public-private-mapping-popup {
+  width: 100%;
+  height: 100%;
+} 
+ 
+a.leaflet-popup-close-button {
+  margin: 1%;
+}
+.leaflet-popup-content-wrapper {
+  width: 350px;
+  height: 350px;
+  background-color: white;
+}

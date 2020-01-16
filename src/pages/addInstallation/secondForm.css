@@ -1,0 +1,292 @@
+/***************************************************************PANEL*REGISTER*SECOND*************************************************************/
+/***PANEL*REGISTER*SECOND*************************************************************************************************************************/
+
+#text-panel-registration {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+#col-register-panel-fields {
+  margin-top: 5%;
+  margin-right: -3%;
+}
+#panel-input-label-second {
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: 10%;
+  margin-bottom: -1%;
+}
+#lon, #lat {
+  color: #2a4092;
+  width:75%;
+  height: 36px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: -1;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  margin-left: 5%;
+}
+#input-separator-second {
+  margin-top: -1%;
+  background-color: transparent;
+  margin-bottom: -3%;
+}
+.coords-container {
+  height: 40vh;
+  width: 85%;
+  margin-left: 7%; 
+}
+#add-installation-container-button-second {
+  margin-top: 5%;
+}
+#button-panel-register-previous-second  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 70%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+}
+#button-panel-register-next-second {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 70%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+}
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: 2%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 5%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 2%;
+    margin-left: -5%;
+    margin-bottom: 1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: -6%;
+  }
+  #panel-input-label-second {
+  display: inline-block;
+  width: 85%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+  }
+  #input-separator-second {
+  margin-top: 6%;
+  background-color: transparent;
+  margin-bottom: -8%;
+  }
+  #lon, #lat {
+  color: #2a4092;
+  width: 85%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+  }
+  #button-panel-register-previous  {
+    background-color: #2a4092;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 80%;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    margin-left: 7%;
+  }
+  #button-panel-register-next {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 15px;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    margin-right: -10%;
+  }
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+  }
+  #pagination {
+    margin-top: -1%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 3%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: -1%;
+    margin-left: 0%;
+    margin-bottom: -1%;
+  }
+  #col-register-panel-fields {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: -2%;
+  }
+  #panel-input-label-second {
+  display: inline-block;
+  width: 90%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+  }
+  #input-separator-second {
+  margin-top: 0%;
+  background-color: transparent;
+  margin-bottom: -8%;
+  }
+  #lon, #lat {
+  color: #2a4092;
+  width: 90%;
+  height: 27px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 2;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-top: 10px solid #f9f9f9;
+  border-radius: 0;
+  margin-left: -20%;
+  margin-top: -1%;
+  }
+  .coords-container {
+    height: 50vh;
+    width: 95%;
+    margin-left: 0%; 
+    margin-top: -5%;
+  }
+  #add-installation-container-button-second {
+    margin-top: 5%;
+    margin-left: -4%;
+  }
+  #button-panel-register-previous-second  {
+    background-color: #2a4092;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 85%;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+  }
+  #button-panel-register-next-second {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 85%;
+    height:40px;
+    border-radius: 0;
+    border: none;
+    margin-right: -15%;
+  }
+  
+}

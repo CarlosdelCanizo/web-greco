@@ -1,0 +1,399 @@
+@import '~antd/dist/antd.css';
+
+/**************************************************************COMPUTER****************************************************************/
+/**************************************COMPUTER****************************************************************/
+
+#background-statistics {
+  position: absolute;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#statistics-map-container {
+  margin-top: 5%;
+  margin-left: 20%;
+  width: 90%;
+  height: 35%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+/**************************************COMPUTER****************************************************************/
+/**************************************ROOF*CARD***************************************************************/
+
+#capacity-card-statistics-container {
+  padding: 3%;
+  margin-top: 5%;
+  margin-left: 15%;
+  width: 60%;
+  height: 200px;
+  text-align: center;
+  font-size: 16px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#tittle-installed {
+  margin-top: 0%;
+  font-family: Lato;
+  font-size: 1em;
+  letter-spacing: 1.49px;
+  text-align: center;
+  color: #8398aa;
+}
+#numbers-installed {
+  display: inline;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#big-letters-installed {
+ display: inline;
+  
+}
+#small-letters-installed {
+  margin-top: 5%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+
+/********************************************COMPUTER****************************************************************/
+/**************************************CLIMATE*OBJECTIVE*************************************************************/
+
+#climate-objective-card-statistics-container {
+  padding: 3%;
+  margin-top: 5%;
+  margin-left: 15%;
+  text-align: center;
+  width: 60%;
+  height: 300px;
+  font-size: 16px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#slider {
+  margin-top: 8%;
+  margin-left: -5%;
+}
+#measurements-left {
+margin-top: 12%;
+margin-left: -35%;
+}
+#measurements-right {
+  margin-top: -18.5%;
+  margin-left: 40%;
+}
+#tag {
+  height: 40px;
+  width: 40px;
+  padding-top: 6px;
+  padding-left: 0px;
+  font-size: 1.5em;
+}
+#cipher {
+  position: relative;
+}
+#numbers-climate-objective {
+  margin-left: -20%;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  color: #2a4092;
+}
+#letters-climate-objective {
+    margin-top: -10%; 
+    font-family: Montserrat;
+    font-size: 1em;
+    line-height: 1.42;
+    letter-spacing: 0.27px;
+    text-align: center;
+    color: #7f95a7;
+     
+   }
+   #small-letters-climate {
+    margin-left: 25%;
+    margin-top: -7%;
+    font-family: Montserrat;
+    font-size: 12px;
+    line-height: 1.08;
+    letter-spacing: 0.27px;
+    text-align: center;
+    color: #7f95a7;
+  }
+
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #capacity-card-statistics-container {
+    padding: 4%;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    height: 185px;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #statistics-map-container {
+    margin-top: 10%;
+    margin-left: 13%;
+    width: 90%;
+    height: 35%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  #climate-objective-card-statistics-container {
+    padding: 3%;
+    margin-top: 5%;
+    margin-left: 10%;
+    text-align: center;
+    width: 80%;
+    height: 350px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+/****************************************TABLET*****************************************************************/
+/**************************************ROOF*CARD****************************************************************/
+
+#tittle-installed {
+  margin-top: 5%;
+  font-family: Lato;
+  font-size: 12px;
+  letter-spacing: 1.49px;
+  text-align: center;
+  color: #8398aa;
+}
+#numbers-installed {
+  display: inline;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#big-letters-installed {
+ display: inline;
+ margin-left: 1%;
+ font-family: Montserrat;
+ font-size: 1em;
+ line-height: 1.42;
+ letter-spacing: 0.27px;
+ text-align: center;
+ color: #7f95a7; 
+}
+#small-letters-installed {
+  margin-top: 5%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+
+/********************************************TABLET*****************************************************************/
+/**************************************CLIMATE*OBJECTIVE************************************************************/
+
+#slider {
+  margin-top: 20%;
+  margin-left: 0%;
+  width: 95%;
+}
+#numbers-climate-objective {
+  margin-left: -40%;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#letters-climate-objective {
+  margin-top: -15%;
+  margin-left: -10%;
+  font-family: Montserrat;
+  font-size: 1em;
+  line-height: 1.42;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+#small-letters-climate {
+  margin-left: 30%;
+  margin-top: -12%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+#measurements-left {
+  margin-top: 25%;
+  margin-left: -60%;
+  }
+  #measurements-right {
+    margin-top: -28%;
+    margin-left: 50%;
+  }
+  #tag {
+    height: 40px;
+    width: 40px;
+    padding-top: 6px;
+    padding-left: 1px;
+    font-size: 1.5em;
+  }
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #background-statistics {
+    position: absolute;
+    background-color: #eaedf1;
+    height: 100vh; 
+    width: 100%;
+  }
+  #capacity-card-statistics-container {
+    padding: 5%;
+    margin-top: 30%;
+    margin-left: 5%;
+    width: 90%;
+    height: 153px;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #statistics-map-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    width: 90%;
+    height: 448px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  #climate-objective-card-statistics-container {  
+    padding: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    width: 90%;
+    height: 271px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+/****************************************MOBILE*SMALL****************************************************************/
+/**************************************CLIMATE*OBJECTIVE*************************************************************/
+
+#slider {
+  margin-top: 10%;
+  margin-left: -5%;
+}
+#measurements-left {
+margin-top: 20%;
+margin-left: -45%;
+}
+#measurements-right {
+  margin-top: -27.5%;
+  margin-left: 50%;
+}
+#tag {
+  height: 40px;
+  width: 40px;
+  padding-top: 6px;
+  padding-left: 1.5px;
+  font-size: 1.5em;
+}
+#numbers-climate-objective {
+  display: inline;
+  margin-left: -30%;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#lettters-climate-objective {
+  display: inline;
+  margin-left: 0%;
+  font-family: Montserrat;
+  font-size: 1em;
+  line-height: 1.42;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+#small-letters-climate {
+  margin-left: 40%;
+  margin-top: -10%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+
+/*************************************MOBILE*SMALL****************************************************************/
+/**************************************ROOF*CARD******************************************************************/
+
+#tittle-installed {
+  margin-top: 3%;
+  font-family: Lato;
+  font-size: 12px;
+  letter-spacing: 1.49px;
+  text-align: center;
+  color: #8398aa;
+}
+#numbers-installed {
+  display: inline;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#big-letters-installed {
+ display: inline;
+ font-family: Montserrat;
+ font-size: 1em;
+ line-height: 1.42;
+ letter-spacing: 0.27px;
+ text-align: center;
+ color: #7f95a7;
+  
+}
+#small-letters-installed {
+  margin-top: 3%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
+}

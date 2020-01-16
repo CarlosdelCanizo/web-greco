@@ -1,0 +1,49 @@
+@import '~antd/dist/antd.css';
+
+/***************PROFILE*************************************************************/
+/***************COMPUTER*********************************************************/
+
+#user-info {
+  width: 100%;
+  height: 100px;
+  margin-top: 0%;
+  margin-left: 0%;
+}
+#user-menu-avatar {
+  margin-top: 0%;
+  margin-left: -0%;
+  font-weight: 600;
+  color: #2a4092;
+  background-color: #e9e9e9;
+  box-shadow: 0 6px 8px 0 rgba(16, 27, 79, 0.21);
+}
+#user-menu-name {
+  background-color: transparent;
+  color: #2a4092;
+  margin-left: 25%;
+  margin-top: -13%;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.31px;
+}
+#user-menu-email {
+  background-color: transparent;
+  color: #2a4092;
+  margin-left: 0%;
+  margin-top: 15%;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.31px;
+  
+}
+
+/***************PROFILE*************************************************************/
+/***************TABLET*********************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+}
+/***************PROFILE*************************************************************/
+/***************MOBILE*********************************************************/
+@media (min-width: 240px) and (max-width: 600px) { 
+}
