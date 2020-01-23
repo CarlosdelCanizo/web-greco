@@ -5,14 +5,14 @@ import "./Mapping.css"
 import L from "leaflet";
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import Header from '../../components/header/Header'
+import Header from '../../header/Header'
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import { Card, Button, Row, Col, Icon, Divider, Collapse } from 'antd'
+import { Button, Row, Col, Divider } from 'antd'
 import solar from '../../assets/solar.jpg'
 
 
-const PrivateMapping = () => {
+const PrivateMapping = (props) => {
 
   let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -30,24 +30,12 @@ const PrivateMapping = () => {
   const [panels, setPanels] = useState([])
 
   useEffect(() => {
-    const fetchData = async () => {
-      var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-      const result = await axios(
-        'http://10.0.10.195:8088/solarPanel',
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": access_token
-          }
-        }
-      );
-      setPanels(result.data.content);
-      // console.log("Els panels!?", result.data.content)
-      // console.log("Directament panels!?", panels)
-    };
-
-    fetchData();
-  }, []);
+    // var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+    axios.get('http://10.0.10.195:8088/solarPanel/getAllSolarPanel')
+      .then(response => {
+        setPanels(response.data)
+      })
+  }, [])
 
   return (
     <React.Fragment>
@@ -69,8 +57,8 @@ const PrivateMapping = () => {
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          {panels.map(item => (
-            <Marker key={item.id} position={[item.lat, item.lon]}>
+          {panels.map((item, id) => (
+            <Marker key={id} position={[item.lat, item.lon]}>
               <Popup >
                 <div id="public-private-mapping-popup">
                   <Row>
@@ -90,7 +78,7 @@ const PrivateMapping = () => {
                         Electrical capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {item.electricalCapacity} Kw
+                        {item.electrical_capacity} Kw
                       </h3>
                     </Col>
                     <Col span={8}>
@@ -109,10 +97,26 @@ const PrivateMapping = () => {
                         {item.inverterCapacity} Kw
                       </h3>
                     </Col>
+                    {/* <div >
+                      {item.multimedia.length ? item.multimedia.map((multimedia, id) => (
+                        <div key={id}>
+                          {multimedia = { multimedia }}
+                        </div>
+                      ))
+                        :
+                        (<p>No images</p>)}
+                    </div>
+                    {item.comments.length ? item.comments.map((comment, id) => (
+                      <div key={id}>
+                        {comment = { comment }}
+                      </div>
+                    ))
+                      :
+                      (<p>No comments</p>)} */}
                   </Row>
                   <Row>
                     <Col span={12}>
-                      <Link to="/show-panel">
+                      <Link to="/show-panel-details">
                         <Button id="mapping-button-left">
                           + info
                     </Button>

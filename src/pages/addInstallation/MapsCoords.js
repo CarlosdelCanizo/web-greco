@@ -42,7 +42,9 @@ class MapCoords extends Component {
 
   render() {
     return (
-      <Map center={this.props.center}
+      <Map
+        style={{ height: "40vh" }}
+        center={this.props.center}
         zoom={this.props.zoom}
         maxZoom={18}
         dragging={true}

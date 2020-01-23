@@ -1,12 +1,12 @@
 import React from 'react'
-import { useState, useEffect, useContext } from 'react'
-import { Card, Button, Col, Row, Tag, Tooltip, Progress } from 'antd';
+import { useState, useEffect } from 'react'
+import { Card, Col, Row, Tag, Tooltip, Progress } from 'antd';
 import './Challenges.css';
 import noImage from '../../assets/no-image.svg'
 import Gold from '../../assets/gold.svg'
 import Silver from '../../assets/silver.svg'
 import Bronze from '../../assets/bronze.svg'
-import Header from '../../components/header/Header'
+import Header from '../../header/Header'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 

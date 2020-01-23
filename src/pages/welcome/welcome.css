@@ -1,6 +1,6 @@
 /*************************************************************COMPUTER**************************************************************/
 /***COMPUTER************************************************************************************************************************/
-  #col-welcome-container {
+#col-welcome-container {
   height: 100vh; 
   background-image: url(../../assets/left-background.png);
   background-color: transparent;
@@ -101,23 +101,23 @@
 /**************************************************************TABLET*****************************************************************/
 /***TABLET****************************************************************************************************************************/
 @media (min-width: 600px) and (max-width: 992px) {
-/* @media only screen and (max-width: 992px) { */
   #col-welcome-container {
-    height: 100%; 
-    background-image: none;
+    height: 100vh; 
+    background-color: #db4196;
   }
   #inside-welcome-container {
-    margin-top: 1%;
+    margin-top: 30%;
     margin-left: 20%;
     margin-right: 20%; 
     padding: 0%;  
   }
   #logo-mobile {
-    margin-left: 10%;
-    margin-top: 10%;
+    height: 30%;
+    margin-left: 0%;
   }
   #logo-mobile-image {
-    margin-left: 12%;
+    margin-top: 10%;
+    margin-left: 20%;
     width: 60%;
   }
   #welcome-title-text {
@@ -170,7 +170,6 @@
 /**************************************************************MOBILE*SMALL****************************************************************/
 /***MOBILE*SMALL***************************************************************************************************************************/
 @media (min-width: 240px) and (max-width: 600px) {
-/* @media only screen and (max-width: 600px) { */
   #col-welcome-container {
     background-image: none; 
     height: 100%;
@@ -178,6 +177,7 @@
     padding: 0%;
   }
   #logo-mobile {
+    height: 15%;
     margin-top: 8%;
     margin-left: 5%;
   }
@@ -187,9 +187,10 @@
   }
   #inside-welcome-container{
     margin-left: 8%;
-    margin-right: 8%; 
+    margin-right: 8%;
   }
   #welcome-title-text {
+    height: 25%;
     margin-top: 10%;
     font-size: 1.6em;
     font-weight: 600;
@@ -247,20 +248,14 @@
     border-radius: 0;
   }
   #welcome-text-footer-container{
-    align-items: flex-start;
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    text-align: center;
+    width: 100vw;
     bottom: 1%;
   }
   #welcome-text-footer {
-    position: relative;
-    z-index: 999;
+    width: 80vw;
     font-size: 0.8em;
     bottom: 3%;
-    left: 5%;
-    width: 80%;
+    left: 25%;
     color: #2a4092;
   } 
 }

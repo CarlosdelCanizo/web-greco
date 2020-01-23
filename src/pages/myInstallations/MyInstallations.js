@@ -1,24 +1,21 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Row, Col } from 'antd';
 import './MyInstallations.css';
-import Header from '../../components/header/Header'
+import Header from '../../header/Header'
 import PanelList from './PanelList';
 import ButtonAdd from './ButtonAdd'
-
 // import PanelContext from '../../context/Context'
-import UserContext from '../../utils/Auth'
-import axios from 'axios'
-
-import Auth from '../../utils/Auth'
+// import UserContext from '../../utils/Auth'
+// import Auth from '../../utils/Auth'
 
 function MyInstallations() {
 
-  const user = useContext(UserContext)
-  const { email } = UserContext;
+  // const user = useContext(UserContext)
+  // const { email } = UserContext;
 
-  console.log("email hardcode", email)
-  console.log("Auth", Auth)
-  console.log("puto userContext", email)
+  // console.log("email hardcode", email)
+  // console.log("Auth", Auth)
+  // console.log("puto userContext", email)
 
   //GET MY SOLAR PANELS
   // const [myPanels, setMyPanels] = useState([]);
@@ -52,9 +49,6 @@ function MyInstallations() {
             <ButtonAdd />
           </Col>
           <Col span={24} xs={24} sm={24} md={19} lg={18} xl={18}>
-            {/* {myPanels.map(panel => (
-              <PanelList key={panel.id} panel={panel} />
-            ))} */}
             <PanelList />
           </Col>
         </Row>

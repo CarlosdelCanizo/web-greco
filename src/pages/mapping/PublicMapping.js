@@ -7,7 +7,7 @@ import "./Mapping.css"
 import L from "leaflet";
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import Header from '../../components/header/Header'
+import Header from '../../header/Header'
 import axios from 'axios'
 
 const PublicMapping = () => {
@@ -31,112 +31,34 @@ const PublicMapping = () => {
     }
   }
 
-
-  //CONTROL MAP
-  // const leafletMap;
-
-  // function handleZoomstart(map) {
-  //   console.log(this.leafletMap && this.leafletMap.leafletElement);
-  // };
-
-  // function getMapZoom() {
-  //   return this.leafletMap && this.leafletMap.leafletElement.getZoom();
-  // }
-
-  // console.log("el leafletMap", leafletMap)
-
   const [panels, setPanels] = useState([])
+  var idImage
+  const [imageUrl, setImageUrl] = useState()
 
-  // useEffect(() => {
-  //   const leafletMap = leafletMap.leafletElement;
-  //   leafletMap.on('zoomend', () => {
-  //     window.console.log('Current zoom level -> ', leafletMap.getZoom());
-  //   });
-  // });
+  //GET PANEL IMAGE
+  function getImage() {
+    axios({
+      url: 'http://10.0.10.195:8088/multimedia/' + 13 + '/getImage/',
+      method: 'GET',
+      responseType: 'blob', // important
+    }).then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      setImageUrl(url)
+
+    });
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://10.0.10.195:8088/solarPanel',
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
-      setPanels(result.data.content);
-    };
-    fetchData();
-  }, []);
+    axios.get('http://10.0.10.195:8088/solarPanel/getAllSolarPanel')
+      .then(response => {
+        setPanels(response.data)
+        getImage()
+      })
+  }, [])
 
-  // PANELS VINGAU!
-  // function showPanels(props) {
-  //   const panels = props.panels;
-  //   const listItems = panels.map((panel) =>
-  //     <li key={panel.toString()}>
-  //       {panel}
-  //     </li>
-  //   );
-  //   return (
-  //     <ul>{listItems}</ul>
-  //   );
-  // }
+  console.log("ELS PANELS DEL SERVER:", panels)
 
-  // GET ALL SOLAR PANELS PAGINATION
-  // function getAllSolarPanelsPagination() {
-  //   var access_token = 'Bearer ' + (localStorage.getItem('access_token'))
-  //   axios.get("http://10.0.10.195:8088/solarPanel?size=2000&page=1",
-  //     {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "Authorization": access_token
-  //       }
-  //     })
-  //     .then(response => {
-  //       if (response.status === 200) {
-  //         console.log("hola soy tu RESPONSE", response)
-  //         return response;
-  //       }
-  //     })
-  //     .then(response => {
-  //       console.log("hola soy tu RESPONSE", response)
-  //     })
-  //     .catch(error => {
-  //       console.log("hola soy tu ERROR", error)
-  //     });
-  // }
-
-  // getAllSolarPanelsPagination()
-  // console.log("Ha pasado un ángel")
-
-  // GET ALL SOLAR PANELS BY POSITION AND DISTANCE, ARA EN SERIO
-  // function getAllSolarPanels() {
-  //   var access_token = 'Bearer ' + (localStorage.getItem('access_token'))
-  //   axios.get("http://10.0.10.195:8088/solarPanel",
-  //     {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "Authorization": access_token
-  //       }
-  //     })
-  //     .then(response => {
-  //       if (response.status === 200) {
-  //         return response;
-  //       }
-  //     })
-  //     .then(response => {
-  //       debugger
-  //       // setPanel({panel:response.data.content[0]})
-  //       setPanels(response.data.content); 
-  //       console.log("hola soy la carga útil", response.data.content[0])
-  //     })
-  //     .catch(error => {
-  //       console.log("hola soy tu ERROR todos los paneles", error)
-  //     });
-  // }
-
-  // getAllSolarPanels();
-  // console.log("Papa noel te ha dejado esto:")
+  console.log("EL ID DE LA IMATGE")
 
   return (
     <React.Fragment>
@@ -168,11 +90,13 @@ const PublicMapping = () => {
                   <Row>
                     <Col span={24} id="public-private-mapping-installation-name">
                       <p>{item.installationName}</p>
+                      <p>{item.id}</p>
+                      {idImage = item.multimedia.map(array => array.id)}
                     </Col>
                   </Row>
                   <Row>
                     <Col span={24}>
-                      <img src={solar} alt="image" id="public-private-mapping-panel-image" />
+                      <img src={imageUrl} alt="image" id="public-private-mapping-panel-image" />
                     </Col>
                   </Row>
                   <Divider id="show-panel-divider" />
@@ -182,7 +106,7 @@ const PublicMapping = () => {
                         Electrical capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {item.electricalCapacity} Kw
+                        {item.electrical_capacity} Kw
                       </h3>
                     </Col>
                     <Col span={8}>

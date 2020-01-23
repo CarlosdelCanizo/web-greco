@@ -45,9 +45,9 @@
   background-color: transparent;
   margin-bottom: -3%;
 }
-.coords-container {
-  height: 40vh;
-  width: 85%;
+/***LEAFLET*MAP*SECOND**************************************************************/
+#coords-container {
+  width: 87%;
   margin-left: 7%; 
 }
 #add-installation-container-button-second {
@@ -152,6 +152,11 @@
   margin-left: -20%;
   margin-top: -1%;
   }
+  /***LEAFLET*MAP*SECOND**************************************************************/
+#coords-container {
+  width: 87%;
+  margin-left: 7%; 
+}
   #button-panel-register-previous  {
     background-color: #2a4092;
     color: #ffffff;
@@ -254,12 +259,13 @@
   margin-left: -20%;
   margin-top: -1%;
   }
-  .coords-container {
-    height: 50vh;
-    width: 95%;
-    margin-left: 0%; 
-    margin-top: -5%;
-  }
+  /***LEAFLET*MAP*SECOND**************************************************************/
+#coords-container {
+  width: 95%;
+  height: 45vh;
+  margin-left: 0%; 
+}
+
   #add-installation-container-button-second {
     margin-top: 5%;
     margin-left: -4%;

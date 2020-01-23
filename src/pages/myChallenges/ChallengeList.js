@@ -1,13 +1,10 @@
 import React from 'react'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import './Challenges.css';
 import axios from 'axios'
-// import ChallengesContext from '../../context/ChallengesContext'
-import ChallengeCard from './ChallengeCard'
+import ChallengeLevelCard from './ChallengeLevelCard'
 
 function ChallengeList() {
-
-  // const { challenges } = useContext(ChallengesContext)
 
   const [myChallenges, setMyChallenges] = useState([])
 
@@ -28,18 +25,11 @@ function ChallengeList() {
     fetchData();
   }, []);
 
-  // console.log("Challenge from server", myChallenges)
-
   return (
     <div>
       {myChallenges.map(challenge => (
-        <ChallengeCard key={challenge.id} challenge={challenge} />
+        <ChallengeLevelCard key={challenge.id} challenge={challenge} />
       ))}
-      {/* {myChallenges.map(challenge => (
-        <ChallengeCard key={challenge.id}>
-          {challenge}
-        </ChallengeCard>))} */}
-      {/* <ChallengeList /> */}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 #background-panel-register {
-  position: absolute;
-  background-image: url(../../assets/panels.png);
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets//panels.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; 

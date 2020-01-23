@@ -1,0 +1,214 @@
+/*****************************************************EDIT*USER*DETAILS*************************************************************/
+/*****COMPUTER*****************************************************************************************************************/
+#edit-details-outside {
+  position: fixed;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#edit-details-menu-inside {
+float: right;
+height: 92%;
+width: 424px;
+font-family: Montserrat;
+color: #2a4092;
+padding: 0;
+margin-top: 1%;
+margin-right: 3%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#edit-details-tittle {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#edit-label {
+  font-size: 11px;
+  width: 100%;
+  margin-left: 0%;
+  color: #2a4092;
+}
+#edit-username {
+  width: 100%;
+  height: 40px;
+  color: #2a4092;
+  border-radius: 0;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+}
+#edit-email {
+  width: 100%;
+  height: 40px;
+  color: #2a4092;
+  border-radius: 0;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+}
+#turn-notifications {
+  display: block;
+  width: 80%;
+  margin-left: 20%;
+  margin-top: 15%;
+}
+#turn-notifications-text {
+  color: #bfc5d2;
+  margin-top: -7%;
+  margin-left: 25%;
+  font-size: 14px;
+}
+#edit-details-save-button {
+  background-color: #db4196;
+  color: #ffffff;
+  line-height: 1.5;
+  height:40px;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 10%;
+}
+#enter-email-text {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+
+/**************EDIT*USER*PROFILE*************************************************************/
+/***************TABLET*********************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #edit-details-outside {
+    position: fixed;
+    background-color: #eaedf1;
+    height: 100vh; 
+    width: 100%;
+  }
+  #edit-details-menu-inside {
+  float: right;
+  height: 92%;
+  width: 424px;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0;
+  margin-top: 1%;
+  margin-right: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  #edit-details-tittle {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #edit-label {
+    font-size: 11px;
+    width: 100%;
+    margin-left: 0%;
+    color: #2a4092;
+  }
+  #edit-username {
+    width: 100%;
+    height: 40px;
+    color: #2a4092;
+    border-radius: 0;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+    background-color: #f9f9f9;
+  }
+  #edit-email {
+    width: 100%;
+    height: 40px;
+    color: #2a4092;
+    border-radius: 0;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+    background-color: #f9f9f9;
+  }
+  #edit-details-save-button {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+    margin-top: 10%;
+}
+}
+
+/**************EDIT*USER*PROFILE*************************************************************/
+/***************MOBILE*********************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+#edit-details-outside {
+  position: fixed;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#edit-details-menu-inside {
+  height: 100%;
+  width: 100%;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#edit-details-tittle {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0%;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#edit-label {
+  font-size: 11px;
+  width: 100%;
+  margin-left: 0%;
+  color: #2a4092;
+}
+#edit-username {
+  width: 100%;
+  height: 40px;
+  color: #2a4092;
+  border-radius: 0;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+}
+#edit-email {
+  width: 100%;
+  height: 40px;
+  color: #2a4092;
+  border-radius: 0;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+}
+#edit-details-save-button {
+  background-color: #db4196;
+  color: #ffffff;
+  line-height: 1.5;
+  height:40px;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 10%;
+}
+}

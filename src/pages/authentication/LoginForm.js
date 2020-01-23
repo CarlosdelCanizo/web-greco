@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
@@ -6,27 +6,21 @@ import { Row, Col, Divider, Form, Input } from 'antd'
 import { Redirect, Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
-import axios from 'axios'
 import qs from 'qs'
-import Auth from '../../utils/Auth'
 import { AuthContext } from '../../App'
+import { ProfileContext } from '../../utils/profile/ProfileContext'
+import axiosConfig from '../../api/axiosConfig'
 
+const LoginForm = () => {
 
-const LoginForm = (props) => {
-
-  const { state, dispatch } = React.useContext(AuthContext);
+  const { dispatch } = React.useContext(AuthContext);
+  const profileContext = useContext(ProfileContext)
 
   const initialState = {
     email: "",
     password: "",
     isSubmitting: false,
     errorMessage: null,
-    userProfile: {
-      id: "",
-      username: "",
-      email: "",
-      isPreviouslyLogged: false
-    }
   };
 
   const [data, setData] = React.useState(initialState);
@@ -46,7 +40,7 @@ const LoginForm = (props) => {
       username: data.email,
       password: data.password,
     }
-    axios.post("http://10.0.10.195:8088/oauth/token", qs.stringify(body),
+    axiosConfig.post("/oauth/token", qs.stringify(body),
       {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -87,17 +81,23 @@ const LoginForm = (props) => {
   };
 
   //Redirect
+  var location = "/first"
   const [toLocation, setLocation] = React.useState(false);
   function activateRedirection() {
+    if (profileContext.isPreviouslyLogged) {
+      location = "/private-mapping"
+      console.log("location")
+    }
     setLocation(true)
   }
 
   return (
     <Row>
-      <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-        <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
-      </Col>
+
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
+        <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+          <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
+        </Col>
         <div id="inside-welcome-container" >
           <h1 id="welcome-title-text" >
             LOGIN TO YOUR <br />
@@ -130,7 +130,7 @@ const LoginForm = (props) => {
             <div id="welcome-button-container">
               <button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}
-                {toLocation ? <Redirect from="/login" to="/first" /> : null}
+                {toLocation ? <Redirect from="/login" to={location} /> : null}
               </button>
             </div>
           </Form>

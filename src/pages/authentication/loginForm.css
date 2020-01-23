@@ -95,30 +95,6 @@
   margin-left: 10%;
   top: -10%;
 }
-
-/*****************************************************REGISTER************/
-#container-checkbox {
-  font-size: 16px;
-  text-align: left;
-  letter-spacing: 0.36px;
-  line-height: 1.25;
-  margin-left: 10%;
-  margin-top: -6%;
-  color: #2a4092;
-}
-#button-register {
-  background-color: #db4196;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 600;
-  width: 67%;
-  height: 40px;
-  border-radius: 0;
-  margin-left: 0%;
-  margin-top: 15%;
-}
-/*****************************************************REGISTER**********/
 /*****************************************************RESET*PASSWORD*********/
 #reset-password-text {
   width: 70%;
@@ -148,18 +124,18 @@
   color: #db4196;
 }
 #welcome-text-footer-container{
-  z-index: 999;
-  position: fixed;
+  /* z-index: 999;
+  position: fixed; */
   width: 25%;
   text-align: center;
   bottom: 2%;
 }
 #login-text-footer {
-  position: relative;
-  z-index: 999;
+  /* position: relative;
+  z-index: 999; */
   font-size: 1em;
   bottom: 2%;
-  left: 25%;
+  left: -10%;
   color: #2a4092;
 }
 
@@ -177,7 +153,7 @@
     padding: 0%;
   }
   #inside-welcome-container {
-    margin-top: 1%;
+    margin-top: 15%;
     margin-left: 20%;
     margin-right: 20%; 
     padding: 0%;  
@@ -185,7 +161,7 @@
   #logo-mobile {
     width: 80%;
     margin-left: 0%;
-    margin-top: 10%;
+    margin-top: 0%;
   }
   #welcome-title-text {
     margin-top: 15%;
@@ -197,7 +173,7 @@
   }
   #label {
     display: inline-block;
-    width: 85%;
+    width: 100%;
     text-align: left;
     margin-left: 0px;
     font-size: 12px;
@@ -211,7 +187,7 @@
   }
   #email, #password {
     color: #2a4092;
-    width: 85%;
+    width: 100%;
     height: 35px;
     font-family: Montserrat;
     font-size: 20px;
@@ -225,29 +201,7 @@
     margin-left: 10%;
     margin-top: -1%;
   }
-  /*****************************************************REGISTER****/
-  #container-checkbox {
-    font-size: 16px;
-    text-align: left;
-    letter-spacing: 0.36px;
-    line-height: 1.25;
-    margin-left: 10%;
-    margin-top: -4%;
-    color: #2a4092;
-  }
-  #button-register {
-    background-color: #db4196;
-    color: #ffffff;
-    font-size: 1em;
-    line-height: 1.5;
-    font-weight: 600;
-    width: 95%;
-    height: 40px;
-    border-radius: 0;
-    margin-left: 0%;
-    margin-top: 10%;
-  }
-  /*****************************************************REGISTER*********/
+
   #welcome-text-mini {
     margin-top: 6%;
     width: 90%;
@@ -272,19 +226,18 @@
     margin-top: 10%;
   }
   #welcome-text-footer-container{
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    text-align: center;
+    /* z-index: 999;
+    position: fixed; */
+    width: 100vw;
     bottom: 3%;
   }
   #login-text-footer {
-    position: relative;
-    z-index: 999;
+    /* position: relative;
+    z-index: 999; */
     font-size: 0.8em;
     bottom: 3%;
-    left: -10%;
-    width: 80%;
+    margin-left: -40%;
+    width: 100vw;
     color: #2a4092;
   } 
 }
@@ -299,17 +252,17 @@
     width: 100vw;
     padding: 0%;
   }
-  #logo-mobile {
+  /* #logo-mobile {
     width: 80%;
     margin-top: 8%;
     margin-left: 5%;
-  }
+  } */
   #inside-welcome-container{
+    margin-top: 10%;
     margin-left: 8%;
     margin-right: 8%; 
   }
   #welcome-title-text {
-    margin-top: 0%;
     font-size: 1.6em;
     font-weight: 600;
     text-align: left;
@@ -318,7 +271,7 @@
   }
   #label {
     display: inline-block;
-    width: 85%;
+    width: 100%;
     text-align: left;
     margin-left: 0px;
     font-size: 12px;
@@ -331,7 +284,7 @@
   }
   #email, #password {
     color: #2a4092;
-    width: 85%;
+    width: 100%;
     height: 35px;
     font-family: Montserrat;
     font-size: 20px;
@@ -369,61 +322,32 @@
     height: 42px;
     border-radius: 0;
   }
-  /*****************************************************REGISTER*********************/
-  #button-register {
-    background-color: #db4196;
-    color: #ffffff;
-    font-size: 1em;
-    line-height: 1.5;
-    font-weight: 600;
-    width: 95%;
-    height: 40px;
-    border-radius: 0;
-    margin-left: 0%;
-    margin-top: 10%;
-  }
-  #container-checkbox {
-    font-size: 16px;
-    text-align: left;
-    letter-spacing: 0.36px;
-    line-height: 1.25;
-    margin-left: 10%;
-    margin-top: -4%;
-    color: #2a4092;
-  }
-  /*****************************************************REGISTER********************/
-  #welcome-text-footer-container{
-    align-items: flex-start;
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    bottom: 1%;
-  }
   #login-text-footer {
-    position: relative;
-    z-index: 999;
+    /* position: relative;
+    z-index: 999; */
+    text-align: left;
     font-size: 0.8em;
-    bottom: 2%;
-    left: -8%;
-    width: 80%;
+    bottom: 3%;
+    margin-left: 0%;
+    width: 200%;
     color: #2a4092;
   } 
 }
+
 /**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
 /***MOBILE*EXTRA*SMALL**********************************************************************************************************************/
 
 @media (max-width: 240px)  {
   #welcome-text-footer-container{
-    z-index: 999;
-    position: absolute;
+    /* z-index: 999;
+    position: absolute; */
     width: 100%;
     text-align: center;
     bottom: -15%;
   }
   #login-text-footer {
-    position: relative;
-    z-index: 999;
+    /* position: relative;
+    z-index: 999; */
     font-size: 0.8em;
     bottom: -15%;
     left: 2%;

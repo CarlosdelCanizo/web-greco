@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { AuthContext } from '../App'
 import Welcome from '../pages/welcome/Welcome'
@@ -18,23 +18,15 @@ import PublicMapping from '../pages/mapping/PublicMapping'
 import PrivateMapping from '../pages/mapping/PrivateMapping'
 import MyInstallations from '../pages/myInstallations/MyInstallations'
 import Statistics from '../pages/statistics/Statistics'
-import About from '../components/header/mainMenu/About'
-import EditUser from '../components/header/userMenu/EditUser'
-// import MyChallenges from '../pages/myChallenges/MyChallengues'
-import ChatPanel from '../components/panels/chatPanel/ChatPanel'
-import ShowPanelDetails from '../components/panels/showPanel/ShowPanelDetails'
-import InviteFriends from '../components/header/userMenu/InviteFriends'
-import Profile from '../utils/Profile'
-import Notification from '../components/header/notificationsMenu/Notification'
+import About from '../header/mainMenu/About'
+import EditUser from '../header/userMenu/EditUser'
+import ShowPanelDetails from '../components/showPanel/ShowPanelDetails'
+import InviteFriends from '../header/userMenu/InviteFriends'
+import Profile from '../utils/profile/Profile'
+import NotificationsList from '../header/notificationsMenu/NotificationsList'
 import PanelList from '../pages/myInstallations/PanelList'
-import ProvaZoom from '../pages/mapping/ProvaZoom'
-import Proves from '../Proves/Proves'
-import Proves2 from '../Proves/Proves2'
-import ChallengeCard from '../pages/myChallenges/ChallengeCard'
+import FeedPanel from '../components/feedPanel/FeedPanel'
 import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard'
-import FeedPanel from '../components/panels/chatPanel/FeedPanel'
-import MapExample from '../pages/mapping/MapExample'
-// import ProvaPanelContext from '../context/ProvaPanelContext'
 
 const Routes = () => {
 
@@ -63,15 +55,7 @@ const Routes = () => {
           <Route path='/panel' component={PanelList} />
           <Route path='/show-panel-details' component={ShowPanelDetails} />
           <Route path='/sixth' component={SixthForm} />
-          <Route path='/prova-zoom' component={Proves} />
-          <Route path='/prova-bubbles' component={Proves} />
-          <Route path='/prova-feed' component={FeedPanel} />
-          <Route path='/map-example' component={MapExample} />
-          {/* <Route path='/prova-heat' component={Proves2} /> */}
-          {/* <Route path='/my-challenges' component={ChallengeCard} /> */}
-          <Route path='/my-challenges' component={ChallengeLevelCard} />
-          {/* <Route path='/my-challenges' component={MyChallenges} /> */}
-          {/* <Route path='/panel-context' component={ProvaPanelContext} /> */}
+          <Route path='/feed-panel' component={FeedPanel} />
           <PrivateRoute path='/first'
             auth={state.isAuthenticated}
             component={FirstForm} />
@@ -99,15 +83,12 @@ const Routes = () => {
           <PrivateRoute path='/my-statistics'
             auth={state.isAuthenticated}
             component={Statistics} />
-          {/* <PrivateRoute path='/my-challenges'
-            auth={state.isAuthenticated}
-            component={MyChallenges} /> */}
           <PrivateRoute path='/edit-user-details'
             auth={state.isAuthenticated}
             component={EditUser} />
           <PrivateRoute path='/feed-panel'
             auth={state.isAuthenticated}
-            component={ChatPanel} />
+            component={FeedPanel} />
           <PrivateRoute path='/show-panel-details'
             auth={state.isAuthenticated}
             component={ShowPanelDetails} />
@@ -119,7 +100,10 @@ const Routes = () => {
             component={InviteFriends} />
           <PrivateRoute path='/notifications'
             auth={state.isAuthenticated}
-            component={Notification} />
+            component={NotificationsList} />
+          <PrivateRoute path='/my-challenges'
+            auth={state.isAuthenticated}
+            component={ChallengeLevelCard} />
         </Switch>
       </BrowserRouter>
     </div>

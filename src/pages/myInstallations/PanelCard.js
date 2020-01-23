@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Card, Button, Row, Col, Icon, Popover, Popconfirm } from 'antd';
 import './MyInstallations.css';
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import PanelContext from '../../context/Context'
 function PanelCard({ panel }) {
 
   const { deletePanel, panels } = useContext(PanelContext)
-  const { id, installationName, electricalCapacity, surface, inverterCapacity } = panel
+  const { id, installationName, electrical_capacity, surface, inverterCapacity } = panel
 
   const text = 'Are you sure to delete this installation?';
 
@@ -30,6 +30,9 @@ function PanelCard({ panel }) {
     <div id="popover-panels">
       <Link to="/show-panel-details">
         <Button id="popover-menu-panels">More details</Button>
+      </Link>
+      <Link to="/feed-panel">
+        <Button id="popover-menu-panels">Feed</Button>
       </Link>
       <Popconfirm
         placement="leftBottom"
@@ -53,7 +56,7 @@ function PanelCard({ panel }) {
           "Authorization": access_token
         }
       })
-      .then(result => console.log(result));
+      .then(result => console.log("Panel Borrado:", result));
   }
 
   return (
@@ -79,7 +82,7 @@ function PanelCard({ panel }) {
                 Electrical capacity
                   </h5>
               <h4 id="panel-data-fields">
-                {electricalCapacity} Kw
+                {electrical_capacity} Kw
                   </h4>
             </Col>
             <Col span={8}>

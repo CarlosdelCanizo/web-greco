@@ -1,0 +1,128 @@
+@import '~antd/dist/antd.css';
+
+/************************************************************FEED*PANEL*************************************************/
+/***COMPUTER************************************************************************************************************/
+#panel-feed-outside {
+  position: fixed;
+  background-color: #eaedf1;
+  height: 100vh; 
+  width: 100%;
+}
+#panel-feed-inside {
+  float: right;
+  height: 92%;
+  width: 424px;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0;
+  margin-top: 1%;
+  margin-right: 5%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#feed-panel-close-button {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  background-color: transparent;
+  color: red;
+  border: none;
+}
+#feed-panel-user-name {
+  margin-top: 1%;
+  margin-left: -6.5%;
+  width: 422.5px;
+  height: 35px;
+  padding-top: 3px;
+  text-align: center;
+  color: #2a4092;
+  background-color: #eeeeee
+}
+#feed-panel-messages-list {
+  overflow-y: auto;
+  margin-top: 3%;
+  margin-left: 5%;
+  height: 260px;
+  width: 400px;
+}
+#feed-panel-user-booble {
+	position: relative;
+	background:  #2a4092;
+  border-radius: 0em 2em 2em 2em;
+  width: 80%;
+  margin-left: 1%;
+  margin-top: 5%;
+  /* border-top-left-radius: 0; */
+  color: white;
+  font-family: Montserrat;
+}
+/* #feed-panel-user-booble:after {
+	content: '';
+	position: absolute;
+	left: 3%;
+	top: 25%;
+	width: 0;
+  height: 0;
+	border: 1em solid transparent;
+	border-right-color: #2a4092;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -0.5em;
+	margin-left: -1em;
+} */
+#feed-panel-avatar {
+  background-color: #2a4092;
+  color: #db4196;
+  margin-left: -125%;
+}
+#feed-panel-text-message {
+  width: 80%;
+  font-size: 1.2em;
+  display:inline-block;
+  vertical-align: middle;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+#feed-panel-message-date {
+  margin-top: -10%;
+  margin-left: 105%;
+  color: #9b9b9b;
+}
+#feed-panel-message-time {
+  margin-top: -1%;
+  margin-left: 109%;
+  color: #9b9b9b;
+}
+#panel-feed-container-message-box {
+  display: block;
+  width: 100%;
+}
+#feed-input-text {
+  margin-top: 4%;
+  margin-left: 3%;
+  height: 40px;
+  width: 84%;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#feed-send-button {
+  position: absolute;
+  left: 98%;
+  top: -100%;
+  font-size: 2.5em;
+  background-color: transparent;
+  border: none;
+  color: #2a4092;
+}
+
+
+/************************************************************FEED*PANEL**************************************************/
+/***TABLE****************************************************************************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+
+}
+
+/************************************************************FEED*PANEL**************************************************/
+/***MOBILE***************************************************************************************************************/
+@media (min-width: 240px) and (max-width: 600px) {
+  
+}

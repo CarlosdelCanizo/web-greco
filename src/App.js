@@ -1,7 +1,7 @@
 import React from 'react'
 import Routes from './utils/Routes'
 import PanelsProvider from './context/PanelsProvider'
-// import ChallengesProvider from './context/ChallengesProvider'
+import ProfileProvider from './utils/profile/ProfileContext'
 
 export const AuthContext = React.createContext();
 
@@ -41,7 +41,7 @@ const reducer = (state, action) => {
   }
 };
 
-function App() {
+const App = () => {
 
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
@@ -59,8 +59,8 @@ function App() {
           expires_in
         }
       })
-    }
 
+    }
   }, [])
 
   window.parent.postMessage("getCoordinates", '*');
@@ -68,11 +68,11 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
-      <PanelsProvider>
-        {/* <ChallengesProvider> */}
-        <Routes />
-        {/* </ChallengesProvider> */}
-      </PanelsProvider>
+      <ProfileProvider>
+        <PanelsProvider>
+          <Routes />
+        </PanelsProvider>
+      </ProfileProvider>
     </AuthContext.Provider>
   )
 }

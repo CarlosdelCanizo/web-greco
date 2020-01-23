@@ -12,13 +12,13 @@ const FifthForm = (props) => {
     const [data, setData] = useState(currentPanelState);
     const { Option } = Select;
 
-    const handleInputChange = value => {
-        setData({ ...data, inclination: value });
-    };
-
-    // const handleInputChange = event => {
-    //     setData({ ...data, [event.target.name]: event.target.value });
+    // const handleInputChange = value => {
+    //     setData({ ...data, inclination: value });
     // };
+
+    const handleInputChange = event => {
+        setData({ ...data, [event.target.name]: event.target.value });
+    };
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -60,9 +60,9 @@ const FifthForm = (props) => {
                     </Col>
 
                     <Form onSubmit={handleFormSubmit}>
-                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <div id="register-panel-fields-fourth">
-                                <Select style={{ width: 200 }} name="inclination" onChange={handleInputChange}>
+                        {/* <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <div id="register-panel-fields-fourth"> */}
+                        {/* <Select style={{ width: 200 }} name="inclination" onChange={handleInputChange}>
                                     <Option value="from 0° to 15°">from 0° to 15°</Option>
                                     <Option value="from 15° to 30°">from 15° to 30°</Option>
                                     <Option value="from 30° to 45°">from 30° to 45°</Option>
@@ -72,18 +72,19 @@ const FifthForm = (props) => {
                                 </Select>
                             </div>
 
-                        </Col>
+                        </Col> */}
 
-                        {/* <Col id="col-register-panel-fields" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                     <Form.Item>
-                                         <label id="panel-input-label">Degrees</label> 
-                                         <Divider id="input-separator" />
-                                       <Input type="number"
-                                            min={1} max={10000}
-                                             values={data.orientation} onChange={handleInputChange}
-                                         placeholder="30.9 °" id="inclination" name="inclination"
-                                            required />
-                                    </Form.Item> */}
+                        <Col id="col-register-panel-fields" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <Form.Item>
+                                <label id="panel-input-label">Degrees</label>
+                                <Divider id="input-separator" />
+                                <Input type="number"
+                                    min={1} max={10000}
+                                    values={data.orientation} onChange={handleInputChange}
+                                    placeholder="30.9 °" id="inclination" name="inclination"
+                                    required />
+                            </Form.Item>
+                        </Col>
 
                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                             <img src={inclination} id="register-panel-image-fifth" />

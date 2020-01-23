@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Form, Card, Radio, Button, Row, Col, Divider, Upload, Icon, message } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axios from 'axios'
-import noImage from '../../assets/no-image.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './sixthForm.css'
@@ -11,6 +10,8 @@ function SixthForm(props) {
 
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
   const [data, setData] = useState(currentPanelState);
+  var currentPanelId
+  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
   //RadioGroup
   const [radioValue, setRadioValue] = useState();
@@ -25,7 +26,7 @@ function SixthForm(props) {
   //Upload Images
   const [images, setImages] = useState(
     {
-      previewVisible: false,
+      previewVisible: true,
       previewImage: '',
       fileList: []
     }
@@ -37,22 +38,13 @@ function SixthForm(props) {
     });
   };
 
+
   const handleUploadImages = ({ fileList }) => {
     console.log('fileList', fileList);
     setImages({ fileList });
-    //"handleSubmit", pero al localstorage:
-    // let formData = new FormData();
-    // formData.append("file", images.fileList[0].originFileObj);
-    // console.log("formData!!", formData)
-    setData({ ...data, [data.multimedia]: fileList });
+    console.log("HOK IMAGES:", images)
+    // setData({ ...data, [data.multimedia]: fileList });
   };
-
-  // HANDLE SUBMIT AUTÈNTIC
-  // const handleSubmitImages = event => {
-  //   let formData = new FormData();
-  //   formData.append("file", images.fileList[0].originFileObj);
-  //   console.log("formData!!", formData)
-  // }
 
   //Form handlers
   const handleInputChange = event => {
@@ -62,98 +54,20 @@ function SixthForm(props) {
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
-    // setData({ ...data });
     localStorage.setItem('currentPanelState', JSON.stringify(data))
     postPanel()
     activateRedirection()
   }
 
-  //LOCAL STORAGE IMAGE
-  // localStorage.setItem('image', JSON.stringify(image))
-  // localStorage.setItem('currentImageId', JSON.stringify(currentImageId))
-  // localStorage.setItem('currentImageName', JSON.stringify(currentImageId))
-  // console.log("Imatge per guardar al LOCALSTORAGE:", image)
-
-  // axios.post("http://10.0.10.195:8088/multimedia/upload/" + panelId, data,
-  //     {
-  //         headers: {
-  //             "Content-Type": "multipart/form-data",
-  //             "Authorization": access_token
-  //         }
-  //     })
-
-  //     .then(response => {
-  //         if (response.status === 200) {
-  //             currentImageId = (response.data.id)
-  //             console.log(currentImageId)
-  //             // getImages(currentImageId)
-  //             throw response
-  //         }
-  //     })
-
-  // }
-
-  //GET IMAGE
-  // function getImages(currentImagelId) {
-  //     axios.get("http://10.0.10.195:8088/multimedia/" + currentImagelId + "/getImage/")
-  //         .then(response => {
-  //             if (response.status === 200) {
-  //                 // debugger
-  //                 console.log(response.data)
-  //                 currentImagePath = "http://10.0.10.195:8088/multimedia/" + currentImageId + "/getImage/"
-  //                 console.log(currentImagePath)
-  //                 throw response;
-  //             }
-  //         })
-  // }
-  function panelTransform(panelForSubmit) {
-    // panelForSubmit = delete panelForSubmit.id;
-    var panelForSubmit = JSON.parse(localStorage.getItem('currentPanelState'))
-    var electrical_CapacityMod = parseFloat(panelForSubmit.electrical_capacity)
-    var surfaceMod = parseFloat(panelForSubmit.surface)
-    var inverterCapacityMod = parseFloat(panelForSubmit.inverterCapacity)
-    panelForSubmit.electrical_capacity = electrical_CapacityMod
-    panelForSubmit.surface = surfaceMod
-    panelForSubmit.inverterCapacity = inverterCapacityMod
-    console.log("panelForSubmit transformacio", panelForSubmit)
-  }
-
   function postPanel() {
     // console.log("USERNAME:", username)
-
-    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panelForSubmit = JSON.parse(localStorage.getItem('currentPanelState'))
     // panelTransform(panelForSubmit)
     console.log("panel for submit", panelForSubmit)
     var body = {
-      photographOfInstallation: "Txema.Sanchis",
+      username: "Txema Sanchis",
       solarPanel: panelForSubmit
     }
-    // const body = {
-    //     photographOfInstallation: "Txema.Sanchis",
-    //     solarPanel:
-    //     {
-    //         lat: 39.8896017,
-    //         lon: -0.0754226,
-    //         panelTrackingOrientation: false,
-    //         panelTrackingInclination: false,
-    //         orientation: 68,
-    //         inclination: 34,
-    //         commissioningDate: "2019-12-12",
-    //         multimedia: [],
-    //         technologyUsed: "Policristalino",
-    //         surface: 15,
-    //         electricalCapacity: 1450,
-    //         inverterCapacity: 1450,
-    //         battery: true,
-    //         batteryDescription: "Ion-litio",
-    //         observation: "Prueba Txema",
-    //         installationName: "Txema´s house",
-    //         installationProperty: "Private",
-    //         installationType: "Autoconsumo"
-
-    //     }
-    // }
     axios.post("http://10.0.10.195:8088/solarPanel", (body),
       {
         headers: {
@@ -163,10 +77,11 @@ function SixthForm(props) {
       })
       .then(response => {
         if (response.status === 200) {
-          const currentPanelId = response.data
-          console.log("LO QUE VOLS:", currentPanelId)
+          currentPanelId = response.data.solarPanel.id
+          console.log("La ID del panel:", currentPanelId)
+          console.log("Resposta del server PANEL:", response.data)
           localStorage.setItem('currentPanelId', JSON.stringify(currentPanelId))
-          // uploadImage()
+          uploadImage()
           activateRedirection()
           console.log(response)
         }
@@ -175,6 +90,32 @@ function SixthForm(props) {
         console.log("RESPUESTA ERROR:", error);
       });
   }
+
+  //UPLOAD IMAGE
+  function uploadImage() {
+    const formData = new FormData()
+    var multimedia = images.fileList[0].originFileObj
+    formData.append("file", multimedia)
+    console.log("imagens hook", images)
+    console.log("multimedia", multimedia)
+    console.log("el FORMA DATA", formData)
+    axios.post("http://10.0.10.195:8088/multimedia/upload/" + currentPanelId, formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": access_token
+        }
+      })
+
+      .then(response => {
+        if (response.status === 200) {
+          console.log("YUJUUU AHÍ VA LA IMATGE!!!", response);
+          throw response
+        }
+      })
+
+  }
+
 
   //REDIRECT
   const [toLocation, setLocation] = useState(false);
@@ -229,12 +170,12 @@ function SixthForm(props) {
 
               <div id="upload-images">
                 <Upload
-                  name="multimedia"
                   listType="picture"
                   fileList={images.fileList}
                   onPreview={handlePreview}
                   onChange={handleUploadImages}
                   beforeUpload={() => false}
+                  name="multimedia"
                 // fileList={fileList}
                 // onChange={handleUpload}
                 // {...propsImages}
@@ -242,7 +183,8 @@ function SixthForm(props) {
                   <Button>
                     <p id="upload-text-one">+ Upload images</p>
                   </Button>
-                  <p>Only png, jpg, with max size of 5 MB</p>
+                  <p>Maximum 3 images per installation</p>
+                  <p>Only png or jpg, with max size of 5 MB each one</p>
                 </Upload>
               </div>
 
@@ -302,7 +244,7 @@ function SixthForm(props) {
 
               <Button id="button-panel-register-next-sixth" type="submit" onClick={handleFormSubmit}>
                 NEXT
-                {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
+                {/* {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null} */}
               </Button>
 
             </Col>
