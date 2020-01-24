@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Button, Row, Col, Divider, Popover } from 'antd';
+import { Button, Row, Col, Divider, Popover, Spin } from 'antd';
 import solar from '../../assets/solar.jpg';
 import 'leaflet/dist/leaflet.css';
 import './Mapping.css';
@@ -9,6 +9,26 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import Header from '../../header/Header';
 import axios from 'axios';
+
+const PanelImage = ({ imageUrl }) => {
+  switch (imageUrl) {
+    case null: {
+      return <Spin />;
+    }
+    case 'no-image': {
+      return <div>meter aquí la img por defecto></div>;
+    }
+    default: {
+      return (
+        <img
+          src={imageUrl}
+          alt="image"
+          id="public-private-mapping-panel-image"
+        />
+      );
+    }
+  }
+};
 
 const PublicMapping = () => {
   const content = (
@@ -32,7 +52,7 @@ const PublicMapping = () => {
 
   const [panels, setPanels] = useState([]);
   var idImage;
-  const [imageUrl, setImageUrl] = useState();
+  const [imageUrl, setImageUrl] = useState(null);
 
   //GET PANEL IMAGE
   function getImage(id) {
@@ -83,6 +103,7 @@ const PublicMapping = () => {
                 onClick={() => {
                   if (item.multimedia && item.multimedia.length > 0) {
                     console.log('img exist with id: ', item.multimedia[0].id);
+                    setImageUrl(null);
                     getImage(item.multimedia[0].id);
                   } else {
                     console.log('img not exist');
@@ -103,15 +124,7 @@ const PublicMapping = () => {
                     </Row>
                     <Row>
                       <Col span={24}>
-                        {imageUrl === 'no-image' ? (
-                          <div>no image</div>
-                        ) : (
-                          <img
-                            src={imageUrl}
-                            alt="image"
-                            id="public-private-mapping-panel-image"
-                          />
-                        )}
+                        <PanelImage imageUrl={imageUrl} />
                       </Col>
                     </Row>
                     <Divider id="show-panel-divider" />
