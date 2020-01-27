@@ -35,9 +35,7 @@ const PanelImage = ({ imageUrl }) => {
   }
 };
 
-
 const PublicMapping = () => {
-
   const content = (
     <div>
       <p>Only for logged users!</p>

@@ -121,8 +121,8 @@ const FeedList = ({ panelId }) => {
         )
         .then(response => {
           const newList = response.data
-
-          setMessagesList(newList);
+          if (newList !== messagesList)
+            setMessagesList(newList);
 
         })
     }
