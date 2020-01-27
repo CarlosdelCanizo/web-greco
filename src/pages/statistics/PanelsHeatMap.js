@@ -2,15 +2,15 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
-import { addressPoints } from './realworld.10000.js';
-import axios from 'axios';
+// import { addressPoints } from './realworld.10000.js';
+import axiosConfig from '../../api/axiosConfig'
 
 
 class PanelsHeatMap extends React.Component {
   state = {
     mapHidden: false,
     layerHidden: false,
-    addressPoints,
+    // addressPoints,
     radius: 4,
     blur: 8,
     max: 0.5,
@@ -21,7 +21,7 @@ class PanelsHeatMap extends React.Component {
     this.setState({ isLoading: true });
     var body = {}
     var access_token = 'Bearer ' + (localStorage.getItem('access_token'))
-    axios.get('http://10.0.10.195:8088/solarPanel/getalllatandlon', body,
+    axiosConfig.get('http://10.0.10.195:8088/solarPanel/getalllatandlon', body,
       {
         headers: {
           "Content-Type": "application/json",
@@ -31,14 +31,14 @@ class PanelsHeatMap extends React.Component {
       .then((response) => {
         this.setState({
           addressPoints: response.data,
-          // isLoading: false
+          isLoading: false
         })
         console.log("Estos son los puntos", this.state.addressPoints)
       })
 
       .catch(error => this.setState({
         error,
-        // isLoading: false
+        isLoading: false
       }));
 
   }

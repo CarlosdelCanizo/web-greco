@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
 import { Row, Col, Divider, Form, Input } from 'antd'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import qs from 'qs'
@@ -11,10 +11,11 @@ import { AuthContext } from '../../App'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 import axiosConfig from '../../api/axiosConfig'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
-  const { dispatch } = React.useContext(AuthContext);
+  const { dispatch } = React.useContext(AuthContext)
   const profileContext = useContext(ProfileContext)
+
 
   const initialState = {
     email: "",
@@ -64,7 +65,7 @@ const LoginForm = () => {
           type: "LOGIN",
           payload: res
         })
-        activateRedirection()
+        getMyUserInfo()
       })
       .catch(error => {
         if (error.response === undefined) {
@@ -80,15 +81,26 @@ const LoginForm = () => {
       });
   };
 
-  //Redirect
-  var location = "/first"
-  const [toLocation, setLocation] = React.useState(false);
-  function activateRedirection() {
-    if (profileContext.isPreviouslyLogged) {
-      location = "/private-mapping"
-      console.log("location")
-    }
-    setLocation(true)
+
+  function getMyUserInfo() {
+    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+    axiosConfig.get("/users/getMyUserInfo",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": access_token
+        }
+      })
+      .then(result => {
+        var data = result.data
+
+        if (data.isPreviouslyLogged === true) {
+          props.history.push('/private-mapping')
+        }
+        else {
+          props.history.push('/first')
+        }
+      })
   }
 
   return (
@@ -130,7 +142,6 @@ const LoginForm = () => {
             <div id="welcome-button-container">
               <button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}
-                {toLocation ? <Redirect from="/login" to={location} /> : null}
               </button>
             </div>
           </Form>

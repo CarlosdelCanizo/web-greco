@@ -1,20 +1,62 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import axiosConfig from '../api/axiosConfig'
+import qs from 'qs'
 
-class Auth extends Component {
-  state = {
-    isLogged: false
-  };
-  render() {
-    const access_token = JSON.parse(localStorage.getItem('access_token'))
-    if (access_token) {
-      this.setState({ isLogged: true })
-    }
+const Auth = (props) => {
 
-    return (
-      <div>
-      </div>
-    );
+  const [data, setData] = React.useState();
+
+  const refresh_token = JSON.parse(localStorage.getItem('refresh_token'))
+  const expires_in = JSON.parse(localStorage.getItem('expires_in'))
+
+  function isAuthenticated() {
+    let expiresAt = JSON.parse(localStorage.getItem('expires_in'))
+    return new Date().getTime() < expiresAt
   }
+
+
+  // POST REFRESH TOKEN
+  var body = {
+    grant_type: "refresh_token",
+    refresh_token: refresh_token
+  }
+  axiosConfig.post("/oauth/token", qs.stringify(body),
+    {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json"
+      },
+      auth: {
+        username: "crmClient1",
+        password: "crmSuperSecret"
+      }
+
+    })
+    .then(response => {
+      if (response.status === 200) {
+        return response
+      }
+      throw response
+    })
+    .then(response => {
+      localStorage.setItem("access_token", JSON.stringify(response.access_token))
+      localStorage.setItem("refresh_token", JSON.stringify(response.refresh_token))
+      let expiresAt = (expires_in * 1000 + new Date().getTime())
+      localStorage.setItem("expires_in", JSON.stringify(response.expires_in))
+    })
+    .catch(error => {
+      if (error.response === undefined) {
+        // NetWork Error  
+        // setData({ ...data, isSubmitting: false, errorMessage: error.message });
+      }
+      else {
+        if (error.response.status === 400) {
+          // bad credentials  
+          // setData({ ...data, isSubmitting: false, errorMessage: error.response.data.error_description });
+        }
+      }
+    });
+
 }
 
 // function handleAuth(response) {

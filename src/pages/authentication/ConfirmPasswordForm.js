@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import './confirmPasswordForm.css'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 const ConfirmPasswordForm = (props) => {
 
@@ -36,7 +36,7 @@ const ConfirmPasswordForm = (props) => {
       password: data.password,
       confirmPassword: data.confirmPassword
     }
-    axios.put("http://10.0.10.195:8088/users/resetPassword", (body),
+    axiosConfig.put("/users/resetPassword", (body),
       {
         headers: {
           "Content-Type": "application/json"

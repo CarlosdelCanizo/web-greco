@@ -6,7 +6,7 @@ import { ProfileContext } from './ProfileContext'
 const Profile = () => {
 
   const profileContext = useContext(ProfileContext)
-  console.log("EL USER:", profileContext)
+
   function getName() {
     let name = profileContext.username;
     return name

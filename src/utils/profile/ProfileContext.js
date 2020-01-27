@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 export const ProfileContext = createContext();
 
@@ -18,7 +18,7 @@ const ProfileProvider = ({ children }) => {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
   useEffect(() => {
     if (access_token) {
-      axios.get("http://10.0.10.195:8088/users/getMyUserInfo",
+      axiosConfig.get("http://10.0.10.195:8088/users/getMyUserInfo",
         {
           headers: {
             "Content-Type": "application/json",

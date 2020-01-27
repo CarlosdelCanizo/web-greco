@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import './Challenges.css';
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 import ChallengeLevelCard from './ChallengeLevelCard'
 
 function ChallengeList() {
@@ -11,7 +11,7 @@ function ChallengeList() {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
+      const result = await axiosConfig(
         'http://10.0.10.195:8088/challenge',
         {
           headers: {

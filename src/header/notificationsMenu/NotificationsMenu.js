@@ -15,7 +15,7 @@ class NotificationsMenu extends Component {
   render() {
     return (
       <nav id="navBar">
-        <Button onClick={this.showDrawer}>
+        <Button onClick={this.showDrawer} id="notifications-button">
           <Link to="/notifications" className="nav-text">
             <Icon type="bell" />
           </Link>

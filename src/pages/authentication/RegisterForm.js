@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import './registerForm.css'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 const RegisterForm = (props) => {
 
@@ -31,7 +31,7 @@ const RegisterForm = (props) => {
       password: data.password,
       confirmPassword: data.confirmPassword
     }
-    axios.post("http://10.0.10.195:8088/register", (body),
+    axiosConfig.post("/register", (body),
       {
         headers: {
           "Content-Type": "application/json"

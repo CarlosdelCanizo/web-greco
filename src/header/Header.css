@@ -1,12 +1,18 @@
 @import '~antd/dist/antd.css';
 
+/*****************************************************NAVBAR**************************************************************/
+
 #navBar {
-  padding: 0.5px;
-  height: 35px;
+  padding: 0.1em;
+  height: 5%;
   margin: auto;
   overflow: auto;
   background-color: white;
   box-shadow: 0 0 30px #f3f1f1;
+}
+#user-button, #notifications-button, #main-menu-button {
+  border: none;
+  background-color: white;
 }
 /*****************************************************MAIN*MENU**************************************************************/
 #mainMenu{
@@ -25,7 +31,6 @@
   margin-top: 2%;
   margin-left: 15%;
   color: #2a4092;
-  
 }
 #userMenu{
   float: right;

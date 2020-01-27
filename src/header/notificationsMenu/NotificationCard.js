@@ -2,7 +2,7 @@ import React from "react"
 import { Card, Row, Col, Divider, Avatar, Badge, Button } from 'antd'
 import "./notifications.css"
 
-function NotificationCard() {
+function NotificationCard({ id }) {
 
   // const [notifications, setNotifications] = useState([])
 
@@ -37,8 +37,8 @@ function NotificationCard() {
           </Col>
           <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
             <h1 id="notification-type">CHAT</h1>
-            <p id="notification-content">Buenas, que modelo de placa tienes?</p>
-            <h4 id="notification-time">Hace 20m</h4>
+            <p id="notification-content">{id.text}</p>
+            <h4 id="notification-time">{id.creationDate}</h4>
           </Col>
           <Divider />
         </Row>

@@ -7,7 +7,7 @@ import Gold from '../../assets/gold.svg'
 import Silver from '../../assets/silver.svg'
 import Bronze from '../../assets/bronze.svg'
 import Header from '../../header/Header'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 import { Link } from 'react-router-dom'
 
 // import ChallengesContext from '../../context/ChallengesContext'
@@ -22,7 +22,7 @@ function ChallengeLevelCard() {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
+      const result = await axiosConfig(
         'http://10.0.10.195:8088/challenge/userChallenges/',
         {
           headers: {

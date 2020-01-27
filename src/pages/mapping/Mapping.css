@@ -12,7 +12,7 @@ a.leaflet-popup-close-button {
 .leaflet-popup-content-wrapper {
   width: 350px;
   height: 350px;
-  background-color: white;
+  background-color: #eaedf1;
 }
 
 #public-private-mapping-installation-name {
@@ -30,11 +30,21 @@ a.leaflet-popup-close-button {
   margin-top: 0%;
   margin-left: 0%;
 }
-#public-private-mapping-panel-image {
-  width: 100%;
-  height: 100%;
+#div-container-img {
+  width: 300px;
+  object-fit: cover; 
+}
+#public-private-mapping-no-image-panel{
+  width: 300px;
+  height: 250px;
   margin-top: 0%;
   margin-left: 0%;
+  background-color: white;
+}
+#public-private-mapping-panel-image {
+  justify-content: center;
+  max-width:300px;
+  height: 250px;
 }
 #show-panel-divider {
   margin-top: 0%;

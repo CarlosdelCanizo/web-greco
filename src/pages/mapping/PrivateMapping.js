@@ -1,18 +1,43 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-import "leaflet/dist/leaflet.css";
-import "./Mapping.css"
-import L from "leaflet";
+import { Button, Row, Col, Divider } from 'antd';
+import spinner from "../../assets/spinner.svg";
+import noImage from '../../assets/solar-panel.svg';
+import 'leaflet/dist/leaflet.css';
+import './Mapping.css';
+import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import Header from '../../header/Header'
-import axios from 'axios'
-import { Link } from "react-router-dom";
-import { Button, Row, Col, Divider } from 'antd'
-import solar from '../../assets/solar.jpg'
+import Header from '../../header/Header';
+import axiosConfig from '../../api/axiosConfig'
+import { Link } from 'react-router-dom'
+
+const PanelImage = ({ imageUrl }) => {
+  switch (imageUrl) {
+    case null: {
+      return <img src={spinner} alt="LOADING..." />;
+    }
+    case 'no-image': {
+      return <img
+        src={noImage}
+        alt="image"
+        id="public-private-mapping-no-image-panel"
+      />
+    }
+    default: {
+      return (
+        <img
+          src={imageUrl}
+          alt="image"
+          id="public-private-mapping-panel-image"
+        />
+      );
+    }
+  }
+};
 
 
-const PrivateMapping = (props) => {
+const PrivateMapping = () => {
 
   let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -28,14 +53,29 @@ const PrivateMapping = (props) => {
   }
 
   const [panels, setPanels] = useState([])
+  const [imageUrl, setImageUrl] = useState();
 
+  //GET PANEL IMAGE
+  function getImage(id) {
+    axiosConfig({
+      url: '/multimedia/' + id + '/getImage/',
+      method: 'GET',
+      responseType: 'blob'
+    }).then(response => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      setImageUrl(url);
+    });
+  }
+
+  //GET ALL PANELS
   useEffect(() => {
-    // var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-    axios.get('http://10.0.10.195:8088/solarPanel/getAllSolarPanel')
+    axiosConfig
+      .get('/solarPanel/getAllSolarPanel')
       .then(response => {
-        setPanels(response.data)
-      })
-  }, [])
+        setPanels(response.data);
+      });
+  }, []);
+
 
   return (
     <React.Fragment>
@@ -58,7 +98,17 @@ const PrivateMapping = (props) => {
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
           {panels.map((item, id) => (
-            <Marker key={id} position={[item.lat, item.lon]}>
+            <Marker key={id} position={[item.lat, item.lon]}
+              onClick={() => {
+                if (item.multimedia && item.multimedia.length > 0) {
+                  console.log('img exist with id: ', item.multimedia[0].id);
+                  getImage(item.multimedia[0].id);
+                } else {
+                  console.log('img not exist');
+                  setImageUrl('no-image');
+                }
+              }}
+            >
               <Popup >
                 <div id="public-private-mapping-popup">
                   <Row>
@@ -68,7 +118,9 @@ const PrivateMapping = (props) => {
                   </Row>
                   <Row>
                     <Col span={24}>
-                      <img src={solar} alt="image" id="public-private-mapping-panel-image" />
+                      <div id="container-img">
+                        <PanelImage imageUrl={imageUrl} />
+                      </div>
                     </Col>
                   </Row>
                   <Divider id="show-panel-divider" />
@@ -97,33 +149,27 @@ const PrivateMapping = (props) => {
                         {item.inverterCapacity} Kw
                       </h3>
                     </Col>
-                    {/* <div >
-                      {item.multimedia.length ? item.multimedia.map((multimedia, id) => (
-                        <div key={id}>
-                          {multimedia = { multimedia }}
-                        </div>
-                      ))
-                        :
-                        (<p>No images</p>)}
-                    </div>
-                    {item.comments.length ? item.comments.map((comment, id) => (
-                      <div key={id}>
-                        {comment = { comment }}
-                      </div>
-                    ))
-                      :
-                      (<p>No comments</p>)} */}
                   </Row>
                   <Row>
                     <Col span={12}>
-                      <Link to="/show-panel-details">
+                      <Link to={
+                        {
+                          pathname: "//show-panel-details",
+                          myPanel: { item }
+                        }
+                      }>
                         <Button id="mapping-button-left">
                           + info
                     </Button>
                       </Link>
                     </Col>
                     <Col span={12}>
-                      <Link to="/feed-panel">
+                      <Link to={
+                        {
+                          pathname: "/feed-panel",
+                          myPanel: { item }
+                        }
+                      }>
                         <Button id="mapping-button-right">
                           Feed
                     </Button>

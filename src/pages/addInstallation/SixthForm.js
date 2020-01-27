@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Form, Card, Radio, Button, Row, Col, Divider, Upload, Icon, message } from 'antd'
 import { Link, Redirect } from "react-router-dom"
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './sixthForm.css'
@@ -68,7 +68,7 @@ function SixthForm(props) {
       username: "Txema Sanchis",
       solarPanel: panelForSubmit
     }
-    axios.post("http://10.0.10.195:8088/solarPanel", (body),
+    axiosConfig.post("/solarPanel", (body),
       {
         headers: {
           "Content-Type": "application/json",
@@ -99,7 +99,7 @@ function SixthForm(props) {
     console.log("imagens hook", images)
     console.log("multimedia", multimedia)
     console.log("el FORMA DATA", formData)
-    axios.post("http://10.0.10.195:8088/multimedia/upload/" + currentPanelId, formData,
+    axiosConfig.post("/multimedia/upload/" + currentPanelId, formData,
       {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -244,7 +244,7 @@ function SixthForm(props) {
 
               <Button id="button-panel-register-next-sixth" type="submit" onClick={handleFormSubmit}>
                 NEXT
-                {/* {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null} */}
+                {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
               </Button>
 
             </Col>

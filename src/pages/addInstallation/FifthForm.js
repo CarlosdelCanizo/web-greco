@@ -76,7 +76,7 @@ const FifthForm = (props) => {
 
                         <Col id="col-register-panel-fields" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                             <Form.Item>
-                                <label id="panel-input-label">Degrees</label>
+                                <label id="label-panel-orientation-inclination">Degrees</label>
                                 <Divider id="input-separator" />
                                 <Input type="number"
                                     min={1} max={10000}

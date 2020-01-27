@@ -1,34 +1,49 @@
 import React, { useState, useEffect } from "react"
 import { Card, Button, Row, Col, Icon, Input, Form, List, Comment, Divider } from 'antd'
 import solar from '../../assets/solar.jpg'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import "./ShowPanel.css"
 import { Link } from "react-router-dom";
 
 const ShowPanelDetails = (props) => {
 
+  const myPanel = props.location.myPanel
+  console.log("El my panel from props", myPanel)
   const [showData, setData] = useState({})
-  var panelId = props.id
+  var panelId = [myPanel.item.id]
 
   //GET MY SOLAR PANELS
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://10.0.10.195:8088/solarPanel/' + "69",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": access_token
-          }
-        }
-      );
-      setData(result.data);
-      console.log("showData show panels details", showData)
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axiosConfig(
+  //       '/solarPanel/' + "248",
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           "Authorization": access_token
+  //         }
+  //       }
+  //     );
+  //     setData(result);
+  //     console.log("SHOW DATA PANEL DETAILS", showData)
+  //     console.log("SHOW RESULT DATA", result.data)
+  //   };
+  //   fetchData();
+  // }, []);
+
+  //GET ALL PANELS
+  // useEffect(() => {
+  //   axiosConfig
+  //     .get('/solarPanel/' + 248)
+  //     .then(response => {
+  //       setData(response.data);
+  //       console.log("SHOW DATA PANEL DETAILS", showData)
+  //       console.log("SHOW RESULT DATA", response.data)
+  //     });
+  // }, []);
+
 
   return (
     <React.Fragment>

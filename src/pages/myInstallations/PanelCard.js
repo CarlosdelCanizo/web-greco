@@ -4,7 +4,7 @@ import './MyInstallations.css';
 import { Link } from "react-router-dom";
 import noImage from '../../assets/no-image.svg'
 import solar from '../../assets/solar.jpg'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 import PanelContext from '../../context/Context'
 
@@ -49,7 +49,7 @@ function PanelCard({ panel }) {
   //DELETE SOLAR PANEL
   function deleteSolarPAnel(id) {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-    axios.delete("http://10.0.10.195:8088/solarPanel/" + id,
+    axiosConfig.delete("http://10.0.10.195:8088/solarPanel/" + id,
       {
         headers: {
           "Content-Type": "application/json",

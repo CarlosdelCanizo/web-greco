@@ -1,23 +1,46 @@
-import React, { useState, useEffect } from "react"
-import { Input, Button, List, Comment, Form, Icon, message } from 'antd';
-import solar from '../../assets/solar.jpg'
-import axios from 'axios'
+import React, { useState, useEffect, useContext } from "react"
+import { Input, Button, Form, Icon, Col, Card, Row, Avatar } from 'antd';
+import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import './feedPanel.css'
 import moment from 'moment'
 import { Link } from "react-router-dom";
-import PanelCard from '../../pages/myInstallations/PanelCard'
+import spinner from "../../assets/spinner.svg";
+import noImage from '../../assets/solar-panel.svg';
+import { ProfileContext } from '../../utils/profile/ProfileContext'
 
 const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-const panelId = '69'
 
-const FeedForm = (props) => {
+const PanelImage = ({ imageUrl }) => {
+  switch (imageUrl) {
+    case null: {
+      return <img src={spinner} alt="LOADING..." />;
+    }
+    case 'no-image': {
+      return <img
+        src={noImage}
+        alt="image"
+        id="feed-card-no-image-panel"
+      />
+    }
+    default: {
+      return (
+        <img
+          src={imageUrl}
+          alt="image"
+          id="feed-card-panel-image"
+        />
+      );
+    }
+  }
+};
 
-  let panelId = props.panelId
-  console.log(panelId)
+//INPUT BOX AND SEND BUTTON
+const FeedForm = ({ panelId }) => {
 
   const [message, setMessage] = useState("");
   const [messagesList, setMessagesList] = useState([])
+
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
@@ -26,7 +49,6 @@ const FeedForm = (props) => {
       postComment()
     }
     setMessage("")
-
   }
   // POST COMMENT
   function postComment() {
@@ -34,10 +56,10 @@ const FeedForm = (props) => {
       text: message,
       solarPanel:
       {
-        id: "69"
+        id: panelId
       }
     }
-    axios.post("http://10.0.10.195:8088/comment/", (body),
+    axiosConfig.post("/comment/", (body),
       {
         headers: {
           "Content-Type": "application/json",
@@ -71,41 +93,74 @@ const FeedForm = (props) => {
   );
 };
 
-const FeedList = () => {
-  // INITIAL COMMENTS COMMIT ASYNC
-  const [messagesList, setMessagesList] = useState([]);
-  var params = {
-    size: 50,
-    page: 0
-  }
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://10.0.10.195:8088/solarPanel/' + 69 + '/comments?', (params),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": access_token
-          }
-        }
-      );
+//MESSAGES LIST
+const FeedList = ({ panelId }) => {
 
-      setMessagesList(result.data.content);
-    };
-    fetchData();
-  }, []);
+  const profileContext = useContext(ProfileContext)
+  var username = profileContext.username
+
+  const [messagesList, setMessagesList] = useState([]);
+
+  //AVATAR
+  const getName = (name) => {
+    return name.slice(0, 2)
+  }
+
+  //INITIAL COMMENTS COMMIT
+  useEffect(() => {
+
+    const fetchMessages = () => {
+      axiosConfig
+        .get('/solarPanel/' + panelId + '/comments',
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": access_token
+            }
+          }
+        )
+        .then(response => {
+          const newList = response.data
+
+          setMessagesList(newList);
+
+        })
+    }
+    fetchMessages();
+    console.log("Loop?", messagesList)
+  }, [])
+
 
   return (
     <React.Fragment>
       <div id="feed-panel-messages-list">
-        {messagesList.map(messages => (
-          <div key={messages.id} >
-            <div>{message.username}</div>
-            <div id="feed-panel-user-booble">
-              <p id="feed-panel-text-message">{messages.text}</p>
-              <h6 id="feed-panel-message-date">{moment(messages.creationDate).format('DD/MM/YYYY')}</h6>
-              <h6 id="feed-panel-message-time">{moment(messages.creationDate).format('HH:mm')}</h6>
-            </div>
+        {messagesList.map(item => (
+          <div key={item.id}>
+            {item.userName === username ?
+              (<React.Fragment>
+                <div>
+                  <Avatar id="feed-panel-avatar">{getName(item.userName)}</Avatar>
+                </div>
+                <div id="feed-panel-user-booble">
+                  <p id="feed-panel-text-message">{item.text}</p>
+                  <h6 id="feed-panel-message-date">{moment(item.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-time">{moment(item.creationDate).format('HH:mm')}</h6>
+                </div>
+              </React.Fragment>
+              )
+              :
+              (<React.Fragment>
+                <div>
+                  <Avatar id="another-feed-panel-avatar">{getName(item.userName)}</Avatar>
+                </div>
+                <div id="feed-panel-another-booble">
+                  <p id="feed-panel-text-another-message">{item.text}</p>
+                  <h6 id="feed-panel-message-another-date">{moment(item.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-another-time">{moment(item.creationDate).format('HH:mm')}</h6>
+                </div>
+              </React.Fragment>
+              )}
+
           </div>
         ))}
       </div>
@@ -113,18 +168,100 @@ const FeedList = () => {
   )
 }
 
-const FeedPanel = () => {
+const FeedPanel = (props) => {
+
+  const myPanel = props.location.myPanel
+  const [imageUrl, setImageUrl] = useState();
+
+  useEffect(() => {
+    function getImage(id) {
+      axiosConfig({
+        url: '/multimedia/' + id + '/getImage/',
+        method: 'GET',
+        responseType: 'blob'
+      }).then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        setImageUrl(url);
+      });
+    }
+    if ([myPanel.item.multimedia] && [myPanel.item.multimedia.length] > 0) {
+      getImage([myPanel.item.multimedia[0].id]);
+    } else {
+      setImageUrl('no-image');
+    }
+  }, []);
+
   return (
+
     <React.Fragment>
       <Header />
-      {/* <PanelCard /> */}
       <div id="panel-feed-outside">
-        <div id="panel-feed-inside">
-          <FeedList />
-          <FeedForm />
-        </div>
+        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+          <Card id="feed-card-container">
+            <Row>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <p id="feed-card-tittle">{myPanel.item.installationName}</p>
+                <div id="installation-button-container">
+                  <Link to="private-mapping">
+                    <Button id="feed-close-button">
+                      <Icon type="close" />
+                    </Button>
+                  </Link>
+                </div>
+                <div id="feed-card-image-container">
+                  <PanelImage imageUrl={imageUrl} />
+                </div>
+              </Col >
+            </Row>
+            <Row>
+              <div id="feed-panel-text-fields">
+                <Col span={8}>
+                  <h5 id="panel-data-labels">
+                    Electrical capacity
+                  </h5>
+                  <h4 id="panel-data-fields">
+                    {myPanel.item.electrical_capacity} Kw
+                  </h4>
+                </Col>
+                <Col span={8}>
+                  <h5 id="panel-data-labels">
+                    Surface
+                  </h5>
+                  <h4 id="panel-data-fields">
+                    {myPanel.item.surface} m²
+                  </h4>
+                </Col>
+                <Col span={8}>
+                  <h5 id="panel-data-labels">
+                    Inverter capacity
+                  </h5>
+                  <h4 id="panel-data-fields">
+                    {myPanel.item.inverterCapacity} Kw
+                  </h4>
+                </Col>
+              </div>
+            </Row>
+            <Row >
+              <div id="feed-panel-user-name-container">
+                <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                  <h3 id="feed-panel-user-name" >Txema Sanchis</h3>
+                </Col>
+              </div>
+            </Row>
+            <Row>
+              <div id="feed-list-container">
+                <FeedList panelId={myPanel.item.id} />
+              </div>
+            </Row>
+            <Row>
+              <div id="feed-form-container">
+                <FeedForm panelId={myPanel.item.id} />
+              </div>
+            </Row>
+          </Card>
+        </Col>
       </div>
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 

@@ -3,37 +3,38 @@ import { Card, Row, Col, Divider, Avatar, Badge, Button } from 'antd'
 import Header from '../Header'
 import NotificationCard from './NotificationCard'
 import "./notifications.css"
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 function NotificationsList() {
 
-  const [notifications, setNotifications] = useState([])
-
+  const [notifications, setNotifications] = useState([{}])
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://10.0.10.195:8088/comments/unreadcomments',
+    // GET NOTIFICATIONS
+    const res = async () => {
+      const result = await axiosConfig.get("/comment/unreadcomments",
         {
           headers: {
-            "Content-Type": "application/json",
             "Authorization": access_token
           }
-        }
-      );
-      setNotifications(result.data);
+        })
+      const data = result.data
+      console.log("El data a secas", data)
+      setNotifications(notifications => [...notifications, data])
+      console.log("NOTIFICATIONS", notifications)
     };
-    fetchData();
-    console.log("Notificaions from server:", notifications)
+    res()
   }, []);
 
   return (
     <React.Fragment>
       <Header />
       <div>
-
-        <NotificationCard />
-
+        {/* {notifications.map(item => (
+          <NotificationCard id={item} />
+        ))} */}
+        HOLA
       </div>
     </React.Fragment >
   )

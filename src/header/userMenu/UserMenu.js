@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { Menu, Icon, Button, Drawer } from 'antd';
-import { Link } from "react-router-dom";
-import Profile from '../../utils/profile/Profile';
+import React, { Component } from 'react'
+import { Menu, Icon, Button, Drawer } from 'antd'
+import { Link } from "react-router-dom"
+import Profile from '../../utils/profile/Profile'
+import iconUser from '../../assets/icon-user.svg'
+
 
 var access_token = JSON.parse(localStorage.getItem('access_token'))
 
@@ -51,8 +53,8 @@ class UserMenu extends Component {
     return (
       <React.Fragment>
         <nav id="navBar">
-          <Button onClick={this.showDrawer}>
-            <Icon type="user" />
+          <Button onClick={this.showDrawer} id="user-button">
+            <img src={iconUser} alt="user-icon" id="user-icon" />
           </Button>
         </nav>
 

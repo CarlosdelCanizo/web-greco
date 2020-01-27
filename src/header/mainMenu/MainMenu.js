@@ -28,7 +28,7 @@ class MainMenu extends Component {
         return (
             <React.Fragment>
                 <nav id="navBar">
-                    <Button onClick={this.showDrawer}>
+                    <Button onClick={this.showDrawer} id="main-menu-button">
                         <Icon type="menu" />
                     </Button>
                 </nav>
@@ -68,6 +68,11 @@ class MainMenu extends Component {
                         <Menu.Item key="about">
                             <Link to="/about" className="nav-text">
                                 <Icon type="exclamation-circle" /> About
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="download">
+                            <Link to="/about" className="nav-text">
+                                <Icon type="download" /> Download database
                             </Link>
                         </Menu.Item>
                     </Menu>

@@ -53,7 +53,7 @@ const Routes = () => {
           <Route path='/public-mapping' component={PublicMapping} />
           <Route path='/about' component={About} />
           <Route path='/panel' component={PanelList} />
-          <Route path='/show-panel-details' component={ShowPanelDetails} />
+          {/* <Route path='/show-panel-details' component={ShowPanelDetails} /> */}
           <Route path='/sixth' component={SixthForm} />
           <Route path='/feed-panel' component={FeedPanel} />
           <PrivateRoute path='/first'

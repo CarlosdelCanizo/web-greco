@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import './resetPassword.css'
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 
 const ResetPasswordForm = () => {
 
@@ -23,7 +23,7 @@ const ResetPasswordForm = () => {
     setData({ ...data, isSubmitting: true, errorMessage: null });
 
     //POST EMAIL
-    axios.post('http://10.0.10.195:8088/email/sendEmailToResetThePassword?email=' + data.email)
+    axiosConfig.post('/email/sendEmailToResetThePassword?email=' + data.email)
       .then(response => {
         if (response.status === 200) {
 
