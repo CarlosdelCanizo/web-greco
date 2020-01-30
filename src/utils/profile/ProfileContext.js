@@ -15,8 +15,9 @@ const ProfileProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState({ userProfile });
   const [isLoggedin, setLoggedIn] = useState(false)
 
-  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+
   useEffect(() => {
+    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     if (access_token) {
       axiosConfig.get("http://10.0.10.195:8088/users/getMyUserInfo",
         {
@@ -28,12 +29,7 @@ const ProfileProvider = ({ children }) => {
         .then(result => {
           setUserInfo(result.data)
           setLoggedIn(true)
-          console.log("HABEMUS TOKEN !!!!", userInfo)
         });
-    }
-    else {
-      // setLoggedIn(false)
-      console.log("TIO DIU QUE NO TE EL TOKEN!!!")
     }
   }, []);
 

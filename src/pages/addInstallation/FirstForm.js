@@ -1,9 +1,11 @@
 import React, { useState, useContext, useReducer, useRef, useEffect } from "react"
 import { Button, Row, Col, Divider, Form, Input, InputNumber, Icon, Card, Radio, DatePicker } from 'antd'
-import { Redirect } from "react-router-dom";
-import noImage from '../../assets/no-image.svg'
+import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
+import monocrystalline from '../../assets/monocrystalline.jpg'
+import multicrystalline from '../../assets/multicrystalline.jpg'
+import thinFilm from '../../assets/thin_film.jpg'
 import './firstForm.css'
 
 const FirstForm = () => {
@@ -102,7 +104,7 @@ const FirstForm = () => {
     <Row>
       <div id="background-panel-register">
         <Card id="card-panel-register-inside">
-          <Col span={24} id="" xs={24} sm={24} md={24} lg={24} xl={24}>
+          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <div id="pagination">
               <img src={bulletPle} width="2%" id="pagination-bullet" />
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
@@ -112,6 +114,13 @@ const FirstForm = () => {
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
             </div>
           </Col>
+
+          <Link to="/private-mapping">
+            <Button id="forms-close-button">
+              <Icon type="close" id="icon-x" />
+            </Button>
+          </Link>
+
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <h2 id="tittle-panel-registration">Register your solar installation</h2>
           </Col>
@@ -177,21 +186,21 @@ const FirstForm = () => {
               value={radioValue}
             >
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={noImage} id="images-tech-us" />
+                <img src={monocrystalline} id="images-tech-us" />
                 <br />
                 <label id="label-radio-button">Monocrystalline</label>
                 <br />
                 <Radio value={"Monocrystalline"} id="radio-button" />
               </Col>
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={noImage} id="images-tech-us" />
+                <img src={multicrystalline} id="images-tech-us" />
                 <br />
                 <label id="label-radio-button">Polycrystalline</label>
                 <br />
                 <Radio value={"Polycrystalline"} id="radio-button" />
               </Col>
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={noImage} id="images-tech-us" />
+                <img src={thinFilm} id="images-tech-us-large" />
                 <br />
                 <label id="label-radio-button">Thin-film</label>
                 <br />

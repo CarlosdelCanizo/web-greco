@@ -9,15 +9,14 @@ const EditUser = () => {
 
   const [data, setData] = React.useState({
     username: "",
-    email: ""
+    email: "",
+    notifications: true
   }
   );
 
-  const [checked, setChecked] = useState(true)
-
-  function onChange() {
-    setChecked(!checked)
-    console.log(`switch to ${checked}`);
+  function onChange(checked) {
+    console.log("switch to", checked);
+    setData({ ...data, notifications: checked });
   }
 
   const handleInputChange = event => {
@@ -29,12 +28,13 @@ const EditUser = () => {
     event.persist()
 
     setData({ ...data, isSubmitting: true, errorMessage: null });
-    console.log("CHANGE USER", data)
+
     // UPDATE USER
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem("access_token"))
     var body = {
       email: data.email,
       username: data.username,
+      notifications: data.notifications
     }
     axios.put("http://10.0.10.195:8088/users", (body),
       {
@@ -90,7 +90,6 @@ const EditUser = () => {
                   <label id="edit-label">Username</label>
                   <Input placeholder="Username" name="username" id="edit-username"
                     values={data.username} onChange={handleInputChange}
-
                   />
                 </div>
               </Form.Item>
@@ -106,11 +105,13 @@ const EditUser = () => {
               </Form.Item>
             </div>
             <div id="turn-notifications">
-              <Switch defaultChecked onChange={onChange}
+              <Switch
+                defaultChecked
+                onChange={onChange}
                 name="notifications"
-                id="notification-switch"
+                id="notifications"
               />
-              {checked ?
+              {data.notifications ?
                 (<p id="turn-notifications-text">Turn OFF notifications</p>) :
                 (<p id="turn-notifications-text">Turn ON notifications</p>)}
             </div>

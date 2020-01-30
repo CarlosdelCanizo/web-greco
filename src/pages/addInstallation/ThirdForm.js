@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Col, Row, Checkbox, Button } from 'antd';
+import { Form, Card, Col, Row, Checkbox, Button, Icon } from 'antd';
 import { Redirect, Link } from "react-router-dom";
 import panelTracking from '../../assets/panel-tracking.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -49,6 +49,13 @@ const ThirdForm = (props) => {
                             <img src={bulletBuit} width="2%" id="pagination-bullet" />
                         </div>
                     </Col>
+
+                    <Link to="/private-mapping">
+                        <Button id="forms-close-button">
+                            <Icon type="close" id="icon-x" />
+                        </Button>
+                    </Link>
+
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <h2 id="tittle-panel-registration">Panel tracking</h2>
                     </Col>

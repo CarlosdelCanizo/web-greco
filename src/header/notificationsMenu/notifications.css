@@ -18,7 +18,7 @@
   color: #2a4092;
   padding: 0;
   margin-top: 1%;
-  margin-right: 1%;
+  margin-right: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #notification-icon {
@@ -49,6 +49,7 @@
 }
 #button-clear {
   left: 30%;
+  margin-top: 5%;
   background-color: #db4196;
   color: #ffffff;
   line-height: 1.5;

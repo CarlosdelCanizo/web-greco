@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Icon, Drawer, Button } from 'antd';
 import { Link } from "react-router-dom";
+import mainMenuIcon from '../../assets/main-menu.svg'
 
 class MainMenu extends Component {
     state = { visible: false };
@@ -29,7 +30,7 @@ class MainMenu extends Component {
             <React.Fragment>
                 <nav id="navBar">
                     <Button onClick={this.showDrawer} id="main-menu-button">
-                        <Icon type="menu" />
+                        <img src={mainMenuIcon} alt="menu-icon" id="menu-icon" />
                     </Button>
                 </nav>
 

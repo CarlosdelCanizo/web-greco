@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext, useCallback } from "react"
 import { Input, Button, Form, Icon, Col, Card, Row, Avatar } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
@@ -107,29 +107,23 @@ const FeedList = ({ panelId }) => {
   }
 
   //INITIAL COMMENTS COMMIT
+  const fetchMessages = useCallback(() => {
+    axiosConfig.get('/solarPanel/' + panelId + '/comments',
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": access_token
+        }
+      })
+      .then(response => {
+        const newList = response.data
+        setMessagesList(newList)
+      })
+  }, [panelId, messagesList])
+
   useEffect(() => {
-
-    const fetchMessages = () => {
-      axiosConfig
-        .get('/solarPanel/' + panelId + '/comments',
-          {
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": access_token
-            }
-          }
-        )
-        .then(response => {
-          const newList = response.data
-          // if (newList !== messagesList)
-          setMessagesList(newList);
-
-        })
-    }
     fetchMessages();
-    console.log("Loop?", messagesList)
-  }, [])
-
+  })
 
   return (
     <React.Fragment>
@@ -201,7 +195,7 @@ const FeedPanel = (props) => {
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                 <p id="feed-card-tittle">{myPanel.item.installationName}</p>
-                <div id="installation-button-container">
+                <div id="feed-button-container">
                   <Link to="private-mapping">
                     <Button id="feed-close-button">
                       <Icon type="close" />
@@ -244,7 +238,7 @@ const FeedPanel = (props) => {
             <Row >
               <div id="feed-panel-user-name-container">
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <h3 id="feed-panel-user-name" >Txema Sanchis</h3>
+                  <h3 id="feed-panel-user-name" >{myPanel.item.username}</h3>
                 </Col>
               </div>
             </Row>

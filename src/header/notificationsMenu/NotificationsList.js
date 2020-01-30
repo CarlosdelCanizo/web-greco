@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Card, Row, Col, Divider, Avatar, Badge, Button } from 'antd'
+import { Card, Button } from 'antd'
 import Header from '../Header'
 import NotificationCard from './NotificationCard'
 import "./notifications.css"
@@ -7,35 +7,61 @@ import axiosConfig from '../../api/axiosConfig'
 
 function NotificationsList() {
 
-  const [notifications, setNotifications] = useState([{}])
+  const [notifications, setNotifications] = useState([])
+  // const [idPanel, setIdPanel] = useState()
+
+
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
+  // GET NOTIFICATIONS
+  const fetch = () => {
+    axiosConfig.get("/comment/unreadcomments",
+      {
+        headers: {
+          "Authorization": access_token
+        }
+      })
+      .then(response => {
+        const newList = response.data
+        setNotifications(newList);
+        // setIdPanel(newList[0].solarPanelId)
+      })
+  }
+
+  // DELETE NOTIFICATIONS
+  const deleteNotifications = () => {
+    setNotifications([])
+    // axiosConfig.get("/solarPanel/" + idPanel + "/comments",
+    //   {
+    //     headers: {
+    //       "Authorization": access_token
+    //     }
+    //   })
+    //   .then(response => {
+    //     const newList = response.data
+    //     fetch()
+    //   })
+  }
+
   useEffect(() => {
-    // GET NOTIFICATIONS
-    const res = async () => {
-      const result = await axiosConfig.get("/comment/unreadcomments",
-        {
-          headers: {
-            "Authorization": access_token
-          }
-        })
-      const data = result.data
-      console.log("El data a secas", data)
-      setNotifications(notifications => [...notifications, data])
-      console.log("NOTIFICATIONS", notifications)
-    };
-    res()
-  }, []);
+    fetch();
+  }, [])
 
   return (
     <React.Fragment>
       <Header />
-      <div>
-        {/* {notifications.map(item => (
-          <NotificationCard id={item} />
-        ))} */}
-        HOLA
-      </div>
+      <Card id="notification-detail">
+        <div>
+          {notifications.map(item => (
+            <NotificationCard item={item} />
+          ))}
+        </div>
+        <div>
+          <Button id="button-clear" onClick={deleteNotifications}>
+            CLEAR
+        </Button>
+        </div>
+      </Card>
     </React.Fragment >
   )
 }

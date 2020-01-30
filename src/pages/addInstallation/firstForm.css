@@ -38,7 +38,22 @@
   border-radius: 0;
   border: none;
 }
-
+#forms-close-button {
+float: right; 
+margin-top: -5%;
+margin-right: -2%;
+line-height: 2.7em;
+background-color: transparent;
+color: #ff0000;
+opacity: 1;
+font-size: 1.5em;
+border: none;
+z-index: 1;
+border-radius: none;
+}
+#icon-x {
+  
+}
 /***************************************************************FIRST*FORM*************************************************************/
 /***FIRST*FORM************************************************************************************************************************/
 
@@ -147,9 +162,22 @@
     margin-left: 0%;
   }
 #images-tech-us {
+  object-fit: fill;
+  height: 177px;
+  max-height: 100%;
   margin-top: 1%;
   width: 90%;
-  height: 100%;
+  margin-left: -5%;
+  margin-right: 3%;
+  padding: 5%;
+  border: 1px solid #cdced7;
+}
+#images-tech-us-large {
+  object-fit: fill;
+  height: 177px;
+  max-height: 100%;
+  margin-top: 1%;
+  width: 90%;
   margin-left: -5%;
   margin-right: 3%;
   padding: 5%;
@@ -328,6 +356,8 @@
     margin-left: 1%;
   }
   #images-tech-us {
+    object-fit: cover;
+    height: 177px;
     margin-top: 0%;
     margin-left: -15%;
     padding: 5%;
@@ -509,6 +539,8 @@
     margin-top: 1%;
   }
   #images-tech-us {
+    object-fit: cover;
+    height: 177px;
     display: inline-block;
     margin-left: 8%;
     margin-right: 4%;

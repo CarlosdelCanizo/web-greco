@@ -1,5 +1,14 @@
 //An extract of address points from the LINZ bulk extract: http://www.linz.govt.nz/survey-titles/landonline-data/landonline-bde
 //Should be this data set: http://data.linz.govt.nz/#/layer/779-nz-street-address-electoral/
+
+export const addressPoints = [
+  // [-37.8839, null, "571"],
+  [-37.8894207167, 175.4015351167, "10"],
+  [-37.8927369333, 175.4087452333, "10"],
+  [-37.90585105, 175.4453463833, "10"],
+  [-37.9064188833, 175.4441556833, "2000"],
+]
+/*
 export const addressPoints = [
 [-37.8839, null, "571"],
 [-37.8869090667, 175.3657417333, "486"],
@@ -10002,3 +10011,4 @@ export const addressPoints = [
 [-37.90567525, 175.4753235167, "119"],
 [-37.9124889333, 175.4727737833, "278"]
 ];
+*/

@@ -1,6 +1,5 @@
 import React from 'react';
 import Routes from './utils/routes';
-import PanelsProvider from './context/PanelsProvider';
 import ProfileProvider from './utils/profile/ProfileContext';
 
 export const AuthContext = React.createContext();
@@ -72,9 +71,7 @@ const App = () => {
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
       <ProfileProvider>
-        <PanelsProvider>
-          <Routes />
-        </PanelsProvider>
+        <Routes />
       </ProfileProvider>
     </AuthContext.Provider>
   );

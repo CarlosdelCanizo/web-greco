@@ -1,22 +1,44 @@
-/***************************************************************PANEL*REGISTER*THIRD*************************************************************/
-/***PANEL*REGISTER*THIRD*************************************************************************************************************************/
-#col-register-panel-radio{
-  margin-top: 5%;
-  margin-left: 35%;
+/***************************************************************PANEL*REGISTER*FOURTH*AND*FIVE***********************************************************/
+/***PANEL*REGISTER*FOURTH*************************************************************************************************************************/
+#selector {
+  margin-top: 3%;
+  margin-left: 0%
 }
-#text-panel-registration-second {
+/* #register-panel-radio {
+  margin-top: -12%;
+  margin-left: -40%;
+} */
+/* #text-panel-registration-second {
   font-size: 16px;
   text-align: left;
   line-height: 1.25;
   color: #7f95a7;
   margin-top: 2%;
-}
+} */
+/* #col-register-panel-select {
+  margin-top: -12%;
+  margin-left: 5%;
+} */
 #register-panel-fields-fourth {
   display: inline-flex;
-  margin-left: 0%;
-  margin-top: 5%;
+  margin-left: 30%;
+  margin-top: 10%;
 }
-#label-panel-orientation-inclination {
+#label-panel-orientation {
+  display: block;
+  text-align: left;
+  width: 150px;
+  text-align: top;
+  font-size: 12px;
+  line-height: 1;
+  color: #2a4092;
+  background-color:#f9f9f9;
+  margin-top: 0%;
+  margin-left: 37.5%;
+  margin-bottom: -0.5%;
+  border: 3px solid #f9f9f9;
+}
+#label-panel-inclination {
   display: inline-block;
   text-align: left;
   width: 150px;
@@ -29,7 +51,7 @@
   margin-bottom: 1%;
   border: 3px solid #f9f9f9;
 }
-#inclination, #orientation {
+#inclination {
   color: #2a4092;
   width: 150px;
   height: 40px;
@@ -44,15 +66,64 @@
   margin-left: -50%;
   margin-top: 5%
 }
+#orientation {
+  color: #2a4092;
+  width: 150px;
+  height: 30px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.6;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  margin-left: 0%;
+  margin-top: -10%
+}
+.ant-select-selection {
+  border: none;
+  background-color: transparent;
+}
+#label-panel-orientation-select {
+  display: inline-block;
+  text-align: left;
+  width: 200px;
+  height: 30px;
+  text-align: top;
+  font-size: 12px;
+  line-height: 1;
+  color: #2a4092;
+  background-color:#f9f9f9;
+  margin-left: 0%;
+  margin-bottom: 0%;
+  margin-top: -20%;
+  border: 3px solid #f9f9f9;
+}
+#select-orientation {
+  color: #2a4092;
+  width: 200px;
+  height: 31px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.6;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  margin-left: -50%;
+  margin-top: -15%
+}
 #register-panel-image-fourth {
   margin-top: 3%;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
 }
 #register-panel-image-fifth {
   margin-top: 3%;
-  width: 65%;
-  height: 65%;
+  width: 50%;
+  height: 50%;
 }   
 
 #button-panel-register-previous-fourth  {

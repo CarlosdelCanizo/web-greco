@@ -1,12 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Form, Card, Radio, Button, Row, Col, Divider, Upload, Icon, message } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './sixthForm.css'
+import { ProfileContext } from '../../utils/profile/ProfileContext'
 
 function SixthForm(props) {
+
+  const profileContext = useContext(ProfileContext)
+  var username = profileContext.username
 
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
   const [data, setData] = useState(currentPanelState);
@@ -38,7 +42,6 @@ function SixthForm(props) {
     });
   };
 
-
   const handleUploadImages = ({ fileList }) => {
     console.log('fileList', fileList);
     setImages({ fileList });
@@ -60,12 +63,9 @@ function SixthForm(props) {
   }
 
   function postPanel() {
-    // console.log("USERNAME:", username)
     var panelForSubmit = JSON.parse(localStorage.getItem('currentPanelState'))
-    // panelTransform(panelForSubmit)
-    console.log("panel for submit", panelForSubmit)
     var body = {
-      username: "Txema Sanchis",
+      username: username,
       solarPanel: panelForSubmit
     }
     axiosConfig.post("/solarPanel", (body),
@@ -137,6 +137,13 @@ function SixthForm(props) {
               <img src={bulletPle} width="2%" id="pagination-bullet" />
             </div>
           </Col>
+
+          <Link to="/private-mapping">
+            <Button id="forms-close-button">
+              <Icon type="close" id="icon-x" />
+            </Button>
+          </Link>
+
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <h2 id="tittle-panel-registration">Additional information</h2>
           </Col>

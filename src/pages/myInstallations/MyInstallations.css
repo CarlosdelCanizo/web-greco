@@ -45,7 +45,8 @@
  
 }
 /************************************************************INSTALLATION**************************************************/
-/***COMPUTER************************************************************************************************************************/
+/***COMPUTER***************************************************************************************************************/
+
 #installation-col-container {
   position: absolute;
   margin-left: 50%;
@@ -62,6 +63,11 @@
   padding: 0; 
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle-button-container {
+  position: absolute;
+  margin-top: -9.1%;
+  margin-left: -10%;
 }
 #installation-tittle {
   position: absolute;
@@ -93,16 +99,10 @@
   margin-top: -16%;
   margin-left: -16%;
 }
-#installation-button-container {
-  margin-top: -20%;
-  margin-left: -15%;
-  width: 450px;
-}
-#installation-button {
-  float: right; 
-  margin-top: 0%;
-  margin-right: 3%;
-  line-height: 2em;
+#installation-button { 
+  margin-top: -25%;
+  right: -625%;
+  line-height: 1.8em;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
@@ -111,25 +111,30 @@
   z-index: 1;
   border-radius: none;
 }
-#installation-add-image {
-  padding: 0%;
+#installation-add-image-container {
   width: 425px;
   height: 325px;
   margin-top: -6.8%;
   margin-left: -6.75%;
+}
+#installation-add-image {
+  object-fit: initial;
+  width: 100%;
+  max-width: 100%;
+  height: 325px;
+  margin-top: -6%;
+  margin-left: 0%;
   border-bottom: 5px solid #2a4092;
 }
 #installation-text-fields {
   padding: 0%;
   margin: 0%;
 }
-
 #panel-data-labels {
   font-weight: 500;
   color: #bfc5d2;
   font-size: 11px;
 }
-
 #panel-data-fields {
   font-family: Montserrat;
   margin-top: -3%;
@@ -167,7 +172,7 @@
 }
 
 /************************************************************INSTALLATIONS**************************************************/
-/***TABLET************************************************************************************************************************/
+/***TABLET******************************************************************************************************************/
 
 #installation-col-container {
   position: absolute;
@@ -187,6 +192,11 @@
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
+#installation-tittle-button-container {
+  position: absolute;
+  margin-top: -16%;
+  margin-left: -16%;
+}
 #installation-tittle {
   position: absolute;
   font-size: 18px;
@@ -199,28 +209,31 @@
   z-index: 1;
   background-color: white;
   opacity: 0.5;
-  margin-top: -15.5%;
-  margin-left: -15%;
-}
-#installation-button-container {
-  margin-top: -2%;
-  margin-left: -2%;
-  width: 425px;
+  margin-top: -1%;
+  margin-left: 2%;
 }
 #installation-button {
-  position: absolute;
-  margin-top: -13%;
-  margin-left: 95%;
+  margin-top: 0%;
+  right: -725%;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
   font-size: 1.5em;
   border: none;
 }
+#installation-add-image-container {
+  width: 425px;
+  height: 325px;
+  margin-top: -6.8%;
+  margin-left: -6.75%;
+}
 #installation-add-image {
+  object-fit: initial;
+  width: 100%;
+  max-width: 100%;
   padding: 0%;
-  margin-top: -6.7%;
-  margin-left: -6.2%;
+  margin-top: -6.2%;
+  margin-left: 0.30%;
   border-bottom: 5px solid #2a4092;
 }
 #installation-text-fields {
@@ -229,14 +242,15 @@
 }
 }
 /************************************************************ADD*INSTALLATION*************************************************/
-/***MOBILE************************************************************************************************************************/
+/***MOBILE********************************************************************************************************************/
+
 @media (min-width: 240px) and (max-width: 600px) {
 #installation-add {
   position: relative;
-  width: 90%;
+  width: 95%;
   height: 125px;
   margin-top: 3%;
-  margin-left: 4%;
+  margin-left: 2.5%;
   font-size: 16px;
   border: 2px;
   border: 2px dotted #2a4092;
@@ -244,7 +258,7 @@
 }
 #installation-add-button {
   margin-top: -3%;
-  margin-left: 40%;
+  margin-left: 35%;
   background-color: #db4196;
   border-color: #db4196;
   color: white;
@@ -255,7 +269,7 @@
   text-align: center;
 }
 /************************************************************INSTALLATIONS**************************************************/
-/***MOBILE************************************************************************************************************************/
+/***MOBILE******************************************************************************************************************/
 
 #installation-col-container {
   position: absolute;
@@ -265,49 +279,59 @@
 #installation-container {
   position: relative;
   margin-top: 5%;
-  margin-left: 4%;
-  width: 92%;
+  margin-left: 2.5%;
+  width: 95%;
   height: 360px;  
   font-family: Montserrat;
   color: #2a4092; 
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
+#installation-tittle-button-container {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  margin-top: -8%;
+  margin-left: -10%;
+  background-color: red;
+}
 #installation-tittle {
   font-size: 18px;
   font-weight: 500;
   line-height: 2em;
-  width: 120%;
+  width: 100%;
   height: 40px;
   text-align: center;
   color: #2a4092;
   z-index: 1;
   background-color: white;
   opacity: 0.5;
-  margin-top: -10%;
-  margin-left: -10%;
-}
-#installation-button-container{
-  position: absolute;
-  width: 100%;
-  margin-top: -7%;
-  left: 30%;
-  background-color: transparent;
+  margin-top: -2%;
+  margin-left: 0%;
 }
 #installation-button {
   margin-top: -4%;
-  margin-left: -6%;
+  right: -40%;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
   font-size: 1.5em;
   border: none;
 }
-#installation-add-image {
-  margin-top: -10.5%;
+#installation-add-image-container {
+  width: 100%;
+  height: 300px;
+  margin-top: -10%;
   margin-left: -10%;
-  width: 120%;
-  height: 300px; 
+  margin: 0 auto;
+}
+#installation-add-image {
+  object-fit: fill;
+  width: 100%;
+  max-width: 100%;
+  margin-top: -10%;
+  margin-left: 0%;
+  height: 310px; 
   border-bottom: 5px solid #2a4092;
 }
 #installation-text-fields {
@@ -316,7 +340,7 @@
   margin-left: 0%;
 }
 #panel-data-labels {
+  margin-top: 5%;
   margin-left: -5%;
 }
-
 }

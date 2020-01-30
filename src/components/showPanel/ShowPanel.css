@@ -1,106 +1,371 @@
 @import '~antd/dist/antd.css';
 
-#chat-panel-exterior-background {
+@import '~antd/dist/antd.css';
+
+/************************************************************SHOW*PANEL*************************************************/
+/***COMPUTER************************************************************************************************************/
+
+#show-panel-outside {
   position: fixed;
   background-color: #eaedf1;
-  height: 100vh; 
-  width: 100vw;
+  height: 100%; 
+  width: 100%;
 }
-#chat-panel-container {
-  position: absolute;
-  margin-left: 40%;
-  height: 92%;
+#show-panel-card-container {
+  float: right;
   width: 424px;
+  height: 90vh;
+  margin-top: 1%;
+  right: 3%;  
   font-family: Montserrat;
   color: #2a4092;
-  padding: 0;
-  margin-top: 1%;
+  padding: 0; 
+  text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-#chat-panel-tittle {
+#show-panel-button-container {
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 90%;
+}
+#show-panel-card-image-container {
+  /* object-fit: fill;  */
+  width: 424px;
+  height: 250px;
+  margin-top: -2.25%;
+  margin-left: -6.8%;
+}
+#show-panel-text-fields {
+  margin-top: 0%;
+  margin-left: 0%;
+}
+
+/*********************************************************************SHOW*PANEL***************/
+/***COMPUTER***********************************************************************************/
+
+#show-panel-card-tittle {
   position: absolute;
   font-size: 18px;
-  padding-top: 5px;
   font-weight: 500;
-  line-height: 1.5em;
-  width: 100%;
+  line-height: 2em;
+  width: 424px;
   height: 40px;
   text-align: center;
   color: #2a4092;
   z-index: 1;
   background-color: white;
   opacity: 0.5;
-  margin-top: 0%;
-  margin-left: 0%;
+  margin-top: -6.8%;
+  margin-left: -6.8%;
 }
-#chat-panel-close-button{
+#show-panel-card-tittle:hover {
   position: absolute;
-  top: 5%;
-  right: 2%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2em;
+  width: 424px;
+  height: 40px;
+  text-align: center;
+  color: #2a4092;
+  z-index: 1;
+  background-color: white;
+  opacity: 1;
+  margin-top: -6.8%;
+  margin-left: -6.8%;
+}
+#show-panel-close-button {
+  float: right; 
+  margin-top: -1%;
+  margin-right: 0%;
+  line-height: 1em;
   background-color: transparent;
-  color: red;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.5em;
   border: none;
+  z-index: 1;
+  border-radius: none;
 }
-#installation-image {
+#show-panel-card-no-image-panel {
+  justify-content: center;
+  object-fit: fill;
+  margin-top: -4%;
+  margin-left: 0%;
   width: 100%;
-  height: 100%;
+  height: 250px;
+  background-color: #eaedf1;
+  border-bottom: 5px solid #2a4092;
 }
-/* #chat-panel-user-name {
-  margin-top: 1%;
-  margin-left: -6.5%;
-  width: 422.5px;
+#show-panel-card-panel-image {
+  justify-content: center;
+  margin-top: -4%;
+  margin-left: 0%;
+  width: 100%;
+  height: 250px;
+  border-bottom: 5px solid #2a4092;
+}
+#show-panel-user-name {
+  margin-top: -2%;
+  margin-left: -6.7%;
+  width: 424px;
   height: 35px;
-  padding-top: 3px;
+  line-height: 2;
+  font-weight: 600;
   text-align: center;
   color: #2a4092;
   background-color: #eeeeee
-} */
+}
+
+/************************************************************SHOW*PANEL**************************************************/
+/***TABLET****************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #show-panel-outside {
+    position: fixed;
+    background-color: #eaedf1;
+    height: 100%; 
+    width: 100%;
+  }
+  #show-panel-card-container {
+    float: right;
+    width: 424px;
+    height: 90vh;
+    margin-top: 1%;
+    right: 2%;  
+    font-family: Montserrat;
+    color: #2a4092;
+    padding: 0; 
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  #show-panel-card-image-container {
+    /* object-fit: fill;  */
+    width: 424px;
+    height: 250px;
+    margin-top: -6.5%;
+    margin-left: -6.8%;
+  }
+  #show-panel-text-fields {
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+
+  /*******************************************************************SHOW*PANEL***************/
+  /***TABLET***********************************************************************************/
+  
+  #show-panel-card-tittle {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2em;
+    width: 424px;
+    height: 40px;
+    text-align: center;
+    color: #2a4092;
+    z-index: 1;
+    background-color: white;
+    opacity: 0.5;
+    margin-top: -7%;
+    margin-left: -6.8%;
+  }
+  #show-panel-close-button {
+    float: right; 
+    margin-top: -7.5%;
+    margin-right: 5%;
+    line-height: 3.3em;
+    background-color: transparent;
+    color: #ff0000;
+    opacity: 1;
+    font-size: 1.5em;
+    border: none;
+    z-index: 1;
+    border-radius: none;
+  }
+  #show-panel-card-no-image-panel {
+    justify-content: center;
+    object-fit: fill;
+    margin-top: -4.5%;
+    margin-left: 0%;
+    width: 100%;
+    height: 250px;
+    background-color: #eaedf1;
+    border-bottom: 5px solid #2a4092;
+  }
+  #show-panel-card-panel-image {
+    justify-content: center;
+    margin-top: -4.5%;
+    margin-left: 0%;
+    width: 100%;
+    height: 250px;
+    border-bottom: 5px solid #2a4092;
+  }
+  #show-panel-user-name {
+    margin-top: -2%;
+    margin-left: -6.7%;
+    width: 424px;
+    height: 35px;
+    line-height: 2;
+    font-weight: 600;
+    text-align: center;
+    color: #2a4092;
+    background-color: #eeeeee
+  }
+}
+
+/************************************************************SHOW*PANEL**************************************************/
+/***MOBILE***************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #show-panel-outside {
+    position: fixed;
+    background-color: #eaedf1;
+    height: 100vh; 
+    width: 100%;
+  }
+  #show-panel-card-container {
+    float: right;
+    width: 100vw;
+    height: 90vh;
+    margin-top: 0%;
+    right: 0%;  
+    font-family: Montserrat;
+    color: #2a4092;
+    padding: 0; 
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  #show-panel-card-image-container {
+    /* object-fit: fill;  */
+    width: 100vh;
+    height: 230px;
+    margin-top: -7.5%;
+    margin-left: -7.5%;
+    /* background-color: red; */
+  }
+  #show-panel-text-fields {
+    margin-top: 2%;
+    margin-left: 0%;
+  }
+
+  /**************************************************************************SHOW*PANEL***************/
+  /***MOBILE***********************************************************************************/
+  
+  #show-panel-card-tittle {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2em;
+    width: 100vw;
+    height: 40px;
+    text-align: center;
+    color: #2a4092;
+    z-index: 1;
+    background-color: white;
+    opacity: 0.5;
+    margin-top: -7.2%;
+    margin-left: -7.7%;
+  }
+  #show-panel-close-button {
+    float: right; 
+    margin-top: -3%;
+    margin-right: 5%;
+    line-height: 2.7em;
+    background-color: transparent;
+    color: #ff0000;
+    opacity: 1;
+    font-size: 1.5em;
+    border: none;
+    z-index: 1;
+    border-radius: none;
+  }
+  #show-panel-card-no-image-panel{
+    justify-content: center;
+    object-fit: contain;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100vh;
+    height: 230px;
+    background-color: #eaedf1;
+    border-bottom: 5px solid #2a4092;
+  }
+  #show-panel-card-panel-image {
+    justify-content: center;
+    object-fit: contain;
+    margin-top: 0%;
+    margin-left: -44.5%;
+    width: 100vw;
+    height: 230px;
+    border-bottom: 5px solid #2a4092;
+  }
+  #show-panel-user-name {
+    margin-top: -2%;
+    margin-left: -8%;
+    width: 100%;
+    height: 35px;
+    line-height: 2;
+    font-weight: 600;
+    text-align: center;
+    color: #2a4092;
+    background-color: #eeeeee
+  }
+}
+
+/*****************************************************DATA*************************************************/
+
 #show-panel-divider {
   margin-top: 0%;
   margin-bottom: 0%;
+  margin-left: -6%;
+  width: 112%;
 }
-#installation-text-fields { 
-  padding: 0%;
-  margin: 1%;
+#show-panel-data-labels-card {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 12px;
+  margin-top: -10%;
+}
+#show-panel-data-labels-first {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 12px;
+  margin-top: -5%;
+}
+#show-panel-data-labels {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 12px;
 }
 #show-panel-data-fields {
-  margin-top: -11%;
-  color:
-  #2a4092;
+  font-family: Montserrat;
+  margin-top: -3%;
+  font-weight: 600;
+  color: #2a4092;
+  font-size: 16px;
   text-align: center;
+}
+#show-panel-data-labels-second {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 12px;
 }
 #show-panel-data-fields-second {
-  margin-top: -8%;
+  font-family: Montserrat;
+  margin-top: -3%;
+  font-weight: 600;
   color: #2a4092;
+  font-size: 16px;
   text-align: center;
 }
-#chat-panel-data-labels-third {
-    margin-top: 0.5%;
-    color: #bfc5d2;
-    text-align: center;
+#show-panel-data-labels-third {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 12px;
 }
 #show-panel-data-fields-third {
-  margin-top: -3%;
+  font-family: Montserrat;
+  margin-top: -2%;
+  font-weight: 600;
   color: #2a4092;
+  font-size: 16px;
   text-align: center;
-}
-#button-container-show-panel {
-  margin-top: 7%;
-  margin-left: 10%;
-}
-#show-panel-edit-button {
-  background-color: #2a4092;
-  color: #ffffff;
-  line-height: 1.5;
-  height: 40px;
-  width: 150px;
-  border-radius: 0;
-}
-#show-panel-save-button {
-  background-color: #db4196;
-  color: #ffffff;
-  line-height: 1.5;
-  height:40px;
-  width: 150px;
-  border-radius: 0;
 }

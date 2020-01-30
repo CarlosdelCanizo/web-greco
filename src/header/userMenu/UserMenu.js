@@ -3,9 +3,11 @@ import { Menu, Icon, Button, Drawer } from 'antd'
 import { Link } from "react-router-dom"
 import Profile from '../../utils/profile/Profile'
 import iconUser from '../../assets/icon-user.svg'
+import axiosConfig from '../../api/axiosConfig'
+
+var access_token
 
 
-var access_token = JSON.parse(localStorage.getItem('access_token'))
 
 class UserMenu extends Component {
   state = {
@@ -33,7 +35,8 @@ class UserMenu extends Component {
 
   logOut = () => {
     localStorage.clear()
-    window.location.replace('');
+    this.isLoggedIn()
+    window.location.replace('/login');
   }
 
   isLoggedIn = () => {
@@ -44,8 +47,12 @@ class UserMenu extends Component {
     }
   }
 
+
+
   componentDidMount() {
-    this.isLoggedIn()
+    access_token = JSON.parse(localStorage.getItem('access_token'))
+    // this.isLoggedIn()
+
   }
 
   render() {

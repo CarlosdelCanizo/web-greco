@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Row, Col, Divider, Form, Card } from 'antd'
+import { Button, Row, Col, Divider, Form, Card, Icon } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -44,6 +44,13 @@ const SecondForm = (props) => {
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
             </div>
           </Col>
+
+          <Link to="/private-mapping">
+            <Button id="forms-close-button">
+              <Icon type="close" id="icon-x" />
+            </Button>
+          </Link>
+
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <h2 id="tittle-panel-registration">Installation location</h2>
           </Col>

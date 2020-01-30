@@ -8,14 +8,11 @@ import { Link } from 'react-router-dom'
 import './loginForm.css'
 import qs from 'qs'
 import { AuthContext } from '../../App'
-import { ProfileContext } from '../../utils/profile/ProfileContext'
 import axiosConfig from '../../api/axiosConfig'
 
 const LoginForm = (props) => {
 
   const { dispatch } = React.useContext(AuthContext)
-  const profileContext = useContext(ProfileContext)
-
 
   const initialState = {
     email: "",
@@ -93,7 +90,6 @@ const LoginForm = (props) => {
       })
       .then(result => {
         var data = result.data
-
         if (data.isPreviouslyLogged === true) {
           props.history.push('/private-mapping')
         }

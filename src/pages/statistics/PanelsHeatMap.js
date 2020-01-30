@@ -11,9 +11,9 @@ class PanelsHeatMap extends React.Component {
     mapHidden: false,
     layerHidden: false,
     // addressPoints,
-    radius: 4,
+    radius: 8,
     blur: 8,
-    max: 0.5,
+    max: 1.5,
     limitAddressPoints: true
   };
 
@@ -95,7 +95,7 @@ class PanelsHeatMap extends React.Component {
             latitudeExtractor={m => m[0]}
             longitudeExtractor={m => m[1]}
             gradient={gradient}
-            intensityExtractor={m => parseFloat(m[2])}
+            intensityExtractor={m => parseFloat(m[2] / 10)}
             radius={Number(this.state.radius)}
             blur={Number(this.state.blur)}
             max={Number.parseFloat(this.state.max)}

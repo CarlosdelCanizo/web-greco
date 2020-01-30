@@ -58,6 +58,9 @@ const Routes = () => {
           <Route path="/show-panel-details" component={ShowPanelDetails} />
           <Route path="/sixth" component={SixthForm} />
           <Route path="/feed-panel" component={FeedPanel} />
+
+          <Route path="/fourthl" component={FourthForm} />
+
           <PrivateRoute
             path="/first"
             auth={state.isAuthenticated}

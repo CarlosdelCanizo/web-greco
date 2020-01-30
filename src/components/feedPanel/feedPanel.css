@@ -21,11 +21,16 @@
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
+#feed-button-container {
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 90%;
+}
 #feed-card-image-container {
   /* object-fit: fill;  */
   width: 424px;
   height: 250px;
-  margin-top: 13%;
+  margin-top: -2.25%;
   margin-left: -6.8%;
 }
 #feed-panel-text-fields {
@@ -78,9 +83,9 @@
 }
 #feed-close-button {
   float: right; 
-  margin-top: 7.5%;
+  margin-top: -1%;
   margin-right: 0%;
-  line-height: 3.3em;
+  line-height: 1em;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;

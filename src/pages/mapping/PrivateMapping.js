@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Button, Row, Col, Divider } from 'antd';
+import { Button, Row, Col, Divider, Tooltip, Icon } from 'antd';
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import 'leaflet/dist/leaflet.css';
@@ -36,7 +36,6 @@ const PanelImage = ({ imageUrl }) => {
   }
 };
 
-
 const PrivateMapping = () => {
 
   let DefaultIcon = L.icon({
@@ -54,6 +53,28 @@ const PrivateMapping = () => {
 
   const [panels, setPanels] = useState([])
   const [imageUrl, setImageUrl] = useState();
+
+  //LIKE
+  const [like, setLike] = useState(false)
+  const [likes, setLikes] = useState(0)
+
+  //GIVE LIKE
+  const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+  const giveLike = (id) => {
+    var body
+    axiosConfig
+      .post("/like/givelike/" + id, body,
+        {
+          headers: {
+            "Authorization": access_token
+          }
+        })
+      .then(response => {
+        setLikes(response.data);
+        setLike(!like)
+      });
+
+  }
 
   //GET PANEL IMAGE
   function getImage(id) {
@@ -75,7 +96,6 @@ const PrivateMapping = () => {
         setPanels(response.data);
       });
   }, []);
-
 
   return (
     <React.Fragment>
@@ -107,9 +127,23 @@ const PrivateMapping = () => {
                   console.log('img not exist');
                   setImageUrl('no-image');
                 }
+                setLikes(item.likes)
+                //FALTA PINTAR EL LIKE SI ESTÁ DADO
               }}
             >
               <Popup >
+                <span>
+                  <Tooltip title="Like" id="tooltip-like">
+                    <Icon style={{ fontSize: '16px', color: '#c3c3c3' }}
+                      type="like"
+                      theme={like ? 'twoTone' : 'outlined'}
+                      onClick={() => {
+                        giveLike(item.id)
+                      }}
+                      id="like-icon" />
+                  </Tooltip>
+                  <p id="text-likes">likes:</p> <p id="number-likes">{likes}</p>
+                </span>
                 <div id="public-private-mapping-popup">
                   <Row>
                     <Col span={24} id="public-private-mapping-installation-name">
@@ -123,7 +157,7 @@ const PrivateMapping = () => {
                       </div>
                     </Col>
                   </Row>
-                  <Divider id="show-panel-divider" />
+                  <Divider id="divider-mapping-top" />
                   <Row id="public-private-mapping-text-fields">
                     <Col span={8}>
                       <h5 id="public-private-mapping-data-labels">
@@ -154,7 +188,7 @@ const PrivateMapping = () => {
                     <Col span={12}>
                       <Link to={
                         {
-                          pathname: "//show-panel-details",
+                          pathname: "/show-panel-details",
                           myPanel: { item }
                         }
                       }>

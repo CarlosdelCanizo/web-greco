@@ -5,207 +5,229 @@ import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import "./ShowPanel.css"
 import { Link } from "react-router-dom";
+import moment from 'moment'
+import spinner from "../../assets/spinner.svg";
+import noImage from '../../assets/solar-panel.svg';
+
+const PanelImage = ({ imageUrl }) => {
+  switch (imageUrl) {
+    case null: {
+      return <img src={spinner} alt="LOADING..." />;
+    }
+    case 'no-image': {
+      return <img
+        src={noImage}
+        alt="image"
+        id="feed-card-no-image-panel"
+      />
+    }
+    default: {
+      return (
+        <img
+          src={imageUrl}
+          alt="image"
+          id="feed-card-panel-image"
+        />
+      );
+    }
+  }
+};
 
 const ShowPanelDetails = (props) => {
 
   const myPanel = props.location.myPanel
   console.log("El my panel from props", myPanel)
   const [showData, setData] = useState({})
-  var panelId = [myPanel.item.id]
+  // var panelId = [myPanel.item.id]
 
-  //GET MY SOLAR PANELS
-  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axiosConfig(
-  //       '/solarPanel/' + "248",
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "Authorization": access_token
-  //         }
-  //       }
-  //     );
-  //     setData(result);
-  //     console.log("SHOW DATA PANEL DETAILS", showData)
-  //     console.log("SHOW RESULT DATA", result.data)
-  //   };
-  //   fetchData();
-  // }, []);
 
-  //GET ALL PANELS
-  // useEffect(() => {
-  //   axiosConfig
-  //     .get('/solarPanel/' + 248)
-  //     .then(response => {
-  //       setData(response.data);
-  //       console.log("SHOW DATA PANEL DETAILS", showData)
-  //       console.log("SHOW RESULT DATA", response.data)
-  //     });
-  // }, []);
+  const [imageUrl, setImageUrl] = useState();
 
+  useEffect(() => {
+    function getImage(id) {
+      axiosConfig({
+        url: '/multimedia/' + id + '/getImage/',
+        method: 'GET',
+        responseType: 'blob'
+      }).then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        setImageUrl(url);
+      });
+    }
+    if ([myPanel.item.multimedia] && [myPanel.item.multimedia.length] > 0) {
+      getImage([myPanel.item.multimedia[0].id]);
+    } else {
+      setImageUrl('no-image');
+    }
+  }, []);
 
   return (
     <React.Fragment>
       <Header />
-      <div id="chat-panel-exterior-background">
-        <Card id="chat-panel-container">
+      <div id="show-panel-outside">
+        <Card id="show-panel-card-container">
           <Row>
-            <Col span={24} id="chat-panel-tittle">
-              <p>{props.installationName}</p>
-              <Link to="/my-installations">
-                <Button id="chat-panel-close-button">
-                  <Icon type="close" />
-                </Button>
-              </Link>
-            </Col>
+            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+              <p id="show-panel-card-tittle">{myPanel.item.installationName}</p>
+              <div id="show-panel-button-container">
+                <Link to="private-mapping">
+                  <Button id="show-panel-close-button">
+                    <Icon type="close" />
+                  </Button>
+                </Link>
+              </div>
+              <div id="show-panel-card-image-container">
+                <PanelImage imageUrl={imageUrl} />
+              </div>
+            </Col >
           </Row>
           <Row>
-            <Col span={24}>
-              <img src={solar} alt="panel-image" id="installation-image" />
-            </Col>
-          </Row>
-          <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
             <Col span={8}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels-card">
                 Electrical capacity
-                </h5>
+                  </h5>
               <h4 id="show-panel-data-fields">
-                {props.electricalCapacity} Kw
-                </h4>
+                {myPanel.item.electrical_capacity} Kw
+                  </h4>
             </Col>
             <Col span={8}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels-card">
                 Surface
-                </h5>
+                  </h5>
               <h4 id="show-panel-data-fields">
-                {props.surface}m²
-                </h4>
+                {myPanel.item.surface} m²
+                  </h4>
             </Col>
             <Col span={8}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels-card">
                 Inverter capacity
-                </h5>
+                  </h5>
               <h4 id="show-panel-data-fields">
-                {props.inverterCapacity}Kw
-                </h4>
+                {myPanel.item.inverterCapacity} Kw
+                  </h4>
             </Col>
+            <Row >
+              <div id="feed-panel-user-name-container">
+                <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                  <h3 id="feed-panel-user-name" >{myPanel.item.username}</h3>
+                </Col>
+              </div>
+            </Row>
           </Row>
-          <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels-first">
                 Installation property
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.installationProperty}
+                {myPanel.item.installationProperty}
               </h4>
             </Col>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels-first">
                 Technollogy used
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.technologyUsed}
+                {myPanel.item.technologyUsed}
               </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Tracking orientation
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.panelTrackingOrientation}
+                {myPanel.item.panelTrackingOrientation ? (<p>Yes</p>) : (<p>No</p>)}
               </h4>
             </Col>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Tracking inclination
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.panelTrackingIncliation}
+                {myPanel.item.panelTrackingIncliation ? (<p>Yes</p>) : (<p>No</p>)}
               </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Orientation
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.orientation}°
+                {myPanel.item.orientation}°
                 </h4>
             </Col>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Inclination
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.inclination}°
+                {myPanel.item.inclination}°
                 </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Battery
                 </h5>
-              <h4 id="show-panel-data-fields-second">
-                {props.battery}
-              </h4>
+              {myPanel.item.battery ?
+                (<h4 id="show-panel-data-fields-second">
+                  Yes
+                </h4>)
+                :
+                (<h4 id="show-panel-data-fields-second">
+                  No
+                </h4>)
+              }
             </Col>
             <Col span={12}>
-              <h5 id="chat-panel-data-labels">
+              <h5 id="show-panel-data-labels">
                 Commissioning date
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {props.commissioningDate}
+                {moment(myPanel.item.creationDate).format('DD/MM/YYYY')}
               </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={24}>
-              <h5 id="chat-panel-data-labels-third">
+              <h5 id="show-panel-data-labels-third">
                 Battery description
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {props.batteryDescription}
+                {myPanel.item.batteryDescription}
               </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={24}>
-              <h5 id="chat-panel-data-labels-third">
+              <h5 id="show-panel-data-labels-third">
                 Installation type
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {props.installationType}
+                {myPanel.item.installationType}
               </h4>
             </Col>
           </Row>
           <Divider id="show-panel-divider" />
-          <Row id="installation-text-fields">
+          <Row>
             <Col span={24}>
-              <h5 id="chat-panel-data-labels-third">
+              <h5 id="show-panel-data-labels-third">
                 Observation
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {props.observation}
+                {myPanel.item.observation}
               </h4>
             </Col>
           </Row>
-          {/* <div id="button-container-show-panel">
-            <Button id="show-panel-edit-button" >EDIT</Button>
-            <Button id="show-panel-save-button" >SAVE</Button>
-          </div> */}
-          <Divider />
         </Card>
       </div>
     </React.Fragment >
