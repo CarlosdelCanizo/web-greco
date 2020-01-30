@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from "react"
+import React, { useState, useEffect, useContext, useRef } from "react"
 import { Input, Button, Form, Icon, Col, Card, Row, Avatar } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
@@ -36,16 +36,16 @@ const PanelImage = ({ imageUrl }) => {
 };
 
 //INPUT BOX AND SEND BUTTON
-const FeedForm = ({ panelId }) => {
+const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
 
   const [message, setMessage] = useState("");
-  const [messagesList, setMessagesList] = useState([])
+  // const [messagesList, setMessagesList] = useState([])
 
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
     if (message) {
-      setMessagesList(messagesList.concat(message))
+      // setMessagesList(messagesList.concat(message))
       postComment()
     }
     setMessage("")
@@ -68,6 +68,16 @@ const FeedForm = ({ panelId }) => {
       })
       .then(response => {
         const dataResponse = response.data;
+        let newResponse = {
+          id: dataResponse.id,
+          text: dataResponse.text,
+          creationDate: dataResponse.creationDate,
+          userID: dataResponse.owner.userId,
+          userName: dataResponse.owner.username,
+          readed: dataResponse.readed,
+          solarPanelId: panelId
+        }
+        setMessagesList(messagesList.concat(newResponse));
       })
       .catch(function (error) {
         console.log(error);
@@ -94,12 +104,14 @@ const FeedForm = ({ panelId }) => {
 };
 
 //MESSAGES LIST
-const FeedList = ({ panelId }) => {
+const FeedList = ({ panelId, messagesList, setMessagesList }) => {
 
   const profileContext = useContext(ProfileContext)
   var username = profileContext.username
-
-  const [messagesList, setMessagesList] = useState([]);
+  // const messagesEndRef = React.useRef(null)
+  // const scrollToBottom = () => {
+  //   messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+  // }
 
   //AVATAR
   const getName = (name) => {
@@ -107,22 +119,33 @@ const FeedList = ({ panelId }) => {
   }
 
   //INITIAL COMMENTS COMMIT
-  const fetchMessages = useCallback(() => {
-    axiosConfig.get('/solarPanel/' + panelId + '/comments',
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": access_token
-        }
-      })
-      .then(response => {
-        const newList = response.data
-        setMessagesList(newList)
-      })
-  }, [panelId, messagesList])
-
+  var render = true;
   useEffect(() => {
-    fetchMessages();
+    function fetchMessages() {
+      if (render) {
+        axiosConfig.get('/solarPanel/' + panelId + '/comments',
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": access_token
+            }
+          })
+          .then(response => {
+            const newList = response.data;
+            if (messagesList.length !== newList.length) {
+              console.log("lenght messages y response", messagesList.length, newList.length);
+              render = true;
+              setMessagesList(newList);
+            } else {
+              console.log("lenght messages y response", messagesList.length, newList.length);
+              render = false;
+            }
+
+          })
+      }
+    }
+    fetchMessages()
+    // scrollToBottom()
   })
 
   return (
@@ -154,7 +177,7 @@ const FeedList = ({ panelId }) => {
                 </div>
               </React.Fragment>
               )}
-
+            {/* <div ref={messagesEndRef} /> */}
           </div>
         ))}
       </div>
@@ -164,8 +187,19 @@ const FeedList = ({ panelId }) => {
 
 const FeedPanel = (props) => {
 
-  const myPanel = props.location.myPanel
+  // const myPanel = "";
+  // if (props.location.myPanel) {
+  // myPanel = props.location.myPanel
+  // } else {
+  // split
+  // contar cuantos items han salido
+  // split[max]
+  //let panelId = document.location.href.split("/")[length];
+  //myPanel = panelId;
+  // }
+  const myPanel = props.location.myPanel;
   const [imageUrl, setImageUrl] = useState();
+  const [messagesList, setMessagesList] = useState([]);
 
   useEffect(() => {
     function getImage(id) {
@@ -244,12 +278,12 @@ const FeedPanel = (props) => {
             </Row>
             <Row>
               <div id="feed-list-container">
-                <FeedList panelId={myPanel.item.id} />
+                <FeedList panelId={myPanel.item.id} messagesList={messagesList} setMessagesList={setMessagesList} />
               </div>
             </Row>
             <Row>
               <div id="feed-form-container">
-                <FeedForm panelId={myPanel.item.id} />
+                <FeedForm panelId={myPanel.item.id} messagesList={messagesList} setMessagesList={setMessagesList} />
               </div>
             </Row>
           </Card>

@@ -27,6 +27,7 @@ import NotificationsList from '../header/notificationsMenu/NotificationsList';
 import PanelList from '../pages/myInstallations/PanelList';
 import FeedPanel from '../components/feedPanel/FeedPanel';
 import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard';
+import DownloadDatabase from '../header/dataBase/DownloadData';
 
 const Routes = () => {
   const { state } = React.useContext(AuthContext);
@@ -59,7 +60,7 @@ const Routes = () => {
           <Route path="/sixth" component={SixthForm} />
           <Route path="/feed-panel" component={FeedPanel} />
 
-          <Route path="/fourthl" component={FourthForm} />
+          <Route path="/download" component={DownloadDatabase} />
 
           <PrivateRoute
             path="/first"

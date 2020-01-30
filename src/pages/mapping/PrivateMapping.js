@@ -55,7 +55,7 @@ const PrivateMapping = () => {
   const [imageUrl, setImageUrl] = useState();
 
   //LIKE
-  const [like, setLike] = useState(false)
+  const [isLike, setLike] = useState(null)
   const [likes, setLikes] = useState(0)
 
   //GIVE LIKE
@@ -71,7 +71,7 @@ const PrivateMapping = () => {
         })
       .then(response => {
         setLikes(response.data);
-        setLike(!like)
+        setLike(!isLike)
       });
 
   }
@@ -128,7 +128,7 @@ const PrivateMapping = () => {
                   setImageUrl('no-image');
                 }
                 setLikes(item.likes)
-                //FALTA PINTAR EL LIKE SI ESTÁ DADO
+                setLike(item.selfLiked)
               }}
             >
               <Popup >
@@ -136,7 +136,7 @@ const PrivateMapping = () => {
                   <Tooltip title="Like" id="tooltip-like">
                     <Icon style={{ fontSize: '16px', color: '#c3c3c3' }}
                       type="like"
-                      theme={like ? 'twoTone' : 'outlined'}
+                      theme={isLike ? 'twoTone' : 'outlined'}
                       onClick={() => {
                         giveLike(item.id)
                       }}
@@ -201,6 +201,7 @@ const PrivateMapping = () => {
                       <Link to={
                         {
                           pathname: "/feed-panel",
+                          // pathname: `/feed-panel/${item.id}`,
                           myPanel: { item }
                         }
                       }>

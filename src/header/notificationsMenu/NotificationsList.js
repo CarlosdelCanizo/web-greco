@@ -8,8 +8,7 @@ import axiosConfig from '../../api/axiosConfig'
 function NotificationsList() {
 
   const [notifications, setNotifications] = useState([])
-  // const [idPanel, setIdPanel] = useState()
-
+  const [idPanels, setIdPanels] = useState([])
 
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
@@ -23,7 +22,10 @@ function NotificationsList() {
       })
       .then(response => {
         const newList = response.data
-        setNotifications(newList);
+        setNotifications(newList)
+        console.log("las notificaciones:", newList)
+        setIdPanels({ ...idPanels, [idPanels]: response.data })
+        console.log("idPanels:", idPanels)
         // setIdPanel(newList[0].solarPanelId)
       })
   }

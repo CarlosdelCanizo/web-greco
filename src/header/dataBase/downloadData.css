@@ -1,0 +1,18 @@
+#download-outside {
+  position: fixed;
+  background-color: #eaedf1;
+  height: 100%; 
+  width: 100%;
+}
+#download-card-container {
+  float: left;
+  width: 424px;
+  height: 90vh;
+  margin-top: 1%;
+  left: 3%;  
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0; 
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}

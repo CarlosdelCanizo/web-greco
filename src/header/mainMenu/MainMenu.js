@@ -72,7 +72,7 @@ class MainMenu extends Component {
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="download">
-                            <Link to="/about" className="nav-text">
+                            <Link to="/download" className="nav-text">
                                 <Icon type="download" /> Download database
                             </Link>
                         </Menu.Item>

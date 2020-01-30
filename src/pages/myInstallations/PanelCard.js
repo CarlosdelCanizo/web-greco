@@ -94,7 +94,9 @@ function PanelCard({ panel }) {
           "Authorization": access_token
         }
       })
-      .then(result => console.log("Panel Borrado:", result));
+      .then(result =>
+        console.log("Panel Borrado:", result));
+
   }
 
   return (
