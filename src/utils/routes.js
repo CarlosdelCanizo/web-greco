@@ -60,7 +60,7 @@ const Routes = () => {
           <Route path="/sixth" component={SixthForm} />
           <Route path="/feed-panel" component={FeedPanel} />
 
-          <Route path="/download" component={DownloadDatabase} />
+          <Route path="/second" component={SecondForm} />
 
           <PrivateRoute
             path="/first"
@@ -141,6 +141,12 @@ const Routes = () => {
             path="/my-challenges"
             auth={state.isAuthenticated}
             component={ChallengeLevelCard}
+          />
+
+          <PrivateRoute
+            path="/download"
+            auth={state.isAuthenticated}
+            component={DownloadDatabase}
           />
 
         </Switch>

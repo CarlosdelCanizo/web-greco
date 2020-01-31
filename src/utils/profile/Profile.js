@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Avatar } from 'antd'
 import './profile.css'
 import { ProfileContext } from './ProfileContext'
 
 const Profile = () => {
 
-  const profileContext = useContext(ProfileContext)
+  useEffect(() => {
+    const profileContext = useContext(ProfileContext)
+    console.log("EL CULPABLE", profileContext)
+  }, []);
+
 
   function getName() {
     let name = profileContext.username;

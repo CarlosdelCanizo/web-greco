@@ -6,36 +6,36 @@ export const ProfileContext = createContext();
 const ProfileProvider = ({ children }) => {
 
   const userProfile = {
-    username: "",
-    email: "",
+    username: '',
+    email: '',
     isPreviouslyLogged: false,
     isLoggedin: false
   }
 
-  const [userInfo, setUserInfo] = useState({ userProfile });
-  const [isLoggedin, setLoggedIn] = useState(false)
+  const [userInfo, setUserInfo] = useState({ ...userProfile });
+  const [isLoggedin, setLoggedIn] = useState(false);
 
 
   useEffect(() => {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     if (access_token) {
-      axiosConfig.get("http://10.0.10.195:8088/users/getMyUserInfo",
+      axiosConfig.get("/users/getMyUserInfo",
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": 'application/json',
             "Authorization": access_token
           }
         })
         .then(result => {
-          setUserInfo(result.data)
+          setUserInfo({ ...result.data })
           setLoggedIn(true)
         });
     }
   }, []);
 
-  const username = userInfo.username
-  const email = userInfo.email
-  const isPreviouslyLogged = userInfo.isPreviouslyLogged
+  const username = userInfo.username;
+  const email = userInfo.email;
+  const isPreviouslyLogged = userInfo.isPreviouslyLogged;
 
   return (
     <ProfileContext.Provider

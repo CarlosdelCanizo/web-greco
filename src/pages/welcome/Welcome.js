@@ -1,10 +1,13 @@
 import React from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
-import { Button, Row, Col, Divider } from 'antd'
+import { Button, Row, Col, Divider, Alert } from 'antd'
 import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './welcome.css'
+
+var coordinates = localStorage.getItem('coordinates')
+console.log("Les coordinates", coordinates)
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -15,6 +18,7 @@ class Welcome extends React.Component {
   }
   handleChange(event) {
     this.setState({ value: event.target.value });
+    console.log("el handle event", this.state.value)
   }
   variable = window.variable
 
@@ -30,6 +34,7 @@ class Welcome extends React.Component {
 
           <div id="geo_response" />
           <div id="gyro_response" />
+
           <input id="prueba-comunicacion" name="prueba-comunicacion"
             value={this.state.value}
             onClick={this.handleChange}>
@@ -37,6 +42,21 @@ class Welcome extends React.Component {
           <div>
             <p>{this.state.value}</p>
           </div>
+
+          {/* <Alert
+            message="Success!"
+            description="Get Coordinates"
+            type="success"
+            showIcon
+            closable
+            onClose={onClose}
+          /> : null} */}
+
+
+          <Button
+          >
+            Get Coordinates
+          </Button>
 
           <div id="inside-welcome-container" >
             <h1 id="welcome-title-text" >

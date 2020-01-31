@@ -30,6 +30,24 @@ const SecondForm = (props) => {
     setLocation(true)
   }
 
+  //COMUNICACIO
+
+  // function handleChange(event) {
+  //   setCoordinates({ value: event.target.value });
+
+  // }
+  // variable = window.variable
+
+  function setMarker(coords) {
+    // let traduccion_coordenadas = {}
+    // traduccion_coordenadas.lat = coords.Latitude
+    // traduccion_coordenadas.lng = coords.Longitude
+    setLat(coords.Latitude)
+    setLon(coords.Longitude)
+    // MapsCoords.handleClick(traduccion_coordenadas)
+  }
+
+
   return (
     <Row>
       <div id="background-panel-register">
@@ -70,7 +88,7 @@ const SecondForm = (props) => {
                   name="lat"
                   value={lat}
                   readOnly={true}
-                  required
+                  requiredn
                 />
 
               </Form.Item>
@@ -95,9 +113,28 @@ const SecondForm = (props) => {
                   setLon={setLon}
                   zoom={8}
                   center={{ lat: 39.8714243295929, lng: -0.06466403603553773 }}
-                />
+                >
+
+                </MapsCoords>
               </div>
             </Col>
+
+            <div id="geo_response" />
+            <div id="gyro_response" />
+
+            <input id="prueba-comunicacion" name="prueba-comunicacion"
+              // value={coordinates}
+              // onClick={handleChange}
+              //setMarker(JSON.parse(event.target.value).Longitude,JSON.parse(event.target.value).Latitude)
+              onClick={event => setMarker(JSON.parse(event.target.value))}
+            // onChange={event => setCoordinates(event.target.value)}
+            >
+
+            </input>
+            <div>
+              {/* <p>{coordinates}</p> */}
+            </div>
+
 
             <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Link to="/first">
