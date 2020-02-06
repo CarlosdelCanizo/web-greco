@@ -3,32 +3,33 @@ import PanelCard from './PanelCard'
 import axiosConfig from '../../api/axiosConfig'
 
 
-function PanelList() {
+const PanelList = (props) => {
 
   const [panelsList, setPanelsList] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-      const result = await axiosConfig(
-        '/solarPanel/getmysolarpanel',
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": access_token
-          }
+  const fetchPanels = async () => {
+    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+    const result = await axiosConfig(
+      '/solarPanel/getmysolarpanel',
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": access_token
         }
-      );
-      setPanelsList(result.data);
-    };
+      }
+    );
+    setPanelsList(result.data);
+  };
 
-    fetchData();
+
+  useEffect(() => {
+    fetchPanels();
   }, []);
 
   return (
     <div>
       {panelsList.map(panel => (
-        <PanelCard key={panel.id} panel={panel} />
+        <PanelCard key={panel.id} panel={panel} fetchPanels={fetchPanels} />
       ))}
     </div>
   )

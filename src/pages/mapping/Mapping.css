@@ -26,11 +26,24 @@ a.leaflet-popup-close-button {
   color:#bfc5d2;
   /* width: 100px; */
 }
+#text-likes-checked {
+  font-weight: 600;
+  margin-left: 12%;
+  margin-top: -7%;
+  color:#359eff;
+  /* width: 100px; */
+}
 #number-likes {
   font-weight: 600;
   margin-left: 26%;
   margin-top: -13%;
-  color:#2a4092;
+  color:#bfc5d2;
+}
+#number-likes-checked {
+  font-weight: 600;
+  margin-left: 26%;
+  margin-top: -13%;
+  color:#359eff;
 }
 #public-private-mapping-installation-name {
   position: absolute;
@@ -52,6 +65,9 @@ a.leaflet-popup-close-button {
   object-fit: cover; 
 }
 #container-img {
+  object-fit: initial;
+  width: 100%;
+  max-width: 100%;
   margin-top: -3%;
   margin-left: -7.5%;
 }

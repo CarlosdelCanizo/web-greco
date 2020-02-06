@@ -4,6 +4,7 @@ import axiosConfig from '../../api/axiosConfig';
 export const ProfileContext = createContext();
 
 const ProfileProvider = ({ children }) => {
+
   const userProfile = {
     username: '',
     email: '',
@@ -15,8 +16,7 @@ const ProfileProvider = ({ children }) => {
   const [isLoggedin, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    var access_token =
-      'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
+    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
     if (access_token) {
       axiosConfig.get("/users/getMyUserInfo",
         {
@@ -28,7 +28,6 @@ const ProfileProvider = ({ children }) => {
         .then(result => {
           setUserInfo({ ...result.data })
           setLoggedIn(true)
-
         });
     }
   }, []);
@@ -43,7 +42,9 @@ const ProfileProvider = ({ children }) => {
         username,
         email,
         isLoggedin,
-        isPreviouslyLogged
+        isPreviouslyLogged,
+        setUserInfo,
+        setLoggedIn
       }}
     >
       {children}

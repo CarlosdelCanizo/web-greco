@@ -51,9 +51,7 @@ border: none;
 z-index: 1;
 border-radius: none;
 }
-#icon-x {
-  
-}
+
 /***************************************************************FIRST*FORM*************************************************************/
 /***FIRST*FORM************************************************************************************************************************/
 
@@ -190,9 +188,11 @@ border-radius: none;
 }
 #radio-button {
   margin-left: 0%;
+  color: #db4196
  }
-#register-panel-inverter {
-  top: -4%;
+#register-panel-fields-sixth {
+  margin-top: 0%;
+  margin-left: 0%;
 }
 #panel-alone-input-label {
   display: block;
@@ -207,8 +207,22 @@ border-radius: none;
   margin-left: 30%;
   margin-bottom: -1%;
 }
-#inverter-capacity {
+#label-panel-six-large {
+  display: inline-block;
+  text-align: left;
+  width: 90%;
+  text-align: top;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
   color: #2a4092;
+  background-color:#f9f9f9;
+  margin-left: -10%;
+  margin-bottom: 0%;
+  border: 3px solid #f9f9f9;
+}
+#inverter-capacity {
+  /* color: #2a4092;
   width: 40%;
   height: 35px;
   font-family: Montserrat;
@@ -221,8 +235,37 @@ border-radius: none;
   border-top: 10px solid #f9f9f9;
   border-radius: 0;
   margin-left: 0%;
-  margin-top: -1%;
+  margin-top: -1%; */
+  color: #2a4092;
+  width: 80%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.6;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  margin-top: -5%;
+  margin-left: 0%;
 }
+#installation-type {
+  color: #2a4092;
+  width: 80%;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.6;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  margin-top: -5%;
+  margin-left: 0%;
+}
+
 #register-panels-button-container-first {
   margin-top: 0%;
   margin-left: 0%;

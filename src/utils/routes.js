@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import { AuthContext } from '../App';
 import Welcome from '../pages/welcome/Welcome';
 import LoginForm from '../pages/authentication/LoginForm';
@@ -22,29 +23,32 @@ import About from '../header/mainMenu/About';
 import EditUser from '../header/userMenu/EditUser';
 import ShowPanelDetails from '../components/showPanel/ShowPanelDetails';
 import InviteFriends from '../header/userMenu/InviteFriends';
-import Profile from '../utils/profile/Profile';
 import NotificationsList from '../header/notificationsMenu/NotificationsList';
-import PanelList from '../pages/myInstallations/PanelList';
 import FeedPanel from '../components/feedPanel/FeedPanel';
 import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard';
 import DownloadDatabase from '../header/dataBase/DownloadData';
+import ImageSlider from '../components/imageSlider/ImageSlider'
 
 const Routes = () => {
+
+  const history = createBrowserHistory();
   const { state } = React.useContext(AuthContext);
+
   const PrivateRoute = ({ component: Component, auth }) => (
     <Route
       render={props =>
         state.isAuthenticated === true ? (
           <Component auth={auth} {...props} />
         ) : (
-            <Redirect to={{ pathname: '/' }} />
+            <Redirect to={{ pathname: "/" }} />
           )
       }
     />
   );
+
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route path="/login" component={LoginForm} />
@@ -52,15 +56,16 @@ const Routes = () => {
           <Route path="/reset-password" component={ResetPasswordForm} />
           <Route path="/confirm" component={ConfirmPasswordForm} />
           <Route path="/complete-register" component={CompleteRegister} />
-          <Route path="/profile" component={Profile} />
           <Route path="/public-mapping" component={PublicMapping} />
           <Route path="/about" component={About} />
-          <Route path="/panel" component={PanelList} />
-          <Route path="/show-panel-details" component={ShowPanelDetails} />
-          <Route path="/sixth" component={SixthForm} />
-          <Route path="/feed-panel" component={FeedPanel} />
 
+          <Route path="/first" component={FirstForm} />
           <Route path="/second" component={SecondForm} />
+          <Route path="/third" component={ThirdForm} />
+          <Route path="/fourth" component={FourthForm} />
+          <Route path="/fifth" component={FifthForm} />
+
+          <Route path="/image-slider" component={ImageSlider} />
 
           <PrivateRoute
             path="/first"
@@ -155,4 +160,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default Routes

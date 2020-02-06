@@ -8,11 +8,13 @@ import { Link } from 'react-router-dom'
 import './loginForm.css'
 import qs from 'qs'
 import { AuthContext } from '../../App'
+import { ProfileContext } from '../../utils/profile/ProfileContext'
 import axiosConfig from '../../api/axiosConfig'
 
 const LoginForm = (props) => {
 
   const { dispatch } = React.useContext(AuthContext)
+  const { setUserInfo, setLoggedIn } = useContext(ProfileContext)
 
   const initialState = {
     email: "",
@@ -81,6 +83,7 @@ const LoginForm = (props) => {
 
   function getMyUserInfo() {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+
     axiosConfig.get("/users/getMyUserInfo",
       {
         headers: {
@@ -90,7 +93,10 @@ const LoginForm = (props) => {
       })
       .then(result => {
         var data = result.data
+        setUserInfo(result.data)
+        setLoggedIn(true)
         if (data.isPreviouslyLogged === true) {
+
           props.history.push('/private-mapping')
         }
         else {

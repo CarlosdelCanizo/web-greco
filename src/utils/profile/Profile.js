@@ -5,11 +5,7 @@ import { ProfileContext } from './ProfileContext'
 
 const Profile = () => {
 
-  useEffect(() => {
-    const profileContext = useContext(ProfileContext)
-    console.log("EL CULPABLE", profileContext)
-  }, []);
-
+  const profileContext = useContext(ProfileContext)
 
   function getName() {
     let name = profileContext.username;

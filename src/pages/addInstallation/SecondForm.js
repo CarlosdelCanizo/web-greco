@@ -1,25 +1,51 @@
-import React, { useState } from "react";
-import { Button, Row, Col, Divider, Form, Card, Icon } from 'antd'
+import React, { useState, useEffect } from "react";
+import { Button, Row, Col, Divider, Form, Card, Icon, Input } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
-import './secondForm.css'
 import 'leaflet/dist/leaflet.css';
+import './secondForm.css'
 import MapsCoords from "./MapsCoords";
 
+const SecondForm = props => {
 
-const SecondForm = (props) => {
+  //MOBILE COORDINATES*********************************************************
+  //MOBILE VERSION
+  // var isMobile = JSON.parse(localStorage.getItem("isMobile"));
+  window.parent.postMessage('getCoordinates', '*');
+  const [coordinates, setCoordinates] = useState()
+  function setMarker(coords) {
+    setMobileLat(coords.Latitude)
+    setMobileLon(coords.Longitude)
+  }
+  //MOBILE COORDINATES********************************************************
 
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
-  console.log("A VORE SI APROFITA", currentPanelState)
+
+  var latitude
+  var longitude
+  if (currentPanelState && currentPanelState.lat !== "" && currentPanelState.lon !== "") {
+    latitude = currentPanelState.lat
+    longitude = currentPanelState.lon
+    console.log("el current del lat lon", latitude, longitude)
+  }
+  if (currentPanelState === undefined) {
+    latitude = ""
+    longitude = ""
+  }
+
   const [data, setData] = useState(currentPanelState);
-  const [lat, setLat] = useState('');
-  const [lon, setLon] = useState('');
+  const [lat, setLat] = useState(latitude);
+  const [lon, setLon] = useState(longitude);
+  const [mobileLat, setMobileLat] = useState('');
+  const [mobileLon, setMobileLon] = useState('');
+  console.log("lat lon:", lat, lon)
 
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
-    setData(data.lat = ("" + lat), data.lon = ("" + lon));
+    if (lat !== "" && lat !== undefined && lon !== "" && lon !== undefined)
+      setData(data.lat = ("" + lat), data.lon = ("" + lon));
     localStorage.setItem('currentPanelState', JSON.stringify(data))
     activateRedirection()
   }
@@ -29,24 +55,6 @@ const SecondForm = (props) => {
   function activateRedirection() {
     setLocation(true)
   }
-
-  //COMUNICACIO
-
-  // function handleChange(event) {
-  //   setCoordinates({ value: event.target.value });
-
-  // }
-  // variable = window.variable
-
-  function setMarker(coords) {
-    // let traduccion_coordenadas = {}
-    // traduccion_coordenadas.lat = coords.Latitude
-    // traduccion_coordenadas.lng = coords.Longitude
-    setLat(coords.Latitude)
-    setLon(coords.Longitude)
-    // MapsCoords.handleClick(traduccion_coordenadas)
-  }
-
 
   return (
     <Row>
@@ -83,12 +91,12 @@ const SecondForm = (props) => {
               <Form.Item>
                 <label id="panel-input-label-second">Latitude</label>
                 <Divider id="input-separator-second" />
-                <input
+                <Input
                   id="lat"
                   name="lat"
-                  value={lat}
+                  value={mobileLat != "" ? mobileLat : lat}
                   readOnly={true}
-                  requiredn
+                  required
                 />
 
               </Form.Item>
@@ -97,10 +105,10 @@ const SecondForm = (props) => {
               <Form.Item>
                 <label id="panel-input-label-second">Longitude</label>
                 <Divider id="input-separator-second" />
-                <input
+                <Input
                   id="lon"
                   name="lon"
-                  value={lon}
+                  value={mobileLon != "" ? mobileLon : lon}
                   readOnly={true}
                   required
                 />
@@ -111,28 +119,30 @@ const SecondForm = (props) => {
                 <MapsCoords
                   setLat={setLat}
                   setLon={setLon}
-                  zoom={8}
-                  center={{ lat: 39.8714243295929, lng: -0.06466403603553773 }}
+                  zoom={(mobileLat && mobileLon) ? (18) : (3)}
+                  mobileLat={mobileLat}
+                  mobileLon={mobileLon}
+                  setMobileLat={setMobileLat}
+                  setMobileLon={setMobileLon}
+                  // center={{ lat: 39.8714243295929, lng: -0.06466403603553773 }}
+                  center={(mobileLat && mobileLon) ?
+                    (({ lat: mobileLat, lng: mobileLon }))
+                    :
+                    ({ lat: 40.41717418841311, lng: -3.703317801130291 })}
                 >
 
                 </MapsCoords>
               </div>
             </Col>
 
+
             <div id="geo_response" />
-            <div id="gyro_response" />
-
-            <input id="prueba-comunicacion" name="prueba-comunicacion"
-              // value={coordinates}
-              // onClick={handleChange}
-              //setMarker(JSON.parse(event.target.value).Longitude,JSON.parse(event.target.value).Latitude)
+            <input id="coordinatesFromMobile" name="coordinatesFromMobile"
               onClick={event => setMarker(JSON.parse(event.target.value))}
-            // onChange={event => setCoordinates(event.target.value)}
             >
-
             </input>
             <div>
-              {/* <p>{coordinates}</p> */}
+              <p>{coordinates}</p>
             </div>
 
 

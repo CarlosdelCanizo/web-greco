@@ -1,5 +1,5 @@
-import React, { useState, useContext, useReducer, useRef, useEffect } from "react"
-import { Button, Row, Col, Divider, Form, Input, InputNumber, Icon, Card, Radio, DatePicker } from 'antd'
+import React, { useState } from "react"
+import { Button, Row, Col, Divider, Form, Input, InputNumber, Icon, Card, Radio, DatePicker, Select } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -7,88 +7,185 @@ import monocrystalline from '../../assets/monocrystalline.jpg'
 import multicrystalline from '../../assets/multicrystalline.jpg'
 import thinFilm from '../../assets/thin_film.jpg'
 import './firstForm.css'
+import moment from 'moment'
+import { useHistory } from "react-router-dom"
 
-const FirstForm = () => {
+const FirstForm = (props) => {
+
+  // const formItemLayout = {
+  //   labelCol: {
+  //     xs: { span: 5 },
+  //     sm: { span: 5 },
+  //     md: { span: 5 },
+  //     lg: { span: 5 },
+  //     xl: { span: 5 }
+  //   },
+  //   wrapperCol: {
+  //     xs: { span: 25 },
+  //     sm: { span: 5 },
+  //     md: { span: 5 },
+  //     lg: { span: 5 },
+  //     xl: { span: 5 }
+  //   },
+  // };
 
   const initialPanelState = {
     electrical_capacity: 0,
     surface: 0,
     lat: "",
     lon: "",
-    orientation: "",
-    inclination: "",
-    panelTrackingOrientation: false,
-    panelTrackingInclination: false,
+    orientation: 0,
+    inclination: 0,
+    panelTrackingOrientation: null,
+    panelTrackingInclination: null,
     technologyUsed: "",
     inverterCapacity: 0,
     commissioningDate: "",
     observation: "",
-    battery: true,
+    battery: null,
     batteryDescription: "",
     installationName: "",
     installationProperty: "",
-    multimedia: []
+    installationType: "",
+    multimedia: [],
   };
-  // const [electrical_capacity, setElectrical_capacity] = useState()
-  //GET INITIAL STATE
-  // var electrical_capacity
-  // var surface, commissioningDate, inverterCapacity, technologyUsed
 
-  // useEffect(() => {
-  //   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"))
-  //   if (currentPanelState) {
-  //     var electrical_capacity = currentPanelState.electrical_capacity
-  //     // console.log("El ref", default_electrical_capacity)
-  //     var surface = currentPanelState.surface
-  //     var commissioningDate = currentPanelState.commissioningDate
-  //     var inverterCapacity = currentPanelState.inverterCapacity
-  //     var technologyUsed = currentPanelState.technologyUsed
-  //   }
+  const [data, setData] = useState(initialPanelState);
+  const { Option } = Select;
+  const myPanel = props.location.myPanel
 
-  // }, []);
+  var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
+  console.log("El currentPanelId", currentPanelId)
 
-
-  // var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"))
-  // if (currentPanelState) {
-  //   default_electrical_capacity.current = currentPanelState.electrical_capacity
-  //   surface = currentPanelState.surface
-  //   commissioningDate = currentPanelState.commissioningDate
-  //   inverterCapacity = currentPanelState.inverterCapacity
-  //   technologyUsed = currentPanelState.technologyUsed
-  // }
+  //GET UPDATE DATA
+  if (myPanel !== undefined) {
+    var electrical_capacity = myPanel.panel.electrical_capacity
+    var surface = myPanel.panel.surface
+    var commissioningDate = moment(myPanel.panel.commissioningDate, 'YYYY-MM-DD')
+    var technologyUsed = myPanel.panel.technologyUsed
+    var inverterCapacity = myPanel.panel.inverterCapacity
+    var installationType = myPanel.panel.installationType
+    //OTHERS
+    data.id = myPanel.panel.id
+    data.lat = "" + myPanel.panel.lat
+    data.lon = "" + myPanel.panel.lon
+    data.inclination = myPanel.panel.inclination
+    data.orientation = myPanel.panel.orientation
+    data.panelTrackingOrientation = myPanel.panel.panelTrackingOrientation
+    data.panelTrackingInclination = myPanel.panel.panelTrackingInclination
+    data.observation = myPanel.panel.observation
+    data.battery = myPanel.panel.battery
+    data.batteryDescription = myPanel.panel.batteryDescription
+    data.installationName = myPanel.panel.installationName
+    data.installationProperty = myPanel.panel.installationProperty
+  } else {
+    // GET FIRST INPUT DATA
+    var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"))
+    if (currentPanelState !== null) {
+      var electrical_capacity = currentPanelState.electrical_capacity
+      var surface = currentPanelState.surface
+      var commissioningDate = (currentPanelState.commissioningDate).substring(0, 10)
+      var technologyUsed = currentPanelState.technologyUsed
+      var inverterCapacity = currentPanelState.inverterCapacity
+      var installationType = currentPanelState.installationType
+      //OTHERS
+      var lat = currentPanelState.lat
+      var lon = currentPanelState.lon
+      var inclination = currentPanelState.inclination
+      var orientation = currentPanelState.orientation
+      var panelTrackingOrientation = currentPanelState.panelTrackingOrientation
+      var panelTrackingInclination = currentPanelState.panelTrackingInclination
+      var observation = currentPanelState.observation
+      var battery = currentPanelState.battery
+      var batteryDescription = currentPanelState.batteryDescription
+      var installationName = currentPanelState.installationName
+      var installationProperty = currentPanelState.installationProperty
+    }
+  }
 
   function resetInput(event) {
     event.target.value = ""
   }
 
-  function fillInput(event) {
-    if (event.target.value === "")
-      event.target.value = event.target.defaultValue
-  }
-
-  const [data, setData] = useState(initialPanelState);
-
-  //DatePicker
+  //DATE PICKER
   function onChangeDatePicker(date, dateString) {
+    // console.log("DATE, DATESTRING", date.d, dateString)
     setData({ ...data, commissioningDate: dateString });
   }
 
-  //RadioGroup
-  const [radioValue, setRadioValue] = useState();
-  const onChangeRadio = e => {
-    setRadioValue({
-      value: e.target.value,
-    });
-    setData({ ...data, technologyUsed: e.target.value })
+  //RADIO GROUP
+  const [radioValue, setRadioValue] = useState(technologyUsed);
+  const onChangeRadio = event => {
+    let value = event.target.value
+    setRadioValue(value);
+    setData({ ...data, technologyUsed: value })
   }
+
+  //SELECT
+  const handleInputSelectChange = value => {
+    setData({ ...data, installationType: value });
+  };
 
   const handleInputChange = event => {
     setData({ ...data, [event.target.name]: (event.target.value) });
   };
 
+  //handleSubmit
   const handleFormSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
     event.persist()
+    if (data.electrical_capacity === 0 && electrical_capacity !== 0) {
+      data.electrical_capacity = electrical_capacity
+    }
+    if (data.surface === 0 && surface !== 0) {
+      data.surface = surface
+    }
+    if (data.commissioningDate === "" || commissioningDate === "") {
+      data.commissioningDate = commissioningDate
+    }
+    if (data.technologyUsed === "" && technologyUsed !== "") {
+      data.technologyUsed = technologyUsed
+    }
+    if (data.inverterCapacity === 0 && inverterCapacity !== 0) {
+      data.inverterCapacity = inverterCapacity
+    }
+    if (data.installationType === "" && installationType !== "") {
+      data.installationType = installationType
+    }
+    //OTHERS
+    if (data.lat === "" && lat !== "") {
+      data.lat = lat
+    }
+    if (data.lon === "" && lon !== "") {
+      data.lon = lon
+    }
+    if (data.inclination === 0 && inclination !== 0) {
+      data.inclination = inclination
+    }
+    if (data.orientation === 0 && inclination !== 0) {
+      data.orientation = orientation
+    }
+    if (data.panelTrackingOrientation === null && panelTrackingOrientation !== null) {
+      data.panelTrackingOrientation = panelTrackingOrientation
+    }
+    if (data.panelTrackingInclination === null && panelTrackingInclination !== null) {
+      data.panelTrackingInclination = panelTrackingInclination
+    }
+    if (data.observation === "" && observation !== "") {
+      data.observation = observation
+    }
+    if (data.battery === null && battery !== null) {
+      data.battery = battery
+    }
+    if (data.batteryDescription === "" && batteryDescription !== "") {
+      data.batteryDescription = batteryDescription
+    }
+    if (data.installationName === "" && installationName !== "") {
+      data.installationName = installationName
+    }
+    if (data.installationProperty === "" && installationProperty !== "") {
+      data.installationProperty = installationProperty
+    }
     setData({ ...data, isSubmitting: true, errorMessage: null });
     localStorage.setItem('currentPanelState', JSON.stringify(data))
     activateRedirection()
@@ -99,6 +196,11 @@ const FirstForm = () => {
   function activateRedirection() {
     setLocation(true)
   }
+
+  console.log("radioValue", radioValue)
+  console.log("technolgyUsed", technologyUsed)
+  console.log("data.Technology", data.technologyUsed)
+
 
   return (
     <Row>
@@ -131,29 +233,35 @@ const FirstForm = () => {
           </Col>
           <Form onSubmit={handleFormSubmit}>
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
-              <Form.Item>
+              <Form.Item
+              // {...formItemLayout}
+              // label="Fail"
+              // validateStatus="error"
+              // help="Only numberss"
+              >
                 <label id="panel-input-label">Electrical capacity</label>
                 <Divider id="input-separator" />
-                <Input type="number"
-                  // defaultValue={default_electrical_capacity}
-                  values={data.electrical_capacity}
+
+                <Input
+                  type="number"
+                  value={data.electrical_capacity === 0 ? electrical_capacity : data.electrical_capacity}
                   onChange={handleInputChange}
                   onClick={resetInput}
                   placeholder="330Kw"
                   id="electrical_capacity"
                   name="electrical_capacity"
-                // required="true"
+                  required
                 />
               </Form.Item>
             </Col>
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
+
               <Form.Item>
                 <label id="panel-input-label">Surface</label>
                 <Divider id="input-separator" />
                 <Input type="number"
                   min={1} max={10000}
-                  defaultValue={data.surface}
-                  values={data.surface}
+                  value={data.surface === 0 ? surface : data.surface}
                   onChange={handleInputChange}
                   onClick={resetInput}
                   placeholder="10m²"
@@ -167,7 +275,9 @@ const FirstForm = () => {
                 <label id="panel-date-label">Comissioning date</label>
                 <Divider id="input-date-separator" />
                 <DatePicker
+                  defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
                   onChange={onChangeDatePicker}
+                  onClick={resetInput}
                   id="commissioningDate"
                   name="commissioningDate"
                   required />
@@ -179,53 +289,68 @@ const FirstForm = () => {
             </Col>
 
             <Radio.Group
-              defaultValue={data.technologyUsed}
               id="technology-used"
               name="technologyUsed"
               onChange={onChangeRadio}
               value={radioValue}
             >
+
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={monocrystalline} id="images-tech-us" />
                 <br />
-                <label id="label-radio-button">Monocrystalline</label>
+                <label id="label-radio-button">Monocrystalline silicon</label>
                 <br />
-                <Radio value={"Monocrystalline"} id="radio-button" />
+                <Radio value="Monocrystalline silicon" id="radio-button" />
               </Col>
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={multicrystalline} id="images-tech-us" />
                 <br />
-                <label id="label-radio-button">Polycrystalline</label>
+                <label id="label-radio-button">Polycrystalline silicon</label>
                 <br />
-                <Radio value={"Polycrystalline"} id="radio-button" />
+                <Radio value="Polycrystalline silicon" id="radio-button" />
               </Col>
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={thinFilm} id="images-tech-us-large" />
                 <br />
                 <label id="label-radio-button">Thin-film</label>
                 <br />
-                <Radio value={"Thin-film"} id="radio-button" />
+                <Radio value="Thin-film " id="radio-button" />
               </Col>
             </Radio.Group>
 
-            <Col id="register-panel-inverter" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Col d="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <label id="panel-alone-input-label">AC Inverter capacity</label>
-                {/* <Divider id="input-separator" /> */}
                 <Input type="number"
                   placeholder="800Kw" name="inverterCapacity" id="inverter-capacity"
-                  defaultValue={data.inverterCapacity}
-                  values={data.inverterCapacity}
+                  value={data.inverterCapacity === 0 ? inverterCapacity : data.inverterCapacity}
                   onChange={handleInputChange}
                   onClick={resetInput}
                   required />
               </Form.Item>
             </Col>
+            <Col id="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Form.Item>
+                <label id="label-panel-six-large">Installation type</label>
+                <Divider id="divider-input-sixth" />
+                <Select
+                  placeholder='On-grid'
+                  name="installationType"
+                  id="installation-type"
+                  value={data.installationType === "" ? installationType : data.installationType}
+                  onChange={handleInputSelectChange}
+                  onClick={resetInput}
+                >
+
+                  <Option id="select-property" value="On-grid">On-grid</Option>
+                  <Option id="select-property" value="Of-grid">Off-grid</Option>
+
+                </Select>
+
+              </Form.Item>
+            </Col>
 
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              {/* <div id="error-message">
-              {errorMessage ? (<p >{errorMessage}</p>) : (null)}
-            </div> */}
               <div id="register-panels-button-container-first">
                 <Button
                   id="button-panel-register-next-first"

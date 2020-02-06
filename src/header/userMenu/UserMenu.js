@@ -6,11 +6,10 @@ import iconUser from '../../assets/icon-user.svg'
 
 var access_token
 
-
-
 class UserMenu extends Component {
   state = {
-    visible: false
+    visible: false,
+    isLoggedIn: false
   };
 
   showDrawer = () => {
@@ -34,8 +33,8 @@ class UserMenu extends Component {
 
   logOut = () => {
     localStorage.clear()
-    this.isLoggedIn()
-    window.location.replace('/login');
+    // this.isLoggedIn()
+    window.location.replace('/');
   }
 
   isLoggedIn = () => {
@@ -48,8 +47,7 @@ class UserMenu extends Component {
 
   componentDidMount() {
     access_token = JSON.parse(localStorage.getItem('access_token'))
-    // this.isLoggedIn()
-
+    this.isLoggedIn()
   }
 
   render() {

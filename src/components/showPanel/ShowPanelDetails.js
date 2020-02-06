@@ -36,13 +36,9 @@ const PanelImage = ({ imageUrl }) => {
 const ShowPanelDetails = (props) => {
 
   const myPanel = props.location.myPanel
-  console.log("El my panel from props", myPanel)
-  const [showData, setData] = useState({})
-  // var panelId = [myPanel.item.id]
 
-
+  //GET IMAGE
   const [imageUrl, setImageUrl] = useState();
-
   useEffect(() => {
     function getImage(id) {
       axiosConfig({
@@ -54,8 +50,8 @@ const ShowPanelDetails = (props) => {
         setImageUrl(url);
       });
     }
-    if ([myPanel.item.multimedia] && [myPanel.item.multimedia.length] > 0) {
-      getImage([myPanel.item.multimedia[0].id]);
+    if ([myPanel.panel.multimedia] && [myPanel.panel.multimedia.length] > 0) {
+      getImage([myPanel.panel.multimedia[0].id]);
     } else {
       setImageUrl('no-image');
     }
@@ -68,7 +64,7 @@ const ShowPanelDetails = (props) => {
         <Card id="show-panel-card-container">
           <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <p id="show-panel-card-tittle">{myPanel.item.installationName}</p>
+              <p id="show-panel-card-tittle">{myPanel.panel.installationName}</p>
               <div id="show-panel-button-container">
                 <Link to="private-mapping">
                   <Button id="show-panel-close-button">
@@ -87,7 +83,7 @@ const ShowPanelDetails = (props) => {
                 Electrical capacity
                   </h5>
               <h4 id="show-panel-data-fields">
-                {myPanel.item.electrical_capacity} Kw
+                {myPanel.panel.electrical_capacity} Kw
                   </h4>
             </Col>
             <Col span={8}>
@@ -95,7 +91,7 @@ const ShowPanelDetails = (props) => {
                 Surface
                   </h5>
               <h4 id="show-panel-data-fields">
-                {myPanel.item.surface} m²
+                {myPanel.panel.surface} m²
                   </h4>
             </Col>
             <Col span={8}>
@@ -103,13 +99,13 @@ const ShowPanelDetails = (props) => {
                 Inverter capacity
                   </h5>
               <h4 id="show-panel-data-fields">
-                {myPanel.item.inverterCapacity} Kw
+                {myPanel.panel.inverterCapacity} Kw
                   </h4>
             </Col>
             <Row >
               <div id="feed-panel-user-name-container">
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <h3 id="feed-panel-user-name" >{myPanel.item.username}</h3>
+                  <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
                 </Col>
               </div>
             </Row>
@@ -120,7 +116,7 @@ const ShowPanelDetails = (props) => {
                 Installation property
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.installationProperty}
+                {myPanel.panel.installationProperty}
               </h4>
             </Col>
             <Col span={12}>
@@ -128,7 +124,7 @@ const ShowPanelDetails = (props) => {
                 Technollogy used
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.technologyUsed}
+                {myPanel.panel.technologyUsed}
               </h4>
             </Col>
           </Row>
@@ -139,7 +135,7 @@ const ShowPanelDetails = (props) => {
                 Tracking orientation
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.panelTrackingOrientation ? (<p>Yes</p>) : (<p>No</p>)}
+                {myPanel.panel.panelTrackingOrientation ? (<p>Yes</p>) : (<p>No</p>)}
               </h4>
             </Col>
             <Col span={12}>
@@ -147,7 +143,7 @@ const ShowPanelDetails = (props) => {
                 Tracking inclination
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.panelTrackingIncliation ? (<p>Yes</p>) : (<p>No</p>)}
+                {myPanel.panel.panelTrackingInclination ? (<p>Yes</p>) : (<p>No</p>)}
               </h4>
             </Col>
           </Row>
@@ -158,7 +154,7 @@ const ShowPanelDetails = (props) => {
                 Orientation
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.orientation}°
+                {myPanel.panel.orientation}°
                 </h4>
             </Col>
             <Col span={12}>
@@ -166,7 +162,7 @@ const ShowPanelDetails = (props) => {
                 Inclination
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {myPanel.item.inclination}°
+                {myPanel.panel.inclination}°
                 </h4>
             </Col>
           </Row>
@@ -176,7 +172,7 @@ const ShowPanelDetails = (props) => {
               <h5 id="show-panel-data-labels">
                 Battery
                 </h5>
-              {myPanel.item.battery ?
+              {myPanel.panel.battery ?
                 (<h4 id="show-panel-data-fields-second">
                   Yes
                 </h4>)
@@ -191,7 +187,7 @@ const ShowPanelDetails = (props) => {
                 Commissioning date
                 </h5>
               <h4 id="show-panel-data-fields-second">
-                {moment(myPanel.item.creationDate).format('DD/MM/YYYY')}
+                {moment(myPanel.panel.commissioningDate).format('YYYY-MM-DD')}
               </h4>
             </Col>
           </Row>
@@ -202,7 +198,7 @@ const ShowPanelDetails = (props) => {
                 Battery description
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {myPanel.item.batteryDescription}
+                {myPanel.panel.batteryDescription}
               </h4>
             </Col>
           </Row>
@@ -213,7 +209,7 @@ const ShowPanelDetails = (props) => {
                 Installation type
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {myPanel.item.installationType}
+                {myPanel.panel.installationType}
               </h4>
             </Col>
           </Row>
@@ -224,7 +220,7 @@ const ShowPanelDetails = (props) => {
                 Observation
                 </h5>
               <h4 id="show-panel-data-fields-third">
-                {myPanel.item.observation}
+                {myPanel.panel.observation}
               </h4>
             </Col>
           </Row>

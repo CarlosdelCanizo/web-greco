@@ -6,23 +6,53 @@ import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './thirdForm.css'
 
-const ThirdForm = (props) => {
+const ThirdForm = props => {
+
+    var currentPanelOrientation
+    var currentPanelInclination
 
     var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
-    const [data, setData] = useState(currentPanelState);
-    const [orientation, setOrientation] = useState(false);
-    const [inclination, setInclination] = useState(false);
+    if (currentPanelState && currentPanelState.panelTrackingOrientation) {
+        currentPanelOrientation = (currentPanelState.panelTrackingOrientation)
+    } else {
+        currentPanelOrientation = false
+    }
+    if (currentPanelState && currentPanelState.panelTrackingInclination) {
+        currentPanelInclination = (currentPanelState.panelTrackingInclination)
+    } else {
+        currentPanelInclination = false
+    }
 
-    const handleOrientation = () => setOrientation(!orientation)
-    const handleInclination = () => setInclination(!inclination)
+    const [data, setData] = useState(currentPanelState);
+    const [orientation, setOrientation] = useState(currentPanelOrientation);
+    const [inclination, setInclination] = useState(currentPanelInclination);
+
+    function handleOrientation() {
+        setOrientation(!orientation)
+    }
+    function handleInclination() {
+        setInclination(!inclination)
+    }
 
     const handleInputChange = event => {
-        setData({ ...data, [event.target.name]: event.target.value });
+        setData({ ...data, [event.target.name]: event.target.checked });
     };
 
     const handleFormSubmit = event => {
         event.preventDefault();
         event.persist()
+        if (data.panelTrackingOrientation === null || data.panelTrackingOrientation === undefined) {
+            data.panelTrackingOrientation = false
+        }
+        if (data.panelTrackingInclination === null || data.panelTrackingInclination === undefined) {
+            data.panelTrackingInclination = false
+        }
+        if (data.panelTrackingInclination === true) {
+            data.inclination = 0
+        }
+        if (data.panelTrackingOrientation === true) {
+            data.orientation = 0
+        }
         setData({ ...data, isSubmitting: true, errorMessage: null });
         localStorage.setItem('currentPanelState', JSON.stringify(data))
         activateRedirection()
@@ -70,12 +100,14 @@ const ThirdForm = (props) => {
                         <div >
                             <Col id="register-panel-fields-third" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                 <Form.Item>
-                                    <Checkbox label='Orientation'
+                                    <Checkbox
+                                        label='Orientation'
                                         id="panelTrackingOrientation"
                                         name="panelTrackingOrientation"
                                         onClick={handleOrientation}
-                                        checked={orientation ? (data.panelTrackingOrientation = true) : (data.panelTrackingOrientation = false)}
                                         onChange={handleInputChange}
+                                        defaultChecked={currentPanelOrientation}
+                                        checked={orientation}
                                     >
                                         Orientation
                                     </Checkbox>
@@ -85,11 +117,13 @@ const ThirdForm = (props) => {
                             <Col id="register-panel-fields-third" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                 <Form.Item>
                                     <Checkbox label='Inclination'
+
                                         id="panelTrackingInclination"
                                         name="panelTrackingInclination"
                                         onClick={handleInclination}
-                                        checked={inclination ? (data.panelTrackingInclination = true) : (data.panelTrackingInclination = false)}
                                         onChange={handleInputChange}
+                                        defaultChecked={currentPanelInclination}
+                                        checked={inclination}
                                     >
                                         Inclination
                                     </Checkbox>
@@ -110,7 +144,11 @@ const ThirdForm = (props) => {
                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                             <Button id="button-panel-register-next-third" type="submit" onClick={handleFormSubmit}>
                                 NEXT
-                                {toLocation ? <Redirect from="/third" to="/fourth" /> : null}
+                                {toLocation ? <Redirect from="/third" to={(orientation && inclination) ? ("/sixth")
+                                    : (orientation ? ("/fifth") : ("/fourth") || (inclination ? ("/fifth") : ("/fourth")))
+                                }
+
+                                /> : null}
                             </Button>
 
                         </Col>

@@ -6,21 +6,17 @@ import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './welcome.css'
 
-var coordinates = localStorage.getItem('coordinates')
-console.log("Les coordinates", coordinates)
-
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
 
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-    console.log("el handle event", this.state.value)
-  }
-  variable = window.variable
+  // handleChange(event) {
+  //   this.setState({ value: event.target.value });
+  //   console.log("el handle event", this.state.value)
+  // }
 
   render() {
     console.log('this props', this.props)
@@ -32,7 +28,7 @@ class Welcome extends React.Component {
             <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
           </Col>
 
-          <div id="geo_response" />
+          {/* <div id="geo_response" />
           <div id="gyro_response" />
 
           <input id="prueba-comunicacion" name="prueba-comunicacion"
@@ -41,22 +37,7 @@ class Welcome extends React.Component {
           </input>
           <div>
             <p>{this.state.value}</p>
-          </div>
-
-          {/* <Alert
-            message="Success!"
-            description="Get Coordinates"
-            type="success"
-            showIcon
-            closable
-            onClose={onClose}
-          /> : null} */}
-
-
-          <Button
-          >
-            Get Coordinates
-          </Button>
+          </div> */}
 
           <div id="inside-welcome-container" >
             <h1 id="welcome-title-text" >
@@ -68,7 +49,7 @@ class Welcome extends React.Component {
             <Divider id="large-divider" />
             <div id="welcome-button-container">
               <Button id="button-welcome-left"><Link to="/public-mapping">PUBLIC ACCESS </Link></Button>
-              <Button id="button-welcome-right"><Link to={"/login"}>LOGIN</Link></Button>
+              <Button id="button-welcome-right"><Link to="/login">LOGIN</Link></Button>
             </div>
             <h6 id="welcome-text-mini">Do not you have an account yet? <Link id="link" from="/welcome" to="/register">Sign up</Link></h6>
           </div>

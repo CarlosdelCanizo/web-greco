@@ -1,63 +1,63 @@
-import React, { useState } from "react";
-import axiosConfig from '../api/axiosConfig'
-import qs from 'qs'
+// import React, { useState } from "react";
+// import axiosConfig from '../api/axiosConfig'
+// import qs from 'qs'
 
-const Auth = (props) => {
+// const Auth = (props) => {
 
-  const [data, setData] = React.useState();
+//   const [data, setData] = React.useState();
 
-  const refresh_token = JSON.parse(localStorage.getItem('refresh_token'))
-  const expires_in = JSON.parse(localStorage.getItem('expires_in'))
+//   const refresh_token = JSON.parse(localStorage.getItem('refresh_token'))
+//   const expires_in = JSON.parse(localStorage.getItem('expires_in'))
 
-  function isAuthenticated() {
-    let expiresAt = JSON.parse(localStorage.getItem('expires_in'))
-    return new Date().getTime() < expiresAt
-  }
+//   function isAuthenticated() {
+//     let expiresAt = JSON.parse(localStorage.getItem('expires_in'))
+//     return new Date().getTime() < expiresAt
+//   }
 
 
-  // POST REFRESH TOKEN
-  var body = {
-    grant_type: "refresh_token",
-    refresh_token: refresh_token
-  }
-  axiosConfig.post("/oauth/token", qs.stringify(body),
-    {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": "application/json"
-      },
-      auth: {
-        username: "crmClient1",
-        password: "crmSuperSecret"
-      }
+//   // POST REFRESH TOKEN
+//   var body = {
+//     grant_type: "refresh_token",
+//     refresh_token: refresh_token
+//   }
+//   axiosConfig.post("/oauth/token", qs.stringify(body),
+//     {
+//       headers: {
+//         "Content-Type": "application/x-www-form-urlencoded",
+//         "Accept": "application/json"
+//       },
+//       auth: {
+//         username: "crmClient1",
+//         password: "crmSuperSecret"
+//       }
 
-    })
-    .then(response => {
-      if (response.status === 200) {
-        return response
-      }
-      throw response
-    })
-    .then(response => {
-      localStorage.setItem("access_token", JSON.stringify(response.access_token))
-      localStorage.setItem("refresh_token", JSON.stringify(response.refresh_token))
-      let expiresAt = (expires_in * 1000 + new Date().getTime())
-      localStorage.setItem("expires_in", JSON.stringify(response.expires_in))
-    })
-    .catch(error => {
-      if (error.response === undefined) {
-        // NetWork Error  
-        // setData({ ...data, isSubmitting: false, errorMessage: error.message });
-      }
-      else {
-        if (error.response.status === 400) {
-          // bad credentials  
-          // setData({ ...data, isSubmitting: false, errorMessage: error.response.data.error_description });
-        }
-      }
-    });
+//     })
+//     .then(response => {
+//       if (response.status === 200) {
+//         return response
+//       }
+//       throw response
+//     })
+//     .then(response => {
+//       localStorage.setItem("access_token", JSON.stringify(response.access_token))
+//       localStorage.setItem("refresh_token", JSON.stringify(response.refresh_token))
+//       let expiresAt = (expires_in * 1000 + new Date().getTime())
+//       localStorage.setItem("expires_in", JSON.stringify(response.expires_in))
+//     })
+//     .catch(error => {
+//       if (error.response === undefined) {
+//         // NetWork Error  
+//         // setData({ ...data, isSubmitting: false, errorMessage: error.message });
+//       }
+//       else {
+//         if (error.response.status === 400) {
+//           // bad credentials  
+//           // setData({ ...data, isSubmitting: false, errorMessage: error.response.data.error_description });
+//         }
+//       }
+//     });
 
-}
+// }
 
 // function handleAuth(response) {
 //   localStorage.setItem('access_token', response.data.accessToken)
@@ -103,4 +103,4 @@ const Auth = (props) => {
 
 // }
 
-export default Auth
+// export default Auth

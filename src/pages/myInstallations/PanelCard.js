@@ -30,10 +30,15 @@ const PanelImage = ({ imageUrl }) => {
   }
 };
 
-function PanelCard({ panel }) {
+const PanelCard = ({ panel, fetchPanels }) => {
 
-  const [imageUrl, setImageUrl] = useState();
+  function updatePanelId() {
+    localStorage.setItem('currentPanelId', JSON.stringify(panel.id))
+  }
+
+
   //GET IMAGE
+  const [imageUrl, setImageUrl] = useState();
   useEffect(() => {
     function getImage(id) {
       axiosConfig({
@@ -52,35 +57,56 @@ function PanelCard({ panel }) {
     }
   }, []);
 
-  const text = 'Are you sure to delete this installation?';
 
+  const text = 'Are you sure to delete this installation?';
   function confirm() {
     onDeleteClick()
   }
 
   function onDeleteClick() {
     deleteSolarPanel(panel.id)
-    // return deletePanel(id);
+
   }
 
   const textMenu = <span id="popover-panels">INSTALLATION</span>;
   const content = (
     <div id="popover-panels">
-      <Link to="/show-panel-details">
+      <Link to={
+        {
+          pathname: "/show-panel-details",
+          myPanel: { panel }
+        }
+      }>
+
         <Button id="popover-menu-panels">More details</Button>
       </Link>
-      <Link to="/feed-panel">
+      <Link to={
+        {
+          pathname: "/feed-panel",
+          myPanel: { panel }
+        }
+      }>
         <Button id="popover-menu-panels">Feed</Button>
       </Link>
+
       <Popconfirm
         placement="leftBottom"
         title={text}
         onConfirm={confirm}
         okText="Yes"
         cancelText="No"
-      ><Button id="popover-menu-panels">Delete</Button>
+      >
+        <Button id="popover-menu-panels">Delete</Button>
       </Popconfirm>
-      <Button id="popover-menu-panels">Edit</Button>
+
+      <Link to={
+        {
+          pathname: "/first",
+          myPanel: { panel }
+        }
+      }>
+        <Button id="popover-menu-panels" onClick={updatePanelId}>Edit</Button>
+      </Link>
     </div>
   );
 
@@ -94,9 +120,9 @@ function PanelCard({ panel }) {
           "Authorization": access_token
         }
       })
-      .then(result =>
-        console.log("Panel Borrado:", result));
-
+      .then(result => {
+        fetchPanels();
+      });
   }
 
   return (

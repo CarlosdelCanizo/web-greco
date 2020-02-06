@@ -40,7 +40,6 @@ const RegisterForm = (props) => {
       .then(response => {
         if (response.status === 200) {
           localStorage.setItem('user', data.username)
-          localStorage.setItem('email', data.email)
           activateRedirection()
         }
       })

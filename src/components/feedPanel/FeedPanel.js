@@ -108,10 +108,13 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
 
   const profileContext = useContext(ProfileContext)
   var username = profileContext.username
-  // const messagesEndRef = React.useRef(null)
-  // const scrollToBottom = () => {
-  //   messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
-  // }
+
+  //AUTOSCROLL
+  const scrollableArea = useRef(null);
+  useEffect(() => {
+    if (scrollableArea.current)
+      scrollableArea.current.scrollTop = scrollableArea.current.scrollHeight;
+  }, [messagesList]);
 
   //AVATAR
   const getName = (name) => {
@@ -145,41 +148,40 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
       }
     }
     fetchMessages()
-    // scrollToBottom()
   })
 
   return (
     <React.Fragment>
-      <div id="feed-panel-messages-list">
-        {messagesList.map(item => (
-          <div key={item.id}>
-            {item.userName === username ?
+      <div id="feed-panel-messages-list" ref={scrollableArea}>
+        {messagesList.map(panel => (
+          <div key={panel.id}>
+            {panel.userName === username ?
               (<React.Fragment>
                 <div>
-                  <Avatar id="feed-panel-avatar">{getName(item.userName)}</Avatar>
+                  <Avatar id="feed-panel-avatar">{getName(panel.userName)}</Avatar>
                 </div>
                 <div id="feed-panel-user-booble">
-                  <p id="feed-panel-text-message">{item.text}</p>
-                  <h6 id="feed-panel-message-date">{moment(item.creationDate).format('DD/MM/YYYY')}</h6>
-                  <h6 id="feed-panel-message-time">{moment(item.creationDate).format('HH:mm')}</h6>
+                  <p id="feed-panel-text-message">{panel.text}</p>
+                  <h6 id="feed-panel-message-date">{moment(panel.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-time">{moment(panel.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>
               )
               :
               (<React.Fragment>
                 <div>
-                  <Avatar id="another-feed-panel-avatar">{getName(item.userName)}</Avatar>
+                  <Avatar id="another-feed-panel-avatar">{getName(panel.userName)}</Avatar>
                 </div>
                 <div id="feed-panel-another-booble">
-                  <p id="feed-panel-text-another-message">{item.text}</p>
-                  <h6 id="feed-panel-message-another-date">{moment(item.creationDate).format('DD/MM/YYYY')}</h6>
-                  <h6 id="feed-panel-message-another-time">{moment(item.creationDate).format('HH:mm')}</h6>
+                  <p id="feed-panel-text-another-message">{panel.text}</p>
+                  <h6 id="feed-panel-message-another-date">{moment(panel.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-another-time">{moment(panel.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>
               )}
-            {/* <div ref={messagesEndRef} /> */}
           </div>
         ))}
+
       </div>
     </React.Fragment >
   )
@@ -192,7 +194,7 @@ const FeedPanel = (props) => {
   // myPanel = props.location.myPanel
   // } else {
   // split
-  // contar cuantos items han salido
+  // contar cuantos panels han salido
   // split[max]
   //let panelId = document.location.href.split("/")[length];
   //myPanel = panelId;
@@ -212,8 +214,8 @@ const FeedPanel = (props) => {
         setImageUrl(url);
       });
     }
-    if ([myPanel.item.multimedia] && [myPanel.item.multimedia.length] > 0) {
-      getImage([myPanel.item.multimedia[0].id]);
+    if ([myPanel.panel.multimedia] && [myPanel.panel.multimedia.length] > 0) {
+      getImage([myPanel.panel.multimedia[0].id]);
     } else {
       setImageUrl('no-image');
     }
@@ -228,7 +230,7 @@ const FeedPanel = (props) => {
           <Card id="feed-card-container">
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <p id="feed-card-tittle">{myPanel.item.installationName}</p>
+                <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
                 <div id="feed-button-container">
                   <Link to="private-mapping">
                     <Button id="feed-close-button">
@@ -248,7 +250,7 @@ const FeedPanel = (props) => {
                     Electrical capacity
                   </h5>
                   <h4 id="panel-data-fields">
-                    {myPanel.item.electrical_capacity} Kw
+                    {myPanel.panel.electrical_capacity} Kw
                   </h4>
                 </Col>
                 <Col span={8}>
@@ -256,7 +258,7 @@ const FeedPanel = (props) => {
                     Surface
                   </h5>
                   <h4 id="panel-data-fields">
-                    {myPanel.item.surface} m²
+                    {myPanel.panel.surface} m²
                   </h4>
                 </Col>
                 <Col span={8}>
@@ -264,7 +266,7 @@ const FeedPanel = (props) => {
                     Inverter capacity
                   </h5>
                   <h4 id="panel-data-fields">
-                    {myPanel.item.inverterCapacity} Kw
+                    {myPanel.panel.inverterCapacity} Kw
                   </h4>
                 </Col>
               </div>
@@ -272,18 +274,18 @@ const FeedPanel = (props) => {
             <Row >
               <div id="feed-panel-user-name-container">
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <h3 id="feed-panel-user-name" >{myPanel.item.username}</h3>
+                  <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
                 </Col>
               </div>
             </Row>
             <Row>
               <div id="feed-list-container">
-                <FeedList panelId={myPanel.item.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+                <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
               </div>
             </Row>
             <Row>
               <div id="feed-form-container">
-                <FeedForm panelId={myPanel.item.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+                <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
               </div>
             </Row>
           </Card>

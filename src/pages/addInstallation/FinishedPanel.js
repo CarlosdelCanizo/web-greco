@@ -3,11 +3,14 @@ import { useState } from "react"
 import { Card, Button, Row, Col } from 'antd'
 import solarPanel from '../../assets/solar-panel.svg'
 import { Link } from "react-router-dom"
-import axios from 'axios'
 
 import './finishedPanel.css'
 
-function FinishedPanel() {
+const FinishedPanel = props => {
+
+    var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
+    localStorage.removeItem("currentPanelId")
+    localStorage.removeItem("currentPanelState")
 
     //Redirect
     const [toLocation, setLocation] = useState(false);
@@ -21,7 +24,10 @@ function FinishedPanel() {
                 <Card id="card-panel-register-inside">
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <div id="tittle-panel-registration">
-                            <h2>Your installation has been added successfully</h2>
+                            <h2>Your installation has been </h2>
+                            {currentPanelId === null || currentPanelId === 0 ?
+                                <h2>added</h2> : <h2>updated</h2>}
+                            <h2> successfully</h2>
                         </div>
                     </Col>
 

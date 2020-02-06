@@ -25,7 +25,7 @@ const CompleteRegister = () => {
         <Col id="col-welcome-container" span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
           <div id="inside-welcome-container">
             <h1 id="title-register-complete" >
-              {"WELL DONE! " + userName + " , YOU´RE ALREADY REGISTERED!"}
+              {"WELL DONE! " + userName + ", YOU´RE ALREADY REGISTERED!"}
             </h1>
             <div id="col-solar-image">
               <img id="solar-image" src={solarHouse} />

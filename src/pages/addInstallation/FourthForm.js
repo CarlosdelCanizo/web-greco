@@ -6,9 +6,23 @@ import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './fourthForm.css'
 
-const FourthForm = (props) => {
+const FourthForm = props => {
+
+    //MOBILE GYRO*********************************************************
+    //MOBILE VERSION
+    const [degree, setDegree] = useState()
+    window.parent.postMessage('getGyroscope', '*');
+
+    // var isMobile = localStorage.getItem("isMobile")
+    // console.log("isMobile", isMobile)
+
+    //MOBILE GYRO********************************************************
 
     var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
+    var orientation
+    if (currentPanelState !== null) {
+        orientation = currentPanelState.orientation
+    }
     const [data, setData] = useState(currentPanelState);
     const [isChecked, setChecked] = useState(true);
     const { Option } = Select;
@@ -16,7 +30,6 @@ const FourthForm = (props) => {
 
     function onChangeSwitch() {
         setChecked(!isChecked)
-        console.log("isChecked:", isChecked)
     }
 
 
@@ -42,6 +55,12 @@ const FourthForm = (props) => {
         setLocation(true)
     }
 
+    function resetInput(event) {
+        event.target.value = ""
+    }
+
+    let isMobile = false;
+
     return (
         <Row>
             <div id="background-panel-register">
@@ -63,6 +82,37 @@ const FourthForm = (props) => {
                             <Icon type="close" id="icon-x" />
                         </Button>
                     </Link>
+
+                    <div id="gyro_response" />
+                    <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
+                        onClick={event => {
+                            setDegree(JSON.parse(event.target.value));
+                            console.log("els degrees", degree);
+                            if (document.getElementById("greco_iframe") != undefined) {
+                                isMobile = true;
+                                console.log("isMobile", isMobile);
+                            }
+                            else {
+                                console.log("no isMobile");
+                            }
+
+
+                        }}
+                    >
+                        {/* </input>
+                    <input id="orientationFromMobile_beta" name="orientationFromMobile_beta"
+                        onClick={event => setDegree(JSON.parse(event.target.value))}
+                    >
+                    </input>
+                    <input id="orientationFromMobile_gamma" name="orientationFromMobile_gamma"
+                        onClick={event => setDegree(JSON.parse(event.target.value))}
+                    > */}
+                    </input>
+                    <div>
+                        <p>{degree} </p>
+                        <p>guacamayo</p>
+                        {isMobile ? (<p>SI</p>) : (<p>NO</p>)}
+                    </div>
 
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <h2 id="tittle-panel-registration">Panel orientation</h2>
@@ -86,8 +136,10 @@ const FourthForm = (props) => {
                                         <Form.Item>
                                             <label id="label-panel-orientation">Input degrees</label>
                                             <Input type="number"
-                                                min={1} max={10000}
-                                                values={data.orientation}
+                                                onClick={resetInput}
+                                                min={1} max={360}
+                                                value={data.orientation || orientation}
+                                                // value={degree} //ARREGLAR PER AL MOVIL
                                                 onChange={handleInputChange}
                                                 placeholder="30.9°"
                                                 id="orientation"
@@ -131,18 +183,18 @@ const FourthForm = (props) => {
                                                 name="orientation"
                                                 onChange={handleInputSelectChange}>
 
-                                                <Option value={"NE (from 0° to 45°)"}>NE (from 0° to 45°)</Option>
-                                                <Option value="EN (from 45° to 90°)">EN (from 45° to 90°)</Option>
+                                                <Option value="0">NE (from 0° to 45°)</Option>
+                                                <Option value="45">EN (from 45° to 90°)</Option>
 
-                                                <Option value="ES (from 90° to 135°)">ES (from 90° to 135°)</Option>
-                                                <Option value="SE (from 135° to 180°)">SE (from 135° to 180°)</Option>
+                                                <Option value="90">ES (from 90° to 135°)</Option>
+                                                <Option value="135">SE (from 135° to 180°)</Option>
 
 
-                                                <Option value="SW (from 180° to 225°)">SW (from 180° to 225°)</Option>
-                                                <Option value="WS (from 225° to 270°)">WS (from 225° to 270°)</Option>
+                                                <Option value="180">SW (from 180° to 225°)</Option>
+                                                <Option value="225">WS (from 225° to 270°)</Option>
 
-                                                <Option value="WN (from 270° to 315°)">WN (from 270° to 315°)</Option>
-                                                <Option value="NW (from 315° to 360°)">NW (from 315° to 360°)</Option>
+                                                <Option value="270">WN (from 270° to 315°)</Option>
+                                                <Option value="315">NW (from 315° to 360°)</Option>
 
                                             </Select>
                                         </div>

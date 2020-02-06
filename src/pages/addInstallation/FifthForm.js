@@ -1,30 +1,39 @@
 import React, { useState } from "react";
 import { Form, Card, Row, Col, Icon, Button, Select, Divider, Input, Switch } from 'antd';
 import { Link, Redirect } from "react-router-dom";
-import inclination from '../../assets/inclination.svg'
+import inclinationImage from '../../assets/inclination.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './fourthForm.css'
 
-const FifthForm = (props) => {
+const FifthForm = props => {
+
+    //MOBILE GYRO*********************************************************
+    //MOBILE VERSION
+    var prova = window.parent.postMessage('getGyroscope', '*');
+    console.log("El giroscope", prova)
+    const [degree, setDegree] = useState()
+    //MOBILE GYRO********************************************************
 
     var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
+    if (currentPanelState != null) {
+        var inclination = currentPanelState.inclination
+    }
     const [data, setData] = useState(currentPanelState);
     const [isChecked, setChecked] = useState(true);
     const { Option } = Select;
 
     function onChangeSwitch() {
         setChecked(!isChecked)
-        console.log("isChecked:", isChecked)
     }
 
-    const handleInputChange = value => {
+    const handleInputSelectChange = value => {
         setData({ ...data, inclination: value });
     };
 
-    // const handleInputChange = event => {
-    //     setData({ ...data, [event.target.name]: event.target.value });
-    // };
+    const handleInputChange = event => {
+        setData({ ...data, [event.target.name]: event.target.value });
+    };
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -38,6 +47,10 @@ const FifthForm = (props) => {
     const [toLocation, setLocation] = useState(false);
     function activateRedirection() {
         setLocation(true)
+    }
+
+    function resetInput(event) {
+        event.target.value = ""
     }
 
     return (
@@ -62,6 +75,15 @@ const FifthForm = (props) => {
                         </Button>
                     </Link>
 
+                    <div id="gyro_response" />
+                    <input id="degreeFromMobile" name="degreeFromMobile"
+                        onClick={event => setDegree(JSON.parse(event.target.value))}
+                    >
+                    </input>
+                    <div>
+                        <p>{degree}</p>
+                    </div>
+
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <h2 id="tittle-panel-registration">Panel inclination</h2>
                     </Col>
@@ -84,17 +106,19 @@ const FifthForm = (props) => {
                                         <Form.Item>
                                             <label id="label-panel-orientation">Degrees</label>
                                             <Input type="number"
-                                                min={1} max={10000}
-                                                values={data.orientation}
+                                                min={1} max={45}
+                                                value={data.inclination || inclination}
+                                                // values={degree} PER AL MOVIL
                                                 onChange={handleInputChange}
                                                 placeholder="30.9 °"
                                                 id="orientation"
                                                 name="inclination"
+                                                onClick={resetInput}
                                                 required />
                                         </Form.Item>
                                     </Col>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={inclination} id="register-panel-image-fifth" />
+                                        <img src={inclinationImage} id="register-panel-image-fifth" />
                                     </Col>
                                     <p id="text-panel-registration">
                                         Definition 0° North
@@ -127,24 +151,24 @@ const FifthForm = (props) => {
                                                 style={{ width: 200 }}
                                                 id="select-orientation"
                                                 name="inclination"
-                                                onChange={handleInputChange}>
-                                                <Option value="from 0° to 15°">from 0° to 15°</Option>
-                                                <Option value="from 15° to 30°">from 15° to 30°</Option>
-                                                <Option value="from 30° to 45°">from 30° to 45°</Option>
-                                                <Option value="from 45° to 60°">from 45° to 60°</Option>
-                                                <Option value="from 60° to 75°">from 60° to 75°</Option>
-                                                <Option value="from 75° to 90°">from 75° to 90°</Option>
+                                                onChange={handleInputSelectChange}>
+                                                <Option value="0">from 0° to 15°</Option>
+                                                <Option value="15">from 15° to 30°</Option>
+                                                <Option value="30">from 30° to 45°</Option>
+                                                <Option value="45">from 45° to 60°</Option>
+                                                <Option value="60">from 60° to 75°</Option>
+                                                <Option value="75">from 75° to 90°</Option>
                                             </Select>
                                         </div>
                                     </Col>
 
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={inclination} id="register-panel-image-fifth" />
+                                        <img src={inclinationImage} id="register-panel-image-fifth" />
                                     </Col>
 
                                     <p id="text-panel-registration">
                                         Definition 0° North
-    </p>
+                                    </p>
 
                                     <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                         <Link to="fourth">

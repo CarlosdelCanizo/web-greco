@@ -38,6 +38,8 @@ const PanelImage = ({ imageUrl }) => {
 
 const PrivateMapping = () => {
 
+  const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+
   let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow
@@ -52,28 +54,31 @@ const PrivateMapping = () => {
   }
 
   const [panels, setPanels] = useState([])
+  const [individualPanel, setIndividualPanel] = useState({});
   const [imageUrl, setImageUrl] = useState();
 
-  //LIKE
-  const [isLike, setLike] = useState(null)
-  const [likes, setLikes] = useState(0)
-
-  //GIVE LIKE
-  const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-  const giveLike = (id) => {
-    var body
+  //GET ALL PANELS
+  useEffect(() => {
     axiosConfig
-      .post("/like/givelike/" + id, body,
+      .get('/solarPanel/getAllSolarPanel')
+      .then(response => {
+        setPanels(response.data);
+      });
+  }, []);
+
+  //GET ESPECIFIC SOLAR PANEL
+  function getSpecificSolarPanel(id) {
+    axiosConfig
+      .get('/solarPanel/' + id,
         {
           headers: {
             "Authorization": access_token
           }
         })
       .then(response => {
-        setLikes(response.data);
-        setLike(!isLike)
-      });
-
+        const data = response.data
+        setIndividualPanel({ ...data });
+      })
   }
 
   //GET PANEL IMAGE
@@ -88,15 +93,24 @@ const PrivateMapping = () => {
     });
   }
 
-  //GET ALL PANELS
-  useEffect(() => {
+  //GIVE LIKE
+  const giveLike = (id) => {
+    var body
     axiosConfig
-      .get('/solarPanel/getAllSolarPanel')
+      .post("/like/givelike/" + id, body,
+        {
+          headers: {
+            "Authorization": access_token
+          }
+        })
       .then(response => {
-        setPanels(response.data);
-      });
-  }, []);
+        setIndividualPanel({
+          likes: response.data.numberOfLikes,
+          liked: response.data.liked
+        });
 
+      });
+  }
   return (
     <React.Fragment>
       <Header />
@@ -117,18 +131,18 @@ const PrivateMapping = () => {
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          {panels.map((item, id) => (
-            <Marker key={id} position={[item.lat, item.lon]}
+          {panels.map((panel, id) => (
+            <Marker key={id} position={[panel.lat, panel.lon]}
               onClick={() => {
-                if (item.multimedia && item.multimedia.length > 0) {
-                  console.log('img exist with id: ', item.multimedia[0].id);
-                  getImage(item.multimedia[0].id);
+                console.log("Panel", individualPanel)
+                getSpecificSolarPanel(panel.id)
+                if (panel.multimedia && panel.multimedia.length > 0) {
+                  console.log('img exist with id: ', panel.multimedia[0].id);
+                  getImage(panel.multimedia[0].id);
                 } else {
                   console.log('img not exist');
                   setImageUrl('no-image');
                 }
-                setLikes(item.likes)
-                setLike(item.selfLiked)
               }}
             >
               <Popup >
@@ -136,18 +150,19 @@ const PrivateMapping = () => {
                   <Tooltip title="Like" id="tooltip-like">
                     <Icon style={{ fontSize: '16px', color: '#c3c3c3' }}
                       type="like"
-                      theme={isLike ? 'twoTone' : 'outlined'}
+                      theme={individualPanel.liked ? 'twoTone' : 'outlined'}
                       onClick={() => {
-                        giveLike(item.id)
+                        giveLike(panel.id)
                       }}
                       id="like-icon" />
                   </Tooltip>
-                  <p id="text-likes">likes:</p> <p id="number-likes">{likes}</p>
+                  <p id={individualPanel.liked ? "text-likes-checked" : "text-likes"}>likes:</p>
+                  <p id={individualPanel.liked ? "number-likes-checked" : "number-likes"}>{individualPanel.likes}</p>
                 </span>
                 <div id="public-private-mapping-popup">
                   <Row>
                     <Col span={24} id="public-private-mapping-installation-name">
-                      <p>{item.installationName}</p>
+                      <p>{panel.installationName}</p>
                     </Col>
                   </Row>
                   <Row>
@@ -164,7 +179,7 @@ const PrivateMapping = () => {
                         Electrical capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {item.electrical_capacity} Kw
+                        {panel.electrical_capacity} Kw
                       </h3>
                     </Col>
                     <Col span={8}>
@@ -172,7 +187,7 @@ const PrivateMapping = () => {
                         Surface
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {item.surface} Kw
+                        {panel.surface} Kw
                       </h3>
                     </Col>
                     <Col span={8}>
@@ -180,7 +195,7 @@ const PrivateMapping = () => {
                         Inverter capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {item.inverterCapacity} Kw
+                        {panel.inverterCapacity} Kw
                       </h3>
                     </Col>
                   </Row>
@@ -189,7 +204,7 @@ const PrivateMapping = () => {
                       <Link to={
                         {
                           pathname: "/show-panel-details",
-                          myPanel: { item }
+                          myPanel: { panel }
                         }
                       }>
                         <Button id="mapping-button-left">
@@ -201,8 +216,8 @@ const PrivateMapping = () => {
                       <Link to={
                         {
                           pathname: "/feed-panel",
-                          // pathname: `/feed-panel/${item.id}`,
-                          myPanel: { item }
+                          // pathname: `/feed-panel/${panel.id}`,
+                          myPanel: { panel }
                         }
                       }>
                         <Button id="mapping-button-right">

@@ -5,6 +5,7 @@ import Header from '../../header/Header'
 import './downloadData.css'
 import { Link } from "react-router-dom";
 import spinner from "../../assets/spinner.svg";
+import moment from 'moment'
 
 
 const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
@@ -19,11 +20,18 @@ const DownloadData = (props) => {
       headers: { "Authorization": access_token },
       method: 'GET',
       responseType: 'blob'
-    }).then(response => {
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      setDatabase(url);
-      console.log("Download:", database)
-    });
+    })
+      .then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        let data = moment().format('DD/MM/YYYY_HH:mm')
+        link.setAttribute('download', 'solarPanelInfo' + data + '.csv')
+        document.body.appendChild(link)
+        link.click()
+        setDatabase(url);
+        console.log("Download:", database)
+      });
   }
 
   return (
