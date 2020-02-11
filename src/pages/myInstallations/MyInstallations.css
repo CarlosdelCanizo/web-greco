@@ -117,7 +117,7 @@
   margin-top: -6.8%;
   margin-left: -6.75%;
 }
-#installation-add-image {
+#card-slider-installation-add-image {
   object-fit: initial;
   width: 100%;
   max-width: 100%;
@@ -144,10 +144,63 @@
   text-align: center;
 }
 
+/************************************************************CARD*SLIDER*************************************************/
+/***COMPUTER************************************************************************************************************************/
+
+#card-slider-button-left {
+  position: absolute;
+  z-index: 999;
+  margin-top: 40%;
+  margin-left: -85%;
+  background-color: transparent;
+  border: none;
+}
+#arrow {
+  color: red;
+  font-size: 1.5em;
+}
+#card-slider-image {
+  /* justify-content: center;
+  margin-top: 0%;
+  margin-left: 0%;
+  width: 100%;
+  height: 250px; */
+  object-fit: initial;
+  width: 100%;
+  max-width: 100%;
+  height: 325px;
+  margin-top: -6%;
+  margin-left: 0%;
+  border-bottom: 5px solid #2a4092;
+} 
+#card-slider-button-delete-image {
+  position: absolute;
+  z-index: 999;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  margin-top: 1%;
+  margin-left: -80%;
+} 
+#card-slider-button-right {
+  position: absolute;
+  z-index: 999;
+  margin-top: 40%;
+  margin-left: 23%;
+  background-color: transparent;
+  border: none;
+}
+
 /************************************************************ADD*INSTALLATION*************************************************/
 /***TABLET************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
+#background-installations {
+    background-color: #eaedf1;
+    height: auto; 
+    width: 100vw;
+}
 #installation-add {
   position: relative;
   width: 135%;
@@ -227,7 +280,7 @@
   margin-top: -6.8%;
   margin-left: -6.75%;
 }
-#installation-add-image {
+#card-slider-installation-add-image {
   object-fit: initial;
   width: 100%;
   max-width: 100%;
@@ -245,6 +298,11 @@
 /***MOBILE********************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
+#background-installations {
+    background-color: #eaedf1;
+    height: auto; 
+    width: 100vw;
+}
 #installation-add {
   position: relative;
   width: 95%;
@@ -289,17 +347,16 @@
 }
 #installation-tittle-button-container {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 40px;
   margin-top: -8%;
   margin-left: -10%;
-  background-color: red;
 }
 #installation-tittle {
   font-size: 18px;
   font-weight: 500;
   line-height: 2em;
-  width: 100%;
+  width: 95%;
   height: 40px;
   text-align: center;
   color: #2a4092;
@@ -310,7 +367,7 @@
   margin-left: 0%;
 }
 #installation-button {
-  margin-top: -4%;
+  margin-top: -2%;
   right: -40%;
   background-color: transparent;
   color: #ff0000;
@@ -319,28 +376,77 @@
   border: none;
 }
 #installation-add-image-container {
-  width: 100%;
+  width: 100vw;
   height: 300px;
   margin-top: -10%;
   margin-left: -10%;
   margin: 0 auto;
 }
-#installation-add-image {
+#card-slider-installation-add-image {
   object-fit: fill;
-  width: 100%;
+  width: 95%;
   max-width: 100%;
-  margin-top: -10%;
-  margin-left: 0%;
-  height: 310px; 
+  margin-top: -9%;
+  margin-left: -20%;
+  height: 300px; 
   border-bottom: 5px solid #2a4092;
 }
 #installation-text-fields {
   width: 100%;
   padding: 0%;
   margin-left: 0%;
+  margin-top: -10%;
 }
 #panel-data-labels {
   margin-top: 5%;
   margin-left: -5%;
+}
+
+/************************************************************CARD*SLIDER*************************************************/
+/***MOBILE************************************************************************************************************************/
+
+#card-slider-button-left {
+  position: absolute;
+  z-index: 999;
+  margin-top: 45%;
+  margin-left: -128%;
+  background-color: transparent;
+  border: none;
+}
+#arrow {
+  color: red;
+  font-size: 1.5em;
+}
+#card-slider-image {
+  /* justify-content: center;
+  margin-top: 0%;
+  margin-left: 0%;
+  width: 100%;
+  height: 250px; */
+  object-fit: initial;
+  width: 100%;
+  max-width: 100%;
+  height: 325px;
+  margin-top: -6%;
+  margin-left: 0%;
+  border-bottom: 5px solid #2a4092;
+} 
+#card-slider-button-delete-image {
+  position: absolute;
+  z-index: 999;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  margin-top: -9%;
+  margin-left: -125%;
+} 
+#card-slider-button-right {
+  position: absolute;
+  z-index: 999;
+  margin-top: 45%;
+  margin-left: -18%;
+  background-color: transparent;
+  border: none;
 }
 }

@@ -15,20 +15,20 @@ import { Link } from 'react-router-dom'
 const PanelImage = ({ imageUrl }) => {
   switch (imageUrl) {
     case null: {
-      return <img src={spinner} alt="LOADING..." />;
+      return <img src={spinner} alt="LOADING..." id="spiner-images" />;
     }
     case 'no-image': {
       return <img
         src={noImage}
-        alt="image"
-        id="public-private-mapping-no-image-panel"
+        alt="without image"
+        id="public-private-mapping-panel-image"
       />
     }
     default: {
       return (
         <img
           src={imageUrl}
-          alt="image"
+          alt="panel image"
           id="public-private-mapping-panel-image"
         />
       );
@@ -134,13 +134,10 @@ const PrivateMapping = () => {
           {panels.map((panel, id) => (
             <Marker key={id} position={[panel.lat, panel.lon]}
               onClick={() => {
-                console.log("Panel", individualPanel)
                 getSpecificSolarPanel(panel.id)
                 if (panel.multimedia && panel.multimedia.length > 0) {
-                  console.log('img exist with id: ', panel.multimedia[0].id);
                   getImage(panel.multimedia[0].id);
                 } else {
-                  console.log('img not exist');
                   setImageUrl('no-image');
                 }
               }}
@@ -216,7 +213,6 @@ const PrivateMapping = () => {
                       <Link to={
                         {
                           pathname: "/feed-panel",
-                          // pathname: `/feed-panel/${panel.id}`,
                           myPanel: { panel }
                         }
                       }>

@@ -24,14 +24,12 @@ a.leaflet-popup-close-button {
   margin-left: 12%;
   margin-top: -7%;
   color:#bfc5d2;
-  /* width: 100px; */
 }
 #text-likes-checked {
   font-weight: 600;
   margin-left: 12%;
   margin-top: -7%;
   color:#359eff;
-  /* width: 100px; */
 }
 #number-likes {
   font-weight: 600;
@@ -60,31 +58,29 @@ a.leaflet-popup-close-button {
   margin-top: -3%;
   margin-left: -7.5%;
 }
+#spiner-images {
+  margin-top: 10%;
+  margin-left: 10%;
+  text-align: center;
+  font-size: 2em;
+}
 #div-container-img {
-  width: 300px;
-  object-fit: cover; 
+  width: 300px; 
+  height: 250px;
 }
 #container-img {
-  object-fit: initial;
-  width: 100%;
+  width: 300px;
   max-width: 100%;
   margin-top: -3%;
   margin-left: -7.5%;
 }
-#public-private-mapping-no-image-panel{
+#public-private-mapping-panel-image {
+  object-fit: initial;
   width: 300px;
   height: 250px;
   margin-top: 0%;
   margin-left: 0%;
   background-color: #bfc5d2;
-}
-#public-private-mapping-panel-image {
-  justify-content: center;
-  max-width:300px;
-  height: 250px;
-  margin-top: 0%;
-  margin-left: 0%;
-  background-color: white;
 }
 #public-private-mapping-data-labels { 
   font-weight: 600;
@@ -97,8 +93,7 @@ a.leaflet-popup-close-button {
 #public-private-mapping-data-fields {
   margin-left: -3%;
   font-weight: 600;
-  color:
-  #2a4092;
+  color: #2a4092;
   text-align: center;
   width: 100px;
 }
@@ -109,7 +104,7 @@ a.leaflet-popup-close-button {
   visibility: hidden;
 }
 #mapping-button-left {
-  margin-top: 5%;
+  margin-top: 1%;
   margin-left: -6%;
   background-color: #2a4092;
   color: #ffffff;
@@ -119,7 +114,7 @@ a.leaflet-popup-close-button {
   border-radius: 0;
 }
 #mapping-button-right {
-margin-top: 5%;
+margin-top: 1%;
 margin-left: 2%;
 background-color: #db4196;
 color: #ffffff;

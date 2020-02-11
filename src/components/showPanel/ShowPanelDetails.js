@@ -1,61 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { Card, Button, Row, Col, Icon, Input, Form, List, Comment, Divider } from 'antd'
-import solar from '../../assets/solar.jpg'
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import "./ShowPanel.css"
 import { Link } from "react-router-dom";
 import moment from 'moment'
-import spinner from "../../assets/spinner.svg";
-import noImage from '../../assets/solar-panel.svg';
-
-const PanelImage = ({ imageUrl }) => {
-  switch (imageUrl) {
-    case null: {
-      return <img src={spinner} alt="LOADING..." />;
-    }
-    case 'no-image': {
-      return <img
-        src={noImage}
-        alt="image"
-        id="feed-card-no-image-panel"
-      />
-    }
-    default: {
-      return (
-        <img
-          src={imageUrl}
-          alt="image"
-          id="feed-card-panel-image"
-        />
-      );
-    }
-  }
-};
+import ImageSlider from '../imageSlider/ImageSlider'
 
 const ShowPanelDetails = (props) => {
 
   const myPanel = props.location.myPanel
-
-  //GET IMAGE
-  const [imageUrl, setImageUrl] = useState();
-  useEffect(() => {
-    function getImage(id) {
-      axiosConfig({
-        url: '/multimedia/' + id + '/getImage/',
-        method: 'GET',
-        responseType: 'blob'
-      }).then(response => {
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        setImageUrl(url);
-      });
-    }
-    if ([myPanel.panel.multimedia] && [myPanel.panel.multimedia.length] > 0) {
-      getImage([myPanel.panel.multimedia[0].id]);
-    } else {
-      setImageUrl('no-image');
-    }
-  }, []);
 
   return (
     <React.Fragment>
@@ -73,35 +27,37 @@ const ShowPanelDetails = (props) => {
                 </Link>
               </div>
               <div id="show-panel-card-image-container">
-                <PanelImage imageUrl={imageUrl} />
+                <ImageSlider multimedia={myPanel.panel.multimedia} />
               </div>
             </Col >
           </Row>
           <Row>
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Electrical capacity
-                  </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.electrical_capacity} Kw
-                  </h4>
-            </Col>
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Surface
-                  </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.surface} m²
-                  </h4>
-            </Col>
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Inverter capacity
-                  </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.inverterCapacity} Kw
-                  </h4>
-            </Col>
+            <div id="feed-panel-text-fields">
+              <Col span={8}>
+                <h5 id="show-panel-data-labels-card">
+                  Electrical capacity
+                </h5>
+                <h4 id="show-panel-data-fields">
+                  {myPanel.panel.electrical_capacity} Kw
+                </h4>
+              </Col>
+              <Col span={8}>
+                <h5 id="show-panel-data-labels-card">
+                  Surface
+                </h5>
+                <h4 id="show-panel-data-fields">
+                  {myPanel.panel.surface} m²
+                </h4>
+              </Col>
+              <Col span={8}>
+                <h5 id="show-panel-data-labels-card">
+                  Inverter capacity
+                </h5>
+                <h4 id="show-panel-data-fields">
+                  {myPanel.panel.inverterCapacity} Kw
+                </h4>
+              </Col>
+            </div>
             <Row >
               <div id="feed-panel-user-name-container">
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

@@ -35,8 +35,9 @@ const LoginForm = (props) => {
     setData({ ...data, isSubmitting: true, errorMessage: null });
 
     // POST LOGIN
+    console.log("EXEMPLE ENV", process.env.REACT_APP_GRANT_TYPE_A, process.env.REACT_APP_USER_NAME, process.env.REACT_APP_PASSWORD, process.env.REACT_APP_SCOPE)
     var body = {
-      grant_type: "password",
+      grant_type: process.env.REACT_APP_GRANT_TYPE_A,
       username: data.email,
       password: data.password,
     }
@@ -47,10 +48,10 @@ const LoginForm = (props) => {
           "Accept": "application/json"
         },
         auth: {
-          username: "crmClient1",
-          password: "crmSuperSecret"
+          username: process.env.REACT_APP_USER_NAME,
+          password: process.env.REACT_APP_PASSWORD
         },
-        scope: "read write trust"
+        scope: process.env.REACT_APP_SCOPE
       })
       .then(response => {
         if (response.status === 200) {
@@ -80,7 +81,6 @@ const LoginForm = (props) => {
       });
   };
 
-
   function getMyUserInfo() {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
@@ -107,7 +107,6 @@ const LoginForm = (props) => {
 
   return (
     <Row>
-
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
         <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
           <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
@@ -139,15 +138,15 @@ const LoginForm = (props) => {
               </Form.Item>
 
             </div>
-            <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
-            <Divider id="large-divider" />
+            <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
+            {/* <Divider id="large-divider" /> */}
             <div id="welcome-button-container">
               <button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}
               </button>
             </div>
           </Form>
-          <h6 id="welcome-text-mini">Do not you have an account yet? <Link id="link" to="/register">Sign up</Link></h6>
+          <h6 id="welcome-text-mini-account">Do not you have an account yet? <Link id="link" to="/register">Sign up</Link></h6>
 
           <div id="welcome-text-footer-container">
             <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>

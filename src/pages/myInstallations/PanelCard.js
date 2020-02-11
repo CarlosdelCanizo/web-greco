@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import axiosConfig from '../../api/axiosConfig'
+import CardSlider from './CardSlider'
 
 const PanelImage = ({ imageUrl }) => {
   switch (imageUrl) {
@@ -142,7 +143,8 @@ const PanelCard = ({ panel, fetchPanels }) => {
             </div>
           </Col>
           <div id="installation-add-image-container">
-            <PanelImage imageUrl={imageUrl} id="installation-add-image" />
+            <CardSlider multimedia={panel.multimedia} />
+            {/* <PanelImage imageUrl={imageUrl} id="installation-add-image" /> */}
           </div>
           <div id="installation-text-fields">
             <Col span={8}>

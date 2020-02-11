@@ -27,7 +27,7 @@ const SecondForm = props => {
   if (currentPanelState && currentPanelState.lat !== "" && currentPanelState.lon !== "") {
     latitude = currentPanelState.lat
     longitude = currentPanelState.lon
-    console.log("el current del lat lon", latitude, longitude)
+    console.log("el current del latitude longitude", latitude, longitude)
   }
   if (currentPanelState === undefined) {
     latitude = ""
@@ -39,7 +39,7 @@ const SecondForm = props => {
   const [lon, setLon] = useState(longitude);
   const [mobileLat, setMobileLat] = useState('');
   const [mobileLon, setMobileLon] = useState('');
-  console.log("lat lon:", lat, lon)
+
 
   const handleFormSubmit = event => {
     event.preventDefault();
@@ -55,6 +55,17 @@ const SecondForm = props => {
   function activateRedirection() {
     setLocation(true)
   }
+
+  const isEnabled =
+    (data.lat && data.lat !== undefined || lat && lat !== "") &&
+    (data.lat && data.lon !== undefined || lat && lat !== "");
+
+  function clearPanel() {
+    localStorage.removeItem("currentPanelState")
+    localStorage.removeItem("currentPanelId")
+  }
+  console.log("lat lon:", lat, lon)
+  console.log("el data lat y data lon", data.lat, data.lon)
 
   return (
     <Row>
@@ -72,7 +83,7 @@ const SecondForm = props => {
           </Col>
 
           <Link to="/private-mapping">
-            <Button id="forms-close-button">
+            <Button id="forms-close-button" onClick={clearPanel}>
               <Icon type="close" id="icon-x" />
             </Button>
           </Link>
@@ -160,6 +171,7 @@ const SecondForm = props => {
             <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
               <Button
+                disabled={!isEnabled}
                 id="button-panel-register-next-second"
                 onClick={handleFormSubmit}
               >

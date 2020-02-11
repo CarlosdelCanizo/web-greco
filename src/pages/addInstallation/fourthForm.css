@@ -1,5 +1,8 @@
 /***************************************************************PANEL*REGISTER*FOURTH*AND*FIVE***********************************************************/
 /***PANEL*REGISTER*FOURTH*************************************************************************************************************************/
+#orientationFromMobile_alpha {
+  visibility: hidden;
+}
 #selector {
   margin-top: 3%;
   margin-left: 0%
@@ -379,7 +382,6 @@
   margin-left: -5%;
   margin-bottom: -1%;
 }
-
   #button-panel-register-next {
     background-color: #db4196;
     color: #ffffff;

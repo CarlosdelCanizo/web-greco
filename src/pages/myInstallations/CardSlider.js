@@ -3,7 +3,7 @@ import { Button, Icon, Popconfirm, message } from 'antd'
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import axiosConfig from '../../api/axiosConfig'
-import './imageSlider.css'
+import './MyInstallations.css'
 
 const PanelImage = ({ imageUrl }) => {
   switch (imageUrl) {
@@ -13,23 +13,25 @@ const PanelImage = ({ imageUrl }) => {
     case 'no-image': {
       return <img
         src={noImage}
-        alt="slider"
-        id="slider-image"
+        alt="image"
+        id="card-slider-installation-add-image"
       />
     }
     default: {
       return (
         <img
           src={imageUrl}
-          alt="slider"
-          id="slider-image"
+          alt="image"
+          id="card-slider-installation-add-image"
         />
       );
     }
   }
 };
 
-const ImageSlider = ({ multimedia }) => {
+const CardSlider = ({ multimedia }) => {
+
+  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
   var firstImageId
   var lastImageId
@@ -62,10 +64,10 @@ const ImageSlider = ({ multimedia }) => {
           setImageUrl(url);
         });
     }
-
     getImage(currentImageId)
 
   }, [currentImageId]);
+
 
   function forward() {
     setCurrentImageId(currentImageId + 1);
@@ -75,10 +77,40 @@ const ImageSlider = ({ multimedia }) => {
     setCurrentImageId(currentImageId - 1);
   }
 
+  const deleteImage = (id) => {
+    axiosConfig.delete('/multimedia/' + id,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": access_token
+        }
+      })
+      .then(response => {
+        console.log("Delete image:", response);
+      })
+      .then(error => {
+        console.log("ERROR delete image:", error);
+      })
+
+  }
+
+  function confirm() {
+    deleteImage(currentImageId)
+    setImageUrl(noImage);
+
+  }
+
   return (
     <div>
+      <Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
+        <Button
+          id="card-slider-button-delete-image"
+        >
+          <Icon type="delete" />
+        </Button>
+      </Popconfirm>
       <Button
-        id="slider-button-left"
+        id="card-slider-button-left"
         onClick={backward}
         disabled={currentImageId === firstImageId ? true : false}
       >
@@ -86,16 +118,16 @@ const ImageSlider = ({ multimedia }) => {
       </Button>
 
       <Button
-        id="slider-button-right"
+        id="card-slider-button-right"
         onClick={forward}
         disabled={currentImageId === lastImageId ? true : false}
       >
         <Icon type="right" id="arrow" />
       </Button>
 
-      <PanelImage imageUrl={imageUrl} id="slider-image" />
+      <PanelImage imageUrl={imageUrl} id="card-slider-image" />
     </div>
   );
 }
 
-export default ImageSlider;
+export default CardSlider;

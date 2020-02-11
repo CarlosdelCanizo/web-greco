@@ -1,33 +1,134 @@
-/* .image-slide {
-  height: 100%;
+@import '~antd/dist/antd.css';
+
+/************************************************************IMAGE*SLIDER*************************************************/
+/***COMPUTER************************************************************************************************************/
+
+#slider-button-left {
+  position: absolute;
+  z-index: 999;
+  margin-top: 25%;
+  margin-left: -4%;
+  background-color: transparent;
+  border: none;
+}
+#arrow {
+  color: red;
+  font-size: 1.5em;
+}
+#slider-image {
+  justify-content: center;
+  margin-top: -4%;
+  margin-left: 0%;
   width: 100%;
-  transition: background-image .3s ease-in-out;
+  height: 250px;
+  border-bottom: 5px solid #2a4092;
+  /* justify-content: center;
+  margin-top: 0%;
+  margin-left: 0%;
+  width: 100%;
+  height: 250px; */
+} 
+#slider-button-delete-image {
+  position: absolute;
+  z-index: 999;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  margin-top: -3%;
+  margin-left: 0%;
+} 
+#slider-button-right {
+  position: absolute;
+  z-index: 999;
+  margin-top: 25%;
+  margin-left: 104%;
+  background-color: transparent;
+  border: none;
 }
 
-.slide-arrow {
-  color: antiquewhite;
-  cursor: pointer;
-  font-size: 2rem;
-  position: fixed;
-  top: 50%;
+/************************************************************IMAGE*SLIDER**************************************************/
+/***TABLET****************************************************************************************************************/
+
+@media (min-width: 600px) and (max-width: 992px) {
+  #slider-button-left {
+    position: absolute;
+    z-index: 999;
+    margin-top: 30%;
+    margin-left: -4%;
+    background-color: transparent;
+    border: none;
+  }
+  #arrow {
+    color: red;
+    font-size: 1.5em;
+  }
+  #slider-image {
+    justify-content: center;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100%;
+    height: 250px;
+  } 
+  #slider-button-delete-image {
+    position: absolute;
+    z-index: 999;
+    color: red;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    margin-top: -3%;
+    margin-left: 0%;
+  } 
+  #slider-button-right {
+    position: absolute;
+    z-index: 999;
+    margin-top: 30%;
+    margin-left: 104%;
+    background-color: transparent;
+    border: none;
+  }
 }
 
-.slide-arrow.right {
-  right: 1rem;
-}
+/************************************************************IMAGE*SLIDER**************************************************/
+/***MOBILE***************************************************************************************************************/
 
-.slide-arrow.left {
-  left: 1rem;
-} */
-
-.ant-carousel.slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
-  overflow: hidden;
-}
-
-.ant-carousel.slick-slide h3 {
-  color: #fff;
+@media (min-width: 240px) and (max-width: 600px) {
+  #slider-button-left {
+    position: absolute;
+    z-index: 999;
+    margin-top: 30%;
+    margin-left: -5%;
+    background-color: transparent;
+    border: none;
+  }
+  #arrow {
+    color: red;
+    font-size: 1.5em;
+  }
+  #slider-image {
+    justify-content: center;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100%;
+    height: 200px;
+  } 
+  #slider-button-delete-image {
+    position: absolute;
+    z-index: 999;
+    color: red;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    margin-top: -3%;
+    margin-left: 0%;
+  } 
+  #slider-button-right {
+    position: absolute;
+    z-index: 999;
+    margin-top: 30%;
+    margin-left: 104%;
+    background-color: transparent;
+    border: none;
+  }
 }

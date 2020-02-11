@@ -8,58 +8,64 @@ import axiosConfig from '../../api/axiosConfig'
 function NotificationsList() {
 
   const [notifications, setNotifications] = useState([])
-  const [idPanels, setIdPanels] = useState([])
 
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+  var isDisabled = false
 
   // GET NOTIFICATIONS
-  const fetch = () => {
-    axiosConfig.get("/comment/unreadcomments",
+  useEffect(() => {
+    const fetchNotifications = () => {
+      axiosConfig.get("/comment/unreadcomments",
+        {
+          headers: {
+            "Authorization": access_token
+          }
+        })
+        .then(response => {
+          const dataResponse = response.data
+          setNotifications(dataResponse)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    fetchNotifications();
+  }, [])
+
+
+  // DELETE NOTIFICATIONS
+  const deleteNotifications = () => {
+    let idPanel = notifications[0].idPanel
+    axiosConfig.get("/solarPanel/" + idPanel + "/comments",
       {
         headers: {
           "Authorization": access_token
         }
       })
       .then(response => {
-        const newList = response.data
-        setNotifications(newList)
-        console.log("las notificaciones:", newList)
-        setIdPanels({ ...idPanels, [idPanels]: response.data })
-        console.log("idPanels:", idPanels)
-        // setIdPanel(newList[0].solarPanelId)
+        const responseData = response.data
+        console.log("El responseDatata de los comentarios para que se borren", responseData)
       })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
-
-  // DELETE NOTIFICATIONS
-  const deleteNotifications = () => {
-    setNotifications([])
-    // axiosConfig.get("/solarPanel/" + idPanel + "/comments",
-    //   {
-    //     headers: {
-    //       "Authorization": access_token
-    //     }
-    //   })
-    //   .then(response => {
-    //     const newList = response.data
-    //     fetch()
-    //   })
-  }
-
-  useEffect(() => {
-    fetch();
-  }, [])
 
   return (
     <React.Fragment>
       <Header />
       <Card id="notification-detail">
         <div>
+          {notifications.length === 0 ?
+            (isDisabled = true, <p id="no-notifications">You don´t have new notifications</p>)
+            :
+            (null)}
           {notifications.map(item => (
-            <NotificationCard item={item} />
+            <NotificationCard key={item.id} item={item} />
           ))}
         </div>
         <div>
-          <Button id="button-clear" onClick={deleteNotifications}>
+          <Button id="button-clear" onClick={deleteNotifications} disabled={isDisabled}>
             CLEAR
         </Button>
         </div>

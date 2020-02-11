@@ -150,15 +150,11 @@
     height: 10px;
   }
   #welcome-text-footer-container{
-    z-index: 999;
-    position: fixed;
     width: 100%;
     text-align: center;
     bottom: 3%;
   }
   #welcome-text-footer {
-    position: relative;
-    z-index: 999;
     font-size: 0.8em;
     bottom: 3%;
     left: 10%;
@@ -172,9 +168,14 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #col-welcome-container {
     background-image: none; 
-    height: 100%;
+    /* height: 100%;
     width: 100vw;
-    padding: 0%;
+    padding: 0%; */
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 50px; /* height of your footer */
   }
   #logo-mobile {
     height: 15%;
@@ -248,15 +249,18 @@
     border-radius: 0;
   }
   #welcome-text-footer-container{
-    width: 100vw;
-    bottom: 1%;
+   width: 80%;
+   height: auto;
   }
   #welcome-text-footer {
-    width: 80vw;
-    font-size: 0.8em;
-    bottom: 3%;
-    left: 25%;
-    color: #2a4092;
+   position: fixed;
+   text-align: center;
+   left:5%;
+   right: 5%;
+   bottom: 0;
+   width: 80%;
+   font-size: 0.8em;
+   color: #2a4092;
   } 
 }
 
@@ -265,17 +269,13 @@
 
 @media (max-width: 240px)  {
   #welcome-text-footer-container{
-    z-index: 999;
-    position: absolute;
     width: 100%;
     text-align: center;
-    bottom: -15%;
+    top: 2%;
   }
   #welcome-text-footer {
-    position: relative;
-    z-index: 999;
     font-size: 0.8em;
-    bottom: -15%;
+    top: -152%;
     width: 80%;
     color: #2a4092;
   } 

@@ -219,6 +219,28 @@ const SixthForm = props => {
     setLocation(true)
   }
 
+  function clearPanel() {
+    localStorage.removeItem("currentPanelState")
+    localStorage.removeItem("currentPanelId")
+  }
+
+  console.log("data.installationName", data.installationName);
+  console.log("installationName", installationName);
+  console.log("data.installationProperty", data.installationProperty);
+  console.log("data.battery", data.battery);
+  console.log("baterry", battery);
+  console.log("data.batteryDescruiption", data.batteryDescription);
+  console.log("battery description", batteryDescription);
+  console.log("data.observation", data.observation);
+  console.log("observation", observation);
+
+  const isEnabled =
+    (data.installationName !== undefined && data.installationName.length > 0 || installationName && installationName !== undefined && installationName > 0) &&
+    (data.installationProperty !== undefined && data.installationProperty.length > 0 || installationProperty && installationProperty !== undefined && installationProperty > 0) &&
+    (data.battery !== undefined || battery && battery !== "" && battery !== undefined) &&
+    (data.batteryDescription !== undefined && data.batteryDescription.length > 0 || batteryDescription && batteryDescription !== undefined && batteryDescription > 0) &&
+    (data.observation !== undefined && data.observation.length > 0 || observation && observation > 0);
+
   return (
     <Row>
       <div id="background-panel-register">
@@ -235,7 +257,7 @@ const SixthForm = props => {
           </Col>
 
           <Link to="/private-mapping">
-            <Button id="forms-close-button">
+            <Button id="forms-close-button" onClick={clearPanel}>
               <Icon type="close" id="icon-x" />
             </Button>
           </Link>
@@ -347,7 +369,7 @@ const SixthForm = props => {
             <Col id="col-observation" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
               <Form.Item>
                 <label id="label-panel-very-large">Observations</label>
-                <input placeholder='Observations and comments'
+                <Input placeholder='Observations and comments'
                   type="text"
                   name="observation"
                   id="observation"
@@ -365,7 +387,11 @@ const SixthForm = props => {
             </Col>
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
-              <Button id="button-panel-register-next-sixth" type="submit" onClick={handleFormSubmit}>
+              <Button
+                disabled={!isEnabled}
+                id="button-panel-register-next-sixth"
+                type="submit"
+                onClick={handleFormSubmit}>
                 NEXT
                 {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
               </Button>

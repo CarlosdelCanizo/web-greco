@@ -5,47 +5,20 @@ import Header from '../../header/Header'
 import './feedPanel.css'
 import moment from 'moment'
 import { Link } from "react-router-dom";
-import spinner from "../../assets/spinner.svg";
-import noImage from '../../assets/solar-panel.svg';
+import ImageSlider from '../imageSlider/ImageSlider'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 
 const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
-const PanelImage = ({ imageUrl }) => {
-  switch (imageUrl) {
-    case null: {
-      return <img src={spinner} alt="LOADING..." />;
-    }
-    case 'no-image': {
-      return <img
-        src={noImage}
-        alt="image"
-        id="feed-card-no-image-panel"
-      />
-    }
-    default: {
-      return (
-        <img
-          src={imageUrl}
-          alt="image"
-          id="feed-card-panel-image"
-        />
-      );
-    }
-  }
-};
 
 //INPUT BOX AND SEND BUTTON
 const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
 
   const [message, setMessage] = useState("");
-  // const [messagesList, setMessagesList] = useState([])
 
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
     if (message) {
-      // setMessagesList(messagesList.concat(message))
       postComment()
     }
     setMessage("")
@@ -72,15 +45,15 @@ const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
           id: dataResponse.id,
           text: dataResponse.text,
           creationDate: dataResponse.creationDate,
-          userID: dataResponse.owner.userId,
-          userName: dataResponse.owner.username,
+          userID: dataResponse.userId,
+          userName: dataResponse.userName,
           readed: dataResponse.readed,
           solarPanelId: panelId
         }
         setMessagesList(messagesList.concat(newResponse));
       })
       .catch(function (error) {
-        console.log(error);
+        console.log("error post message response", error);
       });
   }
   return (
@@ -136,14 +109,11 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
           .then(response => {
             const newList = response.data;
             if (messagesList.length !== newList.length) {
-              console.log("lenght messages y response", messagesList.length, newList.length);
               render = true;
               setMessagesList(newList);
             } else {
-              console.log("lenght messages y response", messagesList.length, newList.length);
               render = false;
             }
-
           })
       }
     }
@@ -189,37 +159,8 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
 
 const FeedPanel = (props) => {
 
-  // const myPanel = "";
-  // if (props.location.myPanel) {
-  // myPanel = props.location.myPanel
-  // } else {
-  // split
-  // contar cuantos panels han salido
-  // split[max]
-  //let panelId = document.location.href.split("/")[length];
-  //myPanel = panelId;
-  // }
   const myPanel = props.location.myPanel;
-  const [imageUrl, setImageUrl] = useState();
   const [messagesList, setMessagesList] = useState([]);
-
-  useEffect(() => {
-    function getImage(id) {
-      axiosConfig({
-        url: '/multimedia/' + id + '/getImage/',
-        method: 'GET',
-        responseType: 'blob'
-      }).then(response => {
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        setImageUrl(url);
-      });
-    }
-    if ([myPanel.panel.multimedia] && [myPanel.panel.multimedia.length] > 0) {
-      getImage([myPanel.panel.multimedia[0].id]);
-    } else {
-      setImageUrl('no-image');
-    }
-  }, []);
 
   return (
 
@@ -239,7 +180,7 @@ const FeedPanel = (props) => {
                   </Link>
                 </div>
                 <div id="feed-card-image-container">
-                  <PanelImage imageUrl={imageUrl} />
+                  <ImageSlider multimedia={myPanel.panel.multimedia} />
                 </div>
               </Col >
             </Row>

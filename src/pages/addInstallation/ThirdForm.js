@@ -64,6 +64,11 @@ const ThirdForm = props => {
         setLocation(true)
     }
 
+    function clearPanel() {
+        localStorage.removeItem("currentPanelState")
+        localStorage.removeItem("currentPanelId")
+    }
+
     return (
         <Row>
             <div id="background-panel-register">
@@ -81,7 +86,7 @@ const ThirdForm = props => {
                     </Col>
 
                     <Link to="/private-mapping">
-                        <Button id="forms-close-button">
+                        <Button id="forms-close-button" onClick={clearPanel}>
                             <Icon type="close" id="icon-x" />
                         </Button>
                     </Link>

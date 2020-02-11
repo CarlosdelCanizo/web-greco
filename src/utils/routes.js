@@ -27,7 +27,7 @@ import NotificationsList from '../header/notificationsMenu/NotificationsList';
 import FeedPanel from '../components/feedPanel/FeedPanel';
 import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard';
 import DownloadDatabase from '../header/dataBase/DownloadData';
-import ImageSlider from '../components/imageSlider/ImageSlider'
+// import ImageSlider from '../components/imageSlider/ImageSlider'
 
 const Routes = () => {
 
@@ -64,8 +64,9 @@ const Routes = () => {
           <Route path="/third" component={ThirdForm} />
           <Route path="/fourth" component={FourthForm} />
           <Route path="/fifth" component={FifthForm} />
+          <Route path="/sixth" component={SixthForm} />
 
-          <Route path="/image-slider" component={ImageSlider} />
+          {/* <Route path="/image-slider" component={ImageSlider} /> */}
 
           <PrivateRoute
             path="/first"

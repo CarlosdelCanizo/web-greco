@@ -14,20 +14,20 @@ import axiosConfig from '../../api/axiosConfig'
 const PanelImage = ({ imageUrl }) => {
   switch (imageUrl) {
     case null: {
-      return <img src={spinner} alt="LOADING..." />;
+      return <img src={spinner} alt="LOADING..." id="spiner-images" />;
     }
     case 'no-image': {
       return <img
         src={noImage}
-        alt="image"
-        id="public-private-mapping-no-image-panel"
+        alt="without image"
+        id="public-private-mapping-panel-image"
       />
     }
     default: {
       return (
         <img
           src={imageUrl}
-          alt="image"
+          alt="panel image"
           id="public-private-mapping-panel-image"
         />
       );
@@ -58,12 +58,6 @@ const PublicMapping = () => {
   const [panels, setPanels] = useState([]);
   const [imageUrl, setImageUrl] = useState();
 
-  //LIKE
-  // const [like, setLike] = useState(false)
-  // const giveLike = () => {
-  //   setLike(!like)
-  // }
-
   //GET PANEL IMAGE
   function getImage(id) {
     axiosConfig({
@@ -90,7 +84,6 @@ const PublicMapping = () => {
       <Header />
       <div id="leaflet-container">
         <LeafletMap
-          // ref={(ref) => { leafletMap = ref; }}
           style={{ height: '95vh' }}
           center={[50, 10]}
           zoom={4}
@@ -111,10 +104,8 @@ const PublicMapping = () => {
                 position={[item.lat, item.lon]}
                 onClick={() => {
                   if (item.multimedia && item.multimedia.length > 0) {
-                    console.log('img exist with id: ', item.multimedia[0].id);
                     getImage(item.multimedia[0].id);
                   } else {
-                    console.log('img not exist');
                     setImageUrl('no-image');
                   }
                 }}

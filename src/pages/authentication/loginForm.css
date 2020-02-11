@@ -74,7 +74,16 @@
   margin-left: 10%;
   margin-top: -1%;
 }
-#welcome-text-mini {
+#welcome-text-mini-forget {
+  margin-top: 5%;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.36px;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#welcome-text-mini-account {
   margin-top: 5%;
   font-size: 1em;
   font-weight: 600;
@@ -124,15 +133,12 @@
   color: #db4196;
 }
 #welcome-text-footer-container{
-  /* z-index: 999;
-  position: fixed; */
   width: 25%;
   text-align: center;
   bottom: 2%;
 }
 #login-text-footer {
-  /* position: relative;
-  z-index: 999; */
+  width: 50%;
   font-size: 1em;
   bottom: 2%;
   left: -10%;
@@ -201,8 +207,18 @@
     margin-left: 10%;
     margin-top: -1%;
   }
-
-  #welcome-text-mini {
+  #welcome-text-mini-forget {
+    margin-top: 6%;
+    width: 90%;
+    margin-right: 8%;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.36px;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #welcome-text-mini-account {
     margin-top: 6%;
     width: 90%;
     margin-right: 8%;
@@ -226,14 +242,10 @@
     margin-top: 10%;
   }
   #welcome-text-footer-container{
-    /* z-index: 999;
-    position: fixed; */
     width: 100vw;
     bottom: 3%;
   }
   #login-text-footer {
-    /* position: relative;
-    z-index: 999; */
     font-size: 0.8em;
     bottom: 3%;
     margin-left: -40%;
@@ -248,7 +260,7 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #col-welcome-container {
     background-image: none; 
-    height: 100vh;
+    height: auto;
     width: 100vw;
     padding: 0%;
   }
@@ -258,7 +270,7 @@
     margin-left: 5%;
   } */
   #inside-welcome-container{
-    margin-top: 10%;
+    margin-top: 8%;
     margin-left: 8%;
     margin-right: 8%; 
   }
@@ -298,8 +310,19 @@
     margin-left: 10%;
     margin-top: -1%;
   }
-  #welcome-text-mini {
-    margin-top: 6%;
+  #welcome-text-mini-forget {
+    margin-top: -10%;
+    width: 85%;
+    margin-right: 8%;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.36px;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #welcome-text-mini-account {
+    margin-top: 4%;
     width: 85%;
     margin-right: 8%;
     font-size: 1em;
@@ -321,15 +344,22 @@
     width: 95%;
     height: 42px;
     border-radius: 0;
+    margin-top: 10%;
+  }
+  #welcome-text-footer-container {
+    position: relative;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 5%;
   }
   #login-text-footer {
-    /* position: relative;
-    z-index: 999; */
+    position: fixed;
     text-align: left;
+    left:10%;
+    right: 5%;
+    bottom: 0;
+    width: 80%;
     font-size: 0.8em;
-    bottom: 3%;
-    margin-left: 0%;
-    width: 200%;
     color: #2a4092;
   } 
 }
@@ -339,15 +369,11 @@
 
 @media (max-width: 240px)  {
   #welcome-text-footer-container{
-    /* z-index: 999;
-    position: absolute; */
     width: 100%;
     text-align: center;
     bottom: -15%;
   }
   #login-text-footer {
-    /* position: relative;
-    z-index: 999; */
     font-size: 0.8em;
     bottom: -15%;
     left: 2%;
@@ -392,4 +418,3 @@
     color: #2a4092;
   } 
 } 
-

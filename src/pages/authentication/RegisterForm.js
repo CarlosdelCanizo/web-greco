@@ -74,7 +74,7 @@ const RegisterForm = (props) => {
         <div id="inside-welcome-container" >
           <h1 id="welcome-title-text" >
             USER REGISTER
-        </h1>
+          </h1>
           <Form onSubmit={handleFormSubmit}>
             <div id="input-login-form-fields">
               <Form.Item>
@@ -129,13 +129,12 @@ const RegisterForm = (props) => {
                     {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("REGISTER")}
                     {toLocation ? <Redirect from="/register" to="/complete-register" /> : null}
                   </button>
-                ) : (<button id="button-register" disabled>ACCEPT TO REGISTER</button>)
+                )
+                :
+                (<button id="button-register" disabled>ACCEPT TO REGISTER</button>)
               }
             </div>
           </Form>
-        </div>
-        <div id="welcome-text-footer-container">
-          <h6 id="login-text-footer">&nbsp;&nbsp;</h6>
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
 // import { addressPoints } from './realworld.10000.js';
 import axiosConfig from '../../api/axiosConfig'

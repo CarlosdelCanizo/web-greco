@@ -27,14 +27,13 @@
   margin-left: 90%;
 }
 #feed-card-image-container {
-  /* object-fit: fill;  */
   width: 424px;
-  height: 250px;
+  height: 235px;
   margin-top: -2.25%;
   margin-left: -6.8%;
 }
 #feed-panel-text-fields {
-  margin-top: 0%;
+  margin-top: -2%;
   margin-left: 0%;
 }
 #feed-list-container {
@@ -44,7 +43,7 @@
 }
 #feed-form-container {
   width: 100%;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-left: -14%
 }
 
@@ -84,7 +83,7 @@
 #feed-close-button {
   float: right; 
   margin-top: -1%;
-  margin-right: 0%;
+  margin-right: -25%;
   line-height: 1em;
   background-color: transparent;
   color: #ff0000;
@@ -93,24 +92,6 @@
   border: none;
   z-index: 1;
   border-radius: none;
-}
-#feed-card-no-image-panel {
-  justify-content: center;
-  object-fit: fill;
-  margin-top: -4%;
-  margin-left: 0%;
-  width: 100%;
-  height: 250px;
-  background-color: #eaedf1;
-  border-bottom: 5px solid #2a4092;
-}
-#feed-card-panel-image {
-  justify-content: center;
-  margin-top: -4%;
-  margin-left: 0%;
-  width: 100%;
-  height: 250px;
-  border-bottom: 5px solid #2a4092;
 }
 #feed-panel-user-name {
   margin-top: -2%;
@@ -263,25 +244,14 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
   #feed-card-image-container {
-    /* object-fit: fill;  */
     width: 424px;
     height: 250px;
     margin-top: -6.5%;
     margin-left: -6.8%;
   }
   #feed-panel-text-fields {
-    margin-top: 0%;
+    margin-top: 1%;
     margin-left: 0%;
-  }
-  #feed-list-container {
-   margin-top: -5%;
-   margin-left: -10%;
-   height: 55vh;
-  }
-  #feed-form-container {
-    width: 100%;
-    margin-top: 5%;
-    margin-left: -14%
   }
 
   /**************************************************************************CARD****************/
@@ -304,8 +274,8 @@
   }
   #feed-close-button {
     float: right; 
-    margin-top: -7.5%;
-    margin-right: 5%;
+    margin-top: -40%;
+    margin-right: -15%;
     line-height: 3.3em;
     background-color: transparent;
     color: #ff0000;
@@ -314,24 +284,6 @@
     border: none;
     z-index: 1;
     border-radius: none;
-  }
-  #feed-card-no-image-panel{
-    justify-content: center;
-    object-fit: fill;
-    margin-top: -4.5%;
-    margin-left: 0%;
-    width: 100%;
-    height: 250px;
-    background-color: #eaedf1;
-    border-bottom: 5px solid #2a4092;
-  }
-  #feed-card-panel-image {
-    justify-content: center;
-    margin-top: -4.5%;
-    margin-left: 0%;
-    width: 100%;
-    height: 250px;
-    border-bottom: 5px solid #2a4092;
   }
   #feed-panel-user-name {
     margin-top: -2%;
@@ -347,13 +299,36 @@
 
   /**************************************************************************FEED****************/
   /***TABLET***********************************************************************************/
-  
+  #feed-list-container {
+    margin-top: -5%;
+    margin-left: -10%;
+    /* height: 60vh; */
+   }
   #feed-panel-messages-list {
     overflow-y: auto;
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
-    height: 55vh;
+    min-height: calc(60vh - 60px);
+  }
+  #panel-feed-container-message-box {
+    display: block;
+    width: 100%;
+  }
+  #feed-input-text {
+    margin-top: 0%;
+    margin-left: 10%;
+    height: 40px;
+    width: 95%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #feed-send-button {
+    position: absolute;
+    left: 98%;
+    font-size: 2.5em;
+    background-color: transparent;
+    border: none;
+    color: #2a4092;
   }
   #feed-panel-user-booble {
     text-align: left;
@@ -364,7 +339,6 @@
     height: 100%;
     margin-left: 1%;
     margin-top: 2%;
-    /* border-top-left-radius: 0; */
     color: white;
     font-family: Montserrat;
   }
@@ -377,24 +351,9 @@
     height: 100%;
     margin-right: 1%;
     margin-top: 2%;
-    /* border-top-left-radius: 0; */
     color: white;
     font-family: Montserrat;
   }
-  /* #feed-panel-user-booble:after {
-    content: '';
-    position: absolute;
-    left: 3%;
-    top: 25%;
-    width: 0;
-    height: 0;
-    border: 1em solid transparent;
-    border-right-color: #2a4092;
-    border-left: 0;
-    border-top: 0;
-    margin-top: -0.5em;
-    margin-left: -1em;
-  } */
   #feed-panel-avatar {
     background-color: #2a4092;
     color: #db4196;
@@ -418,26 +377,6 @@
     margin-left: 109%;
     color: #9b9b9b;
   }
-  #panel-feed-container-message-box {
-    display: block;
-    width: 100%;
-  }
-  #feed-input-text {
-    margin-top: 0%;
-    margin-left: 10%;
-    height: 40px;
-    width: 95%;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  #feed-send-button {
-    position: absolute;
-    left: 98%;
-    top: -100%;
-    font-size: 2.5em;
-    background-color: transparent;
-    border: none;
-    color: #2a4092;
-  }
 }
 
 /************************************************************FEED*PANEL**************************************************/
@@ -447,13 +386,13 @@
   #panel-feed-outside {
     position: fixed;
     background-color: #eaedf1;
-    height: 100vh; 
+    height: 100%; 
     width: 100%;
   }
   #feed-card-container {
-    float: right;
-    width: 100vw;
-    height: 90vh;
+    float: none;
+    width: 100%;
+    height: 100%;
     margin-top: 0%;
     right: 0%;  
     font-family: Montserrat;
@@ -463,25 +402,18 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
   #feed-card-image-container {
-    /* object-fit: fill;  */
     width: 100vh;
-    height: 230px;
+    height: 200px;
     margin-top: -7.5%;
     margin-left: -7.5%;
-    /* background-color: red; */
   }
   #feed-panel-text-fields {
-    margin-top: 2%;
+    margin-top: -5%;
     margin-left: 0%;
-  }
-  #feed-list-container {
-   margin-top: -5%;
-   margin-left: -10%;
-   height: 100%;
   }
   #feed-form-container {
     width: 100%;
-    margin-top: 3%;
+    margin-top: -18%;
     margin-left: -14%
   }
 
@@ -505,8 +437,8 @@
   }
   #feed-close-button {
     float: right; 
-    margin-top: -3%;
-    margin-right: 5%;
+    margin-top: -30%;
+    margin-right: -20%;
     line-height: 2.7em;
     background-color: transparent;
     color: #ff0000;
@@ -516,29 +448,10 @@
     z-index: 1;
     border-radius: none;
   }
-  #feed-card-no-image-panel{
-    justify-content: center;
-    object-fit: contain;
-    margin-top: 0%;
-    margin-left: 0%;
-    width: 100vh;
-    height: 230px;
-    background-color: #eaedf1;
-    border-bottom: 5px solid #2a4092;
-  }
-  #feed-card-panel-image {
-    justify-content: center;
-    object-fit: contain;
-    margin-top: 0%;
-    margin-left: -44.5%;
-    width: 100vw;
-    height: 230px;
-    border-bottom: 5px solid #2a4092;
-  }
   #feed-panel-user-name {
     margin-top: -2%;
     margin-left: -8%;
-    width: 100%;
+    width: 100vw;
     height: 35px;
     line-height: 2;
     font-weight: 600;
@@ -550,12 +463,17 @@
   /**************************************************************************FEED****************/
   /***MOBILE***********************************************************************************/
   
+  #feed-list-container {
+    margin-top: -5%;
+    margin-left: -10%;
+    height: 55vh;
+   }
   #feed-panel-messages-list {
-    overflow-y: auto;
+    /* overflow-y: auto; */
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
-    height: 315px;
+    height: calc(55vh - 70px);
   }
   #feed-panel-user-booble {
     text-align: left;
@@ -566,7 +484,6 @@
     height: 100%;
     margin-left: 1%;
     margin-top: 2%;
-    /* border-top-left-radius: 0; */
     color: white;
     font-family: Montserrat;
   }
@@ -579,24 +496,9 @@
     height: 100%;
     margin-right: 1%;
     margin-top: 2%;
-    /* border-top-left-radius: 0; */
     color: white;
     font-family: Montserrat;
   }
-  /* #feed-panel-user-booble:after {
-    content: '';
-    position: absolute;
-    left: 3%;
-    top: 25%;
-    width: 0;
-    height: 0;
-    border: 1em solid transparent;
-    border-right-color: #2a4092;
-    border-left: 0;
-    border-top: 0;
-    margin-top: -0.5em;
-    margin-left: -1em;
-  } */
   #feed-panel-avatar {
     background-color: #2a4092;
     color: #db4196;

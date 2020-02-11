@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Row, Col, Divider, Form, Input, InputNumber, Icon, Card, Radio, DatePicker, Select } from 'antd'
+import { Button, Row, Col, Divider, Form, Input, Icon, Card, Radio, DatePicker, Select } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -8,26 +8,8 @@ import multicrystalline from '../../assets/multicrystalline.jpg'
 import thinFilm from '../../assets/thin_film.jpg'
 import './firstForm.css'
 import moment from 'moment'
-import { useHistory } from "react-router-dom"
 
 const FirstForm = (props) => {
-
-  // const formItemLayout = {
-  //   labelCol: {
-  //     xs: { span: 5 },
-  //     sm: { span: 5 },
-  //     md: { span: 5 },
-  //     lg: { span: 5 },
-  //     xl: { span: 5 }
-  //   },
-  //   wrapperCol: {
-  //     xs: { span: 25 },
-  //     sm: { span: 5 },
-  //     md: { span: 5 },
-  //     lg: { span: 5 },
-  //     xl: { span: 5 }
-  //   },
-  // };
 
   const initialPanelState = {
     electrical_capacity: 0,
@@ -55,7 +37,6 @@ const FirstForm = (props) => {
   const myPanel = props.location.myPanel
 
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
-  console.log("El currentPanelId", currentPanelId)
 
   //GET UPDATE DATA
   if (myPanel !== undefined) {
@@ -103,10 +84,6 @@ const FirstForm = (props) => {
     }
   }
 
-  function resetInput(event) {
-    event.target.value = ""
-  }
-
   //DATE PICKER
   function onChangeDatePicker(date, dateString) {
     // console.log("DATE, DATESTRING", date.d, dateString)
@@ -126,6 +103,7 @@ const FirstForm = (props) => {
     setData({ ...data, installationType: value });
   };
 
+  //INPUTS HANDLER CHANGE
   const handleInputChange = event => {
     setData({ ...data, [event.target.name]: (event.target.value) });
   };
@@ -197,9 +175,23 @@ const FirstForm = (props) => {
     setLocation(true)
   }
 
-  console.log("radioValue", radioValue)
-  console.log("technolgyUsed", technologyUsed)
-  console.log("data.Technology", data.technologyUsed)
+  function resetInput(event) {
+    event.target.value = ""
+  }
+
+  function clearPanel() {
+    localStorage.removeItem("currentPanelState")
+    localStorage.removeItem("currentPanelId")
+  }
+
+  const isEnabled =
+    (currentPanelId && currentPanelId > 0) ||
+    (data.electrical_capacity.length > 0 || electrical_capacity && electrical_capacity !== undefined && electrical_capacity.length > 0) &&
+    (data.surface.length > 0 || surface && surface !== undefined && surface.length > 0) &&
+    (data.commissioningDate !== "" || commissioningDate !== undefined) &&
+    (data.technologyUsed !== "" || technologyUsed && technologyUsed !== undefined && technologyUsed.length > 0) &&
+    (data.inverterCapacity.length > 0 || inverterCapacity && inverterCapacity.length > 0) &&
+    (data.installationType !== "" || installationType && installationType !== undefined && installationType.length > 0)
 
 
   return (
@@ -218,7 +210,7 @@ const FirstForm = (props) => {
           </Col>
 
           <Link to="/private-mapping">
-            <Button id="forms-close-button">
+            <Button id="forms-close-button" onClick={clearPanel}>
               <Icon type="close" id="icon-x" />
             </Button>
           </Link>
@@ -234,23 +226,18 @@ const FirstForm = (props) => {
           <Form onSubmit={handleFormSubmit}>
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item
-              // {...formItemLayout}
-              // label="Fail"
-              // validateStatus="error"
-              // help="Only numberss"
               >
                 <label id="panel-input-label">Electrical capacity</label>
                 <Divider id="input-separator" />
 
                 <Input
                   type="number"
-                  value={data.electrical_capacity === 0 ? electrical_capacity : data.electrical_capacity}
+                  value={data.electrical_capacity === 0 ? (electrical_capacity) : (data.electrical_capacity)}
                   onChange={handleInputChange}
                   onClick={resetInput}
                   placeholder="330Kw"
                   id="electrical_capacity"
                   name="electrical_capacity"
-                  required
                 />
               </Form.Item>
             </Col>
@@ -293,6 +280,7 @@ const FirstForm = (props) => {
               name="technologyUsed"
               onChange={onChangeRadio}
               value={radioValue}
+              required
             >
 
               <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -321,7 +309,8 @@ const FirstForm = (props) => {
             <Col d="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <label id="panel-alone-input-label">AC Inverter capacity</label>
-                <Input type="number"
+                <Input
+                  type="number"
                   placeholder="800Kw" name="inverterCapacity" id="inverter-capacity"
                   value={data.inverterCapacity === 0 ? inverterCapacity : data.inverterCapacity}
                   onChange={handleInputChange}
@@ -340,6 +329,7 @@ const FirstForm = (props) => {
                   value={data.installationType === "" ? installationType : data.installationType}
                   onChange={handleInputSelectChange}
                   onClick={resetInput}
+                  required
                 >
 
                   <Option id="select-property" value="On-grid">On-grid</Option>
@@ -349,10 +339,13 @@ const FirstForm = (props) => {
 
               </Form.Item>
             </Col>
+            <div id="error-message">
 
+            </div>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
               <div id="register-panels-button-container-first">
                 <Button
+                  disabled={!isEnabled}
                   id="button-panel-register-next-first"
                   onClick={handleFormSubmit}
                 >
