@@ -9,12 +9,7 @@ import './completeRegister.css'
 const CompleteRegister = () => {
 
   const userName = (localStorage.getItem('user')).toUpperCase();
-
-  //Redirect
-  const [toLocation, setLocation] = useState(false);
-  function activateRedirection() {
-    setLocation(true)
-  }
+  localStorage.removeItem("user")
 
   return (
     <Row>
@@ -34,7 +29,7 @@ const CompleteRegister = () => {
               <h4>You are already part of this great community. You only have one last step left to finish the process</h4>
             </div>
             <Link to="/login">
-              <button id="button-register-complete" onClick={activateRedirection}>
+              <button id="button-register-complete">
                 NEXT
             </button>
             </Link>

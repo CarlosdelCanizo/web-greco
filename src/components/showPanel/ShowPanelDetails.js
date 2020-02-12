@@ -19,13 +19,11 @@ const ShowPanelDetails = (props) => {
           <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
               <p id="show-panel-card-tittle">{myPanel.panel.installationName}</p>
-              <div id="show-panel-button-container">
-                <Link to="private-mapping">
-                  <Button id="show-panel-close-button">
-                    <Icon type="close" />
-                  </Button>
-                </Link>
-              </div>
+              <Link to="private-mapping">
+                <Button id="show-panel-close-button">
+                  <Icon type="close" />
+                </Button>
+              </Link>
               <div id="show-panel-card-image-container">
                 <ImageSlider multimedia={myPanel.panel.multimedia} />
               </div>

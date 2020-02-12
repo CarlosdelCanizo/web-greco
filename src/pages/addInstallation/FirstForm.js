@@ -184,6 +184,15 @@ const FirstForm = (props) => {
     localStorage.removeItem("currentPanelId")
   }
 
+  function validate(email, password) {
+    // true means invalid, so our conditions got reversed
+    return {
+      email: email.length === 0,
+      password: password.length === 0
+    };
+  }
+
+
   const isEnabled =
     (currentPanelId && currentPanelId > 0) ||
     (data.electrical_capacity.length > 0 || electrical_capacity && electrical_capacity !== undefined && electrical_capacity.length > 0) &&

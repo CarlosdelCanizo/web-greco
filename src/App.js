@@ -22,8 +22,15 @@ const reducer = (state, action) => {
         'refresh_token',
         JSON.stringify(action.payload.refresh_token)
       );
+      localStorage.setItem(
+        'expires_in',
+        JSON.stringify(action.payload.expires_in)
+      );
       let expiresAt = action.payload.expires_in * 1000 + new Date().getTime();
-      localStorage.setItem('expires_in', JSON.stringify(expiresAt));
+      let expires_in = action.payload.expires_in
+      console.log("expires_in", expires_in)
+      console.log("expiresAt", expiresAt)
+      // localStorage.setItem('expires_in', JSON.stringify(expiresAt));
       return {
         ...state,
         isAuthenticated: true,

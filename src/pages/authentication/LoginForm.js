@@ -35,7 +35,6 @@ const LoginForm = (props) => {
     setData({ ...data, isSubmitting: true, errorMessage: null });
 
     // POST LOGIN
-    console.log("EXEMPLE ENV", process.env.REACT_APP_GRANT_TYPE_A, process.env.REACT_APP_USER_NAME, process.env.REACT_APP_PASSWORD, process.env.REACT_APP_SCOPE)
     var body = {
       grant_type: process.env.REACT_APP_GRANT_TYPE_A,
       username: data.email,

@@ -17,6 +17,14 @@ const Auth = (props) => {
     return () => clearInterval(interval);
   }, []);
 
+  // const isExpired = (exp?: number) => {
+  //   if (!exp) {
+  //     return false;
+  //   }
+
+  //   return Date.now() > exp;
+  // };
+
 
   // POST REFRESH TOKEN
   function getNewRefreshToken() {

@@ -172,45 +172,41 @@ const FeedPanel = (props) => {
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                 <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
-                <div id="feed-button-container">
-                  <Link to="private-mapping">
-                    <Button id="feed-close-button">
-                      <Icon type="close" />
-                    </Button>
-                  </Link>
-                </div>
+                <Link to="private-mapping">
+                  <Button id="feed-close-button">
+                    <Icon type="close" />
+                  </Button>
+                </Link>
                 <div id="feed-card-image-container">
                   <ImageSlider multimedia={myPanel.panel.multimedia} />
                 </div>
               </Col >
             </Row>
             <Row>
-              <div id="feed-panel-text-fields">
-                <Col span={8}>
-                  <h5 id="panel-data-labels">
-                    Electrical capacity
+              <Col span={8}>
+                <h5 id="panel-data-labels">
+                  Electrical capacity
                   </h5>
-                  <h4 id="panel-data-fields">
-                    {myPanel.panel.electrical_capacity} Kw
+                <h4 id="panel-data-fields">
+                  {myPanel.panel.electrical_capacity} Kw
                   </h4>
-                </Col>
-                <Col span={8}>
-                  <h5 id="panel-data-labels">
-                    Surface
+              </Col>
+              <Col span={8}>
+                <h5 id="panel-data-labels">
+                  Surface
                   </h5>
-                  <h4 id="panel-data-fields">
-                    {myPanel.panel.surface} m²
+                <h4 id="panel-data-fields">
+                  {myPanel.panel.surface} m²
                   </h4>
-                </Col>
-                <Col span={8}>
-                  <h5 id="panel-data-labels">
-                    Inverter capacity
+              </Col>
+              <Col span={8}>
+                <h5 id="panel-data-labels">
+                  Inverter capacity
                   </h5>
-                  <h4 id="panel-data-fields">
-                    {myPanel.panel.inverterCapacity} Kw
+                <h4 id="panel-data-fields">
+                  {myPanel.panel.inverterCapacity} Kw
                   </h4>
-                </Col>
-              </div>
+              </Col>
             </Row>
             <Row >
               <div id="feed-panel-user-name-container">

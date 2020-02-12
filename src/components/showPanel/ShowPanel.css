@@ -21,20 +21,11 @@
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-#show-panel-button-container {
-  position: absolute;
-  margin-top: -5%;
-  margin-left: 90%;
-}
 #show-panel-card-image-container {
   width: 424px;
   height: 250px;
   margin-top: -2.25%;
   margin-left: -6.8%;
-}
-#show-panel-text-fields {
-  margin-top: 0%;
-  margin-left: 0%;
 }
 
 /*********************************************************************SHOW*PANEL***************/
@@ -71,17 +62,16 @@
   margin-left: -6.8%;
 }
 #show-panel-close-button {
-  float: right; 
-  margin-top: -1%;
-  margin-right: -25%;
-  line-height: 1em;
-  background-color: transparent;
-  color: #ff0000;
-  opacity: 1;
-  font-size: 1.5em;
-  border: none;
-  z-index: 1;
-  border-radius: none;
+  position: absolute; 
+    margin-top: -1.3rem;
+    right: -2rem;
+    background-color: transparent;
+    color: #ff0000;
+    opacity: 1;
+    font-size: 1rem;
+    border: none;
+    z-index: 1;
+    border-radius: none;
 }
 #show-panel-user-name {
   margin-top: -2%;
@@ -119,17 +109,9 @@
   }
   #show-panel-card-image-container {
     width: 424px;
-    height: 250px;
-    margin-top: -6.5%;
-    margin-left: -6.8%;
-  }
-  #feed-panel-text-fields {
-    margin-top: 5%;
-    margin-left: 0%;
-  }
-  #show-panel-text-fields {
-    margin-top: 0%;
-    margin-left: 0%;
+    height: 260px;
+    margin-top: -1.5rem;
+    margin-left: -1.6rem;
   }
 
   /*******************************************************************SHOW*PANEL***************/
@@ -139,7 +121,7 @@
     position: absolute;
     font-size: 18px;
     font-weight: 500;
-    line-height: 2em;
+    line-height: 2.2em;
     width: 424px;
     height: 40px;
     text-align: center;
@@ -147,18 +129,17 @@
     z-index: 1;
     background-color: white;
     opacity: 0.5;
-    margin-top: -7%;
-    margin-left: -6.8%;
+    margin-top: -1.5rem;
+    margin-left: -1.6rem;
   }
   #show-panel-close-button {
-    float: right; 
-    margin-top: -40%;
-    margin-right: -15%;
-    line-height: 3.3em;
+    position: absolute; 
+    margin-top: -1.3rem;
+    right: -1.5rem;
     background-color: transparent;
     color: #ff0000;
     opacity: 1;
-    font-size: 1.5em;
+    font-size: 1rem;
     border: none;
     z-index: 1;
     border-radius: none;
@@ -187,28 +168,22 @@
     width: 100%;
   }
   #show-panel-card-container {
-    float: right;
+    overflow-y: auto;
     width: 100vw;
     height: 100vh;
-    margin-top: 0%;
+    margin-top: 0.1rem;
     right: 0%;  
     font-family: Montserrat;
     color: #2a4092;
-    padding: 0; 
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
   #show-panel-card-image-container {
     width: 100vw;
-    height: 230px;
-    margin-top: -7.5%;
-    margin-left: -7.5%;
+    height: 210px;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
   }
-  #show-panel-text-fields {
-    margin-top: 2%;
-    margin-left: 0%;
-  }
-
   /**************************************************************************SHOW*PANEL***************/
   /***MOBILE***********************************************************************************/
   
@@ -216,26 +191,25 @@
     position: absolute;
     font-size: 18px;
     font-weight: 500;
-    line-height: 2em;
+    line-height: 1.8em;
     width: 100vw;
-    height: 40px;
+    height: 2rem;
     text-align: center;
     color: #2a4092;
     z-index: 1;
     background-color: white;
     opacity: 0.5;
-    margin-top: -7.2%;
-    margin-left: -7.7%;
+    margin-top: -1.6rem;
+    margin-left: -1.5rem;
   }
   #show-panel-close-button {
-    float: right; 
-    margin-top: -3%;
-    margin-right: 5%;
-    line-height: 2.7em;
+    position: absolute; 
+    margin-top: -1.5rem;
+    right: -1.5rem;
     background-color: transparent;
     color: #ff0000;
     opacity: 1;
-    font-size: 1.5em;
+    font-size: 1em;
     border: none;
     z-index: 1;
     border-radius: none;
@@ -307,6 +281,7 @@
 #show-panel-data-fields-third {
   font-family: Montserrat;
   margin-top: -2%;
+  margin-bottom: 1rem;
   font-weight: 600;
   color: #2a4092;
   font-size: 16px;
