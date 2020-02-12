@@ -105,6 +105,7 @@ const FirstForm = (props) => {
 
   //INPUTS HANDLER CHANGE
   const handleInputChange = event => {
+    // if (event.target.value)
     setData({ ...data, [event.target.name]: (event.target.value) });
   };
 

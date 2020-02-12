@@ -186,10 +186,9 @@ border-radius: none;
  font-size: 0.9em;
  color: #7f95a7;
 }
-#radio-button {
-  margin-left: 0%;
+/* .ant-radio-input {
   color: #db4196
- }
+ } */
 #register-panel-fields-sixth {
   margin-top: 0%;
   margin-left: 0%;
