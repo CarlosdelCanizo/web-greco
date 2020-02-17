@@ -95,6 +95,7 @@ const PublicMapping = () => {
           dragging={true}
           animate={true}
           easeLinearity={0.35}
+          tap={false}
         >
           <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
           {panels.map(item => {

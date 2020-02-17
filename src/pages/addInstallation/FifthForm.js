@@ -36,7 +36,11 @@ const FifthForm = props => {
     };
 
     const handleInputChange = event => {
-        setData({ ...data, [event.target.name]: event.target.value });
+        if (event.target.value && isNaN(event.target.value)) {
+            setData({ ...data, errorMessage: "Enter only numbers, please" });
+        } else {
+            setData({ ...data, [event.target.name]: event.target.value });
+        }
     };
 
     const handleFormSubmit = event => {
@@ -106,35 +110,38 @@ const FifthForm = props => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                     </Col>
-                    <Switch
-                        onChange={onChangeSwitch}
-                        name="selector"
-                        id="selector"
-                    />
+                    <div id="selector">
+                        <Switch
+                            onChange={onChangeSwitch}
+                            name="selector"
+
+                        />
+                    </div>
                     {isChecked ?
                         (
                             <React.Fragment>
                                 <Form onSubmit={handleFormSubmit}>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <Form.Item>
-                                            <label id="label-panel-orientation">Degrees</label>
-                                            <Input type="number"
-                                                min={1} max={45}
-                                                // value={data.inclination || inclination}
-                                                value={isMobile(navigator.userAgent || navigator.vendor || window.opera) ?
-                                                    degree : data.inclination || inclination}
-                                                onChange={handleInputChange}
-                                                placeholder="30.9 °"
-                                                id="orientation"
-                                                name="inclination"
-                                                onClick={resetInput}
-                                                required />
+                                            <div id="div-inclination-orientation-background">
+                                                <label id="panel-inclination-orientation-label">Degrees</label>
+                                                <Input
+                                                    value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                        degree : data.inclination || inclination}
+                                                    onChange={handleInputChange}
+                                                    placeholder="30.9 °"
+                                                    id="orientation"
+                                                    name="inclination"
+                                                    onClick={resetInput}
+                                                    required />
+                                            </div>
+                                            {(data.errorMessage) ? (<p id="error-message" >{data.errorMessage}</p>) : (null)}
                                         </Form.Item>
                                     </Col>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <img src={inclinationImage} id="register-panel-image-fifth" />
                                     </Col>
-                                    <p id="text-panel-registration">
+                                    <p id="text-panel-north">
                                         Definition 0° North
                                 </p>
                                     <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -158,33 +165,35 @@ const FifthForm = props => {
                         )
                         :
                         (
-
-
                             <React.Fragment>
                                 <Form onSubmit={handleFormSubmit}>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <div id="register-panel-fields-fourth">
-                                            <label id="label-panel-orientation-select">Select degrees</label>
-                                            <Select
-                                                style={{ width: 200 }}
-                                                id="select-orientation"
-                                                name="inclination"
-                                                onChange={handleInputSelectChange}>
-                                                <Option value="1">from 0° to 15°</Option>
-                                                <Option value="15">from 15° to 30°</Option>
-                                                <Option value="30">from 30° to 45°</Option>
-                                                <Option value="45">from 45° to 60°</Option>
-                                                <Option value="60">from 60° to 75°</Option>
-                                                <Option value="75">from 75° to 90°</Option>
-                                            </Select>
+                                            <div id="div-select-inclination-orientation-background">
+                                                <label id="panel-inclination-orientation-label">Select degrees</label>
+                                                <Select
+                                                    id="select-orientation"
+                                                    style={{ width: 200 }}
+                                                    name="inclination"
+                                                    onChange={handleInputSelectChange}>
+
+                                                    <Option value="1">from 0° to 15°</Option>
+                                                    <Option value="15">from 15° to 30°</Option>
+                                                    <Option value="30">from 30° to 45°</Option>
+                                                    <Option value="45">from 45° to 60°</Option>
+                                                    <Option value="60">from 60° to 75°</Option>
+                                                    <Option value="75">from 75° to 90°</Option>
+
+                                                </Select>
+                                            </div>
                                         </div>
                                     </Col>
 
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={inclinationImage} id="register-panel-image-fifth" />
+                                        <img src={inclinationImage} id="register-panel-image-fifth-select" />
                                     </Col>
 
-                                    <p id="text-panel-registration">
+                                    <p id="text-panel-north">
                                         Definition 0° North
                                     </p>
 
@@ -206,7 +215,6 @@ const FifthForm = props => {
                                     </Col>
                                 </Form>
                             </React.Fragment>
-
                         )
                     }
                 </Card>

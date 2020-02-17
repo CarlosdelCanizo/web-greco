@@ -17,7 +17,7 @@ const DownloadData = (props) => {
   function downLoad() {
     axiosConfig({
       url: '/download/',
-      headers: { "Authorization": access_token },
+      // headers: { "Authorization": access_token },
       method: 'GET',
       responseType: 'blob'
     })

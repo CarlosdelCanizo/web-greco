@@ -55,7 +55,7 @@
   margin-left: 7%; 
 }
 #add-installation-container-button-second {
-  margin-top: 5%;
+  margin-top: 0%;
 }
 #button-panel-register-previous-second  {
   background-color: #2a4092;
@@ -94,7 +94,8 @@
     font-family: Montserrat;
     background-color: white;
     text-align: center;
-    border: none;  
+    border: none; 
+    overflow: auto;  
   }
   #pagination {
     margin-top: 2%;
@@ -199,7 +200,8 @@
     font-family: Montserrat;
     background-color: white;
     text-align: center;
-    border: none;  
+    border: none; 
+    overflow: auto;  
   }
   #pagination {
     margin-top: -1%;
@@ -271,7 +273,7 @@
 }
 
   #add-installation-container-button-second {
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: -4%;
   }
   #button-panel-register-previous-second  {

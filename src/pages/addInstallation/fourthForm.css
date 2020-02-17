@@ -4,104 +4,94 @@
   visibility: hidden;
 }
 #selector {
-  margin-top: 3%;
-  margin-left: 0%
+  position: absolute;
+  top: 33%;
+  margin-left: 20%;
+  z-index: 1;
 }
-/* #register-panel-radio {
-  margin-top: -12%;
-  margin-left: -40%;
-} */
-/* #text-panel-registration-second {
+#error-message {
+  float: left;
+  width: 60%;
+  height: 16px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: -0.07px;
+  color: #ff3b30;
+  margin-left: 20%;
+  margin-top: -2%;
+}
+#text-panel-north {
   font-size: 16px;
-  text-align: left;
-  line-height: 1.25;
-  color: #7f95a7;
-  margin-top: 2%;
-} */
-/* #col-register-panel-select {
-  margin-top: -12%;
-  margin-left: 5%;
-} */
+    line-height: 1.25;
+    color: #7f95a7;
+}
+#div-inclination-orientation-background {
+  margin-top: 5%;
+  margin-left: 38%;
+  background-color: #f9f9f9;
+  width: 150px;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
 #register-panel-fields-fourth {
   display: inline-flex;
   margin-left: 30%;
   margin-top: 10%;
 }
-#label-panel-orientation {
+#panel-inclination-orientation-label {
   display: block;
+  width: 100%;
   text-align: left;
-  width: 150px;
-  text-align: top;
-  font-size: 12px;
-  line-height: 1;
-  color: #2a4092;
-  background-color:#f9f9f9;
-  margin-top: 0%;
-  margin-left: 37.5%;
-  margin-bottom: -0.5%;
-  border: 3px solid #f9f9f9;
-}
-#label-panel-inclination {
-  display: inline-block;
-  text-align: left;
-  width: 150px;
-  text-align: top;
+  font-weight: 600;
   font-size: 12px;
   line-height: 1.25;
   color: #2a4092;
-  background-color:#f9f9f9;
-  margin-left: 0%;
-  margin-bottom: 1%;
-  border: 3px solid #f9f9f9;
-}
-#inclination {
-  color: #2a4092;
-  width: 150px;
-  height: 40px;
-  font-family: Montserrat;
-  font-size: 16px;
-  line-height: 1.6;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-radius: 0;
-  margin-left: -50%;
-  margin-top: 5%
+  background-color:transparent;
+  left: 0%;
+  top: 0%;
 }
 #orientation {
   color: #2a4092;
-  width: 150px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
   font-family: Montserrat;
   font-size: 16px;
-  line-height: 1.6;
+  padding: 20px 10px 0 5px;
+  background-color: transparent;
+  border-radius: 0;
+  margin-left: 0%;
+  top: -29%
+}
+#inclination {
+  color: #2a4092;
+  width: 100%;
+  height: 100%;
+  font-family: Montserrat;
+  font-size: 16px;
+  padding: 20px 10px 0 5px;
+  background-color: transparent;
+  border-radius: 0;
+  margin-left: 0%;
+  margin-top: -29%
+}
+#div-select-inclination-orientation-background {
+  margin-top: -14%;
+  margin-left: -45%;
+  background-color: #f9f9f9;
+  width: 200px;
+  height: 54px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-radius: 0;
-  margin-left: 0%;
-  margin-top: -10%
 }
 .ant-select-selection {
   border: none;
   background-color: transparent;
-}
-#label-panel-orientation-select {
-  display: inline-block;
-  text-align: left;
-  width: 200px;
-  height: 30px;
-  text-align: top;
-  font-size: 12px;
-  line-height: 1;
-  color: #2a4092;
-  background-color:#f9f9f9;
-  margin-left: 0%;
-  margin-bottom: 0%;
-  margin-top: -20%;
-  border: 3px solid #f9f9f9;
+  width: 100%;
+  height: 100%;
 }
 #select-orientation {
   color: #2a4092;
@@ -110,32 +100,38 @@
   font-family: Montserrat;
   font-size: 16px;
   line-height: 1.6;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
+  background-color: transparent;
   border-radius: 0;
-  margin-left: -50%;
-  margin-top: -15%
+  margin-left: 0%;
+  top: 5%
 }
 #register-panel-image-fourth {
   margin-top: 3%;
   width: 60%;
   height: 60%;
 }
+#register-panel-image-fourth-select {
+  margin-top: 7%;
+  width: 60%;
+  height: 60%;
+}
 #register-panel-image-fifth {
-  margin-top: 3%;
+  margin-top: 1%;
   width: 50%;
   height: 50%;
 }   
-
+#register-panel-image-fifth-select {
+  margin-top: 5%;
+  width: 50%;
+  height: 50%;
+}   
 #button-panel-register-previous-fourth  {
   background-color: #2a4092;
   color: #ffffff;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 80%;
+  width: 70%;
   height: 40px;
   border-radius: 0;
   border: none;
@@ -148,7 +144,7 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 80%;
+  width: 70%;
   height:40px;
   border-radius: 0;
   border: none;
@@ -161,12 +157,12 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 80%;
+  width: 70%;
   height: 40px;
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 18%;
+  margin-top: 9%;
 }
 #button-panel-register-next-fifth {
   background-color: #db4196;
@@ -174,130 +170,12 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 80%;
+  width: 70%;
   height:40px;
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 18%;
-}
-/**************************************************************MOBILE*SMALL****************************************************************/
-/***MOBILE*SMALL***************************************************************************************************************************/
-
-@media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100vw;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: -1%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: left;
-    margin-top: 3%;
-    line-height: 1.25;
-    color: #2a4092;
-  }
-  #text-panel-registration {
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: -1%;
-    margin-bottom: -1%;
-  }
-  #col-register-panel-fields {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: -2%;
-  }
-  #panel-input-label {
-  display: inline-block;
-  width: 90%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
-#register-panel-image-fourth {
-  margin-top: 5%;
-  width: 100%;
-  height: 100%;
-}
-#register-panel-image-fifth {
-  margin-top: 5%;
-  width: 100%;
-  height: 100%;
-}
-
-#button-panel-register-previous-fourth  {
-  background-color: #2a4092;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height: 40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 50%;
-}
-#button-panel-register-next-fourth {
-  background-color: #db4196;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height:40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 50%;
-}
-#button-panel-register-previous-fifth  {
-  background-color: #2a4092;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height: 40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 30%;
-}
-#button-panel-register-next-fifth {
-  background-color: #db4196;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height:40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 30%;
-}
+  margin-top: 9%;
 }
 
 /**************************************************************TABLET*****************************************************************/
@@ -352,37 +230,7 @@
   margin-left: -20%;
   margin-bottom: -1%;
 }
-
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 85%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: -1%;
-}
-  #button-panel-register-next {
+#button-panel-register-next {
     background-color: #db4196;
     color: #ffffff;
     line-height: 1.5;
@@ -391,5 +239,154 @@
     border-radius: 0;
     border: none;
     margin-left: 0%;
+}
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+  #card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
   }
+  #pagination {
+    margin-top: -1%;
+  }
+  #pagination-bullet {
+    margin-left: 1%;
+  }
+  #tittle-panel-registration {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 3%;
+    line-height: 1.25;
+    color: #2a4092;
+  }
+  #text-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: -1%;
+    margin-bottom: -1%;
+  }
+  #selector {
+    position: absolute;
+    top: 31%;
+    margin-left: 0%;
+    z-index: 1;
+  }
+  #div-inclination-orientation-background {
+    margin-top: 5%;
+    margin-left: 25%;
+    background-color: #f9f9f9;
+    width: 150px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+  }
+  #div-select-inclination-orientation-background {
+    margin-top: -7%;
+    margin-left: -20%;
+    background-color: #f9f9f9;
+    width: 200px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+  }
+  #panel-input-label {
+  display: inline-block;
+  width: 90%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-bottom: 10px solid #f9f9f9;
+  margin-left: -20%;
+  margin-bottom: -1%;
+}
+#register-panel-image-fourth {
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+}
+#register-panel-image-fourth-select {
+  margin-top: 12%;
+  width: 100%;
+  height: 100%;
+}
+#register-panel-image-fifth {
+  margin-top: 5%;
+  width: 80%;
+  height: 80%;
+}
+#register-panel-image-fifth-select {
+  margin-top: 12%;
+  width: 80%;
+  height: 80%;
+}
+#button-panel-register-previous-fourth  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: -12%;
+  margin-top: 36%;
+}
+#button-panel-register-next-fourth {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: -12%;
+  margin-top: 36%;
+}
+#button-panel-register-previous-fifth  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: -5%;
+  margin-top: 30%;
+}
+#button-panel-register-next-fifth {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: -5%;
+  margin-top: 30%;
+}
 }

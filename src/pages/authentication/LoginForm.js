@@ -119,26 +119,40 @@ const LoginForm = (props) => {
             <div id="input-login-form-fields">
 
               <Form.Item>
-                <label id="label">Email</label>
-                <Input type="email" placeholder="Email" name="email" id="email"
-                  values={data.email} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-login-email-background">
+                  <label id="login-label">Email</label>
+                  <Input type="email"
+                    placeholder="Email"
+                    name="email"
+                    id="email"
+                    values={data.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
               <Divider id="between-inputs" />
               <Form.Item>
-                <label id="label">Password</label>
-                <Input type="password" placeholder="Password" name="password" id="password"
-                  values={data.password} onChange={handleInputChange}
-                />
-                <div id="error-message">
-                  {(data.errorMessage) ? (<p >{data.errorMessage}</p>) : (null)}
+                <div id="div-login-email-background">
+                  <label id="login-label">Password</label>
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    id="password"
+                    values={data.password}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </Form.Item>
-
+              <div id="login-error-message">
+                {(data.errorMessage) ? (<p>{data.errorMessage}</p>) : (null)}
+              </div>
             </div>
-            <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
-            {/* <Divider id="large-divider" /> */}
+            <div>
+              <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
+              <Divider id="large-divider" />
+            </div>
             <div id="welcome-button-container">
               <button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}

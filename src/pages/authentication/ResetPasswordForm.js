@@ -55,12 +55,12 @@ const ResetPasswordForm = () => {
 
   return (
     <Row>
-      <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-        <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
-      </Col>
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <div id="inside-welcome-container" >
-          <h1 id="welcome-title-text" >
+        <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+          <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
+        </Col>
+        <div id="inside-reset-container" >
+          <h1 id="reset-title-text" >
             RESET YOUR <br />
             PASSWORD
         </h1>
@@ -69,12 +69,19 @@ const ResetPasswordForm = () => {
           </div>
           <Form onSubmit={handleFormSubmit} >
             <div id="input-login-form-fields">
+
               <Form.Item>
-                <label id="label">Email</label>
-                <Input placeholder="Email" type="email" name="email" id="email"
-                  values={data.email} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-login-email-background">
+                  <label id="register-label">Email</label>
+                  <Input placeholder="Email"
+                    type="email"
+                    name="email"
+                    id="email"
+                    values={data.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
 
             </div>

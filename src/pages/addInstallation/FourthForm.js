@@ -36,7 +36,11 @@ const FourthForm = props => {
     };
 
     const handleInputChange = event => {
-        setData({ ...data, [event.target.name]: event.target.value });
+        if (event.target.value && isNaN(event.target.value)) {
+            setData({ ...data, errorMessage: "Enter only numbers, please" });
+        } else {
+            setData({ ...data, [event.target.name]: event.target.value, errorMessage: null });
+        }
     };
 
     const handleFormSubmit = event => {
@@ -105,38 +109,39 @@ const FourthForm = props => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
                     </Col>
-                    <Switch
-                        onChange={onChangeSwitch}
-                        name="selector"
-                        id="selector"
-                    />
+                    <div id="selector">
+                        <Switch
+                            onChange={onChangeSwitch}
+                            name="selector"
+                        />
+                    </div>
                     {isChecked ?
                         (
                             <React.Fragment>
                                 <Form onSubmit={handleFormSubmit}>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <Form.Item>
-                                            <label id="label-panel-orientation">Input degrees</label>
-                                            <Input
-                                                type="number"
-                                                onClick={resetInput}
-                                                min={1} max={360}
-                                                // value={data.orientation || orientation}
-                                                value={isMobile(navigator.userAgent || navigator.vendor || window.opera) ?
-                                                    degree : data.orientation || orientation}
-                                                onChange={handleInputChange}
-                                                placeholder="30.9°"
-                                                id="orientation"
-                                                name="orientation"
-                                                required
-                                            />
+                                            <div id="div-inclination-orientation-background">
+                                                <label id="panel-inclination-orientation-label">Input degrees</label>
+                                                <Input
+                                                    onClick={resetInput}
+                                                    value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                        (degree) : (data.orientation || orientation)}
+                                                    onChange={handleInputChange}
+                                                    placeholder="30.9°"
+                                                    id="orientation"
+                                                    name="orientation"
+                                                    required
+                                                />
+                                            </div>
+                                            {(data.errorMessage) ? (<p id="error-message" >{data.errorMessage}</p>) : (null)}
 
                                         </Form.Item>
                                     </Col>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <img src={compass} id="register-panel-image-fourth" />
                                     </Col>
-                                    <p id="text-panel-registration">
+                                    <p id="text-panel-north">
                                         Definition 0° North
                                         </p>
                                     <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -160,39 +165,40 @@ const FourthForm = props => {
                         :
                         (
                             <React.Fragment>
-
                                 <Form onSubmit={handleFormSubmit}>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                         <div id="register-panel-fields-fourth">
-                                            <label id="label-panel-orientation-select">Select degrees</label>
-                                            <Select
-                                                id="select-orientation"
-                                                style={{ width: 200 }}
-                                                name="orientation"
-                                                onChange={handleInputSelectChange}>
+                                            <div id="div-select-inclination-orientation-background">
+                                                <label id="panel-inclination-orientation-label">Select degrees</label>
+                                                <Select
+                                                    id="select-orientation"
+                                                    style={{ width: 200 }}
+                                                    name="orientation"
+                                                    onChange={handleInputSelectChange}>
 
-                                                <Option value="1">NE (from 0° to 45°)</Option>
-                                                <Option value="45">EN (from 45° to 90°)</Option>
+                                                    <Option value="1">NE (from 0° to 45°)</Option>
+                                                    <Option value="45">EN (from 45° to 90°)</Option>
 
-                                                <Option value="90">ES (from 90° to 135°)</Option>
-                                                <Option value="135">SE (from 135° to 180°)</Option>
+                                                    <Option value="90">ES (from 90° to 135°)</Option>
+                                                    <Option value="135">SE (from 135° to 180°)</Option>
 
 
-                                                <Option value="180">SW (from 180° to 225°)</Option>
-                                                <Option value="225">WS (from 225° to 270°)</Option>
+                                                    <Option value="180">SW (from 180° to 225°)</Option>
+                                                    <Option value="225">WS (from 225° to 270°)</Option>
 
-                                                <Option value="270">WN (from 270° to 315°)</Option>
-                                                <Option value="315">NW (from 315° to 360°)</Option>
+                                                    <Option value="270">WN (from 270° to 315°)</Option>
+                                                    <Option value="315">NW (from 315° to 360°)</Option>
 
-                                            </Select>
+                                                </Select>
+                                            </div>
                                         </div>
                                     </Col>
 
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={compass} id="register-panel-image-fourth" />
+                                        <img src={compass} id="register-panel-image-fourth-select" />
                                     </Col>
 
-                                    <p id="text-panel-registration">
+                                    <p id="text-panel-north">
                                         Definition 0° North
                                     </p>
 

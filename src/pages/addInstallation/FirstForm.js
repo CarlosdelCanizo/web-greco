@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Row, Col, Divider, Form, Input, Icon, Card, Radio, DatePicker, Select } from 'antd'
+import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, Alert } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -86,7 +86,6 @@ const FirstForm = (props) => {
 
   //DATE PICKER
   function onChangeDatePicker(date, dateString) {
-    // console.log("DATE, DATESTRING", date.d, dateString)
     setData({ ...data, commissioningDate: dateString });
   }
 
@@ -105,8 +104,11 @@ const FirstForm = (props) => {
 
   //INPUTS HANDLER CHANGE
   const handleInputChange = event => {
-    // if (event.target.value)
-    setData({ ...data, [event.target.name]: (event.target.value) });
+    if (isNaN(event.target.value)) {
+      setData({ ...data, errorMessage: "Enter only numbers, please" });
+    } else {
+      setData({ ...data, [event.target.name]: (event.target.value), errorMessage: null });
+    }
   };
 
   //handleSubmit
@@ -185,15 +187,6 @@ const FirstForm = (props) => {
     localStorage.removeItem("currentPanelId")
   }
 
-  function validate(email, password) {
-    // true means invalid, so our conditions got reversed
-    return {
-      email: email.length === 0,
-      password: password.length === 0
-    };
-  }
-
-
   const isEnabled =
     (currentPanelId && currentPanelId > 0) ||
     (data.electrical_capacity.length > 0 || electrical_capacity && electrical_capacity !== undefined && electrical_capacity.length > 0) &&
@@ -202,7 +195,6 @@ const FirstForm = (props) => {
     (data.technologyUsed !== "" || technologyUsed && technologyUsed !== undefined && technologyUsed.length > 0) &&
     (data.inverterCapacity.length > 0 || inverterCapacity && inverterCapacity.length > 0) &&
     (data.installationType !== "" || installationType && installationType !== undefined && installationType.length > 0)
-
 
   return (
     <Row>
@@ -237,52 +229,54 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item
               >
-                <label id="panel-input-label">Electrical capacity</label>
-                <Divider id="input-separator" />
+                <div id="div-electrical-background">
+                  <label id="panel-input-label">Electrical capacity</label>
+                  <Input
+                    id="electrical_capacity"
+                    name="electrical_capacity"
+                    value={data.electrical_capacity === 0 ? (electrical_capacity) : (data.electrical_capacity)}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                    placeholder="330Kw"
 
-                <Input
-                  type="number"
-                  value={data.electrical_capacity === 0 ? (electrical_capacity) : (data.electrical_capacity)}
-                  onChange={handleInputChange}
-                  onClick={resetInput}
-                  placeholder="330Kw"
-                  id="electrical_capacity"
-                  name="electrical_capacity"
-                />
+                  />
+                </div>
               </Form.Item>
             </Col>
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
-
               <Form.Item>
-                <label id="panel-input-label">Surface</label>
-                <Divider id="input-separator" />
-                <Input type="number"
-                  min={1} max={10000}
-                  value={data.surface === 0 ? surface : data.surface}
-                  onChange={handleInputChange}
-                  onClick={resetInput}
-                  placeholder="10m²"
-                  id="surface"
-                  name="surface"
-                  required />
+                <div id="div-surface-background">
+                  <label id="panel-input-label">Surface</label>
+                  <Input
+                    value={data.surface === 0 ? surface : data.surface}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                    placeholder="10m²"
+                    id="surface"
+                    name="surface"
+                    required />
+                </div>
               </Form.Item>
             </Col>
             <Col id="col-commissioning-date" span={8} xs={24} sm={8} md={8} lg={8} xl={8}>
               <Form.Item>
-                <label id="panel-date-label">Comissioning date</label>
-                <Divider id="input-date-separator" />
-                <DatePicker
-                  defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
-                  onChange={onChangeDatePicker}
-                  onClick={resetInput}
-                  id="commissioningDate"
-                  name="commissioningDate"
-                  required />
+                <div id="div-date-background">
+                  <label id="panel-input-label">Comissioning date</label>
+                  <DatePicker
+                    defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
+                    onChange={onChangeDatePicker}
+                    onClick={resetInput}
+                    id="commissioningDate"
+                    name="commissioningDate"
+                    required />
+                </div>
               </Form.Item>
 
             </Col>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h3 id="subtittle-panel-registration">Panel type</h3>
+              <div id="div-subtittle">
+                <h3 id="subtittle-panel-registration">Panel type</h3>
+              </div>
             </Col>
 
             <Radio.Group
@@ -316,53 +310,57 @@ const FirstForm = (props) => {
               </Col>
             </Radio.Group>
 
-            <Col d="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
-                <label id="panel-alone-input-label">AC Inverter capacity</label>
-                <Input
-                  type="number"
-                  placeholder="800Kw" name="inverterCapacity" id="inverter-capacity"
-                  value={data.inverterCapacity === 0 ? inverterCapacity : data.inverterCapacity}
-                  onChange={handleInputChange}
-                  onClick={resetInput}
-                  required />
+                <div id="div-inverter-background">
+                  <label id="panel-input-label">AC Inverter capacity</label>
+                  <Input
+                    placeholder="800Kw"
+                    name="inverterCapacity"
+                    id="inverter-capacity"
+                    value={data.inverterCapacity === 0 ? inverterCapacity : data.inverterCapacity}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                    required />
+                </div>
+              </Form.Item>
+
+            </Col>
+            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Form.Item>
+                <div id="div-installation-background">
+                  <label id="panel-input-label">Installation type</label>
+                  <Select
+                    placeholder='On-grid'
+                    name="installationType"
+                    id="installation-type"
+                    value={data.installationType === "" ? installationType : data.installationType}
+                    onChange={handleInputSelectChange}
+                    onClick={resetInput}
+                    required
+                  >
+
+                    <Option id="select-property" value="On-grid">On-grid</Option>
+                    <Option id="select-property" value="Of-grid">Off-grid</Option>
+
+                  </Select>
+                </div>
               </Form.Item>
             </Col>
-            <Col id="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Form.Item>
-                <label id="label-panel-six-large">Installation type</label>
-                <Divider id="divider-input-sixth" />
-                <Select
-                  placeholder='On-grid'
-                  name="installationType"
-                  id="installation-type"
-                  value={data.installationType === "" ? installationType : data.installationType}
-                  onChange={handleInputSelectChange}
-                  onClick={resetInput}
-                  required
-                >
-
-                  <Option id="select-property" value="On-grid">On-grid</Option>
-                  <Option id="select-property" value="Of-grid">Off-grid</Option>
-
-                </Select>
-
-              </Form.Item>
-            </Col>
-            <div id="error-message">
-
+            <div >
+              {(data.errorMessage) ? (<p id="error-message">{data.errorMessage}</p>) : (null)}
             </div>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <div id="register-panels-button-container-first">
-                <Button
-                  disabled={!isEnabled}
-                  id="button-panel-register-next-first"
-                  onClick={handleFormSubmit}
-                >
-                  NEXT
+
+              <Button
+                disabled={!isEnabled}
+                id="button-panel-register-next-first"
+                onClick={handleFormSubmit}
+              >
+                NEXT
                 {toLocation ? <Redirect from="/first" to="/second" /> : null}
-                </Button>
-              </div>
+              </Button>
+
             </Col>
           </Form>
         </Card>

@@ -78,35 +78,43 @@ const RegisterForm = (props) => {
           <Form onSubmit={handleFormSubmit}>
             <div id="input-login-form-fields">
               <Form.Item>
-                <label id="label">Username</label>
-                <Input placeholder="Username" type="text" name="username" id="username"
-                  values={data.username} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-register-email-background">
+                  <label id="register-label">Username</label>
+                  <Input placeholder="Username" type="text" name="username" id="username"
+                    values={data.username} onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
               <Divider id="between-inputs" />
               <Form.Item>
-                <label id="label">Email</label>
-                <Input placeholder="Valid email" type="email" name="email" id="email"
-                  values={data.email} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-register-email-background">
+                  <label id="register-label">Email</label>
+                  <Input placeholder="Valid email" type="email" name="email" id="email"
+                    values={data.email} onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
               <Divider id="between-inputs" />
               <Form.Item>
-                <label id="label">Password</label>
-                <Input type="password" placeholder="Password" name="password" id="password"
-                  values={data.password} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-register-email-background">
+                  <label id="register-label">Password</label>
+                  <Input type="password" placeholder="Password" name="password" id="password"
+                    values={data.password} onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
               <Divider id="between-inputs" />
               <Form.Item>
-                <label id="label">Confirm password</label>
-                <Input type="password" placeholder="Confirm password" name="confirmPassword" id="password"
-                  values={data.confirmPassword} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-register-email-background">
+                  <label id="register-label">Confirm password</label>
+                  <Input type="password" placeholder="Confirm password" name="confirmPassword" id="password"
+                    values={data.confirmPassword} onChange={handleInputChange}
+                    required
+                  />
+                </div>
                 <div id="error-register-message">
                   {data.errorMessage && (<p >{data.errorMessage}</p>)}
                 </div>

@@ -5,68 +5,85 @@
   margin-top: 0%;
   margin-left: 0%;
 } 
-#label-panel-six-large {
-  display: inline-block;
+#div-installation-background {
+  margin-top: 3%;
+  margin-left: 10%;
+  background-color: #f9f9f9;
+  width: 230px;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+#div-observation-background {
+  margin-top: 3%;
+  margin-left: 5%;
+  background-color: #f9f9f9;
+  width: 520px;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+#panel-sixth-label {
+  display: block;
+  width: 100%;
   text-align: left;
-  width: 80%;
-  text-align: top;
-  font-size: 12px;
   font-weight: 600;
+  font-size: 12px;
   line-height: 1.25;
   color: #2a4092;
-  background-color:#f9f9f9;
-  margin-left: 0%;
-  margin-bottom: 0%;
-  border: 3px solid #f9f9f9;
+  background-color:transparent;
+  left: 1%;
+  top: 1%;
+}
+#panel-sixth-label-large {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #2a4092;
+  background-color:transparent;
+  left: 1%;
+  top: 2%;
 }
 #installation-name {
   color: #2a4092;
-  width: 80%;
-  height: 35px;
+  width: 100%;
+  height: 55px;
   font-family: Montserrat;
   font-size: 16px;
-  line-height: 1.6;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-radius: 0;
-  margin-top: -5%;
-  margin-left: 0%;
-}
-#divider-input-sixth {
-  margin-top: 3%;
+  padding: 20px 10px 0 5px; 
   background-color: transparent;
-  margin-bottom: -9%;
+  border-radius: 0;
+  top: -28%;
+  left: 0%;
 }
 #installation-property {
   color: #2a4092;
-  width: 80%;
-  height: 35px;
+  width: 100%;
+  height: 100%;
   font-family: Montserrat;
   font-size: 16px;
-  line-height: 1.6;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
+  padding: 20px 10px 0 5px;
+  background-color: transparent;
   border-radius: 0;
-  margin-top: -5%;
+  top: -30%;
   margin-left: 0%;
 }
-#select-property {
-  color: #2a4092;
-  /* width: 100%;
-  height: 40px; */
+.ant-select-selection {
+  /* color: #2a4092;
+  width: 100%;
+  height: 100%;
   font-family: Montserrat;
   font-size: 16px;
-  line-height: 1.6;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
+  padding: 0px 10px 0 5px; */
+  /* background-color: transparent; */
   border-radius: 0;
-  margin-left: 0px;
+  /* left: 0%;
+  top: -30% */
 }
 #subtittle-panel-registration-sixth {
   font-size: 18px;
@@ -90,36 +107,20 @@
 #col-battery {
   margin-top: 3%;
 }
-#label-panel-very-large {
-  width: 70%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: -1%;
-}
 #col-observation {
   margin-top: -3%;
 }
 #battery-description, #observation {
   color: #2a4092;
-  width: 70%;
-  height: 35px;
+  width: 100%;
+  height: 101%;
   font-family: Montserrat;
   font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
+  padding: 20px 10px 0 5px;
+  background-color: transparent;
   border-radius: 0;
-  margin-left: -5%;
-  margin-top: -1%;
+  margin-left: 0%;
+  top: -24%;
 }
 #text-panel-registration-sixth {
   font-size: 16px;
@@ -168,7 +169,7 @@
   margin-left: 4%;
 }
 #battery-radio-sixth {
-margin-left: 20%;
+margin-left: 0%;
 margin-top: -5%;
 }
 #button-panel-register-previous-sixth  {
@@ -177,12 +178,12 @@ margin-top: -5%;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 60%;
+  width: 70%;
   height: 40px;
   border-radius: 0;
   border: none;
-  margin-left: 9%;
-  margin-top: 0%;
+  margin-left: 0%;
+  margin-top: 1%;
 }
 #button-panel-register-next-sixth {
   background-color: #db4196;
@@ -190,138 +191,154 @@ margin-top: -5%;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 60%;
+  width: 70%;
   height:40px;
   border-radius: 0;
   border: none;
-  margin-left: -30%;
-  margin-top: 0%;
+  margin-left: 0%;
+  margin-top: 1%;
 }
 #images-progress-bar {
   margin-left: 0%;
 }
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
 
-/**************************************************************MOBILE*SMALL****************************************************************/
-/***MOBILE*SMALL***************************************************************************************************************************/
-
-@media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100vw;
+@media (min-width: 600px) and (max-width: 992px) {
+  #register-panel-fields-sixth {
     margin-top: 0%;
     margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: -1%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: left;
+  } 
+  #div-installation-background {
     margin-top: 3%;
-    line-height: 1.25;
-    color: #2a4092;
+    margin-left: 10%;
+    background-color: #f9f9f9;
+    width: 230px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
   }
-  #label-panel-six-large {
-    display: inline-block;
+  #div-observation-background {
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: #f9f9f9;
+    width: 520px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+  }
+  #panel-sixth-label {
+    display: block;
+    width: 100%;
     text-align: left;
-    width: 90%;
-    text-align: top;
-    font-size: 12px;
     font-weight: 600;
+    font-size: 12px;
     line-height: 1.25;
     color: #2a4092;
-    background-color:#f9f9f9;
-    margin-left: -10%;
-    margin-bottom: 0%;
-    border: 3px solid #f9f9f9;
+    background-color:transparent;
+    left: 1%;
+    top: 1%;
   }
-  #divider-input-sixth {
-    margin-top: 0%;
-    background-color: transparent;
-    margin-bottom: -10%;
+  #panel-sixth-label-large {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #2a4092;
+    background-color:transparent;
+    left: 1%;
+    top: 2%;
   }
   #installation-name {
     color: #2a4092;
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 55px;
     font-family: Montserrat;
     font-size: 16px;
-    line-height: 1.6;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
+    padding: 20px 10px 0 5px; 
+    background-color: transparent;
     border-radius: 0;
-    margin-top: -5%;
-    margin-left: -10%;
+    top: -28%;
+    left: 0%;
   }
   #installation-property {
     color: #2a4092;
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 100%;
     font-family: Montserrat;
     font-size: 16px;
-    line-height: 1.6;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
+    padding: 20px 10px 0 5px;
+    background-color: transparent;
     border-radius: 0;
-    margin-top: -5%;
+    top: -30%;
     margin-left: 0%;
   }
-  #select-property {
-    color: #2a4092;
-    /* width: 100%;
-    height: 40px; */
+  .ant-select-selection {
+    /* color: #2a4092;
+    width: 100%;
+    height: 100%;
     font-family: Montserrat;
     font-size: 16px;
-    line-height: 1.6;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
+    padding: 0px 10px 0 5px; */
+    /* background-color: transparent; */
     border-radius: 0;
-    margin-left: 0px;
+    /* left: 0%;
+    top: -30% */
   }
   #subtittle-panel-registration-sixth {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;
-    margin-left: 0%;
-    margin-top: -5%;
+    margin-left: 5%;
+    margin-top: -1%;
+    margin-bottom: 3%;
   }
   #subtittle-panel-registration-battery {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;
-    margin-left: 0%;
-    margin-top: 1%;
+    margin-left: 5%;
+    margin-top: -1%;
   }
-  /* #image-fields-container {
-    width: 90%;
-    height: 100%;
-    margin-left: 10%;
-    border-radius: 2.6px;
-    border: solid 1.3px #2a4092;
-    background-color: #f9f9f9;
-  } */
+  #col-battery {
+    margin-top: 3%;
+  }
+  #col-observation {
+    margin-top: -3%;
+  }
+  #battery-description, #observation {
+    color: #2a4092;
+    width: 100%;
+    height: 101%;
+    font-family: Montserrat;
+    font-size: 18px;
+    padding: 20px 10px 0 5px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 0%;
+    top: -24%;
+  }
+  #text-panel-registration-sixth {
+    font-size: 16px;
+    margin-left: 13%;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 1%;
+    margin-bottom: -1%;
+  }
   #upload-images {
-    margin-left: 1%;
-    width: 95%;
-    height: 135px;
+    margin-left: 5%;
+    width: 90%;
+    height: 150px;
     border-radius: 2.6px;
     border: dotted 2px #2a4092;
     background-color: #f9f9f9;
@@ -339,18 +356,38 @@ margin-top: -5%;
     color: #db4196;
     background-color: #f9f9f9;
   }
+  #preview-sixth {
+    height: 10%;
+    width: 10%;
+    border: 1px solid #cdced7;
+  }
+  #no-image-sixth {
+    margin-left: -63%;
+    margin-top: 2%;
+    height: 10%;
+    width: 10%;
+    padding: 1%;
+    border: 1px solid #cdced7;
+  }
+  #battery-radio-text-sixth {
+    margin-left: 4%;
+  }
+  #battery-radio-sixth {
+  margin-left: 0%;
+  margin-top: -5%;
+  }
   #button-panel-register-previous-sixth  {
     background-color: #2a4092;
     color: #ffffff;
     font-size: 1em;
     line-height: 1.5;
     font-weight: 500;
-    width: 80%;
+    width: 70%;
     height: 40px;
     border-radius: 0;
     border: none;
     margin-left: 0%;
-    margin-top: 0%;
+    margin-top: 1%;
   }
   #button-panel-register-next-sixth {
     background-color: #db4196;
@@ -358,762 +395,238 @@ margin-top: -5%;
     font-size: 1em;
     line-height: 1.5;
     font-weight: 500;
-    width: 80%;
+    width: 70%;
     height:40px;
     border-radius: 0;
     border: none;
-    margin-left: -20%;
-    margin-top: 0%;
-  }
-}
-
-/**************************************************************TABLET*****************************************************************/
-/***TABLET****************************************************************************************************************************/
-
-@media (min-width: 600px) and (max-width: 992px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100%;
-    margin-top: 0%;
     margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: 2%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 26px;
-    font-weight: bolder;
-    margin-top: 5%;
-    line-height: 1.25;
-    color: #2a4092;
-  }
-  #text-panel-registration {
-    font-size: 18px;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: 2%;
-    margin-bottom: 1%;
-  }
-  #col-register-panel-fields {
-    margin-top: 3%;
-    margin-left: 5%;
-    margin-right: -6%;
-  }
-  #panel-input-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
-#input-separator {
-  margin-top: 5%;
-  background-color: transparent;
-  margin-bottom: -8%;
-}
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 85%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: -1%;
-}
-.ant-calendar-picker-input {
-  border-radius: 0px;
-  height: 25px;
-  background-color: #f9f9f9;;
-}
-#col-commissioning-date {
-  margin-top: 3%;
-  margin-left: 2%;
-}
-#commissioningDate {
-  color: #2a4092;
-  width: 85%;
-  height: 40px;
-  font-family: Montserrat;
-  font-size: 20px;
-  line-height: 1.25;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -5%;
-  margin-top: -2%;
-}
-  #subtittle-panel-registration {
-    font-size: 16px;
-    font-weight: 1000;
-    text-align: left;
-    line-height: 1.25;
-    color: #2a4092;
-    margin-left: 4%;
-    margin-top: 2%;
-  }
-  #col-radio-button {
-    width: 240px;
     margin-top: 1%;
   }
-  #images-tech-us {
-    display: inline-block;
-    margin-left: 8%;
-    margin-right: 4%;
-    padding: 5%;
-    border: 1px solid #cdced7;
-  }
-  #label-radio-button {
-    margin-left: 0%;
-    font-size: 1.1em;
-    color: #7f95a7;
-  }
-  #register-panel-inverter {
-    margin-top: 4%;
-    margin-left: 20%;
-  }
-  #panel-alone-input-label {
-    width: 55%;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color: #f9f9f9;
-    border-bottom: 10px solid #f9f9f9;
-    margin-left: 3%;
-    margin-bottom: -1%;
-    }
-  #inverter-capacity {
-    color: #2a4092;
-    width: 55%;
-    height: 35px;
-    font-family: Montserrat;
-    font-size: 20px;
-    line-height: 2;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
-    border-top: 10px solid #f9f9f9;
-    border-radius: 0;
-    margin-left: -40%;
-    margin-top: -1%;
-  }
-  #register-panels-button-container-first {
-    margin-top: -2%;
-  }
-  #button-panel-register-next-first {
-    background-color: #db4196;
-    color: #ffffff;
-    line-height: 1.5;
-    height:40px;
-    width: 55%;
-    border-radius: 0;
-    border: none;
-    margin-left: 0%;
-    margin-top: 5%;
-  }
-}#background-panel-register {
-  position: absolute;
-  background-image: url(../../assets/panels.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; 
-}
-#card-panel-register-inside {
-  height: 85vh;
-  width: 40%;
-  margin-top: 3%;
-  margin-left: 30%;
-  font-family: Montserrat;
-  background-color: white;
-  text-align: center;  
-}
-#pagination {
-  margin-top: 0%;
-}
-#pagination-bullet {
-  margin-left: 1%;
-}
-#tittle-panel-registration {
-  font-size: 25px;
-  font-weight: bolder;
-  text-align: center;
-  margin-top: 3%;
-  line-height: 1.25;
-  color: #2a4092;
-}
-#button-panel-register-next-first {
-  background-color: #db4196;
-  color: #ffffff;
-  line-height: 1.5;
-  height:40px;
-  width: 40%;
-  border-radius: 0;
-  border: none;
-}
-
-/***************************************************************FIRST*FORM*************************************************************/
-/***FIRST*FORM************************************************************************************************************************/
-
-#text-panel-registration {
-  font-size: 16px;
-  text-align: center;
-  line-height: 1.25;
-  color: #7f95a7;
-  margin-top: 1%;
-  margin-bottom: -1%;
-}
-#col-register-panel-fields {
-  margin-top: 5%;
-  margin-right: -3%;
-}
-#col-commissioning-date {
-  margin-top: 4.5%;
-}
-#panel-input-label {
-  display: inline-block;
-  width: 80%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: 10%;
-  margin-bottom: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 80%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: 10%;
-  margin-bottom: -1%;
-}
-#input-separator {
-  margin-top: -3%;
-  background-color: transparent;
-  margin-bottom: -3%;
-}
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 80%;
-  height: 38px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: 10%;
-  margin-top: -1%;
-}
-.ant-calendar-picker-input {
-  border-radius: 0px;
-  height: 26px;
-  background-color: #f9f9f9;
-  border: none;
-}
-#input-date-separator {
-  margin-top: 3%;
-  background-color: transparent;
-  margin-bottom: -7%;
-}
-#commissioningDate {
-  color: #2a4092;
-  width: 80%;
-  height: 38px;
-  font-family: Montserrat;
-  font-size: 20px;
-  line-height: 0;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: 10%;
-  margin-top: -3%;
-}
-#subtittle-panel-registration {
-  font-size: 16px;
-  font-weight: 1000;
-  text-align: left;
-  line-height: 1.25;
-  color: #2a4092;
-  margin-left: 5%;
-  margin-top: 1%;
-}
-#col-radio-button {
-  margin-left: 0%;
-}
-#technology-used {
+  #images-progress-bar {
     margin-left: 0%;
   }
-#images-tech-us {
-  margin-top: 1%;
-  width: 90%;
-  height: 100%;
-  margin-left: -5%;
-  margin-right: 3%;
-  padding: 5%;
-  border: 1px solid #cdced7;
-}
-#label-radio-button {
- margin-left: -5%;
- font-size: 0.9em;
- color: #7f95a7;
-}
-#radio-button {
-  margin-left: 0%;
- }
-#register-panel-inverter {
-  top: -4%;
-}
-#panel-alone-input-label {
-  display: block;
-  width: 40%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: 30%;
-  margin-bottom: -1%;
-}
-#inverter-capacity {
-  color: #2a4092;
-  width: 40%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 20px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: 0%;
-  margin-top: -1%;
-}
-#register-panels-button-container-first {
-  margin-top: 0%;
-  margin-left: 0%;
 }
 
 /**************************************************************MOBILE*SMALL****************************************************************/
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100vw;
+  #register-panel-fields-sixth {
     margin-top: 0%;
     margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: -1%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: left;
+  } 
+  #div-installation-background {
     margin-top: 3%;
-    line-height: 1.25;
-    color: #2a4092;
+    margin-left: 10%;
+    background-color: #f9f9f9;
+    width: 90px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
   }
-  #text-panel-registration {
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: -1%;
-    margin-bottom: -1%;
-  }
-  #col-register-panel-fields {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: -2%;
-  }
-  #panel-input-label {
-  display: inline-block;
-  width: 90%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
-#input-separator {
-  margin-top: -0%;
-  background-color: transparent;
-  margin-bottom: -8%;
-}
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 90%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 95%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: 0%;
-}
-.ant-calendar-picker-input {
-  border-radius: 0px;
-  height: 25px;
-  background-color: #f9f9f9;;
-}
-#col-commissioning-date {
-  margin-top: -11%;
-}
-#commissioningDate {
-  color: #2a4092;
-  width: 95%;
-  height: 40px;
-  font-family: Montserrat;
-  font-size: 20px;
-  line-height: 1.25;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -5%;
-  margin-top: 0%;
-}
-  #subtittle-panel-registration {
-    font-size: 16px;
-    font-weight: 1000;
-    text-align: left;
-    line-height: 1.25;
-    color: #2a4092;
+  #div-observation-background {
+    margin-top: 3%;
     margin-left: 0%;
-    margin-top: -6%;
-  }
-  #col-radio-button {
-    margin-left: 0%;
-  }
-  #technology-used {
-    margin-left: 1%;
-  }
-  #images-tech-us {
-    margin-top: 0%;
-    margin-left: -15%;
-    padding: 5%;
-    border: 1px solid #cdced7;
-  }
-  #radio-button {
-  margin-left: 5%;
-  }
-  #register-panel-inverter {
-    margin-top: -4%;
-    margin-left: -2%;
-  }
-  #panel-alone-input-label {
-    display: inline-block;
+    background-color: #f9f9f9;
     width: 95%;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
+  }
+  #panel-sixth-label {
+    display: block;
+    width: 100%;
     text-align: left;
     font-weight: 600;
     font-size: 12px;
     line-height: 1.25;
     color: #2a4092;
-    background-color: #f9f9f9;
-    border-bottom: 10px solid #f9f9f9;
-    margin-left: 0%;
-    margin-bottom: 0%;
-    }
-  #inverter-capacity {
+    background-color:transparent;
+    left: 1%;
+    top: 1%;
+  }
+  #panel-sixth-label-large {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
     color: #2a4092;
-    width: 95%;
-    height: 35px;
+    background-color:transparent;
+    left: 1%;
+    top: 2%;
+  }
+  #installation-name {
+    color: #2a4092;
+    width: 100%;
+    height: 55px;
     font-family: Montserrat;
-    font-size: 20px;
-    line-height: 2;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
-    border-top: 10px solid #f9f9f9;
+    font-size: 16px;
+    padding: 20px 10px 0 5px; 
+    background-color: transparent;
     border-radius: 0;
+    top: -28%;
+    left: 0%;
+  }
+  #installation-property {
+    color: #2a4092;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 20px 10px 0 5px;
+    background-color: transparent;
+    border-radius: 0;
+    top: -30%;
     margin-left: 0%;
+  }
+  .ant-select-selection {
+    /* color: #2a4092;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 0px 10px 0 5px; */
+    /* background-color: transparent; */
+    border-radius: 0;
+    /* left: 0%;
+    top: -30% */
+  }
+  #subtittle-panel-registration-sixth {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 0%;
+    margin-top: -1%;
+    margin-bottom: 3%;
+  }
+  #subtittle-panel-registration-battery {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  #battery {
+    position: relative;
+    margin-left: 52%;
+  }
+  #battery-radio-sixth {
+    margin-top: -9%;
+    }
+  #col-battery {
+    margin-top: 3%;
+  }
+  #col-observation {
     margin-top: -3%;
   }
-  #register-panels-button-container-first {
-    margin-top: -2%;
-  }
-  #button-panel-register-next-first {
-    background-color: #db4196;
-    color: #ffffff;
-    line-height: 1.5;
-    height:40px;
-    width: 95%;
-    border-radius: 0;
-    border: none;
-    margin-left: -3%;
-  }
-}
-
-/**************************************************************TABLET*****************************************************************/
-/***TABLET****************************************************************************************************************************/
-
-@media (min-width: 600px) and (max-width: 992px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: 2%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 26px;
-    font-weight: bolder;
-    margin-top: 5%;
-    line-height: 1.25;
+  #battery-description, #observation {
     color: #2a4092;
-  }
-  #text-panel-registration {
+    width: 100%;
+    height: 101%;
+    font-family: Montserrat;
     font-size: 18px;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: 2%;
-    margin-bottom: 1%;
+    padding: 20px 10px 0 5px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 0%;
+    top: -24%;
   }
-  #col-register-panel-fields {
-    margin-top: 3%;
-    margin-left: 5%;
-    margin-right: -6%;
-  }
-  #panel-input-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
-#input-separator {
-  margin-top: 5%;
-  background-color: transparent;
-  margin-bottom: -8%;
-}
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 85%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: -1%;
-}
-.ant-calendar-picker-input {
-  border-radius: 0px;
-  height: 25px;
-  background-color: #f9f9f9;;
-}
-#col-commissioning-date {
-  margin-top: 3%;
-  margin-left: 2%;
-}
-#commissioningDate {
-  color: #2a4092;
-  width: 85%;
-  height: 40px;
-  font-family: Montserrat;
-  font-size: 20px;
-  line-height: 1.25;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -5%;
-  margin-top: -2%;
-}
-  #subtittle-panel-registration {
+  #text-panel-registration-sixth {
     font-size: 16px;
-    font-weight: 1000;
+    margin-left: 13%;
     text-align: left;
     line-height: 1.25;
-    color: #2a4092;
-    margin-left: 4%;
-    margin-top: 2%;
-  }
-  #col-radio-button {
-    width: 240px;
+    color: #7f95a7;
     margin-top: 1%;
+    margin-bottom: -1%;
   }
-  #images-tech-us {
-    display: inline-block;
-    margin-left: 8%;
-    margin-right: 4%;
-    padding: 5%;
+  #upload-images {
+    margin-left: 0%;
+    width: 95%;
+    height: 150px;
+    border-radius: 2.6px;
+    border: dotted 2px #2a4092;
+    background-color: #f9f9f9;
+    overflow: scroll;
+  }
+  #upload-text-one {
+    height: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.31px;
+    color: #db4196;
+    background-color: #f9f9f9;
+  }
+  #preview-sixth {
+    height: 10%;
+    width: 10%;
     border: 1px solid #cdced7;
   }
-  #label-radio-button {
-    margin-left: 0%;
-    font-size: 1.1em;
-    color: #7f95a7;
+  #no-image-sixth {
+    margin-left: -63%;
+    margin-top: 2%;
+    height: 10%;
+    width: 10%;
+    padding: 1%;
+    border: 1px solid #cdced7;
   }
-  #register-panel-inverter {
-    margin-top: 4%;
-    margin-left: 20%;
+  #battery-radio-text-sixth {
+    margin-left: 4%;
   }
-  #panel-alone-input-label {
-    width: 55%;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color: #f9f9f9;
-    border-bottom: 10px solid #f9f9f9;
-    margin-left: 3%;
-    margin-bottom: -1%;
-    }
-  #inverter-capacity {
-    color: #2a4092;
-    width: 55%;
-    height: 35px;
-    font-family: Montserrat;
-    font-size: 20px;
-    line-height: 2;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-    background-color: #f9f9f9;
-    border-top: 10px solid #f9f9f9;
-    border-radius: 0;
-    margin-left: -40%;
-    margin-top: -1%;
-  }
-  #register-panels-button-container-first {
-    margin-top: -2%;
-  }
-  #button-panel-register-next-first {
-    background-color: #db4196;
+
+  #button-panel-register-previous-sixth  {
+    background-color: #2a4092;
     color: #ffffff;
+    font-size: 1em;
     line-height: 1.5;
-    height:40px;
-    width: 55%;
+    font-weight: 500;
+    width: 85%;
+    height: 40px;
     border-radius: 0;
     border: none;
-    margin-left: 0%;
-    margin-top: 5%;
+    margin-left: -6%;
+    margin-top: 13%;
   }
+  #button-panel-register-next-sixth {
+    background-color: #db4196;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 85%;
+    height:40px;
+    border-radius: 0;
+    border: none;
+    margin-left: -6%;
+    margin-top: 13%;
+  }
+  #images-progress-bar {
+    margin-left: 0%;
+  }
+}
+
+/*******ERROR*MESSAGE********/
+#error-message {
+  display: contents;
+  width: 90%;
+  height: 16px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: -0.07px;
+  color: red;
+  margin-left: 0% !important;
+  margin-top: -3%  !important;
 }

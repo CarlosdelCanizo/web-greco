@@ -103,11 +103,11 @@ const ThirdForm = props => {
 
                     <Form onSubmit={handleFormSubmit}>
                         <div >
-                            <Col id="register-panel-fields-third" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <Col id="register-panel-fields-third" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                 <Form.Item>
                                     <Checkbox
                                         label='Orientation'
-                                        id="panelTrackingOrientation"
+                                        id="panel-tracking-orientation"
                                         name="panelTrackingOrientation"
                                         onClick={handleOrientation}
                                         onChange={handleInputChange}
@@ -117,13 +117,11 @@ const ThirdForm = props => {
                                         Orientation
                                     </Checkbox>
                                 </Form.Item>
-
-                            </Col>
-                            <Col id="register-panel-fields-third" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                                &nbsp; &nbsp;
                                 <Form.Item>
                                     <Checkbox label='Inclination'
 
-                                        id="panelTrackingInclination"
+                                        id="panel-tracking-inclination"
                                         name="panelTrackingInclination"
                                         onClick={handleInclination}
                                         onChange={handleInputChange}

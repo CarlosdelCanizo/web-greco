@@ -1,21 +1,33 @@
 import React, { useState } from "react"
-import { Card, Form, Input, Divider, Alert, Switch } from 'antd'
-import axios from 'axios'
+import { Card, Form, Input, Divider, Alert, message, Switch, Button } from 'antd'
+import axiosConfig from '../../api/axiosConfig'
 import Header from '../Header'
 import "./editUser.css"
-
 
 const EditUser = () => {
 
   const [data, setData] = React.useState({
     username: "",
     email: "",
-    notifications: true
+    notifications: true,
+    isSubmitting: false,
+    errorMessage: null,
   }
   );
 
+  const success = () => {
+    message.warning('If you change your email, you need to loggin again', 5, onClose = { onClose });
+  };
+
+  function removeCredentials() {
+    localStorage.removeItem("access_token")
+    localStorage.removeItem("expires_in")
+    localStorage.removeItem("refresh_token")
+    window.location.reload()
+  }
+
   function onChange(checked) {
-    console.log("switch to", checked);
+    // console.log("switch to", checked);
     setData({ ...data, notifications: checked });
   }
 
@@ -26,17 +38,19 @@ const EditUser = () => {
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
+    setData({ ...data, submited: true, errorMessage: null });
+    updateUser()
+  };
 
-    setData({ ...data, isSubmitting: true, errorMessage: null });
-
-    // UPDATE USER
+  // UPDATE USER
+  function updateUser() {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem("access_token"))
     var body = {
       email: data.email,
       username: data.username,
       notifications: data.notifications
     }
-    axios.put("http://10.0.10.195:8088/users", (body),
+    axiosConfig.put("/users", (body),
       {
         headers: {
           "Content-Type": "application/json",
@@ -45,36 +59,52 @@ const EditUser = () => {
       })
       .then(response => {
         if (response.status === 200) {
-          return response
+          activateRedirection()
+          success()
         }
         throw response
       })
-      .then(response => {
-        const res = response.data
-        activateRedirection()
-      })
       .catch(error => {
-        if (error.response === undefined) {
+        console.log("error", error)
+        if (error === undefined) {
           // NetWork Error  
-          setData({ ...data, isSubmitting: false, errorMessage: error.message });
+          setData({ ...data, errorMessage: error.response.data.message });
         }
-        else {
-          if (error.response.status === 400) {
+        if (error !== undefined && error.response !== undefined) {
+          if (error.response.data.status === 400) {
             // bad credentials  
-            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.error_description });
+            setData({ ...data, errorMessage: error.response.data.message });
+          }
+
+          if (error.response.data.status === 404) {
+            //  not found  
+            setData({ ...data, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 500) {
+            // Srver error  
+            setData({ ...data, errorMessage: error.response.data.message });
           }
         }
       });
-  };
+  }
 
   //Redirect
   const [toLocation, setLocation] = React.useState(false);
   function activateRedirection() {
     setLocation(true)
   }
-  const onClose = e => {
-    window.location.reload();
+
+  const onClose = () => {
+    if (data.email && data.email !== "") {
+      removeCredentials()
+    } else {
+      window.location.reload()
+    }
+
   };
+
+  const isEnabled = (data.username && data.username !== "" && data.isSubmitting === false
+    || data.email && data.email !== "" && data.isSubmitting === false)
 
   return (
     <React.Fragment>
@@ -86,20 +116,28 @@ const EditUser = () => {
             <Divider />
             <div id="edit-details-form-fields">
               <Form.Item>
-                <div id="background-color">
+                <div id="div-edit-user-background">
                   <label id="edit-label">Username</label>
-                  <Input placeholder="Username" name="username" id="edit-username"
-                    values={data.username} onChange={handleInputChange}
+                  <Input
+                    placeholder="Username"
+                    name="username"
+                    id="edit-username"
+                    values={data.username}
+                    onChange={handleInputChange}
                   />
                 </div>
               </Form.Item>
               <Divider id="between-inputs" />
               <Form.Item>
-                <div id="background-color">
+                <div id="div-edit-user-background">
                   <label id="edit-label">Email</label>
-                  <Input type="email" placeholder="Email" name="email" id="edit-email"
-                    values={data.email} onChange={handleInputChange}
-
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    id="edit-email"
+                    values={data.email}
+                    onChange={handleInputChange}
                   />
                 </div>
               </Form.Item>
@@ -116,13 +154,13 @@ const EditUser = () => {
                 (<p id="turn-notifications-text">Turn ON notifications</p>)}
             </div>
             <div id="error-reset-message">
-              {data.errorMessage && (<p >{data.errorMessage}</p>)}
+              {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
             </div>
             <div id="succes-message">
               {toLocation ?
                 <Alert
                   message="Success!"
-                  description="User edited correctly. If you have changed your email, please go back to login"
+                  description={"Username: " + (data.username ? (data.username) : ("-")) + "\nEmail: " + (data.email ? (data.email) : ("-"))}
                   type="success"
                   showIcon
                   closable
@@ -130,7 +168,12 @@ const EditUser = () => {
                 /> : null}
             </div>
             <div>
-              <button id="edit-details-save-button" >SAVE CHANGES</button>
+              <Button
+                id="edit-details-save-button"
+                disabled={!isEnabled}
+                onClick={handleFormSubmit}
+              >SAVE CHANGES
+              </Button>
             </div>
           </Form>
         </Card>

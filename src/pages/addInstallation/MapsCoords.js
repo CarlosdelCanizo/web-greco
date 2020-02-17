@@ -69,6 +69,7 @@ class MapCoords extends Component {
         animate={true}
         easeLinearity={0.25}
         onClick={this.handleClick}
+        tap={false}
       >
         <TileLayer
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'

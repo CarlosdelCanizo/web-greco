@@ -17,9 +17,16 @@
 }
 #register-panel-fields-third {
   margin-top: 5%;
-  margin-left: 0%;
+  margin-left: 35%;
+  display: flex;
 }
-.ant-checkbox {
+#panel-tracking-orientation {
+  margin-right: 5%;
+}
+#panel-tracking-inclination {
+  margin-left: 5%;
+}
+.ant-checkbox .ant-checkbox-inner {
   border-color: #db4196;
 }
 .ant-checkbox-checked .ant-checkbox-inner {
@@ -34,11 +41,6 @@
   width: 50%;
   height: 50%;
 }
-#register-panels-button-container-third {
-  margin-top: 5%;
-  margin-left: 0%;
-  background-color: burlywood;
-}
 #button-panel-register-previous-third  {
   background-color: #2a4092;
   color: #ffffff;
@@ -50,7 +52,7 @@
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 13%;
+  margin-top: 22.5%;
 }
 #button-panel-register-next-third {
   background-color: #db4196;
@@ -63,95 +65,7 @@
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 13%;
-}
-
-/**************************************************************MOBILE*SMALL****************************************************************/
-/***MOBILE*SMALL***************************************************************************************************************************/
-
-@media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
-    height: 100vh;
-    width: 100vw;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-  }
-  #pagination {
-    margin-top: -1%;
-  }
-  #pagination-bullet {
-    margin-left: 1%;
-  }
-  #tittle-panel-registration {
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: left;
-    margin-top: 3%;
-    line-height: 1.25;
-    color: #2a4092;
-  }
-  #text-panel-registration {
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: -1%;
-    margin-bottom: -1%;
-  }
-  #col-register-panel-fields {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: -2%;
-  }
-  #panel-input-label {
-  display: inline-block;
-  width: 90%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
-#image-panel-tracking {
-  margin-top: -10%;
-  width: 85%;
-  height: 85%;
-}
-
-#button-panel-register-previous-third  {
-  background-color: #2a4092;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height: 40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 22%;
-}
-#button-panel-register-next-third {
-  background-color: #db4196;
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 500;
-  width: 80%;
-  height:40px;
-  border-radius: 0;
-  border: none;
-  margin-left: 0%;
-  margin-top: 22%;
-}
+  margin-top: 22.5%;
 }
 
 /**************************************************************TABLET*****************************************************************/
@@ -166,7 +80,8 @@
     font-family: Montserrat;
     background-color: white;
     text-align: center;
-    border: none;  
+    border: none; 
+    overflow: auto;  
   }
   #pagination {
     margin-top: 2%;
@@ -193,51 +108,8 @@
     margin-left: 5%;
     margin-right: -6%;
   }
-  #panel-input-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-}
 
-#electrical_capacity, #surface, #lon, #lat {
-  color: #2a4092;
-  width: 85%;
-  height: 35px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-}
-#panel-date-label {
-  display: inline-block;
-  width: 85%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -5%;
-  margin-bottom: -1%;
-}
-
-  #button-panel-register-next {
+#button-panel-register-next {
     background-color: #db4196;
     color: #ffffff;
     line-height: 1.5;
@@ -246,5 +118,89 @@
     border-radius: 0;
     border: none;
     margin-left: 0%;
-  }
+}
+}
+
+/**************************************************************MOBILE*SMALL****************************************************************/
+/***MOBILE*SMALL***************************************************************************************************************************/
+
+@media (min-width: 240px) and (max-width: 600px) {
+#card-panel-register-inside {
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;
+    overflow: auto;  
+}
+#pagination {
+    margin-top: -1%;
+}
+#pagination-bullet {
+  margin-left: 1%;
+}
+#tittle-panel-registration {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 3%;
+    line-height: 1.25;
+    color: #2a4092;
+}
+#text-panel-registration {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-left: 0%;
+    margin-top: -1%;
+    margin-bottom: -1%;
+}
+#col-register-panel-fields {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: -2%;
+}
+#register-panel-fields-third {
+    margin-top: 10%;
+    margin-left: 15%;
+    display: flex;
+}
+#image-panel-tracking {
+  margin-top: 0%;
+  margin-left: -15%;
+  width: 75%;
+  height: 75%;
+}
+#button-panel-register-previous-third  {
+  background-color: #2a4092;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 34%;
+  margin-left: -15%;
+}
+#button-panel-register-next-third {
+  background-color: #db4196;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+  width: 85%;
+  height:40px;
+  border-radius: 0;
+  border: none;
+  margin-left: 0%;
+  margin-top: 34%;
+  margin-left: -15%;
+}
 }

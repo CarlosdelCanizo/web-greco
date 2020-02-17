@@ -118,34 +118,35 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
       }
     }
     fetchMessages()
+    console.log("la messageList", messagesList)
   })
 
   return (
     <React.Fragment>
       <div id="feed-panel-messages-list" ref={scrollableArea}>
-        {messagesList.map(panel => (
-          <div key={panel.id}>
-            {panel.userName === username ?
+        {messagesList.map(message => (
+          <div key={message.id}>
+            {message.userName === username ?
               (<React.Fragment>
                 <div>
-                  <Avatar id="feed-panel-avatar">{getName(panel.userName)}</Avatar>
+                  <Avatar id="feed-panel-avatar">{getName(message.userName)}</Avatar>
                 </div>
                 <div id="feed-panel-user-booble">
-                  <p id="feed-panel-text-message">{panel.text}</p>
-                  <h6 id="feed-panel-message-date">{moment(panel.creationDate).format('DD/MM/YYYY')}</h6>
-                  <h6 id="feed-panel-message-time">{moment(panel.creationDate).format('HH:mm')}</h6>
+                  <p id="feed-panel-text-message">{message.text}</p>
+                  <h6 id="feed-panel-message-date">{moment(message.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-time">{moment(message.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>
               )
               :
               (<React.Fragment>
                 <div>
-                  <Avatar id="another-feed-panel-avatar">{getName(panel.userName)}</Avatar>
+                  <Avatar id="another-feed-panel-avatar">{getName(message.userName)}</Avatar>
                 </div>
                 <div id="feed-panel-another-booble">
-                  <p id="feed-panel-text-another-message">{panel.text}</p>
-                  <h6 id="feed-panel-message-another-date">{moment(panel.creationDate).format('DD/MM/YYYY')}</h6>
-                  <h6 id="feed-panel-message-another-time">{moment(panel.creationDate).format('HH:mm')}</h6>
+                  <p id="feed-panel-text-another-message">{message.text}</p>
+                  <h6 id="feed-panel-message-another-date">{moment(message.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-another-time">{moment(message.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>
               )}
