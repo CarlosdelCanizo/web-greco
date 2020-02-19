@@ -12,7 +12,7 @@
 #feed-card-container {
   float: right;
   width: 424px;
-  height: 90vh;
+  /* height: 90vh; EFREN */
   margin-top: 1%;
   right: 3%;  
   font-family: Montserrat;
@@ -103,7 +103,7 @@
   margin-top: 0%;
   margin-left: 5%;
   width: 100%;
-  height: 315px;
+  height: 230px;
 }
 /***********************************AVATAR*USER*/
 #feed-panel-user-booble {
@@ -193,6 +193,10 @@
 #panel-feed-container-message-box {
   display: block;
   width: 100%;
+  /*EFREN*/
+  position: absolute;
+  bottom: -10px;
+  /*EFREN*/
 }
 #feed-input-text {
   margin-top: 0%;
@@ -224,7 +228,7 @@
   #feed-card-container {
     float: right;
     width: 424px;
-    height: 90vh;
+    /* height: 90vh; EFREN */
     margin-top: 1%;
     right: 2%;  
     font-family: Montserrat;
@@ -287,18 +291,20 @@
   #feed-list-container {
     margin-top: -5%;
     margin-left: -10%;
-    height: 50vh;
    }
   #feed-panel-messages-list {
     overflow-y: auto;
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
-    height: calc(60vh - 85px);
   }
   #panel-feed-container-message-box {
     display: block;
     width: 100%;
+    /*EFREN*/
+  position: absolute;
+  bottom: -10px;
+  /*EFREN*/
   }
   #feed-input-text {
     margin-top:2rem;
@@ -451,6 +457,10 @@
 #panel-feed-container-message-box {
   display: block;
   width: 100%;
+  /*EFREN*/
+  position: absolute;
+  bottom: -10px;
+  /*EFREN*/
 }
 #feed-input-text {
   margin-top: 0%;
@@ -483,7 +493,7 @@
   #feed-card-container {
     overflow-y: auto;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; EFREN*/
     margin-top: 0.1rem;
     right: 0%;  
     font-family: Montserrat;
@@ -552,13 +562,11 @@
   #feed-list-container {
     margin-top: -5%;
     margin-left: -10%;
-    height: 55vh;
    }
   #feed-panel-messages-list {
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
-    height: calc(55vh - 50px);
   }
   /* #feed-panel-user-booble {
     text-align: left;
@@ -695,6 +703,10 @@
 #panel-feed-container-message-box {
   display: block;
   width: 100%;
+  /*EFREN*/
+  position: absolute;
+  bottom: -10px;
+  /*EFREN*/
 }
 #feed-input-text {
   margin-top: 0%;
@@ -716,6 +728,10 @@
   #panel-feed-container-message-box {
     display: block;
     width: 100%;
+    /*EFREN*/
+  position: absolute;
+  bottom: -10px;
+  /*EFREN*/
   }
   #feed-input-text {
     margin-top: 2rem;

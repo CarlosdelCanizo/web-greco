@@ -217,14 +217,18 @@ const FeedPanel = (props) => {
               </div>
             </Row>
             <Row>
-              <div id="feed-list-container">
-                <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-              </div>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <div id="feed-list-container">
+                  <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+                </div>
+              </Col>
             </Row>
             <Row>
-              <div id="feed-form-container">
-                <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-              </div>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <div id="feed-form-container">
+                  <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+                </div>
+              </Col>
             </Row>
           </Card>
         </Col>
