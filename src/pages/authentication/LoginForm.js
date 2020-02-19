@@ -123,7 +123,7 @@ const LoginForm = (props) => {
                   <Input type="email"
                     placeholder="Email"
                     name="email"
-                    id="email"
+                    id="login-email"
                     values={data.email}
                     onChange={handleInputChange}
                     required
@@ -138,7 +138,7 @@ const LoginForm = (props) => {
                     type="password"
                     placeholder="Password"
                     name="password"
-                    id="password"
+                    id="login-password"
                     values={data.password}
                     onChange={handleInputChange}
                   />

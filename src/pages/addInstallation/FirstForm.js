@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, Alert } from 'antd'
+import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -105,7 +105,8 @@ const FirstForm = (props) => {
   //INPUTS HANDLER CHANGE
   const handleInputChange = event => {
     if (isNaN(event.target.value)) {
-      setData({ ...data, errorMessage: "Enter only numbers, please" });
+      error()
+      // setData({ ...data, errorMessage: "Enter only numbers, please" });
     } else {
       setData({ ...data, [event.target.name]: (event.target.value), errorMessage: null });
     }
@@ -186,6 +187,10 @@ const FirstForm = (props) => {
     localStorage.removeItem("currentPanelState")
     localStorage.removeItem("currentPanelId")
   }
+
+  const error = () => {
+    message.error('Only numbers, please', 5);
+  };
 
   const isEnabled =
     (currentPanelId && currentPanelId > 0) ||
@@ -347,9 +352,6 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
-            <div >
-              {(data.errorMessage) ? (<p id="error-message">{data.errorMessage}</p>) : (null)}
-            </div>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
 
               <Button

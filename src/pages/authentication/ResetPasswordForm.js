@@ -75,7 +75,7 @@ const ResetPasswordForm = () => {
                   <Input placeholder="Email"
                     type="email"
                     name="email"
-                    id="email"
+                    id="reset-email"
                     values={data.email}
                     onChange={handleInputChange}
                     required

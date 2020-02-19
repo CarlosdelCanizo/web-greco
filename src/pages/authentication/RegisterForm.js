@@ -84,7 +84,7 @@ const RegisterForm = (props) => {
                     placeholder="Username"
                     type="text"
                     name="username"
-                    id="username"
+                    id="register-username"
                     values={data.username}
                     onChange={handleInputChange}
                     required
@@ -99,7 +99,7 @@ const RegisterForm = (props) => {
                     placeholder="Valid email"
                     type="email"
                     name="email"
-                    id="email"
+                    id="register-email"
                     values={data.email}
                     onChange={handleInputChange}
                     required
@@ -114,7 +114,7 @@ const RegisterForm = (props) => {
                     type="password"
                     placeholder="Password"
                     name="password"
-                    id="password"
+                    id="register-password"
                     values={data.password}
                     onChange={handleInputChange}
                     required
@@ -129,7 +129,7 @@ const RegisterForm = (props) => {
                     type="password"
                     placeholder="Confirm password"
                     name="confirmPassword"
-                    id="password"
+                    id="register-confirm"
                     values={data.confirmPassword}
                     onChange={handleInputChange}
                     required

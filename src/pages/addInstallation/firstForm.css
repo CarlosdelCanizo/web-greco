@@ -57,6 +57,15 @@ border-radius: none;
   left: 0%;
   margin-top: 0% !important;
 }
+.ant-calendar-picker-input {
+  left: 0%;
+  top: 0%;
+  border-radius: 0px;
+  width: 100%;
+  height: 100%;
+  background-color:red;
+  border: none;
+}
 
 /***************************************************************FIRST*FORM*************************************************************/
 /***COMPUTER************************************************************************************************************************/
@@ -98,7 +107,7 @@ border-radius: none;
   left: -20%;
   top: -15%;
 }
-#panel-input-label-2 {
+/* #panel-input-label-2 {
   position: relative;
   width: 100%;
   text-align: left;
@@ -109,7 +118,7 @@ border-radius: none;
   background-color:transparent;
   left: -20%;
   top: -15%;
-}
+} */
 #electrical_capacity {
   color: #2a4092;
   width: 100%;
@@ -319,7 +328,7 @@ border-radius: none;
     margin-top: 0%;
     margin-left: -7%;
     background-color: #f9f9f9;
-    width: 87%;
+    width: 85%;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
@@ -347,13 +356,13 @@ border-radius: none;
     background-color: transparent;
     border-radius: 0;
     left: 0%;
-    top: -71%;
+    top: -68%;
 }
 #div-surface-background {
     margin-top: -0%;
     margin-left: -5%;
     background-color: #f9f9f9;
-    width: 87%;
+    width: 85%;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
@@ -369,7 +378,7 @@ border-radius: none;
     background-color: transparent;
     border-radius: 0;
     left: 0%;
-    top: -71%;
+    top: -68%;
 }
 #div-date-background {
     margin-top: 0%;
@@ -381,15 +390,6 @@ border-radius: none;
     border-width: 0px 0px 2px 0px;
     border-bottom-color: #2a4092;
 }
-  .ant-calendar-picker-input {
-    left: 0%;
-    top: 0%;
-    border-radius: 0px;
-    width: 100%;
-    height: 100%;
-    background-color:transparent;
-    border: none;
-  }
 #commissioningDate {
   color: #2a4092;
   width: 100%;
@@ -610,7 +610,7 @@ border-radius: none;
     background-color: transparent;
     border-radius: 0;
     left: 0%;
-    top: -71%;
+    top: -68%;
 }
 #div-surface-background {
     margin-top: 5%;
@@ -632,7 +632,7 @@ border-radius: none;
     background-color: transparent;
     border-radius: 0;
     left: 0%;
-    top: -71%;
+    top: -68%;
 }
 #div-date-background {
   margin-top: 8%;

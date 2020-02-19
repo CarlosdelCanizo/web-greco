@@ -92,7 +92,7 @@ const ConfirmPasswordForm = (props) => {
                     placeholder="Your email"
                     type="email"
                     name="email"
-                    id="email"
+                    id="confirm-email"
                     values={data.email}
                     onChange={handleInputChange}
                     required
@@ -107,7 +107,7 @@ const ConfirmPasswordForm = (props) => {
                     placeholder="Password"
                     type="password"
                     name="password"
-                    id="password"
+                    id="confirm-password"
                     values={data.password}
                     onChange={handleInputChange}
                     required
@@ -122,7 +122,7 @@ const ConfirmPasswordForm = (props) => {
                     placeholder="Confirm password"
                     type="password"
                     name="confirmPassword"
-                    id="password"
+                    id="confirm-confirm"
                     values={data.confirmPassword}
                     onChange={handleInputChange}
                     required

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { Form, Card, Radio, Button, Row, Col, Divider, Upload, Icon, Select, Input } from 'antd'
+import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -27,7 +27,6 @@ const SixthForm = props => {
   }
 
   const [data, setData] = useState(currentPanelState);
-  const [error, setError] = useState(null);
   const { Option } = Select;
   var panelResponseId //IMAGES ON POST
   var currentPanelId //IMAGES ON PUT
@@ -116,9 +115,17 @@ const SixthForm = props => {
         }
       })
       .catch(function (error) {
-        setError(error = "Server error. You can´t post your installation.");
+        error()
       });
   }
+
+  const error = () => {
+    message.error('Server error. You can´t post/update your installation now. Please, try again later.', 5);
+  };
+
+  const errorImages = () => {
+    message.error('Server error. You can´t upload images now. Please, try again later.', 5);
+  };
 
   //UPDATE PANEL PUT
   function updatePanel() {
@@ -156,6 +163,7 @@ const SixthForm = props => {
         }
       })
       .catch(function (error) {
+        error()
       });
   }
 
@@ -190,6 +198,7 @@ const SixthForm = props => {
         }
       })
       .then(error => {
+        errorImages()
       })
   }
 
@@ -337,8 +346,6 @@ const SixthForm = props => {
               </Form.Item>
 
             </Col>
-
-            {error ? (<p id="error-post-update-message">{error}</p>) : (null)}
 
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Link to="/fifth">

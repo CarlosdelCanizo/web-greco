@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Row, Col, Icon, Button, Select, Divider, Input, Switch } from 'antd';
+import { Form, Card, Row, Col, Icon, Button, Select, message, Input, Switch } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import inclinationImage from '../../assets/inclination.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -38,7 +38,7 @@ const FifthForm = props => {
 
     const handleInputChange = event => {
         if (event.target.value && isNaN(event.target.value)) {
-            setData({ ...data, errorMessage: "Enter only numbers, please" });
+            error()
         } else {
             setData({ ...data, [event.target.name]: event.target.value });
         }
@@ -66,6 +66,10 @@ const FifthForm = props => {
         localStorage.removeItem("currentPanelState")
         localStorage.removeItem("currentPanelId")
     }
+
+    const error = () => {
+        message.error('Only numbers, please', 5);
+    };
 
     console.log("inclination y data.inclination", inclination, data.inclination)
     const isEnabled =
@@ -136,7 +140,6 @@ const FifthForm = props => {
                                                     onClick={resetInput}
                                                     required />
                                             </div>
-                                            {(data.errorMessage) ? (<p id="error-message" >{data.errorMessage}</p>) : (null)}
                                         </Form.Item>
                                     </Col>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

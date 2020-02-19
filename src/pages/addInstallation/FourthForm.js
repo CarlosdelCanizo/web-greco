@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch } from 'antd';
+import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import compass from '../../assets/compass.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -38,7 +38,7 @@ const FourthForm = props => {
 
     const handleInputChange = event => {
         if (event.target.value && isNaN(event.target.value)) {
-            setData({ ...data, errorMessage: "Enter only numbers, please" });
+            error()
         } else {
             setData({ ...data, [event.target.name]: event.target.value, errorMessage: null });
         }
@@ -66,6 +66,10 @@ const FourthForm = props => {
         localStorage.removeItem("currentPanelState")
         localStorage.removeItem("currentPanelId")
     }
+
+    const error = () => {
+        message.error('Only numbers, please', 5);
+    };
 
     console.log("orientation y data.orientation", orientation, data.orientation)
     const isEnabled =
@@ -135,8 +139,6 @@ const FourthForm = props => {
                                                     required
                                                 />
                                             </div>
-                                            {(data.errorMessage) ? (<p id="error-message" >{data.errorMessage}</p>) : (null)}
-
                                         </Form.Item>
                                     </Col>
                                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
