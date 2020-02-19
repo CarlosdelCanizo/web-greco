@@ -58,7 +58,7 @@
   padding: 20px 10px 0 5px; 
   background-color: transparent;
   border-radius: 0;
-  top: -28%;
+  top: -26%;
   left: 0%;
 }
 #installation-property {
@@ -120,7 +120,7 @@
   background-color: transparent;
   border-radius: 0;
   margin-left: 0%;
-  top: -24%;
+  top: -22%;
 }
 #text-panel-registration-sixth {
   font-size: 16px;
@@ -618,7 +618,7 @@ margin-top: -5%;
 }
 
 /*******ERROR*MESSAGE********/
-#error-message {
+#error-post-update-message {
   display: contents;
   width: 90%;
   height: 16px;
@@ -630,3 +630,12 @@ margin-top: -5%;
   margin-left: 0% !important;
   margin-top: -3%  !important;
 }
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  #installation-name, #installation-property, #battery-description, #observation{ margin-top: -18px!important; } }   
+
+  @-moz-document url-prefix() {
+    
+    #installation-name, #installation-property, #battery-description, #observation{ margin-top:-4px!important; }
+    }

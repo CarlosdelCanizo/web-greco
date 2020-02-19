@@ -82,7 +82,6 @@ const LoginForm = (props) => {
 
   function getMyUserInfo() {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
     axiosConfig.get("/users/getMyUserInfo",
       {
         headers: {
@@ -107,8 +106,8 @@ const LoginForm = (props) => {
   return (
     <Row>
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-          <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
+        <Col span={24} id="login-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+          <img src={mobileLogo} id="login-logo-mobile-image" alt="mobile-logo" />
         </Col>
         <div id="inside-welcome-container" >
           <h1 id="welcome-title-text" >
@@ -161,7 +160,7 @@ const LoginForm = (props) => {
           </Form>
           <h6 id="welcome-text-mini-account">Do not you have an account yet? <Link id="link" to="/register">Sign up</Link></h6>
 
-          <div id="welcome-text-footer-container">
+          <div id="login-text-footer-container">
             <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
           </div>
         </div>

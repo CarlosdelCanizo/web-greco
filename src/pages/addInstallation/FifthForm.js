@@ -32,6 +32,7 @@ const FifthForm = props => {
     }
 
     const handleInputSelectChange = value => {
+        parseInt(value, 10);
         setData({ ...data, inclination: value });
     };
 

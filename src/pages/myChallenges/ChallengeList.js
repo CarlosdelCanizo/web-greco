@@ -12,7 +12,7 @@ function ChallengeList() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axiosConfig(
-        'http://10.0.10.195:8088/challenge',
+        '/challenge',
         {
           headers: {
             "Content-Type": "application/json",

@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import notificationsOff from '../../assets/notifications-off.svg'
 import axiosConfig from '../../api/axiosConfig'
 
-const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
 class NotificationsMenu extends Component {
   state = {
     visible: false,
@@ -25,6 +23,7 @@ class NotificationsMenu extends Component {
 
   // GET UNREAD NOTIFICATIONS
   fetchNotifications() {
+    const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     axiosConfig.get("/comment/unreadcomments",
       {
         headers: {

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { Card, Input, Form, Alert, Divider } from 'antd';
+import { Card, Input, Form, Alert, Divider, Button } from 'antd';
 import Header from '../Header'
 import "../Header.css"
-import axios from 'axios'
+import axiosConfig from '../../api/axiosConfig'
 import "./editUser.css"
 
 const InviteFriends = () => {
@@ -22,7 +22,7 @@ const InviteFriends = () => {
     var body = {
     }
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem("access_token"))
-    axios.post('http://10.0.10.195:8088/referedUser?email=' + data.email, body,
+    axiosConfig.post('/referedUser?email=' + data.email, body,
       {
         headers: {
           "Content-Type": "application/json",
@@ -31,19 +31,29 @@ const InviteFriends = () => {
       })
       .then(response => {
         if (response.status === 200) {
-
           activateRedirection()
         }
       })
       .catch(function (error) {
-        if (error.response === undefined) {
+        console.log("error", error)
+        if (error === undefined) {
           // NetWork Error  
-          setData({ ...data, isSubmitting: false, errorMessage: error.message });
+          setData({ ...data, errorMessage: error.response.data.message });
         }
-        else {
-          console.log(error.message);
-          //Unregistered user
-          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.debugMessage });
+        if (error !== undefined && error.response !== undefined) {
+          if (error.response.data.status === 400) {
+            // bad credentials  
+            setData({ ...data, errorMessage: error.response.data.message });
+          }
+
+          if (error.response.data.status === 404) {
+            //  not found  
+            setData({ ...data, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 500) {
+            // Server error  
+            setData({ ...data, errorMessage: error.response.data.message });
+          }
         }
       });
   }
@@ -68,32 +78,41 @@ const InviteFriends = () => {
           <Form onSubmit={handleFormSubmit} >
             <div id="edit-details-form-fields">
               <Form.Item>
-                <label id="edit-label">Friend´s Email</label>
-                <Input placeholder="Email" type="email" name="email" id="edit-email"
-                  values={data.email} onChange={handleInputChange}
-                  required
-                />
+                <div id="div-edit-user-background">
+                  <label id="edit-label">Friend´s Email</label>
+                  <Input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    id="edit-email"
+                    values={data.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
               </Form.Item>
 
             </div>
-            <div id="error-reset-message">
-              {data.errorMessage && (<p >{data.errorMessage}</p>)}
+            <div id="error-edit-user-message">
+              {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
             </div>
-            <div id="succes-message">
+            <div id="success-edit-user-message">
               {toLocation ?
                 <Alert
-                  message="Success!"
-                  description="Invitation sent"
+                  message="Invitation sent to:"
+                  description={data.email}
                   type="success"
                   showIcon
                   closable
                 /> : null}
             </div>
             <div id="welcome-button-container">
-              <button id="edit-details-save-button" disabled={data.isSubmitting}>
+              <Button id="edit-details-save-button"
+                onClick={handleFormSubmit}
+                disabled={data.isSubmitting}>
                 {/* {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("INVITE")} */}
                 INVITE
-                  </button>
+                  </Button>
             </div>
           </Form>
           {/* </div> */}

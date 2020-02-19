@@ -23,7 +23,7 @@ function ChallengeLevelCard() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axiosConfig(
-        'http://10.0.10.195:8088/challenge/userChallenges/',
+        '/challenge/userChallenges/',
         {
           headers: {
             "Content-Type": "application/json",

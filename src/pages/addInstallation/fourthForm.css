@@ -50,8 +50,8 @@
   line-height: 1.25;
   color: #2a4092;
   background-color:transparent;
-  left: 0%;
-  top: 0%;
+  left: 1%;
+  top: 1%;
 }
 #orientation {
   color: #2a4092;
@@ -390,3 +390,11 @@
   margin-top: 30%;
 }
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  #orientation, #inclination{ margin-top: -15px!important; } }   
+
+  @-moz-document url-prefix() {
+    
+    #orientation, #inclination{ margin-top:3px!important; }
+    }

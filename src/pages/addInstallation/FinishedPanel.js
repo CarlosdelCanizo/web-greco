@@ -23,11 +23,11 @@ const FinishedPanel = props => {
             <div id="background-panel-register">
                 <Card id="card-panel-register-inside">
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <div id="tittle-panel-registration">
-                            <h2>Your installation has been </h2>
+                        <div>
+                            <h2 id="tittle-finished-panel">Your installation has been </h2>
                             {currentPanelId === null || currentPanelId === 0 ?
-                                <h2>added</h2> : <h2>updated</h2>}
-                            <h2> successfully</h2>
+                                <h2 id="tittle-finished-panel">added</h2> : <h2 id="tittle-finished-panel">updated</h2>}
+                            <h2 id="tittle-finished-panel"> successfully</h2>
                         </div>
                     </Col>
 

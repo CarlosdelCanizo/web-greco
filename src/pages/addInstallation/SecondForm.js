@@ -100,29 +100,30 @@ const SecondForm = props => {
 
             <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
-                <label id="panel-input-label-second">Latitude</label>
-                <Divider id="input-separator-second" />
-                <Input
-                  id="lat"
-                  name="lat"
-                  value={mobileLat != "" ? mobileLat : lat}
-                  readOnly={true}
-                  required
-                />
-
+                <div id="div-longlat-background">
+                  <label id="panel-longlat-label">Latitude</label>
+                  <Input
+                    id="lat"
+                    name="lat"
+                    value={mobileLat != "" ? mobileLat : lat}
+                    readOnly={true}
+                    required
+                  />
+                </div>
               </Form.Item>
             </Col>
             <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
-                <label id="panel-input-label-second">Longitude</label>
-                <Divider id="input-separator-second" />
-                <Input
-                  id="lon"
-                  name="lon"
-                  value={mobileLon != "" ? mobileLon : lon}
-                  readOnly={true}
-                  required
-                />
+                <div id="div-longlat-background">
+                  <label id="panel-longlat-label">Longitude</label>
+                  <Input
+                    id="lon"
+                    name="lon"
+                    value={mobileLon != "" ? mobileLon : lon}
+                    readOnly={true}
+                    required
+                  />
+                </div>
               </Form.Item>
             </Col>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

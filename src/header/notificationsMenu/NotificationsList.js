@@ -24,9 +24,11 @@ function NotificationsList() {
         .then(response => {
           const dataResponse = response.data
           setNotifications(dataResponse)
+          console.log("access_token", access_token)
         })
         .catch(function (error) {
           console.log(error);
+          console.log("access_token", access_token)
         });
     }
     fetchNotifications();

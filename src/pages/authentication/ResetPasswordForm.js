@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
-import { Row, Col, Form, Input, Alert } from 'antd'
+import { Row, Col, Form, Input, Alert, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
@@ -26,7 +26,6 @@ const ResetPasswordForm = () => {
     axiosConfig.post('/email/sendEmailToResetThePassword?email=' + data.email)
       .then(response => {
         if (response.status === 200) {
-
           activateRedirection()
         }
       })
@@ -56,8 +55,8 @@ const ResetPasswordForm = () => {
   return (
     <Row>
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-          <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
+        <Col span={24} id="reset-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+          <img src={mobileLogo} id="reset-logo-mobile-image" alt="mobile-logo" />
         </Col>
         <div id="inside-reset-container" >
           <h1 id="reset-title-text" >
@@ -100,14 +99,14 @@ const ResetPasswordForm = () => {
                 /> : null}
             </div>
             <div id="welcome-button-container">
-              <button id="button-register" disabled={data.isSubmitting}>
+              <Button
+                id="button-reset"
+                disabled={data.isSubmitting}
+                onClick={handleFormSubmit}>
                 {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("RESET")}
-              </button>
+              </Button>
             </div>
           </Form>
-        </div>
-        <div id="welcome-text-footer-container">
-          <h6 id="login-text-footer">&nbsp;&nbsp;</h6>
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

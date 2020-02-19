@@ -815,3 +815,15 @@ border-radius: none;
   /* color: #db4196 !important; */
   /* background-clip: content-box !important; */
 }  
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  .ant-input{ margin-top: -3px!important; } }   
+
+  @-moz-document url-prefix() {
+    
+    .ant-input{ margin-top:-4px!important; }
+    #div-inverter-background{
+      height: 53px!important;
+    }
+    }

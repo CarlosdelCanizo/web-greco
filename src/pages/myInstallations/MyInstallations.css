@@ -5,6 +5,7 @@
   background-color: #eaedf1;
   height: 100vh; 
   width: 100vw;
+  overflow: auto;
 }
 #popover-panels {
   font-family: Montserrat;
@@ -47,11 +48,6 @@
 /************************************************************INSTALLATION**************************************************/
 /***COMPUTER***************************************************************************************************************/
 
-#installation-col-container {
-  position: absolute;
-  margin-left: 50%;
-  margin-top: 3%;
-}
 #installation-container {
   position: relative;
   width: 425px;
@@ -61,48 +57,37 @@
   font-family: Montserrat;
   color: #2a4092;
   padding: 0; 
-  text-align: center;
+  text-align: center;;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #installation-tittle-button-container {
   position: absolute;
-  margin-top: -9.1%;
-  margin-left: -10%;
+  width: 425px;
+  height: 40px;
+  margin-top: -16%;
+  margin-left: -16.5%;
 }
 #installation-tittle {
-  position: absolute;
+  position: relative;
   font-size: 18px;
   font-weight: 500;
   line-height: 2em;
-  width: 425px;
-  height: 40px;
   text-align: center;
   color: #2a4092;
   z-index: 1;
   background-color: white;
   opacity: 0.5;
-  margin-top: -16%;
-  margin-left: -16%;
+  height: 41px;
 }
 #installation-tittle:hover {
-  position: absolute;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 2em;
-  width: 425px;
-  height: 40px;
-  text-align: center;
-  color: #2a4092;
-  z-index: 1;
-  background-color: white;
-  opacity: 1;
-  margin-top: -16%;
-  margin-left: -16%;
+  opacity: 0.8;
 }
-#installation-button { 
-  margin-top: -25%;
-  right: -625%;
-  line-height: 1.8em;
+#installation-button-menu { 
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: auto;
+  line-height: 1.5em;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
@@ -146,12 +131,41 @@
 
 /************************************************************CARD*SLIDER*************************************************/
 /***COMPUTER************************************************************************************************************************/
-
-#card-slider-button-left {
+#container-delete-button-slider {
   position: absolute;
+} 
+#card-slider-button-delete-image {
+  position: relative;
   z-index: 999;
-  margin-top: 40%;
-  margin-left: -85%;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  margin-top: 8%;  
+} 
+#container-left-button-slider {
+  position: absolute;
+  width: 50px;
+  height: 325px;
+}
+#card-slider-button-left {
+  position: relative;
+  z-index: 999;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+}
+#container-right-button-slider {
+  position: absolute;
+  width: 50px;
+  height: 325px;
+  top: -7%;
+  right: -7%;
+}
+#card-slider-button-right {
+  position: relative;
+  z-index: 999;
+  top: 50%;
   background-color: transparent;
   border: none;
 }
@@ -173,24 +187,6 @@
   margin-left: 0%;
   border-bottom: 5px solid #2a4092;
 } 
-#card-slider-button-delete-image {
-  position: absolute;
-  z-index: 999;
-  color: red;
-  background-color: transparent;
-  border: none;
-  font-size: 1em;
-  margin-top: 1%;
-  margin-left: -80%;
-} 
-#card-slider-button-right {
-  position: absolute;
-  z-index: 999;
-  margin-top: 40%;
-  margin-left: 23%;
-  background-color: transparent;
-  border: none;
-}
 
 /************************************************************ADD*INSTALLATION*************************************************/
 /***TABLET************************************************************************************************************************/

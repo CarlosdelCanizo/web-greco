@@ -66,6 +66,7 @@
   font-weight: 600;
   width: 50%;
   height: 40px;
+  border: 0;
   border-radius: 0;
 }
 #button-welcome-right {
@@ -76,6 +77,7 @@
   font-weight: 600;
   width: 50%;
   height: 40px;
+  border: 0;
   border-radius: 0;
   margin-left: 5%;
 }
@@ -83,19 +85,20 @@
   color: #db4196;
 }
 #welcome-text-footer-container{
-  z-index: 999;
   position: fixed;
-  width: 25%;
-  text-align: center;
+  z-index: 999;
+  width: 20%;
   bottom: 2%;
 }
 #welcome-text-footer {
   position: relative;
+  float: left;
   z-index: 999;
   font-size: 1em;
   bottom: 3%;
-  left: 45%;
+  margin-left: 0%;
   color: #2a4092;
+  font-weight: 500;
 }
 
 /**************************************************************TABLET*****************************************************************/
@@ -110,14 +113,13 @@
     margin-right: 20%; 
     padding: 0%;  
   }
-  #logo-mobile {
+  #welcome-logo-mobile {
     height: 30%;
-    margin-left: 0%;
+    margin-left: 25%;
   }
-  #logo-mobile-image {
-    margin-top: 10%;
-    margin-left: 20%;
-    width: 60%;
+  #welcome-logo-mobile-image {
+    margin-top: 15%;
+    width: 45%;
   }
   #welcome-title-text {
     margin-top: 15%;
@@ -149,16 +151,21 @@
     height: 10px;
   }
   #welcome-text-footer-container{
-    width: 100%;
-    text-align: center;
-    bottom: 3%;
+    position: fixed;
+    z-index: 999;
+    width: 40%;
+    bottom: 2%;
   }
   #welcome-text-footer {
-    font-size: 0.8em;
-    bottom: 3%;
-    left: 10%;
-    width: 80%;
-    color: #2a4092;
+  font-size: 0.8em;
+  position: relative;
+  float: left;
+  z-index: 999;
+  font-size: 1em;
+  bottom: 3%;
+  margin-left: 0%;
+  color: #2a4092;
+  font-weight: 500;
   } 
 }
 
@@ -173,14 +180,14 @@
     position: relative;
     padding-bottom: 50px; /* height of your footer */
   }
-  #logo-mobile {
+  #welcome-logo-mobile {
     height: 15%;
     margin-top: 8%;
     margin-left: 5%;
   }
-  #logo-mobile-image {
+  #welcome-logo-mobile-image {
     margin-left: 5.5%;
-    width: 80%;
+    width: 75%;
   }
   #inside-welcome-container{
     margin-left: 8%;
@@ -230,6 +237,7 @@
     font-weight: 600;
     width: 95%;
     height: 42px;
+    border: 0;
     border-radius: 0;
   }
   #button-welcome-right {
@@ -242,28 +250,28 @@
     height: 42px;
     margin-top: 3%;
     margin-left: 0%;
+    border: 0;
     border-radius: 0;
   }
   #welcome-text-footer-container{
-   width: 80%;
+   position: fixed;
+   width: 100%;
    height: auto;
   }
   #welcome-text-footer {
-   position: fixed;
-   text-align: center;
-   left:5%;
-   right: 5%;
+   left:0%;
    bottom: 0;
    width: 80%;
    font-size: 0.8em;
    color: #2a4092;
+   font-weight: 500;
   } 
 }
 
 /**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
 /***MOBILE*EXTRA*SMALL***************************************************************************************************************************/
 
-@media (max-width: 240px)  {
+/* @media (max-width: 240px)  {
   #welcome-text-footer-container{
     width: 100%;
     text-align: center;
@@ -275,12 +283,12 @@
     width: 80%;
     color: #2a4092;
   } 
-}
+} */
 
 /**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
 /***ORIENTATION*LANDSCAPE**************************************************************************************************************************/
 
-@media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
+/* @media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
 
   #welcome-text-footer-container{
     z-index: 999;
@@ -288,7 +296,7 @@
     width: 100%;
     text-align: center;
     bottom: -15%;
-    /* left: -5.5%; */
+    left: -5.5%;
   }
   #welcome-text-footer {
     position: relative;
@@ -298,7 +306,7 @@
     width: 80%;
     color: #2a4092;
   } 
-} 
+}  */
 
 #prueba-comunicacion {
   display: none;

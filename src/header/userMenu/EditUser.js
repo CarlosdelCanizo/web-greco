@@ -38,7 +38,7 @@ const EditUser = () => {
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
-    setData({ ...data, submited: true, errorMessage: null });
+    setData({ ...data, isSubmitting: true, errorMessage: null });
     updateUser()
   };
 
@@ -81,7 +81,7 @@ const EditUser = () => {
             setData({ ...data, errorMessage: error.response.data.message });
           }
           if (error.response.data.status === 500) {
-            // Srver error  
+            // Server error  
             setData({ ...data, errorMessage: error.response.data.message });
           }
         }
@@ -153,14 +153,16 @@ const EditUser = () => {
                 (<p id="turn-notifications-text">Turn OFF notifications</p>) :
                 (<p id="turn-notifications-text">Turn ON notifications</p>)}
             </div>
-            <div id="error-reset-message">
+            <div id="error-edit-user-message">
               {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
             </div>
-            <div id="succes-message">
+            <div id="success-edit-user-message">
               {toLocation ?
-                <Alert
+                <Alert id="edit-success-alert"
                   message="Success!"
-                  description={"Username: " + (data.username ? (data.username) : ("-")) + "\nEmail: " + (data.email ? (data.email) : ("-"))}
+                  description={(data.username && data.email ? ("New username: " + data.username + "  &  " + "New email: " + data.email)
+                    : (data.username ? ("New username: " + data.username) : ("New email: " + data.email)))
+                  }
                   type="success"
                   showIcon
                   closable
@@ -170,7 +172,7 @@ const EditUser = () => {
             <div>
               <Button
                 id="edit-details-save-button"
-                disabled={!isEnabled}
+                disabled={!isEnabled || data.isSubmitting}
                 onClick={handleFormSubmit}
               >SAVE CHANGES
               </Button>

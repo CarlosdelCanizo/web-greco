@@ -2,7 +2,6 @@ import React from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
-// import { addressPoints } from './realworld.10000.js';
 import axiosConfig from '../../api/axiosConfig'
 
 
@@ -10,7 +9,6 @@ class PanelsHeatMap extends React.Component {
   state = {
     mapHidden: false,
     layerHidden: false,
-    // addressPoints,
     radius: 8,
     blur: 8,
     max: 1.5,
@@ -21,7 +19,7 @@ class PanelsHeatMap extends React.Component {
     this.setState({ isLoading: true });
     var body = {}
     var access_token = 'Bearer ' + (localStorage.getItem('access_token'))
-    axiosConfig.get('http://10.0.10.195:8088/solarPanel/getalllatandlon', body,
+    axiosConfig.get('/solarPanel/getalllatandlon', body,
       {
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +31,6 @@ class PanelsHeatMap extends React.Component {
           addressPoints: response.data,
           isLoading: false
         })
-        console.log("Estos son los puntos", this.state.addressPoints)
       })
 
       .catch(error => this.setState({
@@ -106,60 +103,6 @@ class PanelsHeatMap extends React.Component {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
         </Map>
-        {/* <input
-          type="button"
-          value="Toggle Map"
-          onClick={() => this.setState({ mapHidden: !this.state.mapHidden })}
-        />
-        <input
-          type="button"
-          value="Toggle Layer"
-          onClick={() =>
-            this.setState({ layerHidden: !this.state.layerHidden })
-          }
-        /> */}
-        {/* <input
-          type="button"
-          value="Toggle Limited Data"
-          onClick={this.toggleLimitedAddressPoints.bind(this)}
-        /> */}
-
-        {/* <div>
-          Radius
-          <input
-            type="range"
-            min={1}
-            max={40}
-            value={this.state.radius}
-            onChange={e => this.setState({ radius: e.currentTarget.value })}
-          />{" "}
-          {this.state.radius}
-        </div>
-
-        <div>
-          Blur
-          <input
-            type="range"
-            min={1}
-            max={20}
-            value={this.state.blur}
-            onChange={e => this.setState({ blur: e.currentTarget.value })}
-          />{" "}
-          {this.state.blur}
-        </div>
-
-        <div>
-          Max
-          <input
-            type="range"
-            min={0.1}
-            max={3}
-            step={0.1}
-            value={this.state.max}
-            onChange={e => this.setState({ max: e.currentTarget.value })}
-          />{" "}
-          {this.state.max}
-        </div> */}
       </div>
     );
   }

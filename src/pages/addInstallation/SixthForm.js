@@ -338,7 +338,7 @@ const SixthForm = props => {
 
             </Col>
 
-            {error ? (<p id="error-message">{error}</p>) : (null)}
+            {error ? (<p id="error-post-update-message">{error}</p>) : (null)}
 
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Link to="/fifth">

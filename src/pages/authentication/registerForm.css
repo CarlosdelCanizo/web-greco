@@ -7,7 +7,7 @@
   width: 60%;
   height: 54px;
   border-style: solid;
-  border-width: 0px 0px 1px 0px;
+  border-width: 0px 0px 2px 0px;
   border-bottom-color: #2a4092;
 }
 #register-label {
@@ -18,22 +18,22 @@
   font-size: 12px;
   line-height: 1.25;
   color: #2a4092;
-  background-color: #f9f9f9;
+  background-color: transparent;
   left: 1%;
   top: 1%;
   z-index: 1;
 }
-#email, #password, #username, #cofirm-password {
+#username {
   color: #2a4092;
-  width: 60%;
-  height: 35px;
+  width: 100%;
+  height: 100%;
   font-family: Montserrat;
   font-size: 20px;
-  line-height: 2;
+  padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
-  margin-left: 10%;
-  margin-top: -1%;
+  margin-left: 0%;
+  top: -23%;
 }
 #container-checkbox {
   font-size: 16px;
@@ -52,6 +52,7 @@
   font-weight: 600;
   width: 67%;
   height: 40px;
+  border: 0;
   border-radius: 0;
   margin-left: 0%;
   margin-top: 15%;
@@ -73,11 +74,13 @@
 /***TABLET************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
-  #logo-mobile {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
-    margin-bottom: -10%; 
+  #register-logo-mobile {
+    height: 30%;
+    margin-left: 25%;
+  }
+  #register-logo-mobile-image {
+    margin-top: 15%;
+    width: 45%;
   }
   #welcome-title-text {
     margin-top: 10%;
@@ -94,7 +97,7 @@
     width: 60%;
     height: 54px;
     border-style: solid;
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 2px 0px;
     border-bottom-color: #2a4092;
   }
   #register-label {
@@ -105,11 +108,24 @@
     font-size: 12px;
     line-height: 1.25;
     color: #2a4092;
-    background-color: #f9f9f9;
+    background-color: transparent;
     left: 1%;
     top: 1%;
     z-index: 1;
+  }  
+  #username {
+    color: #2a4092;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 20px;
+    padding: 20px 10px 0 5px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 0%;
+    margin-top: -1%;
   }
+
   #container-checkbox {
     font-size: 16px;
     text-align: left;
@@ -127,7 +143,7 @@
     font-weight: 600;
     width: 95%;
     height: 40px;
-    border-radius: 0;
+    border: 0;
     margin-left: 0%;
     margin-top: 10%;
   }
@@ -151,11 +167,14 @@
   #col-welcome-container {
       overflow: auto !important;
     }
-  #logo-mobile {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
-    margin-bottom: -9%; 
+  #register-logo-mobile {
+    height: 15%;
+    margin-top: 8%;
+    margin-left: 5%;
+  }
+  #register-logo-mobile-image {
+    margin-left: 5.5%;
+    width: 75%;
   }
   #welcome-title-text {
     margin-top: -5%;
@@ -173,7 +192,7 @@
     width: 80%;
     height: 54px;
     border-style: solid;
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 2px 0px;
     border-bottom-color: #2a4092;
   }
   #register-label {
@@ -206,7 +225,7 @@
     font-weight: 600;
     width: 95%;
     height: 40px;
-    border-radius: 0;
+    border: 0;
     margin-left: 0%;
     margin-top: 10%;
   }
@@ -227,13 +246,13 @@
 /**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
 /***MOBILE*EXTRA*SMALL**********************************************************************************************************************/
 
-@media (max-width: 240px)  {
-  #welcome-text-footer-container{
+/* @media (max-width: 240px)  {
+  #register-text-footer-container{
     width: 100%;
     text-align: center;
     bottom: -15%;
   }
-  #login-text-footer {
+  #register-text-footer {
     position: relative;
     z-index: 999;
     font-size: 0.8em;
@@ -242,12 +261,12 @@
     width: 80%;
     color: #2a4092;
   } 
-}
+} */
 
 /**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
 /***ORIENTATION*LANDSCAPE***********************************************************************************************************************/
 
-@media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
+/* @media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
   
   #label {
     display: inline-block;
@@ -263,17 +282,24 @@
     margin-bottom: -1%;
     margin-top: 8%;
   }
-  #welcome-text-footer-container{
+  #registeer-text-footer-container{
     width: 100%;
     text-align: center;
     bottom: -15%;
   }
-  #login-text-footer {
+  #register-text-footer {
     font-size: 0.8em;
     bottom: -15%;
     left: -10%;
     width: 80%;
     color: #2a4092;
-  } 
-} 
+  }  */
+/* }  */
 
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  #username{ margin-top: -16px !important; } }   
+
+  @-moz-document url-prefix() {
+    
+    #username { margin-top:-5px !important; }
+    }

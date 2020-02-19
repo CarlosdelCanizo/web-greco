@@ -32,6 +32,7 @@ const FourthForm = props => {
     }
 
     const handleInputSelectChange = value => {
+        parseInt(value, 10);
         setData({ ...data, orientation: value });
     };
 

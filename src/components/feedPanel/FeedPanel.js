@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 import ImageSlider from '../imageSlider/ImageSlider'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 
-const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
 //INPUT BOX AND SEND BUTTON
 const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
 
@@ -25,6 +23,7 @@ const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
   }
   // POST COMMENT
   function postComment() {
+    const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var body = {
       text: message,
       solarPanel:
@@ -97,6 +96,7 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
   //INITIAL COMMENTS COMMIT
   var render = true;
   useEffect(() => {
+    const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     function fetchMessages() {
       if (render) {
         axiosConfig.get('/solarPanel/' + panelId + '/comments',

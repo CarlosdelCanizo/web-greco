@@ -2,7 +2,7 @@ import React from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
-import { Row, Col, Divider, Form, Input, Checkbox } from 'antd'
+import { Row, Col, Divider, Form, Input, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
@@ -68,8 +68,8 @@ const RegisterForm = (props) => {
     <Row>
 
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} id="logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-          <img src={mobileLogo} id="logo-mobile-image" alt="mobile-logo" />
+        <Col span={24} id="register-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+          <img src={mobileLogo} id="register-logo-mobile-image" alt="mobile-logo" />
         </Col>
         <div id="inside-welcome-container" >
           <h1 id="welcome-title-text" >
@@ -80,8 +80,13 @@ const RegisterForm = (props) => {
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Username</label>
-                  <Input placeholder="Username" type="text" name="username" id="username"
-                    values={data.username} onChange={handleInputChange}
+                  <Input
+                    placeholder="Username"
+                    type="text"
+                    name="username"
+                    id="username"
+                    values={data.username}
+                    onChange={handleInputChange}
                     required
                   />
                 </div>
@@ -90,8 +95,13 @@ const RegisterForm = (props) => {
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Email</label>
-                  <Input placeholder="Valid email" type="email" name="email" id="email"
-                    values={data.email} onChange={handleInputChange}
+                  <Input
+                    placeholder="Valid email"
+                    type="email"
+                    name="email"
+                    id="email"
+                    values={data.email}
+                    onChange={handleInputChange}
                     required
                   />
                 </div>
@@ -100,8 +110,13 @@ const RegisterForm = (props) => {
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Password</label>
-                  <Input type="password" placeholder="Password" name="password" id="password"
-                    values={data.password} onChange={handleInputChange}
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    id="password"
+                    values={data.password}
+                    onChange={handleInputChange}
                     required
                   />
                 </div>
@@ -110,8 +125,13 @@ const RegisterForm = (props) => {
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Confirm password</label>
-                  <Input type="password" placeholder="Confirm password" name="confirmPassword" id="password"
-                    values={data.confirmPassword} onChange={handleInputChange}
+                  <Input
+                    type="password"
+                    placeholder="Confirm password"
+                    name="confirmPassword"
+                    id="password"
+                    values={data.confirmPassword}
+                    onChange={handleInputChange}
                     required
                   />
                 </div>
@@ -122,7 +142,8 @@ const RegisterForm = (props) => {
 
               <div id="container-checkbox">
                 <Checkbox id="checkbox-private-policy"
-                  defaultChecked type="checkbox"
+                  defaultChecked
+                  type="checkbox"
                   onChange={toggle}
                 >
                   Accept private policy
@@ -133,13 +154,13 @@ const RegisterForm = (props) => {
             <div id="welcome-button-container">
               {(isChecked) ?
                 (
-                  <button id="button-register">
+                  <Button id="button-register" onClick={handleFormSubmit}>
                     {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("REGISTER")}
                     {toLocation ? <Redirect from="/register" to="/complete-register" /> : null}
-                  </button>
+                  </Button>
                 )
                 :
-                (<button id="button-register" disabled>ACCEPT TO REGISTER</button>)
+                (<Button id="button-register" disabled>ACCEPT TO REGISTER</Button>)
               }
             </div>
           </Form>

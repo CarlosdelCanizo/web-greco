@@ -67,7 +67,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
   //DELETE SOLAR PANEL
   function deleteSolarPanel(id) {
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-    axiosConfig.delete("http://10.0.10.195:8088/solarPanel/" + id,
+    axiosConfig.delete("/solarPanel/" + id,
       {
         headers: {
           "Content-Type": "application/json",
@@ -86,13 +86,11 @@ const PanelCard = ({ panel, fetchPanels }) => {
           <Col span={24} xs={24} sm={24} md={10} lg={10} xl={10}>
             <div id="installation-tittle-button-container">
               <p id="installation-tittle">{panel.installationName}</p>
-
               <Popover placement="left" title={textMenu} content={content} trigger="click">
-                <Button id="installation-button">
+                <Button id="installation-button-menu">
                   <Icon type="more" />
                 </Button>
               </Popover>
-
             </div>
           </Col>
           <div id="installation-add-image-container">

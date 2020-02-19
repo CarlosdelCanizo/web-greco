@@ -101,31 +101,36 @@ const CardSlider = ({ multimedia }) => {
   }
 
   return (
-    <div>
-      <Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
+    <div id="container">
+      <div id="container-delete-button-slider">
+        <Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
+          <Button id="card-slider-button-delete-image"
+          >
+            <Icon type="delete" />
+          </Button>
+        </Popconfirm>
+      </div>
+      <div id="container-left-button-slider">
         <Button
-          id="card-slider-button-delete-image"
+          id="card-slider-button-left"
+          onClick={backward}
+          disabled={currentImageId === firstImageId ? true : false}
         >
-          <Icon type="delete" />
+          <Icon type="left" id="arrow" />
         </Button>
-      </Popconfirm>
-      <Button
-        id="card-slider-button-left"
-        onClick={backward}
-        disabled={currentImageId === firstImageId ? true : false}
-      >
-        <Icon type="left" id="arrow" />
-      </Button>
-
-      <Button
-        id="card-slider-button-right"
-        onClick={forward}
-        disabled={currentImageId === lastImageId ? true : false}
-      >
-        <Icon type="right" id="arrow" />
-      </Button>
-
-      <PanelImage imageUrl={imageUrl} id="card-slider-image" />
+      </div>
+      <div id="container-images-slider">
+        <PanelImage imageUrl={imageUrl} id="card-slider-image" />
+      </div>
+      <div id="container-right-button-slider">
+        <Button
+          id="card-slider-button-right"
+          onClick={forward}
+          disabled={currentImageId === lastImageId ? true : false}
+        >
+          <Icon type="right" id="arrow" />
+        </Button>
+      </div>
     </div>
   );
 }

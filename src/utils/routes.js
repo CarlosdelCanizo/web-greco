@@ -58,13 +58,14 @@ const Routes = () => {
           <Route path="/complete-register" component={CompleteRegister} />
           <Route path="/public-mapping" component={PublicMapping} />
           <Route path="/about" component={About} />
+          <Route path="/download" component={DownloadDatabase} />
 
-          <Route path="/first" component={FirstForm} />
+          {/* <Route path="/first" component={FirstForm} />
           <Route path="/second" component={SecondForm} />
           <Route path="/third" component={ThirdForm} />
           <Route path="/fourth" component={FourthForm} />
           <Route path="/fifth" component={FifthForm} />
-          <Route path="/sixth" component={SixthForm} />
+          <Route path="/sixth" component={SixthForm} /> */}
 
           {/* <Route path="/image-slider" component={ImageSlider} /> */}
 
@@ -147,12 +148,6 @@ const Routes = () => {
             path="/my-challenges"
             auth={state.isAuthenticated}
             component={ChallengeLevelCard}
-          />
-
-          <PrivateRoute
-            path="/download"
-            auth={state.isAuthenticated}
-            component={DownloadDatabase}
           />
 
         </Switch>
