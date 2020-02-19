@@ -9,7 +9,6 @@
   background-size: cover; 
 }
 #card-panel-register-inside {
-  height: 85vh;
   width: 40%;
   margin-top: 3%;
   margin-left: 30%;
@@ -106,6 +105,22 @@ border-radius: none;
   background-color:transparent;
   left: -20%;
   top: -15%;
+
+}
+#panel-input-label-electrical_capacity, #panel-input-label-surface, #panel-input-label-commissioningDate{
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  left: -20%;
+  top: -15%;
+  float: left;
+  line-height: inherit;
+  left: 10px;
 }
 /* #panel-input-label-2 {
   position: relative;
@@ -245,7 +260,7 @@ border-radius: none;
 }
 #technology-used {
   margin-left: -1%;
-  width: 100vw;
+  width: 100%;
   }
 #images-tech-us {
   object-fit: fill;
@@ -290,7 +305,6 @@ border-radius: none;
 
 @media (min-width: 600px) and (max-width: 992px) {
 #card-panel-register-inside {
-    height: 100vh;
     width: 100%;
     margin-top: 0%;
     margin-left: 0%;
@@ -345,6 +359,22 @@ border-radius: none;
     background-color:transparent;
     left: 4%;
     top: -22%;
+}
+
+#panel-input-label-electrical_capacity, #panel-input-label-surface, #panel-input-label-commissioningDate{
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  left: -20%;
+  top: -15%;
+  float: left;
+  line-height: inherit;
+  left: 10px;
 }
 #electrical_capacity {
     color: #2a4092;
@@ -541,7 +571,6 @@ border-radius: none;
 
 @media (min-width: 240px) and (max-width: 600px) {
 #card-panel-register-inside {
-    height: 100vh;
     width: 100vw;
     margin-top: 0%;
     margin-left: 0%;
@@ -599,6 +628,22 @@ border-radius: none;
     background-color:transparent;
     left: 6%;
     top: -15%;
+
+}
+#panel-input-label-electrical_capacity, #panel-input-label-surface, #panel-input-label-commissioningDate{
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  left: -20%;
+  top: -15%;
+  float: left;
+  line-height: inherit;
+  left: 10px;
 }
 #electrical_capacity {
     color: #2a4092;

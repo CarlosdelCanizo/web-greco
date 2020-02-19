@@ -14,3 +14,11 @@ body,html {
   width: 448px;
   margin-left: -9%; 
 }
+
+.body_forms{
+  background: url(/static/media/panels.12d79477.png);
+  background-size: cover;
+}
+.transparentDivider{
+  background: none!important;
+}

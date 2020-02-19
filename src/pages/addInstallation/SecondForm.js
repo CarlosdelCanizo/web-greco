@@ -71,116 +71,128 @@ const SecondForm = props => {
     <Row>
       <div id="background-panel-register">
         <Card id="card-panel-register-inside">
-          <Col span={24} id="" xs={24} sm={24} md={24} lg={24} xl={24}>
-            <div id="pagination">
-              <img src={bulletBuit} width="2%" id="pagination-bullet" />
-              <img src={bulletPle} width="2%" id="pagination-bullet" />
-              <img src={bulletBuit} width="2%" id="pagination-bullet" />
-              <img src={bulletBuit} width="2%" id="pagination-bullet" />
-              <img src={bulletBuit} width="2%" id="pagination-bullet" />
-              <img src={bulletBuit} width="2%" id="pagination-bullet" />
-            </div>
-          </Col>
-
-          <Link to="/private-mapping">
-            <Button id="forms-close-button" onClick={clearPanel}>
-              <Icon type="close" id="icon-x" />
-            </Button>
-          </Link>
-
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <h2 id="tittle-panel-registration">Installation location</h2>
-          </Col>
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <p id="text-panel-registration">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </Col>
           <Form onSubmit={handleFormSubmit} >
+            <Row>
+              <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
 
-            <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Form.Item>
-                <div id="div-longlat-background">
-                  <label id="panel-longlat-label">Latitude</label>
-                  <Input
-                    id="lat"
-                    name="lat"
-                    value={mobileLat != "" ? mobileLat : lat}
-                    readOnly={true}
-                    required
-                  />
+              </Col>
+              <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
+                <div id="pagination">
+                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                  <img src={bulletPle} width="2%" id="pagination-bullet" />
+                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
                 </div>
-              </Form.Item>
-            </Col>
-            <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Form.Item>
-                <div id="div-longlat-background">
-                  <label id="panel-longlat-label">Longitude</label>
-                  <Input
-                    id="lon"
-                    name="lon"
-                    value={mobileLon != "" ? mobileLon : lon}
-                    readOnly={true}
-                    required
-                  />
+              </Col>
+              <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+                <Link to="/private-mapping">
+                  <Button id="forms-close-button" onClick={clearPanel}>
+                    <Icon type="close" id="icon-x" />
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <h2 id="tittle-panel-registration">Installation location</h2>
+              </Col>
+            </Row>
+            <Row>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <p id="text-panel-registration">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Form.Item>
+                  <div id="div-longlat-background">
+                    <label id="panel-longlat-label">Latitude</label>
+                    <Input
+                      id="lat"
+                      name="lat"
+                      value={mobileLat != "" ? mobileLat : lat}
+                      readOnly={true}
+                      required
+                    />
+                  </div>
+                </Form.Item>
+              </Col>
+              <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Form.Item>
+                  <div id="div-longlat-background">
+                    <label id="panel-longlat-label">Longitude</label>
+                    <Input
+                      id="lon"
+                      name="lon"
+                      value={mobileLon != "" ? mobileLon : lon}
+                      readOnly={true}
+                      required
+                    />
+                  </div>
+                </Form.Item>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <div id="coords-container">
+                  <MapsCoords
+                    setLat={setLat}
+                    setLon={setLon}
+                    zoom={(mobileLat && mobileLon) ? (18) : (3)}
+                    mobileLat={mobileLat}
+                    mobileLon={mobileLon}
+                    setMobileLat={setMobileLat}
+                    setMobileLon={setMobileLon}
+                    // center={{ lat: 39.8714243295929, lng: -0.06466403603553773 }}
+                    center={(mobileLat && mobileLon) ?
+                      (({ lat: mobileLat, lng: mobileLon }))
+                      :
+                      ({ lat: 40.41717418841311, lng: -3.703317801130291 })}
+                  >
+
+                  </MapsCoords>
                 </div>
-              </Form.Item>
-            </Col>
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <div id="coords-container">
-                <MapsCoords
-                  setLat={setLat}
-                  setLon={setLon}
-                  zoom={(mobileLat && mobileLon) ? (18) : (3)}
-                  mobileLat={mobileLat}
-                  mobileLon={mobileLon}
-                  setMobileLat={setMobileLat}
-                  setMobileLon={setMobileLon}
-                  // center={{ lat: 39.8714243295929, lng: -0.06466403603553773 }}
-                  center={(mobileLat && mobileLon) ?
-                    (({ lat: mobileLat, lng: mobileLon }))
-                    :
-                    ({ lat: 40.41717418841311, lng: -3.703317801130291 })}
+              </Col>
+            </Row>
+            <Divider className="transparentDivider"></Divider>
+            <Row>
+              <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Link to="/first">
+                  <Button
+                    id="button-panel-register-previous-second"
+                  >
+                    PREVIOUS
+
+              </Button>
+                </Link>
+                <div id="geo_response" />
+                <input id="coordinatesFromMobile" name="coordinatesFromMobile"
+                  onClick={event => setMarker(JSON.parse(event.target.value))}
                 >
+                </input>
+                <div>
+                  <p>{coordinates}</p>
+                </div>
+              </Col>
+              <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
-                </MapsCoords>
-              </div>
-            </Col>
-
-
-            <div id="geo_response" />
-            <input id="coordinatesFromMobile" name="coordinatesFromMobile"
-              onClick={event => setMarker(JSON.parse(event.target.value))}
-            >
-            </input>
-            <div>
-              <p>{coordinates}</p>
-            </div>
-
-
-            <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Link to="/first">
                 <Button
-                  id="button-panel-register-previous-second"
+                  disabled={!isEnabled}
+                  id="button-panel-register-next-second"
+                  onClick={handleFormSubmit}
                 >
-                  PREVIOUS
-
-              </Button>
-              </Link>
-
-            </Col>
-            <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-
-              <Button
-                disabled={!isEnabled}
-                id="button-panel-register-next-second"
-                onClick={handleFormSubmit}
-              >
-                NEXT
+                  NEXT
                 {toLocation ? <Redirect from="/second" to="/third" /> : null}
-              </Button>
+                </Button>
 
-            </Col>
+              </Col>
+            </Row>
           </Form >
         </Card >
       </div >

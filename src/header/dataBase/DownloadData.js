@@ -33,7 +33,7 @@ const DownloadData = (props) => {
         console.log("Download:", database)
       });
   }
-
+  document.body.classList.remove('body_forms');
   return (
 
     <React.Fragment>

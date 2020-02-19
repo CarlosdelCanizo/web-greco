@@ -37,7 +37,7 @@ const FirstForm = (props) => {
   const myPanel = props.location.myPanel
 
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
-
+  document.body.classList.add('body_forms');
   //GET UPDATE DATA
   if (myPanel !== undefined) {
     var electrical_capacity = myPanel.panel.electrical_capacity
@@ -203,9 +203,12 @@ const FirstForm = (props) => {
 
   return (
     <Row>
-      <div id="background-panel-register">
-        <Card id="card-panel-register-inside">
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+      {/* <div id="background-panel-register"> */}
+      <Card id="card-panel-register-inside">
+        <Form onSubmit={handleFormSubmit}>
+          <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+          </Col>
+          <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
             <div id="pagination">
               <img src={bulletPle} width="2%" id="pagination-bullet" />
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
@@ -215,27 +218,31 @@ const FirstForm = (props) => {
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
             </div>
           </Col>
-
-          <Link to="/private-mapping">
-            <Button id="forms-close-button" onClick={clearPanel}>
-              <Icon type="close" id="icon-x" />
-            </Button>
-          </Link>
-
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <h2 id="tittle-panel-registration">Register your solar installation</h2>
+          <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+            <Link to="/private-mapping">
+              <Button id="forms-close-button" onClick={clearPanel}>
+                <Icon type="close" id="icon-x" />
+              </Button>
+            </Link>
           </Col>
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <p id="text-panel-registration">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <Row>
+            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+              <h2 id="tittle-panel-registration">Register your solar installation</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+              <p id="text-panel-registration">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-          </Col>
-          <Form onSubmit={handleFormSubmit}>
+            </Col>
+          </Row>
+          <Row>
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label">Electrical capacity</label>
+                  <label id="panel-input-label-electrical_capacity">Electrical capacity</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
@@ -251,7 +258,7 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
-                  <label id="panel-input-label">Surface</label>
+                  <label id="panel-input-label-surface">Surface</label>
                   <Input
                     value={data.surface === 0 ? surface : data.surface}
                     onChange={handleInputChange}
@@ -266,7 +273,7 @@ const FirstForm = (props) => {
             <Col id="col-commissioning-date" span={8} xs={24} sm={8} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
-                  <label id="panel-input-label">Comissioning date</label>
+                  <label id="panel-input-label-commissioningDate">Comissioning date</label>
                   <DatePicker
                     defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
                     onChange={onChangeDatePicker}
@@ -278,12 +285,15 @@ const FirstForm = (props) => {
               </Form.Item>
 
             </Col>
+          </Row>
+          <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
               <div id="div-subtittle">
                 <h3 id="subtittle-panel-registration">Panel type</h3>
               </div>
             </Col>
-
+          </Row>
+          <Row>
             <Radio.Group
               id="technology-used"
               name="technologyUsed"
@@ -292,21 +302,21 @@ const FirstForm = (props) => {
               required
             >
 
-              <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={monocrystalline} id="images-tech-us" />
                 <br />
                 <label id="label-radio-button">Monocrystalline silicon</label>
                 <br />
                 <Radio value="Monocrystalline silicon" id="radio-button" />
               </Col>
-              <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={multicrystalline} id="images-tech-us" />
                 <br />
                 <label id="label-radio-button">Polycrystalline silicon</label>
                 <br />
                 <Radio value="Polycrystalline silicon" id="radio-button" />
               </Col>
-              <Col id="col-radio-button" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                 <img src={thinFilm} id="images-tech-us-large" />
                 <br />
                 <label id="label-radio-button">Thin-film</label>
@@ -314,7 +324,8 @@ const FirstForm = (props) => {
                 <Radio value="Thin-film " id="radio-button" />
               </Col>
             </Radio.Group>
-
+          </Row>
+          <Row>
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
@@ -352,6 +363,8 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
+          </Row>
+          <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
 
               <Button
@@ -364,9 +377,10 @@ const FirstForm = (props) => {
               </Button>
 
             </Col>
-          </Form>
-        </Card>
-      </div >
+          </Row>
+        </Form>
+      </Card>
+      {/* </div > */}
     </Row >
   )
 }

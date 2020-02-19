@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message } from 'antd';
+import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import compass from '../../assets/compass.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -80,149 +80,169 @@ const FourthForm = props => {
             <div id="background-panel-register">
 
                 <Card id="card-panel-register-inside">
-                    <Col span={24} id="" xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <div id="pagination">
-                            <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                            <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                            <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                            <img src={bulletPle} width="2%" id="pagination-bullet" />
-                            <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                            <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                        </div>
-                    </Col>
+                    <Row>
+                        <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
 
-                    <Link to="/private-mapping">
-                        <Button id="forms-close-button" onClick={clearPanel}>
-                            <Icon type="close" id="icon-x" />
-                        </Button>
-                    </Link>
+                        </Col>
+                        <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
+                            <div id="pagination">
+                                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                                <img src={bulletPle} width="2%" id="pagination-bullet" />
+                                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                            </div>
+                        </Col>
+                        <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
 
-                    <div id="gyro_response" />
-                    <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
-                        onClick={event => {
-                            setDegree(JSON.parse(event.target.value));
-                        }}
-                    >
-                    </input>
+                            <Link to="/private-mapping">
+                                <Button id="forms-close-button" onClick={clearPanel}>
+                                    <Icon type="close" id="icon-x" />
+                                </Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                    <Row>
 
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <h2 id="tittle-panel-registration">Panel orientation</h2>
-                    </Col>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <p id="text-panel-registration">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <h2 id="tittle-panel-registration">Panel orientation</h2>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <p id="text-panel-registration">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
-                    </Col>
-                    <div id="selector">
-                        <Switch
-                            onChange={onChangeSwitch}
-                            name="selector"
-                        />
-                    </div>
-                    {isChecked ?
-                        (
-                            <React.Fragment>
-                                <Form onSubmit={handleFormSubmit}>
-                                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <Form.Item>
-                                            <div id="div-inclination-orientation-background">
-                                                <label id="panel-inclination-orientation-label">Input degrees</label>
-                                                <Input
-                                                    onClick={resetInput}
-                                                    value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
-                                                        (degree) : (data.orientation || orientation)}
-                                                    onChange={handleInputChange}
-                                                    placeholder="30.9°"
-                                                    id="orientation"
-                                                    name="orientation"
-                                                    required
-                                                />
-                                            </div>
-                                        </Form.Item>
-                                    </Col>
-                                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={compass} id="register-panel-image-fourth" />
-                                    </Col>
-                                    <p id="text-panel-north">
-                                        Definition 0° North
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}><div id="selector">
+                            <Switch
+                                onChange={onChangeSwitch}
+                                name="selector"
+                            />
+                        </div></Col>
+                    </Row>
+                    <Divider className="transparentDivider"></Divider>
+                    <Row>
+                        <Col>
+                            {isChecked ?
+                                (
+                                    <React.Fragment>
+                                        <Form onSubmit={handleFormSubmit}>
+                                            <div id="gyro_response" />
+                                            <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
+                                                onClick={event => {
+                                                    setDegree(JSON.parse(event.target.value));
+                                                }}
+                                            >
+                                            </input>
+                                            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                                <Form.Item>
+                                                    <div id="div-inclination-orientation-background">
+                                                        <label id="panel-inclination-orientation-label">Input degrees</label>
+                                                        <Input
+                                                            onClick={resetInput}
+                                                            value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                                (degree) : (data.orientation || orientation)}
+                                                            onChange={handleInputChange}
+                                                            placeholder="30.9°"
+                                                            id="orientation"
+                                                            name="orientation"
+                                                            required
+                                                        />
+                                                    </div>
+                                                </Form.Item>
+                                            </Col>
+                                            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                                <img src={compass} id="register-panel-image-fourth" />
+                                            </Col>
+                                            <p id="text-panel-north">
+                                                Definition 0° North
                                         </p>
-                                    <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                        <Link to="/third">
-                                            <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
-                                        </Link>
-                                    </Col>
-                                    <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                        <Button
-                                            disabled={!isEnabled}
-                                            id="button-panel-register-next-fourth"
-                                            type="submit"
-                                            onClick={handleFormSubmit}>
-                                            NEXT
+                                            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                <Link to="/third">
+                                                    <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
+                                                </Link>
+                                            </Col>
+                                            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                <Button
+                                                    disabled={!isEnabled}
+                                                    id="button-panel-register-next-fourth"
+                                                    type="submit"
+                                                    onClick={handleFormSubmit}>
+                                                    NEXT
                                         {toLocation ? <Redirect from="/fourth" to="/fifth" /> : null}
-                                        </Button>
-                                    </Col>
-                                </Form>
-                            </React.Fragment>
-                        )
-                        :
-                        (
-                            <React.Fragment>
-                                <Form onSubmit={handleFormSubmit}>
-                                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <div id="register-panel-fields-fourth">
-                                            <div id="div-select-inclination-orientation-background">
-                                                <label id="panel-inclination-orientation-label">Select degrees</label>
-                                                <Select
-                                                    id="select-orientation"
-                                                    style={{ width: 200 }}
-                                                    name="orientation"
-                                                    onChange={handleInputSelectChange}>
+                                                </Button>
+                                            </Col>
+                                        </Form>
+                                    </React.Fragment>
+                                )
+                                :
+                                (
+                                    <React.Fragment>
+                                        <Form onSubmit={handleFormSubmit}>
+                                            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                                {/* <div id="register-panel-fields-fourth"> */}
+                                                <div id="div-select-inclination-orientation-background">
+                                                    <label id="panel-inclination-orientation-label">Select degrees</label>
+                                                    <Select
+                                                        id="select-orientation"
+                                                        style={{ width: 200 }}
+                                                        name="orientation"
+                                                        onChange={handleInputSelectChange}>
 
-                                                    <Option value="1">NE (from 0° to 45°)</Option>
-                                                    <Option value="45">EN (from 45° to 90°)</Option>
+                                                        <Option value="1">NE (from 0° to 45°)</Option>
+                                                        <Option value="45">EN (from 45° to 90°)</Option>
 
-                                                    <Option value="90">ES (from 90° to 135°)</Option>
-                                                    <Option value="135">SE (from 135° to 180°)</Option>
+                                                        <Option value="90">ES (from 90° to 135°)</Option>
+                                                        <Option value="135">SE (from 135° to 180°)</Option>
 
 
-                                                    <Option value="180">SW (from 180° to 225°)</Option>
-                                                    <Option value="225">WS (from 225° to 270°)</Option>
+                                                        <Option value="180">SW (from 180° to 225°)</Option>
+                                                        <Option value="225">WS (from 225° to 270°)</Option>
 
-                                                    <Option value="270">WN (from 270° to 315°)</Option>
-                                                    <Option value="315">NW (from 315° to 360°)</Option>
+                                                        <Option value="270">WN (from 270° to 315°)</Option>
+                                                        <Option value="315">NW (from 315° to 360°)</Option>
 
-                                                </Select>
-                                            </div>
-                                        </div>
-                                    </Col>
+                                                    </Select>
+                                                </div>
+                                                {/* </div> */}
+                                            </Col>
 
-                                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                                        <img src={compass} id="register-panel-image-fourth-select" />
-                                    </Col>
+                                            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                                <img src={compass} id="register-panel-image-fourth-select" />
+                                            </Col>
 
-                                    <p id="text-panel-north">
-                                        Definition 0° North
+                                            <p id="text-panel-north">
+                                                Definition 0° North
                                     </p>
 
-                                    <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                        <Link to="/third">
-                                            <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
-                                        </Link>
-                                    </Col>
-                                    <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                        <Button
-                                            disabled={!isEnabled}
-                                            id="button-panel-register-next-fourth"
-                                            type="submit"
-                                            onClick={handleFormSubmit}>
-                                            NEXT
+                                            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                <Link to="/third">
+                                                    <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
+                                                </Link>
+                                            </Col>
+                                            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                <Button
+                                                    disabled={!isEnabled}
+                                                    id="button-panel-register-next-fourth"
+                                                    type="submit"
+                                                    onClick={handleFormSubmit}>
+                                                    NEXT
                                             {toLocation ? <Redirect from="/fourth" to="/fifth" /> : null}
-                                        </Button>
-                                    </Col>
-                                </Form>
-                            </React.Fragment>
-                        )}
+                                                </Button>
+                                            </Col>
+                                        </Form>
+                                    </React.Fragment>
+                                )}
+                        </Col>
+                    </Row>
+
+
                 </Card>
             </div>
         </Row >

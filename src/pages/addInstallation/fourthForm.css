@@ -1,13 +1,13 @@
 /***************************************************************PANEL*REGISTER*FOURTH*AND*FIVE***********************************************************/
 /***PANEL*REGISTER*FOURTH*************************************************************************************************************************/
 #orientationFromMobile_alpha {
-  visibility: hidden;
+  display:none;
 }
 #selector {
-  position: absolute;
-  top: 33%;
-  margin-left: 20%;
+  
   z-index: 1;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 #error-message {
   float: left;
@@ -27,19 +27,27 @@
     color: #7f95a7;
 }
 #div-inclination-orientation-background {
-  margin-top: 5%;
+  /*margin-top: 5%;
   margin-left: 38%;
   background-color: #f9f9f9;
   width: 150px;
   height: 54px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
+  border-bottom-color: #2a4092;*/
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    width: 200px;
+    height: 54px;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-bottom-color: #2a4092;
 }
 #register-panel-fields-fourth {
   display: inline-flex;
-  margin-left: 30%;
+  margin-left: 0px;
   margin-top: 10%;
+
 }
 #panel-inclination-orientation-label {
   display: block;
@@ -78,8 +86,15 @@
   margin-top: -29%
 }
 #div-select-inclination-orientation-background {
-  margin-top: -14%;
+  /*margin-top: -14%;
   margin-left: -45%;
+  background-color: #f9f9f9;
+  width: 200px;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;*/
+  margin: 0 auto;
   background-color: #f9f9f9;
   width: 200px;
   height: 54px;
@@ -183,7 +198,6 @@
 
 @media (min-width: 600px) and (max-width: 992px) {
   #card-panel-register-inside {
-    height: 100vh;
     width: 100%;
     margin-top: 0%;
     margin-left: 0%;
@@ -247,7 +261,6 @@
 
 @media (min-width: 240px) and (max-width: 600px) {
   #card-panel-register-inside {
-    height: 100vh;
     width: 100vw;
     margin-top: 0%;
     margin-left: 0%;
@@ -279,10 +292,9 @@
     margin-bottom: -1%;
   }
   #selector {
-    position: absolute;
-    top: 31%;
-    margin-left: 0%;
     z-index: 1;
+    margin: 0 auto;
+    margin-top: 20px;
   }
   #div-inclination-orientation-background {
     margin-top: 5%;
