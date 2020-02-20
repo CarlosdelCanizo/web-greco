@@ -17,8 +17,6 @@
 }
 #register-panel-fields-third {
   margin-top: 5%;
-  margin-left: 35%;
-  display: flex;
 }
 #panel-tracking-orientation {
   margin-right: 5%;
@@ -164,8 +162,6 @@
 }
 #register-panel-fields-third {
     margin-top: 10%;
-    margin-left: 15%;
-    display: flex;
 }
 #image-panel-tracking {
   margin-top: 0%;

@@ -114,7 +114,9 @@ const ThirdForm = props => {
                         </Row>
                         <Row>
                             <div >
-                                <Col id="register-panel-fields-third" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Col span={10} xs={10} sm={10} md={10} lg={10} xl={10}>
+                                </Col>
+                                <Col id="register-panel-fields-third" span={1} xs={1} sm={1} md={1} lg={1} xl={1}>
                                     <Form.Item>
                                         <Checkbox
                                             label='Orientation'
@@ -128,8 +130,11 @@ const ThirdForm = props => {
                                             Orientation
                                     </Checkbox>
                                     </Form.Item>
-                                    &nbsp; &nbsp;
-                                <Form.Item>
+                                </Col>
+                                <Col id="register-panel-fields-third" span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+                                </Col>
+                                <Col id="register-panel-fields-third" span={1} xs={1} sm={1} md={1} lg={1} xl={1}>
+                                    <Form.Item>
                                         <Checkbox label='Inclination'
 
                                             id="panel-tracking-inclination"
@@ -142,6 +147,8 @@ const ThirdForm = props => {
                                             Inclination
                                     </Checkbox>
                                     </Form.Item>
+                                </Col>
+                                <Col span={10} xs={10} sm={10} md={10} lg={10} xl={10}>
                                 </Col>
                             </div>
                         </Row>
