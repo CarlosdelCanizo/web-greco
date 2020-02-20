@@ -202,7 +202,7 @@ border-radius: none;
 }
 #div-inverter-background {
   margin-top: 3%;
-  margin-left: 20%;
+  margin: 0 auto;
   background-color: #f9f9f9;
   width: 200px;
   height: 54px;
@@ -222,9 +222,10 @@ border-radius: none;
   left: 0%;
   top: -71%;
 }
-#div-installation-background {
+#div-installation-background-firstform {
   top: 0%;
   left: 15%;
+  margin: 0 auto!important;
   background-color: #f9f9f9;
   width: 200px;
   height: 54px;
@@ -466,7 +467,7 @@ border-radius: none;
   top: -71%;
   left: 0%;
 }
-#div-installation-background {
+#div-installation-background-firstform {
   margin-top: 0%;
   margin-left: 10%;
   background-color: #f9f9f9;
@@ -714,11 +715,21 @@ border-radius: none;
   height: 25px;
   background-color: #f9f9f9;;
 } */
-#div-inverter-background {
+#div-inverter-background-firstform {
   margin-top: 2%;
   margin-left: 0%;
   background-color: #f9f9f9;
   width: 90%;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+#div-installation-background-firstform {
+
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  width: 200px;
   height: 54px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
@@ -748,7 +759,7 @@ border-radius: none;
   top: -71%;
   left: 0%;
 }
-#div-installation-background {
+#div-installation-background-firstform {
   margin-top: 1% !important;
   margin-left: 1% !important;
   background-color: #f9f9f9;

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message } from 'antd'
+import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message, Divider } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -325,6 +325,7 @@ const FirstForm = (props) => {
               </Col>
             </Radio.Group>
           </Row>
+          <Divider className="transparentDivider"></Divider>
           <Row>
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
@@ -344,7 +345,7 @@ const FirstForm = (props) => {
             </Col>
             <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
-                <div id="div-installation-background">
+                <div id="div-installation-background-firstform">
                   <label id="panel-input-label">Installation type</label>
                   <Select
                     placeholder='On-grid'
