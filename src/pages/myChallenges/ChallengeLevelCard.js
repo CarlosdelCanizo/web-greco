@@ -45,7 +45,8 @@ function ChallengeLevelCard() {
           {myChallenges.map(item => (
             <Card key={item.id}>
               <Row>
-                <Col span={5} xs={24} sm={24} md={5} lg={5} xl={6}>
+                <Col xs={24} sm={5} md={5} lg={9} xl={7} xxl={4}>
+                  <Tag color="#db4196" id="challenge-tagImage">{item.status}</Tag>
                   <div id="challenge-card-image-container">
                     {item.percentageCompleted === 100.0 ?
                       <img src={Gold} alt="medal" id="challenge-card-image" />
@@ -55,13 +56,13 @@ function ChallengeLevelCard() {
 
                   </div>
                 </Col>
-                <Col span={19} xs={24} sm={24} md={24} lg={19} xl={18}>
+                <Col span={19} xs={24} sm={19} md={19} lg={15} xl={17} xxl={20}>
                   <Row>
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
 
                       <div id="challenge-card-text">
                         <p>From 12 November to 26 December</p>
-                        <Tag color="#db4196" id="challenge-tag">{item.status}</Tag>
+                        <Tag color="#db4196" id="challenge-tagBox">{item.status}</Tag>
                         <h2 style={{ color: "#2a4092" }}>
                           {/* Be an influencer */}
                           {item.challengeName}
