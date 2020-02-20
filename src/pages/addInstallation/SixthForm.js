@@ -256,7 +256,7 @@ const SixthForm = props => {
               </Col>
             </Row>
             <Row id="trespercent">
-              <Col id="register-panel-fields-sixth-left" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Col id="register-panel-fields-sixth-left" span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
                 <Form.Item>
                   <div id="div-installation-background">
                     <label id="panel-sixth-label">Instalation name</label>
@@ -272,7 +272,7 @@ const SixthForm = props => {
                   </div>
                 </Form.Item>
               </Col>
-              <Col id="register-panel-fields-sixth-right" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Col id="register-panel-fields-sixth-right" span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
                 <Form.Item>
                   <div id="div-installation-background-right">
                     <label id="panel-sixth-label">Installation property</label>

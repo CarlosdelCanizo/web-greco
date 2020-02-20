@@ -113,44 +113,42 @@ const ThirdForm = props => {
 
                         </Row>
                         <Row>
-                            <div >
-                                <Col span={10} xs={10} sm={10} md={10} lg={10} xl={10}>
-                                </Col>
-                                <Col id="register-panel-fields-third" span={1} xs={1} sm={1} md={1} lg={1} xl={1}>
-                                    <Form.Item>
-                                        <Checkbox
-                                            label='Orientation'
-                                            id="panel-tracking-orientation"
-                                            name="panelTrackingOrientation"
-                                            onClick={handleOrientation}
-                                            onChange={handleInputChange}
-                                            defaultChecked={currentPanelOrientation}
-                                            checked={orientation}
-                                        >
-                                            Orientation
+                            <Col span={7} xs={7} sm={7} md={7} lg={7} xl={7}>
+                            </Col>
+                            <Col id="register-panel-fields-third" span={4} xs={4} sm={4} md={4} lg={4} xl={4}>
+                                <Form.Item>
+                                    <Checkbox
+                                        label='Orientation'
+                                        id="panel-tracking-orientation"
+                                        name="panelTrackingOrientation"
+                                        onClick={handleOrientation}
+                                        onChange={handleInputChange}
+                                        defaultChecked={currentPanelOrientation}
+                                        checked={orientation}
+                                    >
+                                        Orientation
                                     </Checkbox>
-                                    </Form.Item>
-                                </Col>
-                                <Col id="register-panel-fields-third" span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-                                </Col>
-                                <Col id="register-panel-fields-third" span={1} xs={1} sm={1} md={1} lg={1} xl={1}>
-                                    <Form.Item>
-                                        <Checkbox label='Inclination'
+                                </Form.Item>
+                            </Col>
+                            <Col id="register-panel-fields-third" span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+                            </Col>
+                            <Col id="register-panel-fields-third" span={4} xs={4} sm={4} md={4} lg={4} xl={4}>
+                                <Form.Item>
+                                    <Checkbox label='Inclination'
 
-                                            id="panel-tracking-inclination"
-                                            name="panelTrackingInclination"
-                                            onClick={handleInclination}
-                                            onChange={handleInputChange}
-                                            defaultChecked={currentPanelInclination}
-                                            checked={inclination}
-                                        >
-                                            Inclination
+                                        id="panel-tracking-inclination"
+                                        name="panelTrackingInclination"
+                                        onClick={handleInclination}
+                                        onChange={handleInputChange}
+                                        defaultChecked={currentPanelInclination}
+                                        checked={inclination}
+                                    >
+                                        Inclination
                                     </Checkbox>
-                                    </Form.Item>
-                                </Col>
-                                <Col span={10} xs={10} sm={10} md={10} lg={10} xl={10}>
-                                </Col>
-                            </div>
+                                </Form.Item>
+                            </Col>
+                            <Col span={7} xs={7} sm={7} md={7} lg={7} xl={7}>
+                            </Col>
                         </Row>
                         <Row>
                             <Col id="col-image-panel-tracking" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

@@ -66,6 +66,11 @@ border-radius: none;
   border: none;
 }
 
+#radio-label-row {
+  min-height: 50px;
+  margin-top: 30px;
+}
+
 /***************************************************************FIRST*FORM*************************************************************/
 /***COMPUTER************************************************************************************************************************/
 
@@ -122,18 +127,6 @@ border-radius: none;
   line-height: inherit;
   left: 10px;
 }
-/* #panel-input-label-2 {
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 0;
-  color: #2a4092;
-  background-color:transparent;
-  left: -20%;
-  top: -15%;
-} */
 #electrical_capacity {
   color: #2a4092;
   width: 100%;

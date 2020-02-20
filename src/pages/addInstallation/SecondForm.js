@@ -124,7 +124,7 @@ const SecondForm = props => {
               </Col>
               <Col id="col-register-panel-fields" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Form.Item>
-                  <div id="div-longlat-background">
+                  <div id="div-longlat-background-right">
                     <label id="panel-longlat-label">Longitude</label>
                     <Input
                       id="lon"

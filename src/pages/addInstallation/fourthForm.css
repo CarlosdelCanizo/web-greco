@@ -297,24 +297,32 @@
     margin-top: 20px;
   }
   #div-inclination-orientation-background {
-    margin-top: 5%;
+    /* margin-top: 5%;
     margin-left: 25%;
     background-color: #f9f9f9;
     width: 150px;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
+    border-bottom-color: #2a4092; */
+    
   }
   #div-select-inclination-orientation-background {
-    margin-top: -7%;
+    /* margin-top: -7%;
     margin-left: -20%;
     background-color: #f9f9f9;
     width: 200px;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
+    border-bottom-color: #2a4092; */
+    margin: 0 auto;
+  background-color: #f9f9f9;
+  width: 200px;
+  height: 54px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
   }
   #panel-input-label {
   display: inline-block;

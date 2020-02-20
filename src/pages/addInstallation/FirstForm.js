@@ -301,33 +301,68 @@ const FirstForm = (props) => {
               value={radioValue}
               required
             >
+              <Row>
 
-              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={monocrystalline} id="images-tech-us" />
-                <br />
-                <label id="label-radio-button">Monocrystalline silicon</label>
-                <br />
-                <Radio value="Monocrystalline silicon" id="radio-button" />
-              </Col>
-              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={multicrystalline} id="images-tech-us" />
-                <br />
-                <label id="label-radio-button">Polycrystalline silicon</label>
-                <br />
-                <Radio value="Polycrystalline silicon" id="radio-button" />
-              </Col>
-              <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                <img src={thinFilm} id="images-tech-us-large" />
-                <br />
-                <label id="label-radio-button">Thin-film</label>
-                <br />
-                <Radio value="Thin-film " id="radio-button" />
-              </Col>
+                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <img src={monocrystalline} id="images-tech-us" />
+                    </Col>
+                  </Row>
+                  <Row id="radio-label-row">
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <label id="label-radio-button">Monocrystalline silicon</label>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <Radio value="Monocrystalline silicon" id="radio-button" />
+                    </Col>
+                  </Row>
+                </Col>
+
+                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <img src={multicrystalline} id="images-tech-us" />
+                    </Col>
+                  </Row>
+                  <Row id="radio-label-row">
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <label id="label-radio-button">Polycrystalline silicon</label>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <Radio value="Polycrystalline silicon" id="radio-button" />
+                    </Col>
+                  </Row>
+                </Col>
+
+                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <img src={thinFilm} id="images-tech-us-large" />
+                    </Col>
+                  </Row>
+                  <Row id="radio-label-row">
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <label id="label-radio-button">Thin-film</label>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                      <Radio value="Thin-film " id="radio-button" />
+                    </Col>
+                  </Row>
+                </Col>
+
+              </Row>
             </Radio.Group>
           </Row>
           <Divider className="transparentDivider"></Divider>
           <Row>
-            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
                   <label id="panel-input-label">AC Inverter capacity</label>
@@ -343,7 +378,7 @@ const FirstForm = (props) => {
               </Form.Item>
 
             </Col>
-            <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-firstform">
                   <label id="panel-input-label">Installation type</label>
