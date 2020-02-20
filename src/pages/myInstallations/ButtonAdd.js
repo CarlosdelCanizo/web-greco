@@ -14,7 +14,7 @@ function ButtonAdd() {
   }
 
   return (
-    <Col span={4} xs={24} sm={24} md={24} lg={4} xl={4}>
+    <Col span={4} xs={24} sm={24} md={24} lg={24} xl={24}>
       <Card id="installation-add">
         <Link to="/first">
           <Button type="link" shape="circle" size="large" icon="plus" id="installation-add-button" onClick={addNewPanel} />

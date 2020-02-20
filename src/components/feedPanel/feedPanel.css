@@ -30,11 +30,10 @@
 #feed-list-container {
  margin-top: 0%;
  margin-left: -10%;
- height: 100%;
+ height: 350px;
 }
 #feed-form-container {
   width: 100%;
-  margin-top: 1%;
   margin-left: -14%
 }
 
@@ -103,7 +102,7 @@
   margin-top: 0%;
   margin-left: 5%;
   width: 100%;
-  height: 230px;
+  height: 300px;
 }
 /***********************************AVATAR*USER*/
 #feed-panel-user-booble {
@@ -196,6 +195,7 @@
   /*EFREN*/
   position: absolute;
   bottom: -10px;
+  height: 45px;
   /*EFREN*/
 }
 #feed-input-text {
@@ -304,6 +304,7 @@
     /*EFREN*/
   position: absolute;
   bottom: -10px;
+  height: 45px;
   /*EFREN*/
   }
   #feed-input-text {
@@ -460,6 +461,7 @@
   /*EFREN*/
   position: absolute;
   bottom: -10px;
+  height: 45px;
   /*EFREN*/
 }
 #feed-input-text {
@@ -510,7 +512,6 @@
   }
   #feed-form-container {
     width: 100%;
-    margin-top: -18%;
     margin-left: -14%
   }
 
@@ -567,6 +568,7 @@
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
+    height: 250px;
   }
   /* #feed-panel-user-booble {
     text-align: left;
@@ -706,6 +708,7 @@
   /*EFREN*/
   position: absolute;
   bottom: -10px;
+  height: 100px;
   /*EFREN*/
 }
 #feed-input-text {
@@ -725,14 +728,6 @@
   color: #2a4092;
 }
 
-  #panel-feed-container-message-box {
-    display: block;
-    width: 100%;
-    /*EFREN*/
-  position: absolute;
-  bottom: -10px;
-  /*EFREN*/
-  }
   #feed-input-text {
     margin-top: 2rem;
     margin-left: 10%;
@@ -749,4 +744,77 @@
     border: none;
     color: #2a4092;
   }  
+}
+
+@media (min-height: 567px) and (max-height: 569px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 730px) and (max-height: 732px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 822px) and (max-height: 824px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 666px) and (max-height: 668px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 735px) and (max-height: 737px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 811px) and (max-height: 813px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 400px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (min-height: 1023px) and (max-height: 1025px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 500px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 450px);
+  }
+}
+
+
+@media (min-height: 1365px) and (max-height: 1367px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 500px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 450px);
+  }
 }

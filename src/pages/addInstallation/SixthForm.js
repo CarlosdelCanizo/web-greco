@@ -31,6 +31,14 @@ const SixthForm = props => {
   var panelResponseId //IMAGES ON POST
   var currentPanelId //IMAGES ON PUT
 
+  const error = () => {
+    message.error('Server error. You can´t post/update your installation now. Please, try again later.', 5);
+  };
+
+  const errorImages = () => {
+    message.error('Server error. You can´t upload images now. Please, try again later.', 5);
+  };
+
   //RadioGroup
   const [radioValue, setRadioValue] = useState(battery);
   const onChangeRadio = event => {
@@ -118,14 +126,6 @@ const SixthForm = props => {
         error()
       });
   }
-
-  const error = () => {
-    message.error('Server error. You can´t post/update your installation now. Please, try again later.', 5);
-  };
-
-  const errorImages = () => {
-    message.error('Server error. You can´t upload images now. Please, try again later.', 5);
-  };
 
   //UPDATE PANEL PUT
   function updatePanel() {

@@ -1,7 +1,6 @@
 /***************************************************************SIXTH*FORM*************************************************************/
 /***SIXTH*FORM************************************************************************************************************************/
 #trespercent{
-  margin-left: 5%;
   margin-right: 5%;
 }
 #register-panel-fields-sixth-left {
@@ -18,7 +17,6 @@
   margin-top: 3%;
   /* margin-left: 10%; */
   background-color: #f9f9f9;
-  width: 350px;
   height: 54px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
@@ -28,12 +26,10 @@
   margin-top: 3%;
   /* margin-left: 10%; */
   background-color: #f9f9f9;
-  width: 350px;
   height: 54px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
   border-bottom-color: #2a4092;
-  float: right;
 }
 #div-observation-background {
   margin-top: 3%;
@@ -230,9 +226,7 @@ margin-left: 0%;
   } 
   #div-installation-background {
     margin-top: 3%;
-    margin-left: 10%;
     background-color: #f9f9f9;
-    width: 230px;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;
@@ -435,9 +429,7 @@ margin-left: 0%;
   } 
   #div-installation-background {
     margin-top: 3%;
-    margin-left: 10%;
     background-color: #f9f9f9;
-    width: 90px;
     height: 54px;
     border-style: solid;
     border-width: 0px 0px 2px 0px;

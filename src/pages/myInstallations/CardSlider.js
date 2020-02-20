@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Button, Icon, Popconfirm, message } from 'antd'
+import { Button, Icon, Popconfirm, message, Row, Col } from 'antd'
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import axiosConfig from '../../api/axiosConfig'
@@ -102,35 +102,46 @@ const CardSlider = ({ multimedia }) => {
 
   return (
     <div id="container">
-      <div id="container-delete-button-slider">
-        <Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
+      {/* <div id="container-delete-button-slider">
+        {<Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
           <Button id="card-slider-button-delete-image"
           >
             <Icon type="delete" />
           </Button>
-        </Popconfirm>
-      </div>
-      <div id="container-left-button-slider">
-        <Button
-          id="card-slider-button-left"
-          onClick={backward}
-          disabled={currentImageId === firstImageId ? true : false}
-        >
-          <Icon type="left" id="arrow" />
-        </Button>
-      </div>
-      <div id="container-images-slider">
-        <PanelImage imageUrl={imageUrl} id="card-slider-image" />
-      </div>
-      <div id="container-right-button-slider">
-        <Button
-          id="card-slider-button-right"
-          onClick={forward}
-          disabled={currentImageId === lastImageId ? true : false}
-        >
-          <Icon type="right" id="arrow" />
-        </Button>
-      </div>
+        </Popconfirm>}
+      </div> */}
+      <Row>
+        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+          <div id="container-left-button-slider">
+            <Button
+              id="card-slider-button-left"
+              onClick={backward}
+              disabled={currentImageId === firstImageId ? true : false}
+            >
+              <Icon type="left" id="arrow" />
+            </Button>
+          </div>
+        </Col>
+        <Col xs={16} sm={16} md={20} lg={20} xl={20}>
+          <div id="container-images-slider">
+            <PanelImage imageUrl={imageUrl} id="card-slider-image" />
+          </div>
+        </Col>
+        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+          <div id="container-right-button-slider">
+            <Button
+              id="card-slider-button-right"
+              onClick={forward}
+              disabled={currentImageId === lastImageId ? true : false}
+            >
+              <Icon type="right" id="arrow" />
+            </Button>
+          </div>
+        </Col>
+      </Row>
+
+
+
     </div>
   );
 }

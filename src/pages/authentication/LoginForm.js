@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
-import { Row, Col, Divider, Form, Input } from 'antd'
+import { Row, Col, Divider, Form, Input, Button } from 'antd'
 import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
@@ -106,14 +106,18 @@ const LoginForm = (props) => {
   return (
     <Row>
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} id="login-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
-          <img src={mobileLogo} id="login-logo-mobile-image" alt="mobile-logo" />
+        <Col span={24} xs={24} sm={24} md={24} lg={0} xl={0}>
+          <Row>
+            <img src={mobileLogo} id="login-logo-mobile-image" alt="mobile-logo" />
+          </Row>
         </Col>
+
         <div id="inside-welcome-container" >
-          <h1 id="welcome-title-text" >
+          <h1 id="login-title-text" >
             LOGIN TO YOUR <br />
             ACCOUNT
-        </h1>
+            </h1>
+
           <Form onSubmit={handleFormSubmit}>
             <div id="input-login-form-fields">
 
@@ -159,10 +163,12 @@ const LoginForm = (props) => {
             </div>
           </Form>
           <h6 id="welcome-text-mini-account">Do not you have an account yet? <Link id="link" to="/register">Sign up</Link></h6>
-
-          <div id="login-text-footer-container">
-            <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
-          </div>
+          <Row>
+            {/* <div id="login-text-footer-container"> */}
+            <div className="fixed-footer">
+              <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
+            </div>
+          </Row>
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

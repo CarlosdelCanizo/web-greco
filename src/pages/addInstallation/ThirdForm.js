@@ -113,7 +113,7 @@ const ThirdForm = props => {
 
                         </Row>
                         <Row>
-                            <Col span={7} xs={7} sm={7} md={7} lg={7} xl={7}>
+                            <Col span={6} xs={6} sm={6} md={6} lg={6} xl={6}>
                             </Col>
                             <Col id="register-panel-fields-third" span={4} xs={4} sm={4} md={4} lg={4} xl={4}>
                                 <Form.Item>
@@ -147,7 +147,7 @@ const ThirdForm = props => {
                                     </Checkbox>
                                 </Form.Item>
                             </Col>
-                            <Col span={7} xs={7} sm={7} md={7} lg={7} xl={7}>
+                            <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                             </Col>
                         </Row>
                         <Row>

@@ -83,19 +83,30 @@ const PanelCard = ({ panel, fetchPanels }) => {
     <Col span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
       <Card id="installation-container">
         <Row>
-          <Col span={24} xs={24} sm={24} md={10} lg={10} xl={10}>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+          </Col>
+          <Col xs={20} sm={20} md={20} lg={20} xl={20}>
             <div id="installation-tittle-button-container">
               <p id="installation-tittle">{panel.installationName}</p>
-              <Popover placement="left" title={textMenu} content={content} trigger="click">
-                <Button id="installation-button-menu">
-                  <Icon type="more" />
-                </Button>
-              </Popover>
+
             </div>
           </Col>
-          <div id="installation-add-image-container">
-            <CardSlider multimedia={panel.multimedia} />
-          </div>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+            <Popover placement="left" title={textMenu} content={content} trigger="click">
+              <Button id="installation-button-menu">
+                <Icon type="more" />
+              </Button>
+            </Popover>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            <div id="installation-add-image-container">
+              <CardSlider multimedia={panel.multimedia} />
+            </div>
+          </Col>
+        </Row>
+        <Row>
           <div id="installation-text-fields">
             <Col span={8}>
               <h5 id="panel-data-labels">
@@ -124,7 +135,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
           </div>
         </Row>
       </Card>
-    </Col>
+    </Col >
   );
 }
 
