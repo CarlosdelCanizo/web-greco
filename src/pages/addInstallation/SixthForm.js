@@ -202,6 +202,7 @@ const SixthForm = props => {
       })
   }
 
+
   //REDIRECT
   const [toLocation, setLocation] = useState(false);
   function activateRedirection() {
@@ -254,8 +255,8 @@ const SixthForm = props => {
                 <h2 id="tittle-panel-registration">Additional information</h2>
               </Col>
             </Row>
-            <Row>
-              <Col id="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Row id="trespercent">
+              <Col id="register-panel-fields-sixth-left" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Form.Item>
                   <div id="div-installation-background">
                     <label id="panel-sixth-label">Instalation name</label>
@@ -271,9 +272,9 @@ const SixthForm = props => {
                   </div>
                 </Form.Item>
               </Col>
-              <Col id="register-panel-fields-sixth" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Col id="register-panel-fields-sixth-right" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Form.Item>
-                  <div id="div-installation-background">
+                  <div id="div-installation-background-right">
                     <label id="panel-sixth-label">Installation property</label>
                     <Select placeholder='Private'
                       name="installationProperty"
@@ -312,21 +313,29 @@ const SixthForm = props => {
                 </div>
               </Col>
             </Row>
-            <Row>
+            <Row id="trespercent">
               <Col id="col-battery" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h3 id="subtittle-panel-registration-battery"> Do you have a battery?</h3>
-                <div id="battery-radio-sixth" >
-                  <Radio.Group
-                    defaultValue={true}
-                    id="battery"
-                    name="battery"
-                    onChange={onChangeRadio}
-                    value={radioValue}
-                  >
-                    <Radio value={true} id="radio-button" >YES</Radio>
-                    <Radio value={false} id="radio-button" >NO</Radio>
-                  </Radio.Group>
-                </div>
+                <Row>
+                  <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <h3 id="subtittle-panel-registration-battery"> Do you have a battery?</h3>
+                  </Col>
+                  <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <div id="battery-radio-sixth" >
+                      <Radio.Group
+                        defaultValue={true}
+                        id="battery"
+                        name="battery"
+                        onChange={onChangeRadio}
+                        value={radioValue}
+                      >
+                        <Radio value={true} id="radio-button" >YES</Radio>
+                        <Radio value={false} id="radio-button" >NO</Radio>
+                      </Radio.Group>
+                    </div>
+                  </Col>
+                </Row>
+
+
               </Col>
             </Row>
             <Row>
