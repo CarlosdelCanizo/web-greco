@@ -3,18 +3,14 @@
 /************************************************************SHOW*PANEL*************************************************/
 /***COMPUTER************************************************************************************************************/
 
-#show-panel-outside {
-  position: fixed;
-  background-color: #eaedf1;
-  height: 100%; 
-  width: 100%;
-}
 #show-panel-card-container {
+  z-index: 999;
+  position: absolute;
   float: right;
   width: 424px;
-  height: 90vh;
-  margin-top: 1%;
-  right: 3%;  
+  height: 720px;
+  right: 3%; 
+  top: 45px; 
   font-family: Montserrat;
   color: #2a4092;
   padding: 0; 

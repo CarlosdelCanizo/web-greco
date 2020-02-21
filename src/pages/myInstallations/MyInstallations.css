@@ -5,7 +5,7 @@
   background-color: #eaedf1;
   height: 100%; 
   width: 100%;
-  overflow: auto;
+  /* overflow: auto; */
 }
 #popover-panels {
   font-family: Montserrat;
@@ -15,6 +15,9 @@
 }
 #popover-menu-panels:hover {
   color: #db4196; 
+}
+#background-row{
+  background-color: #eaedf1;
 }
 
 /************************************************************ADD*INSTALLATION*************************************************/
@@ -31,10 +34,10 @@
   height: 350px;
   margin-top: 80%;
   margin-left: 100%;
-  font-size: 16px;
+  font-size: 16px;*/
   border: 2px;
   border: 2px dotted #2a4092;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #installation-add .ant-card-body{
   text-align: center;
@@ -51,15 +54,18 @@
   border-color: #db4196;
   color: white;
 }
-#add-installation-text-button {
-  /* margin-top: 15%;
-  margin-left: 15%; */
+/* #add-installation-text-button {
+  margin-top: 15%;
+  margin-left: 15%;
  
-}
+} */
 /************************************************************INSTALLATION**************************************************/
 /***COMPUTER***************************************************************************************************************/
 
 #installation-container {
+  margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
   position: relative;
   /* width: 425px; */
   height: 380px;
@@ -122,6 +128,7 @@
   margin-left: 0%; */
   /* border-bottom: 5px solid #2a4092; */
   max-width: 225px;
+  max-height: 200px;
 }
 #installation-text-fields {
   padding: 0%;
@@ -168,7 +175,7 @@
 #card-slider-button-left {
   position: relative;
   z-index: 999;
-  top: 25%;
+  top: 15%;
   background-color: transparent;
   border: none;
   margin-left: 10px;
@@ -183,11 +190,11 @@
 #card-slider-button-right {
   position: relative;
   z-index: 999;
-  top: 25%;
+  top: 15%;
   background-color: transparent;
   border: none;
   right: 20px;
-  margin-top: 26px;
+  margin-top: 24px;
 }
 #arrow {
   color: red;
@@ -287,6 +294,9 @@
   width: 100%;
 }
 #installation-container {
+  margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
   position: relative;
   display: block;
   /* width: 424px; */
@@ -469,7 +479,7 @@
 #card-slider-button-left {
   position: absolute;
   z-index: 999;
-  margin-top: 25%;
+  margin-top: 15%;
   margin-left: -50px;
   background-color: transparent;
   border: none;
@@ -506,10 +516,10 @@
 #card-slider-button-right {
   position: absolute;
   z-index: 999;
-  margin-top: 25%;
+  margin-top: 15%;
   margin-right: -100%;
   background-color: transparent;
   border: none;
-  margin-top: 37px;
+  margin-top: 24px;
 }
 }

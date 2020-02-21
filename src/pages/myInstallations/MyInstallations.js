@@ -12,7 +12,7 @@ function MyInstallations() {
       <Header />
 
       <div id="background-installations">
-        <Row>
+        <Row id="background-row" >
           <Col span={24} xs={24} sm={24} md={5} lg={6} xl={6}>
             <ButtonAdd />
           </Col>

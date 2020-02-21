@@ -10,6 +10,7 @@
 }
 #card-panel-register-inside {
   width: 40%;
+  /* height: 90%; */
   margin-top: 3%;
   margin-left: 30%;
   font-family: Montserrat;
@@ -65,12 +66,21 @@ border-radius: none;
   background-color:red;
   border: none;
 }
+/* .ant-select {
+
+  height: 54;
+  width: 100%;
+ 
+} */
 
 #radio-label-row {
   min-height: 50px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
-
+#radio-button-row {
+  min-height: 10px;
+  top: -10px;
+}
 /***************************************************************FIRST*FORM*************************************************************/
 /***COMPUTER************************************************************************************************************************/
 
@@ -249,10 +259,10 @@ border-radius: none;
   line-height: 1.25;
   color: #2a4092;
 }
-#col-radio-button {
+/* #col-radio-button {
   width: auto;
   margin-left: 1%;
-}
+} */
 #technology-used {
   margin-left: -1%;
   width: 100%;
@@ -499,11 +509,11 @@ border-radius: none;
     margin-left: 4%;
     margin-top: 2%;
 }
-#col-radio-button {
+/* #col-radio-button {
     width: 220px;
     margin-top: 1%;
     margin-left: 3%;
-}
+} */
 #technology-used {
     margin-left: -3%;
 }
@@ -720,7 +730,6 @@ border-radius: none;
   border-bottom-color: #2a4092;
 }
 #div-installation-background-firstform {
-
   margin: 0 auto;
   background-color: #f9f9f9;
   width: 100%;
@@ -793,10 +802,10 @@ border-radius: none;
     margin-left: 0%;
     margin-top: -6%;
 }
-#col-radio-button {
+/* #col-radio-button {
     width: 33%;
     margin-left: 0%;
-}
+} */
 #technology-used {
   width: 100%;
   margin-left: -1%;

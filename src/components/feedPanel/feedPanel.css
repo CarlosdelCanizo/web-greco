@@ -3,18 +3,14 @@
 /************************************************************FEED*PANEL*************************************************/
 /***COMPUTER************************************************************************************************************/
 
-#panel-feed-outside {
-  position: fixed;
-  background-color: #eaedf1;
-  height: 100%; 
-  width: 100%;
-}
 #feed-card-container {
+  z-index: 999;
+  position: absolute;
   float: right;
   width: 424px;
-  /* height: 90vh; EFREN */
-  margin-top: 1%;
+  height: 720px;
   right: 3%;  
+  top: 45px;
   font-family: Montserrat;
   color: #2a4092;
   padding: 0; 

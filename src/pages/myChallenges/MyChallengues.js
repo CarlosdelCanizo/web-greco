@@ -10,8 +10,8 @@ function MyChallenges() {
     <React.Fragment>
       <Header />
       <div id="background-installations">
-        <Row>
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+        <Row >
+          <Col id="background-row" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <ChallengeList />
           </Col>
         </Row>

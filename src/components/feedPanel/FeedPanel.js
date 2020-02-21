@@ -7,6 +7,7 @@ import moment from 'moment'
 import { Link } from "react-router-dom";
 import ImageSlider from '../imageSlider/ImageSlider'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
+import ShowMapping from "../ShowMapping"
 
 //INPUT BOX AND SEND BUTTON
 const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
@@ -167,73 +168,76 @@ const FeedPanel = (props) => {
 
     <React.Fragment>
       <Header />
-      <div id="panel-feed-outside">
-        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-          <Card id="feed-card-container">
-            <Row>
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
-                <Link to="private-mapping">
-                  <Button id="feed-close-button">
-                    <Icon type="close" />
-                  </Button>
-                </Link>
-                <div id="feed-card-image-container">
-                  <ImageSlider multimedia={myPanel.panel.multimedia} />
-                </div>
-              </Col >
-            </Row>
-            <Row>
-              <Col span={8}>
-                <h5 id="panel-data-labels">
-                  Electrical capacity
-                  </h5>
-                <h4 id="panel-data-fields">
-                  {myPanel.panel.electrical_capacity} Kw
-                  </h4>
-              </Col>
-              <Col span={8}>
-                <h5 id="panel-data-labels">
-                  Surface
-                  </h5>
-                <h4 id="panel-data-fields">
-                  {myPanel.panel.surface} m²
-                  </h4>
-              </Col>
-              <Col span={8}>
-                <h5 id="panel-data-labels">
-                  Inverter capacity
-                  </h5>
-                <h4 id="panel-data-fields">
-                  {myPanel.panel.inverterCapacity} Kw
-                  </h4>
-              </Col>
-            </Row>
-            <Row >
-              <div id="feed-panel-user-name-container">
-                <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                  <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
-                </Col>
-              </div>
-            </Row>
-            <Row>
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <div id="feed-list-container">
-                  <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-                </div>
-                <div id="feed-form-container">
-                  <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-
-              </Col>
-            </Row>
-          </Card>
+      <Row>
+        <Col span={24} xs={0} sm={0} md={24} lg={24} xl={24} >
+          <ShowMapping lat={myPanel.panel.lat} lon={myPanel.panel.lon} />
         </Col>
-      </div>
+      </Row>
+      {/* <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}> */}
+      <Card id="feed-card-container">
+        <Row>
+          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
+            <Link to="private-mapping">
+              <Button id="feed-close-button">
+                <Icon type="close" />
+              </Button>
+            </Link>
+            <div id="feed-card-image-container">
+              <ImageSlider multimedia={myPanel.panel.multimedia} />
+            </div>
+          </Col >
+        </Row>
+        <Row>
+          <Col span={8}>
+            <h5 id="panel-data-labels">
+              Electrical capacity
+                  </h5>
+            <h4 id="panel-data-fields">
+              {myPanel.panel.electrical_capacity} Kw
+                  </h4>
+          </Col>
+          <Col span={8}>
+            <h5 id="panel-data-labels">
+              Surface
+                  </h5>
+            <h4 id="panel-data-fields">
+              {myPanel.panel.surface} m²
+                  </h4>
+          </Col>
+          <Col span={8}>
+            <h5 id="panel-data-labels">
+              Inverter capacity
+                  </h5>
+            <h4 id="panel-data-fields">
+              {myPanel.panel.inverterCapacity} Kw
+                  </h4>
+          </Col>
+        </Row>
+        <Row >
+          <div id="feed-panel-user-name-container">
+            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+              <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
+            </Col>
+          </div>
+        </Row>
+        <Row>
+          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <div id="feed-list-container">
+              <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+            </div>
+            <div id="feed-form-container">
+              <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+
+          </Col>
+        </Row>
+      </Card>
+      {/* </Col> */}
     </React.Fragment >
   );
 };

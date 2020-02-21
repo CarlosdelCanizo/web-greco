@@ -303,9 +303,9 @@ const FirstForm = (props) => {
             >
               <Row>
 
-                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={monocrystalline} id="images-tech-us" />
                     </Col>
                   </Row>
@@ -315,15 +315,15 @@ const FirstForm = (props) => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="radio-button-row" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Monocrystalline silicon" id="radio-button" />
                     </Col>
                   </Row>
                 </Col>
 
-                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={multicrystalline} id="images-tech-us" />
                     </Col>
                   </Row>
@@ -332,26 +332,26 @@ const FirstForm = (props) => {
                       <label id="label-radio-button">Polycrystalline silicon</label>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                  <Row id="radio-button-row">
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Polycrystalline silicon" id="radio-button" />
                     </Col>
                   </Row>
                 </Col>
 
-                <Col id="" span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={thinFilm} id="images-tech-us-large" />
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <label id="label-radio-button">Thin-film</label>
                     </Col>
                   </Row>
                   <Row>
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="radio-button-row" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Thin-film " id="radio-button" />
                     </Col>
                   </Row>
@@ -360,7 +360,7 @@ const FirstForm = (props) => {
               </Row>
             </Radio.Group>
           </Row>
-          <Divider className="transparentDivider"></Divider>
+          {/* <Divider className="transparentDivider"></Divider> */}
           <Row>
             <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
@@ -376,7 +376,6 @@ const FirstForm = (props) => {
                     required />
                 </div>
               </Form.Item>
-
             </Col>
             <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>

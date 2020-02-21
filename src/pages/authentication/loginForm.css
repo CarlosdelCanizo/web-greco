@@ -4,7 +4,7 @@
 #col-welcome-container {
   height: 100%; 
   background-image: url(../../assets/left-background.png);
-  background-color: transparent;
+  background-color: white !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  

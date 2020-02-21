@@ -38,6 +38,7 @@ const PanelImage = ({ imageUrl }) => {
 
 const PrivateMapping = () => {
 
+  document.body.classList.remove('body_forms');
   const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
   let DefaultIcon = L.icon({
@@ -136,7 +137,7 @@ const PrivateMapping = () => {
             <Marker key={id} position={[panel.lat, panel.lon]}
               onClick={() => {
                 getSpecificSolarPanel(panel.id)
-                if (panel.multimedia && panel.multimedia.length > 0) {
+                if (panel.multimedia && panel.multimedia !== "undefined" && panel.multimedia.length > 0) {
                   getImage(panel.multimedia[0].id);
                 } else {
                   setImageUrl('no-image');

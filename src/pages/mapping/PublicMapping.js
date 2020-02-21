@@ -104,7 +104,7 @@ const PublicMapping = () => {
                 key={item.id}
                 position={[item.lat, item.lon]}
                 onClick={() => {
-                  if (item.multimedia && item.multimedia.length > 0) {
+                  if (item.multimedia && item.multimedia !== "undefined" && item.multimedia.length > 0) {
                     getImage(item.multimedia[0].id);
                   } else {
                     setImageUrl('no-image');

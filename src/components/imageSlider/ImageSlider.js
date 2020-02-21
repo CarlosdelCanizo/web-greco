@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Button, Icon, Popconfirm, message } from 'antd'
+import React, { useState, useEffect } from 'react';
+import { Button, Icon } from 'antd'
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import axiosConfig from '../../api/axiosConfig'
