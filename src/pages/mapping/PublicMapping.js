@@ -36,6 +36,9 @@ const PanelImage = ({ imageUrl }) => {
 };
 
 const PublicMapping = () => {
+
+  document.body.classList.remove('body_forms');
+
   const content = (
     <div>
       <p id="pop-over-content">Only for logged users!</p>

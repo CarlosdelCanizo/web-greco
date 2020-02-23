@@ -38,6 +38,7 @@ const FirstForm = (props) => {
 
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
   document.body.classList.add('body_forms');
+
   //GET UPDATE DATA
   if (myPanel !== undefined) {
     var electrical_capacity = myPanel.panel.electrical_capacity
@@ -106,7 +107,6 @@ const FirstForm = (props) => {
   const handleInputChange = event => {
     if (isNaN(event.target.value)) {
       error()
-      // setData({ ...data, errorMessage: "Enter only numbers, please" });
     } else {
       setData({ ...data, [event.target.name]: (event.target.value), errorMessage: null });
     }
@@ -203,12 +203,11 @@ const FirstForm = (props) => {
 
   return (
     <Row>
-      {/* <div id="background-panel-register"> */}
       <Card id="card-panel-register-inside">
         <Form onSubmit={handleFormSubmit}>
-          <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
           </Col>
-          <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
+          <Col xs={20} sm={20} md={20} lg={20} xl={20}>
             <div id="pagination">
               <img src={bulletPle} width="2%" id="pagination-bullet" />
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
@@ -218,27 +217,27 @@ const FirstForm = (props) => {
               <img src={bulletBuit} width="2%" id="pagination-bullet" />
             </div>
           </Col>
-          <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-            <Link to="/private-mapping">
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+            <Link to="my-installations">
               <Button id="forms-close-button" onClick={clearPanel}>
                 <Icon type="close" id="icon-x" />
               </Button>
             </Link>
           </Col>
           <Row>
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <h2 id="tittle-panel-registration">Register your solar installation</h2>
             </Col>
           </Row>
           <Row>
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <p id="text-panel-registration">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
             </Col>
           </Row>
           <Row>
-            <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-register-panel-fields" xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item
               >
                 <div id="div-electrical-background">
@@ -250,12 +249,12 @@ const FirstForm = (props) => {
                     onChange={handleInputChange}
                     onClick={resetInput}
                     placeholder="330Kw"
-
+                    required
                   />
                 </div>
               </Form.Item>
             </Col>
-            <Col id="col-register-panel-fields" span={8} xs={12} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-register-panel-fields" xs={12} sm={8} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
                   <label id="panel-input-label-surface">Surface</label>
@@ -270,7 +269,7 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
-            <Col id="col-commissioning-date" span={8} xs={24} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-commissioning-date" xs={24} sm={8} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
                   <label id="panel-input-label-commissioningDate">Comissioning date</label>
@@ -287,7 +286,7 @@ const FirstForm = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div id="div-subtittle">
                 <h3 id="subtittle-panel-registration">Panel type</h3>
               </div>
@@ -303,55 +302,55 @@ const FirstForm = (props) => {
             >
               <Row>
 
-                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
-                  <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                <Col id="image-col" xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row >
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={monocrystalline} id="images-tech-us" />
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                       <label id="label-radio-button">Monocrystalline silicon</label>
                     </Col>
                   </Row>
                   <Row>
-                    <Col id="radio-button-row" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="radio-button-row" xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Monocrystalline silicon" id="radio-button" />
                     </Col>
                   </Row>
                 </Col>
 
-                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="image-col" xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={multicrystalline} id="images-tech-us" />
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
-                    <Col id="" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                       <label id="label-radio-button">Polycrystalline silicon</label>
                     </Col>
                   </Row>
                   <Row id="radio-button-row">
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Polycrystalline silicon" id="radio-button" />
                     </Col>
                   </Row>
                 </Col>
 
-                <Col span={8} xs={8} sm={8} md={8} lg={8} xl={8}>
+                <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="image-col-large" xs={24} sm={24} md={24} lg={24} xl={24}>
                       <img src={thinFilm} id="images-tech-us-large" />
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                       <label id="label-radio-button">Thin-film</label>
                     </Col>
                   </Row>
                   <Row>
-                    <Col id="radio-button-row" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                    <Col id="radio-button-row" xs={24} sm={24} md={24} lg={24} xl={24}>
                       <Radio value="Thin-film " id="radio-button" />
                     </Col>
                   </Row>
@@ -360,12 +359,11 @@ const FirstForm = (props) => {
               </Row>
             </Radio.Group>
           </Row>
-          {/* <Divider className="transparentDivider"></Divider> */}
           <Row>
-            <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
+            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
-                  <label id="panel-input-label">AC Inverter capacity</label>
+                  <label id="panel-input-label-inverter">AC Inverter capacity</label>
                   <Input
                     placeholder="800Kw"
                     name="inverterCapacity"
@@ -377,10 +375,11 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
-            <Col span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
+
+            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-firstform">
-                  <label id="panel-input-label">Installation type</label>
+                  <label id="panel-input-label-type">Installation type</label>
                   <Select
                     placeholder='On-grid'
                     name="installationType"
@@ -397,10 +396,11 @@ const FirstForm = (props) => {
                   </Select>
                 </div>
               </Form.Item>
+
             </Col>
           </Row>
           <Row>
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
 
               <Button
                 disabled={!isEnabled}
@@ -415,7 +415,6 @@ const FirstForm = (props) => {
           </Row>
         </Form>
       </Card>
-      {/* </div > */}
     </Row >
   )
 }

@@ -17,7 +17,6 @@
   margin-top: 5%;
   margin-right: -3%;
 }
-
 #div-longlat-background {
 margin-top: 5%;
 margin-left: 15%;
@@ -28,9 +27,8 @@ border-style: solid;
 border-width: 0px 0px 2px 0px;
 border-bottom-color: #2a4092;
 }
-
 #div-longlat-background-right {
-  margin-top: 5%;
+margin-top: 5%;
 margin-left: 15%;
 background-color: #f9f9f9;
 width: 75%;
@@ -38,54 +36,35 @@ height: 54px;
 border-style: solid;
 border-width: 0px 0px 2px 0px;
 border-bottom-color: #2a4092;
-  float: right;
-margin-right: 5%;
-  }
-
+float: right;
+margin-right: 6%;
+}
 #panel-longlat-label {
   display: block;
   width: 99%;
   text-align: left;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 10px;
   line-height: 1.25;
   color: #2a4092;
   background-color:transparent;
-  left: 1%;
+  left: 3%;
   top: 2%;
 }
-
-/* #panel-input-label-second {
-  display: inline-block;
-  width: 80%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: 10%;
-  margin-bottom: -1%;
-} */
 #lon, #lat {
-  color: #2a4092;
+  color: #7f95a7;
   width:100%;
   height: 100%;
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 14px;
   padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
   margin-left: 0%;
-  top: -15%;;
+  top: -11%;
 
 }
-/* #input-separator-second {
-  margin-top: -1%;
-  background-color: transparent;
-  margin-bottom: -3%;
-} */
+
 /***LEAFLET*MAP*SECOND**************************************************************/
 #coords-container {
   width: 87%;
@@ -159,22 +138,31 @@ margin-right: 5%;
     margin-left: 5%;
     margin-right: -6%;
   }
-
-  #lon, #lat {
-  color: #2a4092;
+  #lat {
+  color: #7f95a7;
   width: 100%;
   height: 100%;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 14px;
   background-color: transparent;
   border-radius: 0;
-  margin-left: 0%;
-  margin-top: -1%;
+  margin-left: -3;
+  margin-top: -2%;
   }
-
+  #lon {
+    color: #7f95a7;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: transparent;
+    border-radius: 0;
+    left: 0%;
+    margin-top: -2%;
+    }
   #div-longlat-background {
     margin-top: 5%;
-    margin-left: 15%;
+    margin-left: 3%;
     background-color: #f9f9f9;
     width: 75%;
     height: 54px;
@@ -182,17 +170,26 @@ margin-right: 5%;
     border-width: 0px 0px 2px 0px;
     border-bottom-color: #2a4092;
     }
-    
+    #div-longlat-background-right {
+      position: relative;
+      margin-top: 5%;
+      margin-left: -25%;
+      background-color: #f9f9f9;
+      width: 75%;
+      height: 54px;
+      border-style: solid;
+      border-width: 0px 0px 2px 0px;
+      border-bottom-color: #2a4092;
+      }
     #panel-longlat-label {
-      display: block;
       width: 99%;
       text-align: left;
-      font-weight: 600;
-      font-size: 12px;
+      font-weight: 500;
+      font-size: 10px;
       line-height: 1.25;
       color: #2a4092;
       background-color:transparent;
-      left: 1%;
+      left: 2%;
       top: 2%;
     }
 
@@ -233,7 +230,7 @@ margin-right: 5%;
 
 @media (min-width: 240px) and (max-width: 600px) {
   #card-panel-register-inside {
-    width: 100vw;
+    width: 100%;
     margin-top: 0%;
     margin-left: 0%;
     font-family: Montserrat;
@@ -270,55 +267,31 @@ margin-right: 5%;
     margin-left: 2%;
     margin-right: -2%;
   }
-  /* #panel-input-label-second {
-  display: inline-block;
-  width: 90%;
-  text-align: left;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color: #f9f9f9;
-  border-bottom: 10px solid #f9f9f9;
-  margin-left: -20%;
-  margin-bottom: -1%;
-  }
-  #input-separator-second {
-  margin-top: 0%;
-  background-color: transparent;
-  margin-bottom: -8%;
-  }
-  #lon, #lat {
-  color: #2a4092;
-  width: 90%;
-  height: 27px;
-  font-family: Montserrat;
-  font-size: 18px;
-  line-height: 2;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  background-color: #f9f9f9;
-  border-top: 10px solid #f9f9f9;
-  border-radius: 0;
-  margin-left: -20%;
-  margin-top: -1%;
-  } */
-  #lon, #lat {
-    color: #2a4092;
+  #lat {
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     background-color: transparent;
     border-radius: 0;
-    margin-left: 0%;
+    margin-left: -2%;
     margin-top: -1%;
     }
-  
+  #lon {
+    color: #7f95a7;
+    width: 100%;
+    height: 100%;
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: transparent;
+    border-radius: 0;
+    left: 0%;
+    margin-top: -1%;
+    }
     #div-longlat-background {
       margin-top: 5%;
-      margin-left: 15%;
+      margin-left: -3%;
       background-color: #f9f9f9;
       width: 75%;
       height: 54px;
@@ -326,21 +299,27 @@ margin-right: 5%;
       border-width: 0px 0px 2px 0px;
       border-bottom-color: #2a4092;
       }
-
-      
-
-      
-      
+      #div-longlat-background-right {
+        position: relative;
+        margin-top: 5%;
+        left: -7%;
+        background-color: #f9f9f9;
+        width: 75%;
+        height: 54px;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        border-bottom-color: #2a4092;
+        }
       #panel-longlat-label {
         display: block;
         width: 99%;
         text-align: left;
-        font-weight: 600;
-        font-size: 12px;
+        font-weight: 500;
+        font-size: 10px;
         line-height: 1.25;
         color: #2a4092;
         background-color:transparent;
-        left: 1%;
+        margin-left: 3%;
         top: 2%;
       }
 
@@ -351,7 +330,6 @@ margin-right: 5%;
   height: 45vh;
   margin-left: 0%; 
 }
-
   #add-installation-container-button-second {
     margin-top: 3%;
     margin-left: -4%;

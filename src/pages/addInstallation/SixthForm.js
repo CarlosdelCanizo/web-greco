@@ -223,180 +223,178 @@ const SixthForm = props => {
 
   return (
     <Row>
-      <div id="background-panel-register">
-        <Card id="card-panel-register-inside">
-          <Form onSubmit={handleFormSubmit}>
-            <Row>
+      <Card id="card-panel-register-inside">
+        <Form onSubmit={handleFormSubmit}>
+          <Row>
 
-              <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
+            <Col xs={2} sm={2} md={2} lg={2} xl={2}>
 
-              </Col>
-              <Col span={20} xs={20} sm={20} md={20} lg={20} xl={20}>
-                <div id="pagination">
-                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                  <img src={bulletBuit} width="2%" id="pagination-bullet" />
-                  <img src={bulletPle} width="2%" id="pagination-bullet" />
-                </div>
-              </Col>
+            </Col>
+            <Col xs={20} sm={20} md={20} lg={20} xl={20}>
+              <div id="pagination">
+                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                <img src={bulletBuit} width="2%" id="pagination-bullet" />
+                <img src={bulletPle} width="2%" id="pagination-bullet" />
+              </div>
+            </Col>
 
-              <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-                <Link to="/private-mapping">
-                  <Button id="forms-close-button" onClick={clearPanel}>
-                    <Icon type="close" id="icon-x" />
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h2 id="tittle-panel-registration">Additional information</h2>
-              </Col>
-            </Row>
-            <Row id="trespercent">
-              <Col id="register-panel-fields-sixth-left" span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
-                <Form.Item>
-                  <div id="div-installation-background">
-                    <label id="panel-sixth-label">Instalation name</label>
-                    <Input
-                      placeholder='My installation'
-                      type="text"
-                      name="installationName"
-                      id="installation-name"
-                      value={data.installationName === "" ? installationName : data.installationName}
-                      onChange={handleInputChange}
-                      onClick={resetInput}
-                    />
-                  </div>
-                </Form.Item>
-              </Col>
-              <Col id="register-panel-fields-sixth-right" span={12} xs={24} sm={12} md={12} lg={12} xl={12}>
-                <Form.Item>
-                  <div id="div-installation-background-right">
-                    <label id="panel-sixth-label">Installation property</label>
-                    <Select placeholder='Private'
-                      name="installationProperty"
-                      id="installation-property"
-                      value={data.installationProperty || installationProperty}
-                      onChange={handleInputSelectChange}
-                    >
-
-                      <Option id="select-property" value="Public">Public</Option>
-                      <Option id="select-property" value="Private">Private</Option>
-
-                    </Select>
-                  </div>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h2 id="subtittle-panel-registration-sixth">Installation photography</h2>
-
-                <div id="upload-images">
-                  <Upload
-                    listType="picture"
-                    fileList={images.fileList}
-                    onPreview={handlePreview}
-                    onChange={handleUploadImages}
-                    beforeUpload={() => false}
-                    name="multimedia"
-                  >
-                    <Button>
-                      <p id="upload-text-one">+ Upload images</p>
-                    </Button>
-                    <p>Maximum 3 images per installation</p>
-                    <p>Only png or jpg, with max size of 5 MB each one</p>
-                  </Upload>
-                </div>
-              </Col>
-            </Row>
-            <Row id="trespercent">
-              <Col id="col-battery" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <Row>
-                  <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <h3 id="subtittle-panel-registration-battery"> Do you have a battery?</h3>
-                  </Col>
-                  <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <div id="battery-radio-sixth" >
-                      <Radio.Group
-                        defaultValue={true}
-                        id="battery"
-                        name="battery"
-                        onChange={onChangeRadio}
-                        value={radioValue}
-                      >
-                        <Radio value={true} id="radio-button" >YES</Radio>
-                        <Radio value={false} id="radio-button" >NO</Radio>
-                      </Radio.Group>
-                    </div>
-                  </Col>
-                </Row>
-
-
-              </Col>
-            </Row>
-            <Row>
-              <Col id="col-battery" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <Form.Item>
-                  <div id="div-observation-background">
-                    <label id="panel-sixth-label-large">Battery Description</label>
-                    <Input
-                      placeholder='12V 700Ah Upower'
-                      type="text"
-                      name="batteryDescription"
-                      id="battery-description"
-                      value={data.batteryDescription === "" ? batteryDescription : data.batteryDescription}
-                      onChange={handleInputChange}
-                      onClick={resetInput}
-                    />
-                  </div>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>
-              <Col id="col-observation" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <Form.Item>
-                  <div id="div-observation-background">
-                    <label id="panel-sixth-label-large">Observations</label>
-                    <Input placeholder='Observations and comments'
-                      type="text"
-                      name="observation"
-                      id="observation"
-                      value={data.observation === "" ? observation : data.observation}
-                      onChange={handleInputChange}
-                      onClick={resetInput}
-                    />
-                  </div>
-                </Form.Item>
-
-              </Col>
-
-              <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Link to="/fifth">
-                  <Button id="button-panel-register-previous-sixth">PREVIOUS</Button>
-                </Link>
-              </Col>
-              <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-
-                <Button
-                  disabled={!isEnabled}
-                  id="button-panel-register-next-sixth"
-                  type="submit"
-                  onClick={handleFormSubmit}>
-                  NEXT
-                {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
+            <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+              <Link to="/my-installations">
+                <Button id="forms-close-button" onClick={clearPanel}>
+                  <Icon type="close" id="icon-x" />
                 </Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+              <h2 id="tittle-panel-registration">Additional information</h2>
+            </Col>
+          </Row>
+          <Row >
+            <Col id="register-panel-fields-sixth-left" xs={24} sm={12} md={12} lg={12} xl={12}>
+              <Form.Item>
+                <div id="div-installation-background">
+                  <label id="panel-sixth-label">Instalation name</label>
+                  <Input
+                    placeholder='My installation'
+                    type="text"
+                    name="installationName"
+                    id="installation-name"
+                    value={data.installationName === "" ? installationName : data.installationName}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                  />
+                </div>
+              </Form.Item>
+            </Col>
+            <Col id="register-panel-fields-sixth-right" xs={24} sm={12} md={12} lg={12} xl={12}>
+              <Form.Item>
+                <div id="div-installation-background-right">
+                  <label id="panel-sixth-label">Installation property</label>
+                  <Select placeholder='Private'
+                    name="installationProperty"
+                    id="installation-property"
+                    value={data.installationProperty || installationProperty}
+                    onChange={handleInputSelectChange}
+                  >
 
-              </Col>
+                    <Option id="select-property" value="Public">Public</Option>
+                    <Option id="select-property" value="Private">Private</Option>
 
-            </Row>
-          </Form>
+                  </Select>
+                </div>
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+              <h2 id="subtittle-panel-registration-sixth">Installation photography</h2>
 
-        </Card>
-      </div>
+              <div id="upload-images">
+                <Upload
+                  listType="picture"
+                  fileList={images.fileList}
+                  onPreview={handlePreview}
+                  onChange={handleUploadImages}
+                  beforeUpload={() => false}
+                  name="multimedia"
+                >
+                  <Button>
+                    <p id="upload-text-one">+ Upload images</p>
+                  </Button>
+                  <p>Maximum 3 images per installation</p>
+                  <p>Only png or jpg, with max size of 5 MB each one</p>
+                </Upload>
+              </div>
+            </Col>
+          </Row>
+          <Row >
+            <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
+              <Row>
+                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <h3 id="subtittle-panel-registration-battery"> Do you have a battery?</h3>
+                </Col>
+                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <div id="battery-radio-sixth" >
+                    <Radio.Group
+                      defaultValue={true}
+                      id="battery"
+                      name="battery"
+                      onChange={onChangeRadio}
+                      value={radioValue}
+                    >
+                      <Radio value={true} id="radio-button" >YES</Radio>
+                      <Radio value={false} id="radio-button" >NO</Radio>
+                    </Radio.Group>
+                  </div>
+                </Col>
+              </Row>
+
+
+            </Col>
+          </Row>
+          <Row>
+            <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
+              <Form.Item>
+                <div id="div-observation-background">
+                  <label id="panel-sixth-label-large">Battery Description</label>
+                  <Input
+                    placeholder='12V 700Ah Upower'
+                    type="text"
+                    name="batteryDescription"
+                    id="battery-description"
+                    value={data.batteryDescription === "" ? batteryDescription : data.batteryDescription}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                  />
+                </div>
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row>
+            <Col id="col-observation" xs={24} sm={24} md={24} lg={24} xl={24}>
+              <Form.Item>
+                <div id="div-observation-background">
+                  <label id="panel-sixth-label-large">Observations</label>
+                  <Input placeholder='Observations and comments'
+                    type="text"
+                    name="observation"
+                    id="observation"
+                    value={data.observation === "" ? observation : data.observation}
+                    onChange={handleInputChange}
+                    onClick={resetInput}
+                  />
+                </div>
+              </Form.Item>
+
+            </Col>
+
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Link to="/fifth">
+                <Button id="button-panel-register-previous-sixth">PREVIOUS</Button>
+              </Link>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+
+              <Button
+                disabled={!isEnabled}
+                id="button-panel-register-next-sixth"
+                type="submit"
+                onClick={handleFormSubmit}>
+                NEXT
+                {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
+              </Button>
+
+            </Col>
+
+          </Row>
+        </Form>
+
+      </Card>
     </Row >
   )
 }

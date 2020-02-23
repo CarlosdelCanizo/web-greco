@@ -40,40 +40,8 @@ class PanelsHeatMap extends React.Component {
 
   }
 
-  /**
-   * Toggle limiting the address points to test behavior with refocusing/zooming when data points change
-   */
-  // toggleLimitedAddressPoints() {
-  //   if (this.state.limitAddressPoints) {
-  //     this.setState({
-  //       addressPoints: addressPoints.slice(500, 1000),
-  //       limitAddressPoints: false
-  //     });
-  //   } else {
-  //     this.setState({ addressPoints, limitAddressPoints: true });
-  //   }
-  // }
-
   render() {
-    if (this.state.mapHidden) {
-      return (
-        <div>
-          <input
-            type="button"
-            value="Toggle Map"
-            onClick={() => this.setState({ mapHidden: !this.state.mapHidden })}
-          />
-        </div>
-      );
-    }
-
     const gradient = {
-      // 0.1: "#89BDE0",
-      // 0.2: "#96E3E6",
-      // 0.4: "#82CEB6",
-      // 0.6: "#FAF3A5",
-      // 0.8: "#F5D98B",
-      // "1.0": "#DE9A96"
       0.1: "blue",
       0.2: "cyan",
       0.4: "green",
@@ -84,7 +52,10 @@ class PanelsHeatMap extends React.Component {
 
     return (
       <div>
-        <Map center={[0, 0]} zoom={1} style={{ height: "80vh" }}>
+        <Map id="leaflet-heat-map"
+          center={[0, 0]}
+          zoom={1}
+        >
           <HeatmapLayer
             fitBoundsOnLoad
             fitBoundsOnUpdate
@@ -96,6 +67,7 @@ class PanelsHeatMap extends React.Component {
             radius={Number(this.state.radius)}
             blur={Number(this.state.blur)}
             max={Number.parseFloat(this.state.max)}
+            tap={false}
           />
 
           <TileLayer

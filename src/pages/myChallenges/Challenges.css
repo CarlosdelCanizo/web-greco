@@ -1,32 +1,32 @@
 /************************************************************MY*CHALLENGES**********************************************************/
 /***COMPUTER************************************************************************************************************************/
-#background-statistics {
-  position: absolute;
-  background-color: #eaedf1;
-  height: 100vh; 
-  width: 100%;
-}
+
 #challenge-card-container {
   margin-top: 3%;
   margin-left: 15%;
   width: 70%;
 }
+#individual-challenge-card {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #challenge-card-image-container {
-  height: 100%;
-  width: 100%;
+  width: 220px;
+  height: 220px;
   background-color:#ffffff;
   padding: 0%;
   margin-left: -5%;
   margin-top: -1%;
-  text-align: left;
   box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
 }
-#challenge-tag {
+/* #challenge-tag {
   text-align: center;
   margin-left: 80%;
   width: 15%;
   
-}
+} */
 #challenge-tagImage{
     position: absolute;
     margin-top: 10px;
@@ -36,11 +36,20 @@
 #challenge-tagBox{
   float: right;
   display: initial;
+  text-align: center;
+  line-height: 2.2em;
+  font-size: 16px;
+  width: 125px;
+  height: 40px;
 }
 
 #challenge-card-image {
   height: 100%;
   width: 100%;
+  object-fit: fill;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #eaedf1;
 }
 #challenge-card-text {
@@ -53,13 +62,6 @@
   background-color:#2a4092;
   color: white;
 }
-/* .ant-card {
-  background-color:#ffffff;
-  padding: 12%;
-  color:#8398aa;
-  text-align: left;
-  box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
-} */
 #challenge-percentage {
 margin-top: 12%;
 margin-left: 5%;
@@ -70,20 +72,19 @@ width: 80%;
 }
 /************************************************************MY*CHALLENGES**********************************************************/
 /***TABLET************************************************************************************************************************/
-@media (min-width: 600px) and (max-width: 992px) {
+@media (min-width: 575px) and (max-width: 992px) {
   #challenge-card-container {
     margin-top: 3%;
     margin-left: 2%;
     width: 95%;
   }
   #challenge-card-image-container {
-    height: 100%;
-    width: 100%;
+    width: 160px;
+    height: 160px;
     background-color:#ffffff;
     padding: 0%;
-    margin-left: -10%;
+    margin-left: -5%;
     margin-top: -1%;
-    text-align: left;
     box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
   }
   #challenge-tag {
@@ -92,8 +93,13 @@ width: 80%;
     width: 15%;
   }
   #challenge-card-image {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #eaedf1;
   }
   #challenge-card-text {
     margin-left: 15%;
@@ -107,18 +113,18 @@ width: 80%;
     color: white;
   }
   #challenge-percentage {
-    margin-top: 12%;
-    margin-left: 10%;
+    margin-top: 5%;
+    margin-left: 15%;
     width: 80%;
     }
 }
 /************************************************************MY*CHALLENGES**********************************************************/
 /***MOBILE************************************************************************************************************************/
-@media (min-width: 240px) and (max-width: 600px) {
+@media (min-width: 240px) and (max-width: 575px) {
   #challenge-card-container {
     margin-top: 3%;
-    margin-left: 3.5%;
-    width: 93%;
+    margin-left: 3%;
+    width: 94%;
     height: 100%;
   }
   #challenge-card-image-container {
@@ -126,27 +132,35 @@ width: 80%;
     width: 100%;
     background-color:#ffffff;
     padding: 0%;
-    margin-left: -8%;
-    margin-top: -8%;
-    text-align: left;
+    margin-left: auto;
+    margin-top: auto;
     box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
   }
-  #challenge-tag {
-    position: absolute;
-    text-align: center;
-    margin-top: -110%;
-    margin-left: 70%;
-    width: 30%;
-  }
-  #challenge-tagImage{
+  
+  #challenge-tagImage{  
     display: initial;
+    right: 3px;
+    text-align: center;
+    line-height: 2em;
+    font-size: 13px;
+    width: 75px;
+    height: 30px;
+    border-radius: 0;
   }
   #challenge-tagBox{
     display: none;
+
   }
   #challenge-card-image {
     height: 100%;
     width: 100%;
+    max-width: initial;
+    max-height: 225px;
+    object-fit: fill;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eaedf1;
   }
   #challenge-card-text {
     width: 100%;

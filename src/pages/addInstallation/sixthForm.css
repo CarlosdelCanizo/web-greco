@@ -1,8 +1,8 @@
 /***************************************************************SIXTH*FORM*************************************************************/
 /***SIXTH*FORM************************************************************************************************************************/
-#trespercent{
+/* #trespercent{
   margin-right: 5%;
-}
+} */
 #register-panel-fields-sixth-left {
   margin-top: 0%;
   margin-left: 0%;
@@ -14,8 +14,9 @@
   float: right;
 } 
 #div-installation-background {
+  width: 80%;
   margin-top: 3%;
-  /* margin-left: 10%; */
+  margin-left: 10%;
   background-color: #f9f9f9;
   height: 54px;
   border-style: solid;
@@ -23,8 +24,9 @@
   border-bottom-color: #2a4092;
 }
 #div-installation-background-right {
+  width: 80%;
   margin-top: 3%;
-  /* margin-left: 10%; */
+  margin-left: 10%;
   background-color: #f9f9f9;
   height: 54px;
   border-style: solid;
@@ -32,7 +34,8 @@
   border-bottom-color: #2a4092;
 }
 #div-observation-background {
-  margin-top: 3%;
+  width: 90%;
+  margin-top: 1%;
   margin-left: 5%;
   margin-right: 5%;
   background-color: #f9f9f9;
@@ -45,20 +48,20 @@
   display: block;
   width: 100%;
   text-align: left;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 10px;
   line-height: 1.25;
   color: #2a4092;
   background-color:transparent;
-  left: 1%;
+  left: 2%;
   top: 1%;
 }
 #panel-sixth-label-large {
   display: block;
   width: 100%;
   text-align: left;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 10px;
   line-height: 1.25;
   color: #2a4092;
   background-color:transparent;
@@ -66,41 +69,32 @@
   top: 2%;
 }
 #installation-name {
-  color: #2a4092;
+  color: #7f95a7;
   width: 100%;
   height:100%;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 14px;
   padding: 20px 10px 0 5px; 
   background-color: transparent;
   border-radius: 0;
-  top: -23%;
+  top: -18%;
   left: 0%;
 }
 #installation-property {
-  color: #2a4092;
-  width: 100%;
+  color: #7f95a7;
   height: 100%;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 14px;
   padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
   top: -30%;
-  margin-left: 0%;
+  margin-left: -3%;
 }
-.ant-select-selection {
-  /* color: #2a4092;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 16px;
-  padding: 0px 10px 0 5px; */
-  /* background-color: transparent; */
+/* .ant-select-selection {
+  width: 232px !important;
   border-radius: 0;
-  /* left: 0%;
-  top: -30% */
-}
+} */
 #subtittle-panel-registration-sixth {
   font-size: 18px;
   font-weight: 600;
@@ -117,7 +111,7 @@
   text-align: left;
   line-height: 1.25;
   color: #2a4092;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-top: -1%;
 }
 #col-battery {
@@ -127,16 +121,16 @@
   margin-top: -3%;
 }
 #battery-description, #observation {
-  color: #2a4092;
+  color: #7f95a7;
   width: 100%;
   height: 100%;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 14px;
   padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
   margin-left: 0%;
-  top: -24%;
+  top: -18%;
 }
 #text-panel-registration-sixth {
   font-size: 16px;
@@ -246,7 +240,7 @@ margin-left: 0%;
     display: block;
     width: 100%;
     text-align: left;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 1.25;
     color: #2a4092;
@@ -258,7 +252,7 @@ margin-left: 0%;
     display: block;
     width: 100%;
     text-align: left;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 1.25;
     color: #2a4092;
@@ -267,11 +261,11 @@ margin-left: 0%;
     top: 2%;
   }
   #installation-name {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     padding: 20px 10px 0 5px; 
     background-color: transparent;
     border-radius: 0;
@@ -279,11 +273,11 @@ margin-left: 0%;
     left: 0%;
   }
   #installation-property {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
@@ -328,11 +322,11 @@ margin-left: 0%;
     margin-top: -3%;
   }
   #battery-description, #observation {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
@@ -414,9 +408,9 @@ margin-left: 0%;
     margin-left: 0%;
     margin-top: 1%;
   }
-  #images-progress-bar {
+  /* #images-progress-bar {
     margin-left: 0%;
-  }
+  } */
 }
 
 /**************************************************************MOBILE*SMALL****************************************************************/
@@ -449,8 +443,8 @@ margin-left: 0%;
     display: block;
     width: 100%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color:transparent;
@@ -461,8 +455,8 @@ margin-left: 0%;
     display: block;
     width: 100%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color:transparent;
@@ -470,11 +464,11 @@ margin-left: 0%;
     top: 2%;
   }
   #installation-name {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     padding: 20px 10px 0 5px; 
     background-color: transparent;
     border-radius: 0;
@@ -482,11 +476,11 @@ margin-left: 0%;
     left: 0%;
   }
   #installation-property {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
@@ -535,11 +529,11 @@ margin-left: 0%;
     margin-top: -3%;
   }
   #battery-description, #observation {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
@@ -625,7 +619,7 @@ margin-left: 0%;
 }
 
 /*******ERROR*MESSAGE********/
-#error-post-update-message {
+/* #error-post-update-message {
   display: contents;
   width: 90%;
   height: 16px;
@@ -636,7 +630,7 @@ margin-left: 0%;
   color: red;
   margin-left: 0% !important;
   margin-top: -3%  !important;
-}
+} */
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {

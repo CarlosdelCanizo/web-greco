@@ -9,6 +9,7 @@ import Bronze from '../../assets/bronze.svg'
 import Header from '../../header/Header'
 import axiosConfig from '../../api/axiosConfig'
 import { Link } from 'react-router-dom'
+import influencer from '../../assets/group-foto.png'
 
 // import ChallengesContext from '../../context/ChallengesContext'
 
@@ -40,59 +41,70 @@ function ChallengeLevelCard() {
   return (
     <React.Fragment>
       <Header />
-      <div id="background-statistics">
-        <div id="challenge-card-container">
-          {myChallenges.map(item => (
-            <Card key={item.id}>
-              <Row>
-                <Col xs={24} sm={5} md={5} lg={9} xl={7} xxl={4}>
-                  <Tag color="#db4196" id="challenge-tagImage">{item.status}</Tag>
+      {/* <div id="background-statistics"> */}
+      <div id="challenge-card-container">
+        {myChallenges.map(item => (
+          <Card id="individual-challenge-card" key={item.id}>
+            <Row>
+              <Col xs={24} sm={5} md={7} lg={9} xl={7} xxl={4}>
+                <Row>
+                  <Tag id="challenge-tagImage" color={item.status === "OPEN" ? ("#2a4092") : ("#db4196")} >{item.status}</Tag>
                   <div id="challenge-card-image-container">
                     {item.percentageCompleted === 100.0 ?
-                      <img src={Gold} alt="medal" id="challenge-card-image" />
+                      (<img src={Gold} alt="gold-medal" id="challenge-card-image" />)
                       :
-                      <img src={noImage} alt="medal" id="challenge-card-image" />
+                      (item.percentageCompleted <= 66.0 && item.percentageCompleted >= 33.0 ?
+                        (<img src={Silver} alt="silver-medal" id="challenge-card-image" />)
+                        :
+                        (item.percentageCompleted <= 32.0 && item.percentageCompleted >= 1.0 ?
+                          (<img src={Bronze} alt="bronze-medal" id="challenge-card-image" />)
+                          :
+                          (<img src={influencer} alt="challenge-picture" id="challenge-card-image" />)))
                     }
 
                   </div>
-                </Col>
-                <Col span={19} xs={24} sm={19} md={19} lg={15} xl={17} xxl={20}>
-                  <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                </Row>
+              </Col>
+              <Col xs={24} sm={19} md={17} lg={15} xl={17} xxl={20}>
+                <Row>
+                  <Col xs={24} sm={24} md={24} lg={24} xl={24}>
 
-                      <div id="challenge-card-text">
-                        <p>From 12 November to 26 December</p>
-                        <Tag color="#db4196" id="challenge-tagBox">{item.status}</Tag>
-                        <h2 style={{ color: "#2a4092" }}>
-                          {/* Be an influencer */}
-                          {item.challengeName}
-                        </h2>
-                        <p>
-                          {item.challengeDescription}
-                          {/* Surely you know a lot of people with a photovoltaic panel in their home or workplace.
-                    Invite who surrounds you to be an active part of this community and become an influencer! */}
-                        </p>
-                      </div>
+                    <div id="challenge-card-text">
+                      <Tag id="challenge-tagBox" color={item.status === "OPEN" ? ("#2a4092") : ("#db4196")} >{item.status}</Tag>
+                      <h2 style={{ color: "#2a4092" }}>
+                        {item.challengeName}
+                      </h2>
+                      <p>
+                        {item.challengeDescription}
+                      </p>
+                    </div>
 
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={24} sm={24} md={24} lg={24} xl={24}>
 
-                      <div id="challenge-percentage">
-                        <Tooltip title="1 done / 2 in progress / 3 to do">
-                          <Progress percent={item.percentageCompleted} successPercent={33} type="line" />
-                        </Tooltip>
-                      </div>
+                    <div id="challenge-percentage">
+                      <Tooltip title="1 done / 2 in progress / 3 to do">
+                        <Progress
+                          strokeColor={{
+                            from: '#2a4092',
+                            to: '#db4196',
+                          }}
+                          percent={item.percentageCompleted}
+                          status="active"
+                        />
+                      </Tooltip>
+                    </div>
 
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Card>
-          ))}
-        </div>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Card>
+        ))}
       </div>
+      {/* </div> */}
     </React.Fragment>
   );
 

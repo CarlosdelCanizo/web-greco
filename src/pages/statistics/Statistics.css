@@ -3,12 +3,10 @@
 /**************************************************************COMPUTER****************************************************************/
 /**************************************COMPUTER****************************************************************/
 
-#background-statistics {
-  position: absolute;
-  background-color: #eaedf1;
-  height: auto; 
-  width: 100%;
+#leaflet-heat-map {
+  height: 80vh;
 }
+
 #statistics-map-container {
   margin-top: 5%;
   margin-left: 20%;
@@ -134,6 +132,11 @@ margin-left: -35%;
 /***TABLET****************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
+
+  #leaflet-heat-map {
+    height: 80vh;
+  }
+
   #background-statistics {
     position: absolute;
     background-color: #eaedf1;
@@ -160,10 +163,9 @@ margin-left: -35%;
   }
   #climate-objective-card-statistics-container {
     padding: 3%;
-    margin-top: 5%;
-    margin-left: 10%;
     text-align: center;
     width: 80%;
+    margin-left: 10%;
     height: 350px;
     font-size: 16px;
     background-color: white;
@@ -270,18 +272,18 @@ margin-left: -35%;
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #background-statistics {
-    position: relative;
-    background-color: #eaedf1;
-    height: auto; 
-    width: 100%;
+
+  #leaflet-heat-map {
+    height: 450px;
   }
+
   #container-cards {
     background-color: #eaedf1;
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
   #capacity-card-statistics-container {
     padding: 2%;
-    margin-top: 20%;
     margin-left: 5%;
     width: 90%;
     height: 153px;
@@ -291,18 +293,14 @@ margin-left: -35%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #statistics-map-container {
-    margin-top: 3%;
-    margin-bottom: 5%;
     margin-left: 5%;
     width: 90%;
-    height: 448px;
+    height: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
   #climate-objective-card-statistics-container {  
     padding: 5%;
-    margin-top: 2%;
     margin-left: 5%;
-    margin-bottom: 5%;
     text-align: center;
     width: 90%;
     height: 271px;
@@ -310,6 +308,47 @@ margin-left: -35%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+
+/*************************************MOBILE*SMALL****************************************************************/
+/**************************************ROOF*CARD******************************************************************/
+
+#tittle-installed {
+  margin-top: 5%;
+  font-family: Lato;
+  font-size: 12px;
+  letter-spacing: 1.49px;
+  text-align: center;
+  color: #8398aa;
+}
+#numbers-installed {
+  display: inline;
+  opacity: 0.96;
+  font-family: Montserrat;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #2a4092;
+}
+#big-letters-installed {
+ display: inline;
+ font-family: Montserrat;
+ font-size: 1em;
+ line-height: 1.42;
+ letter-spacing: 0.27px;
+ text-align: center;
+ color: #7f95a7;
+  
+}
+#small-letters-installed {
+  margin-top: 3%;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: 0.27px;
+  text-align: center;
+  color: #7f95a7;
+}
 
 /****************************************MOBILE*SMALL****************************************************************/
 /**************************************CLIMATE*OBJECTIVE*************************************************************/
@@ -357,47 +396,6 @@ margin-left: -45%;
 #small-letters-climate {
   margin-left: 40%;
   margin-top: -10%;
-  font-family: Montserrat;
-  font-size: 12px;
-  line-height: 1.08;
-  letter-spacing: 0.27px;
-  text-align: center;
-  color: #7f95a7;
-}
-
-/*************************************MOBILE*SMALL****************************************************************/
-/**************************************ROOF*CARD******************************************************************/
-
-#tittle-installed {
-  margin-top: 5%;
-  font-family: Lato;
-  font-size: 12px;
-  letter-spacing: 1.49px;
-  text-align: center;
-  color: #8398aa;
-}
-#numbers-installed {
-  display: inline;
-  opacity: 0.96;
-  font-family: Montserrat;
-  font-size: 2em;
-  font-weight: 500;
-  line-height: 1;
-  text-align: center;
-  color: #2a4092;
-}
-#big-letters-installed {
- display: inline;
- font-family: Montserrat;
- font-size: 1em;
- line-height: 1.42;
- letter-spacing: 0.27px;
- text-align: center;
- color: #7f95a7;
-  
-}
-#small-letters-installed {
-  margin-top: 3%;
   font-family: Montserrat;
   font-size: 12px;
   line-height: 1.08;
