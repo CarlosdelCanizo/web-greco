@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Card, Button } from 'antd'
+import { Card, Button, Row, Col } from 'antd'
 import Header from '../Header'
+import PrivateMapping from '../../pages/mapping/PrivateMapping'
 import NotificationCard from './NotificationCard'
 import "./notifications.css"
 import axiosConfig from '../../api/axiosConfig'
@@ -46,7 +47,7 @@ function NotificationsList() {
       })
       .then(response => {
         const responseData = response.data
-        console.log("El responseDatata de los comentarios para que se borren", responseData)
+
       })
       .catch(function (error) {
         console.log(error);
@@ -55,7 +56,18 @@ function NotificationsList() {
 
   return (
     <React.Fragment>
-      <Header />
+      {
+        (window.innerWidth < 600 && window.innerWidth < 768) ?
+          <Header />
+          :
+          (null)
+      }
+
+      <Row>
+        <Col xs={0} sm={0} md={24} lg={24} xl={24} >
+          <PrivateMapping />
+        </Col>
+      </Row>
       <Card id="notification-detail">
         <div>
           {notifications.length === 0 ?

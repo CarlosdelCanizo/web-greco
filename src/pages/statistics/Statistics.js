@@ -14,6 +14,7 @@ class Statistics extends React.Component {
   }
 
   render() {
+    document.body.classList.remove('body_forms');
     return (
       <React.Fragment >
         <Header />

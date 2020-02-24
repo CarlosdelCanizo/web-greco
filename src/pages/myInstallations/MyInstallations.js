@@ -6,7 +6,7 @@ import PanelList from './PanelList';
 import ButtonAdd from './ButtonAdd'
 
 function MyInstallations() {
-
+  document.body.classList.remove('body_forms');
   return (
     <React.Fragment>
       <Header />

@@ -5,7 +5,7 @@ import Header from '../../header/Header'
 import ChallengeList from './ChallengeList';
 
 function MyChallenges() {
-
+  document.body.classList.remove('body_forms');
   return (
     <React.Fragment>
       <Header />

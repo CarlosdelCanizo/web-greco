@@ -2,9 +2,9 @@
 
 #card-panel-register-inside {
   width: 600px;
-  height:700px;
+  height: 700px;
   margin-top: 3%;
-  margin-left: 30%;
+  margin: 0 auto;
   font-family: Montserrat;
   background-color: white;
   text-align: center;  
@@ -160,7 +160,7 @@ border-radius: none;
   background-color: transparent;
 }
 #commissioningDate {
-  width: 100%;
+  /* width: 100%; */
   padding: 20px 10px 0 0;
   left: 0%;
   top: -106%;
@@ -223,7 +223,7 @@ border-radius: none;
   border-bottom-color: #2a4092;
   margin-left: 20px;
 }
-/* #installation-type {
+#installation-type {
   color: #7f95a7;
   width: 100% !important;
   height: 62px !important;
@@ -233,7 +233,7 @@ border-radius: none;
   border-radius: 0;
   top: -100%;
   left: 1%;
-} */
+}
 .ant-select-selection {
   color: #7f95a7; 
   width: 100% !important;
@@ -319,19 +319,20 @@ border-radius: none;
 @media (min-width: 600px) and (max-width: 1023px) {
 .ant-calendar-picker-input {
     color: #7f95a7;
-    width: 192px;
+    width: calc((100vw / 3) - 5em );
     height: 52px;
     font-family: Montserrat;
     font-size: 14px;
     padding: 20px 10px 0 3px;
     border-radius: 0;
+    border: none;
     background-color: transparent;
   }
 #commissioningDate {
-    width: 100%;
+    /* width: 10%; */
     padding: 20px 10px 0 0;
     left: 0%;
-    top: -106%;
+    margin-top:-1px;
   }
 #card-panel-register-inside {
     width: 100%;
@@ -492,7 +493,7 @@ border-radius: none;
   border-width: 0px 0px 2px 0px;
   border-bottom-color: #2a4092;
 }
-/* #installation-type {
+#installation-type {
   color: #7f95a7;
   width: 100%;
   height: 100%;
@@ -500,13 +501,13 @@ border-radius: none;
   font-size: 14px;
   line-height: 1.6;
   border-radius: 0;
-  top: -71%;
+  top: -103%;
   left: 0%;
-} */
+}
 .ant-select-selection {
   color: #7f95a7;
-  width: 100% !important;
-  height: 52px !important;
+  width: 100%;
+  height: 52px ;
   font-family: Montserrat;
   font-size: 14px;
   padding: 20px 0 0 0;
@@ -596,17 +597,6 @@ border-radius: none;
 
 @media (min-width: 240px) and (max-width: 600px) {
  
-.ant-calendar-picker-input {
-    color: #7f95a7;
-    width: 100% !important;
-    height: 52px;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 0 0 6px;
-    border-radius: 0;
-    left: 0%;
-    background-color: transparent;
-  }
 #card-panel-register-inside {
     width: 100%;
     margin-top: 0%;
@@ -646,7 +636,7 @@ border-radius: none;
 }
 #div-electrical-background {
     margin-top: 5%;
-    margin-left: -2%;
+    margin-left: -4%;
     background-color: #f9f9f9;
     width: 90%;
     height: 54px;
@@ -714,6 +704,17 @@ border-radius: none;
     left: 0%;
     top: -68%;
 }
+.ant-calendar-picker-input {
+  color: #7f95a7;
+  width: calc(100vw - 48px);
+  height: 52px;
+  font-family: Montserrat;
+  font-size: 14px;
+  padding: 20px 0 0 6px;
+  border-radius: 0;
+  left: 0%;
+  background-color: transparent;
+}
 #div-date-background {
   margin-top: 8%;
   margin-left: 0%;
@@ -778,26 +779,28 @@ border-radius: none;
   left: -35%;
   top: -15%;
 }
-/* #installation-type { */
-  /* color: #7f95a7;
+#installation-type {
+ /* color: #7f95a7;
   font-family: Montserrat;
   font-size: 14px;
-  line-height: 1.6; */
-  /* border-radius: 0;
-  top: -71%;
-  left: 0%; */
-/* } */
+  line-height: 1.6; 
+  border-radius: 0; */
+  top: -80px;
+  left: 0%;
+  width: 100%;
+  /* height: 52px;  */
+ } 
 .ant-select-selection {
   color: #7f95a7;
-  width: 100% !important;
-  height: 52px !important;
+  /* width: 353px !important; */
+  /* height: 52px !important; */
   font-family: Montserrat;
   font-size: 14px;
   padding: 20px 0 0 0;
   background-color: transparent;
   border-radius: 0;
   left: 0%;
-  top: -40px;
+  /* top: -40px; */
 }
 #col-commissioning-date {
   margin-top: -11%;
@@ -859,13 +862,42 @@ border-radius: none;
 }
 }
 
+/*******************ADJUST*VIEWPORTS********************/
+/*CHROME****************************************************************************************/
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  .ant-input{ margin-top: -3px!important; } }   
+  /*COMPUTER*CHROME*/
+  .ant-input{ margin-top: -3px!important; }
 
-  @-moz-document url-prefix() {
-    
-    .ant-input{ margin-top:-4px!important; }
-    #div-inverter-background{
-      height: 53px!important;
+   /*TABLET*CROME*/
+   @media (min-width: 600px) and (max-width: 992px) {
+    .ant-select-selection {top: -32px !important;}
+  }
+
+  /*MOBILE*CHROME*/
+  @media (min-width: 240px) and (max-width: 600px) {
+    .ant-select {
+      margin-top: 4px!important;
+      margin-left: 1px;
+      /* width: 268px !important; */
       }
     }
+}   
+
+/*FIREFOX****************************************************************************/
+@-moz-document url-prefix() {
+    /*COMPUTER*FIREFOX*/
+    .ant-input {
+       margin-top:-4px!important; 
+      }
+    #div-inverter-background {
+      height: 53px!important;
+      }
+      /*MOBILE*FIREFOX*/
+    @media (min-width: 240px) and (max-width: 600px) { 
+      .ant-select {
+         margin-top: 4px!important;
+         /* width: 266px !important; */
+         }
+     }
+  
+}

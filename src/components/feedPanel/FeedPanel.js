@@ -161,11 +161,20 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
 
 const FeedPanel = (props) => {
 
-  const myPanel = props.location.myPanel;
   const [messagesList, setMessagesList] = useState([]);
 
-  return (
+  const myPanel = props.location.myPanel;
+  const myLocation = props.location.hash
 
+  function onClose() {
+    if (myLocation === "#my-installations") {
+      props.history.push('/my-installations')
+    } else {
+      props.history.push('/private-mapping')
+    }
+  }
+
+  return (
     <React.Fragment>
       <Header />
       <Row>
@@ -178,11 +187,9 @@ const FeedPanel = (props) => {
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
-            <Link to="private-mapping">
-              <Button id="feed-close-button">
-                <Icon type="close" />
-              </Button>
-            </Link>
+            <Button id="feed-close-button" onClick={onClose}>
+              <Icon type="close" />
+            </Button>
             <div id="feed-card-image-container">
               <ImageSlider multimedia={myPanel.panel.multimedia} />
             </div>
@@ -190,36 +197,36 @@ const FeedPanel = (props) => {
         </Row>
         <Row>
           <Col span={8}>
-            <h5 id="panel-data-labels">
+            <h5 id="feed-panel-data-labels">
               Electrical capacity
-                  </h5>
-            <h4 id="panel-data-fields">
+            </h5>
+            <h4 id="feed-panel-data-fields">
               {myPanel.panel.electrical_capacity} Kw
-                  </h4>
+            </h4>
           </Col>
           <Col span={8}>
-            <h5 id="panel-data-labels">
+            <h5 id="feed-panel-data-labels">
               Surface
-                  </h5>
-            <h4 id="panel-data-fields">
+            </h5>
+            <h4 id="feed-panel-data-fields">
               {myPanel.panel.surface} m²
-                  </h4>
+            </h4>
           </Col>
           <Col span={8}>
-            <h5 id="panel-data-labels">
+            <h5 id="feed-panel-data-labels">
               Inverter capacity
-                  </h5>
-            <h4 id="panel-data-fields">
+            </h5>
+            <h4 id="feed-panel-data-fields">
               {myPanel.panel.inverterCapacity} Kw
-                  </h4>
+            </h4>
           </Col>
         </Row>
         <Row >
-          <div id="feed-panel-user-name-container">
-            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
-            </Col>
-          </div>
+          {/* <div id="feed-panel-user-name-container"> */}
+          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
+          </Col>
+          {/* </div> */}
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

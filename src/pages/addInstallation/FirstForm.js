@@ -37,7 +37,12 @@ const FirstForm = (props) => {
   const myPanel = props.location.myPanel
 
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
-  document.body.classList.add('body_forms');
+
+  if (window.innerWidth < 768 && window.innerHeight > 720) {
+    document.body.classList.remove('body_forms');
+  } else {
+    document.body.classList.add('body_forms');
+  }
 
   //GET UPDATE DATA
   if (myPanel !== undefined) {
@@ -237,7 +242,7 @@ const FirstForm = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col id="col-register-panel-fields" xs={12} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item
               >
                 <div id="div-electrical-background">
@@ -254,7 +259,7 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
-            <Col id="col-register-panel-fields" xs={12} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
                   <label id="panel-input-label-surface">Surface</label>
@@ -269,7 +274,7 @@ const FirstForm = (props) => {
                 </div>
               </Form.Item>
             </Col>
-            <Col id="col-commissioning-date" xs={24} sm={8} md={8} lg={8} xl={8}>
+            <Col id="col-commissioning-date" xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
                   <label id="panel-input-label-commissioningDate">Comissioning date</label>
@@ -360,7 +365,7 @@ const FirstForm = (props) => {
             </Radio.Group>
           </Row>
           <Row>
-            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
                   <label id="panel-input-label-inverter">AC Inverter capacity</label>
@@ -376,7 +381,7 @@ const FirstForm = (props) => {
               </Form.Item>
             </Col>
 
-            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-firstform">
                   <label id="panel-input-label-type">Installation type</label>

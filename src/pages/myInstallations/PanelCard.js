@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import axiosConfig from '../../api/axiosConfig'
 import CardSlider from './CardSlider'
 
+
 const PanelCard = ({ panel, fetchPanels }) => {
+
+  const location = "my-installations"
 
   function updatePanelId() {
     localStorage.setItem('currentPanelId', JSON.stringify(panel.id))
@@ -28,7 +31,8 @@ const PanelCard = ({ panel, fetchPanels }) => {
       <Link to={
         {
           pathname: "/show-panel-details",
-          myPanel: { panel }
+          myPanel: { panel },
+          hash: location.toString()
         }
       }>
 
@@ -37,7 +41,8 @@ const PanelCard = ({ panel, fetchPanels }) => {
       <Link to={
         {
           pathname: "/feed-panel",
-          myPanel: { panel }
+          myPanel: { panel },
+          hash: location.toString()
         }
       }>
         <Button id="popover-menu-panels">Feed</Button>
@@ -83,8 +88,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
     <Col span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
       <Card id="installation-container">
         <Row>
-          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-          </Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2} />
           <Col xs={20} sm={20} md={20} lg={20} xl={20}>
             <div id="installation-tittle-button-container">
               <p id="installation-tittle">{panel.installationName}</p>

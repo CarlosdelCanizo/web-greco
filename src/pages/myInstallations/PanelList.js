@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from 'react'
 import PanelCard from './PanelCard'
 import axiosConfig from '../../api/axiosConfig'
 
-
 const PanelList = (props) => {
 
   const [panelsList, setPanelsList] = useState([])
@@ -20,7 +19,6 @@ const PanelList = (props) => {
     );
     setPanelsList(result.data);
   };
-
 
   useEffect(() => {
     fetchPanels();

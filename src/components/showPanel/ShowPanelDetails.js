@@ -10,6 +10,15 @@ import ShowMapping from "../ShowMapping"
 const ShowPanelDetails = (props) => {
 
   const myPanel = props.location.myPanel
+  const myLocation = props.location.hash
+
+  function onClose() {
+    if (myLocation === "#my-installations") {
+      props.history.push('/my-installations')
+    } else {
+      props.history.push('/private-mapping')
+    }
+  }
 
   return (
     <React.Fragment>
@@ -23,43 +32,41 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <p id="show-panel-card-tittle">{myPanel.panel.installationName}</p>
-            <Link to="private-mapping">
-              <Button id="show-panel-close-button">
-                <Icon type="close" />
-              </Button>
-            </Link>
+            <Button id="show-panel-close-button" onClick={onClose}>
+              <Icon type="close" />
+            </Button>
             <div id="show-panel-card-image-container">
               <ImageSlider multimedia={myPanel.panel.multimedia} />
             </div>
           </Col >
         </Row>
         <Row>
-          <div id="feed-panel-text-fields">
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Electrical capacity
+          {/* <div id="feed-panel-text-fields"> */}
+          <Col span={8}>
+            <h5 id="show-panel-data-labels-card">
+              Electrical capacity
                 </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.electrical_capacity} Kw
+            <h4 id="show-panel-data-fields">
+              {myPanel.panel.electrical_capacity} Kw
                 </h4>
-            </Col>
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Surface
+          </Col>
+          <Col span={8}>
+            <h5 id="show-panel-data-labels-card">
+              Surface
                 </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.surface} m²
+            <h4 id="show-panel-data-fields">
+              {myPanel.panel.surface} m²
                 </h4>
-            </Col>
-            <Col span={8}>
-              <h5 id="show-panel-data-labels-card">
-                Inverter capacity
+          </Col>
+          <Col span={8}>
+            <h5 id="show-panel-data-labels-card">
+              Inverter capacity
                 </h5>
-              <h4 id="show-panel-data-fields">
-                {myPanel.panel.inverterCapacity} Kw
+            <h4 id="show-panel-data-fields">
+              {myPanel.panel.inverterCapacity} Kw
                 </h4>
-            </Col>
-          </div>
+          </Col>
+          {/* </div> */}
           <Row >
             <div id="feed-panel-user-name-container">
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
@@ -73,7 +80,7 @@ const ShowPanelDetails = (props) => {
             <h5 id="show-panel-data-labels-first">
               Installation property
                 </h5>
-            <h4 id="show-panel-data-fields-second">
+            <h4 id="show-panel-data-fields-first">
               {myPanel.panel.installationProperty}
             </h4>
           </Col>
@@ -81,7 +88,7 @@ const ShowPanelDetails = (props) => {
             <h5 id="show-panel-data-labels-first">
               Technollogy used
                 </h5>
-            <h4 id="show-panel-data-fields-second">
+            <h4 id="show-panel-data-fields-first">
               {myPanel.panel.technologyUsed}
             </h4>
           </Col>
@@ -89,7 +96,7 @@ const ShowPanelDetails = (props) => {
         <Divider id="show-panel-divider" />
         <Row>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-second">
               Tracking orientation
                 </h5>
             <h4 id="show-panel-data-fields-second">
@@ -97,7 +104,7 @@ const ShowPanelDetails = (props) => {
             </h4>
           </Col>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-second">
               Tracking inclination
                 </h5>
             <h4 id="show-panel-data-fields-second">
@@ -108,18 +115,18 @@ const ShowPanelDetails = (props) => {
         <Divider id="show-panel-divider" />
         <Row>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-third">
               Orientation
                 </h5>
-            <h4 id="show-panel-data-fields-second">
+            <h4 id="show-panel-data-fields-third">
               {myPanel.panel.orientation}°
                 </h4>
           </Col>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-third">
               Inclination
                 </h5>
-            <h4 id="show-panel-data-fields-second">
+            <h4 id="show-panel-data-fields-third">
               {myPanel.panel.inclination}°
                 </h4>
           </Col>
@@ -127,7 +134,7 @@ const ShowPanelDetails = (props) => {
         <Divider id="show-panel-divider" />
         <Row>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-second">
               Battery
                 </h5>
             {myPanel.panel.battery ?
@@ -141,7 +148,7 @@ const ShowPanelDetails = (props) => {
             }
           </Col>
           <Col span={12}>
-            <h5 id="show-panel-data-labels">
+            <h5 id="show-panel-data-labels-second">
               Commissioning date
                 </h5>
             <h4 id="show-panel-data-fields-second">

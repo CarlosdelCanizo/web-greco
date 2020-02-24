@@ -27,7 +27,7 @@
   margin-right: 25%;
  }
 #welcome-title-text {
-  font-size: 2.2em;
+  font-size: 41.6px;
   font-weight: 600;
   text-align: left;
   margin-top: 12%;
@@ -36,14 +36,14 @@
 }
 #welcome-normal-text {
   margin-top: 5%;
-  font-size: 1.6em;
+  font-size: 24px;
   text-align: left;
   line-height: 1.25;
   color: #002c50;
 }
 #welcome-text-mini {
   margin-top: 5%;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 600;
   text-align: left;
   letter-spacing: 0.36px;
@@ -94,7 +94,7 @@
   position: relative;
   float: left;
   z-index: 999;
-  font-size: 1em;
+  font-size: 16px;
   bottom: 3%;
   margin-left: 0%;
   color: #2a4092;
@@ -123,7 +123,7 @@
   }
   #welcome-title-text {
     margin-top: 15%;
-    font-size: 2em;
+    font-size: 41.6;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -131,7 +131,7 @@
   }
   #welcome-normal-text {
     margin-top: 10%;
-    font-size: 1.5em;
+    font-size: 24m;
     text-align: left;
     line-height: 1.25;
     color: #002c50;
@@ -181,6 +181,7 @@
     padding-bottom: 50px; /* height of your footer */
   }
   #welcome-logo-mobile {
+    width: 95%;
     height: 15%;
     margin-top: 8%;
     margin-left: 5%;
@@ -196,7 +197,7 @@
   #welcome-title-text {
     height: 25%;
     margin-top: 10%;
-    font-size: 1.6em;
+    font-size: 26.6;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -205,7 +206,7 @@
   #welcome-normal-text {
     margin-top: 6%;
     margin-right: 8%;
-    font-size: 1.2em;
+    font-size: 16px;
     letter-spacing: 0.36px;
     text-align: left;
     line-height: 1.25;
@@ -215,7 +216,7 @@
     margin-top: 6%;
     width: 85%;
     margin-right: 8%;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 600;
     text-align: left;
     letter-spacing: 0.36px;
@@ -262,7 +263,7 @@
    left:0%;
    bottom: 0;
    width: 80%;
-   font-size: 0.8em;
+   font-size: 12;
    color: #2a4092;
    font-weight: 500;
   } 

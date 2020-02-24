@@ -29,9 +29,9 @@
 
 #show-panel-card-tittle {
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 2em;
+  line-height: 2.8em;
   width: 424px;
   height: 40px;
   text-align: center;
@@ -44,9 +44,9 @@
 }
 #show-panel-card-tittle:hover {
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 2em;
+  line-height: 2.8em;
   width: 424px;
   height: 40px;
   text-align: center;
@@ -115,9 +115,9 @@
   
   #show-panel-card-tittle {
     position: absolute;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    line-height: 2.2em;
+    line-height: 2.5em;
     width: 424px;
     height: 40px;
     text-align: center;
@@ -185,9 +185,9 @@
   
   #show-panel-card-tittle {
     position: absolute;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    line-height: 1.8em;
+    line-height: 2em;
     width: 100vw;
     height: 2rem;
     text-align: center;
@@ -231,55 +231,59 @@
   margin-left: -6%;
   width: 112%;
 }
+/*CARD*/
 #show-panel-data-labels-card {
   font-weight: 500;
   color: #bfc5d2;
-  font-size: 12px;
-  margin-top: -10%;
-}
-#show-panel-data-labels-first {
-  font-weight: 500;
-  color: #bfc5d2;
-  font-size: 12px;
+  font-size: 9px;
   margin-top: -5%;
-}
-#show-panel-data-labels {
-  font-weight: 500;
-  color: #bfc5d2;
-  font-size: 12px;
 }
 #show-panel-data-fields {
   font-family: Montserrat;
-  margin-top: -3%;
-  font-weight: 600;
+  margin-top: -2%;
+  font-weight: 500;
   color: #2a4092;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
 }
-#show-panel-data-labels-second {
+/*FIRST*/
+#show-panel-data-labels-first {
   font-weight: 500;
   color: #bfc5d2;
-  font-size: 12px;
+  font-size: 10px;
+  margin-top: 0%;
+}
+#show-panel-data-fields-first {
+  margin-top: -2%;
+  font-weight: 500;
+  color: #2a4092;
+  font-size: 15px;
+  text-align: center;
+}
+/*SECOND*/
+#show-panel-data-labels-second {
+  margin-top: 2%;
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 10px;
 }
 #show-panel-data-fields-second {
-  font-family: Montserrat;
-  margin-top: -3%;
-  font-weight: 600;
+  margin-top: -2%;
+  font-weight: 500;
   color: #2a4092;
-  font-size: 16px;
-  text-align: center;
+  font-size: 15px;
 }
+/*THIRD*/
 #show-panel-data-labels-third {
+  margin-top: 2%;
   font-weight: 500;
   color: #bfc5d2;
-  font-size: 12px;
+  font-size: 10px;
 }
 #show-panel-data-fields-third {
-  font-family: Montserrat;
   margin-top: -2%;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #2a4092;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
 }

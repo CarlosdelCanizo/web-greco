@@ -281,7 +281,7 @@ margin-left: 0%;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
-    top: -30%;
+    top: -100%;
     margin-left: 0%;
   }
   .ant-select-selection {
@@ -484,7 +484,7 @@ margin-left: 0%;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
-    top: -26%;
+    top: -106%;
     margin-left: 0%;
   }
   .ant-select-selection {
@@ -493,11 +493,11 @@ margin-left: 0%;
     height: 100%;
     font-family: Montserrat;
     font-size: 16px;
-    padding: 0px 10px 0 5px; */
-    /* background-color: transparent; */
+    padding: 0px 10px 0 5px; 
+    background-color: transparent; */
     border-radius: 0;
-    /* left: 0%;
-    top: -30% */
+    /* left: 0%; */
+    margin-top: 12%
   }
   #subtittle-panel-registration-sixth {
     font-size: 18px;
@@ -632,11 +632,69 @@ margin-left: 0%;
   margin-top: -3%  !important;
 } */
 
-
+/*******************ADJUST*VIEWPORTS********************/
+/*CHROME************************************************************************************************************/
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  #installation-name, #installation-property, #battery-description, #observation{ margin-top: -15px!important; } }   
+  /*COMPUTER*CHROME*/
+  #installation-name, #battery-description, #observation{ 
+    margin-top: -12px!important; 
+  }
+  #installation-property { 
+    margin-top: -18px !important;
+    width: 248px !important;
+    left: 3px; 
+  }
 
-  @-moz-document url-prefix() {
-    
-    #installation-name, #installation-property, #battery-description, #observation{ margin-top:-3px!important; }
+  /*TABLET*CHROME*/
+  @media (min-width: 600px) and (max-width: 992px) {
+    #installation-property {
+      top: 18px !important;
+      width: 300px !important;
+      margin-left: -8px;
     }
+  }
+
+  /*MOBILE*CHROME*/
+  @media (min-width: 240px) and (max-width: 600px) { 
+    #installation-name, #battery-description, #observation{ margin-top: -12px!important; }
+    #installation-property {
+      top: 2px !important;
+      width: 271px !important;
+      margin-left: -5px;
+    }
+    #div-installation-background, #div-installation-background-right {
+      width: calc(100% - 10px) !important;
+      margin-left: 0%;
+    }
+    #installation-type {
+      margin-top: 38px !important;
+    }
+  }
+}   
+
+/*FIREFOX**********************************************************************************/
+  @-moz-document url-prefix() {
+
+    /*COMPUTER-FIREFOX*/
+        #installation-name, #installation-property, #installation-property, #battery-description, #observation{ margin-top:-3px!important; }
+    
+    /*MOBILE FIREFOX*/
+        @media (min-width: 240px) and (max-width: 600px) { 
+          #installation-name, #battery-description, #observation{ margin-top: 0px !important; }
+          #installation-property {
+            top: -12px !important;
+            width: 271px !important;
+            margin-left: -5px;
+          }
+          #div-installation-background, #div-installation-background-right {
+            width: calc(100% - 10px) !important;
+            margin-left: 0%;
+          }
+        }   
+        /*TABLET*FIREFOX*/
+          @media (min-width: 600px) and (max-width: 992px) {
+          #installation-property {
+            top: -46px !important;
+          }
+    }
+  }

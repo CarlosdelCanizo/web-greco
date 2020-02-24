@@ -173,7 +173,7 @@ margin-right: 6%;
     #div-longlat-background-right {
       position: relative;
       margin-top: 5%;
-      margin-left: -25%;
+      left: -15%;
       background-color: #f9f9f9;
       width: 75%;
       height: 54px;
@@ -362,10 +362,19 @@ margin-right: 6%;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  #lon, #lat{ margin-top: -15px!important; } }   
+  /*COMPUTER*CROME*/
+  #lon, #lat{ margin-top: -12px!important; }
+/*TABLET*CROME*/
+/* @media (min-width: 600px) and (max-width: 992px) {
+  #lon {left: -20px !important;}
+  #div-longlat-background-right {left: -20px !important;}
+} */
+
+}   
 
   @-moz-document url-prefix() {
     
     #lon, #lat{ margin-top:-7px!important; }
     } 
   
+    
