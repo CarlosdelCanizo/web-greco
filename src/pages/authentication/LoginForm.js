@@ -153,15 +153,18 @@ const LoginForm = (props) => {
             </div>
             <div>
               <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
-              {/* <Divider id="large-divider" /> */}
+              <Divider id="large-divider" />
             </div>
             <div id="welcome-button-container">
-              <button id="button-login" disabled={data.isSubmitting}>
+              <Button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}
-              </button>
+              </Button>
             </div>
           </Form>
-          <h6 id="welcome-text-mini-account">Do not you have an account yet? <Link id="link" to="/register">Sign up</Link></h6>
+          <div>
+            <h6 id="welcome-text-mini-account">Do not you have an account yet?
+          <Link id="link" to="/register">Sign up</Link></h6>
+          </div>
           <Row>
             {/* <div id="login-text-footer-container"> */}
             <div className="fixed-footer">

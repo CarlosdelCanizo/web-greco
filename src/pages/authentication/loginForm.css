@@ -120,7 +120,7 @@
   font-weight: 600;
   width: 70%;
   height: 40px;
-  border: 0;
+  border-radius: 0;
   margin-left: 0%;
   margin-top: -15%;
 }
@@ -242,7 +242,7 @@
     font-weight: 600;
     width: 95%;
     height: 40px;
-    border: 0;
+    border-radius: 0;
     margin-left: 0%;
     margin-top: 10%;
   }
@@ -328,6 +328,9 @@
     margin-left: 0%;
     margin-top: -1%;
   }
+  #large-divider {
+    margin-top: -10%;
+  }
   #welcome-text-mini-forget {
     margin-top: 3%;
     width: 85%;
@@ -341,7 +344,7 @@
   }
   #welcome-text-mini-account {
     margin-top: 4%;
-    width: 85%;
+    width: 90%;
     margin-right: 8%;
     font-size:16px;
     font-weight: 500;

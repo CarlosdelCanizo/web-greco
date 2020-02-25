@@ -99,7 +99,6 @@ const ConfirmPasswordForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-confirm-background">
                   <label id="label-confirm">Password</label>
@@ -114,7 +113,6 @@ const ConfirmPasswordForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-confirm-background">
                   <label id="label-confirm">Confirm password</label>
@@ -141,9 +139,6 @@ const ConfirmPasswordForm = (props) => {
             </div>
           </Form>
         </div>
-        {/* <div id="confirm-text-footer-container">
-          <h6 id="confirm-text-footer">&nbsp;&nbsp;</h6>
-        </div> */}
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>
         <div id="col-background-logo">

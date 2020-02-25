@@ -29,7 +29,7 @@
   color: #2a4092;
   background-color: transparent;
   left: 1%;
-  top: 1%;
+  top: 2%;
   z-index: 1;
 }
 #register-username, #register-email, #register-password, #register-confirm {
@@ -120,7 +120,7 @@
     color: #2a4092;
     background-color: transparent;
     left: 1%;
-    top: 1%;
+    top: 2%;
     z-index: 1;
   }  
   #register-username, #register-email, #register-password, #register-confirm {
