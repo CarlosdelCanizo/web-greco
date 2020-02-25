@@ -28,7 +28,7 @@
   margin-right: 25%;
  }
 #title-register-complete {
-  width: 80%;
+  width: 98%;
   font-size: 2.2em;
   font-weight: 600;
   text-align: left;
@@ -38,16 +38,25 @@
 }
 #solar-image {
   margin-top: 5%;
+  width: 188px;
+  height: 171px;
+  object-fit: contain;
 }
 #text-register-complete {
-  width: 100%;
-  font-size: 20px;
   text-align: left;
-  line-height: 1;
-  color: #2a4092;
   margin-left: 0;
   margin-top: 10%;
+
+  width: 500px;
+  height: 80px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
   letter-spacing: 0.44px;
+  color: #002a54;
 }
 #button-register-complete {
   background-color: #db4196;
@@ -92,22 +101,27 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #col-welcome-container {
     background-image: none; 
-    height: 100vh;
+    height: auto;
     width: 100%;
     padding: 0%;
+    overflow: hidden;
   }
   #logo-mobile {
-    width: 80%;
     margin-top: 8%;
-    margin-left: 5%;
+    margin-left: 5%;  
+  }
+  #logo-mobile-image {
+    margin-left: 5.5%;
+    width: 65%;
   }
   #inside-welcome-container{
+    margin-top: 8%;
     margin-left: 8%;
     margin-right: 8%; 
   }
   #title-register-complete {
-    width: 100%;
-    margin-top: 5%;
+    width: 80%;
+    margin-top: -3%;
     font-size: 1.6em;
     font-weight: 600;
     text-align: left;
@@ -140,6 +154,7 @@
     height: 42px;
     border-radius: 0;
     margin-left: 0%;
+    margin-top: 0;
   }
 }
 

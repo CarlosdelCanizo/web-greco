@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import solarHouse from '../../assets/solar-house.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
-import { Row, Col, Card } from 'antd'
+import { Row, Col, Card, Button } from 'antd'
 import { Link } from 'react-router-dom'
 import './completeRegister.css'
 
@@ -29,9 +29,9 @@ const CompleteRegister = () => {
               <h4>You are already part of this great community. You only have one last step left to finish the process</h4>
             </div>
             <Link to="/login">
-              <button id="button-register-complete">
+              <Button id="button-register-complete">
                 NEXT
-            </button>
+            </Button>
             </Link>
           </div>
         </Col>

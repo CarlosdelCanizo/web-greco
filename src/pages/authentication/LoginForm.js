@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
-import { Row, Col, Divider, Form, Input, Button } from 'antd'
+import { Row, Col, Divider, Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
@@ -156,9 +156,9 @@ const LoginForm = (props) => {
               <Divider id="large-divider" />
             </div>
             <div id="welcome-button-container">
-              <Button id="button-login" disabled={data.isSubmitting}>
+              <button id="button-login" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="LOADING..." />) : ("LOGIN")}
-              </Button>
+              </button>
             </div>
           </Form>
           <div>
