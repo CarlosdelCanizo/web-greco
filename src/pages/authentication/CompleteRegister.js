@@ -46,4 +46,3 @@ const CompleteRegister = () => {
 }
 
 export default CompleteRegister
-

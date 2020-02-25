@@ -1,5 +1,14 @@
 /*************************************************************COMPUTER**************************************************************/
 /***COMPUTER************************************************************************************************************************/
+#register-title-text {
+  margin-top: 0%;
+  font-size: 26.6;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.25;
+  color: #2a4092;
+}
+
 #div-register-email-background {
   margin-left: 10%;
   margin-top: -1%;
@@ -14,8 +23,8 @@
   display: block;
   width: 99%;
   text-align: left;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 10px;
   line-height: 1.25;
   color: #2a4092;
   background-color: transparent;
@@ -24,11 +33,11 @@
   z-index: 1;
 }
 #register-username, #register-email, #register-password, #register-confirm {
-  color: #2a4092;
+  color: #7f95a7;
   width: 100%;
   height: 100%;
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 14px;
   padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
@@ -42,7 +51,7 @@
   line-height: 1.25;
   margin-left: 10%;
   margin-top: -6%;
-  color: #2a4092;
+  color: #063154;
 }
 #button-register {
   background-color: #db4196;
@@ -62,8 +71,8 @@
   width: 300px;
   height: 16px;
   font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 1000;
+  font-size: 9px;
+  font-weight: 500;
   letter-spacing: -0.07px;
   color: #ff3b30;
   margin-left: 10%;
@@ -83,9 +92,9 @@
     width: 45%;
     /* margin-left:10% */
   }
-  #welcome-title-text {
+  #register-title-text {
     margin-top: 10%;
-    font-size: 2em;
+    font-size: 26.6;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -105,8 +114,8 @@
     display: block;
     width: 99%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color: transparent;
@@ -115,11 +124,11 @@
     z-index: 1;
   }  
   #register-username, #register-email, #register-password, #register-confirm {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 14px;
     padding: 20px 10px 0 5px;
     background-color: transparent;
     border-radius: 0;
@@ -128,13 +137,13 @@
   }
 
   #container-checkbox {
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     letter-spacing: 0.36px;
     line-height: 1.25;
     margin-left: 10%;
     margin-top: -4%;
-    color: #2a4092;
+    color: #063154;
   }
   #button-register {
     background-color: #db4196;
@@ -153,8 +162,8 @@
     width: 300px;
     height: 16px;
     font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 1000;
+    font-size: 9px;
+    font-weight: 500;
     letter-spacing: -0.07px;
     color: #ff3b30;
     margin-left: 10%;
@@ -169,18 +178,18 @@
       overflow: auto !important;
     }
   #register-logo-mobile {
-    height: 15%;
     margin-top: 8%;
     margin-left: 5%;
   }
   #register-logo-mobile-image {
     margin-left: 5.5%;
-    width: 75%;
+    width: 65%;
+    height: 1%;
   }
-  #welcome-title-text {
-    margin-top: -5%;
+  #register-title-text {
+    margin-top: 5%;
     margin-bottom: 0%;
-    font-size: 1.5em;
+    font-size: 26.6px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -200,23 +209,23 @@
     display: block;
     width: 99%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color: #f9f9f9;
     left: 1%;
-    top: 1%;
+    top: 2%;
     z-index: 1;
   }
   #container-checkbox {
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     letter-spacing: 0.36px;
     line-height: 1.25;
     margin-left: 10%;
     margin-top: 0%;
-    color: #2a4092;
+    color: #063154;
   }
   #button-register {
     background-color: #db4196;
@@ -235,8 +244,8 @@
     width: 80%;
     height: 16px;
     font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 1000;
+    font-size: 9px;
+    font-weight: 500;
     letter-spacing: -0.07px;
     color: #ff3b30;
     margin-top: 0%;
@@ -244,25 +253,7 @@
   }
   
 }
-/**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
-/***MOBILE*EXTRA*SMALL**********************************************************************************************************************/
 
-/* @media (max-width: 240px)  {
-  #register-text-footer-container{
-    width: 100%;
-    text-align: center;
-    bottom: -15%;
-  }
-  #register-text-footer {
-    position: relative;
-    z-index: 999;
-    font-size: 0.8em;
-    bottom: -15%;
-    left: 2%;
-    width: 80%;
-    color: #2a4092;
-  } 
-} */
 
 /**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
 /***ORIENTATION*LANDSCAPE***********************************************************************************************************************/
@@ -298,9 +289,9 @@
 /* }  */
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  #register-username, #register-email, #register-password, #register-confirm{ margin-top: -15px !important; } }   
+  #register-username, #register-email, #register-password, #register-confirm{ margin-top: -12px !important; } }   
 
   @-moz-document url-prefix() {
     
-    #register-username, #register-email, #register-password, #register-confirm { margin-top:-4px !important; }
+    #register-username, #register-email, #register-password, #register-confirm { margin-top:-2px !important; }
     }

@@ -106,7 +106,7 @@ const LoginForm = (props) => {
   return (
     <Row>
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} xs={24} sm={24} md={24} lg={0} xl={0}>
+        <Col id="login-logo-mobile" span={24} xs={24} sm={24} md={24} lg={0} xl={0}>
           <Row>
             <img src={mobileLogo} id="login-logo-mobile-image" alt="mobile-logo" />
           </Row>
@@ -134,7 +134,6 @@ const LoginForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-login-email-background">
                   <label id="login-label">Password</label>
@@ -154,7 +153,7 @@ const LoginForm = (props) => {
             </div>
             <div>
               <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
-              <Divider id="large-divider" />
+              {/* <Divider id="large-divider" /> */}
             </div>
             <div id="welcome-button-container">
               <button id="button-login" disabled={data.isSubmitting}>

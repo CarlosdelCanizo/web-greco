@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 
+
 /************************************************************FEED*PANEL*COMPUTER*CONTAINERS************************************************/
 /***COMPUTER************************************************************************************************************/
 
@@ -100,7 +101,7 @@
   margin-top: 0%;
   margin-left: 5%;
   width: 100%;
-  height: 300px;
+  /* height: 300px; */
 }
 
 #panel-feed-container-message-box {
@@ -300,7 +301,14 @@
     margin-top: 3%;
     margin-left: 5%;
     width: 100%;
+    height: calc(100vh - 710px);
   }
+  #feed-list-container{
+    height: calc(100vh - 675px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  } 
   #panel-feed-container-message-box {
     display: block;
     width: 100%;
@@ -419,7 +427,7 @@
 /************************************************************FEED*PANEL*CONTAINERS*MOBILE*************************************************/
 /***MOBILE***************************************************************************************************************/
 
-@media (min-width: 240px) and (max-width: 600px) {
+@media (min-width: 240px) and (max-width: 600px) and (max-height: 800px){
   /* #panel-feed-outside {
     position: fixed;
     background-color: #eaedf1;
@@ -709,6 +717,9 @@
     height: calc(100vh - 320px);
   }
 }
+
+
+
 /*UNTIL*915*/
 @media (min-height: 811px) and (max-height: 915px) {
   #feed-panel-messages-list{
@@ -717,7 +728,7 @@
   #feed-list-container{
     height: calc(100vh - 330px);
   }
-}
+} 
 /*UNTIL*1025*/
 @media (min-height: 916px) and (max-height: 1025px) {
   #feed-panel-messages-list{
@@ -726,30 +737,9 @@
   #feed-list-container{
     height: calc(100vh - 395px);
   }
-  @media (min-width:767) and (max-width:769) {
-    #feed-panel-messages-list{
-      height: calc(100vh - 710px);
-    }
-    #feed-list-container{
-      height: calc(100vh - 395px);
-    }
-      #feed-form-container {
-      margin-bottom: 130px;
-    } 
-  }
+  
 }
-/*IPAD*/
-/* @media (min-height: 916px) and (max-height: 1025px) and (min-width: 767) and (max-width:769px) {
-  #feed-panel-messages-list{
-    height: calc(100vh - 710px);
-  }
-  #feed-list-container{
-    height: calc(100vh - 395px);
-  }
-    #feed-form-container {
-    margin-bottom: 130px;
-  } 
-} */
+
 
 /*UNTIL*1367*/
 @media (min-height: 1365px) and (max-height: 1367px) {
@@ -758,5 +748,93 @@
   }
   #feed-list-container{
     height: calc(100vh - 450px);
+  }
+}
+
+@media (min-height: 988px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 710px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 675px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  }
+  #feed-send-button{
+    left: 98%;
+    top: -18px;
+  }
+}
+
+
+
+/*Galaxy note 9 414x846*/
+@media (min-width: 413px) and (max-width: 416px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 540px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 504px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  }
+  #feed-send-button{
+    left: 98%;
+    top: -18px;
+  }
+}
+
+/*Ipad pro 10 834x112*/
+@media (min-width: 832px) and (max-width: 835px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 763px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 504px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  }
+  #feed-send-button{
+    left: 98%;
+    top: -18px;
+  }
+}
+
+
+/*Ipad pro 12 1024x1366*/
+@media (min-width: 1022px) and (max-width: 1025px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 1046px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 1016px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  }
+  #feed-send-button{
+    left: 98%;
+    top: -18px;
+  }
+}
+
+
+/*Ipad pro 12 1024x1366*/
+@media (min-width: 1022px) and (max-width: 1025px) {
+  #feed-panel-messages-list{
+    height: calc(100vh - 1046px);
+  }
+  #feed-list-container{
+    height: calc(100vh - 1016px);
+  }
+    #feed-form-container {
+    margin-bottom: 130px;
+  }
+  #feed-send-button{
+    left: 98%;
+    top: -18px;
   }
 }

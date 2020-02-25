@@ -66,7 +66,6 @@ const RegisterForm = (props) => {
 
   return (
     <Row>
-
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
         <Col span={24} id="register-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
           <Row>
@@ -74,7 +73,7 @@ const RegisterForm = (props) => {
           </Row>
         </Col>
         <div id="inside-welcome-container" >
-          <h1 id="welcome-title-text" >
+          <h1 id="register-title-text" >
             USER REGISTER
           </h1>
           <Form onSubmit={handleFormSubmit}>
@@ -93,7 +92,6 @@ const RegisterForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Email</label>
@@ -108,7 +106,6 @@ const RegisterForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Password</label>
@@ -123,7 +120,6 @@ const RegisterForm = (props) => {
                   />
                 </div>
               </Form.Item>
-              <Divider id="between-inputs" />
               <Form.Item>
                 <div id="div-register-email-background">
                   <label id="register-label">Confirm password</label>

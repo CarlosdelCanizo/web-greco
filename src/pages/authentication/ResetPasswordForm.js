@@ -3,7 +3,6 @@ import recLogo from '../../assets/rect-logo.png'
 import mobileLogo from '../../assets/greco-logo-mobile.png'
 import spinner from "../../assets/spinner.svg";
 import { Row, Col, Form, Input, Alert, Button } from 'antd'
-import { Redirect } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import './resetPassword.css'

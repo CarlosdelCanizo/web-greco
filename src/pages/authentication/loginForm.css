@@ -28,7 +28,7 @@
   margin-right: 25%;
  }
 #login-title-text {
-  font-size: 2.2em;
+  font-size: 41.6;
   font-weight: 600;
   text-align: left;
   margin-top: 12%;
@@ -59,8 +59,8 @@
   display: block;
   width: 98%;
   text-align: left;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 10px;
   line-height: 1.24;
   color: #2a4092;
   background-color: transparent;
@@ -69,11 +69,11 @@
   z-index: 1;
 }
 #login-email, #login-password {
-  color: #2a4092;
+  color: #7f95a7;
   width: 100% ;
   height: 100% ;
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 14px;
   padding: 20px 10px 0 5px;
   background-color: transparent;
   border-radius: 0;
@@ -82,33 +82,31 @@
 }
 #welcome-text-mini-forget {
   margin-top: 5%;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 14px;
   text-align: left;
   letter-spacing: 0.36px;
   line-height: 1.25;
-  color: #2a4092;
+  color: #002a54;
 }
 #welcome-text-mini-account {
   margin-top: 5%;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 14px;
   text-align: left;
   letter-spacing: 0.36px;
   line-height: 1.25;
-  color: #2a4092;
+  color: #002a54;
 }
 #login-error-message {
   display: inline-block;
   width: 60%;
   height: 16px;
   font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 1000;
+  font-size: 9px;
+  font-weight: 500;
   letter-spacing: -0.07px;
   color:red;
   margin-left: 10%;
-  top: -10%;
+  margin-top: -10%;
 }
 #welcome-button-container {
   display: flex;
@@ -120,11 +118,11 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 600;
-  width: 65%;
+  width: 70%;
   height: 40px;
   border: 0;
   margin-left: 0%;
-  margin-top: -10%;
+  margin-top: -15%;
 }
 #link {
   color: #db4196;
@@ -144,8 +142,10 @@
 }
 
 #login-text-footer {
-  color: #2a4092;
-  font-weight: 500;
+  margin-left: 13%;
+  margin-right: 13%;
+  color: #002a54;;
+  font-size: 16px;
 }
 /**************************************************************TABLET*****************************************************************/
 /***TABLET************************************************************************************************************************/
@@ -173,7 +173,7 @@
   }
   #login-title-text {
     margin-top: 15%;
-    font-size: 2em;
+    font-size: 26.6;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -193,8 +193,8 @@
     display: block;
     width: 100%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color: transparent;
@@ -202,11 +202,11 @@
     top: 1%;
   }
   #login-email, #login-password {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 2;
     background-color: transparent;
     border-radius: 0;
@@ -217,12 +217,11 @@
     margin-top: 6%;
     width: 90%;
     margin-right: 8%;
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 16px;
     text-align: left;
     letter-spacing: 0.36px;
     line-height: 1.25;
-    color: #2a4092;
+    color: #002a54;
   }
   #welcome-text-mini-account {
     margin-top: 6%;
@@ -282,16 +281,15 @@
     margin-right: 8%; 
   }
   #login-logo-mobile {
-    height: 15%;
     margin-top: 8%;
     margin-left: 5%;
   }
   #login-logo-mobile-image {
     margin-left: 5.5%;
-    width: 75%;
+    width: 65%;
   }
   #login-title-text {
-    font-size: 1.6em;
+    font-size: 26.6px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -311,8 +309,8 @@
     display: block;
     width: 98%;
     text-align: left;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 10px;
     line-height: 1.25;
     color: #2a4092;
     background-color: transparent;
@@ -320,11 +318,11 @@
     top: 1%;
   }
   #login-email, #login-password {
-    color: #2a4092;
+    color: #7f95a7;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 14px;
     border-style: solid;
     border-radius: 0;
     margin-left: 0%;
@@ -334,19 +332,19 @@
     margin-top: 3%;
     width: 85%;
     margin-right: 8%;
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     text-align: left;
     letter-spacing: 0.36px;
     line-height: 1.25;
-    color: #2a4092;
+    color: #002a54;;
   }
   #welcome-text-mini-account {
     margin-top: 4%;
     width: 85%;
     margin-right: 8%;
-    font-size: 1em;
-    font-weight: 600;
+    font-size:16px;
+    font-weight: 500;
     text-align: left;
     letter-spacing: 0.36px;
     line-height: 1.25;
@@ -375,74 +373,19 @@
   #login-text-footer {
     position: fixed;
     text-align: left;
-    left:10%;
-    right: 5%;
+    left: -4%;
+    right: -4%;
     bottom: 0;
     width: 80%;
-    font-size: 0.8em;
+    font-size: 14px;
     color: #2a4092;
   } 
 }
 
-/**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
-/***MOBILE*EXTRA*SMALL**********************************************************************************************************************/
-
-/* @media (max-width: 240px)  {
-  #login-text-footer-container{
-    width: 100%;
-    text-align: center;
-    bottom: -15%;
-  }
-  #login-text-footer {
-    font-size: 0.8em;
-    bottom: -15%;
-    left: 2%;
-    width: 80%;
-    color: #2a4092;
-  } 
-} */
-
-/**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
-/***ORIENTATION*LANDSCAPE***********************************************************************************************************************/
-
-/* @media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
-  
-  #label {
-    display: inline-block;
-    width: 85%;
-    text-align: left;
-    margin-left: 0px;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color: #f9f9f9;
-    border-bottom: 10px solid #f9f9f9;
-    margin-left: 10%;
-    margin-bottom: -1%;
-    margin-top: 8%;
-  }
-  #login-text-footer-container{
-    z-index: 999;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: -15%;
-  }
-  #login-text-footer {
-    position: relative;
-    z-index: 999;
-    font-size: 0.8em;
-    bottom: -15%;
-    left: -10%;
-    width: 80%;
-    color: #2a4092;
-  } 
-}  */
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  #login-email, #login-password{ margin-top: -14px!important; } }   
+  #login-email, #login-password{ margin-top: -12px!important; } }   
 
   @-moz-document url-prefix() {
-    
     #login-email, #login-password{ margin-top:-4px !important; }
     }

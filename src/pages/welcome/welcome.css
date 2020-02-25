@@ -6,13 +6,15 @@
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover; 
+  overflow: hidden; 
 }
 #inside-welcome-container {
   margin-top: 12%;
   margin-left: 25%;
   margin-right: 25%; 
   padding: 1%;  
+  overflow: hidden;
 }
 #col-background {
   background-image: url(../../assets/background.png);
@@ -27,10 +29,12 @@
   margin-right: 25%;
  }
 #welcome-title-text {
-  font-size: 41.6px;
+  width: 430px;
+  height: 100px;
+  font-size: 41px;
   font-weight: 600;
   text-align: left;
-  margin-top: 12%;
+  margin-top: 8%;
   line-height: 1.25;
   color: #2a4092;
 }
@@ -85,18 +89,16 @@
   color: #db4196;
 }
 #welcome-text-footer-container{
-  position: fixed;
-  z-index: 999;
-  width: 20%;
-  bottom: 2%;
+  position: absolute;
+  width: 40%;
+  bottom: 1%;
 }
 #welcome-text-footer {
-  position: relative;
+  position: absolute;
   float: left;
-  z-index: 999;
-  font-size: 16px;
-  bottom: 3%;
-  margin-left: 0%;
+  font-size: 15px;
+  bottom: 0;
+  margin-left: 0;
   color: #2a4092;
   font-weight: 500;
 }
@@ -105,13 +107,14 @@
 /***TABLET****************************************************************************************************************************/
 @media (min-width: 600px) and (max-width: 992px) {
   #col-welcome-container {
-    height: 100vh; 
+    height: 100vh;
   }
   #inside-welcome-container {
     margin-top: 30%;
     margin-left: 20%;
     margin-right: 20%; 
-    padding: 0%;  
+    padding: 0%; 
+    overflow: hidden; 
   }
   #welcome-logo-mobile {
     height: 30%;
@@ -151,18 +154,16 @@
     height: 10px;
   }
   #welcome-text-footer-container{
-    position: fixed;
-    z-index: 999;
+    position: absolute;
     width: 40%;
-    bottom: 2%;
+    bottom: 1%;
   }
   #welcome-text-footer {
-  font-size: 0.8em;
-  position: relative;
+  font-size: 15px;
+  position: absolute;
   float: left;
-  z-index: 999;
-  font-size: 1em;
-  bottom: 3%;
+  font-size: 15px;
+  bottom: 1%;
   margin-left: 0%;
   color: #2a4092;
   font-weight: 500;
@@ -174,21 +175,20 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #col-welcome-container {
     background-image: none; 
-    min-height: 100vh; /* will cover the 100% of viewport */
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 50px; /* height of your footer */
+  }
+  #inside-welcome-container {
+    overflow-y: hidden;
   }
   #welcome-logo-mobile {
-    width: 95%;
-    height: 15%;
     margin-top: 8%;
     margin-left: 5%;
   }
   #welcome-logo-mobile-image {
     margin-left: 5.5%;
-    width: 75%;
+    width: 65%;
   }
   #inside-welcome-container{
     margin-left: 8%;
@@ -197,7 +197,7 @@
   #welcome-title-text {
     height: 25%;
     margin-top: 10%;
-    font-size: 26.6;
+    font-size: 26.6px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -255,36 +255,20 @@
     border-radius: 0;
   }
   #welcome-text-footer-container{
-   position: fixed;
+   position: absolute;
    width: 100%;
-   height: auto;
+   bottom: 0;
   }
   #welcome-text-footer {
    left:0%;
    bottom: 0;
    width: 80%;
-   font-size: 12;
+   font-size: 12px;
    color: #2a4092;
    font-weight: 500;
   } 
 }
 
-/**************************************************************MOBILE*EXTRA*SMALL****************************************************************/
-/***MOBILE*EXTRA*SMALL***************************************************************************************************************************/
-
-/* @media (max-width: 240px)  {
-  #welcome-text-footer-container{
-    width: 100%;
-    text-align: center;
-    top: 2%;
-  }
-  #welcome-text-footer {
-    font-size: 0.8em;
-    top: -152%;
-    width: 80%;
-    color: #2a4092;
-  } 
-} */
 
 /**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
 /***ORIENTATION*LANDSCAPE**************************************************************************************************************************/
