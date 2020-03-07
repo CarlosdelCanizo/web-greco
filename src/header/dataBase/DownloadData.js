@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext, useCallback } from "react"
-import { Input, Button, Form, Icon, Col, Card, Row } from 'antd';
+import React, { useState } from "react"
+import { Button, Col, Card, Row, Divider } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import './downloadData.css'
-import { Link } from "react-router-dom";
-import spinner from "../../assets/spinner.svg";
 import moment from 'moment'
 
 
@@ -43,7 +41,8 @@ const DownloadData = (props) => {
           <Card id="download-card-container">
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h1>Download database</h1>
+                <h1 id="edit-details-tittle">Download database</h1>
+                <Divider />
               </Col >
             </Row>
             <Row>

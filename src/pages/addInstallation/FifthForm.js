@@ -108,8 +108,8 @@ const FifthForm = props => {
                 <Row>
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <p id="text-panel-registration">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            If your device doesn't detect the inclination of your panel, you can type it in.
+                            If you don't know the precise inclination, you may use the drop-down menu below.
                         </p>
                     </Col>
                 </Row>
@@ -160,12 +160,12 @@ const FifthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={inclinationImage} id="register-panel-image-fifth" />
                                         </Col>
-                                        <p id="text-panel-north">
+                                        {/* <p id="text-panel-north">
                                             Definition 0° North
-                                            </p>
+                                            </p> */}
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="fourth">
-                                                <Button id="button-panel-register-previous-fifth">PREVIOUS</Button>
+                                                <Button id="button-panel-register-previous-fifth">BACK</Button>
                                             </Link>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -210,13 +210,13 @@ const FifthForm = props => {
                                             <img src={inclinationImage} id="register-panel-image-fifth-select" />
                                         </Col>
 
-                                        <p id="text-panel-north">
+                                        {/* <p id="text-panel-north">
                                             Definition 0° North
-                                    </p>
+                                    </p> */}
 
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="fourth">
-                                                <Button id="button-panel-register-previous-fifth">PREVIOUS</Button>
+                                                <Button id="button-panel-register-previous-fifth">BACK</Button>
                                             </Link>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>

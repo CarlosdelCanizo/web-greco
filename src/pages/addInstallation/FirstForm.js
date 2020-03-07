@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message, Divider } from 'antd'
+import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -231,7 +231,7 @@ const FirstForm = (props) => {
           </Col>
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h2 id="tittle-panel-registration">Register your solar installation</h2>
+              <h2 id="tittle-panel-registration">Upload a solar power system</h2>
             </Col>
           </Row>
           <Row>
@@ -246,7 +246,7 @@ const FirstForm = (props) => {
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label-electrical_capacity">Electrical capacity</label>
+                  <label id="panel-input-label-electrical_capacity">Power</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
@@ -262,7 +262,7 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
-                  <label id="panel-input-label-surface">Surface</label>
+                  <label id="panel-input-label-surface">Area</label>
                   <Input
                     value={data.surface === 0 ? surface : data.surface}
                     onChange={handleInputChange}
@@ -277,7 +277,7 @@ const FirstForm = (props) => {
             <Col id="col-commissioning-date" xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
-                  <label id="panel-input-label-commissioningDate">Comissioning date</label>
+                  <label id="panel-input-label-commissioningDate">Date of installation</label>
                   <DatePicker
                     defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
                     onChange={onChangeDatePicker}
@@ -293,7 +293,7 @@ const FirstForm = (props) => {
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div id="div-subtittle">
-                <h3 id="subtittle-panel-registration">Panel type</h3>
+                <h3 id="subtittle-panel-registration">Solar panel type</h3>
               </div>
             </Col>
           </Row>

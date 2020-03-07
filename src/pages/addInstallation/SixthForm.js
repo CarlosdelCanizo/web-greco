@@ -251,14 +251,14 @@ const SixthForm = props => {
           </Row>
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h2 id="tittle-panel-registration">Additional information</h2>
+              <h2 id="tittle-panel-registration">Details of your installation</h2>
             </Col>
           </Row>
           <Row >
             <Col id="register-panel-fields-sixth-left" xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background">
-                  <label id="panel-sixth-label">Instalation name</label>
+                  <label id="panel-sixth-label">Name of your installation</label>
                   <Input
                     placeholder='My installation'
                     type="text"
@@ -274,7 +274,7 @@ const SixthForm = props => {
             <Col id="register-panel-fields-sixth-right" xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-right">
-                  <label id="panel-sixth-label">Installation property</label>
+                  <label id="panel-sixth-label">Owner</label>
                   <Select placeholder='Private'
                     name="installationProperty"
                     id="installation-property"
@@ -292,7 +292,7 @@ const SixthForm = props => {
           </Row>
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h2 id="subtittle-panel-registration-sixth">Installation photography</h2>
+              <h2 id="subtittle-panel-registration-sixth">Upload an image</h2>
 
               <div id="upload-images">
                 <Upload
@@ -316,7 +316,7 @@ const SixthForm = props => {
             <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Row>
                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <h3 id="subtittle-panel-registration-battery"> Do you have a battery?</h3>
+                  <h3 id="subtittle-panel-registration-battery"> Does it has a battery?</h3>
                 </Col>
                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                   <div id="battery-radio-sixth" >
@@ -327,8 +327,8 @@ const SixthForm = props => {
                       onChange={onChangeRadio}
                       value={radioValue}
                     >
-                      <Radio value={true} id="radio-button" >YES</Radio>
-                      <Radio value={false} id="radio-button" >NO</Radio>
+                      <Radio value={true} id="radio-button" >Yes</Radio>
+                      <Radio value={false} id="radio-button" >No</Radio>
                     </Radio.Group>
                   </div>
                 </Col>
@@ -341,7 +341,7 @@ const SixthForm = props => {
             <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Form.Item>
                 <div id="div-observation-background">
-                  <label id="panel-sixth-label-large">Battery Description</label>
+                  <label id="panel-sixth-label-large">Type of battery</label>
                   <Input
                     placeholder='12V 700Ah Upower'
                     type="text"
@@ -360,7 +360,7 @@ const SixthForm = props => {
               <Form.Item>
                 <div id="div-observation-background">
                   <label id="panel-sixth-label-large">Observations</label>
-                  <Input placeholder='Observations and comments'
+                  <Input placeholder='Add more information that can be relevant'
                     type="text"
                     name="observation"
                     id="observation"
@@ -375,7 +375,7 @@ const SixthForm = props => {
 
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Link to="/fifth">
-                <Button id="button-panel-register-previous-sixth">PREVIOUS</Button>
+                <Button id="button-panel-register-previous-sixth">BACK</Button>
               </Link>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>

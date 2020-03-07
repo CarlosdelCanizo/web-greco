@@ -109,8 +109,8 @@ const FourthForm = props => {
                 <Row>
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <p id="text-panel-registration">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            If your device doesn't detect the orientation of your panel, you can type it in.
+                            If you don't know the precise orientation, you may use the drop-down menu below.
                         </p>
                     </Col>
                 </Row>
@@ -157,11 +157,11 @@ const FourthForm = props => {
                                             <img src={compass} id="register-panel-image-fourth" />
                                         </Col>
                                         <p id="text-panel-north">
-                                            Definition 0° North
+                                            0º corresponds to North
                                         </p>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="/third">
-                                                <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
+                                                <Button id="button-panel-register-previous-fourth">BACK</Button>
                                             </Link>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -212,12 +212,12 @@ const FourthForm = props => {
                                         </Col>
 
                                         <p id="text-panel-north">
-                                            Definition 0° North
+                                            0º corresponds to North
                                             </p>
 
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="/third">
-                                                <Button id="button-panel-register-previous-fourth">PREVIOUS</Button>
+                                                <Button id="button-panel-register-previous-fourth">BACK</Button>
                                             </Link>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>

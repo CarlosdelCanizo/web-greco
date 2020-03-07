@@ -59,15 +59,7 @@ const Routes = () => {
           <Route path="/public-mapping" component={PublicMapping} />
           <Route path="/about" component={About} />
           <Route path="/download" component={DownloadDatabase} />
-
-          {/* <Route path="/first" component={FirstForm} />
-          <Route path="/second" component={SecondForm} />
-          <Route path="/third" component={ThirdForm} />
-          <Route path="/fourth" component={FourthForm} />
-          <Route path="/fifth" component={FifthForm} />
-          <Route path="/sixth" component={SixthForm} /> */}
-
-          {/* <Route path="/image-slider" component={ImageSlider} /> */}
+          <Route path="/notifications" component={NotificationsList} />
 
           <PrivateRoute
             path="/first"
@@ -138,11 +130,6 @@ const Routes = () => {
             path="/invite-friends"
             auth={state.isAuthenticated}
             component={InviteFriends}
-          />
-          <PrivateRoute
-            path="/notifications"
-            auth={state.isAuthenticated}
-            component={NotificationsList}
           />
           <PrivateRoute
             path="/my-challenges"

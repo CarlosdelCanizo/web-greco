@@ -44,7 +44,7 @@ const ShowPanelDetails = (props) => {
           {/* <div id="feed-panel-text-fields"> */}
           <Col span={8}>
             <h5 id="show-panel-data-labels-card">
-              Electrical capacity
+              Power
                 </h5>
             <h4 id="show-panel-data-fields">
               {myPanel.panel.electrical_capacity} Kw
@@ -52,7 +52,7 @@ const ShowPanelDetails = (props) => {
           </Col>
           <Col span={8}>
             <h5 id="show-panel-data-labels-card">
-              Surface
+              Area
                 </h5>
             <h4 id="show-panel-data-fields">
               {myPanel.panel.surface} m²
@@ -78,7 +78,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={12}>
             <h5 id="show-panel-data-labels-first">
-              Installation property
+              Owner
                 </h5>
             <h4 id="show-panel-data-fields-first">
               {myPanel.panel.installationProperty}
@@ -149,7 +149,7 @@ const ShowPanelDetails = (props) => {
           </Col>
           <Col span={12}>
             <h5 id="show-panel-data-labels-second">
-              Commissioning date
+              Date of installation
                 </h5>
             <h4 id="show-panel-data-fields-second">
               {moment(myPanel.panel.commissioningDate).format('YYYY-MM-DD')}
@@ -160,7 +160,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={24}>
             <h5 id="show-panel-data-labels-third">
-              Battery description
+              Type of battery
                 </h5>
             <h4 id="show-panel-data-fields-third">
               {myPanel.panel.batteryDescription}

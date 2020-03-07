@@ -32,9 +32,9 @@ class Welcome extends React.Component {
             <Divider id="large-divider" />
             <div id="welcome-button-container">
               <Button id="button-welcome-left"><Link to="/public-mapping">PUBLIC ACCESS </Link></Button>
-              <Button id="button-welcome-right"><Link to="/login">LOGIN</Link></Button>
+              <Button id="button-welcome-right"><Link to="/login">LOG IN</Link></Button>
             </div>
-            <h6 id="welcome-text-mini">Do not you have an account yet? <Link id="link" from="/welcome" to="/register">Sign up</Link></h6>
+            <h6 id="welcome-text-mini">Don't you have an account? <Link id="link" from="/welcome" to="/register">Sign up</Link></h6>
 
             <div id="welcome-text-footer-container">
               <h5 id="welcome-text-footer">Coordinated by the Solar Energy Institute of the Polytechnic University of Madrid.</h5>

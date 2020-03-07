@@ -70,7 +70,7 @@ const InviteFriends = () => {
 
       <div id="edit-details-outside">
         <Card id="edit-details-menu-inside">
-          <h1 id="edit-details-tittle" >INVITE A FRIEND</h1>
+          <h1 id="edit-details-tittle" >Invite a friend</h1>
           <Divider />
           <div>
             <p id="enter-email-text">Enter the email address of your friend!</p>

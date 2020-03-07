@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Drawer, Button } from 'antd';
+import { Menu, Icon, Drawer, Button, message } from 'antd';
 import { Link } from "react-router-dom";
 import mainMenuIcon from '../../assets/main-menu.svg'
+import './mainMenu.css'
+
+
+var access_token
+
+const warning = () => {
+    message.warning('Please, log in to view this section', 5);
+};
 
 class MainMenu extends Component {
-    state = { visible: false };
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: false,
+            isLoggedIn: false,
+        };
+    }
 
     showDrawer = () => {
         this.setState({
@@ -23,7 +37,27 @@ class MainMenu extends Component {
         this.setState({
             current: e.key,
         });
+        if (!this.state.isLoggedIn && e.key !== "about" && e.key !== "download") {
+            warning()
+        }
     };
+
+    isLoggedIn = () => {
+        if (access_token === null || access_token === undefined) {
+            this.setState({
+                isLoggedIn: false
+            });
+        } else {
+            this.setState({
+                isLoggedIn: true
+            });
+        }
+    }
+
+    componentDidMount() {
+        access_token = JSON.parse(localStorage.getItem('access_token'))
+        this.isLoggedIn()
+    }
 
     render() {
         return (
@@ -35,7 +69,7 @@ class MainMenu extends Component {
                 </nav>
 
                 <Drawer
-                    title={<Icon type="menu" id="main-menu-tittle-icon" />}
+                    title={<img src={mainMenuIcon} alt="menu-icon" id="menu-icon" />}
                     placement="left"
                     closable={true}
                     onClose={this.onClose}
@@ -47,32 +81,32 @@ class MainMenu extends Component {
                         mode="inline"
                     >
                         <Menu.Item key="map">
-                            <Link to="/private-mapping" className="nav-text">
+                            <Link to="/private-mapping" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                                 <Icon type="environment" /> Map
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="statistics">
-                            <Link to="/my-statistics" className="nav-text">
+                            <Link to="/my-statistics" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                                 <Icon type="bar-chart" /> Statistics
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="challenges">
-                            <Link to="/my-challenges" className="nav-text">
+                            <Link to="/my-challenges" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                                 <Icon type="trophy" /> My Challenges
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="installations">
-                            <Link to="/my-installations" className="nav-text">
+                            <Link to="/my-installations" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                                 <Icon type="cluster" /> My Installations
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="about">
-                            <Link to="/about" className="nav-text">
+                            <Link to="/about" id="logged-public-menu">
                                 <Icon type="exclamation-circle" /> About
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="download">
-                            <Link to="/download" className="nav-text">
+                            <Link to="/download" id="logged-public-menu">
                                 <Icon type="download" /> Download database
                             </Link>
                         </Menu.Item>

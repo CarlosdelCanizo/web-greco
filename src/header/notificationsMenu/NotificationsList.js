@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Card, Button, Row, Col } from 'antd'
+import { Card, Button, Row, Col, Icon } from 'antd'
 import Header from '../Header'
 import PrivateMapping from '../../pages/mapping/PrivateMapping'
 import NotificationCard from './NotificationCard'
 import "./notifications.css"
 import axiosConfig from '../../api/axiosConfig'
+import { Link } from 'react-router-dom'
 
 function NotificationsList() {
 
@@ -25,11 +26,11 @@ function NotificationsList() {
         .then(response => {
           const dataResponse = response.data
           setNotifications(dataResponse)
-          // console.log("access_token", access_token)
+
         })
         .catch(function (error) {
           console.log(error);
-          // console.log("access_token", access_token)
+
         });
     }
     fetchNotifications();
@@ -69,8 +70,15 @@ function NotificationsList() {
         </Col>
       </Row>
       <Card id="notification-detail">
+        <Link to="/private-mapping">
+          <Button id="forms-close-button">
+            <Icon type="close" id="icon-x" />
+          </Button>
+        </Link>
         <div>
-          {notifications.length === 0 ?
+          {access_token === "Bearer null" || access_token === "Bearer undefined" ?
+            (<p id="no-notifications">You must be logged to view your notifications</p>) : (null)}
+          {notifications.length === 0 && access_token !== "Bearer null" && access_token !== "Bearer undefined" ?
             (isDisabled = true, <p id="no-notifications">You don´t have new notifications</p>)
             :
             (null)}

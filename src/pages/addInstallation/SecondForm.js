@@ -92,13 +92,13 @@ const SecondForm = props => {
           </Row>
           <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-              <h2 id="tittle-panel-registration">Installation location</h2>
+              <h2 id="tittle-panel-registration">Locate your installation</h2>
             </Col>
           </Row>
           <Row>
             <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
               <p id="text-panel-registration">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Place your geographical coordinates clicking on the map.
             </p>
             </Col>
           </Row>
@@ -161,7 +161,7 @@ const SecondForm = props => {
                 <Button
                   id="button-panel-register-previous-second"
                 >
-                  PREVIOUS
+                  BACK
 
               </Button>
               </Link>

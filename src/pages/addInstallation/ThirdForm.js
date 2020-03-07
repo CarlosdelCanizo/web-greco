@@ -104,8 +104,9 @@ const ThirdForm = props => {
                     <Row>
                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                             <p id="text-panel-registration">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Does your panel orient towards the Sun?
+                                If that's the case, check the corresponding type of tracking (you can choice both).
+                                If don't, press 'next'.
                         </p>
                         </Col>
 
@@ -159,7 +160,7 @@ const ThirdForm = props => {
                     <Row>
                         <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                             <Link to="/second">
-                                <Button id="button-panel-register-previous-third">PREVIOUS</Button>
+                                <Button id="button-panel-register-previous-third">BACK</Button>
                             </Link>
                         </Col>
                         <Col xs={12} sm={12} md={12} lg={12} xl={12}>

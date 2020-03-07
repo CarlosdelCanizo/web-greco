@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
-import { Menu, Icon, Button, Drawer } from 'antd'
+import { Menu, Icon, Button, Drawer, message } from 'antd'
 import { Link } from "react-router-dom"
 import Profile from '../../utils/profile/Profile'
 import iconUser from '../../assets/icon-user.svg'
+import './userMenu.css'
 
 var access_token
 
+const warning = () => {
+  message.warning('Please, log in to view this section', 5);
+};
+
 class UserMenu extends Component {
-  state = {
-    visible: false,
-    isLoggedIn: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      isLoggedIn: false
+    };
+  }
 
   showDrawer = () => {
     this.setState({
@@ -29,6 +37,9 @@ class UserMenu extends Component {
     this.setState({
       current: e.key,
     });
+    if (!this.state.isLoggedIn && e.key !== "logout") {
+      warning()
+    }
   };
 
   logOut = () => {
@@ -38,10 +49,14 @@ class UserMenu extends Component {
   }
 
   isLoggedIn = () => {
-    if (access_token === null) {
-      return false
+    if (access_token === null || access_token === undefined) {
+      this.setState({
+        isLoggedIn: false
+      });
     } else {
-      return true
+      this.setState({
+        isLoggedIn: true
+      });
     }
   }
 
@@ -74,24 +89,24 @@ class UserMenu extends Component {
           >
 
             <Menu.Item key="edit">
-              <Link to="/edit-user-details" className="nav-text">
+              <Link to="/edit-user-details" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                 <Icon type="edit" /> Edit details
               </Link>
             </Menu.Item>
             <Menu.Item key="invite">
-              <Link to="/invite-friends" className="nav-text">
+              <Link to="/invite-friends" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                 <Icon type="team" /> Invite friends
               </Link>
             </Menu.Item>
             <Menu.Item key="logout" >
 
               {
-                (this.isLoggedIn()) ?
-                  (<Link to="/welcome" className="nav-text" onClick={this.logOut} >
+                (this.state.isLoggedIn) ?
+                  (<Link to="/welcome" id="logged-public-menu" onClick={this.logOut} >
                     <Icon type="logout" /> Log out
                     </Link>)
                   :
-                  (<Link to="/login" className="nav-text">
+                  (<Link to="/login" id="logged-public-menu">
                     <Icon type="login" /> Log in
                     </Link>)
               }
