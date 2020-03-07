@@ -143,7 +143,7 @@ const PublicMapping = () => {
                     <Row id="public-private-mapping-text-fields">
                       <Col span={8}>
                         <h5 id="public-private-mapping-data-labels">
-                          Power
+                          Electrical capacity
                         </h5>
                         <h3 id="public-private-mapping-data-fields">
                           {item.electrical_capacity} Kw
@@ -151,7 +151,7 @@ const PublicMapping = () => {
                       </Col>
                       <Col span={8}>
                         <h5 id="public-private-mapping-data-labels">
-                          Area
+                          Surface
                         </h5>
                         <h3 id="public-private-mapping-data-fields">
                           {item.surface} Kw

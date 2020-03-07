@@ -26,11 +26,9 @@ function NotificationsList() {
         .then(response => {
           const dataResponse = response.data
           setNotifications(dataResponse)
-
         })
         .catch(function (error) {
           console.log(error);
-
         });
     }
     fetchNotifications();
@@ -63,7 +61,6 @@ function NotificationsList() {
           :
           (null)
       }
-
       <Row>
         <Col xs={0} sm={0} md={24} lg={24} xl={24} >
           <PrivateMapping />
@@ -71,7 +68,7 @@ function NotificationsList() {
       </Row>
       <Card id="notification-detail">
         <Link to="/private-mapping">
-          <Button id="forms-close-button">
+          <Button id="notifications-close-button">
             <Icon type="close" id="icon-x" />
           </Button>
         </Link>

@@ -3,8 +3,8 @@ import { Input, Button, Form, Icon, Col, Card, Row, Avatar } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import './feedPanel.css'
+// import './feedPanel2.css'
 import moment from 'moment'
-import { Link } from "react-router-dom";
 import ImageSlider from '../imageSlider/ImageSlider'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 import ShowMapping from "../ShowMapping"
@@ -53,7 +53,6 @@ const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
         setMessagesList(messagesList.concat(newResponse));
       })
       .catch(function (error) {
-        console.log("error post message response", error);
       });
   }
   return (
@@ -119,7 +118,6 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
       }
     }
     fetchMessages()
-    console.log("la messageList", messagesList)
   })
 
   return (
@@ -198,7 +196,7 @@ const FeedPanel = (props) => {
         <Row>
           <Col span={8}>
             <h5 id="feed-panel-data-labels">
-              Power
+              Electrical capacity
             </h5>
             <h4 id="feed-panel-data-fields">
               {myPanel.panel.electrical_capacity} Kw
@@ -206,7 +204,7 @@ const FeedPanel = (props) => {
           </Col>
           <Col span={8}>
             <h5 id="feed-panel-data-labels">
-              Area
+              Surface
             </h5>
             <h4 id="feed-panel-data-fields">
               {myPanel.panel.surface} m²
@@ -233,14 +231,13 @@ const FeedPanel = (props) => {
             <div id="feed-list-container">
               <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
             </div>
-            <div id="feed-form-container">
-              <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-            </div>
           </Col>
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-
+            <div id="feed-form-container">
+              <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+            </div>
           </Col>
         </Row>
       </Card>

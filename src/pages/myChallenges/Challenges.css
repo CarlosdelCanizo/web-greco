@@ -56,6 +56,9 @@
   margin-left: 5%;
   color:#8398aa;
 }
+#challenge-description-text {
+  width: 80%;
+}
 #challenge-card-button {
   margin-top: 10%;
   margin-left: 5%;
@@ -106,6 +109,9 @@ width: 80%;
     margin-bottom: 15%;
     color:#8398aa;
   }
+  #challenge-description-text {
+    width: 80%;
+  }
   #challenge-card-button {
     margin-top: 2%;
     margin-left: 15%;
@@ -136,7 +142,6 @@ width: 80%;
     margin-top: auto;
     box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
   }
-  
   #challenge-tagImage{  
     display: initial;
     right: 3px;
@@ -149,7 +154,6 @@ width: 80%;
   }
   #challenge-tagBox{
     display: none;
-
   }
   #challenge-card-image {
     height: 100%;
@@ -167,6 +171,9 @@ width: 80%;
     margin-left: 0%;
     margin-top:3%;
     color:#8398aa;
+  }
+  #challenge-description-text {
+    width: 100%;
   }
   #challenge-card-button {
     width: 100%;

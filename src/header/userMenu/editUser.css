@@ -1,21 +1,17 @@
 /*****************************************************EDIT*USER*DETAILS*************************************************************/
 /*****COMPUTER*****************************************************************************************************************/
-#edit-details-outside {
-  position: fixed;
-  background-color: #eaedf1;
-  height: 100vh; 
-  width: 100%;
-}
+
 #edit-details-menu-inside {
-overflow: auto;
 float: right;
-height: 92%;
+position: fixed;
+z-index: 1000;
+height: 720px;
 width: 424px;
 font-family: Montserrat;
 color: #2a4092;
 padding: 0;
-margin-top: 1%;
-margin-right: 3%;
+top: 50px;
+right: 3%; 
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #edit-details-tittle {
@@ -105,20 +101,28 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   line-height: 1.25;
   color: #2a4092;
 }
-
+#menu-close-button {
+  float: right; 
+  margin-top: -5%;
+  margin-right: -2%;
+  line-height: 2.7em;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.5em;
+  border: none;
+  box-shadow: none;
+  z-index: 1;
+  border-radius: none;
+  }
 /**************EDIT*USER*PROFILE*************************************************************/
 /***************TABLET*********************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
-  #edit-details-outside {
-    position: fixed;
-    background-color: #eaedf1;
-    height: 100vh; 
-    width: 100%;
-  }
+
   #edit-details-menu-inside {
   float: right;
-  height: 92%;
+  max-height: 720px;
   width: 424px;
   font-family: Montserrat;
   color: #2a4092;
@@ -200,22 +204,16 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 /***************MOBILE*********************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-#edit-details-outside {
-  position: fixed;
-  background-color: #eaedf1;
-  height: 100vh; 
-  width: 100%;
-}
+
 #edit-details-menu-inside {
-  overflow: auto;
-  height: 100%;
+  max-height: calc(100vh - 36px);
   width: 100%;
   font-family: Montserrat;
   color: #2a4092;
   padding: 0;
-  margin-top: 0%;
-  margin-left: 0%;
-  margin-right: 0%;
+  top: 36px;
+  left: 0%;
+  right: 0%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #edit-details-tittle {
@@ -226,6 +224,20 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   line-height: 1.25;
   color: #2a4092;
 }
+#menu-close-button {
+  float: right; 
+  margin-top: -5%;
+  margin-right: -2%;
+  line-height: 2.7em;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: none;
+  z-index: 1;
+  border-radius: none;
+  }
 #div-edit-user-background {
   margin-top: 5%;
   margin-left: 5%;

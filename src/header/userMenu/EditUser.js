@@ -1,8 +1,10 @@
-import React, { useState } from "react"
-import { Card, Form, Input, Divider, Alert, message, Switch, Button } from 'antd'
+import React from "react"
+import { Card, Form, Input, Divider, Alert, message, Switch, Button, Icon, Row, Col } from 'antd'
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../Header'
+import { Link } from "react-router-dom";
 import "./editUser.css"
+import PrivateMapping from '../../pages/mapping/PrivateMapping'
 
 const EditUser = () => {
 
@@ -108,79 +110,91 @@ const EditUser = () => {
 
   return (
     <React.Fragment>
-      <Header />
-      <div id="edit-details-outside">
-        <Card id="edit-details-menu-inside">
-          <Form onSubmit={handleFormSubmit}>
-            <h1 id="edit-details-tittle">Edit details</h1>
-            <Divider />
-            <div id="edit-details-form-fields">
-              <Form.Item>
-                <div id="div-edit-user-background">
-                  <label id="edit-label">Username</label>
-                  <Input
-                    placeholder="Username"
-                    name="username"
-                    id="edit-username"
-                    values={data.username}
-                    onChange={handleInputChange}
-                  />
-                </div>
-              </Form.Item>
-              <Divider id="between-inputs" />
-              <Form.Item>
-                <div id="div-edit-user-background">
-                  <label id="edit-label">Email</label>
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    id="edit-email"
-                    values={data.email}
-                    onChange={handleInputChange}
-                  />
-                </div>
-              </Form.Item>
-            </div>
-            <div id="turn-notifications">
-              <Switch
-                defaultChecked
-                onChange={onChange}
-                name="notifications"
-                id="notifications"
-              />
-              {data.notifications ?
-                (<p id="turn-notifications-text">Turn OFF notifications</p>) :
-                (<p id="turn-notifications-text">Turn ON notifications</p>)}
-            </div>
-            <div id="error-edit-user-message">
-              {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
-            </div>
-            <div id="success-edit-user-message">
-              {toLocation ?
-                <Alert id="edit-success-alert"
-                  message="Success!"
-                  description={(data.username && data.email ? ("New username: " + data.username + "  &  " + "New email: " + data.email)
-                    : (data.username ? ("New username: " + data.username) : ("New email: " + data.email)))
-                  }
-                  type="success"
-                  showIcon
-                  closable
-                  onClose={onClose}
-                /> : null}
-            </div>
-            <div>
-              <Button
-                id="edit-details-save-button"
-                disabled={!isEnabled || data.isSubmitting}
-                onClick={handleFormSubmit}
-              >SAVE CHANGES
+      {
+        (window.innerWidth < 600 && window.innerWidth < 768) ?
+          <Header />
+          :
+          (null)
+      }
+      <Row>
+        <Col xs={0} sm={0} md={24} lg={24} xl={24} >
+          <PrivateMapping />
+        </Col>
+      </Row>
+      <Card id="edit-details-menu-inside">
+        <Link to="/private-mapping">
+          <Button id="menu-close-button">
+            <Icon type="close" id="icon-x" />
+          </Button>
+        </Link>
+        <Form onSubmit={handleFormSubmit}>
+          <h1 id="edit-details-tittle">Edit details</h1>
+          <Divider />
+          <div id="edit-details-form-fields">
+            <Form.Item>
+              <div id="div-edit-user-background">
+                <label id="edit-label">Username</label>
+                <Input
+                  placeholder="Username"
+                  name="username"
+                  id="edit-username"
+                  values={data.username}
+                  onChange={handleInputChange}
+                />
+              </div>
+            </Form.Item>
+            <Divider id="between-inputs" />
+            <Form.Item>
+              <div id="div-edit-user-background">
+                <label id="edit-label">Email</label>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="edit-email"
+                  values={data.email}
+                  onChange={handleInputChange}
+                />
+              </div>
+            </Form.Item>
+          </div>
+          <div id="turn-notifications">
+            <Switch
+              defaultChecked
+              onChange={onChange}
+              name="notifications"
+              id="notifications"
+            />
+            {data.notifications ?
+              (<p id="turn-notifications-text">Turn OFF notifications</p>) :
+              (<p id="turn-notifications-text">Turn ON notifications</p>)}
+          </div>
+          <div id="error-edit-user-message">
+            {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
+          </div>
+          <div id="success-edit-user-message">
+            {toLocation ?
+              <Alert id="edit-success-alert"
+                message="Success!"
+                description={(data.username && data.email ? ("New username: " + data.username + "  &  " + "New email: " + data.email)
+                  : (data.username ? ("New username: " + data.username) : ("New email: " + data.email)))
+                }
+                type="success"
+                showIcon
+                closable
+                onClose={onClose}
+              /> : null}
+          </div>
+          <div>
+            <Button
+              id="edit-details-save-button"
+              disabled={!isEnabled || data.isSubmitting}
+              onClick={handleFormSubmit}
+            >SAVE CHANGES
               </Button>
-            </div>
-          </Form>
-        </Card>
-      </div>
-
+          </div>
+        </Form>
+      </Card>
     </React.Fragment >
   )
 

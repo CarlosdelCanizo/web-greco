@@ -2,13 +2,20 @@
 
 /************************************************************FEED*PANEL*************************************************/
 /***COMPUTER************************************************************************************************************/
-
-/* #edit-details-outside {
-  position: fixed;
-  background-color: #eaedf1;
-  height: 100vh; 
-  width: 100vw;
-} */
+#notifications-close-button {
+  float: right; 
+  margin-top: -5%;
+  margin-right: -2%;
+  line-height: 3em;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 1.5em;
+  border: none;
+  box-shadow: none;
+  z-index: 1;
+  border-radius: none;
+  }
 #notification-detail {
   position: absolute;
   z-index: 999;
@@ -138,12 +145,6 @@
 
 @media (min-width: 240px) and (max-width: 600px) {
  
-  /* #edit-details-outside {
-    position: fixed;
-    background-color: #eaedf1;
-    height: 100vh; 
-    width: 100vw;
-  } */
   #notification-detail {
     position: absolute;
     z-index: 999;
@@ -158,6 +159,20 @@
     right: 0%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
+  #notifications-close-button {
+    float: right; 
+    margin-top: -5%;
+    margin-right: -2%;
+    line-height: 3em;
+    background-color: transparent;
+    color: #ff0000;
+    opacity: 1;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: none;
+    z-index: 1;
+    border-radius: none;
+    }
   #notification-icon {
     margin-top: 75%;
     margin-left: -20%;

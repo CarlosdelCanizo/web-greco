@@ -3,12 +3,10 @@
 /*****************************************************NAVBAR**************************************************************/
 
 #navBar {
-  padding: 0.1em;
-  height: 5%;
+  height: 36px;
   margin: auto;
-  overflow: auto;
   background-color: white;
-  box-shadow: 0 0 30px #f3f1f1;
+  /* box-shadow: 0 0 30px #f3f1f1; */
 }
 #user-button, #notifications-button, #main-menu-button {
   border: none;

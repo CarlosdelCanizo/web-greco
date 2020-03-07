@@ -1,9 +1,12 @@
 import React, { useState } from "react"
-import { Card, Input, Form, Alert, Divider, Button } from 'antd';
+import { Card, Input, Form, Alert, Divider, Button, Icon, Row, Col } from 'antd';
 import Header from '../Header'
-import "../Header.css"
+import '../Header.css'
 import axiosConfig from '../../api/axiosConfig'
-import "./editUser.css"
+import './editUser.css'
+import { Link } from "react-router-dom";
+import PrivateMapping from '../../pages/mapping/PrivateMapping'
+
 
 const InviteFriends = () => {
 
@@ -66,58 +69,69 @@ const InviteFriends = () => {
 
   return (
     <React.Fragment>
-      <Header />
+      {
+        (window.innerWidth < 600 && window.innerWidth < 768) ?
+          <Header />
+          :
+          (null)
+      }
+      <Row>
+        <Col xs={0} sm={0} md={24} lg={24} xl={24} >
+          <PrivateMapping />
+        </Col>
+      </Row>
+      <Card id="edit-details-menu-inside">
+        <Link to="/private-mapping">
+          <Button id="menu-close-button">
+            <Icon type="close" id="icon-x" />
+          </Button>
+        </Link>
+        <h1 id="edit-details-tittle" >Invite a friend</h1>
+        <Divider />
+        <div>
+          <p id="enter-email-text">Enter the email address of your friend!</p>
+        </div>
+        <Form onSubmit={handleFormSubmit} >
+          <div id="edit-details-form-fields">
+            <Form.Item>
+              <div id="div-edit-user-background">
+                <label id="edit-label">Friend´s Email</label>
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                  id="edit-email"
+                  values={data.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </Form.Item>
 
-      <div id="edit-details-outside">
-        <Card id="edit-details-menu-inside">
-          <h1 id="edit-details-tittle" >Invite a friend</h1>
-          <Divider />
-          <div>
-            <p id="enter-email-text">Enter the email address of your friend!</p>
           </div>
-          <Form onSubmit={handleFormSubmit} >
-            <div id="edit-details-form-fields">
-              <Form.Item>
-                <div id="div-edit-user-background">
-                  <label id="edit-label">Friend´s Email</label>
-                  <Input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    id="edit-email"
-                    values={data.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-              </Form.Item>
-
-            </div>
-            <div id="error-edit-user-message">
-              {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
-            </div>
-            <div id="success-edit-user-message">
-              {toLocation ?
-                <Alert
-                  message="Invitation sent to:"
-                  description={data.email}
-                  type="success"
-                  showIcon
-                  closable
-                /> : null}
-            </div>
-            <div id="welcome-button-container">
-              <Button id="edit-details-save-button"
-                onClick={handleFormSubmit}
-                disabled={data.isSubmitting}>
-                {/* {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("INVITE")} */}
-                INVITE
+          <div id="error-edit-user-message">
+            {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
+          </div>
+          <div id="success-edit-user-message">
+            {toLocation ?
+              <Alert
+                message="Invitation sent to:"
+                description={data.email}
+                type="success"
+                showIcon
+                closable
+              /> : null}
+          </div>
+          <div id="welcome-button-container">
+            <Button id="edit-details-save-button"
+              onClick={handleFormSubmit}
+              disabled={data.isSubmitting}>
+              {/* {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("INVITE")} */}
+              INVITE
                   </Button>
-            </div>
-          </Form>
-          {/* </div> */}
-        </Card>
-      </div>
+          </div>
+        </Form>
+      </Card>
     </React.Fragment >
   )
 }

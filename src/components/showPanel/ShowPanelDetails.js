@@ -1,7 +1,6 @@
 import React from "react"
 import { Card, Button, Row, Col, Icon, Divider } from 'antd'
 import Header from '../../header/Header'
-import { Link } from "react-router-dom";
 import './ShowPanel.css'
 import moment from 'moment'
 import ImageSlider from '../imageSlider/ImageSlider'
@@ -24,13 +23,13 @@ const ShowPanelDetails = (props) => {
     <React.Fragment>
       <Header />
       <Row>
-        <Col span={24} xs={0} sm={0} md={24} lg={24} xl={24} >
+        <Col xs={0} sm={0} md={24} lg={24} xl={24} >
           <ShowMapping lat={myPanel.panel.lat} lon={myPanel.panel.lon} />
         </Col>
       </Row>
       <Card id="show-panel-card-container">
         <Row>
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             <p id="show-panel-card-tittle">{myPanel.panel.installationName}</p>
             <Button id="show-panel-close-button" onClick={onClose}>
               <Icon type="close" />

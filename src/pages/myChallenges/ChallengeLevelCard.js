@@ -8,15 +8,9 @@ import Silver from '../../assets/silver.svg'
 import Bronze from '../../assets/bronze.svg'
 import Header from '../../header/Header'
 import axiosConfig from '../../api/axiosConfig'
-import { Link } from 'react-router-dom'
 import influencer from '../../assets/group-foto.png'
 
-// import ChallengesContext from '../../context/ChallengesContext'
-
 function ChallengeLevelCard() {
-
-  // const { deleteChallenge, challenges } = useContext(ChallengesContext)
-  // const { id, name, description, image } = challenge
 
   const [myChallenges, setMyChallenges] = useState([])
 
@@ -41,7 +35,6 @@ function ChallengeLevelCard() {
   return (
     <React.Fragment>
       <Header />
-      {/* <div id="background-statistics"> */}
       <div id="challenge-card-container">
         {myChallenges.map(item => (
           <Card id="individual-challenge-card" key={item.id}>
@@ -74,7 +67,7 @@ function ChallengeLevelCard() {
                       <h2 style={{ color: "#2a4092" }}>
                         {item.challengeName}
                       </h2>
-                      <p>
+                      <p id="challenge-description-text">
                         {item.challengeDescription}
                       </p>
                     </div>
@@ -104,7 +97,6 @@ function ChallengeLevelCard() {
           </Card>
         ))}
       </div>
-      {/* </div> */}
     </React.Fragment>
   );
 

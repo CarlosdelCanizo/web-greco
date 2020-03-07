@@ -1,12 +1,11 @@
 import React, { useState } from "react"
-import { Button, Col, Card, Row, Divider } from 'antd';
+import { Button, Col, Card, Row, Divider, Icon } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
 import Header from '../../header/Header'
 import './downloadData.css'
 import moment from 'moment'
-
-
-const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+import { Link } from "react-router-dom";
+import PrivateMapping from '../../pages/mapping/PrivateMapping'
 
 const DownloadData = (props) => {
 
@@ -15,7 +14,6 @@ const DownloadData = (props) => {
   function downLoad() {
     axiosConfig({
       url: '/download/',
-      // headers: { "Authorization": access_token },
       method: 'GET',
       responseType: 'blob'
     })
@@ -35,10 +33,25 @@ const DownloadData = (props) => {
   return (
 
     <React.Fragment>
-      <Header />
-      <div id="panel-download-outside">
+      {
+        (window.innerWidth < 600 && window.innerWidth < 768) ?
+          <Header />
+          :
+          (null)
+      }
+      <Row>
+        <Col xs={0} sm={0} md={24} lg={24} xl={24} >
+          <PrivateMapping />
+        </Col>
+      </Row>
+      <Row>
         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
           <Card id="download-card-container">
+            <Link to="/private-mapping">
+              <Button id="download-close-button">
+                <Icon type="close" id="icon-x" />
+              </Button>
+            </Link>
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                 <h1 id="edit-details-tittle">Download database</h1>
@@ -46,14 +59,17 @@ const DownloadData = (props) => {
               </Col >
             </Row>
             <Row>
+              <p id="download-text">Download all the information from the Greco project database, in a csv file.</p>
+            </Row>
+            <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <Button onClick={downLoad}>DOWNLOAD</Button>
+                <Button id="download-button" onClick={downLoad}>DOWNLOAD</Button>
               </Col >
             </Row>
 
           </Card>
         </Col>
-      </div>
+      </Row>
     </React.Fragment >
   );
 };
