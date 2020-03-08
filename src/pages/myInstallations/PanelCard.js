@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Button, Row, Col, Icon, Popover, Popconfirm } from 'antd';
 import './MyInstallations.css';
 import { Link } from "react-router-dom";
-
 import axiosConfig from '../../api/axiosConfig'
 import CardSlider from './CardSlider'
 
@@ -25,7 +24,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
 
   }
 
-  const textMenu = <span id="popover-panels">INSTALLATION</span>;
+  const textMenu = <span id="popover-panels">INSTALLATION MENU</span>;
   const content = (
     <div id="popover-panels">
       <Link to={
@@ -89,11 +88,10 @@ const PanelCard = ({ panel, fetchPanels }) => {
       <Card id="installation-container">
         <Row>
           <Col xs={2} sm={2} md={2} lg={2} xl={2} />
-          <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-            <div id="installation-tittle-button-container">
-              <p id="installation-tittle">{panel.installationName}</p>
-
-            </div>
+          <Col id="col-title" xs={20} sm={20} md={20} lg={20} xl={20}>
+            {/* <div id="installation-tittle-button-container"> */}
+            <p id="installation-tittle">{panel.installationName}</p>
+            {/* </div> */}
           </Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}>
             <Popover placement="left" title={textMenu} content={content} trigger="click">
@@ -105,9 +103,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
         </Row>
         <Row>
           <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-            <div id="installation-add-image-container">
-              <CardSlider multimedia={panel.multimedia} />
-            </div>
+            <CardSlider multimedia={panel.multimedia} />
           </Col>
         </Row>
         <Row>

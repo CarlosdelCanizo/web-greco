@@ -45,8 +45,8 @@ a.leaflet-popup-close-button {
 }
 #public-private-mapping-installation-name {
   position: absolute;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 0.3em;
   width: 300px;
   height: 40px;
@@ -83,19 +83,23 @@ a.leaflet-popup-close-button {
   background-color: #bfc5d2;
 }
 #public-private-mapping-data-labels { 
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 3%;
   margin-left: -3%;
   color:#bfc5d2;
   text-align: center;
   width: 100px;
+  font-size: 9;
+  font-family: Montserrat;
 }
 #public-private-mapping-data-fields {
   margin-left: -3%;
-  font-weight: 600;
+  font-weight: 500;
   color: #2a4092;
   text-align: center;
   width: 100px;
+  font-size: 15;
+  font-family: Montserrat;
 }
 #divider-mapping-top {
   top: 3%;

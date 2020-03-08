@@ -24,135 +24,120 @@
 /***COMPUTER************************************************************************************************************************/
 
 #installation-add {
+  /* width: 300px; */
   margin-right: 5%;
   margin-left: 5%;
-  height: 200px;
+  height: 380px;
   margin-top: 20px;
-  /* position: relative;
-  padding: 0%;
-  width: 225px;
-  height: 350px;
-  margin-top: 80%;
-  margin-left: 100%;
-  font-size: 16px;*/
-  border: 2px;
   border: 2px dotted #2a4092;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-#installation-add .ant-card-body{
-  text-align: center;
-  height: 200px;
-  margin-top: 40px;
-
-}
 #installation-add-button {
-  /* margin-top: 50%; */
-  /* margin-left: 30%; */
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
   background-color: #db4196;
   border-color: #db4196;
   color: white;
 }
-/* #add-installation-text-button {
-  margin-top: 15%;
-  margin-left: 15%;
- 
-} */
+#add-installation-text-button {
+  position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #2a4092;
+    font-size: 16px;;
+}
 /************************************************************INSTALLATION**************************************************/
 /***COMPUTER***************************************************************************************************************/
 
 #installation-container {
   margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   position: relative;
-  /* width: 425px; */
   height: 380px;
-  /* margin-top: 10%;
-  margin-left: 0%;   */
   font-family: Montserrat;
   color: #2a4092;
   padding: 0; 
   text-align: center;;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-#installation-tittle-button-container {
-  /* position: absolute; */
-  /* width: 425px; */
+/* #installation-tittle-button-container {
   height: 40px;
-  /* margin-top: -16%;
-  margin-left: -16.5%; */
-}
+  width: 100%;
+} */
 #installation-tittle {
-  position: relative;
-  font-size: 18px;
+  z-index: 400;
+  position: absolute;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 2em;
+  line-height: 2.5em;
   text-align: center;
   color: #2a4092;
-  z-index: 1;
   background-color: white;
   opacity: 0.5;
-  height: 41px;
+  width: 130%;
+  height: 40px;
+  left: -15%;
+  margin-top: -5%;
 }
 #installation-tittle:hover {
   opacity: 0.8;
 }
 #installation-button-menu { 
   position: absolute;
-  top: 0;
-  right: 0;
-  height: auto;
+  top:-20px;
+  right: -20px;
   line-height: 1.5em;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
   font-size: 2em;
   border: none;
-  z-index: 1;
+  z-index: 500;
   border-radius: none;
-}
-#installation-add-image-container {
-  /* width: 425px;
-  height: 325px;
-  margin-top: -6.8%;
-  margin-left: -6.75%; */
-}
-#card-slider-installation-add-image {
-  /* object-fit: initial;
-  width: 100%;
-  max-width: 100%;
-  height: 325px;
-  margin-top: -6%;
-  margin-left: 0%; */
-  /* border-bottom: 5px solid #2a4092; */
-  max-width: 225px;
-  max-height: 200px;
 }
 #installation-text-fields {
   padding: 0%;
   margin: 0%;
-  border-top: 5px solid #2a4092;
-    margin-top: 15px;
+  margin-top: 15px;
 }
 #panel-data-labels {
   font-weight: 500;
   color: #bfc5d2;
-  font-size: 11px;
+  font-size: 9px;
 }
 #panel-data-fields {
   font-family: Montserrat;
   margin-top: -3%;
-  font-weight: 600;
+  font-weight: 500;
   color: #2a4092;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
 }
 
 /************************************************************CARD*SLIDER*************************************************/
 /***COMPUTER************************************************************************************************************************/
-
+#col-slider-left-button {
+  position: absolute;
+  z-index: 800;
+  top: 43%;
+  left: -5%;
+}
+#col-slider-right-button {
+  position: absolute;
+  z-index: 800;
+  top: 35%;
+  right: -5%;
+}
 #container-delete-button-slider {
   position: absolute;
   visibility: hidden;
@@ -166,12 +151,6 @@
   font-size: 1.5em;
   margin-top: 8%;  
 } 
-#container-left-button-slider {
-  position: absolute;
-  width: 50px;
-  height: 325px;
-  margin-top: 24px;
-}
 #card-slider-button-left {
   position: relative;
   z-index: 999;
@@ -180,13 +159,7 @@
   border: none;
   margin-left: 10px;
 }
-#container-right-button-slider {
-  position: absolute;
-  width: 50px;
-  height: 325px;
-  top: -7%;
-  right: -7%;
-}
+
 #card-slider-button-right {
   position: relative;
   z-index: 999;
@@ -200,326 +173,90 @@
   color: red;
   font-size: 1.5em;
 }
-#card-slider-image {
-  /* justify-content: center;
-  margin-top: 0%;
-  margin-left: 0%;
-  width: 100%;
-  height: 250px; */
+#card-slider-installation-add-image {
   object-fit: initial;
-  width: 100%;
-  max-width: 100%;
-  height: 325px;
-  margin-top: -6%;
-  margin-left: 0%;
+  display:block;
+  margin-left:-5%;
+  margin-top: -5%;
+  z-index: -1;
+  width: 130%;
+  height: 305px;
   border-bottom: 5px solid #2a4092;
-} 
+}
 
 /************************************************************ADD*INSTALLATION*************************************************/
 /***TABLET************************************************************************************************************************/
-
-@media (min-width: 240px) and (max-width: 575px) {
-  /* #card-slider-button-right{
-    margin-right: -53px;
-  } */
-}
-@media (min-width: 763px) and (max-width: 991px) {
-  #installation-add {
-    height: 390px;
-  }
-  #installation-container{
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  #installation-add .ant-card-body{
-    margin-top: 140px;
-  }
-}
-@media (min-width: 992px) and (max-width: 9900px) {
-  #installation-add {
-    height: 390px;
-  }
-  #installation-container{
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  #installation-add .ant-card-body{
-    margin-top: 140px;
-  }
-  #card-slider-button-left{
-    margin-left: -20px;
-  }
-  #card-slider-button-right{
-    margin-right: -53px;
-  }
-}
-@media (min-width: 600px) and (max-width: 992px) {
-#background-installations {
-    background-color: #eaedf1;
-    height: auto; 
-    width: 100vw;
-}
-#installation-add {
-  /* position: relative;
-  width: 135%;
-  height: 350px;
-  padding: 0%;
-  margin-top: 20%;
-  margin-left: 15%;
-  font-size: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  */
-}
-#installation-add-button {
-  /* margin-top: 50%; */
-  /* margin-left: 25%; */
-  background-color: #db4196;
-  border-color: #db4196;
-  color: white;
-}
-#add-installation-text-button {
-  /* margin-top: 5%;
-  margin-left: 10%; */
-  
+@media (min-width: 768) and (max-width: 992px) {
+ 
 }
 
-/************************************************************INSTALLATIONS**************************************************/
-/***TABLET******************************************************************************************************************/
-
-#installation-col-container {
-  position: absolute;
-  margin-left: 0%;
-  margin-top: 0%;
-  width: 100%;
-}
-#installation-container {
-  margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-  position: relative;
-  display: block;
-  /* width: 424px; */
-  height: 385px;
-  /* margin-top: 5%;
-  margin-left: 20%;   */
-  font-family: Montserrat;
-  color: #2a4092;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-}
-#installation-tittle-button-container {
-  /* position: absolute;
-  margin-top: -16%;
-  margin-left: -16%; */
-}
-#installation-tittle {
-  position: absolute;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 2em;
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  color: #2a4092;
-  z-index: 1;
-  background-color: white;
-  opacity: 0.5;
-  margin-top: -1%;
-  margin-left: 2%;
-}
-#installation-button {
-  margin-top: 0%;
-  right: -725%;
-  background-color: transparent;
-  color: #ff0000;
-  opacity: 1;
-  font-size: 1.5em;
-  border: none;
-}
-#installation-add-image-container {
-  /* width: 425px;
-  height: 325px;
-  margin-top: -6.8%;
-  margin-left: -6.75%; */
-}
-#card-slider-installation-add-image {
-  /* object-fit: initial;
-  width: 100%;
-  max-width: 100%;
-  padding: 0%;
-  margin-top: -6.2%;
-  margin-left: 0.30%; */
-  /* border-bottom: 5px solid #2a4092; */
-}
-#installation-text-fields {
-  padding: 0%;
-  margin: 1%;
-  border-top: 5px solid #2a4092;
-    margin-top: 15px;
-}
-}
 
 /************************************************************ADD*INSTALLATION*************************************************/
 /***MOBILE********************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-#background-installations {
-    background-color: #eaedf1;
-    height: auto; 
-    width: 100%;
-}
-#installation-add {
-  /* position: relative;
-  width: 95%;
-  height: 125px;
-  margin-top: 3%;
-  margin-left: 2.5%;
-  font-size: 16px;
-  border: 2px;
-  border: 2px dotted #2a4092;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   */
-}
-#installation-add-button {
-  /* margin-top: -3%; */
-  /* margin-left: 35%; */
-  background-color: #db4196;
-  border-color: #db4196;
-  color: white;
-}
-#add-installation-text-button {
-  /* margin-top: 0%;
-  margin-left: 0%;
-  text-align: center; */
-}
-/************************************************************INSTALLATIONS**************************************************/
-/***MOBILE******************************************************************************************************************/
+  #installation-add {
+    height: 125px;
+  }
+  #add-installation-text-button {
+    margin-top: 25px;
+    margin-left: 0%;
+    text-align: center;
+  }
 
-#installation-col-container {
-  position: absolute;
-  margin-left: 0%;
-  margin-top: 0%;
+  #installation-add-button {
+    width: 50px;
+    height: 50px;
+    margin-top: -1%;
+  }
+
+  /************************************************************CARD*SLIDER*************************************************/
+/***MOBILE************************************************************************************************************************/
+#card-slider-installation-add-image {
+  object-fit: initial;
+  display:block;
+  margin-left: -25px;
+  margin-top: -27px;
+  z-index: -1;
+  width: 90vw;
+  height: 305px;
+  border-bottom: 5px solid #2a4092;
 }
-#installation-container {
-  position: relative;
-  /* margin-top: 5%;
-  margin-left: 2.5%;
-  width: 95%; */
-  height: 360px;  
-  font-family: Montserrat;
-  color: #2a4092; 
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 20px;
-}
-#installation-tittle-button-container {
-  /* position: absolute; */
-  /* width: 100%; */
+/************************************************************INSTALLATION**************************************************/
+/***MOBILE***************************************************************************************************************/
+/* #installation-tittle-button-container {
   height: 40px;
-  /* margin-top: -8%;
-  margin-left: -10%; */
+  width: 130%;
+} */
+#col-title {
+margin-top: -1.8em;
 }
 #installation-tittle {
-  font-size: 18px;
+  z-index: 400;
+  position: absolute;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 2em;
-  width: 100%;
-  height: 40px;
-  text-align: center;
+  line-height: 2.5em;
   color: #2a4092;
-  z-index: 1;
   background-color: white;
   opacity: 0.5;
-  margin-top: -2%;
-  margin-left: 0%;
+  width: 90vw;
+  height: 40px;
+  margin-top: 0;
+  left: -12.5vw;
+  right: -12.5vw;
 }
-#installation-button {
-  margin-top: -2%;
-  right: -40%;
-  background-color: transparent;
+#installation-button-menu { 
+  /* position: absolute; */
+  /* top:-20px; */
+  /* right: -20px; */
+  line-height: 0em;
+  /* background-color: transparent;
   color: #ff0000;
   opacity: 1;
-  font-size: 1.5em;
+  font-size: 2em;
   border: none;
-}
-#installation-add-image-container {
-  /* width: 100;
-  height: 300px;
-  margin-top: -10%;
-  margin-left: -10%;
-  margin: 0 auto; */
-}
-#card-slider-installation-add-image {
-  /* object-fit: fill;
-  width: 95%;
-  max-width: 100%;
-  margin-top: -9%;
-  margin-left: -20%;
-  height: 300px;  */
-  /* border-bottom: 5px solid #2a4092; */
-}
-#installation-text-fields {
-  width: 100%;
-  padding: 0%;
-  margin-left: 0%;
-  margin-top: -10%;
-  border-top: 5px solid #2a4092;
-    margin-top: 15px;
-}
-#panel-data-labels {
-  margin-top: 5%;
-  margin-left: -5%;
-}
-
-/************************************************************CARD*SLIDER*************************************************/
-/***MOBILE************************************************************************************************************************/
-
-#card-slider-button-left {
-  position: absolute;
-  z-index: 999;
-  margin-top: 15%;
-  margin-left: -50px;
-  background-color: transparent;
-  border: none;
-}
-#arrow {
-  color: red;
-  font-size: 1.5em;
-}
-#card-slider-image {
-  /* justify-content: center;
-  margin-top: 0%;
-  margin-left: 0%;
-  width: 100%;
-  height: 250px; */
-  object-fit: initial;
-  width: 100%;
-  max-width: 100%;
-  height: 325px;
-  margin-top: -6%;
-  margin-left: 0%;
-  background-color: #bfc5d2;
-  border-bottom: 5px solid #2a4092;
-} 
-#card-slider-button-delete-image {
-  position: absolute;
-  z-index: 999;
-  color: red;
-  background-color: transparent;
-  border: none;
-  font-size: 1em;
-  margin-top: -9%;
-  margin-left: -125%;
-} 
-#card-slider-button-right {
-  position: absolute;
-  z-index: 999;
-  margin-top: 15%;
-  margin-right: -100%;
-  background-color: transparent;
-  border: none;
-  margin-top: 24px;
+  z-index: 500;
+  border-radius: none; */
 }
 }

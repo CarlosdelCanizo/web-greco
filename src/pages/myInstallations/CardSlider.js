@@ -111,37 +111,30 @@ const CardSlider = ({ multimedia }) => {
         </Popconfirm>}
       </div> */}
       <Row>
-        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-          <div id="container-left-button-slider">
-            <Button
-              id="card-slider-button-left"
-              onClick={backward}
-              disabled={currentImageId === firstImageId ? true : false}
-            >
-              <Icon type="left" id="arrow" />
-            </Button>
-          </div>
+        <Col id="col-slider-left-button" xs={2} sm={2} md={2} lg={2} xl={2}>
+          <Button
+            id="card-slider-button-left"
+            onClick={backward}
+            disabled={currentImageId === firstImageId ? true : false}
+          >
+            <Icon type="left" id="arrow" />
+          </Button>
         </Col>
         <Col xs={16} sm={16} md={20} lg={20} xl={20}>
-          <div id="container-images-slider">
-            <PanelImage imageUrl={imageUrl} id="card-slider-image" />
-          </div>
+
+          <PanelImage imageUrl={imageUrl} />
+
         </Col>
-        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-          <div id="container-right-button-slider">
-            <Button
-              id="card-slider-button-right"
-              onClick={forward}
-              disabled={currentImageId === lastImageId ? true : false}
-            >
-              <Icon type="right" id="arrow" />
-            </Button>
-          </div>
+        <Col id="col-slider-right-button" xs={2} sm={2} md={2} lg={2} xl={2}>
+          <Button
+            id="card-slider-button-right"
+            onClick={forward}
+            disabled={currentImageId === lastImageId ? true : false}
+          >
+            <Icon type="right" id="arrow" />
+          </Button>
         </Col>
       </Row>
-
-
-
     </div>
   );
 }
