@@ -246,7 +246,7 @@ const FirstForm = (props) => {
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label-electrical_capacity">Power</label>
+                  <label id="panel-input-label-electrical_capacity">Electrical capcity</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
@@ -262,7 +262,7 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
-                  <label id="panel-input-label-surface">Area</label>
+                  <label id="panel-input-label-surface">Surface</label>
                   <Input
                     value={data.surface === 0 ? surface : data.surface}
                     onChange={handleInputChange}
@@ -277,7 +277,7 @@ const FirstForm = (props) => {
             <Col id="col-commissioning-date" xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
-                  <label id="panel-input-label-commissioningDate">Date of installation</label>
+                  <label id="panel-input-label-commissioningDate">Commissioning date</label>
                   <DatePicker
                     defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
                     onChange={onChangeDatePicker}

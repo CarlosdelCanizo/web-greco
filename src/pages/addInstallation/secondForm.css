@@ -102,7 +102,7 @@ margin-right: 6%;
 /***TABLET****************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
-  #card-panel-register-inside {
+  /* #card-panel-register-inside {
     width: 100%;
     margin-top: 0%;
     margin-left: 0%;
@@ -111,7 +111,7 @@ margin-right: 6%;
     text-align: center;
     border: none; 
     overflow: auto;  
-  }
+  } */
   #pagination {
     margin-top: 2%;
   }
@@ -229,7 +229,7 @@ margin-right: 6%;
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
+  /* #card-panel-register-inside {
     width: 100%;
     margin-top: 0%;
     margin-left: 0%;
@@ -238,7 +238,7 @@ margin-right: 6%;
     text-align: center;
     border: none; 
     overflow: auto;  
-  }
+  } */
   #pagination {
     margin-top: -1%;
   }

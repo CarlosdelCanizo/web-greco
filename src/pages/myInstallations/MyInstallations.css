@@ -210,7 +210,7 @@
     margin-top: -1%;
   }
 
-  /************************************************************CARD*SLIDER*************************************************/
+/************************************************************CARD*SLIDER*************************************************/
 /***MOBILE************************************************************************************************************************/
 #card-slider-installation-add-image {
   object-fit: initial;
@@ -222,6 +222,53 @@
   height: 305px;
   border-bottom: 5px solid #2a4092;
 }
+#col-slider-left-button {
+  position: absolute;
+  z-index: 800;
+  top: 43%;
+  left: -5%;
+}
+#col-slider-right-button {
+  position: absolute;
+  z-index: 800;
+  top: 35%;
+  right: -5%;
+}
+#container-delete-button-slider {
+  position: absolute;
+  visibility: hidden;
+} 
+/* #card-slider-button-delete-image {
+  position: relative;
+  z-index: 999;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  margin-top: 8%;  
+}  */
+#card-slider-button-left {
+  position: relative;
+  z-index: 999;
+  top: 15%;
+  background-color: transparent;
+  border: none;
+  margin-left: -12px;
+}
+
+#card-slider-button-right {
+  position: relative;
+  z-index: 999;
+  top: -1%;
+  background-color: transparent;
+  border: none;
+  right: 12px;
+  margin-top: 24px;
+}
+#arrow {
+  color: red;
+  font-size: 1.5em;
+}
 /************************************************************INSTALLATION**************************************************/
 /***MOBILE***************************************************************************************************************/
 /* #installation-tittle-button-container {
@@ -229,7 +276,9 @@
   width: 130%;
 } */
 #col-title {
+width: auto;
 margin-top: -1.8em;
+left: -13vw;
 }
 #installation-tittle {
   z-index: 400;
@@ -243,20 +292,19 @@ margin-top: -1.8em;
   width: 90vw;
   height: 40px;
   margin-top: 0;
-  left: -12.5vw;
-  right: -12.5vw;
 }
 #installation-button-menu { 
-  /* position: absolute; */
-  /* top:-20px; */
-  /* right: -20px; */
+  position: absolute;
+  margin-right: -67vw;
   line-height: 0em;
-  /* background-color: transparent;
-  color: #ff0000;
-  opacity: 1;
-  font-size: 2em;
-  border: none;
-  z-index: 500;
-  border-radius: none; */
+
 }
 }
+
+/*******************ADJUST*VIEWPORTS********************/
+@media (width: 320px) and (height: 568px) {
+  #installation-tittle {
+    margin-left: -1vw;
+  }
+}
+  

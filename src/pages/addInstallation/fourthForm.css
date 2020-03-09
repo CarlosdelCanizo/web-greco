@@ -246,7 +246,7 @@
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #card-panel-register-inside {
+  /* #card-panel-register-inside {
     width: 100%;
     margin-top: 0%;
     margin-left: 0%;
@@ -260,7 +260,7 @@
   }
   #pagination-bullet {
     margin-left: 1%;
-  }
+  } */
   #tittle-panel-registration {
     font-size: 24px;
     font-weight: bolder;

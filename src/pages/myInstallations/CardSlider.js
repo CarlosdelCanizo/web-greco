@@ -42,7 +42,6 @@ const CardSlider = ({ multimedia }) => {
   } else {
     firstImageId = null
     lastImageId = null
-
   }
 
   const [currentImageId, setCurrentImageId] = useState(firstImageId)
@@ -91,13 +90,11 @@ const CardSlider = ({ multimedia }) => {
       .then(error => {
         console.log("ERROR delete image:", error);
       })
-
   }
 
   function confirm() {
     deleteImage(currentImageId)
     setImageUrl(noImage);
-
   }
 
   return (

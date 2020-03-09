@@ -1,13 +1,17 @@
 @import '~antd/dist/antd.css';
 
 #card-panel-register-inside {
+  position: fixed;
   width: 600px;
   height: 700px;
-  margin-top: 3%;
-  margin: 0 auto;
+  margin: auto;
   font-family: Montserrat;
   background-color: white;
-  text-align: center;  
+  text-align: center;
+  top: 0;
+  bottom: 0; 
+  left: 0;
+  right: 0; 
 }
 #pagination {
   margin-top: 0%;
@@ -151,7 +155,7 @@ border-radius: none;
 }
 .ant-calendar-picker-input {
   color: #7f95a7;
-  width: 177px;
+  width: 165px;
   height: 52px;
   font-family: Montserrat;
   font-size: 14px;
@@ -185,7 +189,7 @@ border-radius: none;
   line-height: 0;
   color: #2a4092;
   background-color:transparent;
-  left: -32%;
+  left: -28%;
   top: -15%;
 }
 #panel-input-label-type {
@@ -197,7 +201,7 @@ border-radius: none;
   line-height: 0;
   color: #2a4092;
   background-color:transparent;
-  left: -33%;
+  left: -30%;
   top: -15%;
 }
 #inverter-capacity {
@@ -210,7 +214,7 @@ border-radius: none;
   background-color: transparent;
   border-radius: 0;
   left: 0%;
-  top: -71%;
+  top: -70%;
 }
 #div-installation-background-firstform {
   margin-top: 0%;
@@ -319,7 +323,7 @@ border-radius: none;
 @media (min-width: 600px) and (max-width: 1023px) {
 .ant-calendar-picker-input {
     color: #7f95a7;
-    width: calc((100vw / 3) - 5em );
+    width: calc( (100vw / 3) - 5em );
     height: 52px;
     font-family: Montserrat;
     font-size: 14px;
@@ -407,7 +411,7 @@ border-radius: none;
     line-height: 1.25;
     color: #2a4092;
     background-color:transparent;
-    left: -33%;
+    left: -31%;
     top: -22%;
 }
 #panel-input-label-type {
@@ -501,7 +505,7 @@ border-radius: none;
   font-size: 14px;
   line-height: 1.6;
   border-radius: 0;
-  top: -103%;
+  top: -0%;
   left: 0%;
 }
 .ant-select-selection {
@@ -514,7 +518,7 @@ border-radius: none;
   background-color: transparent;
   border-radius: 0;
   left: 0%;
-  top: -13px;
+  top: 10% !important;
 }
 #col-commissioning-date {
   margin-top: 3%;
@@ -592,13 +596,14 @@ border-radius: none;
 }
 }
 
-/**************************************************************MOBILE*SMALL****************************************************************/
-/***MOBILE*SMALL***************************************************************************************************************************/
+/**************************************************************MOBILE*****************************************************************/
+/***MOBILE****************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
  
 #card-panel-register-inside {
     width: 100%;
+    height: 100%;
     margin-top: 0%;
     margin-left: 0%;
     font-family: Montserrat;
@@ -612,6 +617,7 @@ border-radius: none;
 }
 #pagination-bullet {
     margin-left: 1%;
+    width: 4%;
 }
 #tittle-panel-registration {
     font-size: 24px;
@@ -649,7 +655,6 @@ border-radius: none;
   width: 100%;
   font-weight: 500;
   font-size: 10px;
-  line-height: 0;
   color: #2a4092;
   background-color:transparent;
   margin-left: -4%;
@@ -662,13 +667,12 @@ border-radius: none;
   width: 100%;
   font-weight: 500;
   font-size: 10px;
-  line-height: 0;
   color: #2a4092;
   background-color:transparent;
   margin-left: -2%;
   top: -15%;
   line-height: inherit;
-  left: 10px;
+  left: 12px;
 }
 #electrical_capacity {
   color: #7f95a7;
@@ -736,13 +740,15 @@ border-radius: none;
   border-bottom-color: #2a4092;
 }
 #panel-input-label-inverter {
+  position: relative;
   width: 100%;
   text-align: left;
   font-weight: 500;
   font-size: 10px;
   color: #2a4092;
   background-color:transparent;
-  left: -33%;
+  /* margin-left: -13%; */
+  /* left: -10px; */
   top: -15%;
 }
 #inverter-capacity {
@@ -751,15 +757,15 @@ border-radius: none;
   height: 100%;
   font-family: Montserrat;
   font-size: 14px;
-  line-height: 0;
+  line-height: inherit;
   background-color: transparent;
   border-radius: 0;
-  top: -71%;
+  top: -70%;
   left: 0%;
 }
 #div-installation-background-firstform {
   margin-top: 1% ;
-  margin-left: 1% ;
+  margin-left: 0% ;
   background-color: #f9f9f9;
   width: 100%;
   height: 54px;
@@ -769,14 +775,14 @@ border-radius: none;
 }
 #panel-input-label-type {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   text-align: left;
   font-weight: 500;
   font-size: 10px;
-  line-height: 0;
+  line-height: inherit;
   color: #2a4092;
-  background-color:transparent;
-  left: -35%;
+  background-color: transparent;
+  /* margin-left: -18px; */
   top: -15%;
 }
 #installation-type {
@@ -867,16 +873,23 @@ border-radius: none;
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
   /*COMPUTER*CHROME*/
   .ant-input{ margin-top: -3px!important; }
+  #commissioningDate{ margin-top: -2px!important; }
+  #inverter-capacity{ margin-top: -4px!important; }
+  #installation-type{ margin-top: 4px!important; }
 
    /*TABLET*CROME*/
    @media (min-width: 600px) and (max-width: 992px) {
     .ant-select-selection {top: -32px !important;}
   }
 
+  /*******************ADJUST*VIEWPORTS********************/
   /*MOBILE*CHROME*/
   @media (min-width: 240px) and (max-width: 600px) {
+    #electrical_capacity, #surface {
+      margin-top: -4px !important;
+      }
     .ant-select {
-      margin-top: 4px!important;
+      margin-top: 4px !important;
       margin-left: 1px;
       /* width: 268px !important; */
       }
@@ -885,18 +898,33 @@ border-radius: none;
 
 /*FIREFOX****************************************************************************/
 @-moz-document url-prefix() {
+
     /*COMPUTER*FIREFOX*/
     .ant-input {
-       margin-top:-4px!important; 
+       margin-top:-4px !important; 
       }
     #div-inverter-background {
-      height: 53px!important;
+      height: 53px !important;
       }
+      #commissioningDate{ margin-top: 0px !important; }
+      .ant-select {
+        margin-top: 5px !important;
+        width: 300px !important;
+        }
+
+      /*TABLET*FIREFOX*/
+      @media (min-width: 600px) and (max-width: 992px) { 
+        #electrical_capacity, #surface {
+          margin-top: -5px !important;
+          }
+      }
+
       /*MOBILE*FIREFOX*/
     @media (min-width: 240px) and (max-width: 600px) { 
       .ant-select {
-         margin-top: 4px!important;
-         /* width: 266px !important; */
+         margin-top: 4px !important;
+         margin-left: -1 !important;
+         width: 270px !important;
          }
      }
   

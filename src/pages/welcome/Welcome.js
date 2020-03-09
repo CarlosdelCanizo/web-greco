@@ -27,7 +27,7 @@ class Welcome extends React.Component {
               WELCOME TO <br />
               THE GRECO PROJECT
           </h1>
-            <p id="welcome-normal-text" >Fostering a Next Generation of <b>European Photovoltaic Society</b> through Open Science.</p>
+            <p id="welcome-normal-text" >Fostering a Next Generation of <span id="welcome-normal-text-bold">European Photovoltaic Society</span> through Open Science.</p>
             <h6 id="welcome-text-mini">Do you want to <a id="link" href="https://www.greco-project.eu/">know more?</a></h6>
             <Divider id="large-divider" />
             <div id="welcome-button-container">

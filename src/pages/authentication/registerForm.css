@@ -254,40 +254,6 @@
   
 }
 
-
-/**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
-/***ORIENTATION*LANDSCAPE***********************************************************************************************************************/
-
-/* @media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
-  
-  #label {
-    display: inline-block;
-    width: 85%;
-    text-align: left;
-    margin-left: 0px;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color: #f9f9f9;
-    border-bottom: 10px solid #f9f9f9;
-    margin-left: 10%;
-    margin-bottom: -1%;
-    margin-top: 8%;
-  }
-  #registeer-text-footer-container{
-    width: 100%;
-    text-align: center;
-    bottom: -15%;
-  }
-  #register-text-footer {
-    font-size: 0.8em;
-    bottom: -15%;
-    left: -10%;
-    width: 80%;
-    color: #2a4092;
-  }  */
-/* }  */
-
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
   #register-username, #register-email, #register-password, #register-confirm{ margin-top: -12px !important; } }   
 

@@ -29,7 +29,7 @@
   margin-right: 25%;
  }
 #welcome-title-text {
-  width: 430px;
+  width: 434px;
   height: 100px;
   font-size: 41px;
   font-weight: 600;
@@ -42,8 +42,14 @@
   margin-top: 5%;
   font-size: 24px;
   text-align: left;
-  line-height: 1.25;
-  color: #002c50;
+  line-height: 1.17;
+  letter-spacing: 0.53px;
+  color: #214867 !important;
+}
+#welcome-normal-text-bold {
+  font-weight: 600;
+  letter-spacing: 0.56px;
+  color: #002c50 !important;
 }
 #welcome-text-mini {
   margin-top: 5%;
@@ -125,8 +131,10 @@
     width: 45%;
   }
   #welcome-title-text {
+    width: 434px;
+    height: 100px;
     margin-top: 15%;
-    font-size: 41.6;
+    font-size: 30px;
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
@@ -170,8 +178,8 @@
   } 
 }
 
-/**************************************************************MOBILE*SMALL****************************************************************/
-/***MOBILE*SMALL***************************************************************************************************************************/
+/**************************************************************MOBILE*****************************************************************/
+/***MOBILE****************************************************************************************************************************/
 @media (min-width: 240px) and (max-width: 600px) {
   #col-welcome-container {
     background-image: none; 
@@ -195,7 +203,8 @@
     margin-right: 8%;
   }
   #welcome-title-text {
-    height: 25%;
+    width: 278px;
+    height: 66px;
     margin-top: 10%;
     font-size: 26.6px;
     font-weight: 600;
@@ -269,30 +278,19 @@
   } 
 }
 
-
-/**************************************************************ORIENTATION*LANDSCAPE***************************************************************/
-/***ORIENTATION*LANDSCAPE**************************************************************************************************************************/
-
-/* @media (min-width: 240px) and (max-width: 992px) and (orientation: LANDSCAPE) {
-
-  #welcome-text-footer-container{
-    z-index: 999;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: -15%;
-    left: -5.5%;
-  }
-  #welcome-text-footer {
-    position: relative;
-    z-index: 999;
-    font-size: 0.8em;
-    bottom: -15%;
-    width: 80%;
-    color: #2a4092;
-  } 
-}  */
-
 #prueba-comunicacion {
   display: none;
+}
+
+/*DIFFERENTS*VIEWPORTS*/
+@media (min-width: 993px) and (max-width: 1172px) {
+  #welcome-title-text {
+    font-size: 25px; 
+  }
+}
+
+@media (min-width: 1173px) and (max-width: 1598px) {
+  #welcome-title-text {
+    font-size: 30px; 
+  }
 }
