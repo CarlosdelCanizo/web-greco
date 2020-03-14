@@ -16,7 +16,7 @@ body,html {
 }
 
 .body_forms{
-  background: url(/static/media/panels.12d79477.png);
+  background-image: url(./assets/panels.png);
   background-size: cover;
 }
 .transparentDivider{

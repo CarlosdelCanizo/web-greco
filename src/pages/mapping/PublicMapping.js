@@ -154,7 +154,7 @@ const PublicMapping = () => {
                           Surface
                         </h5>
                         <h3 id="public-private-mapping-data-fields">
-                          {item.surface} Kw
+                          {item.surface} m²
                         </h3>
                       </Col>
                       <Col span={8}>

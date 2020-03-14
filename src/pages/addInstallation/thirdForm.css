@@ -45,12 +45,11 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 70%;
+  width: 80%;
   height: 40px;
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 6%;
 }
 #button-panel-register-next-third {
   background-color: #db4196;
@@ -58,12 +57,11 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 70%;
+  width: 80%;
   height:40px;
   border-radius: 0;
   border: none;
   margin-left: 0%;
-  margin-top: 6%;
 }
 
 /**************************************************************TABLET*****************************************************************/

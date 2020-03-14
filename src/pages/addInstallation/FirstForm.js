@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -38,11 +38,18 @@ const FirstForm = (props) => {
 
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
 
-  if (window.innerWidth < 768 && window.innerHeight > 720) {
-    document.body.classList.remove('body_forms');
-  } else {
-    document.body.classList.add('body_forms');
-  }
+  //*ADD/REMOVE BACKGROUND*
+  useEffect(() => {
+    // debugger
+    if (window.innerWidth < 768 && window.innerHeight > 720) {
+      document.body.classList.remove('body_forms');
+      console.log("LLEVAR fons")
+    } else {
+      document.body.classList.add('body_forms');
+      console.log("AFEGIR fons")
+    }
+  }, []);
+
 
   //GET UPDATE DATA
   if (myPanel !== undefined) {

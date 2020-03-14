@@ -107,13 +107,12 @@ const ThirdForm = props => {
                                 Does your panel orient towards the Sun?
                                 If that's the case, check the corresponding type of tracking (you can choice both).
                                 If don't, press 'next'.
-                        </p>
+                            </p>
                         </Col>
 
                     </Row>
                     <Row>
-                        <Col xs={7} sm={7} md={7} lg={7} xl={7}>
-                        </Col>
+                        <Col xs={4} sm={7} md={7} lg={7} xl={7} />
                         <Col id="register-panel-fields-third" xs={4} sm={4} md={4} lg={4} xl={4}>
                             <Form.Item>
                                 <Checkbox
@@ -129,8 +128,7 @@ const ThirdForm = props => {
                                     </Checkbox>
                             </Form.Item>
                         </Col>
-                        <Col id="register-panel-fields-third" xs={3} sm={3} md={3} lg={3} xl={3}>
-                        </Col>
+                        <Col id="register-panel-fields-third" xs={3} sm={3} md={3} lg={3} xl={3} />
                         <Col id="register-panel-fields-third" xs={4} sm={4} md={4} lg={4} xl={4}>
                             <Form.Item>
                                 <Checkbox label='Inclination'
@@ -146,8 +144,7 @@ const ThirdForm = props => {
                                     </Checkbox>
                             </Form.Item>
                         </Col>
-                        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-                        </Col>
+                        <Col xs={7} sm={4} md={4} lg={4} xl={4} />
                     </Row>
                     <Row>
                         <Col id="col-image-panel-tracking" xs={24} sm={24} md={24} lg={24} xl={24}>

@@ -15,7 +15,7 @@ class Welcome extends React.Component {
   render() {
     console.log('this props', this.props)
     return (
-      <Row>
+      <Row id="row-page-cotainer">
 
         <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
           <Col span={24} id="welcome-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
@@ -35,10 +35,8 @@ class Welcome extends React.Component {
               <Button id="button-welcome-right"><Link to="/login">LOG IN</Link></Button>
             </div>
             <h6 id="welcome-text-mini">Don't you have an account? <Link id="link" from="/welcome" to="/register">Sign up</Link></h6>
-
-            <div id="welcome-text-footer-container">
-              <h5 id="welcome-text-footer">Coordinated by the Solar Energy Institute of the Polytechnic University of Madrid.</h5>
-            </div>
+            <Divider id="footer-divider" />
+            <h5 id="welcome-text-footer">Coordinated by the Solar Energy Institute of the Polytechnic University of Madrid.</h5>
           </div>
         </Col>
         <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

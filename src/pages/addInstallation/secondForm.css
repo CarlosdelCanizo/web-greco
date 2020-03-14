@@ -79,11 +79,12 @@ margin-right: 6%;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 70%;
+  width: 80%;
   height: 40px;
   border-radius: 0;
   border: none;
-  margin-left: 0%;
+  margin-left: 9%;
+  margin-top: -1%;
 }
 #button-panel-register-next-second {
   background-color: #db4196;
@@ -91,11 +92,12 @@ margin-right: 6%;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
-  width: 70%;
+  width: 80%;
   height:40px;
   border-radius: 0;
   border: none;
-  margin-left: 0%;
+  margin-left: -5%;
+  margin-top: -1%;
 }
 
 /**************************************************************TABLET*****************************************************************/

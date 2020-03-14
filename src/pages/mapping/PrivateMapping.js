@@ -186,7 +186,7 @@ const PrivateMapping = () => {
                         Surface
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {panel.surface} Kw
+                        {panel.surface} m²
                       </h3>
                     </Col>
                     <Col span={8}>

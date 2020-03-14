@@ -104,7 +104,7 @@ const LoginForm = (props) => {
   }
 
   return (
-    <Row>
+    <Row id="row-page-cotainer">
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
         <Col id="login-logo-mobile" span={24} xs={24} sm={24} md={24} lg={0} xl={0}>
           <Row>
@@ -167,12 +167,13 @@ const LoginForm = (props) => {
             <h6 id="welcome-text-mini-account">Don't you have an account yet?
           <Link id="link" to="/register">Sign up</Link></h6>
           </div>
-          <Row>
-            {/* <div id="login-text-footer-container"> */}
-            <div className="fixed-footer">
-              <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
-            </div>
-          </Row>
+          <Divider id="footer-divider" />
+          {/* <Row> */}
+          {/* <div id="login-text-footer-container"> */}
+          {/* <div className="fixed-footer"> */}
+          <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
+          {/* </div> */}
+          {/* </Row> */}
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>
