@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Row, Col, Icon, Button, Select, message, Input, Switch, Divider } from 'antd';
+import { Form, Card, Row, Col, Icon, Button, Select, message, Input, Switch, Divider, Tooltip } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import inclinationImage from '../../assets/inclination.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -74,6 +74,7 @@ const FifthForm = props => {
     const isEnabled =
         (data.inclination && data.inclination > 0 || inclination && inclination > 0);
 
+    const angle = <span>The angle your panel makes with the floor. If horizontally, its inclination is 0º</span>;
 
     return (
         <Row>
@@ -108,24 +109,24 @@ const FifthForm = props => {
                 <Row>
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <p id="text-panel-registration">
-                            If your device doesn't detect the inclination of your panel, you can type it in.
-                            If you don't know the precise inclination, you may use the drop-down menu below.
+                            Use the inclination provided by your smartphone or type it in. If you don't know the precise inclination, click on the button and use the drop-down menu below.
                         </p>
                     </Col>
                 </Row>
 
-
-
                 <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <div id="selector">
-                            <Switch
-                                onChange={onChangeSwitch}
-                                name="selector"
 
-                            />
-                        </div>
-                    </Col>
+                    <Tooltip placement="top" title={angle}>
+                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <div id="selector">
+                                <Switch
+                                    onChange={onChangeSwitch}
+                                    name="selector"
+
+                                />
+                            </div>
+                        </Col>
+                    </Tooltip>
                 </Row>
                 <Divider id="transparent-divider"></Divider>
                 <Row>

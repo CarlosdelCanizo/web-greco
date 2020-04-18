@@ -4,6 +4,12 @@
 #orientationFromMobile_alpha {
   display:none;
 }
+#orientation-info {
+  z-index: 1;
+  position: absolute;
+  left: 15%;
+  top: 40%;
+}
 #selector {
   z-index: 1;
     margin: 0 auto;
@@ -118,13 +124,13 @@
 }
 #register-panel-image-fifth {
   margin-top: 1%;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }   
 #register-panel-image-fifth-select {
   margin-top: 5%;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }   
 #button-panel-register-previous-fourth  {
   background-color: #2a4092;

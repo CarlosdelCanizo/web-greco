@@ -43,10 +43,10 @@ const ShowPanelDetails = (props) => {
           {/* <div id="feed-panel-text-fields"> */}
           <Col span={8}>
             <h5 id="show-panel-data-labels-card">
-              Power
+              Installed capacity
                 </h5>
             <h4 id="show-panel-data-fields">
-              {myPanel.panel.electrical_capacity} Kw
+              {myPanel.panel.electrical_capacity} kW
                 </h4>
           </Col>
           <Col span={8}>
@@ -62,7 +62,7 @@ const ShowPanelDetails = (props) => {
               Inverter capacity
                 </h5>
             <h4 id="show-panel-data-fields">
-              {myPanel.panel.inverterCapacity} Kw
+              {myPanel.panel.inverterCapacity} kW
                 </h4>
           </Col>
           {/* </div> */}
@@ -77,7 +77,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={12}>
             <h5 id="show-panel-data-labels-first">
-              Owner
+              Property
                 </h5>
             <h4 id="show-panel-data-fields-first">
               {myPanel.panel.installationProperty}
@@ -96,7 +96,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={12}>
             <h5 id="show-panel-data-labels-second">
-              Tracking orientation
+              Orientation tracking
                 </h5>
             <h4 id="show-panel-data-fields-second">
               {myPanel.panel.panelTrackingOrientation ? (<p>Yes</p>) : (<p>No</p>)}
@@ -104,7 +104,7 @@ const ShowPanelDetails = (props) => {
           </Col>
           <Col span={12}>
             <h5 id="show-panel-data-labels-second">
-              Tracking inclination
+              Inclination tracking
                 </h5>
             <h4 id="show-panel-data-fields-second">
               {myPanel.panel.panelTrackingInclination ? (<p>Yes</p>) : (<p>No</p>)}
@@ -139,16 +139,16 @@ const ShowPanelDetails = (props) => {
             {myPanel.panel.battery ?
               (<h4 id="show-panel-data-fields-second">
                 Yes
-                </h4>)
+              </h4>)
               :
               (<h4 id="show-panel-data-fields-second">
                 No
-                </h4>)
+              </h4>)
             }
           </Col>
           <Col span={12}>
             <h5 id="show-panel-data-labels-second">
-              Date of installation
+              Installation date
                 </h5>
             <h4 id="show-panel-data-fields-second">
               {moment(myPanel.panel.commissioningDate).format('YYYY-MM-DD')}
@@ -159,7 +159,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={24}>
             <h5 id="show-panel-data-labels-third">
-              Type of battery
+              Battery description
                 </h5>
             <h4 id="show-panel-data-fields-third">
               {myPanel.panel.batteryDescription}
@@ -181,7 +181,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col span={24}>
             <h5 id="show-panel-data-labels-third">
-              Observation
+              Observations
                 </h5>
             <h4 id="show-panel-data-fields-third">
               {myPanel.panel.observation}

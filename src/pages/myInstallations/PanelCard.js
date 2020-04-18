@@ -110,15 +110,15 @@ const PanelCard = ({ panel, fetchPanels }) => {
           <div id="installation-text-fields">
             <Col span={8}>
               <h5 id="panel-data-labels">
-                Electrical capacity
+                Installed capacity
                   </h5>
               <h4 id="panel-data-fields">
-                {panel.electrical_capacity} Kw
+                {panel.electrical_capacity} kW
                   </h4>
             </Col>
             <Col span={8}>
               <h5 id="panel-data-labels">
-                Surface
+                Area
                   </h5>
               <h4 id="panel-data-fields">
                 {panel.surface} m²
@@ -129,7 +129,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
                 Inverter capacity
                   </h5>
               <h4 id="panel-data-fields">
-                {panel.inverterCapacity} Kw
+                {panel.inverterCapacity} kW
                   </h4>
             </Col>
           </div>

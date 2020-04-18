@@ -196,15 +196,15 @@ const FeedPanel = (props) => {
         <Row>
           <Col span={8}>
             <h5 id="feed-panel-data-labels">
-              Electrical capacity
+              Installed capacity
             </h5>
             <h4 id="feed-panel-data-fields">
-              {myPanel.panel.electrical_capacity} Kw
+              {myPanel.panel.electrical_capacity} kW
             </h4>
           </Col>
           <Col span={8}>
             <h5 id="feed-panel-data-labels">
-              Surface
+              Area
             </h5>
             <h4 id="feed-panel-data-fields">
               {myPanel.panel.surface} m²
@@ -215,7 +215,7 @@ const FeedPanel = (props) => {
               Inverter capacity
             </h5>
             <h4 id="feed-panel-data-fields">
-              {myPanel.panel.inverterCapacity} Kw
+              {myPanel.panel.inverterCapacity} kW
             </h4>
           </Col>
         </Row>

@@ -25,7 +25,7 @@ const Profile = () => {
           </div>
         )
         :
-        (<h2 id="user-menu-tittle">GRECO</h2>)}
+        (<h2 id="user-menu-tittle">Generation Solar</h2>)}
     </div>
 
   );

@@ -3,7 +3,7 @@
 #register-title-text {
   margin-top: 0%;
   font-size: 26.6;
-  font-weight: 600;
+  font-weight: 1000;
   text-align: left;
   line-height: 1.25;
   color: #2a4092;
@@ -90,12 +90,12 @@
   #register-logo-mobile-image {
     margin-top: 15%;
     width: 45%;
-    /* margin-left:10% */
+    margin-bottom:15%
   }
   #register-title-text {
-    margin-top: 10%;
-    font-size: 26.6;
-    font-weight: 600;
+    margin-top: 25%;
+    font-size: 41.6px;
+    font-weight: 1000;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;
@@ -174,12 +174,10 @@
 /***MOBILE*SMALL************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #col-welcome-container {
-      overflow: auto !important;
-    }
   #register-logo-mobile {
     margin-top: 8%;
     margin-left: 5%;
+    width: fit-content;
   }
   #register-logo-mobile-image {
     margin-left: 5.5%;
@@ -187,10 +185,10 @@
     height: 1%;
   }
   #register-title-text {
-    margin-top: 5%;
+    margin-top: 25%;
     margin-bottom: 0%;
     font-size: 26.6px;
-    font-weight: 600;
+    font-weight: 1000;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;

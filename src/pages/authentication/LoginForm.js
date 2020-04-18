@@ -150,7 +150,7 @@ const LoginForm = (props) => {
               </div>
             </div>
             <div>
-              <p id="welcome-text-mini-forget">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
+              <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
               <Divider id="large-divider" />
             </div>
             <div id="welcome-button-container">
@@ -164,16 +164,11 @@ const LoginForm = (props) => {
             </div>
           </Form>
           <div>
-            <h6 id="welcome-text-mini-account">Don't you have an account yet?
+            <h6 id="welcome-text-mini">Don't you have an account yet?
           <Link id="link" to="/register">Sign up</Link></h6>
           </div>
           <Divider id="footer-divider" />
-          {/* <Row> */}
-          {/* <div id="login-text-footer-container"> */}
-          {/* <div className="fixed-footer"> */}
-          <h6 id="login-text-footer">Read terms and <a id="link" href="https://www.greco-project.eu/">privacy policy</a>.</h6>
-          {/* </div> */}
-          {/* </Row> */}
+          <h6 id="login-text-footer">Read terms and <a id="link" href="/privacy-policy">privacy policy</a>.</h6>
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

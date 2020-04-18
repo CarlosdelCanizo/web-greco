@@ -5,6 +5,11 @@
   visibility: hidden;
 }
 
+.leaflet-marker-icon, .leaflet-marker-shadow {
+  margin-top: -41px;
+  margin-left: -13px;
+}
+
 #text-panel-registration {
   font-size: 16px;
   text-align: center;

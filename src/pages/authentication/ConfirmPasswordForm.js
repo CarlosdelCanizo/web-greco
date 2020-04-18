@@ -76,7 +76,7 @@ const ConfirmPasswordForm = (props) => {
           <img src={mobileLogo} id="confirm-logo-mobile-image" alt="mobile-logo" />
         </Col>
         <div id="inside-welcome-container" >
-          <h1 id="welcome-title-text" >
+          <h1 id="login-title-text" >
             CONFIRM YOUR <br />
             PASSWORD
         </h1>

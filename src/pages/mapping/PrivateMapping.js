@@ -9,8 +9,9 @@ import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import Header from '../../header/Header';
-import axiosConfig from '../../api/axiosConfig'
-import { Link } from 'react-router-dom'
+import axiosConfig from '../../api/axiosConfig';
+import { Link } from 'react-router-dom';
+import Legend from './Legend';
 
 const PanelImage = ({ imageUrl }) => {
   switch (imageUrl) {
@@ -175,15 +176,15 @@ const PrivateMapping = () => {
                   <Row id="public-private-mapping-text-fields">
                     <Col span={8}>
                       <h5 id="public-private-mapping-data-labels">
-                        Electrical capacity
+                        Installed capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {panel.electrical_capacity} Kw
+                        {panel.electrical_capacity} kW
                       </h3>
                     </Col>
                     <Col span={8}>
                       <h5 id="public-private-mapping-data-labels">
-                        Surface
+                        Area
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
                         {panel.surface} m²
@@ -194,7 +195,7 @@ const PrivateMapping = () => {
                         Inverter capacity
                       </h5>
                       <h3 id="public-private-mapping-data-fields">
-                        {panel.inverterCapacity} Kw
+                        {panel.inverterCapacity} kW
                       </h3>
                     </Col>
                   </Row>
@@ -228,6 +229,7 @@ const PrivateMapping = () => {
               </Popup>
             </Marker>
           ))}
+          <Legend />
         </LeafletMap>
       </div>
     </React.Fragment >

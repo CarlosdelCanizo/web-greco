@@ -8,6 +8,7 @@ import './finishedPanel.css'
 
 const FinishedPanel = props => {
 
+    var panel = JSON.parse(localStorage.getItem('currentPanelState'))
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
     localStorage.removeItem("currentPanelId")
     localStorage.removeItem("currentPanelState")
@@ -49,9 +50,14 @@ const FinishedPanel = props => {
                     </div>
                 </Col>
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                    <Link to="/private-mapping">
+                    <Link to={
+                        {
+                            pathname: "/show-panel-details",
+                            myPanel: { panel }
+                        }
+                    }>
                         <Button id="button-panel-finish-next">
-                            FINALIZE
+                            SEE YOUR INSTALLATION
                         </Button>
                     </Link>
                 </Col>

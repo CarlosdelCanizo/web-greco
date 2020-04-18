@@ -59,7 +59,7 @@ const DownloadData = (props) => {
               </Col >
             </Row>
             <Row>
-              <p id="download-text">Download all the information from the Greco project database, in a csv file.</p>
+              <p id="download-text">Download all the information from the Generation Solar database, in a csv file.</p>
             </Row>
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

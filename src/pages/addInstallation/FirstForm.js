@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message } from 'antd'
+import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message, Popover } from 'antd'
 import { Redirect, Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -40,13 +40,10 @@ const FirstForm = (props) => {
 
   //*ADD/REMOVE BACKGROUND*
   useEffect(() => {
-    // debugger
     if (window.innerWidth < 768 && window.innerHeight > 720) {
       document.body.classList.remove('body_forms');
-      console.log("LLEVAR fons")
     } else {
       document.body.classList.add('body_forms');
-      console.log("AFEGIR fons")
     }
   }, []);
 
@@ -55,6 +52,7 @@ const FirstForm = (props) => {
   if (myPanel !== undefined) {
     var electrical_capacity = myPanel.panel.electrical_capacity
     var surface = myPanel.panel.surface
+    //OPTIONALS FIELDS
     var commissioningDate = moment(myPanel.panel.commissioningDate, 'YYYY-MM-DD')
     var technologyUsed = myPanel.panel.technologyUsed
     var inverterCapacity = myPanel.panel.inverterCapacity
@@ -67,6 +65,7 @@ const FirstForm = (props) => {
     data.orientation = myPanel.panel.orientation
     data.panelTrackingOrientation = myPanel.panel.panelTrackingOrientation
     data.panelTrackingInclination = myPanel.panel.panelTrackingInclination
+    //OPTIONALS FIELDS
     data.observation = myPanel.panel.observation
     data.battery = myPanel.panel.battery
     data.batteryDescription = myPanel.panel.batteryDescription
@@ -78,7 +77,10 @@ const FirstForm = (props) => {
     if (currentPanelState !== null) {
       var electrical_capacity = currentPanelState.electrical_capacity
       var surface = currentPanelState.surface
-      var commissioningDate = (currentPanelState.commissioningDate).substring(0, 10)
+      //OPTIONALS FIELDS
+      if (commissioningDate !== undefined) {
+        var commissioningDate = (currentPanelState.commissioningDate).substring(0, 10)
+      }
       var technologyUsed = currentPanelState.technologyUsed
       var inverterCapacity = currentPanelState.inverterCapacity
       var installationType = currentPanelState.installationType
@@ -89,6 +91,7 @@ const FirstForm = (props) => {
       var orientation = currentPanelState.orientation
       var panelTrackingOrientation = currentPanelState.panelTrackingOrientation
       var panelTrackingInclination = currentPanelState.panelTrackingInclination
+      //OPTIONALS FIELDS
       var observation = currentPanelState.observation
       var battery = currentPanelState.battery
       var batteryDescription = currentPanelState.batteryDescription
@@ -208,10 +211,34 @@ const FirstForm = (props) => {
     (currentPanelId && currentPanelId > 0) ||
     (data.electrical_capacity.length > 0 || electrical_capacity && electrical_capacity !== undefined && electrical_capacity.length > 0) &&
     (data.surface.length > 0 || surface && surface !== undefined && surface.length > 0) &&
-    (data.commissioningDate !== "" || commissioningDate !== undefined) &&
-    (data.technologyUsed !== "" || technologyUsed && technologyUsed !== undefined && technologyUsed.length > 0) &&
-    (data.inverterCapacity.length > 0 || inverterCapacity && inverterCapacity.length > 0) &&
+    //(data.commissioningDate !== "" || commissioningDate !== undefined) &&
+    //(data.technologyUsed !== "" || technologyUsed && technologyUsed !== undefined && technologyUsed.length > 0) &&
+    //(data.inverterCapacity.length > 0 || inverterCapacity && inverterCapacity.length > 0) &&
     (data.installationType !== "" || installationType && installationType !== undefined && installationType.length > 0)
+
+  const infoMonocrystalline = (
+    <div>
+      <p>
+        Composed of a number of dark blue or black cells connected by thin silvered tabs, each of them looks fairly uniform and typically has beveled edges. It has a front glass, a back plastic sheet and an aluminium frame.
+      </p>
+    </div>
+  );
+
+  const infoPolycrystalline = (
+    <div>
+      <p>
+        Unlike monocrystalline solar cells, polycrystalline (also called multicrystalline) cells are completely squared, without beveled edges, and tend to have a less uniform, clearer blue color. It also has a front glass, a back plastic sheet and an aluminium frame.
+      </p>
+    </div>
+  );
+
+  const infoThinFilm = (
+    <div>
+      <p>
+        In a thin-film panel the solar cells come as stripes all along the module, sandwiched between two glasses. However, it is a bit difficult to distinguish the isolated cells, and the panel shows a rather uniform dark appearance.
+      </p>
+    </div >
+  );
 
   return (
     <Row>
@@ -242,25 +269,18 @@ const FirstForm = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-              <p id="text-panel-registration">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            </Col>
-          </Row>
-          <Row>
             <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label-electrical_capacity">Electrical capcity</label>
+                  <label id="panel-input-label-electrical_capacity">Installed capcity</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
                     value={data.electrical_capacity === 0 ? (electrical_capacity) : (data.electrical_capacity)}
                     onChange={handleInputChange}
                     onClick={resetInput}
-                    placeholder="330Kw"
+                    placeholder="330kW"
                     required
                   />
                 </div>
@@ -269,7 +289,7 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
-                  <label id="panel-input-label-surface">Surface</label>
+                  <label id="panel-input-label-surface">Area</label>
                   <Input
                     value={data.surface === 0 ? surface : data.surface}
                     onChange={handleInputChange}
@@ -284,14 +304,14 @@ const FirstForm = (props) => {
             <Col id="col-commissioning-date" xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-date-background">
-                  <label id="panel-input-label-commissioningDate">Commissioning date</label>
+                  <label id="panel-input-label-commissioningDate">Installation date</label>
                   <DatePicker
-                    defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
+                    defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (moment())}
                     onChange={onChangeDatePicker}
                     onClick={resetInput}
                     id="commissioningDate"
                     name="commissioningDate"
-                    required />
+                  />
                 </div>
               </Form.Item>
 
@@ -310,24 +330,35 @@ const FirstForm = (props) => {
               name="technologyUsed"
               onChange={onChangeRadio}
               value={radioValue}
-              required
             >
               <Row>
-
                 <Col id="image-col" xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row >
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <img src={monocrystalline} id="images-tech-us" />
+
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                      <label id="label-radio-button">Monocrystalline silicon</label>
+                      <label id="label-radio-button">Monocrystalline</label>
+                      <Popover id="popover-left"
+                        placement="topLeft"
+                        content={infoMonocrystalline}
+                        title={<p id="popover-title">Monocrystalline silicon</p>}
+                        trigger={"click"}
+                        arrowPointAtCenter>
+                        &nbsp;
+                        <Icon type="question-circle" />
+                      </Popover>
                     </Col>
                   </Row>
                   <Row>
                     <Col id="radio-button-row" xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <Radio value="Monocrystalline silicon" id="radio-button" />
+
                     </Col>
                   </Row>
                 </Col>
@@ -335,17 +366,30 @@ const FirstForm = (props) => {
                 <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
                     <Col id="image-col" xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <img src={multicrystalline} id="images-tech-us" />
+
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                      <label id="label-radio-button">Polycrystalline silicon</label>
+                      <label id="label-radio-button">Polycrystalline</label>
+                      <Popover id="popover-center"
+                        placement="top"
+                        content={infoPolycrystalline}
+                        title={<p id="popover-title">Polycrystalline silicon</p>}
+                        trigger={"click"}
+                        arrowPointAtCenter>
+                        &nbsp;
+                        <Icon type="question-circle" />
+                      </Popover>
                     </Col>
                   </Row>
                   <Row id="radio-button-row">
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <Radio value="Polycrystalline silicon" id="radio-button" />
+
                     </Col>
                   </Row>
                 </Col>
@@ -353,17 +397,31 @@ const FirstForm = (props) => {
                 <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>
                     <Col id="image-col-large" xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <img src={thinFilm} id="images-tech-us-large" />
+
                     </Col>
                   </Row>
                   <Row id="radio-label-row">
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <label id="label-radio-button">Thin-film</label>
+                      <Popover id="popover-right"
+                        placement="topRight"
+                        content={infoThinFilm}
+                        title={<p id="popover-title">Thin-film</p>}
+                        trigger={"click"}
+                        arrowPointAtCenter>
+                        &nbsp;
+                        <Icon type="question-circle" />
+                      </Popover>
                     </Col>
                   </Row>
                   <Row>
                     <Col id="radio-button-row" xs={24} sm={24} md={24} lg={24} xl={24}>
+
                       <Radio value="Thin-film " id="radio-button" />
+
                     </Col>
                   </Row>
                 </Col>
@@ -375,15 +433,15 @@ const FirstForm = (props) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
-                  <label id="panel-input-label-inverter">AC Inverter capacity</label>
+                  <label id="panel-input-label-inverter">Inverter capacity</label>
                   <Input
-                    placeholder="800Kw"
+                    placeholder="800kW"
                     name="inverterCapacity"
                     id="inverter-capacity"
                     value={data.inverterCapacity === 0 ? inverterCapacity : data.inverterCapacity}
                     onChange={handleInputChange}
                     onClick={resetInput}
-                    required />
+                  />
                 </div>
               </Form.Item>
             </Col>

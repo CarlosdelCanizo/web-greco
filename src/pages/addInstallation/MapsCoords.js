@@ -8,16 +8,19 @@ import L from "leaflet";
 const UserMarker = props => {
 
   let DefaultIcon = L.icon({
+
     iconUrl: icon,
-    shadowUrl: iconShadow
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [13, 41], // point of the icon which will correspond to marker's location
   });
 
   L.Marker.prototype.options.icon = DefaultIcon;
 
   const initMarker = ref => {
-    if (ref) {
-      ref.leafletElement.openPopup()
-    }
+    // if (ref) {
+    //   ref.leafletElement.openPopup()
+    // }
   }
   return <Marker ref={initMarker} {...props} />
 }

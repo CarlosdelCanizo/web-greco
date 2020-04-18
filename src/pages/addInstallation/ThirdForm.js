@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Form, Card, Col, Row, Checkbox, Button, Divider, Icon } from 'antd';
+import { Form, Card, Col, Row, Checkbox, Button, Divider, Icon, Tooltip } from 'antd';
 import { Redirect, Link } from "react-router-dom";
-import panelTracking from '../../assets/panel-tracking.svg'
+import OrientationTrack from '../../assets/orientation-tracking.svg'
+import InclintationTrack from '../../assets/inclination-tracking.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import './thirdForm.css'
@@ -69,6 +70,9 @@ const ThirdForm = props => {
         localStorage.removeItem("currentPanelId")
     }
 
+    const orient = <span>Does your panel change its orientation?</span>;
+    const inclin = <span>Does your panel change its inclination?</span>;
+
     return (
         <Row>
             <Card id="card-panel-register-inside">
@@ -104,13 +108,32 @@ const ThirdForm = props => {
                     <Row>
                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                             <p id="text-panel-registration">
-                                Does your panel orient towards the Sun?
-                                If that's the case, check the corresponding type of tracking (you can choice both).
-                                If don't, press 'next'.
+                                Does your panel track the sun? If this is the case, check the corresponding type of tracking (you can choose both). If don't, press 'next'.
                             </p>
                         </Col>
 
                     </Row>
+
+                    <Row>
+                        <Col id="col-image-panel-tracking" xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <div>
+                                <img src={OrientationTrack} id="image-panel-tracking" />
+
+                            </div>
+                            <Tooltip placement="top" title={orient}>
+                                Horizontal tracking
+                            </Tooltip>
+                        </Col>
+                        <Col id="col-image-panel-tracking" xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <div>
+                                <img src={InclintationTrack} id="image-panel-tracking" />
+                            </div>
+                            <Tooltip placement="top" title={inclin}>
+                                Vertical tracking
+                            </Tooltip>
+                        </Col>
+                    </Row>
+
                     <Row>
                         <Col xs={4} sm={7} md={7} lg={7} xl={7} />
                         <Col id="register-panel-fields-third" xs={4} sm={4} md={4} lg={4} xl={4}>
@@ -124,8 +147,7 @@ const ThirdForm = props => {
                                     defaultChecked={currentPanelOrientation}
                                     checked={orientation}
                                 >
-                                    Orientation
-                                    </Checkbox>
+                                </Checkbox>
                             </Form.Item>
                         </Col>
                         <Col id="register-panel-fields-third" xs={3} sm={3} md={3} lg={3} xl={3} />
@@ -140,19 +162,13 @@ const ThirdForm = props => {
                                     defaultChecked={currentPanelInclination}
                                     checked={inclination}
                                 >
-                                    Inclination
-                                    </Checkbox>
+
+                                </Checkbox>
                             </Form.Item>
                         </Col>
                         <Col xs={7} sm={4} md={4} lg={4} xl={4} />
                     </Row>
-                    <Row>
-                        <Col id="col-image-panel-tracking" xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <div>
-                                <img src={panelTracking} id="image-panel-tracking" />
-                            </div>
-                        </Col>
-                    </Row>
+
                     <Divider className="transparentDivider"></Divider>
                     <Row>
                         <Col xs={12} sm={12} md={12} lg={12} xl={12}>

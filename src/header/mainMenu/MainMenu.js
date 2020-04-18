@@ -37,7 +37,7 @@ class MainMenu extends Component {
         this.setState({
             current: e.key,
         });
-        if (!this.state.isLoggedIn && e.key !== "about" && e.key !== "download") {
+        if (!this.state.isLoggedIn && e.key !== "about" && e.key !== "download" && e.key !== "statistics") {
             warning()
         }
     };
@@ -80,13 +80,18 @@ class MainMenu extends Component {
                         style={{ width: 256 }}
                         mode="inline"
                     >
+                        <Menu.Item key="add">
+                            <Link to="/first" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
+                                <Icon type="plus-circle" /> Add Installation
+                            </Link>
+                        </Menu.Item>
                         <Menu.Item key="map">
                             <Link to="/private-mapping" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
-                                <Icon type="environment" /> Map
+                                <Icon type="environment" /> Private Map
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="statistics">
-                            <Link to="/my-statistics" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
+                            <Link to="/my-statistics" id="logged-public-menu">
                                 <Icon type="bar-chart" /> Statistics
                             </Link>
                         </Menu.Item>

@@ -1,0 +1,87 @@
+@import '~antd/dist/antd.css';
+
+/***************ABOUT*************************************************************/
+/***************COMPUTER*********************************************************/
+
+#about-container {
+  overflow: auto;
+  float: left;
+  position: fixed;
+  z-index: 1000;
+    height: 720px;
+    width: 424px;
+    font-family: Montserrat;
+    color: #2a4092;
+    padding: 0;
+    top: 50px;
+    left: 3%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+
+.ant-collapse-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a4092 !important;
+  background-color: #eaedf1;
+}
+#about-text {
+  font-size: 16px;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+#about-wanna {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.36px;
+  line-height: 1.25;
+  color: #2a4092;
+}
+#about-know-more {
+  float: left;
+  font-size: 12px;
+  font-weight: 550;
+  bottom: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #2a4092;
+  font-weight: 500;
+}
+
+/***************ABOUT*************************************************************/
+/***************TABLET************************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+  
+  #about-container {
+    float: left;
+    max-height: 720px;
+      width: 424px;
+      font-family: Montserrat;
+      color: #2a4092;
+      padding: 0;
+      margin-top: 1%;
+      margin-left: 3%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    }
+}
+/***************ABOUT*************************************************************/
+/***************MOBILE*********************************************************/
+@media (min-width: 240px) and (max-width: 600px) { 
+  
+  #about-container {
+      max-height: calc(100vh - 36px);
+      width: 100%;
+      font-family: Montserrat;
+      color: #2a4092;
+      padding: 0;
+      top: 36px;
+      left: 0%;
+      right: 0%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    }
+}

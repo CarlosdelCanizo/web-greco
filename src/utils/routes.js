@@ -27,7 +27,7 @@ import NotificationsList from '../header/notificationsMenu/NotificationsList';
 import FeedPanel from '../components/feedPanel/FeedPanel';
 import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard';
 import DownloadDatabase from '../header/dataBase/DownloadData';
-// import ImageSlider from '../components/imageSlider/ImageSlider'
+import PrivacyPolicy from '../pages/privacyPolicy/PrivacyPolicy';
 
 const Routes = () => {
 
@@ -60,6 +60,14 @@ const Routes = () => {
           <Route path="/about" component={About} />
           <Route path="/download" component={DownloadDatabase} />
           <Route path="/notifications" component={NotificationsList} />
+          <Route path="/my-statistics" component={Statistics} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+
+          <Route path="/second" component={SecondForm} />
+          <Route path="/third" component={ThirdForm} />
+          <Route path="/fourth" component={FourthForm} />
+          <Route path="/fiveth" component={FifthForm} />
+
 
           <PrivateRoute
             path="/first"
@@ -100,11 +108,6 @@ const Routes = () => {
             path="/my-installations"
             auth={state.isAuthenticated}
             component={MyInstallations}
-          />
-          <PrivateRoute
-            path="/my-statistics"
-            auth={state.isAuthenticated}
-            component={Statistics}
           />
           <PrivateRoute
             path="/edit-user-details"

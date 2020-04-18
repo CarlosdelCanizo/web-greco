@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input } from 'antd'
+import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input, Tooltip } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -215,11 +215,15 @@ const SixthForm = props => {
   }
 
   const isEnabled =
-    (data.installationName !== undefined && data.installationName.length > 0 || installationName && installationName !== undefined && installationName > 0) &&
-    (data.installationProperty !== undefined && data.installationProperty.length > 0 || installationProperty && installationProperty !== undefined && installationProperty > 0) &&
-    (data.battery !== undefined || battery && battery !== "" && battery !== undefined) &&
-    (data.batteryDescription !== undefined && data.batteryDescription.length > 0 || batteryDescription && batteryDescription !== undefined && batteryDescription > 0) &&
-    (data.observation !== undefined && data.observation.length > 0 || observation && observation > 0);
+    //(data.installationName !== undefined && data.installationName.length > 0 || installationName && installationName !== undefined && installationName > 0) &&
+    (data.installationProperty !== undefined && data.installationProperty.length > 0 || installationProperty && installationProperty !== undefined && installationProperty > 0);
+  //(data.battery !== undefined || battery && battery !== "" && battery !== undefined) &&
+  //(data.batteryDescription !== undefined && data.batteryDescription.length > 0 || batteryDescription && batteryDescription !== undefined && batteryDescription > 0) &&
+  //(data.observation !== undefined && data.observation.length > 0 || observation && observation > 0)
+
+
+  const serial = <span>If possible, include the serial number of the panel for a quick identification</span>;
+
 
   return (
     <Row>
@@ -274,7 +278,7 @@ const SixthForm = props => {
             <Col id="register-panel-fields-sixth-right" xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-right">
-                  <label id="panel-sixth-label">Owner</label>
+                  <label id="panel-sixth-label">Property</label>
                   <Select placeholder='Private'
                     name="installationProperty"
                     id="installation-property"
@@ -283,7 +287,8 @@ const SixthForm = props => {
                   >
 
                     <Option id="select-property" value="Public">Public</Option>
-                    <Option id="select-property" value="Private">Private</Option>
+                    <Option id="select-property" value="Private me">Private (owned by me)</Option>
+                    <Option id="select-property" value="Private other">Private (owned by someone else)</Option>
 
                   </Select>
                 </div>
@@ -316,7 +321,7 @@ const SixthForm = props => {
             <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Row>
                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <h3 id="subtittle-panel-registration-battery"> Does it has a battery?</h3>
+                  <h3 id="subtittle-panel-registration-battery"> Does it have a battery?</h3>
                 </Col>
                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                   <div id="battery-radio-sixth" >
@@ -341,7 +346,7 @@ const SixthForm = props => {
             <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Form.Item>
                 <div id="div-observation-background">
-                  <label id="panel-sixth-label-large">Type of battery</label>
+                  <label id="panel-sixth-label-large">Battery description</label>
                   <Input
                     placeholder='12V 700Ah Upower'
                     type="text"
@@ -357,20 +362,21 @@ const SixthForm = props => {
           </Row>
           <Row>
             <Col id="col-observation" xs={24} sm={24} md={24} lg={24} xl={24}>
-              <Form.Item>
-                <div id="div-observation-background">
-                  <label id="panel-sixth-label-large">Observations</label>
-                  <Input placeholder='Add more information that can be relevant'
-                    type="text"
-                    name="observation"
-                    id="observation"
-                    value={data.observation === "" ? observation : data.observation}
-                    onChange={handleInputChange}
-                    onClick={resetInput}
-                  />
-                </div>
-              </Form.Item>
-
+              <Tooltip placement="top" title={serial}>
+                <Form.Item>
+                  <div id="div-observation-background">
+                    <label id="panel-sixth-label-large">Observations</label>
+                    <Input placeholder='Add more information that can be relevant'
+                      type="text"
+                      name="observation"
+                      id="observation"
+                      value={data.observation === "" ? observation : data.observation}
+                      onChange={handleInputChange}
+                      onClick={resetInput}
+                    />
+                  </div>
+                </Form.Item>
+              </Tooltip>
             </Col>
 
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>

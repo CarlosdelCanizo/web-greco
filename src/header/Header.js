@@ -36,16 +36,15 @@ class Header extends React.Component {
           <div id="mainMenu">
             <MainMenu />
           </div>
+
           <div id="userMenu">
             <UserMenu />
           </div>
-          <div id="notificationsMenu">
+          <div id="notifications-menu">
 
             {/* <Link to="/notifications" className="nav-text"> */}
             <NotificationsMenu>
-              <Badge onChange={this.onChange} checked={this.state.show} dot>
-
-              </Badge>
+              <Badge onChange={this.onChange} checked={this.state.show} dot />
             </NotificationsMenu>
             {/* </Link> */}
 

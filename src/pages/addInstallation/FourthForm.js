@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider } from 'antd';
+import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider, Tooltip } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import compass from '../../assets/compass.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -73,6 +73,8 @@ const FourthForm = props => {
     const isEnabled =
         (data.orientation && data.orientation > 0 || orientation && orientation > 0);
 
+    const direction = <span>The direction your panel faces in relation to the north 0º</span>;
+
     return (
         <Row>
             <Card id="card-panel-register-inside">
@@ -91,7 +93,6 @@ const FourthForm = props => {
                         </div>
                     </Col>
                     <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-
                         <Link to="/my-installations">
                             <Button id="forms-close-button" onClick={clearPanel}>
                                 <Icon type="close" id="icon-x" />
@@ -100,8 +101,6 @@ const FourthForm = props => {
                     </Col>
                 </Row>
                 <Row>
-
-
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <h2 id="tittle-panel-registration">Panel orientation</h2>
                     </Col>
@@ -109,18 +108,22 @@ const FourthForm = props => {
                 <Row>
                     <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                         <p id="text-panel-registration">
-                            If your device doesn't detect the orientation of your panel, you can type it in.
-                            If you don't know the precise orientation, you may use the drop-down menu below.
+                            Use the orientation provided by your smartphone or type it in. If you don't know the precise orientation, click on the button and use the drop-down menu below.
                         </p>
                     </Col>
                 </Row>
                 <Row>
-                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}><div id="selector">
-                        <Switch
-                            onChange={onChangeSwitch}
-                            name="selector"
-                        />
-                    </div></Col>
+                    <Tooltip placement="top" title={direction}>
+                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+
+                            <div id="selector">
+                                <Switch
+                                    onChange={onChangeSwitch}
+                                    name="selector"
+                                />
+                            </div>
+                        </Col>
+                    </Tooltip>
                 </Row>
                 <Divider id="transparent-divider"></Divider>
                 <Row>

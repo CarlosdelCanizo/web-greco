@@ -65,15 +65,15 @@ const RegisterForm = (props) => {
   }
 
   return (
-    <Row>
+    <Row id="row-page-cotainer">
       <Col span={12} id="col-welcome-container" xs={24} sm={24} md={24} lg={12} xl={12}>
-        <Col span={24} id="register-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
+        <Col span={24} id="welcome-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
           <Row>
-            <img src={mobileLogo} id="register-logo-mobile-image" alt="mobile-logo" />
+            <img src={mobileLogo} id="welcome-logo-mobile-image" alt="mobile-logo" />
           </Row>
         </Col>
         <div id="inside-welcome-container" >
-          <h1 id="register-title-text" >
+          <h1 id="login-title-text" >
             SIGN UP
           </h1>
           <Form onSubmit={handleFormSubmit}>
@@ -144,8 +144,8 @@ const RegisterForm = (props) => {
                   type="checkbox"
                   onChange={toggle}
                 >
-                  Accept private policy
-              </Checkbox>
+                  Accept <a id="link" href="/privacy-policy">private policy</a>
+                </Checkbox>
               </div>
             </div>
 

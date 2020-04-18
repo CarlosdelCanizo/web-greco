@@ -1,14 +1,6 @@
 /*************************************************************COMPUTER**************************************************************/
 /***COMPUTER************************************************************************************************************************/
 
-#col-welcome-container {
-  height: 100vh; 
-  background-image: url(../../assets/left-background.png);
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-}
 #inside-welcome-container {
   margin-top: 12%;
   margin-left: 25%;
@@ -30,7 +22,7 @@
 #title-register-complete {
   width: 98%;
   font-size: 2.2em;
-  font-weight: 600;
+  font-weight: 1000;
   text-align: left;
   margin-top: 10%;
   line-height: 1.25;
@@ -46,7 +38,6 @@
   text-align: left;
   margin-left: 0;
   margin-top: 10%;
-
   width: 500px;
   height: 80px;
   font-family: Montserrat;
@@ -76,8 +67,8 @@
 @media (min-width: 600px) and (max-width: 992px) {
   #title-register-complete {
     width: 100%;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 41px;
+    font-weight: 1000;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;
@@ -99,16 +90,10 @@
 /***MOBILE*SMALL************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #col-welcome-container {
-    background-image: none; 
-    height: auto;
-    width: 100%;
-    padding: 0%;
-    overflow: hidden;
-  }
   #logo-mobile {
     margin-top: 8%;
-    margin-left: 5%;  
+    margin-left: 5%;
+    width: fit-content;  
   }
   #logo-mobile-image {
     margin-left: 5.5%;
@@ -123,7 +108,7 @@
     width: 80%;
     margin-top: -3%;
     font-size: 1.6em;
-    font-weight: 600;
+    font-weight: 1000;
     text-align: left;
     line-height: 1.25;
     color: #2a4092;

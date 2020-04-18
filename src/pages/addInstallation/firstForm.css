@@ -67,7 +67,13 @@ border-radius: none;
 
 /***************************************************************FIRST*FORM*************************************************************/
 /***COMPUTER************************************************************************************************************************/
-
+#popover-left, #popover-center, #popover-right {
+  width: 450px;
+  background-color: #f9f9f9;
+}
+#popover-title {
+  color: #2a4092;
+}
 #text-panel-registration {
   font-size: 16px;
   text-align: center;
@@ -321,6 +327,10 @@ border-radius: none;
 /***TABLET****************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 1023px) {
+  #popover-left, #popover-center, #popover-right {
+    width: 500px;
+  }
+
 .ant-calendar-picker-input {
     color: #7f95a7;
     width: calc( (100vw / 3) - 5em );
@@ -601,6 +611,12 @@ border-radius: none;
 
 @media (min-width: 240px) and (max-width: 600px) {
  
+  #popover-left, #popover-center, #popover-right {
+    width: 96vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
 #card-panel-register-inside {
     width: 100%;
     height: 100%;
@@ -610,7 +626,8 @@ border-radius: none;
     background-color: white;
     text-align: center;
     border: none;
-    overflow: auto;  
+    overflow-x: hidden;
+    overflow-y: auto;  
 }
 #pagination {
     margin-top: -1%;
@@ -852,7 +869,7 @@ border-radius: none;
 }
 #label-radio-button {
  margin-left: -5%;
- font-size: 0.9em;
+ font-size: 0.6em;
  color: #7f95a7;
 }
 #button-panel-register-next-first {
