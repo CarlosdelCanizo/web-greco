@@ -1,0 +1,45 @@
+#logo-sider { 
+  margin-left: 20px;
+  margin-top: 1px;
+}
+#sider-divider {
+  margin-top: 10%;
+  background: none !important;
+}
+.ant-layout-sider-zero-width-trigger {
+  position: absolute;
+  top: 4px;
+  right: -36px;
+  z-index: 1;
+  width: 36px;
+  height: 42px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 42px;
+  text-align: center;
+  background: #001529;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+#page-title {
+  color: #2a4092;
+  font-weight: 600;
+}
+/************************************************************TABLET****************************************************/
+@media (min-width: 600px) and (max-width: 992px) {
+  #page-title {
+    color: #2a4092;
+    margin-left: 25%;
+  }
+}
+/************************************************************MOBILE****************************************************/
+@media (min-width: 240px) and (max-width: 600px) {
+  
+.logo {
+  background-color: #eaedf1;
+  }
+#page-title {
+  color: #2a4092;
+  margin-left: 25%;
+}
+}
