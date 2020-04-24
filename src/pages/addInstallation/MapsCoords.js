@@ -12,7 +12,7 @@ const UserMarker = props => {
     iconUrl: icon,
     shadowUrl: iconShadow,
     iconSize: [25, 41],
-    iconAnchor: [13, 41], // point of the icon which will correspond to marker's location
+    iconAnchor: [13, 41] // point of the icon which will correspond to marker's location
   });
 
   L.Marker.prototype.options.icon = DefaultIcon;

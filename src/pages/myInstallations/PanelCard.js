@@ -34,7 +34,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
       <Link to={
         {
           pathname: "/show-panel-details-sider",
-          myPanel: { panel },
+          myPanel: { panel }
         }
       }>
         <Button id="popover-menu-panels" >More details</Button>
@@ -43,7 +43,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
       <Link to={
         {
           pathname: "/feed-panel-sider",
-          myPanel: { panel },
+          myPanel: { panel }
         }
       }>
         <Button id="popover-menu-panels" >Feed</Button>

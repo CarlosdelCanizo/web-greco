@@ -7,13 +7,13 @@ import axiosConfig from '../../api/axiosConfig'
 class NotificationsMenu extends Component {
   state = {
     visible: false,
-    show: false,
+    show: false
   };
 
   handleClick = e => {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
   };
 

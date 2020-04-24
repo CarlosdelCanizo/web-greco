@@ -22,20 +22,20 @@ class UserMenu extends Component {
 
   showDrawer = () => {
     this.setState({
-      visible: true,
+      visible: true
     });
   };
 
   onClose = () => {
     this.setState({
-      visible: false,
+      visible: false
     });
   };
 
   handleClick = e => {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
     if (!this.state.isLoggedIn && e.key !== "logout") {
       warning()

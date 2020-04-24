@@ -139,7 +139,7 @@ const SixthForm = props => {
       batteryDescription: data.batteryDescription,
       installationName: data.installationName,
       installationProperty: data.installationProperty,
-      installationType: data.installationType,
+      installationType: data.installationType
     }
     axiosConfig.put("/solarPanel", (body),
       {

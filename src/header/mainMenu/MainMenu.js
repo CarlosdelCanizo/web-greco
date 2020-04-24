@@ -16,26 +16,26 @@ class MainMenu extends Component {
         super(props);
         this.state = {
             visible: false,
-            isLoggedIn: false,
+            isLoggedIn: false
         };
     }
 
     showDrawer = () => {
         this.setState({
-            visible: true,
+            visible: true
         });
     };
 
     onClose = () => {
         this.setState({
-            visible: false,
+            visible: false
         });
     };
 
     handleClick = e => {
         console.log('click ', e);
         this.setState({
-            current: e.key,
+            current: e.key
         });
         if (!this.state.isLoggedIn && e.key !== "about" && e.key !== "download" && e.key !== "statistics") {
             warning()

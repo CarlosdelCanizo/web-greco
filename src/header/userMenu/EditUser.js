@@ -13,7 +13,7 @@ const EditUser = () => {
     email: "",
     notifications: true,
     isSubmitting: false,
-    errorMessage: null,
+    errorMessage: null
   }
   );
 

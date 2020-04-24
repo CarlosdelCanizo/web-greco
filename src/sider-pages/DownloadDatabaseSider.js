@@ -9,7 +9,7 @@ import MenuHeader from './MenuHeader';
 var access_token
 
 const {
-  Header, Content, Footer, Sider,
+  Header, Content, Footer, Sider
 } = Layout;
 
 const DownloadDatabaseSider = () => {

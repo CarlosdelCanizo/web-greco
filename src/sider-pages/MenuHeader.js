@@ -7,13 +7,13 @@ import './Sider.css';
 
 class MenuHeader extends React.Component {
   state = {
-    current: 'navigation',
+    current: 'navigation'
   };
 
   handleClick = e => {
     console.log('click ', e);
     this.setState({
-      current: e.key,
+      current: e.key
     });
   };
 

@@ -88,7 +88,7 @@ function ChallengeLevelCard() {
                       <Progress
                         strokeColor={{
                           from: '#2a4092',
-                          to: '#db4196',
+                          to: '#db4196'
                         }}
                         percent={item.percentageCompleted}
                         status="active"
