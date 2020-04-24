@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider, Tooltip } from 'antd';
+import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import compass from '../../assets/compass.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -40,7 +40,12 @@ const FourthForm = props => {
         if (event.target.value && isNaN(event.target.value)) {
             error()
         } else {
-            setData({ ...data, [event.target.name]: event.target.value, errorMessage: null });
+            if (event.target.value > 360) {
+                maxMin();
+            } else {
+                setData({ ...data, [event.target.name]: event.target.value, errorMessage: null });
+            }
+
         }
     };
 
@@ -49,7 +54,7 @@ const FourthForm = props => {
         event.persist()
         setData({ ...data, isSubmitting: true, errorMessage: null });
         localStorage.setItem('currentPanelState', JSON.stringify(data))
-        activateRedirection()
+        checkTracking()
     }
 
     //Redirect
@@ -70,10 +75,22 @@ const FourthForm = props => {
     const error = () => {
         message.error('Only numbers, please', 5);
     };
+
+    const maxMin = () => {
+        message.error('Only up to 360º maximum, please', 5);
+    };
+
+    function checkTracking() {
+        if (currentPanelState.panelTrackingInclination === true) {
+            props.history.push('/sixth')
+        } else {
+            props.history.push('/fifth')
+        }
+
+    }
+
     const isEnabled =
         (data.orientation && data.orientation > 0 || orientation && orientation > 0);
-
-    const direction = <span>The direction your panel faces in relation to the north 0º</span>;
 
     return (
         <Row>
@@ -93,7 +110,7 @@ const FourthForm = props => {
                         </div>
                     </Col>
                     <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <Link to="/my-installations">
+                        <Link to="/my-installations-sider">
                             <Button id="forms-close-button" onClick={clearPanel}>
                                 <Icon type="close" id="icon-x" />
                             </Button>
@@ -113,17 +130,14 @@ const FourthForm = props => {
                     </Col>
                 </Row>
                 <Row>
-                    <Tooltip placement="top" title={direction}>
-                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-
-                            <div id="selector">
-                                <Switch
-                                    onChange={onChangeSwitch}
-                                    name="selector"
-                                />
-                            </div>
-                        </Col>
-                    </Tooltip>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <div id="selector">
+                            <Switch
+                                onChange={onChangeSwitch}
+                                name="selector"
+                            />
+                        </div>
+                    </Col>
                 </Row>
                 <Divider id="transparent-divider"></Divider>
                 <Row>
@@ -159,9 +173,6 @@ const FourthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={compass} id="register-panel-image-fourth" />
                                         </Col>
-                                        <p id="text-panel-north">
-                                            0º corresponds to North
-                                        </p>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="/third">
                                                 <Button id="button-panel-register-previous-fourth">BACK</Button>
@@ -213,15 +224,10 @@ const FourthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={compass} id="register-panel-image-fourth-select" />
                                         </Col>
-
-                                        <p id="text-panel-north">
-                                            0º corresponds to North
-                                            </p>
-
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="/third">
                                                 <Button id="button-panel-register-previous-fourth">BACK</Button>
-                                            </Link>
+                                            </Link>>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Button

@@ -1,9 +1,9 @@
 import React from "react"
 import { Row, Col, Card, Collapse, Divider, Icon, Button } from 'antd'
-import Header from '../../header/Header'
-import "./privacyPolicy.css"
+import "../../header/mainMenu/about.css"
 import { Link } from "react-router-dom";
-import PrivateMapping from '../../pages/mapping/PrivateMapping'
+import PublicMapping from '../../pages/mapping/PublicMapping'
+import '../../header/mainMenu/about.css'
 
 const { Panel } = Collapse;
 
@@ -17,26 +17,20 @@ class PrivacyPolicy extends React.Component {
 
     return (
       <React.Fragment>
-        {
-          (window.innerWidth < 600 && window.innerWidth < 768) ?
-            <Header />
-            :
-            (null)
-        }
         <Row>
           <Col xs={0} sm={0} md={24} lg={24} xl={24} >
-            <PrivateMapping />
+            <PublicMapping />
           </Col>
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <Card id="about-container">
-              <Link to="/private-mapping">
-                <Button id="menu-close-button">
+              <Link to="/public-mapping-sider">
+                <Button id="menu-close-button-about">
                   <Icon type="close" id="icon-x" />
                 </Button>
               </Link>
-              <h1 id="edit-details-tittle" >PrivacyPolicy</h1>
+              <h1 id="edit-details-tittle" >Privacy Policy</h1>
               <Divider />
               <div>
 
@@ -215,7 +209,7 @@ class PrivacyPolicy extends React.Component {
                     <p id="about-text">
                       The recent regulatory modification regarding the publicity and management of the consent for the use of
                       cookies or other elements of information storage entails the obligation of the websites to adapt to the new
-                      regulation on cookies of  <a id="link" href="http://noticias.juridicas.com/base_datos/Admin/l34-2002.html">Law 34/2002, of services of the Information society and electronic commerce</a>.
+                      regulation on cookies of  <a id="link" href="http://noticias.juridicas.com/base_datos/Admin/l34-2002.html" target="_blank">Law 34/2002, of services of the Information society and electronic commerce</a>.
                   </p>
                     <br />
                     <p id="about-text">

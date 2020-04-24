@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Button, Row, Col, Icon, Popover, Popconfirm } from 'antd';
 import './MyInstallations.css';
 import { Link } from "react-router-dom";
@@ -8,10 +8,15 @@ import CardSlider from './CardSlider'
 
 const PanelCard = ({ panel, fetchPanels }) => {
 
-  const location = "my-installations"
+  const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+  const location = "my-installations";
+  localStorage.setItem('pathname', "my-installations-sider")
+
+  const [individualPanel, setIndividualPanel] = useState({});
 
   function updatePanelId() {
-    localStorage.setItem('currentPanelId', JSON.stringify(panel.id))
+    localStorage.setItem('currentPanelId', JSON.stringify(panel.id));
+    getSpecificSolarPanel(panel.id);
   }
 
   const text = 'Are you sure to delete this installation?';
@@ -21,7 +26,6 @@ const PanelCard = ({ panel, fetchPanels }) => {
 
   function onDeleteClick() {
     deleteSolarPanel(panel.id)
-
   }
 
   const textMenu = <span id="popover-panels">INSTALLATION MENU</span>;
@@ -29,22 +33,20 @@ const PanelCard = ({ panel, fetchPanels }) => {
     <div id="popover-panels">
       <Link to={
         {
-          pathname: "/show-panel-details",
+          pathname: "/show-panel-details-sider",
           myPanel: { panel },
-          hash: location.toString()
         }
       }>
-
-        <Button id="popover-menu-panels">More details</Button>
+        <Button id="popover-menu-panels" >More details</Button>
       </Link>
+
       <Link to={
         {
-          pathname: "/feed-panel",
+          pathname: "/feed-panel-sider",
           myPanel: { panel },
-          hash: location.toString()
         }
       }>
-        <Button id="popover-menu-panels">Feed</Button>
+        <Button id="popover-menu-panels" >Feed</Button>
       </Link>
 
       <Popconfirm
@@ -83,6 +85,21 @@ const PanelCard = ({ panel, fetchPanels }) => {
       });
   }
 
+  //GET ESPECIFIC SOLAR PANEL
+  function getSpecificSolarPanel(id) {
+    axiosConfig
+      .get('/solarPanel/' + id,
+        {
+          headers: {
+            "Authorization": access_token
+          }
+        })
+      .then(response => {
+        const data = response.data
+        localStorage.setItem('myPanel', JSON.stringify(data))
+      })
+  }
+
   return (
     <Col span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
       <Card id="installation-container">
@@ -94,8 +111,8 @@ const PanelCard = ({ panel, fetchPanels }) => {
             {/* </div> */}
           </Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-            <Popover placement="left" title={textMenu} content={content} trigger="click">
-              <Button id="installation-button-menu">
+            <Popover placement="left" title={textMenu} content={content} trigger="click" onClick={updatePanelId}>
+              <Button id="installation-button-menu" >
                 <Icon type="more" />
               </Button>
             </Popover>

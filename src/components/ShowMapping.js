@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import '../pages/mapping/showMapping.css'
+//import '../pages/mapping/showMapping.css'
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -28,7 +28,7 @@ const ShowMapping = ({ lat, lon }) => {
       <div className="leaflet-container">
         <LeafletMap
           style={{ height: '95vh', zIndex: '1' }}
-          center={[50, 10]}
+          center={[lat, lon]}
           zoom={4}
           maxZoom={18}
           attributionControl={true}

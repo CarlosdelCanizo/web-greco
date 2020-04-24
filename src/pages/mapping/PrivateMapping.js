@@ -8,7 +8,6 @@ import './Mapping.css';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import Header from '../../header/Header';
 import axiosConfig from '../../api/axiosConfig';
 import { Link } from 'react-router-dom';
 import Legend from './Legend';
@@ -113,9 +112,15 @@ const PrivateMapping = () => {
 
       });
   }
+
+  const seePanel = () => {
+    localStorage.setItem('myPanel', JSON.stringify(individualPanel))
+  }
+
+
+
   return (
     <React.Fragment>
-      <Header />
       <div className="leaflet-container">
         <LeafletMap
           style={{ height: '94vh' }}
@@ -201,25 +206,31 @@ const PrivateMapping = () => {
                   </Row>
                   <Row>
                     <Col span={12}>
+
                       <Link to={
                         {
-                          pathname: "/show-panel-details",
+                          pathname: "/show-panel-details-sider",
                           myPanel: { panel }
                         }
                       }>
-                        <Button id="mapping-button-left">
+
+                        {localStorage.setItem('pathname', "private-mapping-sider")}
+                        <Button id="mapping-button-left" onClick={seePanel()}>
                           + info
-                    </Button>
+                      </Button>
                       </Link>
                     </Col>
                     <Col span={12}>
+
                       <Link to={
                         {
-                          pathname: "/feed-panel",
+                          pathname: "/feed-panel-sider",
                           myPanel: { panel }
                         }
                       }>
-                        <Button id="mapping-button-right">
+
+                        {localStorage.setItem('pathname', "private-mapping-sider")}
+                        <Button id="mapping-button-right" onClick={seePanel()}>
                           Feed
                     </Button>
                       </Link>

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react"
 import { Card, Button, Row, Col, Icon } from 'antd'
-import Header from '../Header'
 import PrivateMapping from '../../pages/mapping/PrivateMapping'
 import NotificationCard from './NotificationCard'
 import "./notifications.css"
 import axiosConfig from '../../api/axiosConfig'
 import { Link } from 'react-router-dom'
 
+var idNotificacion
+
 function NotificationsList() {
 
   const [notifications, setNotifications] = useState([])
+
 
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
   var isDisabled = false
@@ -25,6 +27,7 @@ function NotificationsList() {
         })
         .then(response => {
           const dataResponse = response.data
+          idNotificacion = response.data[response.data.length - 1]
           setNotifications(dataResponse)
         })
         .catch(function (error) {
@@ -37,8 +40,10 @@ function NotificationsList() {
 
   // DELETE NOTIFICATIONS
   const deleteNotifications = () => {
+
     let idPanel = notifications[0].idPanel
-    axiosConfig.get("/solarPanel/" + idPanel + "/comments",
+
+    axiosConfig.get("/solarPanel/" + idNotificacion.id + "/comments",
       {
         headers: {
           "Authorization": access_token
@@ -46,6 +51,7 @@ function NotificationsList() {
       })
       .then(response => {
         const responseData = response.data
+        setNotifications([]);
 
       })
       .catch(function (error) {
@@ -55,19 +61,13 @@ function NotificationsList() {
 
   return (
     <React.Fragment>
-      {
-        (window.innerWidth < 600 && window.innerWidth < 768) ?
-          <Header />
-          :
-          (null)
-      }
       <Row>
         <Col xs={0} sm={0} md={24} lg={24} xl={24} >
           <PrivateMapping />
         </Col>
       </Row>
       <Card id="notification-detail">
-        <Link to="/private-mapping">
+        <Link to={(access_token === null || access_token === "Bearer null") ? ("/public-mapping-sider") : ("/private-mapping-sider")}>
           <Button id="notifications-close-button">
             <Icon type="close" id="icon-x" />
           </Button>

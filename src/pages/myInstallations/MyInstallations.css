@@ -24,10 +24,10 @@
 /***COMPUTER************************************************************************************************************************/
 
 #installation-add {
-  /* width: 300px; */
   margin-right: 5%;
   margin-left: 5%;
   height: 380px;
+  width: 150px;
   margin-top: 20px;
   border: 2px dotted #2a4092;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -197,6 +197,7 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #installation-add {
     height: 125px;
+    width: 90%;
   }
   #add-installation-text-button {
     margin-top: 25px;

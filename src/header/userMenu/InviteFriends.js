@@ -69,25 +69,20 @@ const InviteFriends = () => {
 
   return (
     <React.Fragment>
-      {
-        (window.innerWidth < 600 && window.innerWidth < 768) ?
-          <Header />
-          :
-          (null)
-      }
       <Row>
         <Col xs={0} sm={0} md={24} lg={24} xl={24} >
           <PrivateMapping />
         </Col>
       </Row>
       <Card id="edit-details-menu-inside">
-        <Link to="/private-mapping">
+        <Link to="/private-mapping-sider">
           <Button id="menu-close-button">
             <Icon type="close" id="icon-x" />
           </Button>
         </Link>
-        <h1 id="edit-details-tittle" >Invite a friend</h1>
+        <h1 id="edit-details-tittle" >Invite friends</h1>
         <Divider />
+        <Divider className="transparentDivider" />
         <div>
           <p id="enter-email-text">Enter the email address of your friend!</p>
         </div>

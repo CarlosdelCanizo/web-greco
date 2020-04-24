@@ -1,14 +1,14 @@
 import React from 'react'
-import { Slider, Tag } from 'antd';
+import { Tag, Slider } from 'antd';
 import './Statistics.css';
 
 const marks = {
-  3: '3GW',
-  13: '13GW',
-  37: '37GW',
+  0: '0GW',
+  17: '17GW',
+  27: '27GW',
   37: {
     style: {
-      color: '#f50',
+      color: '#db4196',
     },
     label: <strong>37GW</strong>,
   },
@@ -20,7 +20,18 @@ class ClimateObjective extends React.Component {
     return (
       <React.Fragment>
         <div id="slider">
-          <Slider range marks={marks} defaultValue={[3, 13]} max={37} />
+          {/* <Tooltip title="3 done / 3 in progress / 4 to do"> */}
+
+          <div>
+            <Slider range marks={marks} min={0} max={37} defaultValue={[3, 27]} id="slider-climate-objective" disabled />
+          </div>
+
+          {/* <Progress
+            percent={100}
+            successPercent={56}
+            format={() => 'GW'}
+            id="climate-objective-progress" /> */}
+
         </div>
         <div id="measurements-left">
           <Tag color="#2a4092" id="tag">13</Tag>

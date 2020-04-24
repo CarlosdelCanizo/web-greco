@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import { Button, Col, Card, Row, Divider, Icon } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
-import Header from '../../header/Header'
 import './downloadData.css'
 import moment from 'moment'
 import { Link } from "react-router-dom";
-import PrivateMapping from '../../pages/mapping/PrivateMapping'
+import PublicMapping from '../../pages/mapping/PublicMapping'
 
 const DownloadData = (props) => {
 
@@ -33,29 +32,24 @@ const DownloadData = (props) => {
   return (
 
     <React.Fragment>
-      {
-        (window.innerWidth < 600 && window.innerWidth < 768) ?
-          <Header />
-          :
-          (null)
-      }
       <Row>
         <Col xs={0} sm={0} md={24} lg={24} xl={24} >
-          <PrivateMapping />
+          <PublicMapping />
         </Col>
       </Row>
       <Row>
         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
           <Card id="download-card-container">
-            <Link to="/private-mapping">
+            <Link to="/public-mapping-sider">
               <Button id="download-close-button">
                 <Icon type="close" id="icon-x" />
               </Button>
             </Link>
+            <h1 id="edit-details-tittle" >Download database</h1>
+            <Divider />
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h1 id="edit-details-tittle">Download database</h1>
-                <Divider />
+                <Divider className="transparentDivider" />
               </Col >
             </Row>
             <Row>
@@ -63,7 +57,9 @@ const DownloadData = (props) => {
             </Row>
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+
                 <Button id="download-button" onClick={downLoad}>DOWNLOAD</Button>
+
               </Col >
             </Row>
 

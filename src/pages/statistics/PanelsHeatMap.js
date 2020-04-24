@@ -3,6 +3,7 @@ import { Map, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
 import axiosConfig from '../../api/axiosConfig'
+import { parse } from 'qs';
 
 
 class PanelsHeatMap extends React.Component {
@@ -27,10 +28,12 @@ class PanelsHeatMap extends React.Component {
         }
       })
       .then((response) => {
+        console.log("HeatMap Adress points response", response.data)
         this.setState({
           addressPoints: response.data,
           isLoading: false
         })
+
       })
 
       .catch(error => this.setState({

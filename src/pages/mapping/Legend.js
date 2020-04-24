@@ -1,31 +1,28 @@
-import { MapControl, withLeaflet } from "react-leaflet";
+import { useLeaflet } from "react-leaflet";
 import L from "leaflet";
+import { useEffect } from "react";
 import './Legend.css';
-//import pushpin from '../../assets/pushpin.png'
 
-class Legend extends MapControl {
-  createLeafletElement(props) { }
+const Legend = () => {
+  const { map } = useLeaflet();
+  // console.log(map);
 
-  componentDidMount() {
+  useEffect(() => {
 
-    // const legendText = "This is a map of PV installations registered with Generation Solar." +
-    //   " Explore it, meet energy colleagues, and sign up to register your facilities or view statistics." +
-    //   " All this and more you can do through the options in the sidebar"
-
-    const legendText = ""
+    const legendText = "These are the photovoltaic installations registered in Generation Solar. Explore it, check the statistics, make solar friends... Use the menu options and sign up for more!"
 
     const legend = L.control({ position: "bottomright" });
 
     legend.onAdd = () => {
       const div = L.DomUtil.create("div", "info legend");
-
-      div.innerHTML = '<img src="../../assets/pushpin.png" /> Photovoltaic installation';
+      div.innerHTML = legendText;
       return div;
     };
 
-    const { map } = this.props.leaflet;
     legend.addTo(map);
-  }
-}
+  }, []);
+  return null;
+};
 
-export default withLeaflet(Legend);
+export default Legend;
+

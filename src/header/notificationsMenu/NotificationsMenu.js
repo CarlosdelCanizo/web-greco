@@ -52,7 +52,7 @@ class NotificationsMenu extends Component {
     return (
       <nav id="navBar">
         <Button onClick={this.showDrawer} id="notifications-button">
-          <Link to="/notifications" className="nav-text">
+          <Link to="/notifications-sider" className="nav-text">
             <Badge dot={this.state.show}><img src={notificationsOff} alt="menu-icon" id="menu-icon" width="24" height="24" /></Badge>
           </Link>
         </Button>

@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react"
 import { Input, Button, Form, Icon, Col, Card, Row, Avatar } from 'antd';
 import axiosConfig from '../../api/axiosConfig'
-import Header from '../../header/Header'
 import './feedPanel.css'
-// import './feedPanel2.css'
 import moment from 'moment'
 import ImageSlider from '../imageSlider/ImageSlider'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 import ShowMapping from "../ShowMapping"
+import { Link } from "react-router-dom";
 
 //INPUT BOX AND SEND BUTTON
 const FeedForm = ({ panelId, messagesList, setMessagesList }) => {
@@ -161,35 +160,38 @@ const FeedPanel = (props) => {
 
   const [messagesList, setMessagesList] = useState([]);
 
-  const myPanel = props.location.myPanel;
-  const myLocation = props.location.hash
+  var myPanel = JSON.parse(localStorage.getItem("myPanel"))
+  var myLocation = (localStorage.getItem("pathname"))
+  // const myPanel = props.location.myPanel;
+  // const myLocation = props.location.hash
 
-  function onClose() {
-    if (myLocation === "#my-installations") {
-      props.history.push('/my-installations')
-    } else {
-      props.history.push('/private-mapping')
-    }
-  }
+  // function onClose() {
+  //   if (myLocation === "#my-installations-sider") {
+  //     props.history.push('/my-installations-sider')
+  //   } else {
+  //     props.history.push('/private-mapping-sider')
+  //   }
+  // }
 
   return (
     <React.Fragment>
-      <Header />
       <Row>
         <Col span={24} xs={0} sm={0} md={24} lg={24} xl={24} >
-          <ShowMapping lat={myPanel.panel.lat} lon={myPanel.panel.lon} />
+          <ShowMapping lat={myPanel.lat} lon={myPanel.lon} />
         </Col>
       </Row>
       {/* <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}> */}
       <Card id="feed-card-container">
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <p id="feed-card-tittle">{myPanel.panel.installationName}</p>
-            <Button id="feed-close-button" onClick={onClose}>
-              <Icon type="close" />
+            <p id="feed-card-tittle">{myPanel.installationName}</p>
+            <Button id="feed-close-button" >
+              <Link to={myLocation} >
+                <Icon type="close" />
+              </Link>
             </Button>
             <div id="feed-card-image-container">
-              <ImageSlider multimedia={myPanel.panel.multimedia} />
+              <ImageSlider multimedia={myPanel.multimedia} />
             </div>
           </Col >
         </Row>
@@ -199,7 +201,7 @@ const FeedPanel = (props) => {
               Installed capacity
             </h5>
             <h4 id="feed-panel-data-fields">
-              {myPanel.panel.electrical_capacity} kW
+              {myPanel.electrical_capacity} kW
             </h4>
           </Col>
           <Col span={8}>
@@ -207,7 +209,7 @@ const FeedPanel = (props) => {
               Area
             </h5>
             <h4 id="feed-panel-data-fields">
-              {myPanel.panel.surface} m²
+              {myPanel.surface} m²
             </h4>
           </Col>
           <Col span={8}>
@@ -215,28 +217,28 @@ const FeedPanel = (props) => {
               Inverter capacity
             </h5>
             <h4 id="feed-panel-data-fields">
-              {myPanel.panel.inverterCapacity} kW
+              {myPanel.inverterCapacity} kW
             </h4>
           </Col>
         </Row>
         <Row >
           {/* <div id="feed-panel-user-name-container"> */}
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <h3 id="feed-panel-user-name" >{myPanel.panel.username}</h3>
+            <h3 id="feed-panel-user-name" >{myPanel.username}</h3>
           </Col>
           {/* </div> */}
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <div id="feed-list-container">
-              <FeedList panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+              <FeedList panelId={myPanel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
             </div>
           </Col>
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <div id="feed-form-container">
-              <FeedForm panelId={myPanel.panel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+              <FeedForm panelId={myPanel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
             </div>
           </Col>
         </Row>

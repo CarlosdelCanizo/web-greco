@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Button, Row, Col, Divider, Popover, Tooltip, Icon } from 'antd';
+import { Button, Row, Col, Divider, Popover, Icon } from 'antd';
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import 'leaflet/dist/leaflet.css';
@@ -8,7 +8,6 @@ import './Mapping.css';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import Header from '../../header/Header';
 import axiosConfig from '../../api/axiosConfig';
 import Legend from './Legend';
 
@@ -85,10 +84,10 @@ const PublicMapping = () => {
 
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header /> */}
       <div id="leaflet-container">
         <LeafletMap
-          style={{ height: '95vh' }}
+          style={{ height: '94vh' }}
           center={[50, 10]}
           zoom={4}
           maxZoom={12}

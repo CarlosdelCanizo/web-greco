@@ -122,14 +122,15 @@ const EditUser = () => {
         </Col>
       </Row>
       <Card id="edit-details-menu-inside">
-        <Link to="/private-mapping">
+        <Link to="/private-mapping-sider">
           <Button id="menu-close-button">
             <Icon type="close" id="icon-x" />
           </Button>
         </Link>
+        <h1 id="edit-details-tittle" >Edit user details</h1>
+        <Divider />
         <Form onSubmit={handleFormSubmit}>
-          <h1 id="edit-details-tittle">Edit details</h1>
-          <Divider />
+          <Divider className="transparentDivider" />
           <div id="edit-details-form-fields">
             <Form.Item>
               <div id="div-edit-user-background">

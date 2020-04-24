@@ -4,14 +4,16 @@
 #edit-details-menu-inside {
 float: right;
 position: fixed;
+overflow-y: auto;
 z-index: 1000;
-height: 720px;
+/* height: 720px; */
+max-height: 85vh;
 width: 424px;
 font-family: Montserrat;
 color: #2a4092;
 padding: 0;
-top: 50px;
-right: 3%; 
+top: 60px !important;
+right: 50px !important; 
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #edit-details-tittle {

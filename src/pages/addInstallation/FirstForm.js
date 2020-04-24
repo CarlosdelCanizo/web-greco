@@ -36,7 +36,7 @@ const FirstForm = (props) => {
   const { Option } = Select;
   const myPanel = props.location.myPanel
 
-  var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
+  var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
 
   //*ADD/REMOVE BACKGROUND*
   useEffect(() => {
@@ -210,11 +210,11 @@ const FirstForm = (props) => {
   const isEnabled =
     (currentPanelId && currentPanelId > 0) ||
     (data.electrical_capacity.length > 0 || electrical_capacity && electrical_capacity !== undefined && electrical_capacity.length > 0) &&
-    (data.surface.length > 0 || surface && surface !== undefined && surface.length > 0) &&
+    // (data.surface.length > 0 || surface && surface !== undefined && surface.length > 0) &&
     //(data.commissioningDate !== "" || commissioningDate !== undefined) &&
     //(data.technologyUsed !== "" || technologyUsed && technologyUsed !== undefined && technologyUsed.length > 0) &&
     //(data.inverterCapacity.length > 0 || inverterCapacity && inverterCapacity.length > 0) &&
-    (data.installationType !== "" || installationType && installationType !== undefined && installationType.length > 0)
+    (data.installationType !== "" || installationType && installationType !== undefined && installationType.length > 0);
 
   const infoMonocrystalline = (
     <div>
@@ -257,7 +257,7 @@ const FirstForm = (props) => {
             </div>
           </Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-            <Link to="my-installations">
+            <Link to="my-installations-sider">
               <Button id="forms-close-button" onClick={clearPanel}>
                 <Icon type="close" id="icon-x" />
               </Button>
@@ -273,7 +273,7 @@ const FirstForm = (props) => {
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label-electrical_capacity">Installed capcity</label>
+                  <label id="panel-input-label-electrical_capacity">Installed capacity</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
@@ -297,7 +297,7 @@ const FirstForm = (props) => {
                     placeholder="10m²"
                     id="surface"
                     name="surface"
-                    required />
+                  />
                 </div>
               </Form.Item>
             </Col>
@@ -306,7 +306,7 @@ const FirstForm = (props) => {
                 <div id="div-date-background">
                   <label id="panel-input-label-commissioningDate">Installation date</label>
                   <DatePicker
-                    defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (moment())}
+                    defaultValue={commissioningDate ? (moment(commissioningDate, 'YYYY-MM-DD')) : (null)}
                     onChange={onChangeDatePicker}
                     onClick={resetInput}
                     id="commissioningDate"
@@ -350,7 +350,7 @@ const FirstForm = (props) => {
                         trigger={"click"}
                         arrowPointAtCenter>
                         &nbsp;
-                        <Icon type="question-circle" />
+                        <Icon type="question-circle" theme="twoTone" />
                       </Popover>
                     </Col>
                   </Row>
@@ -381,7 +381,7 @@ const FirstForm = (props) => {
                         trigger={"click"}
                         arrowPointAtCenter>
                         &nbsp;
-                        <Icon type="question-circle" />
+                        <Icon type="question-circle" theme="twoTone" />
                       </Popover>
                     </Col>
                   </Row>
@@ -413,7 +413,7 @@ const FirstForm = (props) => {
                         trigger={"click"}
                         arrowPointAtCenter>
                         &nbsp;
-                        <Icon type="question-circle" />
+                        <Icon type="question-circle" theme="twoTone" />
                       </Popover>
                     </Col>
                   </Row>
@@ -471,8 +471,8 @@ const FirstForm = (props) => {
           </Row>
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-
               <Button
+                //disabled={!isEnabled ? (validateFields()) : (false)}
                 disabled={!isEnabled}
                 id="button-panel-register-next-first"
                 onClick={handleFormSubmit}

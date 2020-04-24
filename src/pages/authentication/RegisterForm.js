@@ -1,6 +1,6 @@
 import React from 'react'
-import recLogo from '../../assets/rect-logo.png'
-import mobileLogo from '../../assets/greco-logo-mobile.png'
+import recLogo from '../../assets/generation-solar-logo.svg'
+import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from "../../assets/spinner.svg";
 import { Row, Col, Divider, Form, Input, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
@@ -72,7 +72,7 @@ const RegisterForm = (props) => {
             <img src={mobileLogo} id="welcome-logo-mobile-image" alt="mobile-logo" />
           </Row>
         </Col>
-        <div id="inside-welcome-container" >
+        <div id="inside-register-container" >
           <h1 id="login-title-text" >
             SIGN UP
           </h1>
@@ -140,25 +140,27 @@ const RegisterForm = (props) => {
 
               <div id="container-checkbox">
                 <Checkbox id="checkbox-private-policy"
-                  defaultChecked
                   type="checkbox"
                   onChange={toggle}
                 >
-                  Accept <a id="link" href="/privacy-policy">private policy</a>
+                  Accept <a id="link" href="/privacy-policy-sider">private policy</a>
                 </Checkbox>
               </div>
             </div>
 
             <div id="welcome-button-container">
               {(isChecked) ?
+
+                (<Button id="button-register" disabled>ACCEPT TO REGISTER</Button>)
+                :
                 (
                   <Button id="button-register" onClick={handleFormSubmit}>
                     {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("SIGN UP")}
                     {toLocation ? <Redirect from="/register" to="/complete-register" /> : null}
                   </Button>
                 )
-                :
-                (<Button id="button-register" disabled>ACCEPT TO REGISTER</Button>)
+
+
               }
             </div>
           </Form>

@@ -2,9 +2,10 @@
 /***COMPUTER************************************************************************************************************************/
 
 #challenge-card-container {
-  margin-top: 3%;
+  margin-top: 4%;
   margin-left: 15%;
   width: 70%;
+  /* background-color: #eaedf1; */
 }
 #individual-challenge-card {
   margin-top: 1%;
@@ -25,7 +26,6 @@
   text-align: center;
   margin-left: 80%;
   width: 15%;
-  
 } */
 #challenge-tagImage{
     position: absolute;
@@ -76,10 +76,15 @@ width: 80%;
 /************************************************************MY*CHALLENGES**********************************************************/
 /***TABLET************************************************************************************************************************/
 @media (min-width: 575px) and (max-width: 992px) {
+  #challenges-title {
+    margin-top: 1%;
+    margin-left: 2%;
+  }
   #challenge-card-container {
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 2%;
     width: 95%;
+    background-color: #eaedf1;
   }
   #challenge-card-image-container {
     width: 160px;
@@ -127,11 +132,26 @@ width: 80%;
 /************************************************************MY*CHALLENGES**********************************************************/
 /***MOBILE************************************************************************************************************************/
 @media (min-width: 240px) and (max-width: 575px) {
+  #challenges-title {
+    margin-top: 1%;
+    margin-left:4%;
+  }
+  #challenges-explanation {
+    color: #2a4092;
+    display: block;
+    font-size: 1.5em;
+  }
+  #challenges-description {
+    margin-left: -2%;
+    color: #2a4092;
+    font-size: 1em;
+  }
   #challenge-card-container {
     margin-top: 3%;
     margin-left: 3%;
     width: 94%;
     height: 100%;
+    background-color: #eaedf1;
   }
   #challenge-card-image-container {
     height: 100%;

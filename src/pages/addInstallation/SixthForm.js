@@ -14,7 +14,7 @@ const SixthForm = props => {
 
   var installationName, installationProperty, battery, batteryDescription, observation
 
-  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
 
@@ -28,15 +28,17 @@ const SixthForm = props => {
 
   const [data, setData] = useState(currentPanelState);
   const { Option } = Select;
-  var panelResponseId //IMAGES ON POST
-  var currentPanelId //IMAGES ON PUT
+  var panelResponseId //FOR IMAGES ON POST
+  var currentPanelId //FOR IMAGES ON PUT
+  var errorImageToUpload = false; //ERROR IMAGE
 
-  const error = () => {
-    message.error('Server error. You can´t post/update your installation now. Please, try again later.', 5);
+
+  const errorServer = () => {
+    message.error('Server error. You can´t post/update your installation now. Please, log in again and try later.', 5);
   };
 
   const errorImages = () => {
-    message.error('Server error. You can´t upload images now. Please, try again later.', 5);
+    message.error('Server error. You can´t upload images now. Please, log in again  and try later.', 5);
   };
 
   //RadioGroup
@@ -46,17 +48,6 @@ const SixthForm = props => {
     setRadioValue(value);
     setData({ ...data, battery: value })
   }
-
-  const handlePreview = file => {
-    setImages({
-      previewImage: file.thumbUrl,
-      previewVisible: true
-    });
-  };
-
-  const handleUploadImages = ({ fileList }) => {
-    setImages({ fileList });
-  };
 
   //Form handlers
   const handleInputChange = event => {
@@ -94,10 +85,9 @@ const SixthForm = props => {
       localStorage.setItem('currentPanelState', JSON.stringify(data))
       postPanel()
     }
-    if (currentPanelId !== 0) {
+    if (currentPanelId > 0) {
       localStorage.setItem('currentPanelState', JSON.stringify(data))
       updatePanel()
-
     }
   }
 
@@ -118,12 +108,14 @@ const SixthForm = props => {
       .then(response => {
         if (response.status === 200) {
           panelResponseId = response.data.solarPanel.id
+          localStorage.setItem('idPanelfromUpload', JSON.stringify(panelResponseId))
           uploadImage()
           activateRedirection()
         }
       })
       .catch(function (error) {
-        error()
+        console.log("Server Error", error);
+        errorServer();
       });
   }
 
@@ -163,9 +155,45 @@ const SixthForm = props => {
         }
       })
       .catch(function (error) {
-        error()
+        console.log("Server Error", error)
+        errorServer()
       });
   }
+
+  function beforeUpload(file) {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJpgOrPng) {
+      message.error('You can only upload JPG/PNG file!');
+      errorImageToUpload = true;
+    }
+    const isLt5M = file.size
+    console.log("Mida fitxer", isLt5M)
+    if (isLt5M > 5242880) {
+      message.error('Image must be smaller than 5MB!');
+      errorImageToUpload = true;
+    }
+    if (isJpgOrPng && isLt5M < 5242880) {
+      errorImageToUpload = false;
+    }
+    return false;
+  }
+
+  //Handler uploadImages
+  const handlePreview = file => {
+    setImages({
+      previewImage: file.thumbUrl,
+      previewVisible: true
+    });
+  };
+
+  const handleUploadImages = ({ fileList }) => {
+    if (errorImageToUpload) {
+
+    } else {
+      setImages({ fileList });
+    }
+  };
+
 
   //UPLOAD IMAGES
   const [images, setImages] = useState(
@@ -194,10 +222,14 @@ const SixthForm = props => {
       })
       .then(response => {
         if (response.status === 200) {
+          console.log("resposta image server:", response.data)
+          var multimedia = response.data;
+          localStorage.setItem('multimedia', JSON.stringify(multimedia))
           throw response
         }
       })
       .then(error => {
+        console.log("Server Error", error)
         errorImages()
       })
   }
@@ -224,6 +256,20 @@ const SixthForm = props => {
 
   const serial = <span>If possible, include the serial number of the panel for a quick identification</span>;
 
+  function checkTracking() {
+    if (currentPanelState.panelTrackingInclination === true && currentPanelState.panelTrackingInclination === true) {
+      props.history.push('/third')
+    }
+    if (currentPanelState.panelTrackingOrientation === true && currentPanelState.panelTrackingInclination === false) {
+      props.history.push('/fifth')
+    }
+    if (currentPanelState.panelTrackingInclination === true && currentPanelState.panelTrackingOrientation === false) {
+      props.history.push('/fourth')
+    }
+    if (currentPanelState.panelTrackingOrientation === false && currentPanelState.panelTrackingInclination === false) {
+      props.history.push('/fifth')
+    }
+  }
 
   return (
     <Row>
@@ -246,7 +292,7 @@ const SixthForm = props => {
             </Col>
 
             <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Link to="/my-installations">
+              <Link to="/my-installations-sider">
                 <Button id="forms-close-button" onClick={clearPanel}>
                   <Icon type="close" id="icon-x" />
                 </Button>
@@ -305,7 +351,8 @@ const SixthForm = props => {
                   fileList={images.fileList}
                   onPreview={handlePreview}
                   onChange={handleUploadImages}
-                  beforeUpload={() => false}
+                  // beforeUpload={() => false}
+                  beforeUpload={beforeUpload}
                   name="multimedia"
                 >
                   <Button>
@@ -338,7 +385,6 @@ const SixthForm = props => {
                   </div>
                 </Col>
               </Row>
-
 
             </Col>
           </Row>
@@ -380,9 +426,9 @@ const SixthForm = props => {
             </Col>
 
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Link to="/fifth">
-                <Button id="button-panel-register-previous-sixth">BACK</Button>
-              </Link>
+
+              <Button id="button-panel-register-previous-sixth" onClick={checkTracking}>BACK</Button>
+
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
 

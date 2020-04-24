@@ -1,9 +1,8 @@
 import React from "react"
-import { Row, Col, Card, Collapse, Divider, Icon, Button } from 'antd'
-import Header from '../Header'
+import { Row, Col, Card, Collapse, Icon, Button, Divider } from 'antd'
 import "./about.css"
 import { Link } from "react-router-dom";
-import PrivateMapping from '../../pages/mapping/PrivateMapping'
+import PublicMapping from '../../pages/mapping/PublicMapping'
 
 const { Panel } = Collapse;
 
@@ -17,28 +16,22 @@ class About extends React.Component {
 
     return (
       <React.Fragment>
-        {
-          (window.innerWidth < 600 && window.innerWidth < 768) ?
-            <Header />
-            :
-            (null)
-        }
         <Row>
           <Col xs={0} sm={0} md={24} lg={24} xl={24} >
-            <PrivateMapping />
+            <PublicMapping />
           </Col>
         </Row>
         <Row>
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <Card id="about-container">
-              <Link to="/private-mapping">
-                <Button id="menu-close-button">
+              <Link to="/public-mapping-sider">
+                <Button id="menu-close-button-about">
                   <Icon type="close" id="icon-x" />
                 </Button>
               </Link>
               <h1 id="edit-details-tittle" >About</h1>
               <Divider />
-              <div>
+              <div id="collapse-div">
                 <Collapse defaultActiveKey={['About']} onChange={callback}>
                   <Panel header="About" key="About">
                     <p id="about-text">
@@ -59,10 +52,10 @@ class About extends React.Component {
                       </h4>
                       <ul>
                         <li>
-                          <a id="link" href="">Check Generation Solar article.</a>
+                          <a id="link" href="https://via.hypothes.is/https://www.greco-project.eu/wp-content/uploads/2020/04/PressRelease-EN.pdf" target="_blank">Generation solar press release</a>
                         </li>
                         <li>
-                          <a id="link" href="">Check this interview to one of GRECO’s scientists.</a>
+                          <a id="link" href="https://www.ramschdesign.de/wp-content/uploads/2020/04/GRECO-Doing-science-differently.pdf" target="_blank">Check this interview to one of GRECO’s scientists.</a>
                         </li>
                       </ul>
                     </p>
@@ -84,7 +77,7 @@ class About extends React.Component {
                       </h4>
                       <ul>
                         <li>
-                          <a id="link" href="https://www.youtube.com/watch?v=SZwJzB-yMrU">Check this SciShow video.</a>
+                          <a id="link" href="https://www.youtube.com/watch?v=SZwJzB-yMrU" target="_blank">Check this SciShow video.</a>
                         </li>
                       </ul>
                     </p>
@@ -153,10 +146,10 @@ class About extends React.Component {
                       Check GRECO´s website and the interview to our coordinators:
                     <ul>
                         <li>
-                          <a id="link" href="https://www.greco-project.eu/the-project/">The project</a>
+                          <a id="link" href="https://www.greco-project.eu/the-project/" target="_blank">The project</a>
                         </li>
                         <li>
-                          <a id="link" href="https://www.youtube.com/watch?v=7edNtE0c8yo">Coordinator interview</a>
+                          <a id="link" href="https://www.youtube.com/watch?v=7edNtE0c8yo" target="_blank">Coordinator interview</a>
                         </li>
                       </ul>
                     </p>
@@ -167,7 +160,7 @@ class About extends React.Component {
                     </h4>
                       <ul>
                         <li>
-                          <a id="link" href="https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/Nov/IRENA_Future_of_Solar_PV_2019.pdf">
+                          <a id="link" href="https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/Nov/IRENA_Future_of_Solar_PV_2019.pdf" target="_blank">
                             IRENA.Future of Solar PV 2019.pdf</a>
                         </li>
                       </ul>

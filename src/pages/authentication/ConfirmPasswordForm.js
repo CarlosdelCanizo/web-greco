@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import recLogo from '../../assets/rect-logo.png'
-import mobileLogo from '../../assets/greco-logo-mobile.png'
+import recLogo from '../../assets/generation-solar-logo.svg'
+import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from '../../assets/spinner.svg'
 import { Row, Col, Divider, Form, Input, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
@@ -75,7 +75,7 @@ const ConfirmPasswordForm = (props) => {
         <Col span={24} id="confirm-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
           <img src={mobileLogo} id="confirm-logo-mobile-image" alt="mobile-logo" />
         </Col>
-        <div id="inside-welcome-container" >
+        <div id="inside-confirm-container" >
           <h1 id="login-title-text" >
             CONFIRM YOUR <br />
             PASSWORD

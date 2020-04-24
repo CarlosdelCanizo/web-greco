@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Card, Row, Col, Icon, Button, Select, message, Input, Switch, Divider, Tooltip } from 'antd';
+import { Form, Card, Row, Col, Icon, Button, Select, message, Input, Switch, Divider } from 'antd';
 import { Link, Redirect } from "react-router-dom";
 import inclinationImage from '../../assets/inclination.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
@@ -40,7 +40,11 @@ const FifthForm = props => {
         if (event.target.value && isNaN(event.target.value)) {
             error()
         } else {
-            setData({ ...data, [event.target.name]: event.target.value });
+            if (event.target.value > 90) {
+                maxMin();
+            } else {
+                setData({ ...data, [event.target.name]: event.target.value });
+            }
         }
     };
 
@@ -71,10 +75,21 @@ const FifthForm = props => {
         message.error('Only numbers, please', 5);
     };
 
+    const maxMin = () => {
+        message.error('Only up to 90º maximum, please', 5);
+    };
+
     const isEnabled =
         (data.inclination && data.inclination > 0 || inclination && inclination > 0);
 
-    const angle = <span>The angle your panel makes with the floor. If horizontally, its inclination is 0º</span>;
+    function checkTracking() {
+        if (currentPanelState.panelTrackingOrientation === true && currentPanelState.panelTrackingInclination === false) {
+            props.history.push('/third')
+        }
+        if (currentPanelState.panelTrackingOrientation === false && currentPanelState.panelTrackingInclination === false) {
+            props.history.push('/fourth')
+        }
+    }
 
     return (
         <Row>
@@ -94,7 +109,7 @@ const FifthForm = props => {
                         </div>
                     </Col>
                     <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <Link to="/my-installations">
+                        <Link to="/my-installations-sider">
                             <Button id="forms-close-button" onClick={clearPanel}>
                                 <Icon type="close" id="icon-x" />
                             </Button>
@@ -115,18 +130,15 @@ const FifthForm = props => {
                 </Row>
 
                 <Row>
+                    <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <div id="selector">
+                            <Switch
+                                onChange={onChangeSwitch}
+                                name="selector"
 
-                    <Tooltip placement="top" title={angle}>
-                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <div id="selector">
-                                <Switch
-                                    onChange={onChangeSwitch}
-                                    name="selector"
-
-                                />
-                            </div>
-                        </Col>
-                    </Tooltip>
+                            />
+                        </div>
+                    </Col>
                 </Row>
                 <Divider id="transparent-divider"></Divider>
                 <Row>
@@ -161,13 +173,10 @@ const FifthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={inclinationImage} id="register-panel-image-fifth" />
                                         </Col>
-                                        {/* <p id="text-panel-north">
-                                            Definition 0° North
-                                            </p> */}
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                            <Link to="fourth">
-                                                <Button id="button-panel-register-previous-fifth">BACK</Button>
-                                            </Link>
+
+                                            <Button id="button-panel-register-previous-fifth" onClick={checkTracking}>BACK</Button>
+
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
@@ -210,15 +219,10 @@ const FifthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={inclinationImage} id="register-panel-image-fifth-select" />
                                         </Col>
-
-                                        {/* <p id="text-panel-north">
-                                            Definition 0° North
-                                    </p> */}
-
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                            <Link to="fourth">
-                                                <Button id="button-panel-register-previous-fifth">BACK</Button>
-                                            </Link>
+
+                                            <Button id="button-panel-register-previous-fifth" onClick={checkTracking}>BACK</Button>
+
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 

@@ -1,39 +1,12 @@
-#download-card-container {
-  position: fixed;
-  z-index: 1000;
-  float: left;
-  width: 424px;
-  height: 720px;
-  top: 50px;
-  left: 3%;  
-  font-family: Montserrat;
-  color: #2a4092;
-  padding: 0; 
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-}
-#download-button {
-  background-color: #db4196;
-    color: #ffffff;
-    line-height: 1.5;
-    height:40px;
-    margin-top: 10%;
-}
-#download-text {
-  font-size: 16px;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: left;
-  line-height: 1.25;
-  color: #7f95a7;
-  margin-top: 1%;
-  margin-bottom: -1%;
-}
+@import '~antd/dist/antd.css';
+
+/***************DOWNLOAD*DATA*************************************************************/
+/***************COMPUTER*********************************************************/
 #download-close-button {
   float: right; 
   margin-top: -5%;
-  margin-right: -2%;
-  line-height: 3.8em;
+  margin-right: -5%;
+  line-height: 2.7em;
   background-color: transparent;
   color: #ff0000;
   opacity: 1;
@@ -43,6 +16,39 @@
   z-index: 1;
   border-radius: none;
   }
+#download-card-container {
+  overflow: visible;
+  float: left;
+  position: fixed;
+  z-index: 1000;
+    /* height: 720px; */
+    max-height: 85vh;
+    width: 424px;
+    font-family: Montserrat;
+    color: #2a4092;
+    padding: 0;
+    top: 60px !important;
+    left: 250px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#download-button {
+  background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    margin-top: 10%;
+    margin-left: 125px;
+}
+#download-text {
+  font-size: 16px;
+  text-align: center;
+  margin-left: 30px;
+  text-align: left;
+  line-height: 1.25;
+  color: #7f95a7;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
 
 /************************************************************DOWNLOAD*DATABASE**************************************************/
 /***TABLET****************************************************************************************************************/
@@ -53,7 +59,7 @@
     width: 424px;
     max-height: 720px;
     margin-top: 1%;
-    margin-left: 3%;  
+    margin-left: 3% !important;  
     font-family: Montserrat;
     color: #2a4092;
     padding: 0; 
@@ -66,12 +72,13 @@
 /***MOBILE*SMALL************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
+  
   #download-card-container {
     float: left;
     width: 100%;
-    max-height: calc(100vh - 36px);
-    top: 36px;
-    left: 0%;  
+    height: 100vh;
+    top: -8px;
+    left: 0% !important;  
     font-family: Montserrat;
     color: #2a4092;
     padding: 0; 

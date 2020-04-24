@@ -51,6 +51,7 @@ const ImageSlider = ({ multimedia }) => {
     if (currentImageId === null) {
       setImageUrl('no-image');
     }
+
     function getImage(currentImageId) {
       axiosConfig({
         url: '/multimedia/' + currentImageId + '/getImage/',

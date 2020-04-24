@@ -30,18 +30,21 @@
   background-image: linear-gradient(to bottom, #185490, #0a2a57); 
 }
 #background-logo {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 25%;
   margin-right: 25%;
  }
-#welcome-first {
+ #welcome-paragraph {
   margin-top: 5%;
   margin-left: 20%;
   margin-right: 20%;
   width: 500px;
   height: 237px;
+  
+}
+#welcome-first {
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -54,10 +57,12 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.36px;
+  color: #ffffff;
 }
 #welcome-third{
   margin-left: 23%;
   margin-right: 23%;
+  margin-top: -50px;
   width: 450px;
   height: 339px;
   font-family: Montserrat;
@@ -90,6 +95,10 @@
   font-weight: 600;
   letter-spacing: 0.56px;
   color: #002c50 !important;
+}
+#welcome-white-text-bold {
+  font-weight: 600;
+  letter-spacing: 0.56px;
 }
 #welcome-text-mini {
   margin-top: 5%;
@@ -237,21 +246,23 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #row-page-container {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
   }
   #col-welcome-container {
     background-image: none; 
     display: block;
     position: relative;
-    padding-bottom: 2.5rem; /*footer height*/
+    padding-bottom: 10rem; /*footer height*/
   }
   #welcome-logo-mobile {
-    margin-top: 8%;
+    margin-top: 5%;
     margin-left: 5%;
     width: fit-content;
   }
   #welcome-logo-mobile-image {
-    margin-left: 5.5%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    margin-left: 8%;
     width: 65%;
   }
   #inside-welcome-container{
@@ -319,12 +330,12 @@
     border-radius: 0;
   }
   #footer-divider {
-    height: 5px;
+    height: 0px;
     background-color: transparent;
   }
   #welcome-text-footer {
    position: absolute;
-   height: 2.5rem; /*footer height*/
+   height: 10rem; /*footer height*/
    clear:both;
    left: 8%;
    bottom: 0;

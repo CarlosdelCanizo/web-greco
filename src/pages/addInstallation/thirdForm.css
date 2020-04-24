@@ -32,12 +32,17 @@
   border-color: #db4196;
 }
 #col-image-panel-tracking {
-  margin-top: 5%;
+  margin-top: 15%;
 }
-#image-panel-tracking {
-  margin-top: -6%;
+#image-panel-tracking-orientation {
+  margin-top: 15%;
   width: 50%;
   height: 50%;
+}
+#image-panel-tracking-inclination {
+  margin-top: 13%;
+  width: 52%;
+  height: 52%;
 }
 #button-panel-register-previous-third  {
   background-color: #2a4092;
@@ -62,6 +67,11 @@
   border-radius: 0;
   border: none;
   margin-left: 0%;
+}
+
+.transparentDividerTracking{
+  margin-top: 25%;
+  background: none!important;
 }
 
 /**************************************************************TABLET*****************************************************************/
@@ -162,7 +172,7 @@
     margin-top: 10%;
 }
 #image-panel-tracking {
-  margin-top: 0%;
+  margin-top: 10%;
   width: 75%;
   height: 75%;
 }
@@ -193,5 +203,9 @@
   margin-left: 0%;
   margin-top: 34%;
   margin-left: -15%;
+}
+#transparentDividerTracking{
+  margin-top: -5%;
+  background: none!important;
 }
 }

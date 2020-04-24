@@ -1,9 +1,18 @@
 @import '~antd/dist/antd.css';
 
+#required-empty-field {
+  box-shadow: 0 0 1.5px 1px red;
+}
+
+#popover-left, #popover-center, #popover-right {
+  border: 1px solid #52acff;
+}
+
 #card-panel-register-inside {
   position: fixed;
   width: 600px;
   height: 700px;
+  /* max-height: 90vh; */
   margin: auto;
   font-family: Montserrat;
   background-color: white;
@@ -63,8 +72,16 @@ border-radius: none;
   border-color: #db4196 !important;
   /* color: #db4196 !important; */
   /* background-clip: content-box !important; */
-}  
-
+} 
+.ant-input::placeholder {
+  color : #becbd4;
+} 
+.ant-calendar-picker-input::placeholder{
+  color : #becbd4;
+}
+.ant-select-selection__placeholder{
+  color : #becbd4;
+}
 /***************************************************************FIRST*FORM*************************************************************/
 /***COMPUTER************************************************************************************************************************/
 #popover-left, #popover-center, #popover-right {

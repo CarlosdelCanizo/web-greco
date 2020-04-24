@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import recLogo from '../../assets/rect-logo.png'
-import mobileLogo from '../../assets/greco-logo-mobile.png'
+import recLogo from '../../assets/generation-solar-logo.svg'
+import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from "../../assets/spinner.svg";
 import { Row, Col, Form, Input, Alert, Button } from 'antd'
 // import { injectIntl } from 'react-intl'
@@ -57,7 +57,7 @@ const ResetPasswordForm = () => {
         <Col span={24} id="welcome-logo-mobile" xs={24} sm={24} md={24} lg={0} xl={0}>
           <img src={mobileLogo} id="welcome-logo-mobile-image" alt="mobile-logo" />
         </Col>
-        <div id="inside-welcome-container" >
+        <div id="inside-reset-container" >
           <h1 id="login-title-text" >
             RESET YOUR <br />
             PASSWORD

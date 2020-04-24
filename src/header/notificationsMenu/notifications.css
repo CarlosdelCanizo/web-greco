@@ -21,14 +21,14 @@
   z-index: 999;
   overflow-y: auto;
   float: right;
-  height: 92%;
+  /* height: 720px; */
   width: 424px;
-  max-height: 720px;
+  max-height: 85vh;
   font-family: Montserrat;
   color: #2a4092;
   padding: 0;
-  top: 50px;
-  right: 2%;
+  top: 60px !important;
+  right: 50px !important; 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 #notification-icon {

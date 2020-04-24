@@ -15,19 +15,21 @@ import FourthForm from '../pages/addInstallation/FourthForm';
 import FifthForm from '../pages/addInstallation/FifthForm';
 import SixthForm from '../pages/addInstallation/SixthForm';
 import FinishedPanel from '../pages/addInstallation/FinishedPanel';
-import PublicMapping from '../pages/mapping/PublicMapping';
-import PrivateMapping from '../pages/mapping/PrivateMapping';
-import MyInstallations from '../pages/myInstallations/MyInstallations';
-import Statistics from '../pages/statistics/Statistics';
-import About from '../header/mainMenu/About';
-import EditUser from '../header/userMenu/EditUser';
 import ShowPanelDetails from '../components/showPanel/ShowPanelDetails';
-import InviteFriends from '../header/userMenu/InviteFriends';
-import NotificationsList from '../header/notificationsMenu/NotificationsList';
 import FeedPanel from '../components/feedPanel/FeedPanel';
-import ChallengeLevelCard from '../pages/myChallenges/ChallengeLevelCard';
-import DownloadDatabase from '../header/dataBase/DownloadData';
-import PrivacyPolicy from '../pages/privacyPolicy/PrivacyPolicy';
+import PublicMappingSider from '../sider-pages/PublicMappingSider';
+import PrivateMappingSider from '../sider-pages/PrivateMappingSider';
+import AboutSider from '../sider-pages/AboutSider';
+import DownloadDatabaseSider from '../sider-pages/DownloadDatabaseSider';
+import MyInstallationsSiders from '../sider-pages/MyInstallationsSider';
+import StatisticsSider from '../sider-pages/StatisticsSider';
+import ChallengeLevelCardSider from '../sider-pages/ChallengeLevelCardSider';
+import PrivacyPolicySider from '../sider-pages/PrivacyPolicySider';
+import EditUserSider from '../sider-pages/EditUserSider';
+import InviteFriendsSider from '../sider-pages/InviteFriendsSider';
+import ShowPanelSider from '../sider-pages/ShowPanelSider';
+import NotificationsListSider from '../sider-pages/NotificationsListSider';
+import FeedPanelSider from '../sider-pages/FeedPanelSider';
 
 const Routes = () => {
 
@@ -56,18 +58,12 @@ const Routes = () => {
           <Route path="/reset-password" component={ResetPasswordForm} />
           <Route path="/confirm" component={ConfirmPasswordForm} />
           <Route path="/complete-register" component={CompleteRegister} />
-          <Route path="/public-mapping" component={PublicMapping} />
-          <Route path="/about" component={About} />
-          <Route path="/download" component={DownloadDatabase} />
-          <Route path="/notifications" component={NotificationsList} />
-          <Route path="/my-statistics" component={Statistics} />
-          <Route path="/privacy-policy" component={PrivacyPolicy} />
-
-          <Route path="/second" component={SecondForm} />
-          <Route path="/third" component={ThirdForm} />
-          <Route path="/fourth" component={FourthForm} />
-          <Route path="/fiveth" component={FifthForm} />
-
+          <Route path="/public-mapping-sider" component={PublicMappingSider} />
+          <Route path="/about-sider" component={AboutSider} />
+          <Route path="/download-sider" component={DownloadDatabaseSider} />
+          <Route path="/notifications-sider" component={NotificationsListSider} />
+          <Route path="/statistics-sider" component={StatisticsSider} />
+          <Route path="/privacy-policy-sider" component={PrivacyPolicySider} />
 
           <PrivateRoute
             path="/first"
@@ -105,14 +101,14 @@ const Routes = () => {
             component={FinishedPanel}
           />
           <PrivateRoute
-            path="/my-installations"
+            path="/my-installations-sider"
             auth={state.isAuthenticated}
-            component={MyInstallations}
+            component={MyInstallationsSiders}
           />
           <PrivateRoute
-            path="/edit-user-details"
+            path="/edit-user-details-sider"
             auth={state.isAuthenticated}
-            component={EditUser}
+            component={EditUserSider}
           />
           <PrivateRoute
             path="/feed-panel"
@@ -125,19 +121,29 @@ const Routes = () => {
             component={ShowPanelDetails}
           />
           <PrivateRoute
-            path="/private-mapping"
+            path="/private-mapping-sider"
             auth={state.isAuthenticated}
-            component={PrivateMapping}
+            component={PrivateMappingSider}
           />
           <PrivateRoute
-            path="/invite-friends"
+            path="/invite-friends-sider"
             auth={state.isAuthenticated}
-            component={InviteFriends}
+            component={InviteFriendsSider}
           />
           <PrivateRoute
-            path="/my-challenges"
+            path="/my-challenges-sider"
             auth={state.isAuthenticated}
-            component={ChallengeLevelCard}
+            component={ChallengeLevelCardSider}
+          />
+          <PrivateRoute
+            path="/show-panel-details-sider"
+            auth={state.isAuthenticated}
+            component={ShowPanelSider}
+          />
+          <PrivateRoute
+            path="/feed-panel-sider"
+            auth={state.isAuthenticated}
+            component={FeedPanelSider}
           />
 
         </Switch>

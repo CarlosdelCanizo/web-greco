@@ -1,5 +1,12 @@
 /*************************************************************COMPUTER**************************************************************/
 /***COMPUTER************************************************************************************************************************/
+#inside-register-container {
+  margin-top: 25%;
+  margin-left: 25%; 
+  margin-right: 25%; 
+  padding: 0; 
+}
+
 #register-title-text {
   margin-top: 0%;
   font-size: 26.6;
@@ -175,14 +182,15 @@
 
 @media (min-width: 240px) and (max-width: 600px) {
   #register-logo-mobile {
-    margin-top: 8%;
+    margin-top: 5%;
     margin-left: 5%;
     width: fit-content;
   }
   #register-logo-mobile-image {
-    margin-left: 5.5%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    margin-left: 8%;
     width: 65%;
-    height: 1%;
   }
   #register-title-text {
     margin-top: 25%;

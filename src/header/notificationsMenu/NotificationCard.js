@@ -24,6 +24,7 @@ function NotificationCard({ item }) {
         .then(response => {
           const data = response.data
           setPanel({ ...data });
+          localStorage.setItem('myPanel', JSON.stringify(data))
         })
     }
     getSpecificSolarPanel(item.solarPanelId)
@@ -37,7 +38,7 @@ function NotificationCard({ item }) {
             <div id="notification-icon">
               <Link to={
                 {
-                  pathname: "/feed-panel",
+                  pathname: "/feed-panel-sider",
                   myPanel: { panel }
                 }
               }>

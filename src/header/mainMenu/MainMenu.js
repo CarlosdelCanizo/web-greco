@@ -91,7 +91,7 @@ class MainMenu extends Component {
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="statistics">
-                            <Link to="/my-statistics" id="logged-public-menu">
+                            <Link to="/statistics" id="logged-public-menu">
                                 <Icon type="bar-chart" /> Statistics
                             </Link>
                         </Menu.Item>

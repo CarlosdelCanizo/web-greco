@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import recLogo from '../../assets/rect-logo.png'
-import mobileLogo from '../../assets/greco-logo-mobile.png'
+import recLogo from '../../assets/generation-solar-logo.svg'
+import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from "../../assets/spinner.svg";
 import { Row, Col, Divider, Form, Input, Button } from 'antd'
 import { Link } from 'react-router-dom'
@@ -95,7 +95,7 @@ const LoginForm = (props) => {
         setLoggedIn(true)
         if (data.isPreviouslyLogged === true) {
 
-          props.history.push('/private-mapping')
+          props.history.push('/private-mapping-sider')
         }
         else {
           props.history.push('/first')
@@ -112,7 +112,7 @@ const LoginForm = (props) => {
           </Row>
         </Col>
 
-        <div id="inside-welcome-container" >
+        <div id="inside-login-container" >
           <h1 id="login-title-text" >
             LOG IN
           </h1>
@@ -150,7 +150,7 @@ const LoginForm = (props) => {
               </div>
             </div>
             <div>
-              <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
+              {/* <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p> */}
               <Divider id="large-divider" />
             </div>
             <div id="welcome-button-container">
@@ -164,11 +164,11 @@ const LoginForm = (props) => {
             </div>
           </Form>
           <div>
-            <h6 id="welcome-text-mini">Don't you have an account yet?
-          <Link id="link" to="/register">Sign up</Link></h6>
+            <h6 id="welcome-text-mini">Don't you have an account yet?<br />
+              <Link id="link" to="/register">Sign up</Link></h6>
           </div>
           <Divider id="footer-divider" />
-          <h6 id="login-text-footer">Read terms and <a id="link" href="/privacy-policy">privacy policy</a>.</h6>
+          <h6 id="login-text-footer">Read terms and <a id="link" href="/privacy-policy-sider">privacy policy</a>.</h6>
         </div>
       </Col>
       <Col span={12} id="col-background" xs={0} sm={0} md={0} lg={12} xl={12}>

@@ -6,9 +6,12 @@ import noImage from '../../assets/no-image.svg'
 import Gold from '../../assets/gold.svg'
 import Silver from '../../assets/silver.svg'
 import Bronze from '../../assets/bronze.svg'
-import Header from '../../header/Header'
 import axiosConfig from '../../api/axiosConfig'
-import influencer from '../../assets/group-foto.png'
+import influencer from '../../assets/influencer.svg'
+import superPowers from '../../assets/solar-super-powers.svg'
+import moreMerrier from '../../assets/the-more-the-merrier.svg'
+import bestFriends from '../../assets/solar-best-friends.svg'
+import debateMaster from '../../assets/debate-master.svg'
 
 function ChallengeLevelCard() {
 
@@ -26,20 +29,21 @@ function ChallengeLevelCard() {
           }
         }
       );
-      setMyChallenges(result.data);
+      var challengesInfo = result.data
+      setMyChallenges(challengesInfo);
     };
     fetchData();
+
     console.log("MyChallenge from server:", myChallenges)
   }, []);
 
   return (
     <React.Fragment>
-      <Header />
       <div id="challenge-card-container">
         {myChallenges.map(item => (
           <Card id="individual-challenge-card" key={item.id}>
             <Row>
-              <Col xs={24} sm={5} md={7} lg={9} xl={7} xxl={4}>
+              <Col xs={24} sm={5} md={7} lg={9} xl={7} xxl={6}>
                 <Row>
                   <Tag id="challenge-tagImage" color={item.status === "OPEN" ? ("#2a4092") : ("#db4196")} >{item.status}</Tag>
                   <div id="challenge-card-image-container">
@@ -52,13 +56,15 @@ function ChallengeLevelCard() {
                         (item.percentageCompleted <= 32.0 && item.percentageCompleted >= 1.0 ?
                           (<img src={Bronze} alt="bronze-medal" id="challenge-card-image" />)
                           :
-                          (<img src={influencer} alt="challenge-picture" id="challenge-card-image" />)))
+                          (<img src={item.id === 10 ? (bestFriends) : (item.id === 20 ? (influencer)
+                            : (item.id === 30 ? (moreMerrier) : (item.id === 40 ? (debateMaster)
+                              : (item.id === 50 ? (superPowers) : (noImage)))))} alt="challenge-picture" id="challenge-card-image" />)))
                     }
 
                   </div>
                 </Row>
               </Col>
-              <Col xs={24} sm={19} md={17} lg={15} xl={17} xxl={20}>
+              <Col xs={24} sm={19} md={17} lg={15} xl={17} xxl={18}>
                 <Row>
                   <Col xs={24} sm={24} md={24} lg={24} xl={24}>
 
@@ -78,16 +84,16 @@ function ChallengeLevelCard() {
                   <Col xs={24} sm={24} md={24} lg={24} xl={24}>
 
                     <div id="challenge-percentage">
-                      <Tooltip title="1 done / 2 in progress / 3 to do">
-                        <Progress
-                          strokeColor={{
-                            from: '#2a4092',
-                            to: '#db4196',
-                          }}
-                          percent={item.percentageCompleted}
-                          status="active"
-                        />
-                      </Tooltip>
+
+                      <Progress
+                        strokeColor={{
+                          from: '#2a4092',
+                          to: '#db4196',
+                        }}
+                        percent={item.percentageCompleted}
+                        status="active"
+                      />
+
                     </div>
 
                   </Col>

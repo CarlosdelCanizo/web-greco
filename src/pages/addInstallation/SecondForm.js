@@ -83,7 +83,7 @@ const SecondForm = props => {
               </div>
             </Col>
             <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Link to="/my-installations">
+              <Link to="/my-installations-sider">
                 <Button id="forms-close-button" onClick={clearPanel}>
                   <Icon type="close" id="icon-x" />
                 </Button>
@@ -154,7 +154,7 @@ const SecondForm = props => {
               </div>
             </Col>
           </Row>
-          <Divider className="transparentDivider"></Divider>
+          <Divider className="transparentDivider" />
           <Row>
             <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
               <Link to="/first">

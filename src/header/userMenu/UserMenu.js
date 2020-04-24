@@ -84,17 +84,17 @@ class UserMenu extends Component {
         >
           <Menu
             onClick={this.handleClick}
-            style={{ width: 256 }}
+            style={{ width: 230 }}
             mode="inline"
           >
 
             <Menu.Item key="edit">
-              <Link to="/edit-user-details" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
+              <Link to="/edit-user-details-sider" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                 <Icon type="edit" /> Edit details
               </Link>
             </Menu.Item>
             <Menu.Item key="invite">
-              <Link to="/invite-friends" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
+              <Link to="/invite-friends-sider" id={this.state.isLoggedIn ? ("logged-public-menu") : ("nav-text")}>
                 <Icon type="team" /> Invite friends
               </Link>
             </Menu.Item>
@@ -104,11 +104,11 @@ class UserMenu extends Component {
                 (this.state.isLoggedIn) ?
                   (<Link to="/welcome" id="logged-public-menu" onClick={this.logOut} >
                     <Icon type="logout" /> Log out
-                    </Link>)
+                  </Link>)
                   :
                   (<Link to="/login" id="logged-public-menu">
                     <Icon type="login" /> Log in
-                    </Link>)
+                  </Link>)
               }
 
             </Menu.Item>
