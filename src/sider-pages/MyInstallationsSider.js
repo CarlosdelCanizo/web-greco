@@ -10,7 +10,7 @@ var access_token
 
 const { Header, Content, Sider } = Layout;
 
-const MyInstallationsSider = () => {
+const MyInstallationsSider = (props) => {
 
   localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
   localStorage.setItem("actualPage", "/my-installations-sider")

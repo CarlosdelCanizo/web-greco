@@ -10,7 +10,7 @@ var access_token
 
 const { Header, Content, Sider } = Layout;
 
-const PrivateMappingSider = () => {
+const PrivateMappingSider = (props) => {
 
   localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
   localStorage.setItem("actualPage", "/private-mapping-sider")

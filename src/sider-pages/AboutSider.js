@@ -10,7 +10,7 @@ var access_token
 
 const { Header, Content, Sider } = Layout;
 
-const AboutSider = () => {
+const AboutSider = (props) => {
 
   localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
   localStorage.setItem("actualPage", "/about-sider")
@@ -51,6 +51,7 @@ const AboutSider = () => {
         <div className="logo" >
           <Link to="/" >
             <img src={mobileLogo} width="70%" height="70%" alt="background-logo" id="logo-sider" />
+            {console.log("link logo", props)}
           </Link>
         </div >
         <Divider id="sider-divider" />

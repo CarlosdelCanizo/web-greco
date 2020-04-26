@@ -148,14 +148,11 @@ const SixthForm = props => {
         if (response.status === 200) {
           panelResponseId = response.data.solarPanel.id
           localStorage.setItem('idPanelFromPostPanel', JSON.stringify(panelResponseId))
-          // console.log("EL ID PANELFROMUPLOAD POST", panelResponseId)
-          // console.log("LISTA DE IMáGENES DESPRÉS DE ENVIAR POST PANEL", images)
           if (images.fileList.length === 0) {
             console.log("No images added")
           } else {
             uploadImage()
           }
-          //activateRedirection()
         }
       })
       .catch(function (error) {
@@ -196,15 +193,12 @@ const SixthForm = props => {
       .then(response => {
         if (response.status === 200) {
           var data = response.data
-          // console.log("RESPUESTA UPDATE PANEL", data)
-          // console.log("LISTA DE IMáGENES DESPRES DE ENVIAR UPDATE PANEL", images)
           if (images.fileList.length === 0) {
             console.log("No images to add", images)
           } else {
             console.log("images to add:", images.fileList.length)
             uploadImage()
           }
-          //activateRedirection()
         }
       })
       .catch(function (error) {
@@ -244,7 +238,6 @@ const SixthForm = props => {
       previewImage: file.thumbUrl,
       previewVisible: true
     });
-    // console.log("PROVA HANDLER PREVIEW 239", file)
   };
 
   const handleUploadImages = ({ fileList }) => {
@@ -254,7 +247,6 @@ const SixthForm = props => {
     } else {
       setImages({ fileList });
     }
-    // console.log("PROVA HANDLER UPLOAD IMAGES", fileList)
   };
 
   function uploadImage() {

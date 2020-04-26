@@ -18,16 +18,14 @@ class Welcome extends React.Component {
     super(props);
 
     //this.state = { value: '' };
-    console.log("props Efrén", this.props)
+
     var access_token = "";
     access_token = localStorage.getItem("access_token")
     if (access_token === null) {
-      //props.history.push('/')
       localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
       localStorage.setItem("actualPage", "/")
     }
     else {
-
       var lastpage = localStorage.getItem("lastPage")
       props.history.push(lastpage)
     }

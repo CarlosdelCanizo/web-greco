@@ -27,9 +27,6 @@ const ProfileProvider = ({ children, props }) => {
         .then(result => {
           setUserInfo({ ...result.data })
           setLoggedIn(true)
-          console.log("UserInfo Efrén: ", result.data)
-          //window.location.href = '/private-mapping-sider';
-          //props.history.push('/private-mapping-sider')
         });
     }
   }, []);
