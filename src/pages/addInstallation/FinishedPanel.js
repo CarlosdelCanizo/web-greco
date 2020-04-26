@@ -6,7 +6,7 @@ import axiosConfig from '../../api/axiosConfig'
 import './finishedPanel.css'
 
 const FinishedPanel = props => {
-
+    console.log("FinishedPanel")
     const [myPanel, setMyPanel] = useState({})
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panel = JSON.parse(localStorage.getItem('currentPanelState'))
@@ -14,9 +14,21 @@ const FinishedPanel = props => {
     // console.log("MULTIMEDIA LOCAL STORAGE", multimedia)
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
     var idPanelfromUpload = JSON.parse(localStorage.getItem("idPanelfromUpload"))
-
+    var idPanelFromPostPanel = JSON.parse(localStorage.getItem("idPanelFromPostPanel"))
     // const myPanel = props.location.myPanel;
     // console.log("MY PANEL DE LAS PROPS", myPanel)
+
+    useEffect(() => {
+        console.log("FinishedPanel useEffect")
+        if (currentPanelId == 0) {
+            getSpecificSolarPanel(idPanelFromPostPanel);
+        } else {
+            getSpecificSolarPanel(idPanelfromUpload);
+        }
+
+    }, []);
+
+
     function getSpecificSolarPanel(id) {
         axiosConfig
             .get('/solarPanel/' + id,
@@ -27,17 +39,14 @@ const FinishedPanel = props => {
                 })
             .then(response => {
                 const data = response.data
-                setMyPanel({ ...data });
-                localStorage.setItem('myPanel', JSON.stringify(myPanel))
+                //setMyPanel({ ...data });
+                localStorage.setItem('myPanel', JSON.stringify(response.data))
                 localStorage.removeItem("currentPanelId")
+                console.log("response data efrén", response.data)
+                console.log("idPanelFromUpload", idPanelfromUpload)
             })
     }
 
-    if (currentPanelId > 0 && idPanelfromUpload === null) {
-        getSpecificSolarPanel(currentPanelId);
-    } else {
-        getSpecificSolarPanel(idPanelfromUpload);
-    }
 
     //Redirect
     const [toLocation, setLocation] = useState(false);

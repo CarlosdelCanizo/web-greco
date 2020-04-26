@@ -152,7 +152,7 @@ const SixthForm = props => {
           } else {
             uploadImage()
           }
-          activateRedirection()
+          //activateRedirection()
         }
       })
       .catch(function (error) {
@@ -201,7 +201,7 @@ const SixthForm = props => {
             console.log("images to add:", images.fileList.length)
             uploadImage()
           }
-          activateRedirection()
+          //activateRedirection()
         }
       })
       .catch(function (error) {
@@ -271,11 +271,14 @@ const SixthForm = props => {
         }
       })
       .then(response => {
+        console.log("response upload image: ", response)
         if (response.status === 200) {
           const data = response.data
-          console.log("data", data)
+
           localStorage.setItem('multimedia', JSON.stringify(data))
+          activateRedirection()
           throw response
+
         }
       })
       .then(error => {

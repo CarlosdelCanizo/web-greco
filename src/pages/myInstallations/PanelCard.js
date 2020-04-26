@@ -16,6 +16,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
 
   function updatePanelId() {
     localStorage.setItem('currentPanelId', JSON.stringify(panel.id));
+    localStorage.setItem('idPanelfromUpload', JSON.stringify(panel.id));
     getSpecificSolarPanel(panel.id);
   }
 
@@ -96,6 +97,7 @@ const PanelCard = ({ panel, fetchPanels }) => {
         })
       .then(response => {
         const data = response.data
+        console.log("PanelCard getSpecificSolarPanel: ", data)
         localStorage.setItem('myPanel', JSON.stringify(data))
       })
   }
