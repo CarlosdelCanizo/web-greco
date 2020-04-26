@@ -222,6 +222,8 @@ const Routes = () => {
           <Route path="/statistics-sider" component={StatisticsSider} />
           <Route path="/privacy-policy-sider" component={PrivacyPolicySider} />
 
+          <Route path="/sixth" component={SixthForm} />
+
           <PrivateRoute
             path="/first"
             auth={state.isAuthenticated}

@@ -70,7 +70,8 @@
   color: #2a4092;
 }
 #numbers-total-capacity {
-  text-align: center;
+  /* text-align: center; */
+  margin-left: 100px;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;
@@ -81,6 +82,7 @@
 
 #big-letters-installed {
   margin-top: 8px;
+  float: left;
   font-family: Montserrat;
   letter-spacing: .27px;
   text-align: center;
@@ -162,14 +164,43 @@ margin-left: -35%;
     color: #7f95a7;
   }
   #slider-climate-objective {
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* text-align: center; */
+    margin-left: 20px;
+    margin-right: 20px;
     width: 90%;
   }
+
+  .ant-slider-disabled .ant-slider-track {
+    background-color: #db4196 !important;
+}
+  /* HOLE RAIL */
+  .ant-slider-disabled .ant-slider-rail {
+    background-color: #2a4092;
+  }
   
-  .ant-slider-track .ant-slider-track-1 {
-    background-color: red;
+  /* SELECTED-TRACK */
+  .ant-slider-disabled .ant-slider-track .ant-slider-track-1  {
+    background-color:#db4196;
+  }
+
+  /*DOT LEFT AND RIGHT RANGE*/
+  .ant-slider-disabled .ant-slider-handle  {
+    border: solid 2px #db4196 !important;
+  }
+
+  /*DOT CENTER RANGE*/
+  .ant-slider-disabled .ant-slider-dot .ant-slider-dot-active {
+    border: solid 2px #db4196 !important;
+  }
+
+  /* CURSOR */
+   .ant-slider-handle .ant-slider-handle-1, .ant-slider-dot .ant-slider-disabled {
+    cursor: auto !important;
+  }
+
+  /* MIDDLE POINTS */
+  .ant-slider .ant-slider-with-marks .ant-slider-disabled {
+    border: solid 2px #2a4092 !important;
   }
 
 /**************************************************************TABLET*****************************************************************/

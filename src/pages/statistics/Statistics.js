@@ -7,14 +7,12 @@ import axiosConfig from '../../api/axiosConfig';
 
 var position = { lat: 39.8714243295929, lng: -0.06466403603553773 }
 
-const yerarObjective = 400 //tonnes CO2
-
 class Statistics extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       totalInstallations: '',
-      totalPower: ''
+      totalPower: '',
     };
   }
 
@@ -35,16 +33,6 @@ class Statistics extends React.Component {
       this.setState({ totalPower: response.data });
     });
   }
-
-  // componentDidMount() {
-  //   axiosConfig
-  //     .get('/co2saving')
-  //     .then(response => {
-  //       var response = response.data;
-  //       console.log(response)
-  //     });
-  // }
-
 
   componentDidMount() {
     this.getAllInstallationsNumber();
@@ -99,7 +87,7 @@ class Statistics extends React.Component {
             </Row>
           </Col>
 
-          {/* <Col id="container-cards" span={24} xs={24} sm={12} md={12} lg={12} xl={12} >
+          <Col id="container-cards" span={24} xs={24} sm={12} md={12} lg={12} xl={12} >
             <div id="climate-objective-card-statistics-container" >
               <h2 id="tittle-installed">CLIMATE OBJECTIVE</h2>
               <div>
@@ -111,8 +99,7 @@ class Statistics extends React.Component {
               </div>
               <ClimateObjective />
             </div>
-          </Col> */}
-}
+          </Col>
         </Row>
       </React.Fragment >
     );

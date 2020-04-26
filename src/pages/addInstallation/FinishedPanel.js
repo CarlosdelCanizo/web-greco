@@ -102,44 +102,65 @@ import './finishedPanel.css'
 
 const FinishedPanel = props => {
 
-    // const [myPanel, setMyPanel] = useState({})
+    const [myPanel, setMyPanel] = useState({})
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panel = JSON.parse(localStorage.getItem('currentPanelState'))
-    // var multimedia = JSON.parse(localStorage.getItem('multimedia'))
-    // console.log("MULTIMEDIA LOCAL STORAGE", multimedia)
+    // var multimediaInitialState = JSON.parse(localStorage.getItem('multimedia'))
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
     var idPanelFromPostPanel = JSON.parse(localStorage.getItem("idPanelFromPostPanel"))
 
 
     //GET SPECIFIC PANEL
+
+
     useEffect(() => {
-        // if (currentPanelId > 0 && idPanelFromPostPanel === null) {
-        getSpecificSolarPanel(idPanelFromPostPanel);
-        // } else {
-        //     getSpecificSolarPanel(idPanelFromPostPanel);
-        // }
+        const fetchData = async () => {
+            const result = await axiosConfig(
+                '/solarPanel/' + idPanelFromPostPanel,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": access_token
+                    }
+                }
+            );
+            var data = result.data
+            setMyPanel(data);
+        };
+        fetchData();
+
+        console.log("data from panel:", myPanel)
     }, []);
+
+    // useEffect(() => {
+    // if (currentPanelId > 0 && idPanelFromPostPanel === null) {
+    //  getSpecificSolarPanel(idPanelFromPostPanel);
+    // } else {
+    //     getSpecificSolarPanel(idPanelFromPostPanel);
+    // }
+    // }, []);
 
 
     // const myPanel = props.location.myPanel;
     // console.log("MY PANEL DE LAS PROPS", myPanel)
-    function getSpecificSolarPanel(id) {
-        axiosConfig
-            .get('/solarPanel/' + id,
-                {
-                    headers: {
-                        "Authorization": access_token
-                    }
-                })
-            .then(response => {
-                const data = response.data
-                // console.log("EL RESPONSE DATA", data)
-                // console.log("EL RESPONSE ", response)
-                // setMyPanel({ ...data });
-                localStorage.setItem('myPanel', JSON.stringify(data))
-                // localStorage.removeItem("currentPanelId")
-            })
-    }
+
+    // function getSpecificSolarPanel(id) {
+    //     axiosConfig
+    //         .get('/solarPanel/' + id,
+    //             {
+    //                 headers: {
+    //                     "Authorization": access_token
+    //                 }
+    //             })
+    //         .then(response => {
+    //             const data = response.data
+    //             console.log("EL RESPONSE DATA", data)
+    //             // console.log("EL RESPONSE ", response)
+    //             setMyPanel({ ...data });
+    //             localStorage.setItem('myPanel', JSON.stringify(data))
+    //             // localStorage.removeItem("currentPanelId")
+    //         })
+    // }
 
     //Redirect
     const [toLocation, setLocation] = useState(false);

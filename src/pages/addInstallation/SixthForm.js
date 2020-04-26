@@ -273,6 +273,7 @@ const SixthForm = props => {
       .then(response => {
         if (response.status === 200) {
           const data = response.data
+          console.log("data", data)
           localStorage.setItem('multimedia', JSON.stringify(data))
           throw response
         }
