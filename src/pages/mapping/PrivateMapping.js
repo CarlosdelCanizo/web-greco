@@ -38,9 +38,6 @@ const PanelImage = ({ imageUrl }) => {
 
 const PrivateMapping = () => {
 
-  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
-  localStorage.setItem("actualPage", "/private-mapping-sider")
-
   document.body.classList.remove('body_forms');
   const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 

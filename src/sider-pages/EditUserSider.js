@@ -12,6 +12,9 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const PublicMappingSider = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/edit-user-details-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const FeedPanelSider = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/feed-panel-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

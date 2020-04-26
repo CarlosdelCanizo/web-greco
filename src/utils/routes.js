@@ -117,7 +117,7 @@ const Routes = () => {
             component={FeedPanel}
           />
           <PrivateRoute
-            path="/show-panel-details"
+            path="/show-panel-details-slider"
             auth={state.isAuthenticated}
             component={ShowPanelDetails}
           />

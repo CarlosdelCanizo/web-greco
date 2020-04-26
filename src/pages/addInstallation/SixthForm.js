@@ -9,6 +9,9 @@ import { ProfileContext } from '../../utils/profile/ProfileContext'
 
 const SixthForm = props => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/sixth")
+
   const profileContext = useContext(ProfileContext)
   var username = profileContext.username
 

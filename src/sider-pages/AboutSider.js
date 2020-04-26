@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const AboutSider = () => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/about-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

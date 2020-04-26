@@ -10,6 +10,9 @@ import axiosConfig from '../../api/axiosConfig'
 
 const ConfirmPasswordForm = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/confirm")
+
   function getUuidParameter() {
     var uuid = window.location.search
     var newUuid = uuid.replace('?', '')

@@ -8,6 +8,9 @@ import './completeRegister.css'
 
 const CompleteRegister = () => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/complete-register")
+
   const userName = (localStorage.getItem('user')).toUpperCase();
   localStorage.removeItem("user")
 

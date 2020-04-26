@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const ChallengeLevelCardSider = () => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/my-challenges-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

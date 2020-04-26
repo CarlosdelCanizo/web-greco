@@ -8,9 +8,12 @@ import InviteFriends from '../header/userMenu/InviteFriends';
 
 var access_token
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const InviteFriendsSider = (props) => {
+
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/invite-friends-sider")
 
   const [isLoggedIn, setLoggedIn] = useState();
 

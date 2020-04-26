@@ -10,6 +10,9 @@ import axiosConfig from '../../api/axiosConfig'
 
 const ResetPasswordForm = () => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/reset-password")
+
   const [data, setData] = React.useState("");
 
   const handleInputChange = event => {

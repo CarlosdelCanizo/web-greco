@@ -8,6 +8,9 @@ import './fourthForm.css'
 
 const FourthForm = props => {
 
+    localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+    localStorage.setItem("actualPage", "/fourth")
+
     //MOBILE GYRO*********************************************************
     //MOBILE VERSION
     function isMobile(a) {

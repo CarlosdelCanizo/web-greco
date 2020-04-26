@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const ShowPanelSider = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/show-panel-details-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

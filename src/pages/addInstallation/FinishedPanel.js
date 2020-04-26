@@ -6,17 +6,16 @@ import axiosConfig from '../../api/axiosConfig'
 import './finishedPanel.css'
 
 const FinishedPanel = props => {
-    console.log("FinishedPanel")
+
+    localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+    localStorage.setItem("actualPage", "/finished-panel")
+
     const [myPanel, setMyPanel] = useState({})
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panel = JSON.parse(localStorage.getItem('currentPanelState'))
-    // var multimedia = JSON.parse(localStorage.getItem('multimedia'))
-    // console.log("MULTIMEDIA LOCAL STORAGE", multimedia)
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
     var idPanelfromUpload = JSON.parse(localStorage.getItem("idPanelfromUpload"))
     var idPanelFromPostPanel = JSON.parse(localStorage.getItem("idPanelFromPostPanel"))
-    // const myPanel = props.location.myPanel;
-    // console.log("MY PANEL DE LAS PROPS", myPanel)
 
     useEffect(() => {
         console.log("FinishedPanel useEffect")
@@ -39,7 +38,6 @@ const FinishedPanel = props => {
                 })
             .then(response => {
                 const data = response.data
-                //setMyPanel({ ...data });
                 localStorage.setItem('myPanel', JSON.stringify(response.data))
                 localStorage.removeItem("currentPanelId")
                 console.log("response data efrén", response.data)
@@ -61,7 +59,6 @@ const FinishedPanel = props => {
 
     return (
         <Row>
-            {/* <div id="background-panel-register"> */}
             <Card id="card-panel-register-inside">
                 <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                     <div>
@@ -95,7 +92,6 @@ const FinishedPanel = props => {
                     </Link>
                 </Col>
             </Card>
-            {/* </div> */}
         </Row>
     )
 }

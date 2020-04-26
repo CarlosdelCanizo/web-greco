@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const MyInstallationsSider = () => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/my-installations-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {

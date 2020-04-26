@@ -11,6 +11,9 @@ import axiosConfig from '../../api/axiosConfig'
 
 const RegisterForm = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/register")
+
   const [data, setData] = React.useState("");
   const [isChecked, setChecked] = React.useState(true)
   const toggle = () => setChecked(!isChecked)

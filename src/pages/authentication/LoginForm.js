@@ -13,6 +13,9 @@ import axiosConfig from '../../api/axiosConfig'
 
 const LoginForm = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/login")
+
   const { dispatch } = React.useContext(AuthContext)
   const { setUserInfo, setLoggedIn } = useContext(ProfileContext)
 

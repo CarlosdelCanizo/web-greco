@@ -8,9 +8,12 @@ import NotificationList from '../header/notificationsMenu/NotificationsList';
 
 var access_token
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const NotificationsMenuSider = (props) => {
+
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/notifications-sider")
 
   const [isLoggedIn, setLoggedIn] = useState();
 

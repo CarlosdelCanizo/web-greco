@@ -9,6 +9,9 @@ import MapsCoords from "./MapsCoords";
 
 const SecondForm = props => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/second")
+
   //MOBILE COORDINATES*********************************************************
   //MOBILE VERSION
   // var isMobile = JSON.parse(localStorage.getItem("isMobile"));

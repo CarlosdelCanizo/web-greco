@@ -9,6 +9,9 @@ import './thirdForm.css';
 
 const ThirdForm = props => {
 
+    localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+    localStorage.setItem("actualPage", "/third")
+
     var currentPanelOrientation;
     var currentPanelInclination;
 

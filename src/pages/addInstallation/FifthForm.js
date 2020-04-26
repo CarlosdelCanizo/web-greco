@@ -8,6 +8,9 @@ import './fourthForm.css'
 
 const FifthForm = props => {
 
+    localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+    localStorage.setItem("actualPage", "/fifth")
+
     //MOBILE GYRO*********************************************************
     //MOBILE VERSION
     function isMobile(a) {

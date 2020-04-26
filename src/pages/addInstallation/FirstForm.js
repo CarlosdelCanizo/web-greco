@@ -11,7 +11,6 @@ import moment from 'moment'
 
 const FirstForm = (props) => {
 
-  console.log("first props", props)
   localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
   localStorage.setItem("actualPage", "/first")
 

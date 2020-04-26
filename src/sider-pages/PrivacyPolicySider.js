@@ -12,6 +12,9 @@ const { Header, Content, Sider } = Layout;
 
 const PrivacyPolicySider = (props) => {
 
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
+  localStorage.setItem("actualPage", "/privacy-policy-sider")
+
   const [isLoggedIn, setLoggedIn] = useState();
 
   useEffect(() => {
