@@ -70,8 +70,7 @@
   color: #2a4092;
 }
 #numbers-total-capacity {
-  /* float: right; */
-  text-align: right;
+  text-align: center;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;

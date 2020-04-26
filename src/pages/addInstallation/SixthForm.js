@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input, Tooltip } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
@@ -12,11 +12,47 @@ const SixthForm = props => {
   const profileContext = useContext(ProfileContext)
   var username = profileContext.username
 
-  var installationName, installationProperty, battery, batteryDescription, observation
+  var installationName, installationProperty, battery, batteryDescription, observation;
 
+  //TO MANAGE IMAGES
+  const [images, setImages] = useState(
+    {
+      previewVisible: true,
+      previewImage: '',
+      fileList: []
+    }
+  );
+
+  //GET FROM LOCAL STORAGE
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
+
+  //TO UPDATE PANEL
+  // var myPanel
+  // var imageNumber
+
+  // if (currentPanelId > 0) {
+  //   myPanel = JSON.parse(localStorage.getItem("myPanel"));
+  // imageNumber = myPanel.multimedia.length;
+  // var image1 = myPanel.multimedia[0];
+  // var image2 = myPanel.multimedia[1];
+  // var image3 = myPanel.multimedia[2];
+
+  //   var newfileList = [image1, image2, image3]
+
+  //   console.log("El panel:", myPanel)
+  //   console.log("número de imágenes:", imageNumber)
+  //   console.log("multimedia imawg1", image1)
+  //   console.log("multimedia image2", image2)
+  //   console.log("multimedia image3", image3)
+  // }
+
+  //RECUPERAR IMAGENES DE MYPANEL 
+  // useEffect(() => {
+
+  // }, []);
+
 
   if (currentPanelState !== null) {
     installationName = currentPanelState.installationName
@@ -108,8 +144,14 @@ const SixthForm = props => {
       .then(response => {
         if (response.status === 200) {
           panelResponseId = response.data.solarPanel.id
-          localStorage.setItem('idPanelfromUpload', JSON.stringify(panelResponseId))
-          uploadImage()
+          localStorage.setItem('idPanelFromPostPanel', JSON.stringify(panelResponseId))
+          // console.log("EL ID PANELFROMUPLOAD POST", panelResponseId)
+          // console.log("LISTA DE IMáGENES DESPRÉS DE ENVIAR POST PANEL", images)
+          if (images.fileList.length === 0) {
+            console.log("No images added")
+          } else {
+            uploadImage()
+          }
           activateRedirection()
         }
       })
@@ -150,7 +192,15 @@ const SixthForm = props => {
       })
       .then(response => {
         if (response.status === 200) {
-          uploadImage()
+          var data = response.data
+          // console.log("RESPUESTA UPDATE PANEL", data)
+          // console.log("LISTA DE IMáGENES DESPRES DE ENVIAR UPDATE PANEL", images)
+          if (images.fileList.length === 0) {
+            console.log("No images to add", images)
+          } else {
+            console.log("images to add:", images.fileList.length)
+            uploadImage()
+          }
           activateRedirection()
         }
       })
@@ -160,7 +210,7 @@ const SixthForm = props => {
       });
   }
 
-  function beforeUpload(file) {
+  function beforeUpload(file, fileList) {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
       message.error('You can only upload JPG/PNG file!');
@@ -172,9 +222,16 @@ const SixthForm = props => {
       message.error('Image must be smaller than 5MB!');
       errorImageToUpload = true;
     }
+    // const howMany = fileList.length
+    // console.log("Cuantes?", howMany)
+    // console.log("Cuantes?", fileList)
+    // if (howMany > 3) {
+    //   message.error('Remember, you can only upload 3 images per installation');
+    // }
     if (isJpgOrPng && isLt5M < 5242880) {
       errorImageToUpload = false;
     }
+
     return false;
   }
 
@@ -184,25 +241,19 @@ const SixthForm = props => {
       previewImage: file.thumbUrl,
       previewVisible: true
     });
+    // console.log("PROVA HANDLER PREVIEW 239", file)
   };
 
   const handleUploadImages = ({ fileList }) => {
-    if (errorImageToUpload) {
 
+    if (errorImageToUpload) {
+      console.log("Image upload error")
     } else {
       setImages({ fileList });
     }
+    // console.log("PROVA HANDLER UPLOAD IMAGES", fileList)
   };
 
-
-  //UPLOAD IMAGES
-  const [images, setImages] = useState(
-    {
-      previewVisible: true,
-      previewImage: '',
-      fileList: []
-    }
-  );
   function uploadImage() {
     if (panelResponseId === undefined) {
       panelResponseId = currentPanelId
@@ -212,7 +263,6 @@ const SixthForm = props => {
     for (var i = 0; i < images.fileList.length; i++) {
       formData.append('file', images.fileList[i].originFileObj)
     }
-
     axiosConfig.post("/multimedia/upload/" + panelResponseId, formData,
       {
         headers: {
@@ -222,9 +272,8 @@ const SixthForm = props => {
       })
       .then(response => {
         if (response.status === 200) {
-          console.log("resposta image server:", response.data)
-          var multimedia = response.data;
-          localStorage.setItem('multimedia', JSON.stringify(multimedia))
+          const data = response.data
+          localStorage.setItem('multimedia', JSON.stringify(data))
           throw response
         }
       })

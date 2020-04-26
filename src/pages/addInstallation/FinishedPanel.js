@@ -103,36 +103,43 @@ import './finishedPanel.css'
 const FinishedPanel = props => {
 
     // const [myPanel, setMyPanel] = useState({})
-    // var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
+    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panel = JSON.parse(localStorage.getItem('currentPanelState'))
     // var multimedia = JSON.parse(localStorage.getItem('multimedia'))
     // console.log("MULTIMEDIA LOCAL STORAGE", multimedia)
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
-    var idPanelfromUpload = JSON.parse(localStorage.getItem("idPanelfromUpload"))
+    var idPanelFromPostPanel = JSON.parse(localStorage.getItem("idPanelFromPostPanel"))
 
-    const myPanel = props.location.myPanel;
-    console.log("MY PANEL DE LAS PROPS", myPanel)
-    // function getSpecificSolarPanel(id) {
-    //     axiosConfig
-    //         .get('/solarPanel/' + id,
-    //             {
-    //                 headers: {
-    //                     "Authorization": access_token
-    //                 }
-    //             })
-    //         .then(response => {
-    //             const data = response.data
-    //             setMyPanel({ ...data });
-    //             localStorage.setItem('myPanel', JSON.stringify(myPanel))
-    //             localStorage.removeItem("currentPanelId")
-    //         })
-    // }
 
-    // if (currentPanelId > 0 && idPanelfromUpload === null) {
-    //     getSpecificSolarPanel(currentPanelId);
-    // } else {
-    //     getSpecificSolarPanel(idPanelfromUpload);
-    // }
+    //GET SPECIFIC PANEL
+    useEffect(() => {
+        // if (currentPanelId > 0 && idPanelFromPostPanel === null) {
+        getSpecificSolarPanel(idPanelFromPostPanel);
+        // } else {
+        //     getSpecificSolarPanel(idPanelFromPostPanel);
+        // }
+    }, []);
+
+
+    // const myPanel = props.location.myPanel;
+    // console.log("MY PANEL DE LAS PROPS", myPanel)
+    function getSpecificSolarPanel(id) {
+        axiosConfig
+            .get('/solarPanel/' + id,
+                {
+                    headers: {
+                        "Authorization": access_token
+                    }
+                })
+            .then(response => {
+                const data = response.data
+                // console.log("EL RESPONSE DATA", data)
+                // console.log("EL RESPONSE ", response)
+                // setMyPanel({ ...data });
+                localStorage.setItem('myPanel', JSON.stringify(data))
+                // localStorage.removeItem("currentPanelId")
+            })
+    }
 
     //Redirect
     const [toLocation, setLocation] = useState(false);
@@ -175,7 +182,7 @@ const FinishedPanel = props => {
                             myPanel: { panel }
                         }
                     }>
-                        <Button id="button-panel-finish-next" onClick={localStorage.removeItem("idPanelfromUpload")}>
+                        <Button id="button-panel-finish-next" onClick={localStorage.removeItem("idPanelFromPostPanel")}>
                             SEE YOUR INSTALLATION
                         </Button>
                     </Link>
