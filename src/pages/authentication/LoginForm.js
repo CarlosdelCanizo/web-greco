@@ -152,7 +152,7 @@ const LoginForm = (props) => {
               </div>
             </div>
             <div>
-              {/* <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p> */}
+              <p id="welcome-text-mini">Forgot your <Link id="link" to="/reset-password">password</Link>?</p>
               <Divider id="large-divider" />
             </div>
             <div id="welcome-button-container">

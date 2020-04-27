@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input, Tooltip } from 'antd'
 import { Link, Redirect } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
@@ -7,7 +7,7 @@ import bulletBuit from '../../assets/bullet-vacio.svg'
 import './sixthForm.css'
 import { ProfileContext } from '../../utils/profile/ProfileContext'
 
-const SixthForm = props => {
+const SixthForm = (props) => {
 
   localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
   localStorage.setItem("actualPage", "/sixth")
@@ -30,32 +30,11 @@ const SixthForm = props => {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
-
-  //TO UPDATE PANEL
-  // var myPanel
-  // var imageNumber
-
-  // if (currentPanelId > 0) {
-  //   myPanel = JSON.parse(localStorage.getItem("myPanel"));
-  // imageNumber = myPanel.multimedia.length;
-  // var image1 = myPanel.multimedia[0];
-  // var image2 = myPanel.multimedia[1];
-  // var image3 = myPanel.multimedia[2];
-
-  //   var newfileList = [image1, image2, image3]
-
-  //   console.log("El panel:", myPanel)
-  //   console.log("número de imágenes:", imageNumber)
-  //   console.log("multimedia imawg1", image1)
-  //   console.log("multimedia image2", image2)
-  //   console.log("multimedia image3", image3)
-  // }
-
-  //RECUPERAR IMAGENES DE MYPANEL 
-  // useEffect(() => {
-
-  // }, []);
-
+  var myPanel = JSON.parse(localStorage.getItem("myPanel"));
+  var multimedia1 = myPanel.multimedia[0];
+  var multimedia2 = myPanel.multimedia[1];
+  var multimedia3 = myPanel.multimedia[2];
+  console.log("PROVA:", multimedia1, multimedia2, multimedia3);
 
   if (currentPanelState !== null) {
     installationName = currentPanelState.installationName
@@ -207,7 +186,8 @@ const SixthForm = props => {
       });
   }
 
-  function beforeUpload(file, fileList) {
+  function beforeUpload(file) {
+
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
       message.error('You can only upload JPG/PNG file!');
@@ -219,16 +199,9 @@ const SixthForm = props => {
       message.error('Image must be smaller than 5MB!');
       errorImageToUpload = true;
     }
-    // const howMany = fileList.length
-    // console.log("Cuantes?", howMany)
-    // console.log("Cuantes?", fileList)
-    // if (howMany > 3) {
-    //   message.error('Remember, you can only upload 3 images per installation');
-    // }
     if (isJpgOrPng && isLt5M < 5242880) {
       errorImageToUpload = false;
     }
-
     return false;
   }
 
@@ -281,7 +254,6 @@ const SixthForm = props => {
         errorImages()
       })
   }
-
 
   //REDIRECT
   const [toLocation, setLocation] = useState(false);
@@ -396,6 +368,7 @@ const SixthForm = props => {
               <div id="upload-images">
                 <Upload
                   listType="picture"
+                  defaultList={myPanel.multimedia}
                   fileList={images.fileList}
                   onPreview={handlePreview}
                   onChange={handleUploadImages}
@@ -403,11 +376,15 @@ const SixthForm = props => {
                   beforeUpload={beforeUpload}
                   name="multimedia"
                 >
-                  <Button>
-                    <p id="upload-text-one">+ Upload images</p>
-                  </Button>
+                  {images.fileList.length >= 3 ? (null) : (
+                    <Button>
+                      <p id="upload-text-one">+ Upload images</p>
+                    </Button>
+                  )}
+
                   <p>Maximum 3 images per installation</p>
                   <p>Only png or jpg, with max size of 5 MB each one</p>
+                  <defaultFileList />
                 </Upload>
               </div>
             </Col>

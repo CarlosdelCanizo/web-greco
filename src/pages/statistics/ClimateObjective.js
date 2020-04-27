@@ -14,6 +14,10 @@ const marks = {
   }
 };
 
+function formatter(value) {
+  return `${value}Tm`;
+}
+
 class ClimateObjective extends React.Component {
   constructor(props) {
     super(props);
@@ -41,13 +45,14 @@ class ClimateObjective extends React.Component {
         <Col>
           <Row >
             <div id="div-slider-climate">
-              <Slider range marks={marks} min={0} max={800000}
+              <Slider range marks={marks} min={0} max={800000} tipFormatter={formatter}
                 value={[this.state.minCo2, this.state.maxCo2]}
                 disabled />
             </div>
           </Row>
           <Row>
-            <p id="small-letters-climate">This value is an estimate based on global parameters</p>
+            <p id="small-letters-climate">The pink bar shows the approximated CO2 emissions saved by the installations registered in Generation Solar.
+             This range is an estimate based on global parameters. Share new installations to get closer the climate objective!</p>
           </Row>
           <Row>
             {/* <Col xs={12} sm={12} md={12} lg={12} xl={12} >

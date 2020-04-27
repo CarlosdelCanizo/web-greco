@@ -97,7 +97,6 @@ const PanelCard = ({ panel, fetchPanels }) => {
         })
       .then(response => {
         const data = response.data
-        console.log("PanelCard getSpecificSolarPanel: ", data)
         localStorage.setItem('myPanel', JSON.stringify(data))
       })
   }
