@@ -17,24 +17,63 @@ const SixthForm = (props) => {
 
   var installationName, installationProperty, battery, batteryDescription, observation;
 
-  //TO MANAGE IMAGES
-  const [images, setImages] = useState(
-    {
-      previewVisible: true,
-      previewImage: '',
-      fileList: []
-    }
-  );
-
   //GET FROM LOCAL STORAGE
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
   var myPanel = JSON.parse(localStorage.getItem("myPanel"));
-  var multimedia1 = myPanel.multimedia[0];
-  var multimedia2 = myPanel.multimedia[1];
-  var multimedia3 = myPanel.multimedia[2];
-  console.log("PROVA:", multimedia1, multimedia2, multimedia3);
+
+
+
+  //PREFILL FILELIST
+  const baseURL = "http://10.0.10.195:8088/"
+
+  // const defaultfilelist = [
+  //   {
+  //     uid: myPanel.multimedia[0].id,
+  //     name: myPanel.multimedia[0].name,
+  //     url: baseURL + 'multimedia/' + myPanel.multimedia[0].id + '/getImage/'
+  //   },
+  //   {
+  //     uid: myPanel.multimedia[1].id,
+  //     name: myPanel.multimedia[1].name,
+  //     url: baseURL + 'multimedia/' + myPanel.multimedia[1].id + '/getImage/'
+  //   },
+  //   {
+  //     uid: myPanel.multimedia[2].id,
+  //     name: myPanel.multimedia[2].name,
+  //     url: baseURL + 'multimedia/' + myPanel.multimedia[2].id + '/getImage/'
+  //   }
+  // ]
+
+  // var uid1 = myPanel.multimedia[0].id
+  // var name1 = myPanel.multimedia[0].name
+  // var url1 = baseURL + 'multimedia/' + myPanel.multimedia[0].id + '/getImage/'
+
+  // function FileList(props) {
+  //   return (
+  //     <div>
+  //       {props.items.map((item, index) => (
+  //         <Item key={index} item={item} />
+  //       ))}
+  //     </div>
+  //   );
+  // }
+
+  //TO MANAGE IMAGES
+  const [images, setImages] = useState(
+    {
+      previewVisible: true,
+      previewImage: '',
+      fileList: [
+        // {
+        //   uid: uid1,
+        //   name: name1,
+        //   url: url1
+        // }
+      ]
+    }
+  );
 
   if (currentPanelState !== null) {
     installationName = currentPanelState.installationName
@@ -368,7 +407,6 @@ const SixthForm = (props) => {
               <div id="upload-images">
                 <Upload
                   listType="picture"
-                  defaultList={myPanel.multimedia}
                   fileList={images.fileList}
                   onPreview={handlePreview}
                   onChange={handleUploadImages}
@@ -381,10 +419,9 @@ const SixthForm = (props) => {
                       <p id="upload-text-one">+ Upload images</p>
                     </Button>
                   )}
-
                   <p>Maximum 3 images per installation</p>
                   <p>Only png or jpg, with max size of 5 MB each one</p>
-                  <defaultFileList />
+                  {/* <DefaultFileList defaultfilelist={{ defaultfilelist }} /> */}
                 </Upload>
               </div>
             </Col>

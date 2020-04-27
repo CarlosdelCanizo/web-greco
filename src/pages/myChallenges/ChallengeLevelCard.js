@@ -33,8 +33,6 @@ function ChallengeLevelCard() {
       setMyChallenges(challengesInfo);
     };
     fetchData();
-
-    console.log("MyChallenge from server:", myChallenges)
   }, []);
 
   return (
