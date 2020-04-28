@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import recLogo from '../../assets/generation-solar-logo.svg'
 import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from '../../assets/spinner.svg'
-import { Row, Col, Divider, Form, Input, Button } from 'antd'
+import { Row, Col, Form, Input, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 import './loginForm.css'
 import './confirmPasswordForm.css'
@@ -137,7 +137,7 @@ const ConfirmPasswordForm = (props) => {
             <div id="welcome-button-container">
               <Button id="button-confirm" disabled={data.isSubmitting}>
                 {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("CONFIRMED")}
-                {toLocation ? <Redirect from="/confirm-password" to="/login" /> : null}
+                {toLocation ? (props.history.push("/confirm-password")) : (null)}
               </Button>
             </div>
           </Form>

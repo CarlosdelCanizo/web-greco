@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { Form, Card, Radio, Button, Row, Col, message, Upload, Icon, Select, Input, Tooltip } from 'antd'
-import { Link, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axiosConfig from '../../api/axiosConfig'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -168,6 +168,7 @@ const SixthForm = (props) => {
           localStorage.setItem('idPanelFromPostPanel', JSON.stringify(panelResponseId))
           if (images.fileList.length === 0) {
             console.log("No images added")
+            props.history.push("/finished-panel")
           } else {
             uploadImage()
           }
@@ -213,6 +214,7 @@ const SixthForm = (props) => {
           var data = response.data
           if (images.fileList.length === 0) {
             console.log("No images to add", images)
+            props.history.push("/finished-panel")
           } else {
             console.log("images to add:", images.fileList.length)
             uploadImage()
@@ -283,7 +285,7 @@ const SixthForm = (props) => {
           const data = response.data
 
           localStorage.setItem('multimedia', JSON.stringify(data))
-          activateRedirection()
+          props.history.push("/finished-panel")
           throw response
 
         }
@@ -292,12 +294,6 @@ const SixthForm = (props) => {
         console.log("Server Error", error)
         errorImages()
       })
-  }
-
-  //REDIRECT
-  const [toLocation, setLocation] = useState(false);
-  function activateRedirection() {
-    setLocation(true)
   }
 
   function clearPanel() {
@@ -500,7 +496,6 @@ const SixthForm = (props) => {
                 type="submit"
                 onClick={handleFormSubmit}>
                 NEXT
-                {toLocation ? <Redirect from="/sixth" to="/finished-panel" /> : null}
               </Button>
 
             </Col>

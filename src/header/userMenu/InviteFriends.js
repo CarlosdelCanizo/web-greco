@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Card, Input, Form, Alert, Divider, Button, Icon, Row, Col } from 'antd';
-import Header from '../Header'
+import spinner from "../../assets/spinner.svg";
 import '../Header.css'
 import axiosConfig from '../../api/axiosConfig'
 import './editUser.css'
@@ -55,7 +55,7 @@ const InviteFriends = () => {
           }
           if (error.response.data.status === 500) {
             // Server error  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, errorMessage: error.response.data.error });
           }
         }
       });
@@ -121,9 +121,8 @@ const InviteFriends = () => {
             <Button id="edit-details-save-button"
               onClick={handleFormSubmit}
               disabled={data.isSubmitting}>
-              {/* {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("INVITE")} */}
-              INVITE
-                  </Button>
+              {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("INVITE")}
+            </Button>
           </div>
         </Form>
       </Card>

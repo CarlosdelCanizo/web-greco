@@ -2,8 +2,7 @@ import React from 'react'
 import recLogo from '../../assets/generation-solar-logo.svg'
 import mobileLogo from '../../assets/generation-solar-logo.svg'
 import spinner from "../../assets/spinner.svg";
-import { Row, Col, Divider, Form, Input, Checkbox, Button } from 'antd'
-import { Redirect } from 'react-router-dom'
+import { Row, Col, Form, Input, Checkbox, Button } from 'antd'
 // import { injectIntl } from 'react-intl'
 import './loginForm.css'
 import './registerForm.css'
@@ -43,7 +42,7 @@ const RegisterForm = (props) => {
       .then(response => {
         if (response.status === 200) {
           localStorage.setItem('user', data.username)
-          activateRedirection()
+          props.history.push("/complete-register")
         }
       })
       .catch(error => {
@@ -60,12 +59,6 @@ const RegisterForm = (props) => {
         }
       });
   };
-
-  //Redirect
-  const [toLocation, setLocation] = React.useState(false);
-  function activateRedirection() {
-    setLocation(true)
-  }
 
   return (
     <Row id="row-page-cotainer">
@@ -159,7 +152,6 @@ const RegisterForm = (props) => {
                 (
                   <Button id="button-register" onClick={handleFormSubmit}>
                     {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("SIGN UP")}
-                    {toLocation ? <Redirect from="/register" to="/complete-register" /> : null}
                   </Button>
                 )
 
