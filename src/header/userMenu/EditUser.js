@@ -1,12 +1,13 @@
 import React from "react"
 import { Card, Form, Input, Divider, Alert, message, Switch, Button, Icon, Row, Col } from 'antd'
+import spinner from "../../assets/spinner.svg"
 import axiosConfig from '../../api/axiosConfig'
-import Header from '../Header'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import "./editUser.css"
 import PrivateMapping from '../../pages/mapping/PrivateMapping'
 
-const EditUser = () => {
+
+const EditUser = (props) => {
 
   const [data, setData] = React.useState({
     username: "",
@@ -17,8 +18,8 @@ const EditUser = () => {
   }
   );
 
-  const success = () => {
-    message.warning('If you change your email, you need to loggin again', 5, onClose = { onClose });
+  const infoLogin = () => {
+    message.info('If you have made changes to your account you have to login again.', 5);
   };
 
   function removeCredentials() {
@@ -41,11 +42,8 @@ const EditUser = () => {
     event.preventDefault();
     event.persist()
     setData({ ...data, isSubmitting: true, errorMessage: null });
-    updateUser()
-  };
 
-  // UPDATE USER
-  function updateUser() {
+    // UPDATE USER
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem("access_token"))
     var body = {
       email: data.email,
@@ -61,48 +59,46 @@ const EditUser = () => {
       })
       .then(response => {
         if (response.status === 200) {
-          activateRedirection()
-          success()
+          setData({ ...data, isSubmitting: true, errorMessage: null });
+          editUserReady()
         }
-        throw response
       })
-      .catch(error => {
+      .catch(function (error) {
         console.log("error", error)
         if (error === undefined) {
           // NetWork Error  
-          setData({ ...data, errorMessage: error.response.data.message });
+          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
         }
         if (error !== undefined && error.response !== undefined) {
           if (error.response.data.status === 400) {
             // bad credentials  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
-
           if (error.response.data.status === 404) {
             //  not found  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
           if (error.response.data.status === 500) {
             // Server error  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
         }
       });
   }
 
-  //Redirect
-  const [toLocation, setLocation] = React.useState(false);
-  function activateRedirection() {
-    setLocation(true)
+  //EDIT USER
+  const [isReady, setReady] = React.useState(false);
+
+  function editUserReady() {
+    infoLogin()
+    setReady(true)
+    setData({ ...data, isSubmitting: true, errorMessage: null });
+
   }
 
   const onClose = () => {
-    if (data.email && data.email !== "") {
-      removeCredentials()
-    } else {
-      window.location.reload()
-    }
-
+    removeCredentials()
+    props.history.push("/login")
   };
 
   const isEnabled = (data.username && data.username !== "" && data.isSubmitting === false
@@ -110,12 +106,6 @@ const EditUser = () => {
 
   return (
     <React.Fragment>
-      {
-        (window.innerWidth < 600 && window.innerWidth < 768) ?
-          <Header />
-          :
-          (null)
-      }
       <Row>
         <Col xs={0} sm={0} md={24} lg={24} xl={24} >
           <PrivateMapping />
@@ -174,11 +164,11 @@ const EditUser = () => {
             {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
           </div>
           <div id="success-edit-user-message">
-            {toLocation ?
+            {isReady ?
               <Alert id="edit-success-alert"
-                message="Success!"
-                description={(data.username && data.email ? ("New username: " + data.username + "  &  " + "New email: " + data.email)
-                  : (data.username ? ("New username: " + data.username) : ("New email: " + data.email)))
+                message="Succes!"
+                description={(data.username && data.email ? ("Username: " + data.username + "  &  " + "Email: " + data.email)
+                  : (data.username ? ("Username: " + data.username) : ("Email: " + data.email)))
                 }
                 type="success"
                 showIcon
@@ -191,8 +181,9 @@ const EditUser = () => {
               id="edit-details-save-button"
               disabled={!isEnabled || data.isSubmitting}
               onClick={handleFormSubmit}
-            >SAVE CHANGES
-              </Button>
+            >
+              {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("SAVE CHANGES")}
+            </Button>
           </div>
         </Form>
       </Card>

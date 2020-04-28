@@ -7,25 +7,19 @@ import { Link } from 'react-router-dom'
 // import { injectIntl } from 'react-intl'
 import './welcome.css'
 
-const { Panel } = Collapse;
-
-function callback(key) {
-  console.log(key);
-}
 
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
-    //this.state = { value: '' };
-
+    console.log("les props del welcome", props)
     var access_token = "";
     access_token = localStorage.getItem("access_token")
     if (access_token === null) {
       localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
       localStorage.setItem("actualPage", "/")
     }
-    else {
+    if (access_token !== null && props.location.pathname !== "/") {
       var lastpage = localStorage.getItem("lastPage")
       props.history.push(lastpage)
     }

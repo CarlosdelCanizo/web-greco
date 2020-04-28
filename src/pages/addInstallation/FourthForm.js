@@ -188,7 +188,7 @@ const FourthForm = props => {
                                                 type="submit"
                                                 onClick={handleFormSubmit}>
                                                 NEXT
-                                        {toLocation ? <Redirect from="/fourth" to="/fifth" /> : null}
+                                        {toLocation ? (props.history.push("/fifth")) : (null)}
                                             </Button>
                                         </Col>
                                     </Form>

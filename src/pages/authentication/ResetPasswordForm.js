@@ -28,6 +28,7 @@ const ResetPasswordForm = () => {
     axiosConfig.post('/email/sendEmailToResetThePassword?email=' + data.email)
       .then(response => {
         if (response.status === 200) {
+          setData({ ...data, isSubmitting: false, errorMessage: null });
           activateRedirection()
         }
       })

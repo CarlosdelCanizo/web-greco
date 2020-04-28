@@ -481,7 +481,7 @@ const FirstForm = (props) => {
                 onClick={handleFormSubmit}
               >
                 NEXT
-                {toLocation ? <Redirect from="/first" to="/second" /> : null}
+                {toLocation ? (props.history.push("/second")) : (null)}
               </Button>
 
             </Col>

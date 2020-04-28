@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Card, Input, Form, Alert, Divider, Button, Icon, Row, Col } from 'antd';
+import { Card, Input, Form, Alert, Divider, Button, Icon, Row, Col } from 'antd'
 import spinner from "../../assets/spinner.svg";
 import '../Header.css'
 import axiosConfig from '../../api/axiosConfig'
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import PrivateMapping from '../../pages/mapping/PrivateMapping'
 
 
-const InviteFriends = () => {
+const InviteFriends = (props) => {
 
   const [data, setData] = React.useState("");
 
@@ -34,38 +34,44 @@ const InviteFriends = () => {
       })
       .then(response => {
         if (response.status === 200) {
-          activateRedirection()
+          setData({ ...data, isSubmitting: true, errorMessage: null });
+          sendEmail()
         }
       })
       .catch(function (error) {
         console.log("error", error)
         if (error === undefined) {
           // NetWork Error  
-          setData({ ...data, errorMessage: error.response.data.message });
+          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
         }
         if (error !== undefined && error.response !== undefined) {
           if (error.response.data.status === 400) {
             // bad credentials  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
-
           if (error.response.data.status === 404) {
             //  not found  
-            setData({ ...data, errorMessage: error.response.data.message });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
           if (error.response.data.status === 500) {
             // Server error  
-            setData({ ...data, errorMessage: error.response.data.error });
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
         }
       });
   }
 
-  //Redirect
-  const [toLocation, setLocation] = useState(false);
-  function activateRedirection() {
-    setLocation(true)
+  //SEND EMAIL
+  const [isSend, setSend] = useState(false);
+
+  function sendEmail() {
+    setSend(true)
+    setData({ ...data, isSubmitting: false, errorMessage: null });
   }
+
+  const onClose = () => {
+    setData({ ...data, isSubmitting: false, errorMessage: null });
+  };
 
   return (
     <React.Fragment>
@@ -108,14 +114,20 @@ const InviteFriends = () => {
             {data.errorMessage && (<p id="error-message">{data.errorMessage}</p>)}
           </div>
           <div id="success-edit-user-message">
-            {toLocation ?
-              <Alert
-                message="Invitation sent to:"
+            {isSend ?
+              (<Alert
+                message="Invitation sent to: "
                 description={data.email}
                 type="success"
                 showIcon
                 closable
-              /> : null}
+                onClose={onClose}
+              >
+              </Alert>
+              )
+              :
+              (null)
+            }
           </div>
           <div id="welcome-button-container">
             <Button id="edit-details-save-button"

@@ -188,7 +188,7 @@ const FifthForm = props => {
                                                 id="button-panel-register-next-fifth"
                                                 type="submit"
                                                 onClick={handleFormSubmit}>
-                                                NEXT {toLocation ? <Redirect from="/fifth" to="/sixth" /> : null}
+                                                NEXT {toLocation ? (props.history.push("/sixth")) : (null)}
                                             </Button>
 
                                         </Col>
@@ -234,7 +234,7 @@ const FifthForm = props => {
                                                 id="button-panel-register-next-fifth"
                                                 type="submit"
                                                 onClick={handleFormSubmit}>
-                                                NEXT {toLocation ? <Redirect from="/fifth" to="/sixth" /> : null}
+                                                NEXT {toLocation ? (props.history.push("/sixth")) : (null)}
                                             </Button>
 
                                         </Col>
