@@ -138,7 +138,7 @@ const ConfirmPasswordForm = (props) => {
               <Button id="button-confirm"
                 disabled={data.isSubmitting}
                 onClick={handleFormSubmit}>
-                {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("CONFIRMED")}
+                {data.isSubmitting ? (<img src={spinner} alt="SENDING..." />) : ("CONFIRM")}
                 {toLocation ? (props.history.push("/login")) : (null)}
               </Button>
             </div>

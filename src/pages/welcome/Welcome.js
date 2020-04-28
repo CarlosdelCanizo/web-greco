@@ -12,7 +12,6 @@ class Welcome extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("les props del welcome", props)
     var access_token = "";
     access_token = localStorage.getItem("access_token")
     if (access_token === null) {
