@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Card, Col, Row, Checkbox, Button, Divider, Icon, Tooltip } from 'antd';
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import OrientationTrack from '../../assets/orientation-tracking.svg';
 import InclintationTrack from '../../assets/inclination-tracking.svg';
 import bulletPle from '../../assets/bullet-lleno.svg';
@@ -179,7 +179,9 @@ const ThirdForm = props => {
                             </Link>
                         </Col>
                         <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                            <Button id="button-panel-register-next-third" type="submit" onClick={handleFormSubmit}>
+                            <Button id="button-panel-register-next-third"
+                                type="submit"
+                                onClick={handleFormSubmit}>
                                 NEXT
                             </Button>
 

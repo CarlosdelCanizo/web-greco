@@ -18,7 +18,7 @@ class Welcome extends React.Component {
       localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
       localStorage.setItem("actualPage", "/")
     }
-    if (access_token !== null && props.location.pathname !== "/") {
+    else {
       var lastpage = localStorage.getItem("lastPage")
       props.history.push(lastpage)
     }

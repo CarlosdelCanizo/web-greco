@@ -75,15 +75,19 @@ const FifthForm = props => {
     }
 
     const error = () => {
-        message.error('Only numbers, please', 5);
+        message.error('Only numbers, please.', 5);
     };
 
     const maxMin = () => {
-        message.error('Only up to 90º maximum, please', 5);
+        message.error('Only up to 90º maximum, please.', 5);
     };
 
     const isEnabled =
         (data.inclination && data.inclination > 0 || inclination && inclination > 0);
+
+    const warningFields = () => {
+        message.warning('Please select or input inclination degrees.', 5);
+    };
 
     function checkTracking() {
         if (currentPanelState.panelTrackingOrientation === true && currentPanelState.panelTrackingInclination === false) {
@@ -178,17 +182,22 @@ const FifthForm = props => {
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
-                                            <Button id="button-panel-register-previous-fifth" onClick={checkTracking}>BACK</Button>
+                                            <Button id="button-panel-register-previous-fifth"
+                                                onClick={checkTracking}>
+                                                BACK
+                                            </Button>
 
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
                                             <Button
-                                                disabled={!isEnabled}
+                                                // disabled={!isEnabled}
                                                 id="button-panel-register-next-fifth"
                                                 type="submit"
-                                                onClick={handleFormSubmit}>
-                                                NEXT {toLocation ? (props.history.push("/sixth")) : (null)}
+                                                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}
+                                            >
+                                                NEXT
+                                                {toLocation ? (props.history.push("/sixth")) : (null)}
                                             </Button>
 
                                         </Col>
@@ -224,16 +233,19 @@ const FifthForm = props => {
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
-                                            <Button id="button-panel-register-previous-fifth" onClick={checkTracking}>BACK</Button>
+                                            <Button id="button-panel-register-previous-fifth" onClick={checkTracking}>
+                                                BACK
+                                            </Button>
 
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
                                             <Button
-                                                disabled={!isEnabled}
+                                                // disabled={!isEnabled}
                                                 id="button-panel-register-next-fifth"
                                                 type="submit"
-                                                onClick={handleFormSubmit}>
+                                                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}
+                                            >
                                                 NEXT {toLocation ? (props.history.push("/sixth")) : (null)}
                                             </Button>
 

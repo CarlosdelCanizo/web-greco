@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Button, Row, Col, Form, Input, Icon, Card, Radio, DatePicker, Select, message, Popover } from 'antd'
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import monocrystalline from '../../assets/monocrystalline.jpg'
@@ -205,6 +205,10 @@ const FirstForm = (props) => {
     localStorage.removeItem("currentPanelState")
     localStorage.removeItem("currentPanelId")
   }
+
+  const warningFields = () => {
+    message.warning('Installed capacity and installation type are required.', 5);
+  };
 
   const error = () => {
     message.error('Only numbers, please', 5);
@@ -475,10 +479,9 @@ const FirstForm = (props) => {
           <Row>
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <Button
-                //disabled={!isEnabled ? (validateFields()) : (false)}
-                disabled={!isEnabled}
+                // disabled={!isEnabled}
                 id="button-panel-register-next-first"
-                onClick={handleFormSubmit}
+                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}
               >
                 NEXT
                 {toLocation ? (props.history.push("/second")) : (null)}

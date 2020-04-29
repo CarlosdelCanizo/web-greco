@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Button, Row, Col, Divider, Form, Card, Icon, Input } from 'antd'
-import { Link, Redirect } from "react-router-dom"
+import React, { useState } from "react";
+import { Button, Row, Col, Divider, Form, Card, Icon, Input, message } from 'antd'
+import { Link } from "react-router-dom"
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
 import 'leaflet/dist/leaflet.css';
@@ -60,12 +60,16 @@ const SecondForm = props => {
 
   const isEnabled =
     (data.lat && data.lat !== undefined || lat && lat !== "") &&
-    (data.lat && data.lon !== undefined || lat && lat !== "");
+    (data.lon && data.lon !== undefined || lon && lon !== "");
 
   function clearPanel() {
     localStorage.removeItem("currentPanelState")
     localStorage.removeItem("currentPanelId")
   }
+
+  const warningFields = () => {
+    message.warning('Please place the installation on the map to continue.', 5);
+  };
 
   return (
     <Row>
@@ -180,9 +184,9 @@ const SecondForm = props => {
             <Col id="add-installation-container-button-second" span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
 
               <Button
-                disabled={!isEnabled}
+                // disabled={!isEnabled}
                 id="button-panel-register-next-second"
-                onClick={handleFormSubmit}
+                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}
               >
                 NEXT
                 {toLocation ? (props.history.push("/third")) : (null)}

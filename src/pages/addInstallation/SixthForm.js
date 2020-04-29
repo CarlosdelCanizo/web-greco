@@ -21,9 +21,7 @@ const SixthForm = (props) => {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
-  var myPanel = JSON.parse(localStorage.getItem("myPanel"));
-
-
+  // var myPanel = JSON.parse(localStorage.getItem("myPanel"));
 
   //PREFILL FILELIST
   const baseURL = "http://10.0.10.195:8088/"
@@ -91,11 +89,15 @@ const SixthForm = (props) => {
 
 
   const errorServer = () => {
-    message.error('Server error. You can´t post/update your installation now. Please, log in again and try later.', 5);
+    message.error('You can´t post/update your installation now. Please, log in again and try later.', 5);
   };
 
   const errorImages = () => {
-    message.error('Server error. You can´t upload images now. Please, log in again  and try later.', 5);
+    message.error('You can´t upload images now. Please, log in again and try later.', 5);
+  };
+
+  const warningFields = () => {
+    message.warning('Property is required.', 5);
   };
 
   //RadioGroup
@@ -175,8 +177,26 @@ const SixthForm = (props) => {
         }
       })
       .catch(function (error) {
-        console.log("Server Error", error);
+        console.log("Post panel error:", error);
         errorServer();
+        if (error === undefined) {
+          // NetWork Error  
+          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+        }
+        if (error !== undefined && error.response !== undefined) {
+          if (error.response.data.status === 400) {
+            // bad credentials  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 404) {
+            //  not found  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 500) {
+            // Server error  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+        }
       });
   }
 
@@ -216,19 +236,35 @@ const SixthForm = (props) => {
             console.log("No images to add", images)
             props.history.push("/finished-panel")
           } else {
-            console.log("images to add:", images.fileList.length)
             uploadImage()
           }
         }
       })
       .catch(function (error) {
-        console.log("Server Error", error)
+        console.log("Upload Error:", error)
         errorServer()
+        if (error === undefined) {
+          // NetWork Error  
+          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+        }
+        if (error !== undefined && error.response !== undefined) {
+          if (error.response.data.status === 400) {
+            // bad credentials  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 404) {
+            //  not found  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 500) {
+            // Server error  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+        }
       });
   }
 
   function beforeUpload(file) {
-
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
       message.error('You can only upload JPG/PNG file!');
@@ -255,7 +291,6 @@ const SixthForm = (props) => {
   };
 
   const handleUploadImages = ({ fileList }) => {
-
     if (errorImageToUpload) {
       console.log("Image upload error")
     } else {
@@ -283,17 +318,37 @@ const SixthForm = (props) => {
         console.log("response upload image: ", response)
         if (response.status === 200) {
           const data = response.data
-
           localStorage.setItem('multimedia', JSON.stringify(data))
           props.history.push("/finished-panel")
-          throw response
-
+          // throw response
         }
       })
-      .then(error => {
-        console.log("Server Error", error)
+      .catch(function (error) {
+        console.log("Upload Image Error", error)
         errorImages()
-      })
+        if (error === undefined) {
+          // NetWork Error  
+          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+        }
+        if (error !== undefined && error.response !== undefined) {
+          if (error.response.data.status === 400) {
+            // bad credentials  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 403) {
+            // You can´t upload more multimedia. Limit exceeded  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 404) {
+            //  not found  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+          if (error.response.data.status === 500) {
+            // Server error  
+            setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          }
+        }
+      });
   }
 
   function clearPanel() {
@@ -332,9 +387,8 @@ const SixthForm = (props) => {
         <Form onSubmit={handleFormSubmit}>
           <Row>
 
-            <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+            <Col xs={2} sm={2} md={2} lg={2} xl={2} />
 
-            </Col>
             <Col xs={20} sm={20} md={20} lg={20} xl={20}>
               <div id="pagination">
                 <img src={bulletBuit} width="2%" id="pagination-bullet" />
@@ -347,11 +401,13 @@ const SixthForm = (props) => {
             </Col>
 
             <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+
               <Link to="/my-installations-sider">
                 <Button id="forms-close-button" onClick={clearPanel}>
                   <Icon type="close" id="icon-x" />
                 </Button>
               </Link>
+
             </Col>
           </Row>
           <Row>
@@ -422,30 +478,32 @@ const SixthForm = (props) => {
               </div>
             </Col>
           </Row>
-          <Row >
-            <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
-              <Row>
-                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <h3 id="subtittle-panel-registration-battery"> Does it have a battery?</h3>
-                </Col>
-                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <div id="battery-radio-sixth" >
-                    <Radio.Group
-                      defaultValue={true}
-                      id="battery"
-                      name="battery"
-                      onChange={onChangeRadio}
-                      value={radioValue}
-                    >
-                      <Radio value={true} id="radio-button" >Yes</Radio>
-                      <Radio value={false} id="radio-button" >No</Radio>
-                    </Radio.Group>
-                  </div>
-                </Col>
-              </Row>
 
-            </Col>
-          </Row>
+
+          <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
+            <Row>
+              <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                <h3 id="subtittle-panel-registration-battery"> Does it have a battery?</h3>
+              </Col>
+              <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                <div id="battery-radio-sixth" >
+                  <Radio.Group
+                    defaultValue={true}
+                    id="battery"
+                    name="battery"
+                    onChange={onChangeRadio}
+                    value={radioValue}
+                  >
+                    <Radio value={true} id="radio-button" >Yes</Radio>
+                    <Radio value={false} id="radio-button" >No</Radio>
+
+                  </Radio.Group>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+
+
           <Row>
             <Col id="col-battery" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Form.Item>
@@ -464,6 +522,7 @@ const SixthForm = (props) => {
               </Form.Item>
             </Col>
           </Row>
+
           <Row>
             <Col id="col-observation" xs={24} sm={24} md={24} lg={24} xl={24}>
               <Tooltip placement="top" title={serial}>
@@ -482,7 +541,12 @@ const SixthForm = (props) => {
                 </Form.Item>
               </Tooltip>
             </Col>
+          </Row>
 
+          <div id="error-panel-post-update-message">
+            {data.errorMessage && (<p>{data.errorMessage}</p>)}
+          </div>
+          <Row>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
 
               <Button id="button-panel-register-previous-sixth" onClick={checkTracking}>BACK</Button>
@@ -491,15 +555,14 @@ const SixthForm = (props) => {
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
 
               <Button
-                disabled={!isEnabled}
+                // disabled={!isEnabled}
                 id="button-panel-register-next-sixth"
                 type="submit"
-                onClick={handleFormSubmit}>
+                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}>
                 NEXT
               </Button>
 
             </Col>
-
           </Row>
         </Form>
 

@@ -48,7 +48,6 @@ const FourthForm = props => {
             } else {
                 setData({ ...data, [event.target.name]: event.target.value, errorMessage: null });
             }
-
         }
     };
 
@@ -76,11 +75,11 @@ const FourthForm = props => {
     }
 
     const error = () => {
-        message.error('Only numbers, please', 5);
+        message.error('Only numbers, please.', 5);
     };
 
     const maxMin = () => {
-        message.error('Only up to 360º maximum, please', 5);
+        message.error('Only up to 360º maximum, please.', 5);
     };
 
     function checkTracking() {
@@ -89,11 +88,13 @@ const FourthForm = props => {
         } else {
             props.history.push('/fifth')
         }
-
     }
 
-    const isEnabled =
-        (data.orientation && data.orientation > 0 || orientation && orientation > 0);
+    const isEnabled = (data.orientation && data.orientation !== "" || orientation && orientation > 0);
+
+    const warningFields = () => {
+        message.warning('Please select or input orientation degrees', 5);
+    };
 
     return (
         <Row>
@@ -183,12 +184,12 @@ const FourthForm = props => {
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Button
-                                                disabled={!isEnabled}
+                                                // disabled={!isEnabled}
                                                 id="button-panel-register-next-fourth"
                                                 type="submit"
-                                                onClick={handleFormSubmit}>
+                                                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}>
                                                 NEXT
-                                        {toLocation ? (props.history.push("/fifth")) : (null)}
+                                                {toLocation ? (props.history.push("/fifth")) : (null)}
                                             </Button>
                                         </Col>
                                     </Form>
@@ -230,16 +231,16 @@ const FourthForm = props => {
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Link to="/third">
                                                 <Button id="button-panel-register-previous-fourth">BACK</Button>
-                                            </Link>>
+                                            </Link>
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>
                                             <Button
-                                                disabled={!isEnabled}
+                                                // disabled={!isEnabled}
                                                 id="button-panel-register-next-fourth"
                                                 type="submit"
-                                                onClick={handleFormSubmit}>
+                                                onClick={isEnabled ? (handleFormSubmit) : (warningFields)}>
                                                 NEXT
-                                            {toLocation ? <Redirect from="/fourth" to="/fifth" /> : null}
+                                                {toLocation ? (props.history.push("/fifth")) : null}
                                             </Button>
                                         </Col>
                                     </Form>
