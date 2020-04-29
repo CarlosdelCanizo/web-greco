@@ -33,15 +33,13 @@ const CardSlider = ({ multimedia }) => {
 
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
 
-  var firstImageId
-  var lastImageId
 
-  if (multimedia && multimedia.length > 0) {
-    firstImageId = multimedia[0].id
-    lastImageId = firstImageId + (multimedia.length - 1)
+  if (multimedia.length > 0) {
+    var firstImageId = multimedia[0].id
+    var lastImageId = multimedia[multimedia.length - 1].id
   } else {
-    firstImageId = null
-    lastImageId = null
+    var firstImageId = null
+    var lastImageId = null
   }
 
   const [currentImageId, setCurrentImageId] = useState(firstImageId)
@@ -49,7 +47,7 @@ const CardSlider = ({ multimedia }) => {
 
   //GET IMAGE FOR SLIDER
   useEffect(() => {
-    if (currentImageId === null) {
+    if (currentImageId === null || currentImageId === undefined) {
       setImageUrl('no-image');
     }
     function getImage(currentImageId) {
@@ -69,11 +67,41 @@ const CardSlider = ({ multimedia }) => {
 
 
   function forward() {
-    setCurrentImageId(currentImageId + 1);
+    var actual = currentImageId
+    console.log("forward MULTIMEDIA", multimedia)
+    if (actual === multimedia[0].id && multimedia.length > 1) {
+      setCurrentImageId(multimedia[1].id)
+    }
+    else if (actual === multimedia[multimedia.length - 1].id) {
+      /* Si es la última no puedo seguir adelante */
+    }
+    else {
+      setCurrentImageId(multimedia[2].id)
+    }
   }
-
   function backward() {
-    setCurrentImageId(currentImageId - 1);
+    //setCurrentImageId(currentImageId - 1);
+    console.log("backward MULTIMEDIA", multimedia)
+    var actual = currentImageId
+    var position_actual = 0
+    for (var i = 0; i < multimedia.length - 1; i++) {
+      if (multimedia[i].id == actual)
+        position_actual = i
+    }
+
+    if (actual === multimedia[0].id) {
+      /*Es la primera, no hay anterior*/
+      /* setCurrentImageId(currentImageId);*/
+    }
+    else if (actual == multimedia[1].id) {
+      /*Si es la última, la anterior es la del mig*/
+      setCurrentImageId(multimedia[0].id)
+    }
+    else {
+
+      /*Si es la última, la anterior es la del mig*/
+      setCurrentImageId(multimedia[1].id)
+    }
   }
 
   const deleteImage = (id) => {

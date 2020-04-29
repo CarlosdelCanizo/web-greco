@@ -12,6 +12,7 @@ const ShowPanelDetails = (props) => {
   // const myLocation = props.location.hash
   var myPanel = JSON.parse(localStorage.getItem("myPanel"))
   var myLocation = (localStorage.getItem("pathname"))
+  console.log("MyPanel en ShowPanelDetails", myPanel)
 
   // function clearPanel() {
   //   localStorage.removeItem("myPanel")

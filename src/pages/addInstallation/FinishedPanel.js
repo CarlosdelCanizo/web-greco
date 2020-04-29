@@ -10,7 +10,6 @@ const FinishedPanel = props => {
     localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
     localStorage.setItem("actualPage", "/finished-panel")
 
-    const [myPanel, setMyPanel] = useState({})
     var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
     var panel = JSON.parse(localStorage.getItem('currentPanelState'))
     var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"))
@@ -18,7 +17,6 @@ const FinishedPanel = props => {
     var idPanelFromPostPanel = JSON.parse(localStorage.getItem("idPanelFromPostPanel"))
 
     useEffect(() => {
-        console.log("FinishedPanel useEffect")
         if (currentPanelId == 0) {
             getSpecificSolarPanel(idPanelFromPostPanel);
         } else {
@@ -40,16 +38,7 @@ const FinishedPanel = props => {
                 const data = response.data
                 localStorage.setItem('myPanel', JSON.stringify(response.data))
                 localStorage.removeItem("currentPanelId")
-                console.log("response data efrén", response.data)
-                console.log("idPanelFromUpload", idPanelfromUpload)
             })
-    }
-
-
-    //Redirect
-    const [toLocation, setLocation] = useState(false);
-    function activateRedirection() {
-        setLocation(true)
     }
 
     function addNewPanel() {

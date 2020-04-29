@@ -21,55 +21,31 @@ const SixthForm = (props) => {
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
   var currentPanelId = JSON.parse(localStorage.getItem("currentPanelId"));
   var currentPanelState = JSON.parse(localStorage.getItem("currentPanelState"));
-  // var myPanel = JSON.parse(localStorage.getItem("myPanel"));
+  var myPanel = JSON.parse(localStorage.getItem("myPanel"));
 
   //PREFILL FILELIST
-  const baseURL = "http://10.0.10.195:8088/"
+  var defaultfilelist = [];
+  // const baseURL = "http://10.0.10.195:8088/"
+  const baseURL = "https://generationsolar.ies.upm.es/api"
 
-  // const defaultfilelist = [
-  //   {
-  //     uid: myPanel.multimedia[0].id,
-  //     name: myPanel.multimedia[0].name,
-  //     url: baseURL + 'multimedia/' + myPanel.multimedia[0].id + '/getImage/'
-  //   },
-  //   {
-  //     uid: myPanel.multimedia[1].id,
-  //     name: myPanel.multimedia[1].name,
-  //     url: baseURL + 'multimedia/' + myPanel.multimedia[1].id + '/getImage/'
-  //   },
-  //   {
-  //     uid: myPanel.multimedia[2].id,
-  //     name: myPanel.multimedia[2].name,
-  //     url: baseURL + 'multimedia/' + myPanel.multimedia[2].id + '/getImage/'
-  //   }
-  // ]
+  if (myPanel != undefined) {
+    for (var i = 0; i <= myPanel.multimedia.length - 1; i++) {
+      var file = {
+        uid: myPanel.multimedia[i].id,
+        name: myPanel.multimedia[i].name,
+        url: baseURL + 'multimedia/' + myPanel.multimedia[i].id + '/getImage/'
+      }
+      defaultfilelist.push(file)
+    }
+  }
 
-  // var uid1 = myPanel.multimedia[0].id
-  // var name1 = myPanel.multimedia[0].name
-  // var url1 = baseURL + 'multimedia/' + myPanel.multimedia[0].id + '/getImage/'
-
-  // function FileList(props) {
-  //   return (
-  //     <div>
-  //       {props.items.map((item, index) => (
-  //         <Item key={index} item={item} />
-  //       ))}
-  //     </div>
-  //   );
-  // }
 
   //TO MANAGE IMAGES
   const [images, setImages] = useState(
     {
       previewVisible: true,
       previewImage: '',
-      fileList: [
-        // {
-        //   uid: uid1,
-        //   name: name1,
-        //   url: url1
-        // }
-      ]
+      fileList: defaultfilelist
     }
   );
 
@@ -264,6 +240,24 @@ const SixthForm = (props) => {
       });
   }
 
+  //DELETE IMAGE FROM SERVER
+  function onRemove(file) {
+    axiosConfig.delete("/multimedia/" + file.uid,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": access_token
+        }
+      })
+      .then(response => {
+        console.log("RESPOSTA OK BORRADO IMAGEN", response)
+      })
+      .catch(function (error) {
+        console.log("KO BORRAR IMATGE:", error);
+
+      });
+  }
+
   function beforeUpload(file) {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
@@ -291,6 +285,7 @@ const SixthForm = (props) => {
   };
 
   const handleUploadImages = ({ fileList }) => {
+    console.log("EL ARRAY IMATGES en handleUploadImages", fileList)
     if (errorImageToUpload) {
       console.log("Image upload error")
     } else {
@@ -464,7 +459,9 @@ const SixthForm = (props) => {
                   onChange={handleUploadImages}
                   // beforeUpload={() => false}
                   beforeUpload={beforeUpload}
+                  onRemove={onRemove}
                   name="multimedia"
+                  onPreview={false}
                 >
                   {images.fileList.length >= 3 ? (null) : (
                     <Button>
