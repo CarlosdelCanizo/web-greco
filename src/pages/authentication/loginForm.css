@@ -31,19 +31,17 @@
   height: 54px;
 }
 #login-label {
-  display:block;
-  position: absolute;
+  position: relative;
+  width: 100%;
   text-align: left;
-  float: left;
-  width: 100px;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: -15px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  left: 2%;
+  top: 35%;
+  z-index: 10;
 }
 #login-email, #login-password {
   width: 100% ;
@@ -117,19 +115,17 @@
     height: 54px;
   }
   #login-label {
-    display:block;
-    position: absolute;
+    position: relative;
+    width: 100%;
     text-align: left;
-    float: left;
-    width: 100px;
-    height: 20px;
-    margin-left: 45px;
-    margin-top: -10px;
-    z-index: 999;
-    color: #2a4092;
-    background-color:transparent;
     font-weight: 500;
     font-size: 10px;
+    line-height: 0;
+    color: #2a4092;
+    background-color:transparent;
+    left: 2%;
+    top: 35%;
+    z-index: 10;
   }
   #login-email, #login-password {
     width: 100%;
@@ -167,6 +163,12 @@
 /***MOBILE*SMALL************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
+  #inside-login-container {
+    margin-top: 20%;
+    margin-left: 15%; 
+    margin-right: 15%; 
+    padding: 0; 
+  }
   #row-page-container {
     position: relative;
     min-height: 100vh;
@@ -197,16 +199,17 @@
     height: 54px;
   }
   #login-label {
-    display: block;
-    width: 98%;
+    position: relative;
+    width: 100%;
     text-align: left;
     font-weight: 500;
     font-size: 10px;
-    line-height: 1.25;
+    line-height: 0;
     color: #2a4092;
-    background-color: transparent;
-    left: 1%;
-    top: 5%;
+    background-color:transparent;
+    left: 2%;
+    top: 35%;
+    z-index: 10;
   }
   #login-email, #login-password {
     width: 100%;

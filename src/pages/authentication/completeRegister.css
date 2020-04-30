@@ -1,7 +1,7 @@
 /*************************************************************COMPUTER**************************************************************/
 /***COMPUTER************************************************************************************************************************/
 
-#inside-welcome-container {
+#inside-complete-container {
   margin-top: 12%;
   margin-left: 25%;
   margin-right: 25%; 
@@ -65,6 +65,11 @@
 /***TABLET************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
+  #inside-complete-container{
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-right: 8%; 
+  }
   #title-register-complete {
     width: 100%;
     font-size: 41px;
@@ -99,7 +104,7 @@
     margin-left: 5.5%;
     width: 65%;
   }
-  #inside-welcome-container{
+  #inside-complete-container{
     margin-top: 8%;
     margin-left: 8%;
     margin-right: 8%; 

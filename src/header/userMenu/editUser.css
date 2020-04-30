@@ -27,12 +27,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 #div-edit-user-background {
   margin-top: 5%;
   margin-left: 5%;
-  background-color: #f9f9f9;
   width: 90%;
   height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
 }
 #edit-label {
   position: relative;
@@ -45,31 +41,20 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color:transparent;
   left: 2%;
   top: -15%;
+  z-index: 10;
 }
 #edit-username {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   left: 0%;
   top: -71%;
-  padding: 20px 10px 0 5px;
   border-radius: 0;
 }
 #edit-email {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   left: 0%;
   top: -71%;
-  padding: 20px 10px 0 5px;
   border-radius: 0;
 }
 #turn-notifications {
@@ -144,12 +129,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   #div-edit-user-background {
     margin-top: 5%;
     margin-left: 5%;
-    background-color: #f9f9f9;
     width: 90%;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
   }
   #edit-label {
     position: relative;
@@ -164,29 +145,16 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     top: -15%;
   }
   #edit-username {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 0;
     left: 0%;
     top: -71%;
-    padding: 20px 10px 0 5px;
-    border-radius: 0;
   }
   #edit-email {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 0;
     left: 0%;
     top: -71%;
-    padding: 20px 10px 0 5px;
     border-radius: 0;
   }
   #edit-details-save-button {
@@ -243,12 +211,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 #div-edit-user-background {
   margin-top: 5%;
   margin-left: 5%;
-  background-color: #f9f9f9;
   width: 90%;
   height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
 }
 #edit-label {
   position: relative;
@@ -263,29 +227,17 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   top: -15%;
 }
 #edit-username {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   left: 0%;
   top: -71%;
-  padding: 20px 10px 0 5px;
   border-radius: 0;
 }
 #edit-email {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   left: 0%;
   top: -71%;
-  padding: 20px 10px 0 5px;
   border-radius: 0;
 }
 #turn-notifications {
@@ -342,39 +294,3 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: 0%;
 }
 
-/*******************ADJUST*VIEWPORTS********************/
-
-/*CHROME**************************************************************************************/
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  /*COMPUTER*CHROME*/
-  /* #orientation, #inclination{ margin-top: -12px!important; }
-  .ant-select-selection {margin-top: 26px!important;} */
-
-    /*TABLET*CHROME*/
-    @media (min-width: 600px) and (max-width: 992px) {
-       /* .ant-select-selection {margin-top: -3px !important;} */
-    } 
-
-  /*MOBILE*CHROME*/
-  @media (min-width: 240px) and (max-width: 600px) { 
-    /* #orientation, #inclination{ margin-top: -12px!important; }
-    .ant-select-selection {margin-top: -6px!important;}
-    #div-inclination-orientation-background {margin-top: 0px;} */
-  }
-
-}
-  /*FIREFOX*************************************************************************************/
-  @-moz-document url-prefix() {
-    /*COMPUTER*FIREFOX*/
-    #edit-username, #edit-email{ margin-top:-3px!important; }
-    
-
-    /*MOBILE*FIREFOX*/
-  @media (min-width: 240px) and (max-width: 600px) { 
-    }
-
-    /*TABLET*FIREFOX*/
-    @media (min-width: 600px) and (max-width: 992px) {
-            /* .ant-select-selection {margin-top: -3px!important;} */
-    }
-}

@@ -2,7 +2,7 @@
 
 /************************************************************** INPUTS */
 #electrical_capacity, #surface, 
-#inverter-capacity, #installation-type  {
+#inverter-capacity {
   width: 80%;
   height: 54px;
   color: #2a4092;
@@ -66,90 +66,79 @@
 /************************************************************** LABELS */
 /* LABELS */
 #panel-input-label-electrical_capacity, #panel-input-label-surface {
-  display:block;
-  position: absolute;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: -10px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 10px;
+  z-index: 10;
 }
 #panel-input-label-commissioningDate {
-  display:block;
-  position: absolute;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: -10px;
-  z-index: 999;
-  color: #2a4092;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 10px;
+  z-index: 10;
 }
 #panel-input-label-inverter {
-  display:block;
-  position: absolute;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-
-  /* FIREFOX LEFT: */
-  margin-left: 5px; 
-  /* CHROME Y EDGE LEFT: */
-  margin-left: 35px;
-
-  margin-top: -10px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 35px;
+  top: 10px;
+  z-index: 10;
 }
 #panel-input-label-type {
-  display:block;
-  position: absolute;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-
-  /* FIREFOX LEFT */
-  margin-left: 40px;
-   /* CHROME Y EDGE LEFT: */
-   /* margin-left: 35px; */
-
-  margin-top: -10px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 35px;
+  top: 10px;
+  z-index: 10;
 }
 
 /***************************************************************/
 #surface {
   width: 100%;
   top: -71%;
+  left: -5px;
 }
 #commissioningDate {
   top: -106%;
 }
 #inverter-capacity {
+  margin-left: -5px;
   top: -70%;
 }
 
 #installation-type {
-  top: -100%;
-  left: 1%;
+  margin-top: 10%;
+  margin-left: 20px;
 }
 /***************************************************************/
 
@@ -286,12 +275,11 @@ border-radius: none;
   width: 300px;
   margin-top: 0.25%;
   margin-left: -9%;
-  /* margin-left: 3%; */
-  /* margin-right: 20px; */
 }
 #div-installation-background-firstform {
-  width: 300px;
-  margin-left: -3%;
+  width: 250px;
+  margin-left: 15px;
+  margin-top: 6px;
 }
 /**********************************************************************************/
 
@@ -361,67 +349,3 @@ border-radius: none;
   margin-left: 0%;
   margin-top: 1%;
 }
-
-
-
-/*******************ADJUST*VIEWPORTS********************/
-/*CHROME****************************************************************************************/
-/* @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) { */
-  /*COMPUTER*CHROME*/
-  /* .ant-input{ margin-top: -3px!important; }
-  #commissioningDate{ margin-top: -2px!important; }
-  #inverter-capacity{ margin-top: -4px!important; }
-  #installation-type{ margin-top: 4px!important; } */
-
-   /*TABLET*CROME*/
-   /* @media (min-width: 600px) and (max-width: 992px) {
-    .ant-select-selection {top: -32px !important;}
-  } */
-
-  /*******************ADJUST*VIEWPORTS********************/
-  /*MOBILE*CHROME*/
-  /* @media (min-width: 240px) and (max-width: 600px) {
-    #electrical_capacity, #surface {
-      margin-top: -4px !important;
-      } */
-    /* .ant-select {
-      margin-top: 4px !important;
-      margin-left: 1px;
-     
-      }
-    }
-}    */
-
-/*FIREFOX****************************************************************************/
-/* @-moz-document url-prefix() { */
-
-    /*COMPUTER*FIREFOX*/
-    /* .ant-input {
-       margin-top:-4px !important; 
-      } */
-    /* #div-inverter-background {
-      height: 53px !important;
-      } */
-      /* #commissioningDate{ margin-top: 0px !important; }
-      .ant-select {
-        margin-top: 5px !important;
-        width: 300px !important;
-        } */
-
-      /*TABLET*FIREFOX*/
-      /* @media (min-width: 600px) and (max-width: 992px) { 
-        #electrical_capacity, #surface {
-          margin-top: -5px !important;
-          }
-      } */
-
-      /*MOBILE*FIREFOX*/
-    /* @media (min-width: 240px) and (max-width: 600px) { 
-      .ant-select {
-         margin-top: 4px !important;
-         margin-left: -1 !important;
-         width: 270px !important;
-         }
-     } */
-  
-/* } */
