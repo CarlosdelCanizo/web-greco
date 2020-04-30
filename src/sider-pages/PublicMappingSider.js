@@ -37,8 +37,8 @@ const PublicMappingSider = (props) => {
   function addNewPanel() {
     localStorage.setItem('currentPanelId', JSON.stringify(0))
     localStorage.removeItem("currentPanelState")
+    localStorage.removeItem("myPanel")
   }
-
   return (
     <Layout>
       {/*MAIN-SLIDER***************************************************************************************************/}
