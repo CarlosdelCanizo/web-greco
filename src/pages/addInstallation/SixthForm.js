@@ -25,8 +25,8 @@ const SixthForm = (props) => {
 
   //PREFILL FILELIST
   var defaultfilelist = [];
-  // const baseURL = "http://10.0.10.195:8088/"
-  const baseURL = "https://generationsolar.ies.upm.es/api"
+  const baseURL = "http://10.0.10.195:8088/"
+  // const baseURL = "https://generationsolar.ies.upm.es/api"
 
   if (myPanel != undefined) {
     for (var i = 0; i <= myPanel.multimedia.length - 1; i++) {
@@ -38,7 +38,6 @@ const SixthForm = (props) => {
       defaultfilelist.push(file)
     }
   }
-
 
   //TO MANAGE IMAGES
   const [images, setImages] = useState(
@@ -430,7 +429,7 @@ const SixthForm = (props) => {
             <Col id="register-panel-fields-sixth-right" xs={24} sm={12} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-installation-background-right">
-                  <label id="panel-sixth-label">Property</label>
+                  <label id="panel-sixth-label-right">Property</label>
                   <Select placeholder='Private'
                     name="installationProperty"
                     id="installation-property"

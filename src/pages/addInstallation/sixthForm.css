@@ -1,8 +1,96 @@
 /***************************************************************SIXTH*FORM*************************************************************/
 /***SIXTH*FORM************************************************************************************************************************/
-/* #trespercent{
-  margin-right: 5%;
-} */
+
+@import '~antd/dist/antd.css';
+
+/************************************************************** INPUTS */
+.ant-input {
+  /* width: 80%; */
+  height: 54px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  padding-top: 25px;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+/***********************************************************************/
+
+/************************************************************* SELECTS */
+.ant-select-selection {
+  width: 230px;
+  margin-left: -5px;
+}
+/* SELECT SELECTED VALUE */
+.ant-select-selection-selected-value {
+  margin-top: -5px;
+  color: #2a4092;
+}
+/* FLECHA SELECT */
+.ant-select-arrow {
+  margin-top: 0px;
+  left: 180px;
+}
+/* CUADRAT CELESTE */
+.ant-select-selection__rendered{
+  margin-top: initial;
+}
+.ant-select-selection .ant-select-selection--single{
+  margin-top: 50px;
+}
+.ant-select-selection__placeholder{
+  margin-top: -15px;
+}
+/***********************************************************************/
+
+/************************************************************** LABELS */
+/* LABELS */
+#panel-sixth-label {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-right {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: -20px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-large {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  font-weight: 500;
+  font-size: 10px;
+}
+/***************************************************************/
 
 /*******ERROR*MESSAGES********/
 #error-edit-user-message {
@@ -29,87 +117,36 @@
   float: right;
 } 
 #div-installation-background {
-  width: 80%;
+  width: 85%;
   margin-top: 3%;
   margin-left: 10%;
-  background-color: #f9f9f9;
   height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
 }
 #div-installation-background-right {
-  width: 80%;
+  /* width: 100%; */
   margin-top: 3%;
-  margin-left: 10%;
-  background-color: #f9f9f9;
+  margin-left: 15%;
   height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
 }
 #div-observation-background {
   width: 90%;
   margin-top: 1%;
   margin-left: 5%;
   margin-right: 5%;
-  background-color: #f9f9f9;
   height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-sixth-label {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color:transparent;
-  left: 2%;
-  top: 1%;
-}
-#panel-sixth-label-large {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color:transparent;
-  left: 1%;
-  top: 2%;
 }
 #installation-name {
-  color: #7f95a7;
   width: 100%;
   height:100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 5px; 
-  background-color: transparent;
-  border-radius: 0;
   top: -18%;
   left: 0%;
 }
 #installation-property {
-  color: #7f95a7;
+  width: 250px;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 5px;
-  background-color: transparent;
-  border-radius: 0;
-  top: -30%;
-  margin-left: -3%;
+  top: 20px;
+  margin-left: -10%;
 }
-/* .ant-select-selection {
-  width: 232px !important;
-  border-radius: 0;
-} */
 #subtittle-panel-registration-sixth {
   font-size: 18px;
   font-weight: 600;
@@ -136,14 +173,8 @@
   margin-top: -3%;
 }
 #battery-description, #observation {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 5px;
-  background-color: transparent;
-  border-radius: 0;
   margin-left: 0%;
   top: -18%;
 }
@@ -167,8 +198,6 @@
 }
 #upload-text-one {
   height: 20px;
-  font-family: Montserrat;
-  font-size: 14px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -229,87 +258,85 @@ margin-left: 0%;
 /***TABLET****************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
+  /* LABELS */
+#panel-sixth-label {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-right {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: -40px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-large {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  font-weight: 500;
+  font-size: 10px;
+}
+
   #register-panel-fields-sixth {
     margin-top: 0%;
     margin-left: 0%;
   } 
   #div-installation-background {
     margin-top: 3%;
-    background-color: #f9f9f9;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
   }
   #div-observation-background {
     margin-top: 3%;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: #f9f9f9;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-  }
-  #panel-sixth-label {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color:transparent;
-    left: 1%;
-    top: 1%;
-  }
-  #panel-sixth-label-large {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color:transparent;
-    left: 1%;
-    top: 2%;
   }
   #installation-name {
-    color: #7f95a7;
-    width: 100%;
+    width: 95%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px; 
-    background-color: transparent;
-    border-radius: 0;
     top: -23%;
-    left: 0%;
-  }
-  #installation-property {
-    color: #7f95a7;
-    width: 100%;
-    height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px;
-    background-color: transparent;
-    border-radius: 0;
-    top: -100%;
-    margin-left: 0%;
+    left: -5px;
   }
   .ant-select-selection {
-    /* color: #2a4092;
+    width: 312px;
+    margin-left: -15px;
+  }
+  .ant-select-arrow {
+    margin-top: 5px;
+    left: 215px;
+  }
+  #installation-property {
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 16px;
-    padding: 0px 10px 0 5px; */
-    /* background-color: transparent; */
-    border-radius: 0;
-    /* left: 0%;
-    top: -30% */
+    top: 32%;
+    margin-left: -20%;
   }
   #subtittle-panel-registration-sixth {
     font-size: 18px;
@@ -337,14 +364,8 @@ margin-left: 0%;
     margin-top: -3%;
   }
   #battery-description, #observation {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px;
-    background-color: transparent;
-    border-radius: 0;
     margin-left: 0%;
     top: -23%;
   }
@@ -368,8 +389,6 @@ margin-left: 0%;
   }
   #upload-text-one {
     height: 20px;
-    font-family: Montserrat;
-    font-size: 14px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -423,96 +442,120 @@ margin-left: 0%;
     margin-left: 0%;
     margin-top: 1%;
   }
-  /* #images-progress-bar {
-    margin-left: 0%;
-  } */
-}
 
 /**************************************************************MOBILE*SMALL****************************************************************/
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #register-panel-fields-sixth {
-    margin-top: 0%;
-    margin-left: 0%;
-  } 
+
+  /************************************************************** LABELS */
+/* LABELS */
+#panel-sixth-label {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: -5px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-right {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: -5px;
+  margin-top: -40px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-sixth-label-large {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -20px;
+  z-index: 999;
+  color: #2a4092;
+  font-weight: 500;
+  font-size: 10px;
+}
+/***************************************************************/
+
+/************************************************************* SELECTS */
+.ant-select-selection {
+  width: 250px;
+  margin-left: -10px;
+}
+/* SELECT SELECTED VALUE */
+.ant-select-selection-selected-value {
+  margin-top: -5px;
+  color: #2a4092;
+}
+/* FLECHA SELECT */
+.ant-select-arrow {
+  margin-top: 0px;
+  left: 180px;
+}
+/* CUADRAT CELESTE */
+.ant-select-selection__rendered{
+  margin-top: initial;
+}
+.ant-select-selection .ant-select-selection--single{
+  margin-top: 50px;
+}
+.ant-select-selection__placeholder{
+  margin-top: -15px;
+}
+/***********************************************************************/
+#register-panel-fields-sixth-left {
+  margin-top: 0%;
+  margin-left: -5%;
+  float: left;
+  width: 80%;
+} 
+#register-panel-fields-sixth-right {
+  margin-top: 0%;
+  margin-left: 0%;
+  float: right;
+  width: 80%;
+} 
   #div-installation-background {
     margin-top: 3%;
-    background-color: #f9f9f9;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
   }
   #div-observation-background {
     margin-top: 3%;
     margin-left: 0%;
-    background-color: #f9f9f9;
     width: 95%;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
   }
-  #panel-sixth-label {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color:transparent;
-    left: 1%;
-    top: 1%;
-  }
-  #panel-sixth-label-large {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color:transparent;
-    left: 1%;
-    top: 2%;
-  }
+  
   #installation-name {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px; 
-    background-color: transparent;
-    border-radius: 0;
     top: -24%;
-    left: 0%;
+    left: -5%;
   }
   #installation-property {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px;
-    background-color: transparent;
-    border-radius: 0;
     top: -106%;
-    margin-left: 0%;
-  }
-  .ant-select-selection {
-    /* color: #2a4092;
-    width: 100%;
-    height: 100%;
-    font-family: Montserrat;
-    font-size: 16px;
-    padding: 0px 10px 0 5px; 
-    background-color: transparent; */
-    border-radius: 0;
-    /* left: 0%; */
-    margin-top: 12%
+    margin-left: -20px;
   }
   #subtittle-panel-registration-sixth {
     font-size: 18px;
@@ -544,14 +587,8 @@ margin-left: 0%;
     margin-top: -3%;
   }
   #battery-description, #observation {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 5px;
-    background-color: transparent;
-    border-radius: 0;
     margin-left: 0%;
     top: -23%;
   }
@@ -601,7 +638,6 @@ margin-left: 0%;
   #battery-radio-text-sixth {
     margin-left: 4%;
   }
-
   #button-panel-register-previous-sixth  {
     background-color: #2a4092;
     color: #ffffff;
@@ -632,7 +668,6 @@ margin-left: 0%;
     margin-left: 0%;
   }
 }
-
 /*******ERROR*MESSAGE********/
 #error-panel-post-update-message {
   display: inline-block;
@@ -647,70 +682,4 @@ margin-left: 0%;
   text-align: center;
   margin-top: -5px !important;
 }
-
-/*******************ADJUST*VIEWPORTS********************/
-/*CHROME************************************************************************************************************/
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  /*COMPUTER*CHROME*/
-  #installation-name, #battery-description, #observation{ 
-    margin-top: -12px!important; 
-  }
-  #installation-property { 
-    margin-top: -18px !important;
-    width: 248px !important;
-    left: 3px; 
-  }
-
-  /*TABLET*CHROME*/
-  @media (min-width: 600px) and (max-width: 992px) {
-    #installation-property {
-      top: 18px !important;
-      width: 300px !important;
-      margin-left: -8px;
-    }
-  }
-
-  /*MOBILE*CHROME*/
-  @media (min-width: 240px) and (max-width: 600px) { 
-    #installation-name, #battery-description, #observation{ margin-top: -12px!important; }
-    #installation-property {
-      top: 2px !important;
-      width: 271px !important;
-      margin-left: -5px;
-    }
-    #div-installation-background, #div-installation-background-right {
-      width: calc(100% - 10px) !important;
-      margin-left: 0%;
-    }
-    #installation-type {
-      margin-top: 38px !important;
-    }
-  }
-}   
-
-/*FIREFOX**********************************************************************************/
-  @-moz-document url-prefix() {
-
-    /*COMPUTER-FIREFOX*/
-        #installation-name, #installation-property, #installation-property, #battery-description, #observation{ margin-top:-3px!important; }
-    
-    /*MOBILE FIREFOX*/
-        @media (min-width: 240px) and (max-width: 600px) { 
-          #installation-name, #battery-description, #observation{ margin-top: 0px !important; }
-          #installation-property {
-            top: -12px !important;
-            width: 271px !important;
-            margin-left: -5px;
-          }
-          #div-installation-background, #div-installation-background-right {
-            width: calc(100% - 10px) !important;
-            margin-left: 0%;
-          }
-        }   
-        /*TABLET*FIREFOX*/
-          @media (min-width: 600px) and (max-width: 992px) {
-          #installation-property {
-            top: -46px !important;
-          }
-    }
-  }
+}

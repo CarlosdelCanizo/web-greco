@@ -172,21 +172,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 2.5rem; /*footer height*/ 
+    padding-bottom: 10rem; /*footer height*/ 
     min-height: 100vh; 
     display: block;
     position: relative;
-    padding-bottom: 2.5rem; /*footer height*/
+    padding-bottom: 10rem; /*footer height*/
   }
   #inside-welcome-container {
     margin-top: 30%;
-    margin-left: 20%;
-    margin-right: 20%; 
+    margin-left: 30%;
+    margin-right: 30%; 
     padding: 0; 
   }
 
   #welcome-logo-mobile-image {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-bottom: 15%;
     width: 45%;
     height: 30%;
@@ -231,7 +231,7 @@
   font-size: 15px;
   position: absolute;
   clear: both;
-  height: 2.5rem; /*footer height*/
+  height: 10rem; /*footer height*/
   width: 50%;
   float: left;
   bottom: 1%;

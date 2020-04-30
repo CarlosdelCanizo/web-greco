@@ -6,7 +6,11 @@ import bulletBuit from '../../assets/bullet-vacio.svg'
 import monocrystalline from '../../assets/monocrystalline.jpg'
 import multicrystalline from '../../assets/multicrystalline.jpg'
 import thinFilm from '../../assets/thin_film.jpg'
+
 import './firstForm.css'
+import './firstFormMobile.css'
+import './firstFormTablet.css'
+
 import moment from 'moment'
 
 const FirstForm = (props) => {

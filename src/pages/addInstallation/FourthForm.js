@@ -160,7 +160,7 @@ const FourthForm = props => {
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <Form.Item>
                                                 <div id="div-inclination-orientation-background">
-                                                    <label id="panel-inclination-orientation-label">Input degrees</label>
+                                                    <label id="panel-inclination-orientation-label-input">Input degrees</label>
                                                     <Input
                                                         onClick={resetInput}
                                                         value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
@@ -224,8 +224,7 @@ const FourthForm = props => {
                                                 </Select>
                                             </div>
                                         </Col>
-
-                                        <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+                                        <Col id="triqui" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={compass} id="register-panel-image-fourth-select" />
                                         </Col>
                                         <Col span={12} xs={12} sm={12} md={12} lg={12} xl={12}>

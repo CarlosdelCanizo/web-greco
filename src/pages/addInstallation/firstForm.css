@@ -1,5 +1,158 @@
 @import '~antd/dist/antd.css';
 
+/************************************************************** INPUTS */
+#electrical_capacity, #surface, 
+#inverter-capacity, #installation-type  {
+  width: 80%;
+  height: 54px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  padding-top: 25px;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}/***********************************************************************/
+
+/************************************************************* SELECTS */
+/* SELECT-DATE PART DESPLEGABLE */
+
+.ant-calendar-picker {
+  width: 165px;
+  height: 54px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+.ant-calendar-picker-input {
+  /* margin-left: -10px; */
+  border-radius: 0;
+  top: 0px;
+  width: 165px;
+  height: 52px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  padding: 23px 0 0 8px;
+}
+/* ICONO CALENDARIO  */
+.ant-calendar-picker-clear, .ant-calendar-picker-icon {
+  margin-top: 2px;
+  left: 110px;
+}
+/* SELECT SELECTED VALUE */
+.ant-select-selection-selected-value {
+  margin-top: -30px;
+  color: #2a4092;
+}
+/* FLECHA SELECT */
+.ant-select-arrow {
+  margin-top: -35px;
+  left: 30px;
+}
+/* CUADRAT CELESTE */
+/* .ant-select-selection__rendered{
+  margin-top: auto;
+}
+.ant-select-selection .ant-select-selection--single{
+} */
+.ant-select-selection__placeholder{
+  margin-top: -40px;
+}
+/***********************************************************************/
+
+/************************************************************** LABELS */
+/* LABELS */
+#panel-input-label-electrical_capacity, #panel-input-label-surface {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -10px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-input-label-commissioningDate {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: -10px;
+  z-index: 999;
+  color: #2a4092;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-input-label-inverter {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+
+  /* FIREFOX LEFT: */
+  margin-left: 5px; 
+  /* CHROME Y EDGE LEFT: */
+  margin-left: 35px;
+
+  margin-top: -10px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-input-label-type {
+  display:block;
+  position: absolute;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+
+  /* FIREFOX LEFT */
+  margin-left: 40px;
+   /* CHROME Y EDGE LEFT: */
+   /* margin-left: 35px; */
+
+  margin-top: -10px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+/***************************************************************/
+#surface {
+  width: 100%;
+  top: -71%;
+}
+#commissioningDate {
+  top: -106%;
+}
+#inverter-capacity {
+  top: -70%;
+}
+
+#installation-type {
+  top: -100%;
+  left: 1%;
+}
+/***************************************************************/
+
 #required-empty-field {
   box-shadow: 0 0 1.5px 1px red;
 }
@@ -21,6 +174,8 @@
   bottom: 0; 
   left: 0;
   right: 0; 
+  overflow-x: hidden;
+  /* overflow-y: auto; */
 }
 #pagination {
   margin-top: 0%;
@@ -82,8 +237,9 @@ border-radius: none;
 .ant-select-selection__placeholder{
   color : #becbd4;
 }
-/***************************************************************FIRST*FORM*************************************************************/
-/***COMPUTER************************************************************************************************************************/
+/***************************************************************FIRST*FORM*GENERAL************************************************************/
+/***************************************************************************************************************************/
+
 #popover-left, #popover-center, #popover-right {
   width: 450px;
   background-color: #f9f9f9;
@@ -106,173 +262,39 @@ border-radius: none;
 #col-commissioning-date {
   margin-top: 4.5%;
 }
+
+/*************************************************** DIVS INPUTS Y SELECTS */
 #div-electrical-background {
-  margin-top: 0%;
-  margin-left: 5%;
-  background-color: #f9f9f9;
+  margin-left: 1%;
   width: 90%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-input-label-electrical_capacity, #panel-input-label-surface, #panel-input-label-commissioningDate{
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 0;
-  color: #2a4092;
-  background-color:transparent;
-  left: -20%;
-  top: -15%;
-  float: left;
-  line-height: inherit;
-  left: 5px;
 }
 #electrical_capacity {
-  color: #7f95a7;
   width: 100%;
-  height: 100%;
-  font-family: Montserrat;
   font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   left: 0%;
   top: -71%;
-  padding: 20px 10px 0 5px;
-  border-radius: 0;
 }
 #div-surface-background {
-  margin-top: 0%;
-  margin-left: 12%;
-  background-color: #f9f9f9;
+  margin-left: 13%;
   width: 90%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#surface {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 5px;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  top: -71%;
 }
 #div-date-background {
   margin-top: 1%;
   margin-left: 20%;
-  background-color: #f9f9f9;
-  width: 90%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-.ant-calendar-picker-input {
-  color: #7f95a7;
-  width: 165px;
-  height: 52px;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 3px;
-  border-radius: 0;
-  background-color: transparent;
-}
-#commissioningDate {
-  /* width: 100%; */
-  padding: 20px 10px 0 0;
-  left: 0%;
-  top: -106%;
 }
 #div-inverter-background {
-  width: 260px;
+  width: 300px;
   margin-top: 0.25%;
-  margin-left: 3%;
-  margin-right: 20px;
-  background-color: #f9f9f9;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-input-label-inverter {
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 0;
-  color: #2a4092;
-  background-color:transparent;
-  left: -28%;
-  top: -15%;
-}
-#panel-input-label-type {
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 0;
-  color: #2a4092;
-  background-color:transparent;
-  left: -30%;
-  top: -15%;
-}
-#inverter-capacity {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 5px;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  top: -70%;
+  margin-left: -9%;
+  /* margin-left: 3%; */
+  /* margin-right: 20px; */
 }
 #div-installation-background-firstform {
-  margin-top: 0%;
-  margin-left: 0%;
-  background-color: #f9f9f9;
-  width: 87%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-  margin-left: 20px;
+  width: 300px;
+  margin-left: -3%;
 }
-#installation-type {
-  color: #7f95a7;
-  width: 100% !important;
-  height: 62px !important;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 10px 0 0;
-  border-radius: 0;
-  top: -100%;
-  left: 1%;
-}
-.ant-select-selection {
-  color: #7f95a7; 
-  width: 100% !important;
-  height: 52px !important;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 0 0 0;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  top: -40px;
-}
+/**********************************************************************************/
+
 #div-subtittle {
   margin-left: 2%;
   margin-top: 0%;
@@ -340,626 +362,66 @@ border-radius: none;
   margin-top: 1%;
 }
 
-/**************************************************************TABLET*****************************************************************/
-/***TABLET****************************************************************************************************************************/
 
-@media (min-width: 600px) and (max-width: 1023px) {
-  #popover-left, #popover-center, #popover-right {
-    width: 500px;
-  }
-
-.ant-calendar-picker-input {
-    color: #7f95a7;
-    width: calc( (100vw / 3) - 5em );
-    height: 52px;
-    font-family: Montserrat;
-    font-size: 14px;
-    padding: 20px 10px 0 3px;
-    border-radius: 0;
-    border: none;
-    background-color: transparent;
-  }
-#commissioningDate {
-    /* width: 10%; */
-    padding: 20px 10px 0 0;
-    left: 0%;
-    margin-top:-1px;
-  }
-#card-panel-register-inside {
-    width: 100%;
-    height: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;  
-}
-#pagination {
-    margin-top: 2%;
-}
-#pagination-bullet {
-    margin-left: 1%;
-}
-#tittle-panel-registration {
-    font-size: 26px;
-    font-weight: bolder;
-    margin-top: 5%;
-    line-height: 1.25;
-    color: #2a4092;
-}
-#text-panel-registration {
-    font-size: 18px;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: 2%;
-    margin-bottom: 1%;
-}
-#col-register-panel-fields {
-    margin-top: 3%;
-    margin-left: 5%;
-    margin-right: -6%;
-}
-#div-electrical-background {
-    margin-top: 0%;
-    margin-left: -7%;
-    background-color: #f9f9f9;
-    width: 80%;
-    height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-}
-#div-surface-background {
-  margin-top: -0%;
-  margin-left: -5%;
-  background-color: #f9f9f9;
-  width: 80%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#div-date-background {
-  margin-top: 0%;
-  margin-left: 5%;
-  background-color: #f9f9f9;
-  width: 80%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-input-label-inverter {
-    width: 100%;
-    text-align: left;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 1.25;
-    color: #2a4092;
-    background-color:transparent;
-    left: -31%;
-    top: -22%;
-}
-#panel-input-label-type {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.25;
-  color: #2a4092;
-  background-color:transparent;
-  left: 3%;
-  top: 6%;
-}
-#panel-input-label-electrical_capacity, #panel-input-label-surface, #panel-input-label-commissioningDate{
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 0;
-  color: #2a4092;
-  background-color:transparent;
-  left: -20%;
-  top: -16%;
-  float: left;
-  line-height: inherit;
-  left: 5px;
-}
-#electrical_capacity {
-  color: #7f95a7;
-    width: 100%;
-    height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    line-height: 2;
-    background-color: transparent;
-    border-radius: 0;
-    left: 0%;
-    top: -68%;
-}
-#surface {
-  color: #7f95a7;
-    width: 100%;
-    height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    line-height: 2;
-    background-color: transparent;
-    border-radius: 0;
-    left: 0%;
-    top: -68%;
-}
-#div-inverter-background {
-  margin-top: 0%;
-  margin-left: 5%;
-  background-color: #f9f9f9;
-  width: 80%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#inverter-capacity {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: 0;
-  background-color: transparent;
-  border-radius: 0;
-  top: -71%;
-  left: 0%;
-}
-#div-installation-background-firstform {
-  margin-top: 0%;
-  margin-left: 10%;
-  background-color: #f9f9f9;
-  width: 80%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#installation-type {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: 1.6;
-  border-radius: 0;
-  top: -0%;
-  left: 0%;
-}
-.ant-select-selection {
-  color: #7f95a7;
-  width: 100%;
-  height: 52px ;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 0 0 0;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  top: 10% !important;
-}
-#col-commissioning-date {
-  margin-top: 3%;
-  margin-left: 2%;
-}
-#div-subtittle {
-  margin-left: -1%;
-  margin-top: -2%;
-}
-#subtittle-panel-registration {
-    font-size: 14px;
-    font-weight: 1000;
-    text-align: left;
-    line-height: 1.25;
-    color: #2a4092;
-    margin-left: 4%;
-    margin-top: 2%;
-}
-#technology-used {
-    margin-left: 1.5%;
-}
-#image-col {
-  margin-right: -16px;
-}
-#image-col-large {
-  margin-left: -15px;
-}
-#radio-label-row {
-  min-height: 50px;
-  margin-top: 10px;
-}
-#radio-button-row {
-  min-height: 10px;
-  top: -15px;
-}
-#images-tech-us {
-  object-fit: fill;
-  height: 225px;
-  width: 225px;
-  max-height: 100%;
-  max-width: 100%;
-  margin-top: 1%;
-  margin-left: 0%;
-  margin-right: 0%;
-  padding: 1%;
-  border: 1px solid #cdced7;
-}
-#images-tech-us-large {
-  object-fit: fill;
-  height: 225px;
-  max-height: 100%;
-  width: 225px;
-  max-width: 100%;
-  margin-top: 1%;
-  margin-left: 0%;
-  margin-right: 0%;
-  padding: 5%;
-  border: 1px solid #cdced7;
-}
-#label-radio-button {
- margin-left: -5%;
- font-size: 0.9em;
- color: #7f95a7;
-}
-#button-panel-register-next-first {
-    background-color: #db4196;
-    color: #ffffff;
-    line-height: 1.5;
-    height:40px;
-    width: 55%;
-    border-radius: 0;
-    border: none;
-    margin-left: 0%;
-    margin-top: 3%;
-}
-}
-
-/**************************************************************MOBILE*****************************************************************/
-/***MOBILE****************************************************************************************************************************/
-
-@media (min-width: 240px) and (max-width: 600px) {
- 
-  #popover-left, #popover-center, #popover-right {
-    width: 96vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
-  }
-
-#card-panel-register-inside {
-    width: 100%;
-    height: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none;
-    overflow-x: hidden;
-    overflow-y: auto;  
-}
-#pagination {
-    margin-top: -1%;
-}
-#pagination-bullet {
-    margin-left: 1%;
-    width: 4%;
-}
-#tittle-panel-registration {
-    font-size: 24px;
-    font-weight: bolder;
-    text-align: left;
-    margin-top: 3%;
-    line-height: 1.25;
-    color: #2a4092;
-}
-#text-panel-registration {
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.25;
-    color: #7f95a7;
-    margin-top: -1%;
-    margin-bottom: -1%;
-}
-#col-register-panel-fields {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: -2%;
-}
-#div-electrical-background {
-    margin-top: 5%;
-    margin-left: -4%;
-    background-color: #f9f9f9;
-    width: 90%;
-    height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-}
-#panel-input-label-electrical_capacity, #panel-input-label-surface{
-  position: relative;
-  width: 100%;
-  font-weight: 500;
-  font-size: 10px;
-  color: #2a4092;
-  background-color:transparent;
-  margin-left: -4%;
-  top: -15%;
-  line-height: inherit;
-  left: 10px;
-}
-#panel-input-label-commissioningDate {
-  position: relative;
-  width: 100%;
-  font-weight: 500;
-  font-size: 10px;
-  color: #2a4092;
-  background-color:transparent;
-  margin-left: -2%;
-  top: -15%;
-  line-height: inherit;
-  left: 12px;
-}
-#electrical_capacity {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: 2;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  top: -68%;
-}
-#div-surface-background {
-    margin-top: 5%;
-    margin-left: 5%;
-    background-color: #f9f9f9;
-    width: 90%;
-    height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
-}
-#surface {
-    color: #7f95a7;
-    width: 100%;
-    height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    line-height: 2;
-    background-color: transparent;
-    border-radius: 0;
-    left: 0%;
-    top: -68%;
-}
-.ant-calendar-picker-input {
-  color: #7f95a7;
-  width: calc(100vw - 48px);
-  height: 52px;
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 0 0 6px;
-  border-radius: 0;
-  left: 0%;
-  background-color: transparent;
-}
-#div-date-background {
-  margin-top: 8%;
-  margin-left: 0%;
-  background-color: #f9f9f9;
-  width: 100%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#div-inverter-background {
-  margin-top: 2%;
-  margin-left: 0%;
-  background-color: #f9f9f9;
-  width: 100%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-input-label-inverter {
-  position: relative;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  color: #2a4092;
-  background-color:transparent;
-  /* margin-left: -13%; */
-  /* left: -10px; */
-  top: -15%;
-}
-#inverter-capacity {
-  color: #7f95a7;
-  width: 100%;
-  height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: inherit;
-  background-color: transparent;
-  border-radius: 0;
-  top: -70%;
-  left: 0%;
-}
-#div-installation-background-firstform {
-  margin-top: 1% ;
-  margin-left: 0% ;
-  background-color: #f9f9f9;
-  width: 100%;
-  height: 54px;
-  border-style: solid;
-  border-width: 0px 0px 2px 0px;
-  border-bottom-color: #2a4092;
-}
-#panel-input-label-type {
-  position: relative;
-  /* width: 100%; */
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: inherit;
-  color: #2a4092;
-  background-color: transparent;
-  /* margin-left: -18px; */
-  top: -15%;
-}
-#installation-type {
- /* color: #7f95a7;
-  font-family: Montserrat;
-  font-size: 14px;
-  line-height: 1.6; 
-  border-radius: 0; */
-  top: -80px;
-  left: 0%;
-  width: 100%;
-  /* height: 52px;  */
- } 
-.ant-select-selection {
-  color: #7f95a7;
-  /* width: 353px !important; */
-  /* height: 52px !important; */
-  font-family: Montserrat;
-  font-size: 14px;
-  padding: 20px 0 0 0;
-  background-color: transparent;
-  border-radius: 0;
-  left: 0%;
-  /* top: -40px; */
-}
-#col-commissioning-date {
-  margin-top: -11%;
-}
-#div-subtittle {
-  margin-left: 0%;
-  margin-top: 5%;
-}
-#subtittle-panel-registration {
-    font-size: 16px;
-    font-weight: 1000;
-    text-align: left;
-    line-height: 1.25;
-    color: #2a4092;
-    margin-left: 0%;
-    margin-top: -6%;
-}
-#technology-used {
-  width: 100%;
-  margin-left: -1%;
-}
-#images-tech-us {
-  object-fit: fill;
-  height: 25vw;
-  width: 100%;
-  max-height: 100%;
-  margin-top: 1%;
-  margin-left: 0%;
-  margin-right: 0%;
-  padding: 5%;
-  border: 1px solid #cdced7;
-}
-#images-tech-us-large {
-  object-fit: fill;
-  height: 216px;
-  width: 100%;
-  max-height: 25vw;
-  margin-top: 1%;
-  margin-left: -2%;
-  margin-right: 0%;
-  padding: 5%;
-  border: 1px solid #cdced7;
-}
-#label-radio-button {
- margin-left: -5%;
- font-size: 0.6em;
- color: #7f95a7;
-}
-#button-panel-register-next-first {
-    background-color: #db4196;
-    color: #ffffff;
-    line-height: 1.5;
-    height:40px;
-    width: 55%;
-    border-radius: 0;
-    border: none;
-    margin-top: 5%;
-    margin-left: -3%;
-}
-}
 
 /*******************ADJUST*VIEWPORTS********************/
 /*CHROME****************************************************************************************/
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+/* @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) { */
   /*COMPUTER*CHROME*/
-  .ant-input{ margin-top: -3px!important; }
+  /* .ant-input{ margin-top: -3px!important; }
   #commissioningDate{ margin-top: -2px!important; }
   #inverter-capacity{ margin-top: -4px!important; }
-  #installation-type{ margin-top: 4px!important; }
+  #installation-type{ margin-top: 4px!important; } */
 
    /*TABLET*CROME*/
-   @media (min-width: 600px) and (max-width: 992px) {
+   /* @media (min-width: 600px) and (max-width: 992px) {
     .ant-select-selection {top: -32px !important;}
-  }
+  } */
 
   /*******************ADJUST*VIEWPORTS********************/
   /*MOBILE*CHROME*/
-  @media (min-width: 240px) and (max-width: 600px) {
+  /* @media (min-width: 240px) and (max-width: 600px) {
     #electrical_capacity, #surface {
       margin-top: -4px !important;
-      }
-    .ant-select {
+      } */
+    /* .ant-select {
       margin-top: 4px !important;
       margin-left: 1px;
-      /* width: 268px !important; */
+     
       }
     }
-}   
+}    */
 
 /*FIREFOX****************************************************************************/
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() { */
 
     /*COMPUTER*FIREFOX*/
-    .ant-input {
+    /* .ant-input {
        margin-top:-4px !important; 
-      }
-    #div-inverter-background {
+      } */
+    /* #div-inverter-background {
       height: 53px !important;
-      }
-      #commissioningDate{ margin-top: 0px !important; }
+      } */
+      /* #commissioningDate{ margin-top: 0px !important; }
       .ant-select {
         margin-top: 5px !important;
         width: 300px !important;
-        }
+        } */
 
       /*TABLET*FIREFOX*/
-      @media (min-width: 600px) and (max-width: 992px) { 
+      /* @media (min-width: 600px) and (max-width: 992px) { 
         #electrical_capacity, #surface {
           margin-top: -5px !important;
           }
-      }
+      } */
 
       /*MOBILE*FIREFOX*/
-    @media (min-width: 240px) and (max-width: 600px) { 
+    /* @media (min-width: 240px) and (max-width: 600px) { 
       .ant-select {
          margin-top: 4px !important;
          margin-left: -1 !important;
          width: 270px !important;
          }
-     }
+     } */
   
-}
+/* } */

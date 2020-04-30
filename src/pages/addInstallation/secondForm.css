@@ -25,49 +25,66 @@
 #div-longlat-background {
 margin-top: 5%;
 margin-left: 15%;
-background-color: #f9f9f9;
 width: 75%;
 height: 54px;
-border-style: solid;
-border-width: 0px 0px 2px 0px;
-border-bottom-color: #2a4092;
+
 }
 #div-longlat-background-right {
 margin-top: 5%;
 margin-left: 15%;
-background-color: #f9f9f9;
 width: 75%;
 height: 54px;
-border-style: solid;
-border-width: 0px 0px 2px 0px;
-border-bottom-color: #2a4092;
 float: right;
 margin-right: 6%;
 }
-#panel-longlat-label {
+#panel-long-label {
+  position: absolute;
   display: block;
-  width: 99%;
-  text-align: left;
-  font-weight: 500;
-  font-size: 10px;
   line-height: 1.25;
   color: #2a4092;
+  margin-left: 5px;
+  margin-top: -5px;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+  z-index: 999;
+  color: #2a4092;
   background-color:transparent;
-  left: 3%;
-  top: 2%;
+  font-weight: 500;
+  font-size: 10px;
+}
+#panel-lat-label {
+  position: absolute;
+  display: block;
+  line-height: 1.25;
+  color: #2a4092;
+  margin-left: 5px;
+  margin-top: -5px;
+  text-align: left;
+  float: left;
+  width: 100px;
+  height: 20px;
+  z-index: 999;
+  color: #2a4092;
+  background-color:transparent;
+  font-weight: 500;
+  font-size: 10px;
 }
 #lon, #lat {
-  color: #7f95a7;
   width:100%;
   height: 100%;
-  font-family: Montserrat;
   font-size: 14px;
-  padding: 20px 10px 0 5px;
-  background-color: transparent;
+  height: 54px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  padding-top: 25px;
   border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
   margin-left: 0%;
   top: -11%;
-
 }
 
 /***LEAFLET*MAP*SECOND**************************************************************/
@@ -109,16 +126,7 @@ margin-right: 6%;
 /***TABLET****************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
-  /* #card-panel-register-inside {
-    width: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none; 
-    overflow: auto;  
-  } */
+
   #pagination {
     margin-top: 2%;
   }
@@ -146,60 +154,30 @@ margin-right: 6%;
     margin-right: -6%;
   }
   #lat {
-  color: #7f95a7;
   width: 100%;
   height: 100%;
-  font-family: Montserrat;
-  font-size: 14px;
-  background-color: transparent;
-  border-radius: 0;
   margin-left: -3;
   margin-top: -2%;
   }
   #lon {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 0;
     left: 0%;
     margin-top: -2%;
     }
   #div-longlat-background {
     margin-top: 5%;
     margin-left: 3%;
-    background-color: #f9f9f9;
     width: 75%;
     height: 54px;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-bottom-color: #2a4092;
     }
     #div-longlat-background-right {
       position: relative;
       margin-top: 5%;
       left: -15%;
-      background-color: #f9f9f9;
       width: 75%;
       height: 54px;
-      border-style: solid;
-      border-width: 0px 0px 2px 0px;
-      border-bottom-color: #2a4092;
       }
-    #panel-longlat-label {
-      width: 99%;
-      text-align: left;
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 1.25;
-      color: #2a4092;
-      background-color:transparent;
-      left: 2%;
-      top: 2%;
-    }
-
 
   /***LEAFLET*MAP*SECOND**************************************************************/
 #coords-container {
@@ -236,16 +214,7 @@ margin-right: 6%;
 /***MOBILE*SMALL***************************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  /* #card-panel-register-inside {
-    width: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    font-family: Montserrat;
-    background-color: white;
-    text-align: center;
-    border: none; 
-    overflow: auto;  
-  } */
+
   #pagination {
     margin-top: -1%;
   }
@@ -275,61 +244,30 @@ margin-right: 6%;
     margin-right: -2%;
   }
   #lat {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 0;
     margin-left: -2%;
     margin-top: -1%;
     }
   #lon {
-    color: #7f95a7;
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 0;
     left: 0%;
     margin-top: -1%;
     }
     #div-longlat-background {
       margin-top: 5%;
       margin-left: -3%;
-      background-color: #f9f9f9;
       width: 75%;
       height: 54px;
-      border-style: solid;
-      border-width: 0px 0px 2px 0px;
-      border-bottom-color: #2a4092;
       }
       #div-longlat-background-right {
         position: relative;
         margin-top: 5%;
         left: -7%;
-        background-color: #f9f9f9;
         width: 75%;
         height: 54px;
-        border-style: solid;
-        border-width: 0px 0px 2px 0px;
-        border-bottom-color: #2a4092;
         }
-      #panel-longlat-label {
-        display: block;
-        width: 99%;
-        text-align: left;
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 1.25;
-        color: #2a4092;
-        background-color:transparent;
-        margin-left: 3%;
-        top: 2%;
-      }
-
 
   /***LEAFLET*MAP*SECOND**************************************************************/
 #coords-container {
@@ -367,21 +305,3 @@ margin-right: 6%;
   }
   
 }
-
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-  /*COMPUTER*CROME*/
-  #lon, #lat{ margin-top: -12px!important; }
-/*TABLET*CROME*/
-/* @media (min-width: 600px) and (max-width: 992px) {
-  #lon {left: -20px !important;}
-  #div-longlat-background-right {left: -20px !important;}
-} */
-
-}   
-
-  @-moz-document url-prefix() {
-    
-    #lon, #lat{ margin-top:-7px!important; }
-    } 
-  
-    
