@@ -1,0 +1,307 @@
+/**************************************************************TABLET*****************************************************************/
+/***TABLET****************************************************************************************************************************/
+
+@import '~antd/dist/antd.css';
+
+@media (min-width: 600px) and (max-width: 1023px) {
+
+/************************************************************** INPUTS */
+#electrical_capacity, #surface, 
+#inverter-capacity {
+  width: 80%;
+  height: 54px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  padding-top: 25px;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}/***********************************************************************/
+
+/************************************************************* SELECTS */
+/* SELECT-DATE PART DESPLEGABLE */
+
+.ant-calendar-picker {
+  width: 200px;
+  height: 59px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-bottom-color: #2a4092;
+}
+.ant-calendar-picker-input {
+  border-radius: 0;
+  top: 5px;
+  width: 200px;
+  height: 56px;
+  color: #2a4092;
+  background-color: #f9f9f9;
+}
+/* ICONO CALENDARIO  */
+.ant-calendar-picker-clear, .ant-calendar-picker-icon {
+  margin-top: 2px;
+  left: 110px;
+}
+/* SELECT SELECTED VALUE */
+.ant-select-selection-selected-value {
+  margin-top: 0px;
+  color: #2a4092;
+}
+/* FLECHA SELECT */
+.ant-select-arrow {
+  margin-top: -5px;
+  left: 30px;
+}
+/* CUADRAT CELESTE */
+/* .ant-select-selection__rendered{
+  margin-top: auto;
+}
+.ant-select-selection .ant-select-selection--single{
+} */
+.ant-select-selection__placeholder{
+  margin-top: -10px;
+}
+/***********************************************************************/
+
+/************************************************************** LABELS */
+/* LABELS */
+#panel-input-label-electrical_capacity, #panel-input-label-surface {
+  position: relative;
+  width: 100px;
+  text-align: left;
+  float: left;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 10px;
+  z-index: 10;
+}
+#panel-input-label-commissioningDate {
+  position: relative;
+  width: 100px;
+  text-align: left;
+  float: left;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 10px;
+  z-index: 10;
+}
+#panel-input-label-inverter {
+  position: relative;
+  width: 100px;
+  text-align: left;
+  float: left;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 10px;
+  z-index: 10;
+}
+#panel-input-label-type {
+  position: relative;
+  width: 100px;
+  text-align: left;
+  float: left;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 10px;
+  top: 10px;
+  z-index: 10;
+}
+
+/***************************************************************/
+  
+  #popover-left, #popover-center, #popover-right {
+    width: 500px;
+  }
+
+#commissioningDate {
+    left: 0%;
+    margin-top:-1px;
+  }
+#card-panel-register-inside {
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    font-family: Montserrat;
+    background-color: white;
+    text-align: center;
+    border: none;  
+}
+#pagination {
+    margin-top: 2%;
+}
+#pagination-bullet {
+    margin-left: 1%;
+}
+#tittle-panel-registration {
+    font-size: 26px;
+    font-weight: bolder;
+    margin-top: 5%;
+    line-height: 1.25;
+    color: #2a4092;
+}
+#text-panel-registration {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #7f95a7;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+#col-register-panel-fields {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: -6%;
+}
+#div-electrical-background {
+    margin-top: 0%;
+    margin-left: -7%;
+    width: 80%;
+}
+#div-surface-background {
+  margin-top: -0%;
+  margin-left: -5%;
+  width: 80%;
+}
+#div-date-background {
+  margin-top: 0%;
+  margin-left: 5%;
+  width: 80%;
+}
+#div-inverter-background {
+  margin-top: 0%;
+  margin-left: 5%;
+  width: 80%;
+}
+
+#electrical_capacity {
+    width: 100%;
+    height: 100%;
+    line-height: 2;
+    left: 0%;
+    top: -68%;
+}
+#surface {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 2;
+    left: 0%;
+    top: -68%;
+}
+
+#inverter-capacity {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  top: -71%;
+  left: 0%;
+}
+#div-installation-background-firstform {
+  margin-top: 0%;
+  margin-left: 5%;
+  width: 80%;
+  height: 54px;
+
+}
+#installation-type {
+
+  width: 100%;
+  height: 100%;
+  line-height: 1.6;
+  top: -0%;
+  left: 0%;
+}
+#col-commissioning-date {
+  margin-top: 3%;
+  margin-left: 2%;
+}
+#div-subtittle {
+  margin-left: -1%;
+  margin-top: -2%;
+}
+#subtittle-panel-registration {
+    font-size: 14px;
+    font-weight: 1000;
+    text-align: left;
+    line-height: 1.25;
+    color: #2a4092;
+    margin-left: 4%;
+    margin-top: 2%;
+}
+#technology-used {
+    margin-left: 1.5%;
+}
+#image-col {
+  margin-right: -16px;
+}
+#image-col-large {
+  margin-left: -15px;
+}
+#radio-label-row {
+  min-height: 50px;
+  margin-top: 10px;
+}
+#radio-button-row {
+  min-height: 10px;
+  top: -15px;
+}
+#images-tech-us {
+  object-fit: fill;
+  height: 225px;
+  width: 225px;
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
+  padding: 1%;
+  border: 1px solid #cdced7;
+}
+#images-tech-us-large {
+  object-fit: fill;
+  height: 225px;
+  max-height: 100%;
+  width: 225px;
+  max-width: 100%;
+  margin-top: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
+  padding: 5%;
+  border: 1px solid #cdced7;
+}
+#label-radio-button {
+ margin-left: -5%;
+ font-size: 0.9em;
+ color: #7f95a7;
+}
+#button-panel-register-next-first {
+    background-color: #db4196;
+    color: #ffffff;
+    line-height: 1.5;
+    height:40px;
+    width: 55%;
+    border-radius: 0;
+    border: none;
+    margin-left: 0%;
+    margin-top: 3%;
+}
+}
+
