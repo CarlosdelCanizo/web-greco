@@ -169,7 +169,7 @@ const LoginForm = (props) => {
             <h6 id="welcome-text-mini">Don't you have an account yet?<br />
               <Link id="link" to="/register">Sign up</Link></h6>
           </div>
-          <Divider id="footer-divider" />
+          <Divider id="login-footer-divider" />
           <h6 id="login-text-footer">Read terms and <a id="link" href="/privacy-policy-sider">privacy policy</a>.</h6>
         </div>
       </Col>
