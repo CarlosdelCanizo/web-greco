@@ -34,11 +34,11 @@ class Welcome extends React.Component {
           <div id="background-logo">
             <img src={recLogo} width="96%" height="100%" alt="background-logo" />
           </div >
-          <div id="welcome-paragraph">
+          <div id="welcome-first-paragraph">
             <p id="welcome-first"><span id="welcome-white-text-bold"></span>The first platform to create a unique solar energy community and promote data exchange between photovoltaic installation owners and scientists.</p>
             <p id="welcome-second">Sign up or log in to share as many photovoltaic installations as you can and...</p>
           </div>
-          <div id="welcome-third">
+          <div id="welcome-second-paragraph">
             <p>• Take part in an environmentally committed international community</p>
             <p>• Provide valuable open data for research and management</p>
             <p>• Face new individual and community challenges</p>
