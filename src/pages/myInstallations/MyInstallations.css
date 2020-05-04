@@ -5,7 +5,6 @@
   background-color: #eaedf1;
   height: 100%; 
   width: 100%;
-  /* overflow: auto; */
 }
 #popover-panels {
   font-family: Montserrat;
@@ -21,7 +20,10 @@
 }
 
 /************************************************************ADD*INSTALLATION*************************************************/
-/***COMPUTER************************************************************************************************************************/
+/***COMPUTER DESDE 792***********************************************************************************************************************/
+@media (min-width: 792px) 
+/* and (max-width: 768px)  */
+{
 
 #installation-add {
   margin-right: 5%;
@@ -57,37 +59,37 @@
 }
 /************************************************************INSTALLATION**************************************************/
 /***COMPUTER***************************************************************************************************************/
-
+#col-installation-container {
+  width: fit-content;
+  margin-right: 25px;
+}
 #installation-container {
   margin-top: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 1%;
+  margin-right: 2%;
   position: relative;
   height: 380px;
+  width: 480px;
   font-family: Montserrat;
   color: #2a4092;
   padding: 0; 
-  text-align: center;;
+  text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-/* #installation-tittle-button-container {
-  height: 40px;
-  width: 100%;
-} */
 #installation-tittle {
   z-index: 400;
   position: absolute;
   font-size: 15px;
   font-weight: 500;
-  line-height: 2.5em;
+  line-height: 3em;
   text-align: center;
   color: #2a4092;
   background-color: white;
   opacity: 0.5;
-  width: 130%;
+  width: 475px;
   height: 40px;
-  left: -15%;
-  margin-top: -5%;
+  left: -23px;
+  margin-top: -23px;
 }
 #installation-tittle:hover {
   opacity: 0.8;
@@ -138,19 +140,6 @@
   top: 35%;
   right: -5%;
 }
-#container-delete-button-slider {
-  position: absolute;
-  visibility: hidden;
-} 
-#card-slider-button-delete-image {
-  position: relative;
-  z-index: 999;
-  color: red;
-  background-color: transparent;
-  border: none;
-  font-size: 1.5em;
-  margin-top: 8%;  
-} 
 #card-slider-button-left {
   position: relative;
   z-index: 999;
@@ -183,32 +172,351 @@
   height: 305px;
   border-bottom: 5px solid #2a4092;
 }
+}
+
+/***TABLET PEQUEÑA HASTA 768 ANCHO*******************************************************************************************************************/
+/* @media (min-width: 601px) and (max-width: 768px) {
+
+    #installation-add {
+      height: 125px;
+      width: 90%;
+    }
+    #add-installation-text-button {
+      margin-top: 25px;
+      margin-left: 0%;
+      text-align: center;
+    }
+  
+    #installation-add-button {
+      width: 50px;
+      height: 50px;
+      margin-top: -1%;
+    } */
+  
+  /************************************************************INSTALLATION**************************************************/
+  /***TABLET PEQUEÑA***************************************************************************************************************/
+  /* #col-installation-container {
+    width: fit-content;
+  }
+  #installation-container {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    position: relative;
+    height: 375px;
+    width: 90vw;
+    font-family: Montserrat;
+    color: #2a4092;
+    padding: 0; 
+    text-align: center;;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #col-title {
+    width: auto;
+    margin-top: -27px;
+    left: -2px;
+    }
+    #installation-tittle {
+      z-index: 400;
+      position: absolute;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 2.6em;
+      color: #2a4092;
+      background-color: white;
+      opacity: 0.5;
+      width: 90vw;
+      height: 40px;
+      margin-top: 0;
+    }
+    #installation-button-menu { 
+      position: absolute;
+      margin-top: -8px;
+      margin-right: -15px;
+    }
+   */
+  /************************************************************CARD*SLIDER*************************************************/
+  /***TABLET PEQUEÑA************************************************************************************************************************/
+  /* #card-slider-installation-add-image {
+    object-fit: initial;
+    display:block;
+    margin-left: -25px;
+    margin-top: -27px;
+    z-index: -1;
+    width: 90vw;
+    height: 305px;
+    border-bottom: 5px solid #2a4092;
+  }
+  #col-slider-left-button {
+    position: absolute;
+    z-index: 800;
+    top: 43%;
+    left: -5%;
+  }
+  #col-slider-right-button {
+    position: absolute;
+    z-index: 800;
+    top: 35%;
+    right: -5%;
+  }
+  #card-slider-button-left {
+    position: relative;
+    z-index: 999;
+    top: 1px;
+    background-color: transparent;
+    border: none;
+    margin-left: -12px;
+  }
+  
+  #card-slider-button-right {
+    position: relative;
+    z-index: 999;
+    top: 0px;
+    background-color: transparent;
+    border: none;
+    right: 12px;
+    margin-top: 24px;
+  }
+  #arrow {
+    color: red;
+    font-size: 1.5em;
+  }
+} */
 
 /************************************************************ADD*INSTALLATION*************************************************/
 /***TABLET************************************************************************************************************************/
+
 @media (min-width: 768) and (max-width: 992px) {
- 
+#installation-add {
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 380px;
+  width: 150px;
+  margin-top: 20px;
+  border: 2px dotted #2a4092;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-add-button {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background-color: #db4196;
+  border-color: #db4196;
+  color: white;
+}
+#add-installation-text-button {
+  position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #2a4092;
+    font-size: 16px;;
+}
+/************************************************************INSTALLATION**************************************************/
+/***TABLET***************************************************************************************************************/
+#col-installation-container {
+  width: fit-content;
+  margin-right: 25px;
+}
+#installation-container {
+  margin-top: 20px;
+  margin-left: 1%;
+  margin-right: 2%;
+  position: relative;
+  height: 380px;
+  width: 480px;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0; 
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#installation-tittle {
+  z-index: 400;
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 3em;
+  text-align: center;
+  color: #2a4092;
+  background-color: white;
+  opacity: 0.5;
+  width: 475px;
+  height: 40px;
+  left: -23px;
+  margin-top: -23px;
+}
+#installation-tittle:hover {
+  opacity: 0.8;
+}
+#installation-button-menu { 
+  position: absolute;
+  top:-20px;
+  right: -20px;
+  line-height: 1.5em;
+  background-color: transparent;
+  color: #ff0000;
+  opacity: 1;
+  font-size: 2em;
+  border: none;
+  z-index: 500;
+  border-radius: none;
+}
+#installation-text-fields {
+  padding: 0%;
+  margin: 0%;
+  margin-top: 15px;
+}
+#panel-data-labels {
+  font-weight: 500;
+  color: #bfc5d2;
+  font-size: 9px;
+}
+#panel-data-fields {
+  font-family: Montserrat;
+  margin-top: -3%;
+  font-weight: 500;
+  color: #2a4092;
+  font-size: 15px;
+  text-align: center;
 }
 
+/************************************************************CARD*SLIDER*************************************************/
+/***TABLET************************************************************************************************************************/
+#col-slider-left-button {
+  position: absolute;
+  z-index: 800;
+  top: 43%;
+  left: -5%;
+}
+#col-slider-right-button {
+  position: absolute;
+  z-index: 800;
+  top: 35%;
+  right: -5%;
+}
+#card-slider-button-left {
+  position: relative;
+  z-index: 999;
+  top: 15%;
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+}
+
+#card-slider-button-right {
+  position: relative;
+  z-index: 999;
+  top: 15%;
+  background-color: transparent;
+  border: none;
+  right: 20px;
+  margin-top: 24px;
+}
+#arrow {
+  color: red;
+  font-size: 1.5em;
+}
+#card-slider-installation-add-image {
+  object-fit: initial;
+  display:block;
+  margin-left:-5%;
+  margin-top: -5%;
+  z-index: -1;
+  width: 130%;
+  height: 305px;
+  border-bottom: 5px solid #2a4092;
+}
+ 
+}
 
 /************************************************************ADD*INSTALLATION*************************************************/
 /***MOBILE********************************************************************************************************************/
 
-@media (min-width: 240px) and (max-width: 600px) {
+@media (min-width: 240px) and (max-width: 575px) {
   #installation-add {
     height: 125px;
     width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 20px;
+    border: 2px dotted #2a4092;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
   }
+
   #add-installation-text-button {
-    margin-top: 25px;
+    margin-top: 50px;
     margin-left: 0%;
     text-align: center;
+    color: #2a4092;
+    font-size: 16px;;
   }
 
   #installation-add-button {
+    position: absolute;
     width: 50px;
     height: 50px;
+    margin-left: 115px;
+    margin-right: 115px;
     margin-top: -1%;
+    background-color: #db4196;
+    border-color: #db4196;
+    color: white;
+  }
+
+/************************************************************INSTALLATION**************************************************/
+/***MOBILE***************************************************************************************************************/
+#col-installation-container {
+  width: fit-content;
+}
+#installation-container {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  position: relative;
+  height: 375px;
+  width: 90vw;
+  font-family: Montserrat;
+  color: #2a4092;
+  padding: 0; 
+  text-align: center;;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#col-title {
+  width: auto;
+  margin-top: -27px;
+  left: -2px;
+  }
+  #installation-tittle {
+    z-index: 400;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.6em;
+    color: #2a4092;
+    background-color: white;
+    opacity: 0.5;
+    width: 90vw;
+    height: 40px;
+    margin-top: 0;
+  }
+  #installation-button-menu { 
+    position: absolute;
+    margin-top: -8px;
+    margin-right: -15px;
   }
 
 /************************************************************CARD*SLIDER*************************************************/
@@ -235,23 +543,10 @@
   top: 35%;
   right: -5%;
 }
-#container-delete-button-slider {
-  position: absolute;
-  visibility: hidden;
-} 
-/* #card-slider-button-delete-image {
-  position: relative;
-  z-index: 999;
-  color: red;
-  background-color: transparent;
-  border: none;
-  font-size: 1.5em;
-  margin-top: 8%;  
-}  */
 #card-slider-button-left {
   position: relative;
   z-index: 999;
-  top: 15%;
+  top: 1px;
   background-color: transparent;
   border: none;
   margin-left: -12px;
@@ -260,7 +555,7 @@
 #card-slider-button-right {
   position: relative;
   z-index: 999;
-  top: -1%;
+  top: 0px;
   background-color: transparent;
   border: none;
   right: 12px;
@@ -270,42 +565,6 @@
   color: red;
   font-size: 1.5em;
 }
-/************************************************************INSTALLATION**************************************************/
-/***MOBILE***************************************************************************************************************/
-/* #installation-tittle-button-container {
-  height: 40px;
-  width: 130%;
-} */
-#col-title {
-width: auto;
-margin-top: -1.8em;
-left: -13vw;
-}
-#installation-tittle {
-  z-index: 400;
-  position: absolute;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 2.5em;
-  color: #2a4092;
-  background-color: white;
-  opacity: 0.5;
-  width: 90vw;
-  height: 40px;
-  margin-top: 0;
-}
-#installation-button-menu { 
-  position: absolute;
-  margin-right: -67vw;
-  line-height: 0em;
-
-}
 }
 
-/*******************ADJUST*VIEWPORTS********************/
-@media (width: 320px) and (height: 568px) {
-  #installation-tittle {
-    margin-left: -1vw;
-  }
-}
   

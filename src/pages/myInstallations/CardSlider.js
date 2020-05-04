@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Button, Icon, Popconfirm, message, Row, Col } from 'antd'
+import React, { useState, useEffect } from 'react';
+import { Button, Icon, Row, Col } from 'antd'
 import spinner from "../../assets/spinner.svg";
 import noImage from '../../assets/solar-panel.svg';
 import axiosConfig from '../../api/axiosConfig'
@@ -32,7 +32,6 @@ const PanelImage = ({ imageUrl }) => {
 const CardSlider = ({ multimedia }) => {
 
   var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
 
   if (multimedia.length > 0) {
     var firstImageId = multimedia[0].id
@@ -104,37 +103,8 @@ const CardSlider = ({ multimedia }) => {
     }
   }
 
-  const deleteImage = (id) => {
-    axiosConfig.delete('/multimedia/' + id,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": access_token
-        }
-      })
-      .then(response => {
-        console.log("Delete image:", response);
-      })
-      .then(error => {
-        console.log("ERROR delete image:", error);
-      })
-  }
-
-  function confirm() {
-    deleteImage(currentImageId)
-    setImageUrl(noImage);
-  }
-
   return (
     <div id="container">
-      {/* <div id="container-delete-button-slider">
-        {<Popconfirm placement="right" title="Are you sure to delete this image?" onConfirm={confirm} >
-          <Button id="card-slider-button-delete-image"
-          >
-            <Icon type="delete" />
-          </Button>
-        </Popconfirm>}
-      </div> */}
       <Row>
         <Col id="col-slider-left-button" xs={2} sm={2} md={2} lg={2} xl={2}>
           <Button
