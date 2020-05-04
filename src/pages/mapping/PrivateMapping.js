@@ -123,7 +123,7 @@ const PrivateMapping = () => {
     <React.Fragment>
       <div className="leaflet-container">
         <LeafletMap
-          style={{ height: '94vh' }}
+          style={{ height: 'calc(100vh - 48px)' }}
           center={[50, 10]}
           zoom={4}
           maxZoom={18}

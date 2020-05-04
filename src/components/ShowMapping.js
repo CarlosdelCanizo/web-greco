@@ -27,7 +27,7 @@ const ShowMapping = ({ lat, lon }) => {
     <React.Fragment>
       <div className="leaflet-container">
         <LeafletMap
-          style={{ height: '95vh', zIndex: '1' }}
+          style={{ height: 'calc(100vh - 48px)', zIndex: '1' }}
           center={[lat, lon]}
           zoom={4}
           maxZoom={18}

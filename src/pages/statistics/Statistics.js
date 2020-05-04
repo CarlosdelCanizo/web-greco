@@ -30,7 +30,10 @@ class Statistics extends React.Component {
       url: '/solarPanel/gettotalenergy',
       method: 'GET'
     }).then(response => {
-      this.setState({ totalPower: response.data });
+      var allInstallationPower = response.data;
+      allInstallationPower = Math.round(allInstallationPower)
+      console.log("El response total power", response.data)
+      this.setState({ totalPower: allInstallationPower });
     });
   }
 
@@ -38,6 +41,7 @@ class Statistics extends React.Component {
     this.getAllInstallationsNumber();
     this.getAllInstallationsPower();
   }
+
 
   render() {
     document.body.classList.remove('body_forms');
@@ -67,14 +71,16 @@ class Statistics extends React.Component {
                 <Divider />
                 <h2 id="tittle-installed">TOTAL CAPACITY</h2>
                 <div>
-                  <Col span={18}>
-                    <h1 style={{ color: "#2a4092" }} id="numbers-total-capacity" >
-                      {this.state.totalPower}
-                    </h1>
-                  </Col>
-                  <Col span={6}>
-                    <p id="big-letters-installed">kW</p>
-                  </Col>
+                  <Row>
+                    <Col span={1} />
+                    <Col span={22}>
+                      <h1 style={{ color: "#2a4092" }} id="numbers-total-capacity" >
+                        {this.state.totalPower}
+                      </h1>
+                      <p id="big-letters-installed">kW</p>
+                    </Col>
+                    <Col span={1} />
+                  </Row>
                   <Row>
                     <p style={{ color: "#bfc5d2" }} id="small-letters-installed">
                       Sum of the installed capacity shared in Generation Solar.
@@ -87,15 +93,13 @@ class Statistics extends React.Component {
 
           <Col id="container-cards" span={24} xs={24} sm={12} md={12} lg={12} xl={12} >
             <div id="climate-objective-card-statistics-container" >
-              <h2 id="tittle-installed">CLIMATE OBJECTIVE FOR 2030</h2>
-              <div>
-                <Row>
-                  <h1 style={{ color: "#2a4092" }} id="numbers-climate-objective" >800.000</h1>
-                </Row>
-                <Row>
-                  <p id="letters-climate-objective">Tonnes of CO₂</p>
-                </Row>
-              </div>
+              <Col span={1} />
+              <Col span={22}>
+                <h2 id="tittle-installed">CLIMATE OBJECTIVE FOR 2030</h2>
+                <h1 style={{ color: "#2a4092" }} id="numbers-climate-objective" >800.000</h1>
+                <p id="letters-climate-objective">Tonnes of CO₂</p>
+              </Col>
+              <Col span={1} />
               <ClimateObjective />
             </div>
           </Col>

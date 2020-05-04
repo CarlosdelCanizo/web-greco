@@ -182,7 +182,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 13rem; /*footer height*/ 
+    padding-bottom: 6rem; /*footer height*/ 
     min-height: 100vh; 
     display: block;
   }
@@ -194,11 +194,11 @@
   }
 
   #welcome-logo-mobile-image {
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 10%;
     width: 45%;
     height: 30%;
     margin-left: 25%;
+    margin-bottom: 15%;
     
   }
   #welcome-title-text {
@@ -238,7 +238,7 @@
   #welcome-text-footer {
   font-size: 15px;
   clear: both;
-  height: 13rem; /*footer height*/
+  height: 6rem; /*footer height*/
   width: 100%;
   float: left;
   bottom: 0;
@@ -258,7 +258,7 @@
     background-image: none; 
     display: block;
     position: relative;
-    padding-bottom: 13rem; /*footer height*/
+    padding-bottom: 6rem; /*footer height*/
   }
   #welcome-logo-mobile {
     margin-top: 5%;
@@ -340,7 +340,7 @@
     background-color: transparent;
   }
   #welcome-text-footer {
-   height: 13rem; /*footer height*/
+   height: 6rem; /*footer height*/
    clear:both;
    left: 8%;
    bottom: 0;

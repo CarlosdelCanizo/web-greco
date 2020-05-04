@@ -21,7 +21,7 @@
 
 #statistics-map-container {
   margin-top: 3%;
-  margin-left: 20%;
+  margin-left: 5%;
   width: 90%;
   height: 35%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -29,7 +29,7 @@
 
 #heatmap-explanation {
   margin-top: 2%;
-  margin-left: 20%;
+  margin-left: 5%;
   width: 90%;
   font-family: Montserrat;
   font-size: 14px;
@@ -45,8 +45,8 @@
 #capacity-card-statistics-container {
   padding: 3%;
   margin-top: 3%;
-  margin-left: 15%;
-  width: 60%;
+  margin-left: 5%;
+  width: 90%;
   height: 320px;
   text-align: center;
   font-size: 16px;
@@ -70,8 +70,8 @@
   color: #2a4092;
 }
 #numbers-total-capacity {
-  /* text-align: center; */
-  margin-left: 100px;
+  display: inline;
+  text-align: center;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;
@@ -81,8 +81,8 @@
 }
 
 #big-letters-installed {
-  margin-top: 8px;
-  float: left;
+  display: inline;
+  margin-left: 10px;
   font-family: Montserrat;
   letter-spacing: .27px;
   text-align: center;
@@ -104,9 +104,9 @@
 #climate-objective-card-statistics-container {
   padding: 3%;
   margin-top: 5%;
-  margin-left: 15%;
+  margin-left: 5%;
   text-align: center;
-  width: 60%;
+  width: 90%;
   height: 300px;
   font-size: 16px;
   background-color: white;
@@ -115,18 +115,17 @@
 
 #numbers-climate-objective {
   display: inline;
-  margin-left: -100px;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;
   font-weight: 500;
   line-height: 1.5;
-  /* text-align: center; */
+  text-align: center;
   color: #2a4092;
 }
 #letters-climate-objective {
-    margin-top: -30px; 
-    margin-left: 170px;
+  display: inline;
+    margin-left: 10px;
     font-family: Montserrat;
     font-size: 1em;
     line-height: 1.42;
@@ -146,7 +145,7 @@
   }
 
   #div-slider-climate {
-    margin-top: 30px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -201,24 +200,6 @@
     cursor: auto !important;
   }
 
-  /* #measurements-left {
-    margin-top: 10px;
-    margin-left: 10px;
-    }
-    #measurements-right {
-      margin-top: -18.5%;
-      margin-left: 40%; */
-      /* margin-left: 10px;
-      margin-top: 10px;
-    } 
-     #tag {
-      height: 40px;
-      width: 40px;
-      padding-top: 6px;
-      padding-left: 0px;
-      font-size: 1.5em;
-    }  */
-
 /**************************************************************TABLET*****************************************************************/
 /***TABLET****************************************************************************************************************************/
 
@@ -228,17 +209,11 @@
     height: 80vh;
   }
 
-  /* #background-statistics {
-    position: absolute;
-    background-color: #eaedf1;
-    height: auto; 
-    width: 100%;
-  } */
   #capacity-card-statistics-container {
     padding: 4%;
     margin-top: 10%;
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 5%;
+    width: 90%;
     height: 320px;
     text-align: center;
     font-size: 16px;
@@ -247,7 +222,7 @@
   }
   #statistics-map-container {
     margin-top: 10%;
-    margin-left: 13%;
+    margin-left: 5%;
     width: 90%;
     height: 35%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
@@ -255,8 +230,8 @@
   #climate-objective-card-statistics-container {
     padding: 3%;
     text-align: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     height: 350px;
     font-size: 16px;
     background-color: white;
@@ -316,13 +291,14 @@
 /********************************************TABLET*****************************************************************/
 /**************************************CLIMATE*OBJECTIVE************************************************************/
 
-#slider {
-  margin-top: 20%;
-  margin-left: 0%;
-  width: 95%;
+#div-slider-climate {
+  margin-top: 120px;
+}
+#div-slider-climate-explanation {
+  margin-top: 70px;
 }
 #numbers-climate-objective {
-  margin-left: 0%;
+  display: inline;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;
@@ -332,8 +308,8 @@
   color: #2a4092;
 }
 #letters-climate-objective {
-  margin-top: -13.5%;
-  margin-left: 50%;
+  display: inline;
+  margin-left: 10px;
   font-family: Montserrat;
   font-size: 1em;
   line-height: 1.42;
@@ -342,8 +318,7 @@
   color: #7f95a7;
 }
 #small-letters-climate {
-  margin-left: 30%;
-  margin-top: -12%;
+  margin-top: 10px;
   font-family: Montserrat;
   font-size: 12px;
   line-height: 1.08;
@@ -351,21 +326,6 @@
   text-align: center;
   color: #7f95a7;
 }
-#measurements-left {
-  margin-top: 25%;
-  margin-left: -60%;
-  }
-  #measurements-right {
-    margin-top: -28%;
-    margin-left: 50%;
-  }
-  #tag {
-    height: 40px;
-    width: 40px;
-    padding-top: 6px;
-    padding-left: 1px;
-    font-size: 1.5em;
-  }
 }
 
 /**************************************************************MOBILE*SMALL****************************************************************/
@@ -418,7 +378,6 @@
     margin-left: 5%;
     text-align: center;
     width: 90%;
-    height: 271px;
     font-size: 16px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -477,27 +436,14 @@
 /****************************************MOBILE*SMALL****************************************************************/
 /**************************************CLIMATE*OBJECTIVE*************************************************************/
 
-#slider {
-  margin-top: 10%;
-  margin-left: -5%;
+#div-slider-climate {
+  margin-top: 100px;
+  /* margin-left: -5%; */
 }
-#measurements-left {
-margin-top: 20%;
-margin-left: -45%;
-}
-#measurements-right {
-  margin-top: -27.5%;
-  margin-left: 50%;
-}
-#tag {
-  height: 40px;
-  width: 40px;
-  padding-top: 6px;
-  padding-left: 1.5px;
-  font-size: 1.5em;
+#div-slider-climate-explanation {
+  margin-top: 70px;;
 }
 #numbers-climate-objective {
-  margin-left: 0%;
   opacity: 0.96;
   font-family: Montserrat;
   font-size: 2em;
@@ -507,8 +453,7 @@ margin-left: -45%;
   color: #2a4092;
 }
 #letters-climate-objective {
-  margin-left: 55%;
-  margin-top: -10%;
+margin-left: 10px;
   font-family: Montserrat;
   font-size: 1em;
   line-height: 1.42;
@@ -517,8 +462,7 @@ margin-left: -45%;
   color: #7f95a7;
 }
 #small-letters-climate {
-  margin-left: 40%;
-  margin-top: -10%;
+  margin-top: 20px;
   font-family: Montserrat;
   font-size: 12px;
   line-height: 1.08;

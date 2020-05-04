@@ -6,6 +6,18 @@
   margin-right: 25%; 
   padding: 0; 
 }
+#col-login-container { 
+  display: block;
+  position: relative;
+  background-image: url(../../assets/left-background.png);
+  background-color: white !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 1rem; /*footer height*/ 
+  height: 100vh;
+  overflow-x: hidden;
+}
 #login-title-text {
   font-size: 41.6px;
   font-weight: 1000;
@@ -18,11 +30,6 @@
   text-align: left;
   margin-left: -11%;
   margin-top: 6%;
-}
-#between-inputs {
-  margin-top: 4%;
-  margin-bottom: 4%;
-  background-color: transparent;
 }
 #div-login-email-background {
   margin-left: 10%;
@@ -59,7 +66,7 @@
   letter-spacing: -0.07px;
   color:red;
   margin-left: 10%;
-  margin-top: -10%;
+  margin-top: 3%;
 }
 #button-login {
   background-color: #db4196;
@@ -67,7 +74,7 @@
   font-size: 1em;
   line-height: 1.5;
   font-weight: 600;
-  width: 70%;
+  width: 65%;
   height: 40px;
   border-radius: 0;
   margin-left: 0%;
@@ -76,23 +83,39 @@
 #link {
   color: #db4196;
 }
+#login-large-divider {
+  height: 30px;
+  background-color: transparent;
+}
 #login-footer-divider {
   height: 5px;
   background-color: transparent;
 }
 #login-text-footer {
-  position: absolute;
-  height: 1.5rem; /*footer height*/
+  height: 1rem; /*footer height*/
   clear:both;
   color: #002a54;;
   font-size: 16px;
   left: 26%;
-  bottom: 1%;
+  margin-top: 5%;
+  bottom: 0%;
 }
 /**************************************************************TABLET*****************************************************************/
 /***TABLET************************************************************************************************************************/
 
 @media (min-width: 600px) and (max-width: 992px) {
+  #col-login-container { 
+    display: block;
+    position: relative;
+    background-image: url(../../assets/left-background.png);
+    background-color: white !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 1.5rem; /*footer height*/ 
+    height: 100vh;
+    overflow-x: hidden;
+  }
   #login-logo-mobile-image {
     margin-top: 10%;
     width: 45%;
@@ -140,19 +163,18 @@
     font-size: 1em;
     line-height: 1.5;
     font-weight: 600;
-    width: 95%;
+    width: 65%;
     height: 40px;
     border-radius: 0;
     margin-left: 0%;
     margin-top: 10%;
   }
   #login-text-footer {
-  position: absolute;
   height: 1.5rem; /*footer height*/
   clear:both;
   float: left;
-  font-size: 1em;
-  bottom: 1%;
+  font-size: 14px;
+  bottom: 0;
   margin-left: 0;
   color: #2a4092;
   font-weight: 500;
@@ -172,6 +194,12 @@
   #row-page-container {
     position: relative;
     min-height: 100vh;
+  }
+  #col-login-container {
+    background-image: none; 
+    display: block;
+    position: relative;
+    padding-bottom: 1.5rem; /*footer height*/
   }
   #login-logo-mobile {
     margin-top: 5%;
@@ -226,13 +254,12 @@
     font-size: 1em;
     line-height: 1.5;
     font-weight: 600;
-    width: 95%;
+    width: 90%;
     height: 42px;
     border-radius: 0;
     margin-top: 0%;
   }
   #login-text-footer {
-    position: absolute;
     height: 1.5rem; /*footer height*/
     clear:both;
     text-align: left;
