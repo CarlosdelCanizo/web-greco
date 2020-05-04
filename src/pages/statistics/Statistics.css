@@ -4,6 +4,8 @@
 /**************************************************************COMPUTER****************************************************/
 #statistics-row {
   background-color: #eaedf1;
+  height: calc(100vh - 48px);
+
 }
 
 #statistics-title {
@@ -104,10 +106,10 @@
 #climate-objective-card-statistics-container {
   padding: 3%;
   margin-top: 5%;
+  margin-bottom: 1%;
   margin-left: 5%;
   text-align: center;
   width: 90%;
-  height: 300px;
   font-size: 16px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

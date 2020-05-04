@@ -42,6 +42,7 @@ const StatisticsSider = (props) => {
 
       {/*MAIN-SLIDER***************************************************************************************************/}
       <Sider
+        id="sider-layout"
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => { console.log(broken); }}
