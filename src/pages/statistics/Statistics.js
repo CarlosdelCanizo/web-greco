@@ -32,7 +32,6 @@ class Statistics extends React.Component {
     }).then(response => {
       var allInstallationPower = response.data;
       allInstallationPower = Math.round(allInstallationPower)
-      console.log("El response total power", response.data)
       this.setState({ totalPower: allInstallationPower });
     });
   }

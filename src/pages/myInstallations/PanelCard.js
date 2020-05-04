@@ -102,22 +102,22 @@ const PanelCard = ({ panel, fetchPanels }) => {
   }
 
   return (
-    <Col span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
+    <Col id="col-installation-container" span={24} xs={24} sm={24} md={24} lg={12} xl={12}>
       <Card id="installation-container">
         <Row>
-          <Col xs={2} sm={2} md={2} lg={2} xl={2} />
-          <Col id="col-title" xs={20} sm={20} md={20} lg={20} xl={20}>
+          {/* <Col xs={2} sm={2} md={2} lg={2} xl={2} /> */}
+          <Col id="col-title" xs={24} sm={24} md={24} lg={24} xl={24}>
             {/* <div id="installation-tittle-button-container"> */}
             <p id="installation-tittle">{panel.installationName}</p>
             {/* </div> */}
           </Col>
-          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-            <Popover placement="left" title={textMenu} content={content} trigger="click" onClick={updatePanelId}>
-              <Button id="installation-button-menu" >
-                <Icon type="more" />
-              </Button>
-            </Popover>
-          </Col>
+          {/* <Col xs={2} sm={2} md={2} lg={2} xl={2}> */}
+          <Popover placement="left" title={textMenu} content={content} trigger="click" onClick={updatePanelId}>
+            <Button id="installation-button-menu" >
+              <Icon type="more" />
+            </Button>
+          </Popover>
+          {/* </Col> */}
         </Row>
         <Row>
           <Col xs={24} sm={24} md={24} lg={24} xl={24}>

@@ -1,12 +1,15 @@
+.ant-layout-sider {
+background-color: white;
+}
 #sider-layout {
-  height: 100vh;
+  min-height: 100vh;
 }
 #logo-sider { 
   margin-left: 20px;
   margin-top: 1px;
 }
 #sider-divider {
-  margin-top: 10%;
+  margin-top: 0;
   background: none !important;
 }
 .ant-layout-sider-zero-width-trigger {
