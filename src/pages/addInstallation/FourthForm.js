@@ -153,10 +153,12 @@ const FourthForm = props => {
                                         <div id="gyro_response" />
                                         <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
                                             onClick={event => {
-                                                setDegree(JSON.parse(event.target.value));
+                                                setDegree(JSON.parse(event.target.value))
+                                                handleInputChange()
                                             }}
                                         >
                                         </input>
+                                        {localStorage.setItem('orientationMobile', JSON.stringify(degree))}
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <Form.Item>
                                                 <div id="div-inclination-orientation-background">

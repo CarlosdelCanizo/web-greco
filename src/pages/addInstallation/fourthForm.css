@@ -418,7 +418,7 @@
   border-radius: 0;
   border: none;
   margin-left: -12%;
-  margin-top: 36%;
+  margin-top: 10%;
 }
 #button-panel-register-next-fourth {
   background-color: #db4196;
@@ -431,7 +431,7 @@
   border-radius: 0;
   border: none;
   margin-left: -12%;
-  margin-top: 36%;
+  margin-top: 10%;
 }
 #button-panel-register-previous-fifth  {
   background-color: #2a4092;
@@ -444,7 +444,7 @@
   border-radius: 0;
   border: none;
   margin-left: -5%;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 #button-panel-register-next-fifth {
   background-color: #db4196;
@@ -457,6 +457,6 @@
   border-radius: 0;
   border: none;
   margin-left: -5%;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 }
