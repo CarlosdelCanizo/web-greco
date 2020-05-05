@@ -40,7 +40,9 @@ background-color: white;
 }
 /************************************************************MOBILE****************************************************/
 @media (min-width: 240px) and (max-width: 600px) {
-  
+  #sider-layout {
+    z-index: 1001;
+  }
 .logo {
   background-color: #eaedf1;
   }
