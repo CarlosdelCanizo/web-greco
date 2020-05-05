@@ -38,38 +38,32 @@ float: right;
 margin-right: 6%;
 }
 #panel-long-label {
-  position: absolute;
-  display: block;
-  line-height: 1.25;
-  color: #2a4092;
-  margin-left: 5px;
-  margin-top: -5px;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 8px;
+  z-index: 10;
 }
 #panel-lat-label {
-  position: absolute;
-  display: block;
-  line-height: 1.25;
-  color: #2a4092;
-  margin-left: 5px;
-  margin-top: -5px;
+  position: relative;
+  width: 100px;
   text-align: left;
   float: left;
-  width: 100px;
-  height: 20px;
-  z-index: 999;
-  color: #2a4092;
-  background-color:transparent;
   font-weight: 500;
   font-size: 10px;
+  line-height: 0;
+  color: #2a4092;
+  background-color:transparent;
+  margin-left: 5px;
+  top: 8px;
+  z-index: 10;
 }
 #lon, #lat {
   width:100%;
@@ -152,6 +146,34 @@ margin-right: 6%;
     margin-top: 3%;
     margin-left: 5%;
     margin-right: -6%;
+  }
+  #panel-long-label {
+    position: relative;
+    width: 100px;
+    text-align: left;
+    float: left;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 0;
+    color: #2a4092;
+    background-color:transparent;
+    margin-left: 5px;
+    top: 0px;
+    z-index: 10;
+  }
+  #panel-lat-label {
+    position: relative;
+    width: 100px;
+    text-align: left;
+    float: left;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 0;
+    color: #2a4092;
+    background-color:transparent;
+    margin-left: 5px;
+    top: 0px;
+    z-index: 10;
   }
   #lat {
   width: 100%;

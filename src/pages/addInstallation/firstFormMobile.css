@@ -155,11 +155,11 @@
   left: -15px;
   /* width: 85vw; */
  } 
-.ant-select-selection {
+#installation-type .ant-select-selection {
   color: #7f95a7;
   font-size: 14px;
   left: 0%;
-  width: 85vw !important;
+  width: 85vw;
 }
 
 /* SELECT SELECTED VALUE */

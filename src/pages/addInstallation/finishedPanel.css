@@ -293,12 +293,12 @@
     margin-top: -1%;
     margin-bottom: -1%;
   }
-  #button-panel-register-next-first {
+  #button-panel-finish-next {
     background-color: #db4196;
     color: #ffffff;
     line-height: 1.5;
     height:40px;
-    width: 55%;
+    width: 75%;
     border-radius: 0;
     border: none;
     margin-left: -3%;
