@@ -158,7 +158,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     width: 100vw;
-    /* max-height: 100vh; */
+    /* max-height: 100vw; */
     margin-top: -10px;
     left: 0;
     right: 0;  

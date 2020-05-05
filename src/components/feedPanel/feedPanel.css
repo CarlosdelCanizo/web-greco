@@ -10,7 +10,7 @@
   position: absolute;
   float: right;
   width: 424px;
-  height: 720px;
+  max-height: 720px;
   /* max-height: 85vh; */
   top: 50px !important;
   right: 50px !important; 

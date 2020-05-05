@@ -44,7 +44,6 @@ const SiderMenu = (props) => {
   }
 
   var defaultPage = getPage()
-  console.log("get page del sider menu", defaultPage)
 
   return (
     <Layout>
