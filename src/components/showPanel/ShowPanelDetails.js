@@ -78,11 +78,11 @@ const ShowPanelDetails = (props) => {
           </Col>
           {/* </div> */}
           <Row >
-            <div id="feed-panel-user-name-container">
-              <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h3 id="feed-panel-user-name" >{myPanel.username}</h3>
-              </Col>
-            </div>
+            {/* <div id="feed-panel-user-name-container"> */}
+            <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+              <h3 id="feed-panel-user-name" >{myPanel.username}</h3>
+            </Col>
+            {/* </div> */}
           </Row>
         </Row>
         <Row>
