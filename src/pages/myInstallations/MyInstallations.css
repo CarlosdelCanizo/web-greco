@@ -1,10 +1,20 @@
 @import '~antd/dist/antd.css';
 
-#background-installations {
-  position: absolute;
+#background-row{
   background-color: #eaedf1;
-  height: 100%; 
-  width: calc (100% - 360px);
+  /* background-color: green !important; */
+  /* width: calc(100vw - 360px); */
+}
+/* #background-installations { */
+  /* position: absolute; */
+  /* background-color: #eaedf1; */
+  /* background-color: red !important; */
+  /* height: 100%;  */
+  /* width: calc(100% - 360px); */
+/* } */
+#background-panel-list {
+  /* background-color: red; */
+  background-color: #eaedf1;
 }
 #popover-panels {
   font-family: Montserrat;
@@ -15,10 +25,6 @@
 #popover-menu-panels:hover {
   color: #db4196; 
 }
-#background-row{
-  background-color: #eaedf1;
-}
-
 /************************************************************ADD*INSTALLATION*************************************************/
 /***COMPUTER************************************************************************************************************************/
 
@@ -174,11 +180,21 @@
 /***TABLET************************************************************************************************************************/
 
 @media (min-width: 768) and (max-width: 992px) {
-  #background-installations {
-    position: absolute;
+  #background-row {
+  background-color: #eaedf1;
+  /* background-color: green !important; */
+  /* width: calc(100vw - 360px); */
+  }
+  /* #background-installations { */
+    /* position: absolute; */
+    /* background-color: #eaedf1; */
+    /* height: 100%; 
+    width: 100vw; */
+  /* } */
+  #background-panel-list {
     background-color: #eaedf1;
-    height: 100%; 
-    width: 100vw;
+    /* height: 100%; 
+    width: 100vw; */
   }
 #installation-add {
   margin-right: 5%;
@@ -333,13 +349,24 @@
 /***MOBILE********************************************************************************************************************/
 
 @media (min-width: 240px) and (max-width: 600px) {
-  #background-installations {
-    position: absolute;
-    background-color: #eaedf1;
-    height: 100%; 
-    width: 100vw;
+  #background-row {
+      background-color: #eaedf1;
+  /* background-color: green !important; */
+  /* width: 90%; */
   }
-
+  /* #background-installations { */
+    /* position: absolute; */
+    /* background-color: #eaedf1; */
+    /* background-color: red !important; */
+    /* height: 100%; */ 
+    /* width: 90vw; */
+  /* } */
+  #background-panel-list {
+    background-color: #eaedf1;
+    /* background-color: yellow !important; */
+    /* height: 100%; 
+    width: 100vw; */
+  }
   #installation-add {
     height: 125px;
     width: 90vw;
@@ -448,5 +475,3 @@
   font-size: 1.5em;
 }
 }
-
-  

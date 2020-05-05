@@ -8,8 +8,8 @@ import multicrystalline from '../../assets/multicrystalline.jpg'
 import thinFilm from '../../assets/thin_film.jpg'
 
 import './firstForm.css'
-import './firstFormMobile.css'
-import './firstFormTablet.css'
+// import './firstFormMobile.css'
+// import './firstFormTablet.css'
 
 import moment from 'moment'
 
