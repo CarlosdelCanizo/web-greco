@@ -155,7 +155,7 @@ const FifthForm = props => {
                                 <React.Fragment>
                                     <Form onSubmit={handleFormSubmit}>
                                         <div id="gyro_response" />
-                                        <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
+                                        <input id="degreeFromMobile" name="degreeFromMobile"
                                             onClick={event => {
                                                 setDegree(JSON.parse(event.target.value));
                                             }}
@@ -166,8 +166,7 @@ const FifthForm = props => {
                                                 <div id="div-inclination-orientation-background">
                                                     <label id="panel-inclination-orientation-label-input">Degrees</label>
                                                     <Input
-                                                        value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
-                                                            degree : data.inclination || inclination}
+                                                        value={data.inclination || inclination}
                                                         onChange={handleInputChange}
                                                         placeholder="30.9 °"
                                                         id="orientation"
@@ -175,6 +174,8 @@ const FifthForm = props => {
                                                         onClick={resetInput}
                                                         required />
                                                 </div>
+                                                {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                    (<p id="gyroscope-message">Mobile gyroscope inclination:: {degree}</p>) : (null)}
                                             </Form.Item>
                                         </Col>
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

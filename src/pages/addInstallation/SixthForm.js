@@ -25,8 +25,8 @@ const SixthForm = (props) => {
 
   //PREFILL FILELIST
   var defaultfilelist = [];
-  const baseURL = "http://10.0.10.195:8088/"
-  // const baseURL = "https://generationsolar.ies.upm.es/api"
+  // const baseURL = "http://10.0.10.195:8088/"
+  const baseURL = "https://generationsolar.ies.upm.es/api"
 
   if (myPanel != undefined) {
     for (var i = 0; i <= myPanel.multimedia.length - 1; i++) {
@@ -284,9 +284,8 @@ const SixthForm = (props) => {
   };
 
   const handleUploadImages = ({ fileList }) => {
-    console.log("EL ARRAY IMATGES en handleUploadImages", fileList)
     if (errorImageToUpload) {
-      console.log("Image upload error")
+      console.log("Image upload controlled error")
     } else {
       setImages({ fileList });
     }
@@ -314,15 +313,19 @@ const SixthForm = (props) => {
           const data = response.data
           localStorage.setItem('multimedia', JSON.stringify(data))
           props.history.push("/finished-panel")
-          // throw response
         }
       })
       .catch(function (error) {
         console.log("Upload Image Error", error)
+        console.log("Después Upload Image Error")
         errorImages()
+        if (error.toLowerCase() === "Request failed with status code 413".toLowerCase()) {
+          console.log("ara si que ha passat")
+        }
         if (error === undefined) {
-          // NetWork Error  
-          setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
+          // NetWork/Server Error  
+          var errorMessage = "Server Error. The images couldn´t be uploaded. Please check your facilities."
+          setData({ ...data, isSubmitting: false, errorMessage: errorMessage });
         }
         if (error !== undefined && error.response !== undefined) {
           if (error.response.data.status === 400) {
@@ -469,7 +472,6 @@ const SixthForm = (props) => {
                   )}
                   <p>Maximum 3 images per installation</p>
                   <p>Only png or jpg, with max size of 5 MB each one</p>
-                  {/* <DefaultFileList defaultfilelist={{ defaultfilelist }} /> */}
                 </Upload>
               </div>
             </Col>

@@ -87,7 +87,6 @@ const PublicMapping = () => {
       {/* <Header /> */}
       <div id="leaflet-container">
         <LeafletMap
-          id="public-private-leaflet-map"
           style={{ height: 'calc(100vh - 48px)' }}
           center={[50, 10]}
           zoom={4}

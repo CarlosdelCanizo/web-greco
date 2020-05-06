@@ -163,8 +163,7 @@ const FourthForm = props => {
                                                     <label id="panel-inclination-orientation-label-input">Input degrees</label>
                                                     <Input
                                                         onClick={resetInput}
-                                                        value={isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
-                                                            (degree) : (data.orientation || orientation)}
+                                                        value={data.orientation || orientation}
                                                         onChange={handleInputChange}
                                                         placeholder="30.9°"
                                                         id="orientation"
@@ -172,6 +171,8 @@ const FourthForm = props => {
                                                         required
                                                     />
                                                 </div>
+                                                {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                    (<p id="gyroscope-message">Mobile gyroscope orientation: {degree}</p>) : (null)}
                                             </Form.Item>
                                         </Col>
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

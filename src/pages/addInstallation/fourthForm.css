@@ -1,7 +1,23 @@
 /***************************************************************PANEL*REGISTER*FOURTH*AND*FIVE***********************************************************/
 /***PANEL*REGISTER*FOURTH*************************************************************************************************************************/
-
+#gyroscope-message {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  height: 16px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.07px;
+  color: #2a4092;
+  margin-left: 0%;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
 #orientationFromMobile_alpha {
+  display:none;
+}
+#degreeFromMobile {
   display:none;
 }
 #orientation-info {
