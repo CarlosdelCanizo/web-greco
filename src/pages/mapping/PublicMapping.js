@@ -87,6 +87,7 @@ const PublicMapping = () => {
       {/* <Header /> */}
       <div id="leaflet-container">
         <LeafletMap
+          id="public-private-leaflet-map"
           style={{ height: 'calc(100vh - 48px)' }}
           center={[50, 10]}
           zoom={4}
@@ -100,7 +101,7 @@ const PublicMapping = () => {
           easeLinearity={0.35}
           tap={false}
         >
-          <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+          <TileLayer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
           {panels.map(item => {
             return (
               <Marker

@@ -3,8 +3,6 @@ import { Map, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
 import axiosConfig from '../../api/axiosConfig'
-import { parse } from 'qs';
-
 
 class PanelsHeatMap extends React.Component {
   state = {
@@ -74,7 +72,7 @@ class PanelsHeatMap extends React.Component {
           />
 
           <TileLayer
-            url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+            url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
         </Map>

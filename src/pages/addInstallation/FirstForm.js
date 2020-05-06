@@ -85,11 +85,9 @@ const FirstForm = (props) => {
       var electrical_capacity = currentPanelState.electrical_capacity
       var surface = currentPanelState.surface
       //OPTIONALS FIELDS
-      console.log("El date abans", commissioningDate)
       if (commissioningDate === undefined && currentPanelState.commissioningDate && currentPanelState.commissioningDate !== "") {
         var commissioningDate = (currentPanelState.commissioningDate).substring(0, 10)
       }
-      console.log("EL comissioningDate", commissioningDate)
       var technologyUsed = currentPanelState.technologyUsed
       var inverterCapacity = currentPanelState.inverterCapacity
       var installationType = currentPanelState.installationType

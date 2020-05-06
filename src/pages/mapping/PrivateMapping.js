@@ -137,7 +137,7 @@ const PrivateMapping = () => {
           tap={false}
         >
           <TileLayer
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
           {panels.map((panel, id) => (
             <Marker key={id} position={[panel.lat, panel.lon]}
