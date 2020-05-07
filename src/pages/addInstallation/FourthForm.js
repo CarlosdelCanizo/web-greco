@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Card, Icon, Button, Col, Row, Select, Input, Switch, message, Divider } from 'antd';
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import compass from '../../assets/compass.svg'
 import bulletPle from '../../assets/bullet-lleno.svg'
 import bulletBuit from '../../assets/bullet-vacio.svg'
@@ -153,7 +153,9 @@ const FourthForm = props => {
                                         <div id="gyro_response" />
                                         <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
                                             onClick={event => {
-                                                setDegree(JSON.parse(event.target.value));
+                                                var grados = JSON.parse(event.target.value);
+                                                grados = Math.trunc(grados);
+                                                setDegree(grados);
                                             }}
                                         >
                                         </input>
@@ -171,9 +173,9 @@ const FourthForm = props => {
                                                         required
                                                     />
                                                 </div>
-                                                {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
-                                                    (<p id="gyroscope-message">Mobile gyroscope orientation: {degree}</p>) : (null)}
                                             </Form.Item>
+                                            {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                (<p id="gyroscope-message">Mobile compass orientation: {degree}°</p>) : (null)}
                                         </Col>
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={compass} id="register-panel-image-fourth" />

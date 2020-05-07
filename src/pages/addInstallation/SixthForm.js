@@ -71,6 +71,10 @@ const SixthForm = (props) => {
     message.error('You can´t upload images now. Please, log in again and try later.', 5);
   };
 
+  const errorUploadingImages = () => {
+    message.error('Server Error. The images couldn´t be uploaded. Please, close this page and check your facilities.', 5);
+  };
+
   const warningFields = () => {
     message.warning('Property is required.', 5);
   };
@@ -316,16 +320,13 @@ const SixthForm = (props) => {
         }
       })
       .catch(function (error) {
-        console.log("Upload Image Error", error)
-        console.log("Después Upload Image Error")
-        errorImages()
-        if (error.toLowerCase() === "Request failed with status code 413".toLowerCase()) {
-          console.log("ara si que ha passat")
+        if (error.toString().toLowerCase().includes("network error")) {
+          errorUploadingImages()
         }
         if (error === undefined) {
           // NetWork/Server Error  
-          var errorMessage = "Server Error. The images couldn´t be uploaded. Please check your facilities."
-          setData({ ...data, isSubmitting: false, errorMessage: errorMessage });
+          errorImages()
+          setData({ ...data, isSubmitting: false, errorMessage: error.response });
         }
         if (error !== undefined && error.response !== undefined) {
           if (error.response.data.status === 400) {
@@ -342,6 +343,7 @@ const SixthForm = (props) => {
           }
           if (error.response.data.status === 500) {
             // Server error  
+            errorImages()
             setData({ ...data, isSubmitting: false, errorMessage: error.response.data.message });
           }
         }
