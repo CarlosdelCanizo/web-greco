@@ -8,7 +8,7 @@ import './userMenu.css'
 var access_token
 
 const warning = () => {
-  message.warning('Please, log in to view this section', 5);
+  message.warning('You are not logged in. Please, log in to view this section', 5);
 };
 
 class UserMenu extends Component {

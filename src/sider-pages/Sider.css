@@ -50,4 +50,7 @@ background-color: white;
   color: #2a4092;
   margin-left: 35%;
 }
+.ant-layout-sider-zero-width-trigger {
+  margin-top: -5px;
+}
 }

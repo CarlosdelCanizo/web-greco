@@ -173,6 +173,7 @@
   z-index: -1;
   width: 130%;
   height: 305px;
+  background-color: #bfc5d2;
   border-bottom: 5px solid #2a4092;
 }
 
@@ -341,6 +342,7 @@
   z-index: -1;
   width: 130%;
   height: 305px;
+  background-color: #bfc5d2;
   border-bottom: 5px solid #2a4092;
 }
 }
@@ -438,6 +440,7 @@
   z-index: -1;
   width: 90vw;
   height: 305px;
+  background-color: #bfc5d2;
   border-bottom: 5px solid #2a4092;
 }
 #col-slider-left-button {

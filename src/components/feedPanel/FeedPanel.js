@@ -121,7 +121,9 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
 
   return (
     <React.Fragment>
-      <div id="feed-panel-messages-list" ref={scrollableArea}>
+      <div
+        id="feed-panel-messages-list"
+        ref={scrollableArea}>
         {messagesList.map(message => (
           <div key={message.id}>
             {message.userName === username ?
@@ -131,7 +133,7 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
                 </div>
                 <div id="feed-panel-user-booble">
                   <p id="feed-panel-text-message">{message.text}</p>
-                  <h6 id="feed-panel-message-date">{moment(message.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-date">{moment(message.creationDate).format('DD/MM/YY')}</h6>
                   <h6 id="feed-panel-message-time">{moment(message.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>
@@ -232,14 +234,16 @@ const FeedPanel = (props) => {
           <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
             <div id="feed-list-container">
               <FeedList panelId={myPanel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+
             </div>
+            {/* <div class="push"></div> */}
           </Col>
         </Row>
         <Row>
-          <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
-            <div id="feed-form-container">
-              <FeedForm panelId={myPanel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
-            </div>
+          <Col id="footer-message-box" span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
+            {/* <div id="feed-form-container"> */}
+            <FeedForm panelId={myPanel.id} messagesList={messagesList} setMessagesList={setMessagesList} />
+            {/* </div> */}
           </Col>
         </Row>
       </Card>

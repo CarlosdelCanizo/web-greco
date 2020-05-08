@@ -6,6 +6,7 @@ import bulletBuit from '../../assets/bullet-vacio.svg'
 import 'leaflet/dist/leaflet.css';
 import './secondForm.css'
 import MapsCoords from "./MapsCoords";
+import MapCoords from "./MapsCoords";
 
 const SecondForm = props => {
 

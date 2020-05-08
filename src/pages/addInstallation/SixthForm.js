@@ -25,8 +25,8 @@ const SixthForm = (props) => {
 
   //PREFILL FILELIST
   var defaultfilelist = [];
-  // const baseURL = "http://10.0.10.195:8088/"
-  const baseURL = "https://generationsolar.ies.upm.es/api"
+  const baseURL = "http://10.0.10.195:8088/"
+  // const baseURL = "https://generationsolar.ies.upm.es/api"
 
   if (myPanel != undefined) {
     for (var i = 0; i <= myPanel.multimedia.length - 1; i++) {

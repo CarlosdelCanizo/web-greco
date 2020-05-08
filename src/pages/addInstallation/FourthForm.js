@@ -154,7 +154,7 @@ const FourthForm = props => {
                                         <input id="orientationFromMobile_alpha" name="orientationFromMobile_alpha"
                                             onClick={event => {
                                                 var grados = JSON.parse(event.target.value);
-                                                grados = Math.trunc(grados);
+                                                grados = Math.round(grados);
                                                 setDegree(grados);
                                             }}
                                         >
@@ -174,8 +174,8 @@ const FourthForm = props => {
                                                     />
                                                 </div>
                                             </Form.Item>
-                                            {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
-                                                (<p id="gyroscope-message">Mobile compass orientation: {degree}°</p>) : (null)}
+                                            {/* {isMobile(navigator.userAgent || navigator.vendor || window.opera) && degree > 0 ?
+                                                (<p id="gyroscope-message">Mobile compass orientation: {degree}°</p>) : (null)} */}
                                         </Col>
                                         <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>
                                             <img src={compass} id="register-panel-image-fourth" />

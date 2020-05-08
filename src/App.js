@@ -62,9 +62,6 @@ const App = () => {
     }
   }, []);
 
-  // window.parent.postMessage('getCoordinates', '*');
-  // window.parent.postMessage('getGyroscope', '*');
-
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
       <ProfileProvider>

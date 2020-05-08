@@ -78,6 +78,10 @@ class MapCoords extends Component {
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         {this.state.currentPos && <UserMarker position={this.state.currentPos}>
+          {console.log("el current poss", this.state.currentPos)}
+        </UserMarker>
+        }
+        {this.state.currentPos && <UserMarker position={this.state.currentPos}>
           {/* <Popup style={{ height: "100", width: "100" }} position={this.state.currentPos}>
             Your installation is here!
            <pre>{JSON.stringify(this.state.currentPos, null, 2)}</pre>
