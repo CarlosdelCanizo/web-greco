@@ -145,7 +145,7 @@ const FeedList = ({ panelId, messagesList, setMessagesList }) => {
                 </div>
                 <div id="feed-panel-another-booble">
                   <p id="feed-panel-text-another-message">{message.text}</p>
-                  <h6 id="feed-panel-message-another-date">{moment(message.creationDate).format('DD/MM/YYYY')}</h6>
+                  <h6 id="feed-panel-message-another-date">{moment(message.creationDate).format('DD/MM/YY')}</h6>
                   <h6 id="feed-panel-message-another-time">{moment(message.creationDate).format('HH:mm')}</h6>
                 </div>
               </React.Fragment>

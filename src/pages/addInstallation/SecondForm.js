@@ -6,12 +6,11 @@ import bulletBuit from '../../assets/bullet-vacio.svg'
 import 'leaflet/dist/leaflet.css';
 import './secondForm.css'
 import MapsCoords from "./MapsCoords";
-import MapCoords from "./MapsCoords";
 
 const SecondForm = props => {
 
-  localStorage.setItem("lastPage", localStorage.getItem("actualPage"))
-  localStorage.setItem("actualPage", "/second")
+  localStorage.setItem("lastPage", localStorage.getItem("actualPage"));
+  localStorage.setItem("actualPage", "/second");
 
   //MOBILE COORDINATES*********************************************************
   //MOBILE VERSION
@@ -29,12 +28,12 @@ const SecondForm = props => {
   var latitude
   var longitude
   if (currentPanelState && currentPanelState.lat !== "" && currentPanelState.lon !== "") {
-    latitude = currentPanelState.lat
-    longitude = currentPanelState.lon
+    latitude = currentPanelState.lat;
+    longitude = currentPanelState.lon;
   }
   if (currentPanelState === undefined) {
-    latitude = ""
-    longitude = ""
+    latitude = "";
+    longitude = "";
   }
 
   const [data, setData] = useState(currentPanelState);
@@ -43,12 +42,12 @@ const SecondForm = props => {
   const [mobileLat, setMobileLat] = useState('');
   const [mobileLon, setMobileLon] = useState('');
 
-
   const handleFormSubmit = event => {
     event.preventDefault();
     event.persist()
     if (lat !== "" && lat !== undefined && lon !== "" && lon !== undefined)
       setData(data.lat = ("" + lat), data.lon = ("" + lon));
+
     localStorage.setItem('currentPanelState', JSON.stringify(data))
     activateRedirection()
   }
@@ -64,8 +63,9 @@ const SecondForm = props => {
     (data.lon && data.lon !== undefined || lon && lon !== "");
 
   function clearPanel() {
-    localStorage.removeItem("currentPanelState")
-    localStorage.removeItem("currentPanelId")
+    localStorage.removeItem("currentPanelState");
+    localStorage.removeItem("myPanel");
+    localStorage.removeItem("currentPanelId");
   }
 
   const warningFields = () => {
@@ -155,8 +155,8 @@ const SecondForm = props => {
                   setMobileLon={setMobileLon}
                   center={(mobileLat && mobileLon) ?
                     (({ lat: mobileLat, lng: mobileLon }))
-                    :
-                    ({ lat: 40.41717418841311, lng: -3.703317801130291 })}
+                    : (lat && lon) ?
+                      (({ lat: lat, lng: lon })) : ({ lat: 40.41717418841311, lng: -3.703317801130291 })}
                 >
                 </MapsCoords>
               </div>

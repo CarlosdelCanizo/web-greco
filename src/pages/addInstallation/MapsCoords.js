@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, Marker } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from "leaflet";
+
+var editLat = null;
+var editLon = null;
+var center = [40.41717418841311, -3.703317801130291];
 
 const UserMarker = props => {
 
@@ -18,9 +22,9 @@ const UserMarker = props => {
   L.Marker.prototype.options.icon = DefaultIcon;
 
   const initMarker = ref => {
-    // if (ref) {
-    //   ref.leafletElement.openPopup()
-    // }
+    if (ref) {
+      ref.leafletElement.openPopup()
+    }
   }
   return <Marker ref={initMarker} {...props} />
 }
@@ -37,6 +41,30 @@ class MapCoords extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidMount() {
+    var myPanel = JSON.parse(localStorage.getItem("myPanel"));
+
+    if (myPanel !== null && myPanel.lat !== "" && myPanel.lat !== undefined && myPanel.lon !== "" && myPanel.lon !== undefined) {
+      editLat = myPanel.lat;
+      editLon = myPanel.lon;
+      this.setState({
+        currentPos: [editLat, editLon]
+      });
+    } else {
+      if (myPanel === null || myPanel === undefined && this.state.position.lat === null && this.state.position.lng === null) {
+        console.log("HOLI")
+        this.setState({
+          currentPos: null,
+        });
+        console.log("HASTA DINS")
+      } else {
+        console.log("IEEEEEIIIIIIIIII")
+      }
+
+    }
+  }
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.mobileLat != this.props.mobileLat || prevProps.mobileLon != this.props.mobileLon) {
@@ -60,7 +88,6 @@ class MapCoords extends Component {
     this.props.setMobileLon("")
   }
 
-
   render() {
     return (
       <Map
@@ -78,18 +105,20 @@ class MapCoords extends Component {
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         {this.state.currentPos && <UserMarker position={this.state.currentPos}>
-          {console.log("el current poss", this.state.currentPos)}
         </UserMarker>
         }
-        {this.state.currentPos && <UserMarker position={this.state.currentPos}>
-          {/* <Popup style={{ height: "100", width: "100" }} position={this.state.currentPos}>
+        {/* {this.state.currentPos && <UserMarker position={this.state.currentPos}>
+          <Popup style={{ height: "100", width: "100" }} position={this.state.currentPos}>
             Your installation is here!
            <pre>{JSON.stringify(this.state.currentPos, null, 2)}</pre>
-          </Popup> */}
+          </Popup>
         </UserMarker>
-        }
+        } */}
+        {/* {console.log("el edit en la clase del mapa", editLat, editLon)}
+        {console.log("el current pos", this.state.currentPos)} */}
+        {/* {(this.state.currentPos) ?
+          (null) : (<UserMarker position={this.state.currentPos} />)} */}
 
-        {(this.state.currentPos) ? (null) : (this.state.positionMobile != "" && <UserMarker position={this.state.positionMobile} />)}
       </Map>
 
     )

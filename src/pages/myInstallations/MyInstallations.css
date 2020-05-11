@@ -5,15 +5,7 @@
   /* background-color: green !important; */
   /* width: calc(100vw - 360px); */
 }
-/* #background-installations { */
-  /* position: absolute; */
-  /* background-color: #eaedf1; */
-  /* background-color: red !important; */
-  /* height: 100%;  */
-  /* width: calc(100% - 360px); */
-/* } */
 #background-panel-list {
-  /* background-color: red; */
   background-color: #eaedf1;
 }
 #popover-panels {
@@ -78,6 +70,7 @@
   padding: 0; 
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  overflow: hidden;
 }
 #installation-tittle {
   z-index: 400;
@@ -183,19 +176,9 @@
 @media (min-width: 768) and (max-width: 992px) {
   #background-row {
   background-color: #eaedf1;
-  /* background-color: green !important; */
-  /* width: calc(100vw - 360px); */
   }
-  /* #background-installations { */
-    /* position: absolute; */
-    /* background-color: #eaedf1; */
-    /* height: 100%; 
-    width: 100vw; */
-  /* } */
   #background-panel-list {
     background-color: #eaedf1;
-    /* height: 100%; 
-    width: 100vw; */
   }
 #installation-add {
   margin-right: 5%;
@@ -246,7 +229,8 @@
   color: #2a4092;
   padding: 0; 
   text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden; 
 }
 #installation-tittle {
   z-index: 400;
@@ -353,21 +337,10 @@
 @media (min-width: 240px) and (max-width: 600px) {
   #background-row {
       background-color: #eaedf1;
-  /* background-color: green !important; */
-  /* width: 90%; */
   }
-  /* #background-installations { */
-    /* position: absolute; */
-    /* background-color: #eaedf1; */
-    /* background-color: red !important; */
-    /* height: 100%; */ 
-    /* width: 90vw; */
-  /* } */
+
   #background-panel-list {
     background-color: #eaedf1;
-    /* background-color: yellow !important; */
-    /* height: 100%; 
-    width: 100vw; */
   }
   #installation-add {
     height: 125px;
@@ -403,8 +376,7 @@
   padding: 0; 
   text-align: center;;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 #col-title {
   width: auto;

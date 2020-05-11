@@ -12,12 +12,12 @@ const ShowPanelDetails = (props) => {
   // const myLocation = props.location.hash
   var myPanel = JSON.parse(localStorage.getItem("myPanel"))
   var myLocation = (localStorage.getItem("pathname"))
-  console.log("MyPanel en ShowPanelDetails", myPanel)
 
-  // function clearPanel() {
-  //   localStorage.removeItem("myPanel")
-  //   localStorage.removeItem("pathname")
-  // }
+  function clearPanel() {
+    localStorage.removeItem("myPanel");
+    localStorage.removeItem("myPanel");
+    localStorage.removeItem("pathname");
+  }
 
   // function onClose() {
   //   if (myLocation === "private-mapping-sider") {
@@ -40,7 +40,7 @@ const ShowPanelDetails = (props) => {
         <Row>
           <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             <p id="show-panel-card-tittle">{myPanel.installationName}</p>
-            <Button id="show-panel-close-button">
+            <Button id="show-panel-close-button" onClick={clearPanel}>
               <Link to={myLocation} >
                 <Icon type="close" />
               </Link>

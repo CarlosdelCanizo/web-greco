@@ -86,11 +86,9 @@
     font-size: 1.3em;
   }
   #slider-image {
-    object-fit: cover;
-    /* max-width: 100%; */
-    height: fit-content;
+    justify-content: center;
     margin-top: 0%;
-    margin-left: -1%;
+    margin-left: 0%;
     height: 200px;
     width: 100%;
     background-color: #bfc5d2;

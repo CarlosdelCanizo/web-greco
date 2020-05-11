@@ -263,6 +263,11 @@
     margin-left: -5%;
     width: 424px;
   }
+  #feed-card-image-container {
+    width: 424px;
+    margin-top: -6.8%;
+    margin-left: -6.8%;
+  }
 
   /**************************************************************************FEED*TABLET*ELEMENTS***************/
   /***TABLET***********************************************************************************/
@@ -648,11 +653,7 @@
     max-height: 170px;
   }
 }
- #feed-card-image-container {
-    width: 423px;
-    margin-top: -1.5rem;
-    margin-left: -1.5rem;
-  }
+
 
  /*MOBILE 360x640---TIPO---GALAXY-NOTE-3---*/
  @media  (width: 360px) and (height: 640px) {
@@ -671,6 +672,11 @@
   #feed-send-button {
     left: 280px;
     bottom: -25px;
+  }
+  #feed-card-image-container {
+    width: 423px;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
   }
 }
 

@@ -70,8 +70,9 @@ const ThirdForm = props => {
     }
 
     function clearPanel() {
-        localStorage.removeItem("currentPanelState")
-        localStorage.removeItem("currentPanelId")
+        localStorage.removeItem("currentPanelState");
+        localStorage.removeItem("myPanel");
+        localStorage.removeItem("currentPanelId");
     }
 
     function checkTracking() {

@@ -71,8 +71,9 @@ const FifthForm = props => {
     }
 
     function clearPanel() {
-        localStorage.removeItem("currentPanelState")
-        localStorage.removeItem("currentPanelId")
+        localStorage.removeItem("currentPanelState");
+        localStorage.removeItem("myPanel");
+        localStorage.removeItem("currentPanelId");
     }
 
     const error = () => {
