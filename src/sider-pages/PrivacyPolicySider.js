@@ -23,7 +23,7 @@ const PrivacyPolicySider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Privacy policy"} />
 
       </Sider>
       <Layout>

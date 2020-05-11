@@ -7,7 +7,6 @@ import L from "leaflet";
 
 var editLat = null;
 var editLon = null;
-var center = [40.41717418841311, -3.703317801130291];
 
 const UserMarker = props => {
 
@@ -53,15 +52,10 @@ class MapCoords extends Component {
       });
     } else {
       if (myPanel === null || myPanel === undefined && this.state.position.lat === null && this.state.position.lng === null) {
-        console.log("HOLI")
         this.setState({
           currentPos: null,
         });
-        console.log("HASTA DINS")
-      } else {
-        console.log("IEEEEEIIIIIIIIII")
       }
-
     }
   }
 
@@ -107,18 +101,6 @@ class MapCoords extends Component {
         {this.state.currentPos && <UserMarker position={this.state.currentPos}>
         </UserMarker>
         }
-        {/* {this.state.currentPos && <UserMarker position={this.state.currentPos}>
-          <Popup style={{ height: "100", width: "100" }} position={this.state.currentPos}>
-            Your installation is here!
-           <pre>{JSON.stringify(this.state.currentPos, null, 2)}</pre>
-          </Popup>
-        </UserMarker>
-        } */}
-        {/* {console.log("el edit en la clase del mapa", editLat, editLon)}
-        {console.log("el current pos", this.state.currentPos)} */}
-        {/* {(this.state.currentPos) ?
-          (null) : (<UserMarker position={this.state.currentPos} />)} */}
-
       </Map>
 
     )

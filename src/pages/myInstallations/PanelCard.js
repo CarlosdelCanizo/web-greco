@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, Button, Row, Col, Icon, Popover, Popconfirm } from 'antd';
 import './MyInstallations.css';
 import { Link } from "react-router-dom";
@@ -9,10 +9,7 @@ import CardSlider from './CardSlider'
 const PanelCard = ({ panel, fetchPanels }) => {
 
   const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-  const location = "my-installations";
   localStorage.setItem('pathname', "my-installations-sider")
-
-  const [individualPanel, setIndividualPanel] = useState({});
 
   function updatePanelId() {
     localStorage.setItem('currentPanelId', JSON.stringify(panel.id));

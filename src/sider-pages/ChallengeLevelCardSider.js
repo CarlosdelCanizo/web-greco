@@ -24,7 +24,7 @@ const ChallengeLevelCardSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"My challenges"} />
 
       </Sider>
       <Layout>

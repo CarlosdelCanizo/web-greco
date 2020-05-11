@@ -25,7 +25,7 @@ const NotificationsMenuSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Notifications"} />
 
       </Sider>
       <Layout>

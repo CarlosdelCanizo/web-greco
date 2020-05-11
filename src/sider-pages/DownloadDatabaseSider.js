@@ -25,7 +25,7 @@ const DownloadDatabaseSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Download"} />
 
       </Sider>
       <Layout>

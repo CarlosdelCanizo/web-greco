@@ -23,7 +23,7 @@ const InviteFriendsSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Invite friend"} />
 
       </Sider>
       <Layout>

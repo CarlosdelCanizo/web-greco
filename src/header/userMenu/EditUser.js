@@ -30,7 +30,6 @@ const EditUser = (props) => {
   }
 
   function onChange(checked) {
-    // console.log("switch to", checked);
     setData({ ...data, notifications: checked });
   }
 

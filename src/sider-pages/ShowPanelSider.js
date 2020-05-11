@@ -23,7 +23,7 @@ const ShowPanelSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Show panel"} />
 
       </Sider>
       <Layout>

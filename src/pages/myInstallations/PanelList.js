@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PanelCard from './PanelCard'
 import axiosConfig from '../../api/axiosConfig'
 
@@ -26,9 +26,9 @@ const PanelList = (props) => {
 
   return (
     <div>
-      {panelsList.map(panel => (
+      {panelsList.map((panel) =>
         <PanelCard key={panel.id} panel={panel} fetchPanels={fetchPanels} />
-      ))}
+      )}
     </div>
   )
 }

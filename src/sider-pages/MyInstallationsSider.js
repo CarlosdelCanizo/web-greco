@@ -23,7 +23,7 @@ const MyInstallationsSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"My installations"} />
 
       </Sider>
       <Layout>

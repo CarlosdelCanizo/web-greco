@@ -22,7 +22,7 @@ const StatisticsSider = (props) => {
         onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
         theme="light" >
 
-        <SiderMenu />
+        <SiderMenu key={"Statistics"} />
 
       </Sider>
       <Layout>

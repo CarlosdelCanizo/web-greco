@@ -23,7 +23,7 @@ const AboutSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"About"} />
 
       </Sider>
       <Layout>

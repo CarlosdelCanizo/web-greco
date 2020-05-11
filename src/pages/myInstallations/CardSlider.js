@@ -13,7 +13,7 @@ const PanelImage = ({ imageUrl }) => {
     case 'no-image': {
       return <img
         src={noImage}
-        alt="image"
+        alt="no image"
         id="card-slider-installation-add-image"
       />
     }
@@ -21,7 +21,7 @@ const PanelImage = ({ imageUrl }) => {
       return (
         <img
           src={imageUrl}
-          alt="image"
+          alt="installation image"
           id="card-slider-installation-add-image"
         />
       );
@@ -31,14 +31,12 @@ const PanelImage = ({ imageUrl }) => {
 
 const CardSlider = ({ multimedia }) => {
 
-  var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-
   if (multimedia.length > 0) {
     var firstImageId = multimedia[0].id
     var lastImageId = multimedia[multimedia.length - 1].id
   } else {
-    var firstImageId = null
-    var lastImageId = null
+    firstImageId = null
+    lastImageId = null
   }
 
   const [currentImageId, setCurrentImageId] = useState(firstImageId)
@@ -67,7 +65,6 @@ const CardSlider = ({ multimedia }) => {
 
   function forward() {
     var actual = currentImageId
-    console.log("forward MULTIMEDIA", multimedia)
     if (actual === multimedia[0].id && multimedia.length > 1) {
       setCurrentImageId(multimedia[1].id)
     }
@@ -79,12 +76,10 @@ const CardSlider = ({ multimedia }) => {
     }
   }
   function backward() {
-    //setCurrentImageId(currentImageId - 1);
-    console.log("backward MULTIMEDIA", multimedia)
     var actual = currentImageId
-    var position_actual = 0
+    var position_actual;
     for (var i = 0; i < multimedia.length - 1; i++) {
-      if (multimedia[i].id == actual)
+      if (multimedia[i].id === actual)
         position_actual = i
     }
 
@@ -92,7 +87,7 @@ const CardSlider = ({ multimedia }) => {
       /*Es la primera, no hay anterior*/
       /* setCurrentImageId(currentImageId);*/
     }
-    else if (actual == multimedia[1].id) {
+    else if (actual === multimedia[1].id) {
       /*Si es la última, la anterior es la del mig*/
       setCurrentImageId(multimedia[0].id)
     }

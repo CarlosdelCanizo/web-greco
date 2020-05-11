@@ -24,7 +24,7 @@ const PrivateMappingSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Private map"} />
 
       </Sider>
       <Layout>

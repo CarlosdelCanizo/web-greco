@@ -65,13 +65,13 @@
 }
 #panel-inclination-orientation-label-input {
   width: 100px;
-  position: fixed;
   text-align: left;
   float: left;
   width: 100px;
   height: 20px;
-  margin-left: 5px;
-  margin-top: 5px;
+  left: 5px;
+  top: 18px;
+  margin-top: -20px;
   z-index: 999;
   color: #2a4092;
   background-color:transparent;
@@ -335,6 +335,7 @@
   background-color:transparent;
   margin-left: 5px;
   top: 25px;
+  margin-top: 10px;
   z-index: 10;
   }
   #panel-inclination-orientation-label {

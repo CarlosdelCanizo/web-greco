@@ -23,7 +23,7 @@ const FeedPanelSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Feed panel"} />
 
       </Sider>
       <Layout>

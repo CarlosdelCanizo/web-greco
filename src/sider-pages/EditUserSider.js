@@ -24,7 +24,7 @@ const PublicMappingSider = (props) => {
         theme="light"
       >
 
-        <SiderMenu />
+        <SiderMenu key={"Edit user"} />
 
       </Sider>
       <Layout>
