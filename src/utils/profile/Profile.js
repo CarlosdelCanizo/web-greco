@@ -25,7 +25,7 @@ const Profile = () => {
           </div>
         )
         :
-        (<h2 id="user-menu-tittle">Generation Solar</h2>)}
+        (<Fragment><h1 id="user-menu-title-not-logged-in">Generation Solar</h1><p id="user-not-logged-in">You´re not logged in</p></Fragment>)}
     </div>
 
   );
