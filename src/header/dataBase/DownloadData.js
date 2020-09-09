@@ -57,7 +57,7 @@ const DownloadData = (props) => {
               </p>
               <br />
               <p id="download-text">
-                "Photovoltaic (PV) installations database” © Generation Solar | CC-BY-4.0
+                Please cite as: "photovoltaic (PV) installations database” © Generation Solar | CC-BY-4.0
               </p>
               <br />
               <p id="download-text">
