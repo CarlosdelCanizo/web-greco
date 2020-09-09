@@ -5,12 +5,12 @@ import axiosConfig from '../../api/axiosConfig';
 
 const marks = {
   0: '0 Tm',
-  400000: '400.000 Tm',
-  800000: {
+  150000: '150.000 Tm',
+  300000: {
     style: {
       color: '#db4196'
     },
-    label: <strong>800.000 Tm</strong>
+    label: <strong>300.000 Tm</strong>
   }
 };
 
@@ -45,15 +45,16 @@ class ClimateObjective extends React.Component {
         <Row >
           <Col>
             <div id="div-slider-climate">
-              <Slider range marks={marks} min={0} max={800000} tipFormatter={formatter}
+              <Slider range marks={marks} min={0} max={300000} tipFormatter={formatter}
                 value={[this.state.minCo2, this.state.maxCo2]}
                 disabled />
             </div>
           </Col>
           <Col>
             <div id="div-slider-climate-explanation">
-              <p id="small-letters-climate">The pink bar shows the approximated CO2 emissions saved by the installations registered in Generation Solar.
-             This range is an estimate based on global parameters. Share new installations to get closer the climate objective!</p>
+              <p id="small-letters-climate">The bar shows the approximate CO<sub>2</sub> emissions saved thanks to the installations registered in Generation Solar.
+              This range is a very rough estimate based on global parameters. It does not serve for research or any rigurous purpose.
+              In upcoming versions of the app, we hope to provide a better estimation. <b>Share new installations to get closer the climate objective!</b></p>
             </div>
           </Col>
         </Row>

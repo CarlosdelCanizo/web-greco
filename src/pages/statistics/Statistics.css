@@ -142,7 +142,7 @@
     font-size: 12px;
     line-height: 1.08;
     letter-spacing: 0.27px;
-    text-align: center;
+    text-align: initial;
     color: #7f95a7;
   }
 
@@ -286,7 +286,7 @@
   font-size: 12px;
   line-height: 1.08;
   letter-spacing: 0.27px;
-  text-align: center;
+  text-align: initial;
   color: #7f95a7;
 }
 
@@ -325,7 +325,7 @@
   font-size: 12px;
   line-height: 1.08;
   letter-spacing: 0.27px;
-  text-align: center;
+  text-align: initial;
   color: #7f95a7;
 }
 }
@@ -431,7 +431,7 @@
   font-size: 12px;
   line-height: normal;
   letter-spacing: 0.27px;
-  text-align: center;
+  text-align: initial;
   color: #7f95a7;
 }
 
@@ -469,7 +469,7 @@ margin-left: 10px;
   font-size: 12px;
   line-height: 1.08;
   letter-spacing: 0.27px;
-  text-align: center;
+  text-align: initial;
   color: #7f95a7;
 }
 }

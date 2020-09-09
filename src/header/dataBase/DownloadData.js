@@ -53,7 +53,17 @@ const DownloadData = (props) => {
               </Col >
             </Row>
             <Row>
-              <p id="download-text">Download all the information from the Generation Solar database, in a csv file.</p>
+              <p id="download-text">Download all the information from the Generation Solar database, in a csv file.
+              </p>
+              <br />
+              <p id="download-text">
+                "Photovoltaic (PV) installations database” © Generation Solar | CC-BY-4.0
+              </p>
+              <br />
+              <p id="download-text">
+                It is impossible to adequately acknowledge the many individuals who have
+                contributed to this initiative. We thank them all, and specially <a href="/about-sider">these people</a>.
+                </p>
             </Row>
             <Row>
               <Col span={24} xs={24} sm={24} md={24} lg={24} xl={24}>

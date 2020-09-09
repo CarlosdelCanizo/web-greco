@@ -32,7 +32,7 @@ class About extends React.Component {
               <h1 id="edit-details-tittle" >About</h1>
               <Divider />
               <div id="collapse-div">
-                <Collapse defaultActiveKey={['About']} onChange={callback}>
+                <Collapse onChange={callback}>
                   <Panel header="About" key="About">
                     <p id="about-text">
                       Generation Solar, our pioneering Citizen Science app is the brainchild of the research and innovation project ‘GRECO’.
@@ -173,6 +173,75 @@ class About extends React.Component {
                       Ana Belén Cristóbal (GRECO project coordinator)
                   </p>
 
+                  </Panel>
+                </Collapse>
+
+                <Collapse onChange={callback}>
+                  <Panel header="The Team" key="The team">
+                    <p id="about-text">
+                      Generation Solar resulted from a participatory process lead by the Studies Centre on
+                      Science, Communication and Society from the University Pompeu Fabra (SCS-
+                      UPF). This process included an open call for proposals and the assessment and
+                      selection of one by an expert jury. The winning proposal was submitted by Marta
+                      Victoria, assistant profesor and researcher at the Department of Engineering -
+                      Photovoltaic Solar Energy, Aarhus University (Denmark). We thank her
+                      contribution, which was essential for the conception and exploitation of Generation
+                      Solar.
+                  </p>
+                    <br />
+                    <p id="about-text">
+                      Several people have contributed to this initiative:
+                    </p>
+                    <br />
+                    <p id="about-know-more">
+                      <h4 id="about-wanna">
+                        Coordination team:
+                      </h4>
+                      <ul>
+                        <li>
+                          Gema Revuelta. Director of the Studies Centre on Science, Communication
+                          and Society from the University Pompeu Fabra (SCS-UPF).
+                        </li>
+                        <li>
+                          Luisa Barbosa. Coordinator of international projects at the SCS-UPF.
+                        </li>
+                        <li>
+                          Carlos del Cañizo. Coordinator of the Project GRECO and director of the
+                          Solar Energy Institute from the Universidad Politécnica de Madrid (UPM).
+                        </li>
+                      </ul>
+                    </p>
+                    <br />
+                    <p id="about-know-more">
+                      <h4 id="about-wanna">
+                        Collaborators:
+                      </h4>
+                      <ul>
+                        <li>
+                          Ana Belén Cristóbal. Coordinator of the Project GRECO and Manager of
+                          Innovation, Research and Development at UPM.
+                        </li>
+                        <li>
+                          Sabine Haas. Reseracher and Project manager from the Transformation of
+                          Energy Systems Unit at Reiner Lemoine Institut.
+                        </li>
+                        <li>
+                          Luis Fialho. Researcher at the University of Évora, Renewable Energies
+                          Chair.
+                        </li>
+                        <li>
+                          Regina Schwald. Project manager at the European Science Communication
+                          Institute.
+                        </li>
+                      </ul>
+                      <p>The software development for the alfa version has been done by the company
+                      Basetis.
+                      </p>
+                      <p>
+                        And, of course, the team is also composed by all the citizen scientists that have
+                        provided their time and data to enrich the community. We thank them all.
+                      </p>
+                    </p>
                   </Panel>
                 </Collapse>
 

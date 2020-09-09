@@ -71,7 +71,8 @@ class Welcome extends React.Component {
             <Divider id="footer-divider" />
             <div id="welcome-text-footer">
               <p><b>Version 1.0</b> - This first version of Generation Solar is still in the improvement phase.</p>
-              <p>This initiative is part of the project <a id="link" href="https://www.greco-project.eu/" target="_blank">GRECO</a> and has been coordinated by the Studies Centre on Science, Communication and Society of the University Pompeu Fabra.</p>
+              <p>This initiative is part of the project <a id="link" href="https://www.greco-project.eu/" target="_blank">GRECO</a> and has been coordinated by the Studies Centre on Science, Communication and Society of the University Pompeu Fabra with the
+support of <a href="/about-sider">many people.</a></p>
 
               <p><img src={ueFlag} width="25px" height="17px" alt="ue-flag" /> This initiative has been funded by the European Commission under the project 787280.</p>
             </div>

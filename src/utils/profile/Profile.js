@@ -1,7 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import { Avatar } from 'antd'
 import './profile.css'
 import { ProfileContext } from './ProfileContext'
+
+//var access_token
 
 const Profile = () => {
 
@@ -12,6 +14,17 @@ const Profile = () => {
     return name
       .slice(0, 2)
   }
+
+  // useEffect(() => {
+  //   access_token = JSON.parse(localStorage.getItem('access_token'))
+  //   if (access_token === null || access_token === undefined) {
+  //     profileContext.isLoggedin = false
+  //     console.log("You are not logged")
+  //   } else {
+  //     profileContext.isLoggedin = true
+  //     console.log("You´re logged")
+  //   }
+  // }, [access_token]);
 
   return (
 

@@ -52,7 +52,8 @@ class Statistics extends React.Component {
             <PanelsHeatMap />
           </div>
           <div>
-            <p id="heatmap-explanation">Heat map showing the geographical distribution and amount of installed capacity of photovoltaic installations registered in Generation Solar.</p>
+            <p id="heatmap-explanation">Heat map showing the geographical distribution and amount of installed capacity of the photovoltaic installations registered in Generation Solar.
+            Red means high installed capacity, while blue equals to little installed capacity.</p>
           </div>
         </Col>
 
@@ -93,8 +94,8 @@ class Statistics extends React.Component {
           <div id="climate-objective-card-statistics-container" >
             <Col span={1} />
             <Col span={22}>
-              <h2 id="tittle-installed">CLIMATE OBJECTIVE FOR 2030</h2>
-              <h1 style={{ color: "#2a4092" }} id="numbers-climate-objective" >800.000</h1>
+              <h2 id="tittle-installed">OUR CLIMATE OBJECTIVE FOR 2021</h2>
+              <h1 style={{ color: "#2a4092" }} id="numbers-climate-objective" >300.000</h1>
               <p id="letters-climate-objective">Tonnes of CO₂</p>
             </Col>
             <Col span={1} />

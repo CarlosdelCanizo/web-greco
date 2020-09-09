@@ -35,7 +35,7 @@ class PrivacyPolicy extends React.Component {
               <div>
 
                 <Collapse onChange={callback}>
-                  <Panel header="LEGAL NOTICE" key="LEGAL NOTICE">
+                  <Panel header="Legal notice" key="Legal notice">
                     <p id="about-text">
                       In order to protect the participant’s identity, no personal information will be shared and the data will be securely stored
                       according to data protection legislation. Only Data Controllers will be able to access detailed information and participants
@@ -47,7 +47,9 @@ class PrivacyPolicy extends React.Component {
                   </p>
                     <br />
                     <p id="about-text">
-                      The data collected in GenerationSolar regarding photovoltaic installations will be freely downloadable for the research community
+                      The data collected in GenerationSolar regarding photovoltaic installations will be freely downloadable (license
+                      <a id="link" href="https://www.google.com/url?q=https://creativecommons.org/licenses/by/4.0/&sa=D&ust=1599644799766000&usg=AFQjCNEqcgYX7fgcEFOOS4YXyOo2_Bq02Q" target="_blank">
+                        &nbsp;  CC BY 4.0</a>) for the research and innovation community
                       in order to favour energy simulation studies. At no moment this data will be used for other purposes.
                       Furthermore, the origin of the data will be transparently referenced and no personal information will be included.
                   </p>
@@ -106,7 +108,7 @@ class PrivacyPolicy extends React.Component {
                 </Collapse>
 
                 <Collapse onChange={callback}>
-                  <Panel header="PRIVACY POLICY" key="PRIVACY POLICY">
+                  <Panel header="Privacy policy" key="Privacy policy">
                     <p id="about-text">
                       Generation Solar (hereinafter, “the App”, in any of the names that has had in the past or may acquire in the future) takes,
                       amongst other things, data and images shared by volunteers (or “citizen scientists”) and it makes this data available
@@ -158,7 +160,7 @@ class PrivacyPolicy extends React.Component {
                 </Collapse>
 
                 <Collapse onChange={callback}>
-                  <Panel header="USER AGREEMENT" key="USER AGREEMENT">
+                  <Panel header="User agreement" key="User agreement">
                     <p id="about-text">
                       Generation Solar (hereinafter, “the App”, in any of the names it has had in the past or may acquire in the future)
                       is a citizen science project developed as part of the project GRECO. This project is coordinated by the
@@ -205,7 +207,7 @@ class PrivacyPolicy extends React.Component {
                 </Collapse>
 
                 <Collapse onChange={callback}>
-                  <Panel header="COOKIES POLICY" key="COOKIES POLICY">
+                  <Panel header="Cookies policy" key="Cookies policy">
                     <p id="about-text">
                       The recent regulatory modification regarding the publicity and management of the consent for the use of
                       cookies or other elements of information storage entails the obligation of the websites to adapt to the new
@@ -267,7 +269,6 @@ class PrivacyPolicy extends React.Component {
                     </p>
                   </Panel>
                 </Collapse>
-
               </div>
               &nbsp;
               </Card>
