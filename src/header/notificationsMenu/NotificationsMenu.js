@@ -23,26 +23,31 @@ class NotificationsMenu extends Component {
 
   // GET UNREAD NOTIFICATIONS
   fetchNotifications() {
-    const access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'))
-    axiosConfig.get("/comment/unreadcomments",
-      {
-        headers: {
-          "Authorization": access_token
-        }
-      })
-      .then(response => {
-        const notifications = response.data
-        if (notifications && notifications.length > 0) {
-          this.setState({
-            show: true,
-          });
-        }
-        else {
-          this.setState({
-            show: false,
-          });
-        }
-      })
+    let access_token = JSON.parse(localStorage.getItem('access_token'))
+    if (access_token !== null) {
+      access_token = 'Bearer ' + access_token
+      axiosConfig.get("/comment/unreadcomments",
+        {
+          headers: {
+            "Authorization": access_token
+          }
+        })
+        .then(response => {
+          const notifications = response.data
+          console.log("NOTIFICATIONS ------", notifications)
+          if (notifications && notifications.length > 0) {
+            this.setState({
+              show: true,
+            });
+          }
+          else {
+            this.setState({
+              show: false,
+            });
+          }
+        })
+    }
+
   }
   componentDidMount() {
     this.fetchNotifications();

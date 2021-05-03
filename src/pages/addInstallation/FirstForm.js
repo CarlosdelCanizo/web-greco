@@ -285,7 +285,7 @@ const FirstForm = (props) => {
               <Form.Item
               >
                 <div id="div-electrical-background">
-                  <label id="panel-input-label-electrical_capacity">Installed capacity</label>
+                  <label id="panel-input-label-electrical_capacity">Installed capacity (kW)</label>
                   <Input
                     id="electrical_capacity"
                     name="electrical_capacity"
@@ -301,7 +301,7 @@ const FirstForm = (props) => {
             <Col id="col-register-panel-fields" xs={12} sm={12} md={8} lg={8} xl={8}>
               <Form.Item>
                 <div id="div-surface-background">
-                  <label id="panel-input-label-surface">Area</label>
+                  <label id="panel-input-label-surface">Surface area (m²)</label>
                   <Input
                     value={data.surface === 0 ? surface : data.surface}
                     onChange={handleInputChange}
@@ -445,7 +445,7 @@ const FirstForm = (props) => {
             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
               <Form.Item>
                 <div id="div-inverter-background">
-                  <label id="panel-input-label-inverter">Inverter capacity</label>
+                  <label id="panel-input-label-inverter">Inverter capacity (kW)</label>
                   <Input
                     placeholder="800kW"
                     name="inverterCapacity"

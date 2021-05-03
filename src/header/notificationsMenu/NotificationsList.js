@@ -19,20 +19,21 @@ function NotificationsList() {
   // GET NOTIFICATIONS
   useEffect(() => {
     const fetchNotifications = () => {
-      axiosConfig.get("/comment/unreadcomments",
-        {
-          headers: {
-            "Authorization": access_token
-          }
-        })
-        .then(response => {
-          const dataResponse = response.data
-          idNotificacion = response.data[response.data.length - 1]
-          setNotifications(dataResponse)
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      if (access_token !== "Bearer null")
+        axiosConfig.get("/comment/unreadcomments",
+          {
+            headers: {
+              "Authorization": access_token
+            }
+          })
+          .then(response => {
+            const dataResponse = response.data
+            idNotificacion = response.data[response.data.length - 1]
+            setNotifications(dataResponse)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     fetchNotifications();
   }, [])
@@ -41,7 +42,7 @@ function NotificationsList() {
   // DELETE NOTIFICATIONS
   const deleteNotifications = () => {
 
-    let idPanel = notifications[0].idPanel
+    let idPanel = notifications[0].idPanel;
 
     axiosConfig.get("/solarPanel/" + idNotificacion.id + "/comments",
       {
@@ -74,7 +75,7 @@ function NotificationsList() {
         </Link>
         <div>
           {access_token === "Bearer null" || access_token === "Bearer undefined" ?
-            (<p id="no-notifications">You must be logged to view your notifications</p>) : (null)}
+            (isDisabled = true, <p id="no-notifications">You must be logged to view your notifications</p>) : (null)}
           {notifications.length === 0 && access_token !== "Bearer null" && access_token !== "Bearer undefined" ?
             (isDisabled = true, <p id="no-notifications">You don´t have new notifications</p>)
             :
