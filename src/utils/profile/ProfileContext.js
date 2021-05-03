@@ -15,8 +15,9 @@ const ProfileProvider = ({ children, props }) => {
   const [isLoggedin, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    var access_token = 'Bearer ' + JSON.parse(localStorage.getItem('access_token'));
-    if (access_token) {
+    let access_token = JSON.parse(localStorage.getItem('access_token'));
+    if (access_token !== null) {
+      access_token = 'Bearer ' + access_token;
       axiosConfig.get("/users/getMyUserInfo",
         {
           headers: {

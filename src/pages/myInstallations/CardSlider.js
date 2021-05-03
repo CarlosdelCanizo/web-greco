@@ -46,21 +46,23 @@ const CardSlider = ({ multimedia }) => {
   useEffect(() => {
     if (currentImageId === null || currentImageId === undefined) {
       setImageUrl('no-image');
+    } else {
+      getImage(currentImageId);
     }
-    function getImage(currentImageId) {
-      axiosConfig({
-        url: '/multimedia/' + currentImageId + '/getImage/',
-        method: 'GET',
-        responseType: 'blob'
-      })
-        .then(response => {
-          const url = window.URL.createObjectURL(new Blob([response.data]));
-          setImageUrl(url);
-        });
-    }
-    getImage(currentImageId)
 
   }, [currentImageId]);
+
+  function getImage(currentImageId) {
+    axiosConfig({
+      url: '/multimedia/' + currentImageId + '/getImage/',
+      method: 'GET',
+      responseType: 'blob'
+    })
+      .then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        setImageUrl(url);
+      });
+  }
 
 
   function forward() {

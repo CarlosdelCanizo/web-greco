@@ -67,7 +67,7 @@
 /* LABELS */
 #panel-input-label-electrical_capacity, #panel-input-label-surface {
   position: relative;
-  width: 100px;
+  /*width: 100px;*/
   text-align: left;
   float: left;
   font-weight: 500;
@@ -95,7 +95,7 @@
 }
 #panel-input-label-inverter {
   position: relative;
-  width: 100px;
+  /*width: 100px;*/
   text-align: left;
   float: left;
   font-weight: 500;
